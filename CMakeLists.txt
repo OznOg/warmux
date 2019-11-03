@@ -4,9 +4,6 @@ cmake_minimum_required(VERSION 2.4.4)
 PROJECT(Warmux)
 SET(VERSION "svn")
 
-# change the default install prefix to /usr
-SET(CMAKE_INSTALL_PREFIX /usr)
-
 # Some aliases of cmake variables
 IF(BUILD)
   SET(BUILD CACHE STRING "Abbreviation for CMAKE_BUILD_TYPE.")
@@ -49,8 +46,8 @@ ELSE(DATA_PATH)
   IF(UNIX AND NOT WIN32)
     SET(INSTALL_DATADIR ${CMAKE_INSTALL_PREFIX}/share/warmux/)
     SET(INSTALL_LOCALEDIR ${CMAKE_INSTALL_PREFIX}/share/locale/)
-    SET(DATA_DESTINATION "share/warmux")
-    SET(PO_DESTINATION "share/locale")
+    SET(DATA_DESTINATION ${CMAKE_INSTALL_PREFIX}/share/warmux)
+    SET(PO_DESTINATION ${CMAKE_INSTALL_PREFIX}/share/locale)
     SET(FONT_FILE ${INSTALL_DATADIR}/font/Ubuntu-R.ttf)
   ELSE(UNIX AND NOT WIN32)
     SET(INSTALL_DATADIR data/)
@@ -214,19 +211,19 @@ INSTALL(DIRECTORY data/ DESTINATION ${DATA_DESTINATION}
 
 # Install desktop file and icon
 IF(UNIX AND NOT APPLE)
-  INSTALL(FILES data/warmux.desktop DESTINATION share/applications)
-  INSTALL(FILES data/icon/warmux_128x128.png DESTINATION share/pixmaps)
+  INSTALL(FILES data/warmux.desktop DESTINATION ${PREFIX}/share/applications)
+  INSTALL(FILES data/icon/warmux_128x128.png DESTINATION ${PREFIX}/share/pixmaps)
 ENDIF(UNIX AND NOT APPLE)
 
 # Install docs
-INSTALL(DIRECTORY doc DESTINATION share/
+INSTALL(DIRECTORY doc DESTINATION ${PREFIX}/share/
   PATTERN ".svn" EXCLUDE
   PATTERN "Makefile*" EXCLUDE
   PATTERN "warmux.man" EXCLUDE
 )
-INSTALL(FILES README README.cmake INSTALL AUTHORS AUTHORS BUGS DESTINATION share/doc)
+INSTALL(FILES README README.cmake INSTALL AUTHORS AUTHORS BUGS DESTINATION ${PREFIX}/share/doc)
 IF(UNIX)
-  INSTALL(FILES doc/warmux.man DESTINATION share/man/man6 RENAME warmux.6)
+  INSTALL(FILES doc/warmux.man DESTINATION ${PREFIX}/share/man/man6 RENAME warmux.6)
 ENDIF(UNIX)
 
 CONFIGURE_FILE(
