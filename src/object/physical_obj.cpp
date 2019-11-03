@@ -48,7 +48,7 @@
 #include "tool/string_tools.h"
 #include "weapon/weapon_launcher.h"
 
-#define Y_OBJET_MIN  -10000
+#define Y_OBJET_MIN  (-10000)
 
 PhysicalObj::PhysicalObj(const std::string &name, const std::string &xml_config) :
   m_collides_with_ground(true),

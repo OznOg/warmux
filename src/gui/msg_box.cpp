@@ -31,7 +31,7 @@ MsgBox::MsgBox(const Point2i& size, Font::font_size_t fsize,
   , max_history(max_lines)
 {
   Widget::SetBorder(defaultOptionColorRect, 2);
-  Widget::SetBackgroundColor(defaultOptionColorBox);
+  WidgetList::SetBackgroundColor(defaultOptionColorBox);
 }
 
 MsgBox::~MsgBox()

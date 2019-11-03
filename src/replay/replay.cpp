@@ -299,7 +299,7 @@ ok:
   val = mode_info.allow_character_selection;
   mode_info.allow_character_selection = game_mode->allow_character_selection;
   game_mode->allow_character_selection = (GameMode::manual_change_character_t)val;
-#define SWAP(a, b) val = a; a = b; b = val
+#define SWAP(a, b) val = a; (a) = b; (b) = val
   SWAP(mode_info.turn_duration, game_mode->duration_turn);
   SWAP(mode_info.duration_before_death_mode, game_mode->duration_before_death_mode);
   SWAP(mode_info.damage_per_turn_during_death_mode, game_mode->damage_per_turn_during_death_mode);

@@ -51,7 +51,7 @@ TeamBox::TeamBox(const std::string& _player_name, const Point2i& _size, uint g)
 
   SetMargin(2);
   SetBorder(transparent_color, 4);
-  Widget::SetBackgroundColor(transparent_color);
+  WidgetList::SetBackgroundColor(transparent_color);
 
   Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 

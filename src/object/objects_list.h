@@ -32,15 +32,15 @@
 #define FOR_ALL_OBJECTS(object) \
   for (ObjectsList::iterator object=ObjectsList::GetRef().begin(), \
        end=ObjectsList::GetRef().end(); \
-       object != end; \
-       ++object)
+       (object) != end; \
+       ++(object))
 
 //-----------------------------------------------------------------------------
 
 // Loop for all objects that aren't out of the screen
 #define FOR_EACH_OBJECT(object) \
   FOR_ALL_OBJECTS(object) \
-    if (!(*object)->IsGhost())
+    if (!(*(object))->IsGhost())
 
 //-----------------------------------------------------------------------------
 

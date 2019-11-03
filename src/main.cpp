@@ -305,7 +305,7 @@ bool AppWarmux::CheckInactive(SDL_Event& evnt)
 #ifdef HAVE_HANDHELD
 #  define CHECK_STATE(e) e.type==SDL_ACTIVEEVENT
 #else
-#  define CHECK_STATE(e) e.type==SDL_ACTIVEEVENT && e.active.state&SDL_APPACTIVE
+#  define CHECK_STATE(e) (e.type==SDL_ACTIVEEVENT && (e).active.state&SDL_APPACTIVE)
 #endif
 
   if (CHECK_STATE(evnt) && evnt.active.gain == 0) {

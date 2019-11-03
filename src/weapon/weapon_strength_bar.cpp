@@ -167,7 +167,7 @@ Color WeaponStrengthBar::ComputeValueColor(int val) const
   int scale = (val << 16)/(max-min);
 
 #define SCALE_COL(fun)   \
-  (((end_color.fun - start_color.fun)*scale)>>16) + start_color.fun
+  ((((end_color.fun - start_color.fun)*scale)>>16) + start_color.fun)
 
   int r = SCALE_COL(GetRed());
   int g = SCALE_COL(GetGreen());

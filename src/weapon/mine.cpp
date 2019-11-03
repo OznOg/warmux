@@ -184,7 +184,7 @@ bool ObjMine::IsImmobile() const
 {
   if (is_active && animation)
     return false;
-  return PhysicalObj::IsImmobile();
+  return WeaponProjectile::IsImmobile();
 }
 
 void ObjMine::Draw()

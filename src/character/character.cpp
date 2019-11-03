@@ -179,7 +179,7 @@ Character::Character(Team& my_team, const std::string &name, Body *char_body) :
 
 Character::Character(const Character& acharacter) :
   PhysicalObj(acharacter),
-  MovableByUser(),
+  MovableByUser(acharacter),
   character_name(acharacter.character_name),
   m_team(acharacter.m_team),
   step_sound_played(acharacter.step_sound_played),

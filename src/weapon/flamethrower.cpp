@@ -97,7 +97,7 @@ void FlameThrowerBullet::DoExplosion()
 
 void FlameThrowerBullet::SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle)
 {
-  WeaponProjectile::SignalGroundCollision(speed_before, contactAngle);
+  WeaponBullet::SignalGroundCollision(speed_before, contactAngle);
   launcher->IncMissedShots();
 }
 

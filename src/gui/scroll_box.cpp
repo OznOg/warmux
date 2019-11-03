@@ -39,7 +39,7 @@ static const float MAX_CAMERA_ACCELERATION = 1.5;
 
 #define SCROLL_UPDATE_INTERVAL    33
 #define SCROLL_SPEED  6
-#define NO_DRAG      -1
+#define NO_DRAG      (-1)
 
 static const Color c_even(0x80, 0x80, 0x80, 0x40);
 static const Color  c_odd(0x80, 0x80, 0x80, 0x20);
@@ -72,7 +72,7 @@ ScrollBox::ScrollBox(const Point2i & _size, bool force, bool alt, bool v)
   }
 
   Widget::SetBorder(white_color, 1);
-  Widget::SetBackgroundColor(transparent_color);
+  WidgetList::SetBackgroundColor(transparent_color);
 
   scrollbar_dim = (v) ? m_dec->GetSizeX() : m_dec->GetSizeY();
   // Let's consider the scrollbar is not displayed for now.
@@ -399,7 +399,7 @@ bool ScrollBox::Update(const Point2i &mousePosition,
                        const Point2i &lastMousePosition)
 {
   bool redraw = need_redrawing;
-  bool updated = Widget::Update(mousePosition, lastMousePosition);
+  bool updated = WidgetList::Update(mousePosition, lastMousePosition);
   need_redrawing = redraw;
 
   bool has_scrollbar = HasScrollBar();

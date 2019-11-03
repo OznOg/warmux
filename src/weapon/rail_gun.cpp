@@ -69,7 +69,7 @@ void RailBullet::SignalGroundCollision(const Point2d& speed_before, const Double
 {
   // Change that sound?
   //JukeBox::GetInstance()->Play("default", "weapon/ricoche1");
-  WeaponProjectile::SignalGroundCollision(speed_before, contactAngle);
+  WeaponBullet::SignalGroundCollision(speed_before, contactAngle);
   launcher->IncMissedShots();
 }
 

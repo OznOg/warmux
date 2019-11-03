@@ -40,7 +40,7 @@ Box::Box(const Point2i & size, bool _draw_border, bool shadowed)
   }
 
   if (shadowed) {
-    Widget::SetBackgroundColor(defaultOptionColorBox);
+    WidgetList::SetBackgroundColor(defaultOptionColorBox);
   }
 }
 

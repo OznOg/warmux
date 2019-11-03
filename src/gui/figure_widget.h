@@ -26,7 +26,7 @@
 #include "picture_widget.h"
 
 /** To help determine at compilation time the size of an array */
-#define ARRAY_SIZE(array_) (sizeof(array_)/sizeof(*array_))
+#define ARRAY_SIZE(array_) (sizeof(array_)/sizeof(*(array_)))
 
 /** Why can't I initialize such a simple struct like an aggregate !? */
 #define DEF_CAPTIONS_PARAMS  Font::FONT_BOLD, dark_gray_color

@@ -42,7 +42,7 @@
 #include "tool/resource_manager.h"
 #include "weapon/weapon.h"
 
-#define MOUSE_CLICK_SQUARE_DISTANCE 5*5
+#define MOUSE_CLICK_SQUARE_DISTANCE (5*5)
 #define LONG_CLICK_DURATION 600
 #define DOUBLE_CLICK_DURATION 300
 #define DOUBLE_CLICK_SQUARE_DISTANCE 25

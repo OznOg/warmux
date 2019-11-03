@@ -28,9 +28,9 @@
 /* ----- Defines for pixel clipping tests */
 
 #define clip_xmin(surface) surface->clip_rect.x
-#define clip_xmax(surface) surface->clip_rect.x+surface->clip_rect.w-1
+#define clip_xmax(surface) (surface->clip_rect.x+(surface)->clip_rect.w-1)
 #define clip_ymin(surface) surface->clip_rect.y
-#define clip_ymax(surface) surface->clip_rect.y+surface->clip_rect.h-1
+#define clip_ymax(surface) (surface->clip_rect.y+(surface)->clip_rect.h-1)
 
 /* AA Line */
 
@@ -41,9 +41,9 @@
 #define CLIP_RIGHT_EDGE  0x2
 #define CLIP_BOTTOM_EDGE 0x4
 #define CLIP_TOP_EDGE    0x8
-#define CLIP_INSIDE(a)   (!a)
-#define CLIP_REJECT(a,b) (a&b)
-#define CLIP_ACCEPT(a,b) (!(a|b))
+#define CLIP_INSIDE(a)   (!(a))
+#define CLIP_REJECT(a,b) ((a)&(b))
+#define CLIP_ACCEPT(a,b) (!((a)|(b)))
 
 int clipEncode(Sint16 x, Sint16 y, Sint16 left, Sint16 top, Sint16 right, Sint16 bottom)
 {

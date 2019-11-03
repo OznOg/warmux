@@ -29,7 +29,7 @@ std::string UTF8ToUTF16(std::string path, const std::string& name);
 std::string ANSIToUTF8(std::string path, const std::string& name);
 #else
 #  define ANSIToUTF8(path, name) (name)
-#  define UTF8ToANSI(path, name) (path+name)
+#  define UTF8ToANSI(path, name) ((path)+(name))
 #endif
 
 #endif // ANSI_CONVERT_H
