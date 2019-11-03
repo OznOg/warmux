@@ -50,13 +50,13 @@ public:
 class SkipTurnIdea : public AIIdea
 {
 public:
-  virtual AIStrategy * CreateStrategy(float accuracy) const;
+  AIStrategy * CreateStrategy(float accuracy) const override;
 };
 
 class WasteAmmoUnitsIdea : public AIIdea
 {
 public:
-  virtual AIStrategy * CreateStrategy(float accuracy) const;
+  AIStrategy * CreateStrategy(float accuracy) const override;
 };
 
 class AIShootIdea : public AIIdea
@@ -72,8 +72,8 @@ protected:
               Weapon::Weapon_type t)
     : weapons_weighting(w), shooter(s), enemy(e), weapon_type(t) { }
 public:
-  virtual bool NoLongerPossible() const;
-  virtual float GetMaxRating(bool one_shot) const;
+  bool NoLongerPossible() const override;
+  float GetMaxRating(bool one_shot) const override;
 };
 
 class ShootDirectlyAtEnemyIdea : public AIShootIdea
@@ -83,7 +83,7 @@ public:
   ShootDirectlyAtEnemyIdea(const WeaponsWeighting & weapons_weighting,
                            const Character & shooter, const Character & enemy,
                            Weapon::Weapon_type weapon_type, int max_distance);
-  virtual AIStrategy * CreateStrategy(float accuracy) const;
+  AIStrategy * CreateStrategy(float accuracy) const override;
 };
 
 class FireMissileWithFixedDurationIdea : public AIShootIdea
@@ -96,7 +96,7 @@ public:
                                    const Character & shooter, const Character & enemy,
                                    Weapon::Weapon_type weapon_type,
                                    float duration, int timeout = -1);
-  virtual AIStrategy * CreateStrategy(float accuracy) const;
+  AIStrategy * CreateStrategy(float accuracy) const override;
 };
 
 #endif

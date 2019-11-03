@@ -38,7 +38,7 @@ public:
   ControlConfig(const Point2i& size, bool readonly = true);
   void SaveControlConfig() const;
 
-  virtual void Pack();
+  void Pack() override;
 };
 
 #endif //GUI_CONTROL_CONFIG_H

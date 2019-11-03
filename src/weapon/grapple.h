@@ -53,9 +53,9 @@ class Grapple : public Weapon
     bool move_down_pressed;
 
   protected:
-    void Refresh();
-    void p_Deselect() { DetachRope(); };
-    bool p_Shoot();
+    void Refresh() override;
+    void p_Deselect() override { DetachRope(); };
+    bool p_Shoot() override;
 
     void GoUp();
     void GoDown();
@@ -86,9 +86,9 @@ class Grapple : public Weapon
     Double delta_len ;
 
     Grapple();
-    ~Grapple();
-    void Draw();
-    virtual void NotifyMove(bool collision);
+    ~Grapple() override;
+    void Draw() override;
+    void NotifyMove(bool collision) override;
 
     GrappleConfig& cfg();
 
@@ -101,38 +101,38 @@ class Grapple : public Weapon
     void DetachNode();
     void SetRopeSize(Double length) const;
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
 
-    void StartMovingLeft();
-    void StopMovingLeft();
+    void StartMovingLeft() override;
+    void StopMovingLeft() override;
 
-    void StartMovingRight();
-    void StopMovingRight();
+    void StartMovingRight() override;
+    void StopMovingRight() override;
 
-    void StartMovingUp();
-    void StopMovingUp();
+    void StartMovingUp() override;
+    void StopMovingUp() override;
 
-    void StartMovingDown();
-    void StopMovingDown();
+    void StartMovingDown() override;
+    void StopMovingDown() override;
 
-    void StartShooting();
-    void StopShooting();
+    void StartShooting() override;
+    void StopShooting() override;
 
-    virtual bool IsPreventingLRMovement();
-    virtual bool IsPreventingWeaponAngleChanges();
+    bool IsPreventingLRMovement() override;
+    bool IsPreventingWeaponAngleChanges() override;
     // Keys management
-    void HandleKeyPressed_Up(bool /*slowly*/);
-    void HandleKeyReleased_Up(bool /*slowly*/);
+    void HandleKeyPressed_Up(bool /*slowly*/) override;
+    void HandleKeyReleased_Up(bool /*slowly*/) override;
 
-    void HandleKeyPressed_Down(bool /*slowly*/);
-    void HandleKeyReleased_Down(bool /*slowly*/);
+    void HandleKeyPressed_Down(bool /*slowly*/) override;
+    void HandleKeyReleased_Down(bool /*slowly*/) override;
 
-    void HandleKeyPressed_MoveRight(bool /*slowly*/);
-    void HandleKeyReleased_MoveRight(bool /*slowly*/);
+    void HandleKeyPressed_MoveRight(bool /*slowly*/) override;
+    void HandleKeyReleased_MoveRight(bool /*slowly*/) override;
 
-    void HandleKeyPressed_MoveLeft(bool /*slowly*/);
-    void HandleKeyReleased_MoveLeft(bool /*slowly*/);
+    void HandleKeyPressed_MoveLeft(bool /*slowly*/) override;
+    void HandleKeyReleased_MoveLeft(bool /*slowly*/) override;
 
     void PrintDebugRope();
 };

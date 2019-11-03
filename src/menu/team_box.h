@@ -77,10 +77,10 @@ public:
   uint GetGroup() const { return group; }
   void SetGroup(uint group);
 
-  virtual bool Update(const Point2i &mousePosition,
-                      const Point2i &lastMousePosition);
+  bool Update(const Point2i &mousePosition,
+                      const Point2i &lastMousePosition) override;
 
-  virtual Widget* ClickUp(const Point2i &mousePosition, uint button);
+  Widget* ClickUp(const Point2i &mousePosition, uint button) override;
 
   void SwitchPlayerType();
 

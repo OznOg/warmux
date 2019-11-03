@@ -56,7 +56,7 @@ private:
 
 public:
   MultiTabs(const Point2i& size, Font::font_size_t fsize = Font::FONT_MEDIUM);
-  virtual ~MultiTabs();
+  ~MultiTabs() override;
 
   void AddNewTab(const std::string& id, const std::string& title, Widget* w);
   const std::string& GetCurrentTabId() const;
@@ -66,15 +66,15 @@ public:
   void SelectTab(uint current);
 
   // from widget
-  virtual void NeedRedrawing();
-  virtual void Draw(const Point2i &mousePosition);
-  virtual bool Update(const Point2i &mousePosition,
-                      const Point2i &lastMousePosition);
-  virtual void Pack();
+  void NeedRedrawing() override;
+  void Draw(const Point2i &mousePosition) override;
+  bool Update(const Point2i &mousePosition,
+                      const Point2i &lastMousePosition) override;
+  void Pack() override;
 
-  virtual bool SendKey(const SDL_keysym&);
-  virtual Widget* Click(const Point2i &mousePosition, uint button);
-  virtual Widget* ClickUp(const Point2i &mousePosition, uint button);
+  bool SendKey(const SDL_keysym&) override;
+  Widget* Click(const Point2i &mousePosition, uint button) override;
+  Widget* ClickUp(const Point2i &mousePosition, uint button) override;
 
   void SetMaxVisibleTabs(uint max) { max_visible_tabs = max; }
 };

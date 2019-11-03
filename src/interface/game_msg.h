@@ -80,7 +80,7 @@ private:
 protected:
   friend class Singleton<GameMessages>;
   GameMessages() { };
-  ~GameMessages() { Reset(); };
+  ~GameMessages() override { Reset(); };
 };
 
 //-----------------------------------------------------------------------------

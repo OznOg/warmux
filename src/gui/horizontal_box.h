@@ -35,10 +35,10 @@ class HBox : public Box
     HBox(Profile * profile,
          const xmlNode * horizontalBoxNode);
 
-    virtual ~HBox() { }
+    ~HBox() override { }
 
-    virtual void Pack();
-    virtual bool LoadXMLConfiguration(void);
+    void Pack() override;
+    bool LoadXMLConfiguration(void) override;
 };
 
 #endif

@@ -31,16 +31,16 @@ class SyringeConfig;
 class Syringe : public Weapon
 {
   protected:
-    bool p_Shoot();
+    bool p_Shoot() override;
 
-    void Draw() { Weapon::Draw(); };
+    void Draw() override { Weapon::Draw(); };
 
   public:
     Syringe();
     SyringeConfig &cfg();
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 };
 
 //-----------------------------------------------------------------------------

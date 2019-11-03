@@ -29,11 +29,11 @@ class RailGun : public BaseSnipeRifle
 {
   uint hits;
 protected:
-  virtual bool p_Shoot();
-  virtual void IncMissedShots();
+  bool p_Shoot() override;
+  void IncMissedShots() override;
 
   // Must be implemented
-  virtual WeaponProjectile * GetProjectileInstance();
+  WeaponProjectile * GetProjectileInstance() override;
 
 public:
   RailGun();
@@ -41,8 +41,8 @@ public:
   void IncreaseHits() { hits++; }
 
   // Must be implemented
-  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
-  void UpdateTranslationStrings();
+  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
+  void UpdateTranslationStrings() override;
 };
 
 #endif /* RAIL_GUN_H */

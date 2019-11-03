@@ -159,7 +159,7 @@ private:
 protected:
   friend class Singleton<MapsList>;
   MapsList();
-  ~MapsList();
+  ~MapsList() override;
 
 public:
   // Return -1 if fails

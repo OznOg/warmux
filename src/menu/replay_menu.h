@@ -45,9 +45,9 @@ class ReplayMenu : public Menu
 
   void ClearReplayInfo();
   void ChangeReplay();
-  void OnClickUp(const Point2i &mousePosition, int button);
+  void OnClickUp(const Point2i &mousePosition, int button) override;
 
-  bool signal_ok();
+  bool signal_ok() override;
 
 public:
   ReplayMenu();

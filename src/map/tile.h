@@ -48,7 +48,7 @@ private:
 
 public:
   Tile ();
-  ~Tile ();
+  ~Tile () override;
 
   // Dig a hole
   void Dig(const Point2i &position, const Surface& provider);

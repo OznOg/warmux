@@ -32,14 +32,14 @@ const int SHOTGUN_BULLETS = 4;
 class Shotgun : public WeaponLauncher
 {
   protected:
-    WeaponProjectile * GetProjectileInstance();
-    void IncMissedShots();
-    bool p_Shoot();
+    WeaponProjectile * GetProjectileInstance() override;
+    void IncMissedShots() override;
+    bool p_Shoot() override;
   public:
     Shotgun();
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
   private:
     void ShootSound() const;
 };

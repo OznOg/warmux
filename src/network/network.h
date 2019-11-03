@@ -107,7 +107,7 @@ protected:
 public:
   NetworkMenu* network_menu;
 
-  virtual ~Network();
+  ~Network() override;
 
   static Network* GetInstance();
   static NetworkServer* GetInstanceServer(); // WARNING: return NULL if not server!!

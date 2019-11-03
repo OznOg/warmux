@@ -63,7 +63,7 @@ class Downloader : public Singleton<Downloader>
 protected:
   friend class Singleton<Downloader>;
   Downloader();
-  ~Downloader();
+  ~Downloader() override;
 
 public:
 #ifdef HAVE_FACEBOOK

@@ -30,10 +30,10 @@ class DiscoGrenadeLauncher : public WeaponLauncher
 public:
   DiscoGrenadeLauncher();
 
-  void UpdateTranslationStrings();
-  std::string GetWeaponWinString(const char *TeamName, uint items_count) const;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
 protected:
-  WeaponProjectile * GetProjectileInstance();
+  WeaponProjectile * GetProjectileInstance() override;
 };
 
 #endif /* DISCO_GRENADE_H */

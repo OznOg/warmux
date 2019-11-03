@@ -43,14 +43,14 @@ class NetworkTeamsSelectionBox : public TeamsSelectionBox
   void UpdateNbTeams();
 
 protected:
-  virtual void PrevTeam(uint i);
-  virtual void NextTeam(uint i);
+  void PrevTeam(uint i) override;
+  void NextTeam(uint i) override;
 
 public:
   NetworkTeamsSelectionBox(const Point2i &size, bool w_border);
 
-  virtual void ValidTeamsSelection();
-  virtual Widget* ClickUp(const Point2i &mousePosition, uint button);
+  void ValidTeamsSelection() override;
+  Widget* ClickUp(const Point2i &mousePosition, uint button) override;
 
   void AddTeamCallback(const std::string& team_id);
   void UpdateTeamCallback(const std::string& old_team_id, const std::string& team_id);

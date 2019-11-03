@@ -89,7 +89,7 @@ private:
 #endif
 
   void SaveOptions();
-  void OnClickUp(const Point2i &mousePosition, int button);
+  void OnClickUp(const Point2i &mousePosition, int button) override;
   static uint fromVolume(uint vol);
   static uint toVolume(uint level);
 
@@ -122,8 +122,8 @@ private:
   /* Controls config */
   ControlConfig *controls;
 
-  bool signal_ok();
-  bool signal_cancel();
+  bool signal_ok() override;
+  bool signal_cancel() override;
 
 public:
   OptionMenu();

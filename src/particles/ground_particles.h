@@ -27,7 +27,7 @@ class GroundParticle : public Particle
 {
 public:
   GroundParticle(const Point2i& size, const Point2i& position);
-  void Refresh();
+  void Refresh() override;
 };
 
 #endif /* GROUND_PARTICLES_H */

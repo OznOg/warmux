@@ -40,7 +40,7 @@ class FileListBox : public ItemBox
 public:
   FileListBox(const Point2i &size, bool list = true)
     : ItemBox(size, false), list_files(list) { }
-  ~FileListBox() { Clear(); }
+  ~FileListBox() override { Clear(); }
 
   void StartListing(const char* dirname = NULL);
   const std::string& GetCurrentFolder() const { return new_path; }
@@ -52,12 +52,12 @@ public:
   /* Beware that under Windows we are using shortnames, hence the extension is uppercase! */
   void AddExtensionFilter(const char* ext) { extensions.push_back(ext); }
 
-  Widget* ClickUp(const Point2i & mousePosition, uint button);
+  Widget* ClickUp(const Point2i & mousePosition, uint button) override;
 
   // This must be defined to properly handle the release of elements
-  virtual void Empty();
-  virtual void Clear();
-  virtual void RemoveSelected();
+  void Empty() override;
+  void Clear() override;
+  void RemoveSelected() override;
 };
 
 #endif // FILE_LIST_BOX_H

@@ -31,11 +31,11 @@ class Gun : public WeaponLauncher
   public:
     Gun();
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
   protected:
-    bool p_Shoot();
-    WeaponProjectile * GetProjectileInstance();
+    bool p_Shoot() override;
+    WeaponProjectile * GetProjectileInstance() override;
 };
 
 #endif /* GUN_H */

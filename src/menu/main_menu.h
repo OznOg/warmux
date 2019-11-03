@@ -52,21 +52,21 @@ public:
   menu_item choice;
 
   MainMenu();
-  ~MainMenu();
+  ~MainMenu() override;
 
   void Init(void);
   menu_item Run();
 
 protected:
-   bool signal_ok();
-   bool signal_cancel();
+   bool signal_ok() override;
+   bool signal_cancel() override;
    void SelectAction(const Widget * widget);
 
 private:
-   virtual void DrawBackground();
-   virtual void RedrawBackground(const Rectanglei& rect) const;
-   void OnClick(const Point2i &mousePosition, int button);
-   void OnClickUp(const Point2i &mousePosition, int button);
+   void DrawBackground() override;
+   void RedrawBackground(const Rectanglei& rect) const override;
+   void OnClick(const Point2i &mousePosition, int button) override;
+   void OnClickUp(const Point2i &mousePosition, int button) override;
 };
 
 #endif

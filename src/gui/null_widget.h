@@ -30,9 +30,9 @@ class NullWidget : public Widget
 {
 public:
   NullWidget(const Point2i& size) : Widget(size) {};
-  virtual ~NullWidget() {};
-  virtual void Draw(const Point2i&) {};
-  virtual void Pack() {};
+  ~NullWidget() override {};
+  void Draw(const Point2i&) override {};
+  void Pack() override {};
 };
 
 #endif

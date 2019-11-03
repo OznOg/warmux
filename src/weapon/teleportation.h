@@ -34,19 +34,19 @@ class Teleportation : public Weapon
     Point2i src, dst;
     bool done;
   protected:
-    bool p_Shoot();
-    void p_Select();
-    void Refresh();
+    bool p_Shoot() override;
+    void p_Select() override;
+    void Refresh() override;
     virtual bool ShouldBeVisible();
   public:
     Teleportation();
-    void ChooseTarget(Point2i mouse_pos);
-    virtual void StartShooting() {}
-    virtual void StopShooting() {}
+    void ChooseTarget(Point2i mouse_pos) override;
+    void StartShooting() override {}
+    void StopShooting() override {}
     WeaponConfig& cfg();
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 };
 
 #endif /* TELEPORTATION_H */

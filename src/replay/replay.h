@@ -72,7 +72,7 @@ public:
 protected:
   friend class Singleton<Replay>;
   Replay();
-  ~Replay();
+  ~Replay() override;
 
 public:
   void Init(bool is_rec);

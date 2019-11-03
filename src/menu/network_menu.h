@@ -61,13 +61,13 @@ class NetworkMenu : public Menu
   void WaitingForGameMaster();
   void AddGameModeTab();
 
-  virtual void Draw(const Point2i &mousePosition);
-  virtual void HandleEvent(const SDL_Event& evnt);
+  void Draw(const Point2i &mousePosition) override;
+  void HandleEvent(const SDL_Event& evnt) override;
 
-  virtual void key_ok();
-  virtual bool signal_ok();
-  virtual bool signal_cancel();
-  virtual void signal_begin_run();
+  void key_ok() override;
+  bool signal_ok() override;
+  bool signal_cancel() override;
+  void signal_begin_run() override;
 
   void RequestSavedTeams();
 
@@ -82,7 +82,7 @@ public:
   Team * FindUnusedTeam(const std::string& default_team_id);
   bool HasOpenTeamSlot();
 
-  void ReceiveMsgCallback(const std::string& msg, const Color& color);
+  void ReceiveMsgCallback(const std::string& msg, const Color& color) override;
   void SetMapsCallback(const std::vector<uint>& list);
   void SetTeamsCallback(const std::vector<uint>& list);
 };

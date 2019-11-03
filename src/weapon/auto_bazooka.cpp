@@ -60,14 +60,14 @@ protected:
   uint m_lastrefresh;
 public:
   RPG(AutomaticBazookaConfig& cfg, WeaponLauncher * p_launcher);
-  void Refresh();
-  void Shoot(Double strength);
-  void Explosion();
+  void Refresh() override;
+  void Shoot(Double strength) override;
+  void Explosion() override;
   void SetTarget(const Point2i& pos) { m_targetPoint = pos; }
 
 protected:
-  void SignalOutOfMap();
-  void SignalDrowning();
+  void SignalOutOfMap() override;
+  void SignalDrowning() override;
 };
 
 RPG::RPG(AutomaticBazookaConfig& cfg, WeaponLauncher * p_launcher)

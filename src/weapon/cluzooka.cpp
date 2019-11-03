@@ -99,19 +99,19 @@ class CluzookaCluster : public WeaponProjectile, public ClusterSpawner< Cluzooka
 
 public:
   CluzookaCluster(ExplosiveWeaponConfig& cfg, WeaponLauncher * p_launcher);
-  void Refresh();
+  void Refresh() override;
 #ifdef CLUSTERS_SPAWN_CLUSTERS
   void Shoot(const Point2i & start_pos, Double strength, Double angle, uint recurse_times);
 #else
   void Shoot(const Point2i & start_pos, Double strength, Double angle);
 #endif
-  virtual void SetEnergyDelta(int delta, bool do_report = true);
+  void SetEnergyDelta(int delta, bool do_report = true) override;
 
 protected:
   void DoSpawn();
-  virtual void SignalOutOfMap();
-  virtual void DoExplosion();
-  virtual void Draw();
+  void SignalOutOfMap() override;
+  void DoExplosion() override;
+  void Draw() override;
 };
 
 CluzookaCluster::CluzookaCluster(ExplosiveWeaponConfig& cfg,
@@ -219,15 +219,15 @@ private:
   bool m_timed_out;
 public:
   CluzookaRocket(ExplosiveWeaponConfig& cfg, WeaponLauncher * p_launcher);
-  void Refresh();
-  void Explosion();
-  void Shoot(Double strength);
+  void Refresh() override;
+  void Explosion() override;
+  void Shoot(Double strength) override;
 protected:
   virtual void DoSpawn();
-  virtual void DoExplosion();
-  virtual void SignalTimeout();
-  virtual void SignalOutOfMap();
-  virtual void SignalDrowning();
+  void DoExplosion() override;
+  void SignalTimeout() override;
+  void SignalOutOfMap() override;
+  void SignalDrowning() override;
 };
 
 CluzookaRocket::CluzookaRocket(ExplosiveWeaponConfig& cfg,

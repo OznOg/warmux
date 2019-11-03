@@ -74,7 +74,7 @@ protected:
   friend class Singleton<Game>;
   friend bool GameIsRunning();
   Game();
-  virtual ~Game();
+  ~Game() override;
 
 private:
   static std::string  current_rules;

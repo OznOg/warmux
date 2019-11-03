@@ -64,16 +64,16 @@ class ResultsMenu : public Menu
   SocialPanel *social_panel;
 #endif
 
-  bool signal_ok();
-  void key_ok();
+  bool signal_ok() override;
+  void key_ok() override;
 
   void ComputeTeamsOrder();
   void DrawPodium(const Point2i &position) const;
   void DrawTeamOnPodium(const Team& team, const Point2i& relative_position);
   bool SaveReplay();
 
-  void Draw(const Point2i &mousePosition);
-  void OnClickUp(const Point2i &mousePosition, int button);
+  void Draw(const Point2i &mousePosition) override;
+  void OnClickUp(const Point2i &mousePosition, int button) override;
 
 #if defined(HAVE_FACEBOOK) || defined(HAVE_TWITTER)
   std::string StringMessagge();
@@ -88,7 +88,7 @@ class ResultsMenu : public Menu
 public:
   ResultsMenu(std::vector<TeamResults*>& v, bool disconnected = false);
 
-  void ReceiveMsgCallback(const std::string& msg, const Color& color);
+  void ReceiveMsgCallback(const std::string& msg, const Color& color) override;
 };
 
 #endif //RESULTS_MENU_H

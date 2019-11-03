@@ -63,7 +63,7 @@ public:
     , color(color)
   { }
 
-  virtual void Draw(const Point2i& mousePosition);
+  void Draw(const Point2i& mousePosition) override;
 
   void AddCaption(const std::string& caption,
                   int x, int y, int w)

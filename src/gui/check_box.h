@@ -45,14 +45,14 @@ public:
            Font::font_style_t font_style = Font::FONT_BOLD);
   CheckBox(Profile * profile,
            const xmlNode * checkBoxNode);
-  virtual ~CheckBox();
+  ~CheckBox() override;
 
-  virtual void Draw(const Point2i & mousePosition);
-  virtual Widget * Click(const Point2i &, uint) { return this; };
-  virtual Widget * ClickUp(const Point2i & mousePosition,
-                           uint button);
-  virtual void Pack();
-  virtual bool LoadXMLConfiguration(void);
+  void Draw(const Point2i & mousePosition) override;
+  Widget * Click(const Point2i &, uint) override { return this; };
+  Widget * ClickUp(const Point2i & mousePosition,
+                           uint button) override;
+  void Pack() override;
+  bool LoadXMLConfiguration(void) override;
 
   bool GetValue() const { return m_value; };
   void SetValue(bool value) { m_value = value; };

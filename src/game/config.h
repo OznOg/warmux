@@ -265,7 +265,7 @@ protected:
 
   friend class Singleton<Config>;
   Config();
-  ~Config() { RemoveAllObjectConfigs(); singleton = NULL; }
+  ~Config() override { RemoveAllObjectConfigs(); singleton = NULL; }
 
 private:
   bool DoLoading(void);

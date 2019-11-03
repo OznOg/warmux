@@ -87,7 +87,7 @@ protected:
 
   bool m_allow_negative_y;
 
-  void StartMoving()
+  void StartMoving() override
   {
     m_last_collided_object = NULL;
     Physics::StartMoving();
@@ -99,7 +99,7 @@ public:
    * because we can copy directly the pointer m_overlapping_object whereas this
    * object does not own it.
    * FIXME what happen if the object is deleted meanwhile ???*/
-  virtual ~PhysicalObj();
+  ~PhysicalObj() override;
 
   //-------- Set position and size -------
 
@@ -222,10 +222,10 @@ public:
 
   bool PutRandomly(bool on_top_of_world, Double min_dst_with_characters, bool net_sync = true);
 
-  collision_t NotifyMove(Point2d oldPos, Point2d newPos);
+  collision_t NotifyMove(Point2d oldPos, Point2d newPos) override;
 
 protected:
-  virtual void SignalRebound();
+  void SignalRebound() override;
   virtual void SignalGroundCollision(const Point2d& /* my_speed_before */, const Double& /*contactAngle*/) { };
   virtual void SignalObjectCollision(const Point2d& /* my_speed_before */,
                                      PhysicalObj * /* collided/ing object */,

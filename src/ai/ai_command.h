@@ -42,7 +42,7 @@ public:
 class DoNothingForeverCommand : public AICommand
 {
 public:
-  virtual bool Execute() { return false; };
+  bool Execute() override { return false; };
 };
 
 /**
@@ -56,7 +56,7 @@ class IncreaseAngleCommand : public AICommand
   bool is_increasing;
 public:
   IncreaseAngleCommand(float target_angle, bool slowly);
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 
@@ -71,7 +71,7 @@ class DecreaseAngleCommand : public AICommand
   bool is_decreasing;
 public:
   DecreaseAngleCommand(float target_angle, bool slowly);
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 class CommandList : public AICommand
@@ -79,8 +79,8 @@ class CommandList : public AICommand
   std::queue<AICommand *> commands;
 public:
   CommandList() {};
-  virtual ~CommandList();
-  virtual bool Execute();
+  ~CommandList() override;
+  bool Execute() override;
   void Add(AICommand * command) { commands.push(command); }
   int Size() { return commands.size(); }
 };
@@ -91,19 +91,19 @@ class SetWeaponAngleCommand : public AICommand
   const float target_angle;
 public:
   SetWeaponAngleCommand(float angle);
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 class StartShootingCommand : public AICommand
 {
 public:
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 class StopShootingCommand : public AICommand
 {
 public:
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 class StartMovingCommand : public AICommand
@@ -112,7 +112,7 @@ class StartMovingCommand : public AICommand
   bool slowly;
 public:
   StartMovingCommand(LRDirection direction, bool slowly);
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 class StopMovingCommand : public AICommand
@@ -121,7 +121,7 @@ class StopMovingCommand : public AICommand
   bool slowly;
 public:
   StopMovingCommand(LRDirection direction, bool slowly);
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 class SetDirectionCommand : public AICommand
@@ -131,8 +131,8 @@ class SetDirectionCommand : public AICommand
   CommandList * commands;
 public:
   SetDirectionCommand(LRDirection direction);
-  virtual ~SetDirectionCommand();
-  virtual bool Execute();
+  ~SetDirectionCommand() override;
+  bool Execute() override;
 };
 
 /*unused?
@@ -152,7 +152,7 @@ class DoNothingCommand : public AICommand
   uint start_time;
 public:
   DoNothingCommand(const uint duration_in_ms);
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 class SelectWeaponCommand : public AICommand
@@ -160,7 +160,7 @@ class SelectWeaponCommand : public AICommand
   Weapon::Weapon_type weapon;
 public:
   SelectWeaponCommand(Weapon::Weapon_type weapon);
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 class SelectCharacterCommand : public AICommand
@@ -168,7 +168,7 @@ class SelectCharacterCommand : public AICommand
   const Character * character;
 public:
   SelectCharacterCommand(const Character * character);
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 class WaitForStrengthCommand : public AICommand
@@ -176,7 +176,7 @@ class WaitForStrengthCommand : public AICommand
   float target_strength;
 public:
   WaitForStrengthCommand(float target_strength);
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 class SetTimeoutCommand : public AICommand
@@ -184,7 +184,7 @@ class SetTimeoutCommand : public AICommand
   int timeout;
 public:
   SetTimeoutCommand(int timeout);
-  virtual bool Execute();
+  bool Execute() override;
 };
 
 #endif

@@ -31,9 +31,9 @@ class Grenade : public WeaponProjectile
 public:
   Grenade(ExplosiveWeaponConfig& cfg,
           WeaponLauncher * p_launcher);
-  void Refresh();
+  void Refresh() override;
 protected:
-  void SignalOutOfMap();
+  void SignalOutOfMap() override;
 };
 
 class GrenadeLauncher : public WeaponLauncher
@@ -41,10 +41,10 @@ class GrenadeLauncher : public WeaponLauncher
  public:
   GrenadeLauncher();
 
-  void UpdateTranslationStrings();
-  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
  protected:
-  WeaponProjectile * GetProjectileInstance();
+  WeaponProjectile * GetProjectileInstance() override;
 };
 
 #endif

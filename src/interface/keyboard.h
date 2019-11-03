@@ -46,10 +46,10 @@ private:
 protected:
   friend class Singleton<Keyboard>;
   Keyboard();
-  void SetDefaultConfig();
+  void SetDefaultConfig() override;
 
 public:
-  bool HandleKeyEvent(const SDL_Event& evnt);
+  bool HandleKeyEvent(const SDL_Event& evnt) override;
   void SetConfig(const xmlNode *node);
   void SaveConfig(xmlNode *node) const;
 

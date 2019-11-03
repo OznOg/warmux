@@ -41,11 +41,11 @@ public:
           bool img_scale = false);
   Button(Profile * profile,
          const xmlNode * baseListBoxNode);
-  virtual ~Button();
+  ~Button() override;
 
-  virtual bool LoadXMLConfiguration(void);
-  virtual void Draw(const Point2i & mousePosition);
-  virtual void Pack();
+  bool LoadXMLConfiguration(void) override;
+  void Draw(const Point2i & mousePosition) override;
+  void Pack() override;
 };
 
 #endif

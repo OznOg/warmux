@@ -41,24 +41,24 @@ class JetPack : public Weapon
     JetPack();
     void Reset();
 
-    virtual void StartShooting();
-    virtual void StopShooting() {};
+    void StartShooting() override;
+    void StopShooting() override {};
 
-    virtual bool IsPreventingLRMovement();
-    virtual bool IsPreventingJumps();
-    virtual bool IsPreventingWeaponAngleChanges();
+    bool IsPreventingLRMovement() override;
+    bool IsPreventingJumps() override;
+    bool IsPreventingWeaponAngleChanges() override;
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 
 
   protected:
-    void Refresh();
-    void p_Select();
-    void p_Deselect();
-    bool p_Shoot();
-    virtual bool ShouldBeDrawn() { return false; };
-    virtual bool ShouldAmmoUnitsBeDrawn() const;
+    void Refresh() override;
+    void p_Select() override;
+    void p_Deselect() override;
+    bool p_Shoot() override;
+    bool ShouldBeDrawn() override { return false; };
+    bool ShouldAmmoUnitsBeDrawn() const override;
 
   private:
     void GoUp();

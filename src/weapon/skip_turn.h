@@ -30,11 +30,11 @@ class SkipTurn : public Weapon
   public:
     SkipTurn();
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
   protected:
-    bool p_Shoot();
-    void Refresh() { };
+    bool p_Shoot() override;
+    void Refresh() override { };
 };
 
 //-----------------------------------------------------------------------------

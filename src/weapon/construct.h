@@ -40,27 +40,27 @@ private:
   void Down() const;
 
 protected:
-  bool p_Shoot();
-  void Refresh() { };
-  bool ShouldBeDrawn() { return false; };
+  bool p_Shoot() override;
+  void Refresh() override { };
+  bool ShouldBeDrawn() override { return false; };
 
 public:
   Construct();
-  ~Construct();
-  void Draw();
-  void ChooseTarget(Point2i mouse_pos);
+  ~Construct() override;
+  void Draw() override;
+  void ChooseTarget(Point2i mouse_pos) override;
 
-  virtual bool IsPreventingWeaponAngleChanges() { return true; };
-  virtual void HandleKeyPressed_Down(bool /*slowly*/) { Down(); };
-  virtual void HandleKeyPressed_Up(bool /*slowly*/) { Up(); };
-  virtual void HandleMouseWheelUp(bool) { Up(); };
-  virtual void HandleMouseWheelDown(bool) { Down(); };
+  bool IsPreventingWeaponAngleChanges() override { return true; };
+  void HandleKeyPressed_Down(bool /*slowly*/) override { Down(); };
+  void HandleKeyPressed_Up(bool /*slowly*/) override { Up(); };
+  void HandleMouseWheelUp(bool) override { Up(); };
+  void HandleMouseWheelDown(bool) override { Down(); };
 
   // Implemeting a method that would otherwise have required RTTI
-  void SetAngle(Double _angle) { angle = _angle; }; // to be used by network
+  void SetAngle(Double _angle) override { angle = _angle; }; // to be used by network
 
-  void UpdateTranslationStrings();
-  std::string GetWeaponWinString(const char *TeamName, uint items_count) const;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
   WeaponConfig& cfg();
 };
 

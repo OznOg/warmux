@@ -78,9 +78,9 @@ public:
   Widget(const Point2i & size, bool clickable = true);
   Widget(Profile * profile,
          const xmlNode * widgetNode);
-  virtual ~Widget() { };
+  ~Widget() override { };
 
-  void RedrawBackground(const Rectanglei& rect) const;
+  void RedrawBackground(const Rectanglei& rect) const override;
   void RedrawForeground() const;
 
   virtual bool LoadXMLConfiguration(void) { return false; };

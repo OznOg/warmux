@@ -45,18 +45,18 @@ class Anvil : public WeaponProjectile
 public:
   Anvil(ExplosiveWeaponConfig& cfg,
         WeaponLauncher * p_launcher);
-  ~Anvil();
-  void Refresh();
+  ~Anvil() override;
+  void Refresh() override;
 
   void PlayFallSound();
   void PlayCollisionSound();
-  void SetEnergyDelta(int /*delta*/, bool /*do_report = true*/) { };
+  void SetEnergyDelta(int /*delta*/, bool /*do_report = true*/) override { };
 protected:
-  virtual void SignalGroundCollision(const Point2d& /* speed_before */, const Double& /*contactAngle*/);
-  virtual void SignalObjectCollision(const Point2d& /* my_speed_before */,
+  void SignalGroundCollision(const Point2d& /* speed_before */, const Double& /*contactAngle*/) override;
+  void SignalObjectCollision(const Point2d& /* my_speed_before */,
               PhysicalObj * obj,
-              const Point2d& /* obj_speed_before */);
-  virtual void SignalOutOfMap();
+              const Point2d& /* obj_speed_before */) override;
+  void SignalOutOfMap() override;
 };
 
 Anvil::Anvil(ExplosiveWeaponConfig& cfg,

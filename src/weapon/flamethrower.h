@@ -31,18 +31,18 @@ class FlameThrower : public WeaponLauncher
     ParticleEngine particle;
     bool shooting;
   protected:
-    WeaponProjectile * GetProjectileInstance();
-    void IncMissedShots();
-    bool p_Shoot();
-    void p_Deselect();
+    WeaponProjectile * GetProjectileInstance() override;
+    void IncMissedShots() override;
+    bool p_Shoot() override;
+    void p_Deselect() override;
   public:
     FlameThrower();
-    virtual void Refresh();
-    virtual void StartShooting();
-    virtual void StopShooting();
+    void Refresh() override;
+    void StartShooting() override;
+    void StopShooting() override;
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 };
 
 #endif /* SUBMACHINE_GUN_H */

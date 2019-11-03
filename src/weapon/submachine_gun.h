@@ -32,16 +32,16 @@ private:
   ParticleEngine particle;
   bool shoot_started;
 protected:
-  WeaponProjectile * GetProjectileInstance();
-  void IncMissedShots();
-  virtual void Refresh();
-  virtual bool p_Shoot();
-  virtual void p_Deselect();
+  WeaponProjectile * GetProjectileInstance() override;
+  void IncMissedShots() override;
+  void Refresh() override;
+  bool p_Shoot() override;
+  void p_Deselect() override;
 public:
   SubMachineGun();
 
-  virtual void UpdateTranslationStrings();
-  virtual std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 };
 
 #endif /* SUBMACHINE_GUN_H */

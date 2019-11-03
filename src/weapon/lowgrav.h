@@ -28,17 +28,17 @@ class LowGrav : public Weapon
 {
   public:
     LowGrav();
-    void Draw() { };
-    void StopShooting();
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void Draw() override { };
+    void StopShooting() override;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
     bool active;
   protected:
-    void Refresh() { };
-    void p_Deselect();
-    bool p_Shoot();
+    void Refresh() override { };
+    void p_Deselect() override;
+    bool p_Shoot() override;
     SoundSample use;
-    virtual bool ShouldBeDrawn() { return false; };
+    bool ShouldBeDrawn() override { return false; };
 };
 
 #endif /* LOWGRAV_H */

@@ -29,8 +29,8 @@ class ExplosionParticle : public Particle
 
 public:
   ExplosionParticle();
-  void Draw();
-  void Refresh();
+  void Draw() override;
+  void Refresh() override;
 };
 
 #endif /* EXPLOSION_PARTICLE_H */

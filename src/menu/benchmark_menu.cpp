@@ -73,14 +73,14 @@ public:
     score->SetText(buffer);
   }
 
-  Widget* ClickUp(const Point2i & mousePosition, uint /*button*/)
+  Widget* ClickUp(const Point2i & mousePosition, uint /*button*/) override
   {
     if (run->Contains(mousePosition))
       return this;
     return NULL;
   }
 
-  virtual void Pack()
+  void Pack() override
   {
     int width  = size.x - run->GetSizeX() - 2*5 -2*5;
     int height = run->GetSizeY();

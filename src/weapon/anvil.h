@@ -29,12 +29,12 @@ class AnvilLauncher : public TargetLauncher
 {
 public:
   AnvilLauncher();
-  void ChooseTarget(Point2i mouse_pos);
-  void UpdateTranslationStrings();
-  std::string GetWeaponWinString(const char *TeamName, uint items_count) const;
+  void ChooseTarget(Point2i mouse_pos) override;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
 protected:
-  WeaponProjectile * GetProjectileInstance();
-  virtual bool p_Shoot();
+  WeaponProjectile * GetProjectileInstance() override;
+  bool p_Shoot() override;
   //virtual bool ShouldBeDrawn() { return !IsOnCooldownFromShot(); }
 };
 

@@ -32,7 +32,7 @@ class Obus : public WeaponProjectile
   SoundSample falling_sound;
 public:
   Obus(AirAttackConfig& cfg);
-  virtual ~Obus();
+  ~Obus() override;
 };
 
 class Plane : public PhysicalObj
@@ -56,10 +56,10 @@ class Plane : public PhysicalObj
   void DropBomb();
 public:
   Plane(AirAttackConfig& cfg);
-  virtual ~Plane();
+  ~Plane() override;
   void Shoot(Double speed, const Point2i& target);
-  void Draw();
-  void Refresh();
+  void Draw() override;
+  void Refresh() override;
 };
 
 class AirAttack : public Weapon
@@ -70,15 +70,15 @@ class AirAttack : public Weapon
   AirAttackConfig& cfg();
 
 protected:
-  bool p_Shoot();
-  void p_Select();
-  void Refresh() { };
+  bool p_Shoot() override;
+  void p_Select() override;
+  void Refresh() override { };
 
 public:
   AirAttack();
-  void ChooseTarget(Point2i mouse_pos);
-  void UpdateTranslationStrings();
-  std::string GetWeaponWinString(const char *TeamName, uint items_count) const;
+  void ChooseTarget(Point2i mouse_pos) override;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
 };
 
 #endif /* AIR_ATTACK_H */

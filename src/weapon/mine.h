@@ -53,12 +53,12 @@ public:
 
   void StartTimeout();
   void Detection();
-  virtual bool IsImmobile() const;
+  bool IsImmobile() const override;
   // Damage handling
-  void SetEnergyDelta(int delta, bool do_report = true);
+  void SetEnergyDelta(int delta, bool do_report = true) override;
 
-  void Draw();
-  void Refresh();
+  void Draw() override;
+  void Refresh() override;
 };
 
 class MineConfig : public Singleton<MineConfig>, public ExplosiveWeaponConfig
@@ -78,12 +78,12 @@ class Mine : public WeaponLauncher
 private:
   void Add (int x, int y);
 protected:
-  WeaponProjectile * GetProjectileInstance();
-  bool p_Shoot();
-  virtual bool ShouldBeDrawn();
+  WeaponProjectile * GetProjectileInstance() override;
+  bool p_Shoot() override;
+  bool ShouldBeDrawn() override;
 public:
-  void UpdateTranslationStrings();
-  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
   Mine();
   MineConfig& cfg();
 };

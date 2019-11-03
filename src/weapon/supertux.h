@@ -38,25 +38,25 @@ private:
 public:
   TuxLauncher();
 
-  virtual void UpdateTranslationStrings();
-  virtual std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 
-  virtual void SignalEndOfProjectile();
-  bool IsReady() const { return !IsOnCooldownFromShot() && WeaponLauncher::IsReady(); }
-  bool IsOnCooldownFromShot() const { return (current_tux || tux_death_time); }
+  void SignalEndOfProjectile() override;
+  bool IsReady() const override { return !IsOnCooldownFromShot() && WeaponLauncher::IsReady(); }
+  bool IsOnCooldownFromShot() const override { return (current_tux || tux_death_time); }
 
-  void StartShooting();
-  void StopShooting();
+  void StartShooting() override;
+  void StopShooting() override;
 
-  virtual bool IsPreventingLRMovement() { return IsOnCooldownFromShot(); }
-  virtual bool IsPreventingJumps() { return IsOnCooldownFromShot(); }
-  virtual bool IsPreventingWeaponAngleChanges() { return IsOnCooldownFromShot(); }
+  bool IsPreventingLRMovement() override { return IsOnCooldownFromShot(); }
+  bool IsPreventingJumps() override { return IsOnCooldownFromShot(); }
+  bool IsPreventingWeaponAngleChanges() override { return IsOnCooldownFromShot(); }
 
 protected:
-  WeaponProjectile * GetProjectileInstance();
-  virtual bool p_Shoot();
-  virtual void Refresh();
-  virtual bool ShouldBeDrawn() { return !(current_tux || tux_death_time); }
+  WeaponProjectile * GetProjectileInstance() override;
+  bool p_Shoot() override;
+  void Refresh() override;
+  bool ShouldBeDrawn() override { return !(current_tux || tux_death_time); }
 private:
   SuperTuxWeaponConfig& cfg();
 };

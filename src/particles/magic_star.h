@@ -27,7 +27,7 @@ class MagicStarParticle: public Particle
 {
  public:
   MagicStarParticle();
-  void Refresh();
+  void Refresh() override;
 };
 
 #endif /* MAGIC_STAR_H */

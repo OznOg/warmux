@@ -42,8 +42,8 @@ public:
   IntConfigElement(const char *n, int *v, int d, int mi, int ma, bool attr = false)
     : ConfigElement(TYPE_INT, n, attr, true)
   { m_val = v; *v = m_def = d; m_min = mi, m_max = ma; ASSERT(d >= mi && d <= ma); }
-  bool Read(const xmlNode* father) const;
-  void Write(XmlWriter& writer, xmlNode* father) const;
+  bool Read(const xmlNode* father) const override;
+  void Write(XmlWriter& writer, xmlNode* father) const override;
 };
 
 class BoolConfigElement : public ConfigElement
@@ -52,8 +52,8 @@ public:
   bool       *m_val, m_def;
   BoolConfigElement(const char *n, bool *v, bool d, bool imp = false, bool attr = false)
     : ConfigElement(TYPE_BOOL, n, attr, imp) { m_val = v; *v = m_def = d; }
-  bool Read(const xmlNode* father) const;
-  void Write(XmlWriter& writer, xmlNode* father) const;
+  bool Read(const xmlNode* father) const override;
+  void Write(XmlWriter& writer, xmlNode* father) const override;
 };
 
 class UintConfigElement : public ConfigElement
@@ -65,8 +65,8 @@ public:
   UintConfigElement(const char *n, uint *v, uint d, uint mi, uint ma, bool attr = false)
     : ConfigElement(TYPE_UINT, n, attr, true)
   { m_val = v; *v = m_def = d; m_min = mi, m_max = ma; ASSERT(d >= mi && d <= ma); }
-  bool Read(const xmlNode* father) const;
-  void Write(XmlWriter& writer, xmlNode* father) const;
+  bool Read(const xmlNode* father) const override;
+  void Write(XmlWriter& writer, xmlNode* father) const override;
 };
 
 class DoubleConfigElement : public ConfigElement
@@ -78,8 +78,8 @@ public:
   DoubleConfigElement(const char *n, Double* v, Double d, Double mi, Double ma, bool attr = false)
     : ConfigElement(TYPE_DOUBLE, n, attr, true)
   { m_val = v; *v = m_def = d; m_min = mi, m_max = ma; ASSERT(d >= mi && d <= ma); }
-  virtual bool Read(const xmlNode* father) const;
-  virtual void Write(XmlWriter& writer, xmlNode* father) const;
+  bool Read(const xmlNode* father) const override;
+  void Write(XmlWriter& writer, xmlNode* father) const override;
 };
 
 class AngleConfigElement : public ConfigElement
@@ -98,8 +98,8 @@ public:
     ASSERT(d >= mi && d <= ma);
   }
 
-  virtual bool Read(const xmlNode* father) const;
-  virtual void Write(XmlWriter& writer, xmlNode* father) const;
+  bool Read(const xmlNode* father) const override;
+  void Write(XmlWriter& writer, xmlNode* father) const override;
 };
 
 class StringConfigElement : public ConfigElement
@@ -108,8 +108,8 @@ public:
   std::string       *m_val, m_def;
   StringConfigElement(const char *n, std::string *v, const std::string& d, bool imp = false, bool attr = false)
     : ConfigElement(TYPE_BOOL, n, attr, imp) { m_val = v; *v = m_def = d; }
-  bool Read(const xmlNode* father) const;
-  void Write(XmlWriter& writer, xmlNode* father) const;
+  bool Read(const xmlNode* father) const override;
+  void Write(XmlWriter& writer, xmlNode* father) const override;
 };
 
 class ConfigElementList : public std::list<ConfigElement*>

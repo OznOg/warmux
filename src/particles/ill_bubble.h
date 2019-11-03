@@ -29,8 +29,8 @@ class IllBubble : public ExplosionSmoke
   uint vib_phi;
 public:
   IllBubble();
-  virtual void Refresh();
-  void Draw();
+  void Refresh() override;
+  void Draw() override;
 };
 
 #endif /* ILL_BUBBLE_H */

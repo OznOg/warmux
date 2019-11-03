@@ -37,9 +37,9 @@ public:
              const std::string & new_text,
              Font::font_size_t font_size,
              Font::font_style_t font_style);
-  virtual ~ButtonText();
+  ~ButtonText() override;
 
-  void Draw(const Point2i & mousePosition);
+  void Draw(const Point2i & mousePosition) override;
 };
 
 #endif

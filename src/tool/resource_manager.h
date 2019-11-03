@@ -66,7 +66,7 @@ public:
 class ResourceManager : public Singleton<ResourceManager>
 {
   ResourceManager();
-  ~ResourceManager();
+  ~ResourceManager() override;
   friend class Singleton<ResourceManager>;
   typedef std::map<std::string, Profile*> ProfileMap;
   static ProfileMap profiles;

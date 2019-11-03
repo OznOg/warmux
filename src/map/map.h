@@ -56,7 +56,7 @@ class Map : public Singleton<Map>
   Text * author_info2;
 
   Map();
-  ~Map();
+  ~Map() override;
 
   void AddRectangle(std::list<Rectanglei>::iterator it, const Rectanglei& rect);
 

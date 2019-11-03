@@ -35,8 +35,8 @@ class TeleportMemberParticle : public Particle
 
 public:
   TeleportMemberParticle(Sprite& spr, const Point2i& position, const Point2i& dest);
-  ~TeleportMemberParticle();
-  void Refresh();
+  ~TeleportMemberParticle() override;
+  void Refresh() override;
 };
 
 #endif /* TELEPORT_MEMBER_H */

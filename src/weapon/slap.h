@@ -30,14 +30,14 @@ class SlapConfig;
 class Slap : public Weapon
 {
   protected:
-    bool p_Shoot();
-    virtual void Refresh() {};
+    bool p_Shoot() override;
+    void Refresh() override {};
   public:
     Slap();
     SlapConfig &cfg();
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 };
 
 #endif /* SLAP_H */

@@ -40,12 +40,12 @@ class RiotBombRocket : public WeaponProjectile
 public:
   RiotBombRocket(ExplosiveWeaponConfig& cfg,
                    WeaponLauncher * p_launcher);
-  void Refresh();
-  void Explosion();
-  void Shoot(Double strength);
+  void Refresh() override;
+  void Explosion() override;
+  void Shoot(Double strength) override;
 protected:
-  void SignalOutOfMap();
-  void SignalDrowning();
+  void SignalOutOfMap() override;
+  void SignalDrowning() override;
 };
 
 RiotBombRocket::RiotBombRocket(ExplosiveWeaponConfig& cfg,

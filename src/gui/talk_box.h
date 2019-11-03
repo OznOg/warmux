@@ -40,17 +40,17 @@ class TalkBox : public VBox
 
 public:
   TalkBox(const Point2i& size, Font::font_size_t font_size, Font::font_style_t font_style);
-  virtual ~TalkBox(void) {}
+  ~TalkBox(void) override {}
 
   void NewMessage(const std::string &msg, const Color& color = white_color);
   void SendChatMsg();
-  void Clear();
+  void Clear() override;
 
   bool TextHasFocus() const;
   TextBox* GetTextBox() const {return line_to_send_tbox; };
 
-  bool SendKey(SDL_keysym key);
-  virtual Widget* ClickUp(const Point2i &mousePosition, uint button);
+  bool SendKey(SDL_keysym key) override;
+  Widget* ClickUp(const Point2i &mousePosition, uint button) override;
 };
 
 

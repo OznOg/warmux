@@ -29,7 +29,7 @@ class PolecatFart : public Particle
 public:
   PolecatFart();
 protected:
-  void Refresh();
+  void Refresh() override;
 };
 
 #endif /* POLECAT_FART_H */

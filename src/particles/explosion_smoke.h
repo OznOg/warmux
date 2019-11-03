@@ -29,8 +29,8 @@ protected:
   uint m_initial_size;
 public:
   ExplosionSmoke(const uint size_init);
-  void Refresh();
-  virtual void Draw();
+  void Refresh() override;
+  void Draw() override;
 };
 
 #endif /* EXPLOSION_SMOKE_H */

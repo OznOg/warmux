@@ -42,12 +42,12 @@ class DiscoGrenade : public WeaponProjectile
 public:
   DiscoGrenade(ExplosiveWeaponConfig& cfg,
                WeaponLauncher * p_launcher);
-  void Refresh();
-  void Shoot(Double strength);
+  void Refresh() override;
+  void Shoot(Double strength) override;
 protected:
-  void Explosion();
-  void SignalOutOfMap();
-  void SignalDrowning();
+  void Explosion() override;
+  void SignalOutOfMap() override;
+  void SignalDrowning() override;
 };
 
 

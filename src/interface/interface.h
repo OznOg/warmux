@@ -152,7 +152,7 @@ private:
 protected:
   friend class Singleton<Interface>;
   Interface();
-  ~Interface();
+  ~Interface() override;
 
 public:
   const WeaponsMenu &GetWeaponsMenu() const { return weapons_menu; }

@@ -30,7 +30,7 @@ class FadingText : public ExplosionSmoke
 
 public:
   FadingText(const std::string & text);
-  virtual void Refresh();
+  void Refresh() override;
 };
 
 #endif /* FADING_TEXT_H */

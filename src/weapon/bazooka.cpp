@@ -36,12 +36,12 @@ class BazookaRocket : public WeaponProjectile
   SoundSample flying_sound;
 public:
   BazookaRocket(ExplosiveWeaponConfig& cfg, WeaponLauncher * p_launcher);
-  void Refresh();
-  void Explosion();
-  void Shoot(Double strength);
+  void Refresh() override;
+  void Explosion() override;
+  void Shoot(Double strength) override;
 protected:
-  void SignalOutOfMap();
-  void SignalDrowning();
+  void SignalOutOfMap() override;
+  void SignalDrowning() override;
 };
 
 BazookaRocket::BazookaRocket(ExplosiveWeaponConfig& cfg,

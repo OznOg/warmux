@@ -29,14 +29,14 @@ class WaterParticle : public Particle
 public:
   WaterParticle(particle_spr type);
   WaterParticle();
-  virtual ~WaterParticle();
-  void Refresh();
-  void Draw();
+  ~WaterParticle() override;
+  void Refresh() override;
+  void Draw() override;
 protected:
-  void SignalDrowning() { m_time_left_to_live = 0; }
-  void SignalOutOfMap() { m_time_left_to_live = 0; }
-  void SignalRebound() { m_time_left_to_live = 0; }
-  void SignalGroundCollision(const Point2d&, const Double&) { m_time_left_to_live = 0; }
+  void SignalDrowning() override { m_time_left_to_live = 0; }
+  void SignalOutOfMap() override { m_time_left_to_live = 0; }
+  void SignalRebound() override { m_time_left_to_live = 0; }
+  void SignalGroundCollision(const Point2d&, const Double&) override { m_time_left_to_live = 0; }
 };
 
 #endif /* WATER_DROP_H */

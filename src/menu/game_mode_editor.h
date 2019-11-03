@@ -64,7 +64,7 @@ class GameModeEditor : public VBox
 public:
   GameModeEditor(const Point2i& size, float zoom, bool _draw_border=true);
 
-  Widget *ClickUp(const Point2i & mousePosition, uint button);
+  Widget *ClickUp(const Point2i & mousePosition, uint button) override;
   void ValidGameMode();
 };
 

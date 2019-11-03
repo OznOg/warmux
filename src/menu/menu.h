@@ -49,14 +49,14 @@ public:
 
   Menu(const std::string& bg, t_action actions = vOkCancel);
   Menu(void);
-  virtual ~Menu();
+  ~Menu() override;
 
   // Start the xml menu configuration.
   void LoadMenu(Profile * profile,
                 const xmlNode * rootMenuNode);
 
   void Run(bool skip=false);
-  virtual void RedrawBackground(const Rectanglei& rect) const;
+  void RedrawBackground(const Rectanglei& rect) const override;
   virtual void RedrawMenu();
 
   void DisplayError(const std::string &msg);

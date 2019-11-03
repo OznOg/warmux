@@ -37,14 +37,14 @@ public:
       bool shadowed = true);
   Box(Profile * _profile,
       const xmlNode * _boxNode);
-  virtual ~Box();
+  ~Box() override;
 
   void ParseXMLBoxParameters(void);
 
   void SetMargin(uint _margin) { margin = _margin; };
   uint GetMargin() { return margin; }
 
-  virtual void Pack() = 0;
+  void Pack() override = 0;
 };
 
 #endif

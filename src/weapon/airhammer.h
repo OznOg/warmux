@@ -44,19 +44,19 @@ class Airhammer : public Weapon
     void PlaySoundSelect();
 
   protected:
-    void p_Select();
-    void p_Deselect();
-    bool p_Shoot();
-    void Refresh();
+    void p_Select() override;
+    void p_Deselect() override;
+    bool p_Shoot() override;
+    void Refresh() override;
 
   public:
     Airhammer();
     AirhammerConfig &cfg();
-    void StartShooting();
-    void StopShooting();
-    virtual bool ShouldAmmoUnitsBeDrawn() const;
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void StartShooting() override;
+    void StopShooting() override;
+    bool ShouldAmmoUnitsBeDrawn() const override;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 };
 
 //-----------------------------------------------------------------------------

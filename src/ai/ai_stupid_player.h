@@ -55,9 +55,9 @@ class AIStupidPlayer : public AIPlayer
   static bool CompareIdeaMaxRating(const AIItem& i1, const AIItem& i2);
 public:
   AIStupidPlayer(Team * team, float accuracy = 0.8f);
-  virtual ~AIStupidPlayer();
-  virtual void PrepareTurn();
-  virtual void Refresh();
+  ~AIStupidPlayer() override;
+  void PrepareTurn() override;
+  void Refresh() override;
 };
 
 #endif

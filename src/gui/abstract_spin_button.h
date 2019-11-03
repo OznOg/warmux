@@ -45,9 +45,9 @@ class AbstractSpinButton : public Widget
                        int max_value);
     AbstractSpinButton(Profile * profile,
                        const xmlNode * spinButtonNode);
-    virtual ~AbstractSpinButton(void) {}
+    ~AbstractSpinButton(void) override {}
 
-    virtual bool LoadXMLConfiguration(void);
+    bool LoadXMLConfiguration(void) override;
     int GetValue() const { return m_value; }
     int IncValue();
     int DecValue();

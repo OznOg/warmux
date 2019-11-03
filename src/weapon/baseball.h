@@ -33,14 +33,14 @@ class BaseballConfig;
 class Baseball : public Weapon
 {
   protected:
-    bool p_Shoot();
-    void Refresh() { };
+    bool p_Shoot() override;
+    void Refresh() override { };
 
   public:
     Baseball();
     BaseballConfig &cfg();
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 };
 
 //-----------------------------------------------------------------------------

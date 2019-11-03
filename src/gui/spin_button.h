@@ -51,17 +51,17 @@ public:
              bool shadowed = true);
   SpinButton(Profile * profile,
              const xmlNode * spinButtonNode);
-  virtual ~SpinButton(void);
+  ~SpinButton(void) override;
 
   // From Widget
-  virtual void Pack();
-  virtual void Draw(const Point2i & mousePosition);
+  void Pack() override;
+  void Draw(const Point2i & mousePosition) override;
   virtual Widget * Click(const Point2i &/*mousePosition*/, uint /*button*/) const { return NULL; };
-  virtual Widget * ClickUp(const Point2i & mousePosition, uint button);
-  virtual bool LoadXMLConfiguration(void);
+  Widget * ClickUp(const Point2i & mousePosition, uint button) override;
+  bool LoadXMLConfiguration(void) override;
 
   // From AbstractSpinButton
-  virtual void ValueHasChanged();
+  void ValueHasChanged() override;
 };
 
 #endif

@@ -36,13 +36,13 @@ public:
 
 protected:
   ParticleEngine particle;
-  void ShootSound();
-  void SignalDrowning();
+  void ShootSound() override;
+  void SignalDrowning() override;
 
-  void SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle);
+  void SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle) override;
   void SignalObjectCollision(const Point2d& my_speed_before,
                              PhysicalObj * obj,
-                             const Point2d& /*obj_speed*/);
+                             const Point2d& /*obj_speed*/) override;
 };
 
 

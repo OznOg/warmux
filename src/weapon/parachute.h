@@ -38,20 +38,20 @@ class Parachute : public Weapon
     Sprite* img;
   protected:
     bool m_used_this_turn;
-    void p_Select();
-    void p_Deselect();
-    void Refresh();
-    bool p_Shoot();
+    void p_Select() override;
+    void p_Deselect() override;
+    void Refresh() override;
+    bool p_Shoot() override;
   public:
     Parachute();
-    ~Parachute();
-    void Draw();
-    virtual bool ShouldBeDrawn() { return false; };
+    ~Parachute() override;
+    void Draw() override;
+    bool ShouldBeDrawn() override { return false; };
 
-    void StartShooting();
+    void StartShooting() override;
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 
     ParachuteConfig& cfg();
 };

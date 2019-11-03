@@ -31,17 +31,17 @@ class NetworkClient : public Network
 {
 protected:
   connection_state_t HandShake(WSocket& server_socket);
-  virtual void HandleAction(Action* a, DistantComputer* sender);
-  virtual void WaitActionSleep() {};
+  void HandleAction(Action* a, DistantComputer* sender) override;
+  void WaitActionSleep() override {};
 
 public:
   NetworkClient(const std::string& password);
-  ~NetworkClient();
+  ~NetworkClient() override;
 
   //virtual const bool IsConnected() const { return true; }
-  virtual bool IsClient() const { return true; }
+  bool IsClient() const override { return true; }
 
-  void CloseConnection(std::list<DistantComputer*>::iterator);
+  void CloseConnection(std::list<DistantComputer*>::iterator) override;
 
   // Client specific methods
   connection_state_t ClientConnect(const std::string& host,

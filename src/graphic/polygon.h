@@ -202,11 +202,11 @@ class DecoratedBox : public Polygon
   enum Style {STYLE_ROUNDED, STYLE_SQUARE};
 
   DecoratedBox(Double width, Double height);
-  ~DecoratedBox();
-  virtual void Draw(Surface * dest);
-  virtual void ApplyTransformation(const AffineTransform2D & trans, bool save_transformation);
-  virtual void AddItem(PolygonItem * item);
-  virtual void ResetTransformation();
+  ~DecoratedBox() override;
+  void Draw(Surface * dest) override;
+  void ApplyTransformation(const AffineTransform2D & trans, bool save_transformation) override;
+  void AddItem(PolygonItem * item) override;
+  void ResetTransformation() override;
   void SetPosition(Double x, Double y);
   void SetStyle(Style style) { m_style = style; }
 

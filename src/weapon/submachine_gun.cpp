@@ -46,10 +46,10 @@ class SubMachineGunBullet : public WeaponBullet
   public:
     SubMachineGunBullet(ExplosiveWeaponConfig& cfg,
                         WeaponLauncher * p_launcher);
-    ~SubMachineGunBullet() { };
+    ~SubMachineGunBullet() override { };
   protected:
-    void ShootSound();
-    void RandomizeShoot(Double &angle,Double &strength);
+    void ShootSound() override;
+    void RandomizeShoot(Double &angle,Double &strength) override;
 };
 
 

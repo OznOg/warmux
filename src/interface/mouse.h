@@ -87,7 +87,7 @@ private:
 protected:
   friend class Singleton<Mouse>;
   Mouse();
-  ~Mouse() { EndLongClickTimer(); }
+  ~Mouse() override { EndLongClickTimer(); }
 
 public:
 

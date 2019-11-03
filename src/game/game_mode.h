@@ -129,7 +129,7 @@ public:
 protected:
   friend class Singleton<GameMode>;
   GameMode();
-  ~GameMode();
+  ~GameMode() override;
 };
 
 #endif /* GAME_MODE_H */

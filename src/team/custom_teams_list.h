@@ -36,7 +36,7 @@ class CustomTeamsList : public Singleton<CustomTeamsList>
 {
 public:
   CustomTeamsList() { LoadList(); }
-  ~CustomTeamsList() { Clear(); }
+  ~CustomTeamsList() override { Clear(); }
   void LoadList();
   std::vector<CustomTeam *> GetList() const { return full_list; }
   CustomTeam* GetByName(std::string name);

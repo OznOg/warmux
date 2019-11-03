@@ -48,7 +48,7 @@ public:
 protected:
   friend class Singleton<CharacterCursor>;
   CharacterCursor();
-  ~CharacterCursor();
+  ~CharacterCursor() override;
 };
 
 //-----------------------------------------------------------------------------

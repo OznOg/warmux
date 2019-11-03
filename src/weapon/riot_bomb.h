@@ -29,10 +29,10 @@ class RiotBomb : public WeaponLauncher
  public:
   RiotBomb();
 
-  void UpdateTranslationStrings();
-  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
  protected:
-  WeaponProjectile * GetProjectileInstance();
+  WeaponProjectile * GetProjectileInstance() override;
 };
 
 #endif

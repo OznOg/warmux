@@ -32,10 +32,10 @@ private:
   uint nb_get;
 #endif
 protected:
-  virtual uint GetRand();
-  virtual void SetRand(uint seed);
+  uint GetRand() override;
+  void SetRand(uint seed) override;
 public:
-  virtual void InitRandom();
+  void InitRandom() override;
   void Verify();
 };
 

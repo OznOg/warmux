@@ -78,7 +78,7 @@ protected:
   ObjectConfig m_cfg;
 public:
   Physics();
-  virtual ~Physics () {};
+  ~Physics () override {};
 
   // Set/Get position
   void SetPhysXY(Double x, Double y);

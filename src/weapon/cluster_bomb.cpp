@@ -50,15 +50,15 @@ class Cluster : public WeaponProjectile
 public:
   Cluster(ClusterBombConfig& cfg,
           WeaponLauncher * p_launcher);
-  void Refresh();
+  void Refresh() override;
   void Shoot(const Point2i & pos, Double strength, Double angle);
-  virtual void SetEnergyDelta(int delta, bool do_report = true);
+  void SetEnergyDelta(int delta, bool do_report = true) override;
 
 protected:
-  virtual void SignalTimeout();
-  virtual void SignalOutOfMap();
-  virtual void DoExplosion();
-  virtual void Draw();
+  void SignalTimeout() override;
+  void SignalOutOfMap() override;
+  void DoExplosion() override;
+  void Draw() override;
 };
 
 class ClusterBomb : public WeaponProjectile
@@ -66,12 +66,12 @@ class ClusterBomb : public WeaponProjectile
 public:
   ClusterBomb(ClusterBombConfig& cfg,
               WeaponLauncher * p_launcher);
-  void Refresh();
-  virtual void SetEnergyDelta(int delta, bool do_report = true);
+  void Refresh() override;
+  void SetEnergyDelta(int delta, bool do_report = true) override;
 
 protected:
-  void DoExplosion();
-  void SignalOutOfMap();
+  void DoExplosion() override;
+  void SignalOutOfMap() override;
 };
 
 Cluster::Cluster(ClusterBombConfig& cfg,

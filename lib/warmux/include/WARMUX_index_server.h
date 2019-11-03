@@ -91,7 +91,7 @@ class IndexServer : public Singleton<IndexServer>
 
 public:
   IndexServer();
-  ~IndexServer();
+  ~IndexServer() override;
 
   // Connect/disconnect to a server
   connection_state_t Connect(const std::string& warmux_version);

@@ -53,11 +53,11 @@ class Medkit : public ObjBox
   void ApplyMedkit(Team &team, Character &character) const;
 public:
   Medkit();
-  ~Medkit();
+  ~Medkit() override;
 
   static ConfigElementList* GetConfigList() { return &settings; }
-  void ApplyBonus(Character *);
-  const Surface* GetIcon() const;
+  void ApplyBonus(Character *) override;
+  const Surface* GetIcon() const override;
 };
 
 //-----------------------------------------------------------------------------

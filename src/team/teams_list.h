@@ -64,7 +64,7 @@ protected:
   friend class Singleton<TeamsList>;
 
 public:
-  ~TeamsList();
+  ~TeamsList() override;
 
   friend TeamsList &GetTeamsList(void);
   void NextTeam();

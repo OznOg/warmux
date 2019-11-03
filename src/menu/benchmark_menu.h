@@ -42,9 +42,9 @@ class BenchmarkMenu : public Menu
 
 public:
   BenchmarkMenu();
-  ~BenchmarkMenu();
+  ~BenchmarkMenu() override;
 
-  void OnClickUp(const Point2i &mousePosition, int button);
+  void OnClickUp(const Point2i &mousePosition, int button) override;
 };
 
 #endif //BENCHMARK_MENU_H

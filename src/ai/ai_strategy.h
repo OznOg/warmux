@@ -42,14 +42,14 @@ class DoNothingStrategy : public AIStrategy
 {
 public:
   DoNothingStrategy();
-  virtual AICommand * CreateCommand() const;
+  AICommand * CreateCommand() const override;
 };
 
 class SkipTurnStrategy : public AIStrategy
 {
 public:
   SkipTurnStrategy();
-  virtual AICommand * CreateCommand() const;
+  AICommand * CreateCommand() const override;
 };
 
 class ShootWithGunStrategy : public AIStrategy
@@ -60,7 +60,7 @@ class ShootWithGunStrategy : public AIStrategy
   float angle;
   int bullets;
 public:
-  virtual AICommand * CreateCommand() const;
+  AICommand * CreateCommand() const override;
   ShootWithGunStrategy(float rating, const Character & shooter,
                        Weapon::Weapon_type weapon, LRDirection  direction,
                        float angle, int bullets);
@@ -75,7 +75,7 @@ class LoadAndFireStrategy : public AIStrategy
   float strength;
   int timeout;
 public:
-  virtual AICommand * CreateCommand() const;
+  AICommand * CreateCommand() const override;
   LoadAndFireStrategy(float rating, const Character & shooter,
                       Weapon::Weapon_type weapon, LRDirection direction,
                       float angle, float strength, int timeout);

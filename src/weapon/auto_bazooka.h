@@ -32,13 +32,13 @@ class AutomaticBazooka : public TargetLauncher
 public:
   AutomaticBazooka();
   AutomaticBazookaConfig &cfg();
-  void UpdateTranslationStrings();
-  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 
 protected:
-  virtual void ChooseTarget(Point2i mouse_pos);
+  void ChooseTarget(Point2i mouse_pos) override;
 
-  WeaponProjectile * GetProjectileInstance();
+  WeaponProjectile * GetProjectileInstance() override;
 };
 
 #endif /* AUTO_BAZOOKA_H */

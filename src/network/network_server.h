@@ -36,21 +36,21 @@ class NetworkServer : public Network
   bool HandShake(WSocket& client_socket, std::string& nickname, uint player_id) const;
 
 protected:
-  virtual void HandleAction(Action* a, DistantComputer* sender);
-  virtual void WaitActionSleep();
+  void HandleAction(Action* a, DistantComputer* sender) override;
+  void WaitActionSleep() override;
 
 public:
   NetworkServer(const std::string& game_name, const std::string& password);
-  ~NetworkServer();
+  ~NetworkServer() override;
 
   //virtual const bool IsConnected() const { return true; }
-  virtual bool IsServer() const { return true; }
+  bool IsServer() const override { return true; }
 
   // Serveur specific methods
   connection_state_t StartServer(const std::string &port, uint max_nb_players);
 
   void RejectIncoming();
-  void CloseConnection(std::list<DistantComputer*>::iterator closed);
+  void CloseConnection(std::list<DistantComputer*>::iterator closed) override;
   void SetMaxNumberOfPlayers(uint num) { max_nb_players = num; }
   void SendMapsList();
 };

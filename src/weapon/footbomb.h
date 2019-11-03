@@ -32,11 +32,11 @@ class FootBombLauncher : public WeaponLauncher
 {
  public:
   FootBombLauncher();
-  void UpdateTranslationStrings();
-  std::string GetWeaponWinString(const char *TeamName, uint items_count) const;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
 
  protected:
-  WeaponProjectile * GetProjectileInstance();
+  WeaponProjectile * GetProjectileInstance() override;
  private:
   FootBombConfig& cfg() ;
 };

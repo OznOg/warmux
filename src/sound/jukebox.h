@@ -103,7 +103,7 @@ class JukeBox : public Singleton<JukeBox>
 
 protected:
   JukeBox();
-  ~JukeBox() { End(); }
+  ~JukeBox() override { End(); }
   friend class Singleton<JukeBox>;
 
 public:

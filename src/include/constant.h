@@ -52,7 +52,7 @@ public:
 protected:
   friend class Singleton<Constants>;
   Constants();
-  ~Constants() { AUTHORS.clear(); };
+  ~Constants() override { AUTHORS.clear(); };
 };
 
 #endif

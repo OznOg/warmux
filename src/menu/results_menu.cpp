@@ -128,7 +128,7 @@ public:
     snprintf(buffer, 16, "%.1f", score);
     SetWidgets(type, buffer, player);
   }
-  void Pack()
+  void Pack() override
   {
     int width = size.x - (4*margin + img->GetSizeX() + score->GetSizeX());
     category->SetSizeX(width/2);

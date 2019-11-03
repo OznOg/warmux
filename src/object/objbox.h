@@ -42,12 +42,12 @@ class ObjBox : public PhysicalObj //it would be nice to name this "Box", but tha
 
 public:
   ObjBox(const std::string &name);
-  ~ObjBox();
+  ~ObjBox() override;
 
   void DropBox();
 
-  void Draw();
-  virtual void Refresh();
+  void Draw() override;
+  void Refresh() override;
   virtual void Randomize() {};
   virtual void ApplyBonus(Character *) {};
 
@@ -59,12 +59,12 @@ protected:
   Sprite *anim;
   void Explode();
 
-  virtual void SignalGroundCollision(const Point2d& my_speed_before, const Double& contactAngle);
-  virtual void SignalObjectCollision(const Point2d& my_speed_before,
+  void SignalGroundCollision(const Point2d& my_speed_before, const Double& contactAngle) override;
+  void SignalObjectCollision(const Point2d& my_speed_before,
                                      PhysicalObj *object,
-                                     const Point2d& object_speed);
-  virtual void SignalDrowning();
-  virtual void SignalGhostState(bool was_already_dead);
+                                     const Point2d& object_speed) override;
+  void SignalDrowning() override;
+  void SignalGhostState(bool was_already_dead) override;
 
   // This returns you a scaled version of your anim Sprite*
   Sprite *CreateIcon();

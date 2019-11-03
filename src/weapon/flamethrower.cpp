@@ -51,14 +51,14 @@ class FlameThrowerBullet : public WeaponBullet
 public:
   FlameThrowerBullet(ExplosiveWeaponConfig& cfg,
                      WeaponLauncher * p_launcher);
-  bool IsOverlapping(const PhysicalObj* obj) const;
+  bool IsOverlapping(const PhysicalObj* obj) const override;
 protected:
   ParticleEngine particle;
-  void ShootSound();
-  void RandomizeShoot(Double &angle, Double &strength);
-  void DoExplosion();
-  void SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle);
-  void SignalDrowning();
+  void ShootSound() override;
+  void RandomizeShoot(Double &angle, Double &strength) override;
+  void DoExplosion() override;
+  void SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle) override;
+  void SignalDrowning() override;
 };
 
 

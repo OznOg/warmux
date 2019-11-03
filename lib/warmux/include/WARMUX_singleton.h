@@ -49,7 +49,7 @@ class Singleton : public BaseSingleton
 {
 protected:
   static T* singleton;
-  ~Singleton()
+  ~Singleton() override
   {
     MSG_DBG_RTTI("singleton", "Deleting singleton %p of type %s",
                  singleton, typeid(T).name());

@@ -34,10 +34,10 @@ public:
        bool force_widget_size = true);
   VBox(Profile * profile,
        const xmlNode * verticalBoxNode);
-  virtual ~VBox() { }
+  ~VBox() override { }
 
-  virtual void Pack();
-  virtual bool LoadXMLConfiguration(void);
+  void Pack() override;
+  bool LoadXMLConfiguration(void) override;
 };
 
 #endif

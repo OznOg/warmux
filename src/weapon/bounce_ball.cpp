@@ -40,9 +40,9 @@ class BounceBall : public WeaponProjectile
   public:
     BounceBall(ExplosiveWeaponConfig& cfg,
                WeaponLauncher * p_launcher);
-    void Refresh();
+    void Refresh() override;
   protected:
-    void SignalOutOfMap();
+    void SignalOutOfMap() override;
 };
 
 

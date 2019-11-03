@@ -98,12 +98,12 @@ private:
   void DrawEnergyBar() const;
   void DrawLostEnergy() const;
 
-  virtual void SignalDrowning();
-  virtual void SignalGhostState(bool was_dead);
-  virtual void SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle);
-  virtual void SignalObjectCollision(const Point2d& my_speed_before,
+  void SignalDrowning() override;
+  void SignalGhostState(bool was_dead) override;
+  void SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle) override;
+  void SignalObjectCollision(const Point2d& my_speed_before,
                                      PhysicalObj * obj,
-                                     const Point2d& obj_speed);
+                                     const Point2d& obj_speed) override;
   void Collision(const Point2d& speed_vector, const Double& contactAngle);
   void SetBody(Body* char_body);
 
@@ -121,14 +121,14 @@ public:
   bool MustBeDrawn() const;
   Character (Team& my_team, const std::string &name, Body *char_body);
   Character (const Character& acharacter);
-  ~Character();
+  ~Character() override;
 
   virtual void SignalExplosion();
 
   void StartOrStopWalkingIfNecessary();
 
   // Energy related
-  void SetEnergyDelta(int delta, Character* dealer);
+  void SetEnergyDelta(int delta, Character* dealer) override;
   void SetEnergy(int new_energy, Character* dealer);
   inline const int & GetEnergy() const { return m_energy; };
 
@@ -162,9 +162,9 @@ public:
     }
   }
 
-  void Draw();
+  void Draw() override;
   void DrawName() const;
-  void Refresh();
+  void Refresh() override;
 
   void PrepareTurn();
   void StartPlaying();
@@ -206,7 +206,7 @@ public:
   uint GetCharacterIndex() const;
 
   // Access to character info
-  const std::string& GetName() const { return character_name; }
+  const std::string& GetName() const override { return character_name; }
   bool IsSameAs(const Character& other) const { return GetName() == other.GetName(); }
 
    // Hand position

@@ -31,11 +31,11 @@ class PetrolBarrel : public PhysicalObj
   Sprite* img;
 public:
   PetrolBarrel();
-  ~PetrolBarrel();
-  void Draw();
-  void Refresh() { };
+  ~PetrolBarrel() override;
+  void Draw() override;
+  void Refresh() override { };
 protected:
-  void SignalGhostState(bool was_already_dead);
+  void SignalGhostState(bool was_already_dead) override;
 };
 
 #endif /* BARREL_H */

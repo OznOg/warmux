@@ -46,26 +46,26 @@ public:
   WidgetList(const Point2i &size);
   WidgetList(Profile * profile,
              const xmlNode * widgetListNode);
-  virtual ~WidgetList();
+  ~WidgetList() override;
 
   // Highlight and background
-  virtual void SetVisible(bool _visible);
-  virtual void SetHighlighted(bool focus);
-  virtual void SetBackgroundColor(const Color &background_color);
+  void SetVisible(bool _visible) override;
+  void SetHighlighted(bool focus) override;
+  void SetBackgroundColor(const Color &background_color) override;
   virtual void SetHighlightBgColor(const Color &highlight_bg_color);
   virtual void SetSelfBackgroundColor(const Color &background_color);
   virtual void SetSelfHighlightBgColor(const Color &highlight_bg_color);
 
-  virtual bool Update(const Point2i &mousePosition,
-                      const Point2i &lastMousePosition);
-  virtual void Draw(const Point2i &mousePosition);
+  bool Update(const Point2i &mousePosition,
+                      const Point2i &lastMousePosition) override;
+  void Draw(const Point2i &mousePosition) override;
   // set need_redrawing to true for all sub widgets;
-  virtual void NeedRedrawing();
+  void NeedRedrawing() override;
 
   // methods specialized from Widget to manage the list of widgets
   virtual bool SendKey(SDL_keysym key);
-  virtual Widget* Click(const Point2i &mousePosition, uint button);
-  virtual Widget* ClickUp(const Point2i &mousePosition, uint button);
+  Widget* Click(const Point2i &mousePosition, uint button) override;
+  Widget* ClickUp(const Point2i &mousePosition, uint button) override;
 
   // to add a widget
   virtual void AddWidget(Widget* widget);
@@ -80,14 +80,14 @@ public:
   Widget * GetCurrentKeyboardSelectedWidget() const { return selected_widget; };
 
   // to implement WidgetBrowser
-  virtual Widget* GetFirstWidget() const;
-  virtual Widget* GetLastWidget() const;
-  virtual Widget* GetNextWidget(const Widget *w, bool loop) const;
-  virtual Widget* GetPreviousWidget(const Widget *w, bool loop) const;
-  virtual bool IsWidgetBrowser() const { return true; };
+  Widget* GetFirstWidget() const override;
+  Widget* GetLastWidget() const override;
+  Widget* GetNextWidget(const Widget *w, bool loop) const override;
+  Widget* GetPreviousWidget(const Widget *w, bool loop) const override;
+  bool IsWidgetBrowser() const override { return true; };
 
   virtual void SetFocusOn(Widget* widget, bool force_mouse_position = false);
-  virtual void Pack();
+  void Pack() override;
 };
 
 #endif // WIDGET_LIST_H

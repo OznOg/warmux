@@ -33,17 +33,17 @@ class Joystick : public Singleton<Joystick>, public ManMachineInterface
   int previous_y_value;
   Key_t previous_x_axis;
   Key_t previous_y_axis;
-  void SetDefaultConfig();
+  void SetDefaultConfig() override;
 
 protected:
   friend class Singleton<Joystick>;
   Joystick();
-  ~Joystick();
+  ~Joystick() override;
 
 public:
   int GetNumberOfJoystick() const;
-  bool HandleKeyEvent(const SDL_Event& event);
-  void Reset();
+  bool HandleKeyEvent(const SDL_Event& event) override;
+  void Reset() override;
 };
 
 //-----------------------------------------------------------------------------

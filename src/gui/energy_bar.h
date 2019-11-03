@@ -60,7 +60,7 @@ public:
             enum orientation _orientation = PROG_BAR_HORIZONTAL);
   EnergyBar(Profile * _profile,
             const xmlNode * _widgetNode);
-  virtual ~EnergyBar(void) {}
+  ~EnergyBar(void) override {}
 
   virtual bool LoadXMLConfiguration(void);
   void ProcessThresholds(uint thresholdNumber,

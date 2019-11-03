@@ -67,17 +67,17 @@ public:
 
   SuperTux(SuperTuxWeaponConfig& cfg,
             WeaponLauncher * p_launcher);
-  void Refresh();
+  void Refresh() override;
 
   inline void SetAngle(Double angle) {angle_rad = angle;}
   void turn_left();
   void turn_right();
-  void Shoot(Double strength);
-  virtual void Explosion();
-  virtual void SignalDrowning();
-  virtual void SignalGoingOutOfWater();
+  void Shoot(Double strength) override;
+  void Explosion() override;
+  void SignalDrowning() override;
+  void SignalGoingOutOfWater() override;
 protected:
-  void SignalOutOfMap();
+  void SignalOutOfMap() override;
 };
 
 //-----------------------------------------------------------------------------

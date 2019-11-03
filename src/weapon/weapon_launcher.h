@@ -50,13 +50,13 @@ public:
   WeaponProjectile(const std::string &nom,
                    ExplosiveWeaponConfig& cfg,
                    WeaponLauncher * p_launcher);
-  virtual ~WeaponProjectile();
+  ~WeaponProjectile() override;
 
-  virtual void Draw();
+  void Draw() override;
   // Call by the object list class to refresh the weapon's state
-  virtual void Refresh();
+  void Refresh() override;
   virtual void Shoot(Double strength);
-  virtual bool IsImmobile() const;
+  bool IsImmobile() const override;
   virtual void SetEnergyDelta(int delta, bool do_report = true);
 
   void IncrementTimeOut();
@@ -71,16 +71,16 @@ protected:
   uint GetMSSinceTimeoutStart() const;
   void Collision();
 
-  virtual void SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle);
-  virtual void SignalObjectCollision(const Point2d& my_speed_before,
+  void SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle) override;
+  void SignalObjectCollision(const Point2d& my_speed_before,
                                      PhysicalObj * obj,
-                                     const Point2d& obj_speed);
-  virtual void SignalOutOfMap();
+                                     const Point2d& obj_speed) override;
+  void SignalOutOfMap() override;
   virtual void SignalTimeout();
   virtual void SignalExplosion();
-  virtual void SignalDrowning();
-  virtual void SignalGoingOutOfWater();
-  void SignalGhostState (bool was_dead);
+  void SignalDrowning() override;
+  void SignalGoingOutOfWater() override;
+  void SignalGhostState (bool was_dead) override;
 
   virtual void ShootSound();
   virtual void Explosion();
@@ -95,16 +95,16 @@ public:
   WeaponBullet(const std::string &name,
                ExplosiveWeaponConfig& cfg,
                WeaponLauncher * p_launcher);
-  virtual ~WeaponBullet(){};
-  virtual void Refresh();
-  virtual bool IsBullet() const { return true; }
+  ~WeaponBullet() override{};
+  void Refresh() override;
+  bool IsBullet() const override { return true; }
 protected:
-  virtual void SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle);
-  virtual void SignalObjectCollision(const Point2d& my_speed_before,
+  void SignalGroundCollision(const Point2d& speed_before, const Double& contactAngle) override;
+  void SignalObjectCollision(const Point2d& my_speed_before,
                                      PhysicalObj * obj,
-                                     const Point2d& obj_speed);
-  virtual void SignalOutOfMap();
-  void DoExplosion();
+                                     const Point2d& obj_speed) override;
+  void SignalOutOfMap() override;
+  void DoExplosion() override;
 };
 
 
@@ -124,8 +124,8 @@ protected:
   int missed_shots;
   bool announce_missed_shots;
 protected:
-  virtual bool p_Shoot();
-  virtual void p_Select();
+  bool p_Shoot() override;
+  void p_Select() override;
   virtual WeaponProjectile * GetProjectileInstance() = 0;
   virtual bool ReloadLauncher();
 private:
@@ -136,16 +136,16 @@ public:
                  const std::string &id,
                  EmptyWeaponConfig * params,
                  bool drawable = true);
-  virtual ~WeaponLauncher();
+  ~WeaponLauncher() override;
 
   // Methods to access data of the projectile
   int GetDamage() const;
   Double GetWindFactor() const { return projectile->GetWindFactor(); }
   Double GetMass() const { return projectile->GetMass(); }
 
-  virtual void Draw();
+  void Draw() override;
 
-  virtual std::string GetWeaponWinString(const char *TeamName, uint items_count) const = 0;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count) const override = 0;
 
   // Handle of projectile events
   // Signal the end of a projectile for any reason possible
@@ -173,27 +173,27 @@ public:
   virtual void IncMissedShots();
 
   // Handle mouse events
-  virtual void HandleMouseWheelUp(bool) { SetTimeoutForAllPlayers(GetTimeout() + 1); }
-  virtual void HandleMouseWheelDown(bool) { SetTimeoutForAllPlayers(GetTimeout() - 1); }
+  void HandleMouseWheelUp(bool) override { SetTimeoutForAllPlayers(GetTimeout() + 1); }
+  void HandleMouseWheelDown(bool) override { SetTimeoutForAllPlayers(GetTimeout() - 1); }
 
   // Handle special keys
-  virtual void HandleKeyReleased_Num1() { SetTimeoutForAllPlayers(1); }
-  virtual void HandleKeyReleased_Num2() { SetTimeoutForAllPlayers(2); }
-  virtual void HandleKeyReleased_Num3() { SetTimeoutForAllPlayers(3); }
-  virtual void HandleKeyReleased_Num4() { SetTimeoutForAllPlayers(4); }
-  virtual void HandleKeyReleased_Num5() { SetTimeoutForAllPlayers(5); }
-  virtual void HandleKeyReleased_Num6() { SetTimeoutForAllPlayers(6); }
-  virtual void HandleKeyReleased_Num7() { SetTimeoutForAllPlayers(7); }
-  virtual void HandleKeyReleased_Num8() { SetTimeoutForAllPlayers(8); }
-  virtual void HandleKeyReleased_Num9() { SetTimeoutForAllPlayers(9); }
-  virtual void HandleKeyReleased_Less() { SetTimeoutForAllPlayers(GetTimeout() - 1); }
-  virtual void HandleKeyReleased_More() { SetTimeoutForAllPlayers(GetTimeout() + 1); }
+  void HandleKeyReleased_Num1() override { SetTimeoutForAllPlayers(1); }
+  void HandleKeyReleased_Num2() override { SetTimeoutForAllPlayers(2); }
+  void HandleKeyReleased_Num3() override { SetTimeoutForAllPlayers(3); }
+  void HandleKeyReleased_Num4() override { SetTimeoutForAllPlayers(4); }
+  void HandleKeyReleased_Num5() override { SetTimeoutForAllPlayers(5); }
+  void HandleKeyReleased_Num6() override { SetTimeoutForAllPlayers(6); }
+  void HandleKeyReleased_Num7() override { SetTimeoutForAllPlayers(7); }
+  void HandleKeyReleased_Num8() override { SetTimeoutForAllPlayers(8); }
+  void HandleKeyReleased_Num9() override { SetTimeoutForAllPlayers(9); }
+  void HandleKeyReleased_Less() override { SetTimeoutForAllPlayers(GetTimeout() - 1); }
+  void HandleKeyReleased_More() override { SetTimeoutForAllPlayers(GetTimeout() + 1); }
 
   WeaponProjectile* GetProjectile() { return projectile; };
   ExplosiveWeaponConfig& cfg() const;
 
   // Implemeting a method that would otherwise have required RTTI
-  void SetProjectileTimeOut(int timeout) { projectile->SetTimeOut(timeout); }
+  void SetProjectileTimeOut(int timeout) override { projectile->SetTimeOut(timeout); }
 };
 
 #endif /* WEAPON_LAUNCHER_H */

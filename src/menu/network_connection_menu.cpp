@@ -76,7 +76,7 @@ class GameListBox : public SelectBox
 {
 public:
   GameListBox(const Point2i &size) : SelectBox(size, false) { }
-  void Select(uint index) { SelectBox::Select(index); }
+  void Select(uint index) override { SelectBox::Select(index); }
   void AddItem(bool selected, bool pwd, const std::string& ip_address,
                const std::string& port, const std::string& name)
   {

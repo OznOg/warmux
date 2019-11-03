@@ -42,28 +42,28 @@ private:
   void ComputeCrossPoint(bool force);
 
 protected:
-  virtual bool p_Shoot();
-  void p_Deselect();
+  bool p_Shoot() override;
+  void p_Deselect() override;
 
 public:
   BaseSnipeRifle(Weapon_type type,
                  const std::string &id);
-  ~BaseSnipeRifle();
-  void SignalProjectileGhostState();
+  ~BaseSnipeRifle() override;
+  void SignalProjectileGhostState() override;
   void DrawBeam();
-  void Draw();  // In order to draw the laser beam / and the contact point.
+  void Draw() override;  // In order to draw the laser beam / and the contact point.
 };
 
 class SnipeRifle : public BaseSnipeRifle
 {
 protected:
-  virtual WeaponProjectile * GetProjectileInstance();
+  WeaponProjectile * GetProjectileInstance() override;
 
 public:
   SnipeRifle();
 
-  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
-  void UpdateTranslationStrings();
+  std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
+  void UpdateTranslationStrings() override;
 };
 
 #endif /* SNIPE_RIFLE_H */

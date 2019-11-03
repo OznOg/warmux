@@ -40,13 +40,13 @@ class DynamiteStick : public WeaponProjectile
     DynamiteStick(ExplosiveWeaponConfig& cfg,
                   WeaponLauncher * p_launcher);
 
-    void Shoot(Double strength);
-    void Refresh();
+    void Shoot(Double strength) override;
+    void Refresh() override;
 
   protected:
-    void SignalExplosion();
-    void SignalOutOfMap();
-    void SignalDrowning();
+    void SignalExplosion() override;
+    void SignalOutOfMap() override;
+    void SignalDrowning() override;
 };
 
 DynamiteStick::DynamiteStick(ExplosiveWeaponConfig& cfg,

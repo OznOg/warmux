@@ -51,15 +51,15 @@ public:
   GraphCanvas(const Point2i& size,
               const std::string& xname, const std::string& yname,
               std::vector<Result>& res, uint thick=2);
-  virtual ~GraphCanvas() {};
-  virtual void Draw(const Point2i&);
+  ~GraphCanvas() override {};
+  void Draw(const Point2i&) override;
 
   virtual void DrawGraph(uint i, float xmax, float xmin,
                          int x, float xscale,
                          int y, float yscale) const;
   virtual void DrawGraph(int x, int y, int w, int h) const;
 
-  virtual void Pack() {};
+  void Pack() override {};
 
   void AddResult(const Result& newer) { results.push_back(newer); }
   void UnsetResults() { results.clear(); }

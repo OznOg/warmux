@@ -31,22 +31,22 @@ class Blowtorch : public Weapon
   private:
     bool active;
   protected:
-    bool p_Shoot();
-    void p_Deselect();
-    void Refresh();
+    bool p_Shoot() override;
+    void p_Deselect() override;
+    void Refresh() override;
 
     void RepeatShoot() const ;
   public:
     Blowtorch();
     BlowtorchConfig& cfg();
 
-    void StartShooting();
-    void StopShooting();
-    virtual bool ShouldAmmoUnitsBeDrawn() const;
-    virtual bool IsPreventingJumps();
+    void StartShooting() override;
+    void StopShooting() override;
+    bool ShouldAmmoUnitsBeDrawn() const override;
+    bool IsPreventingJumps() override;
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 };
 
 #endif  // __BLOWTORCH_H__

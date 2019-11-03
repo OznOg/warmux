@@ -43,14 +43,14 @@ class Gnu : public WeaponProjectile
   int save_x, save_y;
   uint last_rebound_time;
 protected:
-  void SignalOutOfMap();
+  void SignalOutOfMap() override;
 public:
   Gnu(ExplosiveWeaponConfig& cfg,
       WeaponLauncher * p_launcher);
-  void Shoot(Double strength);
-  void Refresh();
+  void Shoot(Double strength) override;
+  void Refresh() override;
 
-  virtual void Explosion();
+  void Explosion() override;
 };
 
 Gnu::Gnu(ExplosiveWeaponConfig& cfg,

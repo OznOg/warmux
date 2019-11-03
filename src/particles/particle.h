@@ -90,9 +90,9 @@ protected:
 
 public:
   Particle(const std::string &name);
-  ~Particle();
-  virtual void Draw();
-  virtual void Refresh();
+  ~Particle() override;
+  void Draw() override;
+  void Refresh() override;
   void SetOnTop(bool b) { on_top = b; }
   bool IsOnTop() const { return on_top; }
   bool StillUseful() const { return m_time_left_to_live > 0; }

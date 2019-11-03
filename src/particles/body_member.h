@@ -27,7 +27,7 @@ class BodyMemberParticle : public Particle
 {
   Double angle_rad;
 
-  void Refresh();
+  void Refresh() override;
 
 public:
 

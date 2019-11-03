@@ -40,7 +40,7 @@ class TeamScrollBox : public ScrollBox
   uint  count;
 public:
   TeamScrollBox(const std::vector<TeamBox*>& teams, const Point2i &size);
-  ~TeamScrollBox();
+  ~TeamScrollBox() override;
   void SetNbTeams(uint nb);
 };
 
@@ -61,11 +61,11 @@ protected:
 public:
   TeamsSelectionBox(const Point2i &size, bool network, bool w_border);
 
-  virtual void Draw(const Point2i &mousePosition);
+  void Draw(const Point2i &mousePosition) override;
 
   virtual void ValidTeamsSelection() = 0;
-  virtual Widget* ClickUp(const Point2i &mousePosition, uint button) = 0;
-  virtual Widget* Click(const Point2i &mousePosition, uint button);
+  Widget* ClickUp(const Point2i &mousePosition, uint button) override = 0;
+  Widget* Click(const Point2i &mousePosition, uint button) override;
 };
 
 class LocalTeamsSelectionBox : public TeamsSelectionBox
@@ -73,14 +73,14 @@ class LocalTeamsSelectionBox : public TeamsSelectionBox
   void SetNbTeams(uint nb_teams);
 
 protected:
-  virtual void PrevTeam(uint i);
-  virtual void NextTeam(uint i);
+  void PrevTeam(uint i) override;
+  void NextTeam(uint i) override;
 
 public:
   LocalTeamsSelectionBox(const Point2i &size, bool border);
 
-  virtual void ValidTeamsSelection();
-  virtual Widget* ClickUp(const Point2i &mousePosition, uint button);
+  void ValidTeamsSelection() override;
+  Widget* ClickUp(const Point2i &mousePosition, uint button) override;
 };
 
 #endif

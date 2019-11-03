@@ -41,10 +41,10 @@ class BonusBox : public ObjBox
   void ApplyBonus (Team &team, Character &character);
 public:
   BonusBox(Weapon * weapon);
-  ~BonusBox();
+  ~BonusBox() override;
 
-  void ApplyBonus(Character *);
-  const Surface* GetIcon() const;
+  void ApplyBonus(Character *) override;
+  const Surface* GetIcon() const override;
 };
 
 //-----------------------------------------------------------------------------

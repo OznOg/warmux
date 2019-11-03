@@ -36,18 +36,18 @@ protected:
     Surface image;
   } m_target;
 
-  void Refresh();
-  void p_Select();
-  void p_Deselect();
+  void Refresh() override;
+  void p_Select() override;
+  void p_Deselect() override;
   void DrawTarget() const;
 
 public:
   TargetLauncher(Weapon_type type,
                  const std::string &id,
                  EmptyWeaponConfig * params);
-  void Draw();
-  bool IsReady() const;
-  virtual void ChooseTarget(Point2i mouse_pos);
+  void Draw() override;
+  bool IsReady() const override;
+  void ChooseTarget(Point2i mouse_pos) override;
 };
 
 

@@ -60,13 +60,13 @@ class FootBomb : public WeaponProjectile
 public:
   FootBomb(FootBombConfig& cfg,
               WeaponLauncher * p_launcher);
-  void Refresh();
-  virtual void SetEnergyDelta(int delta, bool do_report = true);
+  void Refresh() override;
+  void SetEnergyDelta(int delta, bool do_report = true) override;
   void Shoot(const Point2i & pos, Double strength, Double angle, int recursions);
 
 protected:
-  void DoExplosion();
-  void SignalOutOfMap();
+  void DoExplosion() override;
+  void SignalOutOfMap() override;
 };
 
 //-----------------------------------------------------------------------------

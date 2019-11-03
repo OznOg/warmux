@@ -48,13 +48,13 @@ class GridBox : public Box
             bool _draw_border = true);
     GridBox(Profile * _profile,
             const xmlNode * _gridBoxNode);
-    virtual ~GridBox(void);
-    virtual void AddWidget(Widget * widget);
+    ~GridBox(void) override;
+    void AddWidget(Widget * widget) override;
     virtual void AddWidget(Widget * widget,
                            uint x,
                            uint y);
-    virtual bool LoadXMLConfiguration(void);
-    virtual void Pack();
+    bool LoadXMLConfiguration(void) override;
+    void Pack() override;
 
     Point2i GetDefaultBoxSize(const Point2i& full_size) const
     {

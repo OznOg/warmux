@@ -41,23 +41,23 @@ public:
           Font::font_style_t fstyle = Font::FONT_BOLD);
   TextBox(Profile * profile,
           const xmlNode * textBoxNode);
-  virtual ~TextBox() { };
+  ~TextBox() override { };
 
-  virtual bool LoadXMLConfiguration();
+  bool LoadXMLConfiguration() override;
 
   void SetText(std::string const & new_txt);
   void SetMaxNbChars(uint nb_chars) { max_nb_chars = nb_chars; }
 
   // From widget
-  virtual bool SendKey(const SDL_keysym & key);
-  virtual void Draw(const Point2i & mousePosition);
-  virtual Widget *ClickUp(const Point2i &, uint);
+  bool SendKey(const SDL_keysym & key) override;
+  void Draw(const Point2i & mousePosition) override;
+  Widget *ClickUp(const Point2i &, uint) override;
 };
 
 class PasswordBox : public TextBox
 {
   std::string clear_text;
-  void BasicSetText(std::string const & new_txt);
+  void BasicSetText(std::string const & new_txt) override;
 
 public:
   PasswordBox(const std::string & label,
@@ -71,7 +71,7 @@ public:
   PasswordBox(Profile * profile, const xmlNode * passwordBoxNode)
     : TextBox(profile, passwordBoxNode) { }
 
-  bool SendKey(const SDL_keysym & key);
+  bool SendKey(const SDL_keysym & key) override;
   const std::string & GetPassword() const { return clear_text; };
 };
 

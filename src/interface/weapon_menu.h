@@ -47,7 +47,7 @@ public:
   WeaponMenuItem(Weapon * weapon, const Point2d & position);
   bool IsMouseOver();
   void SetZoom(bool value);
-  void Draw(Surface * dest);
+  void Draw(Surface * dest) override;
   uint GetZoomTime() const { return zoom_time; };
   void SetZoomTime(uint time) { zoom_time = time; };
   Weapon * GetWeapon() const { return weapon; };

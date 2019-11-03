@@ -29,8 +29,8 @@ class BulletParticle : public Particle
 
 public:
   BulletParticle();
-  void Refresh();
-  void SignalRebound();
+  void Refresh() override;
+  void SignalRebound() override;
 };
 
 #endif /* BULLET_H */

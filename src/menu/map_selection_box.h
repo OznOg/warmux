@@ -62,10 +62,10 @@ class MapSelectionBox : public VBox
   void ChangeMapListCallback(const std::vector<uint>& list);
   void AllowSelection();
 
-  virtual Widget* ClickUp(const Point2i &mousePosition, uint button);
-  virtual void Pack();
-  virtual bool Update(const Point2i & mousePosition,
-                      const Point2i & lastMousePosition);
+  Widget* ClickUp(const Point2i &mousePosition, uint button) override;
+  void Pack() override;
+  bool Update(const Point2i & mousePosition,
+                      const Point2i & lastMousePosition) override;
 };
 
 

@@ -42,7 +42,7 @@ class GameMenu : public Menu
 
   void SaveOptions();
 
-  bool signal_ok();
+  bool signal_ok() override;
 
 public:
   GameMenu();

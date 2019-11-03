@@ -61,17 +61,17 @@ public:
                 ScalingType type = NO_SCALING);
   PictureWidget(Profile * profile,
                 const xmlNode * pictureNode);
-  virtual ~PictureWidget();
+  ~PictureWidget() override;
 
   // Load all attributs from a "Picture" node.
-  virtual bool LoadXMLConfiguration(void);
+  bool LoadXMLConfiguration(void) override;
 
   void SetSurface(const Surface & s,
                   ScalingType type = NO_SCALING);
   void SetNoSurface();
 
-  virtual void Draw(const Point2i & mousePosition);
-  virtual void Pack() { ApplyScaling(type); }
+  void Draw(const Point2i & mousePosition) override;
+  void Pack() override { ApplyScaling(type); }
 
   // Apply a transparency color mask
   void Disable() { disabled = true; };

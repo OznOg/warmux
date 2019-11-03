@@ -47,14 +47,14 @@ class Polecat : public WeaponProjectile
   Double angle;
   void Fart();
  protected:
-  void SignalOutOfMap();
+  void SignalOutOfMap() override;
  public:
   Polecat(ExplosiveWeaponConfig& cfg,
           WeaponLauncher * p_launcher);
-  void Shoot(Double strength);
-  void Refresh();
+  void Shoot(Double strength) override;
+  void Refresh() override;
 
-  virtual void Explosion();
+  void Explosion() override;
 };
 
 

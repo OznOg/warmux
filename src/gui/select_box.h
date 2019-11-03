@@ -38,8 +38,8 @@ protected:
   int  selected_item;
   Widget *last;
 
-  virtual void __Update(const Point2i & mousePosition,
-                        const Point2i & lastMousePosition);
+  void __Update(const Point2i & mousePosition,
+                        const Point2i & lastMousePosition) override;
 
 public:
   SelectBox(const Point2i& size,
@@ -48,16 +48,16 @@ public:
             bool vertical = true);
 
   // No need for a Draw method: the additional stuff drawn is made by Update
-  virtual bool Update(const Point2i& mousePosition,
-                      const Point2i& lastMousePosition);
-  virtual Widget* ClickUp(const Point2i & mousePosition, uint button);
+  bool Update(const Point2i& mousePosition,
+                      const Point2i& lastMousePosition) override;
+  Widget* ClickUp(const Point2i & mousePosition, uint button) override;
 
   // to add a widget
   virtual void RemoveSelected();
-  virtual void AddWidget(Widget* w);
+  void AddWidget(Widget* w) override;
   virtual void AddWidgetItem(bool select, Widget* w);
-  virtual void Empty();
-  virtual void Clear();
+  void Empty() override;
+  void Clear() override;
 
   // Specific to selection
   int MouseIsOnWhichItem(const Point2i & mousePosition) const;
@@ -97,9 +97,9 @@ public:
                     Font::font_size_t fsize = Font::FONT_SMALL,
                     Font::font_style_t fstyle = Font::FONT_BOLD,
                     const Color & color = white_color);
-  virtual void RemoveSelected();
-  virtual void Empty() { m_values.clear(); SelectBox::Empty(); }
-  virtual void Clear() { m_values.clear(); SelectBox::Clear(); }
+  void RemoveSelected() override;
+  void Empty() override { m_values.clear(); SelectBox::Empty(); }
+  void Clear() override { m_values.clear(); SelectBox::Clear(); }
 
   const void* GetSelectedValue() const { return (selected_item==-1) ? NULL : m_values[selected_item]; }
   // Our accessors somewhat ensures that this is a label, but beware

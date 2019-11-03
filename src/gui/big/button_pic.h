@@ -39,12 +39,12 @@ public:
             const Point2i & size);
   ButtonPic(Profile * profile,
             const xmlNode * buttonPicNode);
-  virtual ~ButtonPic();
+  ~ButtonPic() override;
 
-  virtual bool LoadXMLConfiguration(void);
+  bool LoadXMLConfiguration(void) override;
 
-  virtual void Draw(const Point2i& mousePosition);
-  virtual void Pack();
+  void Draw(const Point2i& mousePosition) override;
+  void Pack() override;
 };
 
 #endif

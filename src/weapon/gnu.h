@@ -35,26 +35,26 @@ private:
 public:
   GnuLauncher();
 
-  virtual void SignalEndOfProjectile();
-  virtual void SignalProjectileCollision() { };
-  virtual void SignalProjectileDrowning() { };
+  void SignalEndOfProjectile() override;
+  void SignalProjectileCollision() override { };
+  void SignalProjectileDrowning() override { };
 
-  bool IsOnCooldownFromShot() const;
-  bool IsReady() const;
+  bool IsOnCooldownFromShot() const override;
+  bool IsReady() const override;
 
-  void StopShooting();
+  void StopShooting() override;
 
-  virtual bool IsPreventingLRMovement();
-  virtual bool IsPreventingJumps();
-  virtual bool IsPreventingWeaponAngleChanges();
+  bool IsPreventingLRMovement() override;
+  bool IsPreventingJumps() override;
+  bool IsPreventingWeaponAngleChanges() override;
 
-  void UpdateTranslationStrings();
-  std::string GetWeaponWinString(const char *TeamName, uint items_count) const;
+  void UpdateTranslationStrings() override;
+  std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
 
 protected:
-  virtual bool p_Shoot();
-  virtual void Refresh();
-  WeaponProjectile * GetProjectileInstance();
+  bool p_Shoot() override;
+  void Refresh() override;
+  WeaponProjectile * GetProjectileInstance() override;
 };
 
 #endif

@@ -47,14 +47,14 @@ class TileItem_Empty : public TileItem
 {
 public:
   TileItem_Empty() { };
-  ~TileItem_Empty() { };
+  ~TileItem_Empty() override { };
 
-  bool IsEmpty(const Point2i &/*pos*/) const { return true; };
+  bool IsEmpty(const Point2i &/*pos*/) const override { return true; };
   void Dig(const Point2i &/*position*/, const Surface& /*dig*/){};
   void Dig(const Point2i &/*center*/, const uint /*radius*/) {};
-  void Draw(const Point2i&) { };
-  bool IsTotallyEmpty() const { return true; };
-  bool NeedSynch() const { return false; }
+  void Draw(const Point2i&) override { };
+  bool IsTotallyEmpty() const override { return true; };
+  bool NeedSynch() const override { return false; }
 };
 
 class TileItem_NonEmpty : public TileItem
@@ -74,7 +74,7 @@ protected:
   void CheckEmptyField();
 
 public:
-  ~TileItem_NonEmpty() { delete[] m_empty_bitfield; }
+  ~TileItem_NonEmpty() override { delete[] m_empty_bitfield; }
 
   virtual bool CheckEmpty() = 0;
   virtual void ForceEmpty();
@@ -93,7 +93,7 @@ public:
     return m_is_empty;
   }
 
-  bool IsEmpty(const Point2i &pos) const
+  bool IsEmpty(const Point2i &pos) const override
   {
     ASSERT(!m_need_check_empty);
     return m_empty_bitfield[((pos.y<<CELL_BITS) + pos.x)>>3] & (1 << (pos.x&7));
@@ -102,10 +102,10 @@ public:
   uint16_t GetChecksum() const;
   uint16_t GetSynchsum() { m_need_resynch = false; return GetChecksum(); }
   void Dig(const Point2i &center, const uint radius);
-  bool IsTotallyEmpty() const { return false; };
+  bool IsTotallyEmpty() const override { return false; };
   Surface& GetSurface() { return m_surface; };
-  void Draw(const Point2i &pos);
-  bool NeedSynch() const { return m_need_resynch; }
+  void Draw(const Point2i &pos) override;
+  bool NeedSynch() const override { return m_need_resynch; }
 };
 
 class TileItem_BaseColorKey : public TileItem_NonEmpty
@@ -120,11 +120,11 @@ protected:
 public:
   static const Uint32 COLOR_KEY = 0xFF00FF;
 
-  void ForceEmpty();
-  void MergeSprite(const Point2i &position, Surface& spr);
+  void ForceEmpty() override;
+  void MergeSprite(const Point2i &position, Surface& spr) override;
 
-  void Dig(const Point2i &position, const Surface& dig);
-  bool CheckEmpty();
+  void Dig(const Point2i &position, const Surface& dig) override;
+  bool CheckEmpty() override;
 };
 
 class TileItem_ColorKey16: public TileItem_BaseColorKey
@@ -134,9 +134,9 @@ public:
     : TileItem_BaseColorKey(16, threshold) { };
   TileItem_ColorKey16(void *pixels, int stride, uint8_t threshold);
 
-  void Empty(int start_x, int end_x, uint8_t* buf);
-  void Darken(int start_x, int end_x, uint8_t* buf);
-  void ScalePreview(uint8_t *odata, int x, uint opitch, uint shift);
+  void Empty(int start_x, int end_x, uint8_t* buf) override;
+  void Darken(int start_x, int end_x, uint8_t* buf) override;
+  void ScalePreview(uint8_t *odata, int x, uint opitch, uint shift) override;
 };
 
 class TileItem_ColorKey24: public TileItem_BaseColorKey
@@ -144,9 +144,9 @@ class TileItem_ColorKey24: public TileItem_BaseColorKey
 public:
   TileItem_ColorKey24(void *pixels, int stride, uint8_t threshold);
 
-  void Empty(int start_x, int end_x, uint8_t* buf);
-  void Darken(int start_x, int end_x, uint8_t* buf);
-  void ScalePreview(uint8_t *odata, int x, uint opitch, uint shift);
+  void Empty(int start_x, int end_x, uint8_t* buf) override;
+  void Darken(int start_x, int end_x, uint8_t* buf) override;
+  void ScalePreview(uint8_t *odata, int x, uint opitch, uint shift) override;
 };
 
 class TileItem_AlphaSoftware : public TileItem_NonEmpty
@@ -159,19 +159,19 @@ public:
   TileItem_AlphaSoftware(void *pixels, int stride, uint8_t threshold);
   // Fill as empty
 
-  void MergeSprite(const Point2i &position, Surface& spr)
+  void MergeSprite(const Point2i &position, Surface& spr) override
   {
     // Can't force SDL_SRCALPHA to 0 and blit, as it may affect non-empty pixels
     m_surface.MergeSurface(spr, position);
     ForceRecheck();
   }
 
-  bool CheckEmpty();
-  void ForceEmpty();
-  void Empty(int start_x, int end_x, uint8_t* buf);
-  void Darken(int start_x, int end_x, uint8_t* buf);
-  void Dig(const Point2i &position, const Surface& dig);
-  void ScalePreview(uint8_t *odata, int x, uint opitch, uint shift);
+  bool CheckEmpty() override;
+  void ForceEmpty() override;
+  void Empty(int start_x, int end_x, uint8_t* buf) override;
+  void Darken(int start_x, int end_x, uint8_t* buf) override;
+  void Dig(const Point2i &position, const Surface& dig) override;
+  void ScalePreview(uint8_t *odata, int x, uint opitch, uint shift) override;
 };
 
 TileItem_NonEmpty* NewEmpty(uint8_t bpp, uint8_t alpha_threshold);

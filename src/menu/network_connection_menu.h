@@ -68,13 +68,13 @@ private:
   uint m_last_click_on_games_lst;
   uint m_Double_click_interval;
 
-  virtual void OnClickUp(const Point2i &mousePosition, int button);
-  virtual void HandleEvent(const SDL_Event& evnt);
+  void OnClickUp(const Point2i &mousePosition, int button) override;
+  void HandleEvent(const SDL_Event& evnt) override;
 
   void DisplayNetError(connection_state_t conn);
 
-  virtual bool signal_ok();
-  virtual bool signal_cancel();
+  bool signal_ok() override;
+  bool signal_cancel() override;
 
   void __RefreshList();
 
@@ -91,7 +91,7 @@ private:
 public:
   static void ThreadRefreshList();
   NetworkConnectionMenu(network_menu_action_t action);
-  ~NetworkConnectionMenu();
+  ~NetworkConnectionMenu() override;
 };
 
 #endif

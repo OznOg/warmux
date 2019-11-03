@@ -28,18 +28,18 @@
 class NetworkLocal : public Network
 {
 protected:
-  virtual void HandleAction(Action* /*a*/, DistantComputer* /*sender*/) { ASSERT(false) };
-  virtual void WaitActionSleep() { ASSERT(false) };
-  virtual void SendAction(const Action&, DistantComputer*, bool, bool) const { }
+  void HandleAction(Action* /*a*/, DistantComputer* /*sender*/) override { ASSERT(false) };
+  void WaitActionSleep() override { ASSERT(false) };
+  void SendAction(const Action&, DistantComputer*, bool, bool) const override { }
 
 public:
   NetworkLocal();
-  ~NetworkLocal() { }
+  ~NetworkLocal() override { }
 
   virtual bool IsConnected() const { return false; }
-  virtual bool IsLocal() const { return true; }
+  bool IsLocal() const override { return true; }
 
-  virtual void CloseConnection(std::list<DistantComputer*>::iterator) { };
+  void CloseConnection(std::list<DistantComputer*>::iterator) override { };
   void SendMapsList() { };
 };
 

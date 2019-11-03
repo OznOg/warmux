@@ -30,12 +30,12 @@ class FireParticle : public Particle
   int oscil_delta;
 public:
   FireParticle();
-  ~FireParticle();
-  void Refresh();
-  void Draw();
+  ~FireParticle() override;
+  void Refresh() override;
+  void Draw() override;
 protected:
-  void SignalDrowning();
-  void SignalOutOfMap();
+  void SignalDrowning() override;
+  void SignalOutOfMap() override;
 };
 
 #endif /* FIRE_H */

@@ -159,7 +159,7 @@ public:
   WeaponMember(void) : Member("weapon") { }
   void Draw(const Point2i & _pos,
             int             flip_x,
-            LRDirection   direction);
+            LRDirection   direction) override;
 };
 
 #endif //MEMBER_H

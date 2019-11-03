@@ -36,20 +36,20 @@ public:
   GameBlitz();
 
   // Overload it to retrieve teams.
-  bool Run();
+  bool Run() override;
 
   // Get remaining time to play
-  uint GetRemainingTime() const;
-  bool IsGameFinished() const;
-  void EndOfGame();
+  uint GetRemainingTime() const override;
+  bool IsGameFinished() const override;
+  void EndOfGame() override;
 
 private:
   std::map<uint, uint> times;
 
-  void RefreshClock();
-  void __SetState_PLAYING();
-  void __SetState_HAS_PLAYED();
-  void __SetState_END_TURN();
+  void RefreshClock() override;
+  void __SetState_PLAYING() override;
+  void __SetState_HAS_PLAYED() override;
+  void __SetState_END_TURN() override;
 
   time_iterator GetCurrentTeam();
   time_iterator KillGroup(time_iterator cur);

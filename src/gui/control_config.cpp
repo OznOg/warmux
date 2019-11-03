@@ -130,13 +130,13 @@ public:
     AddWidget(label_key);
   }
 
-  virtual Widget* ClickUp(const Point2i &mousePosition, uint button)
+  Widget* ClickUp(const Point2i &mousePosition, uint button) override
   {
     WidgetList::ClickUp(mousePosition, button);
     return NULL;
   }
 
-  virtual bool SendKey(const SDL_keysym & key)
+  bool SendKey(const SDL_keysym & key) override
   {
     SDLKey key_code = key.sym;
 
@@ -235,7 +235,7 @@ public:
     return true;
   }
 
-  virtual void Pack()
+  void Pack() override
   {
     // First this so that HBox::Pack does not reset label_key width back
     // to its minimal value
@@ -309,7 +309,7 @@ public:
     SetBackgroundColor(light_gray_color);
   }
 
-  virtual void Pack()
+  void Pack() override
   {
     // First this so that HBox::Pack does not reset label_key width back
     // to its minimal value

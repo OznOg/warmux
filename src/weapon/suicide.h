@@ -31,14 +31,14 @@ class Suicide : public Weapon
   private:
     SoundSample suicide_sound;
   protected:
-    bool p_Shoot();
-    void Refresh();
+    bool p_Shoot() override;
+    void Refresh() override;
   public:
     Suicide();
     ExplosiveWeaponConfig &cfg();
 
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
 };
 
 #endif /* SUICIDE_H */

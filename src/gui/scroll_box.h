@@ -65,8 +65,8 @@ protected:
   ScrollMode   scroll_mode;
   bool         vertical;
 
-  virtual void __Update(const Point2i & mousePosition,
-                        const Point2i & lastMousePosition);
+  void __Update(const Point2i & mousePosition,
+                        const Point2i & lastMousePosition) override;
   Rectanglei GetScrollThumb() const;
   Rectanglei GetScrollTrack() const
   {
@@ -100,23 +100,23 @@ protected:
 
 public:
   ScrollBox(const Point2i & size, bool force = true, bool alternate = false, bool vertical=true);
-  virtual ~ScrollBox();
+  ~ScrollBox() override;
 
   // No need for a Draw method: the additional stuff drawn is made by Update
-  virtual bool Update(const Point2i &mousePosition,
-                      const Point2i &lastMousePosition);
-  virtual Widget* Click(const Point2i & mousePosition, uint button);
-  virtual Widget* ClickUp(const Point2i & mousePosition, uint button);
-  virtual bool SendKey(const SDL_keysym & key);
-  virtual void Pack();
+  bool Update(const Point2i &mousePosition,
+                      const Point2i &lastMousePosition) override;
+  Widget* Click(const Point2i & mousePosition, uint button) override;
+  Widget* ClickUp(const Point2i & mousePosition, uint button) override;
+  bool SendKey(const SDL_keysym & key) override;
+  void Pack() override;
 
   // to add a widget
-  virtual bool Contains(const Point2i & point) const
+  bool Contains(const Point2i & point) const override
   {
     return scroll_mode != SCROLL_MODE_NONE || Widget::Contains(point);
   }
-  virtual void AddWidget(Widget* widget);
-  virtual void RemoveWidget(Widget* w) { box->RemoveWidget(w); }
+  void AddWidget(Widget* widget) override;
+  void RemoveWidget(Widget* w) override { box->RemoveWidget(w); }
   virtual void RemoveFirstWidget()
   {
     Widget *w = box->GetFirstWidget();
@@ -124,15 +124,15 @@ public:
       RemoveWidget(w);
     }
   }
-  virtual size_t WidgetCount() const { return box->WidgetCount(); }
-  virtual void Empty() { offset = 0; box->Empty(); }
-  virtual void Clear() { offset = 0; box->Clear(); }
+  size_t WidgetCount() const override { return box->WidgetCount(); }
+  void Empty() override { offset = 0; box->Empty(); }
+  void Clear() override { offset = 0; box->Clear(); }
   void SetMargin(uint margin) { box->SetMargin(margin); }
   uint GetMargin() { return box->GetMargin(); }
   int GetTrackDimension() const;
   void SetExtraWidthMode() { nonselectable_width = size.x/2; }
 
-  virtual bool IsScrolling();
+  bool IsScrolling() override;
 
 };
 

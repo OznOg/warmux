@@ -31,12 +31,12 @@
 class Dynamite : public WeaponLauncher
 {
   protected:
-    bool p_Shoot();
-    WeaponProjectile * GetProjectileInstance();
-    virtual bool ShouldBeDrawn();
+    bool p_Shoot() override;
+    WeaponProjectile * GetProjectileInstance() override;
+    bool ShouldBeDrawn() override;
   public:
     Dynamite();
-    void UpdateTranslationStrings();
-    std::string GetWeaponWinString(const char *TeamName, uint items_count) const;
+    void UpdateTranslationStrings() override;
+    std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
 };
 #endif /* DYNAMITE_H */

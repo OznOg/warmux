@@ -28,10 +28,10 @@ class GameClassic : public Game
 {
   uint duration;
 
-  void RefreshClock();
-  void __SetState_PLAYING();
-  void __SetState_HAS_PLAYED();
-  void __SetState_END_TURN();
+  void RefreshClock() override;
+  void __SetState_PLAYING() override;
+  void __SetState_HAS_PLAYED() override;
+  void __SetState_END_TURN() override;
 
   void ApplyDeathMode () const;
 
@@ -39,8 +39,8 @@ public:
   GameClassic();
 
   // Get remaining time to play
-  uint GetRemainingTime() const;
-  bool IsGameFinished() const;
-  void EndOfGame();
+  uint GetRemainingTime() const override;
+  bool IsGameFinished() const override;
+  void EndOfGame() override;
 };
 #endif // GAME_CLASSIC_H

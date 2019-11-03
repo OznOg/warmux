@@ -42,7 +42,7 @@ class GunBullet : public WeaponBullet
     GunBullet(ExplosiveWeaponConfig& cfg,
               WeaponLauncher * p_launcher);
   protected:
-    void ShootSound();
+    void ShootSound() override;
 };
 
 GunBullet::GunBullet(ExplosiveWeaponConfig& cfg,

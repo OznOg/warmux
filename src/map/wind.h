@@ -41,9 +41,9 @@ class WindParticle : public PhysicalObj
 public:
   WindParticle(const std::string & xml_file, 
                Double scale);
-  ~WindParticle();
-  void Draw();
-  void Refresh();
+  ~WindParticle() override;
+  void Draw() override;
+  void Refresh() override;
 };
 
 class Wind : public Singleton<Wind>
@@ -58,7 +58,7 @@ class Wind : public Singleton<Wind>
   void RandomizeParticlesPos(); // Put particles randomly on the screen
 
   Wind();
-  ~Wind() { RemoveAllParticles(); }
+  ~Wind() override { RemoveAllParticles(); }
   friend class Singleton<Wind>;
 
 public:

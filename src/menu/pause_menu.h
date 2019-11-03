@@ -39,26 +39,26 @@ private:
 
   Menu* sub_menu;
 
-  bool signal_ok();
-  bool signal_cancel();
+  bool signal_ok() override;
+  bool signal_cancel() override;
 
   void BackToMainMenu();
   void BackToGame();
   void RunOptionsMenu();
   void RunHelpMenu();
 
-  void Draw(const Point2i &mousePosition);
+  void Draw(const Point2i &mousePosition) override;
 
-  void OnClick(const Point2i &mousePosition, int button);
-  void OnClickUp(const Point2i &mousePosition, int button);
+  void OnClick(const Point2i &mousePosition, int button) override;
+  void OnClickUp(const Point2i &mousePosition, int button) override;
 
  public:
   PauseMenu(bool& exit_game);
-  ~PauseMenu();
+  ~PauseMenu() override;
 
   // Those are needed because PauseMenu might have those called through
   // a callback while displaying a submenu
-  void RedrawMenu();
+  void RedrawMenu() override;
   void DisplayError(const std::string &msg);
 };
 

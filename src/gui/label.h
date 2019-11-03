@@ -42,11 +42,11 @@ public:
   Label(Profile * profile,
         const xmlNode * pictureNode);
   Label(void) {}
-  virtual ~Label();
+  ~Label() override;
 
-  virtual bool LoadXMLConfiguration(void);
-  virtual void Draw(const Point2i & mousePosition);
-  virtual void Pack();
+  bool LoadXMLConfiguration(void) override;
+  void Draw(const Point2i & mousePosition) override;
+  void Pack() override;
 
   void SetText(const std::string & new_txt);
 };
