@@ -157,7 +157,7 @@ msgstr "Lag %s har oändligt med ammunition för %s!"
 msgid "%s team has skipped its turn."
 msgstr "Lag %s har hoppade över sin omgång."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -193,7 +193,7 @@ msgstr[1] ""
 "Lag %s har belönats med %u tryckluftsborr. För inte för mycket oväsen med "
 "dem! Tack, kära granne."
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -242,7 +242,7 @@ msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "Lag %s har belönats med %u studsboll! Boing!"
 msgstr[1] "Lag %s har belönats med %u studsbollar! Boing!"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -278,7 +278,7 @@ msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "Lag %s har belönats med %u eldkastare!"
 msgstr[1] "Lag %s har belönats med %u eldkastare!"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -567,7 +567,7 @@ msgstr ""
 "Avfyra : mellanslag\n"
 "en träff per omgång"
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "Städ"
 
@@ -790,11 +790,11 @@ msgstr "Klientläge"
 msgid "Clumsiest"
 msgstr "Klumpigast"
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "Splitterbomb"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 msgid "Cluzooka"
 msgstr "Klustergevär"
 
@@ -1066,7 +1066,7 @@ msgstr "Spelnamn:"
 msgid "Flame Thrower"
 msgstr "Eldkastare"
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 msgid "Football Bomb"
 msgstr "Am. fotbollsbomb"
 
@@ -1238,7 +1238,7 @@ msgstr ""
 msgid "Initial energy"
 msgstr "Initial energi"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 #, fuzzy
 msgid ""
@@ -2075,11 +2075,11 @@ msgstr ""
 msgid "Teleportation"
 msgstr "Teleportering"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Splitterbomben har lämnat slagfältet innan den kunde explodera."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr ""
 "Den amerikanska fotbollsbomben har lämnat slagfältet innan den kunde "
@@ -2147,7 +2147,7 @@ msgstr "De andra väntar på dig! Vakna! :-)"
 msgid "The parachute is activated automatically."
 msgstr "Fallskärmen aktiveras automatiskt."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Raketen har lämnat slagfältet..."
@@ -2193,7 +2193,7 @@ msgid ""
 "Click to pause"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 #, fuzzy
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
@@ -2326,7 +2326,7 @@ msgid ""
 "Press space till desired strength"
 msgstr ""
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 #, fuzzy
 msgid ""
 "Usage: left click on the target\n"
@@ -2506,7 +2506,7 @@ msgstr "Du behöver åtminstone två giltiga lag!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "Du kommer inte att kunna spela innan du har valt ett lag!"
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "Ditt skott missade!"
 

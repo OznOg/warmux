@@ -55,7 +55,7 @@ public:
   void Detection();
   bool IsImmobile() const override;
   // Damage handling
-  void SetEnergyDelta(int delta, bool do_report = true) override;
+  void SetEnergyDelta(int /*delta*/, Character * /*dealer*/) override;
 
   void Draw() override;
   void Refresh() override;

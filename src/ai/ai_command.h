@@ -127,7 +127,6 @@ public:
 class SetDirectionCommand : public AICommand
 {
   LRDirection direction;
-  bool turning;
   CommandList * commands;
 public:
   SetDirectionCommand(LRDirection direction);

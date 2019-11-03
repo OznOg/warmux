@@ -63,7 +63,7 @@ public:
   void NeedRedrawing() override;
 
   // methods specialized from Widget to manage the list of widgets
-  virtual bool SendKey(SDL_keysym key);
+  bool SendKey(const SDL_keysym &key) override;
   Widget* Click(const Point2i &mousePosition, uint button) override;
   Widget* ClickUp(const Point2i &mousePosition, uint button) override;
 

@@ -161,7 +161,7 @@ msgstr "%s es un psicòpata!!, ha mort a un membre des seu equip %s"
 msgid "%s team has skipped its turn."
 msgstr "%s ha perdut es seu torn."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -193,7 +193,7 @@ msgid_plural ""
 msgstr[0] "L'equip %s aconsegueix %u martell volador!"
 msgstr[1] "L'equip %s aconsegueix %u martells voladors!"
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -238,7 +238,7 @@ msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "L'equip %s aconsegueix %u pilota!"
 msgstr[1] "L'equip %s aconsegueix %u pilotes!"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -274,7 +274,7 @@ msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "L'equip %s aconsegueix %u llançaflames!"
 msgstr[1] "L'equip %s aconsegueix %u llançaflames!"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -555,7 +555,7 @@ msgstr ""
 "Foc: barra espaciadora\n"
 "un tir per torn "
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "Enclusa"
 
@@ -780,11 +780,11 @@ msgstr "Client"
 msgid "Clumsiest"
 msgstr "El més maldestre"
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "Bomba de fragmentació"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 msgid "Cluzooka"
 msgstr "Bazooka"
 
@@ -1059,7 +1059,7 @@ msgstr "Nom de joc:"
 msgid "Flame Thrower"
 msgstr "Llançaflames"
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 msgid "Football Bomb"
 msgstr "Pantalla completa?"
 
@@ -1233,7 +1233,7 @@ msgstr ""
 msgid "Initial energy"
 msgstr "Energia inicial"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 #, fuzzy
 msgid ""
@@ -2080,13 +2080,13 @@ msgstr ""
 msgid "Teleportation"
 msgstr "Teletransportació"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr ""
 "La bomba de fragmentació ha abandonat el camp de batalla abans que pogués "
 "explotar."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr ""
 "La bomba de fragmentació ha abandonat es camp de batalla abans de poder "
@@ -2161,7 +2161,7 @@ msgstr "Tots estan esperant! Venja que tots estan per tu :-) "
 msgid "The parachute is activated automatically."
 msgstr "El paracaigudes s'activa automàticament."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "El coet ha anat a un altre mon..."
@@ -2207,7 +2207,7 @@ msgid ""
 "Click to pause"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 #, fuzzy
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
@@ -2341,7 +2341,7 @@ msgid ""
 "Press space till desired strength"
 msgstr ""
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 #, fuzzy
 msgid ""
 "Usage: left click on the target\n"
@@ -2529,7 +2529,7 @@ msgstr "Tu necesites almenys dos equips vàlids!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "No podràs jugar abans de seleccionar un equip!"
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "Has fallat el tir!"
 

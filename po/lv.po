@@ -158,7 +158,7 @@ msgstr "%s komandai jau ir bezgalīgs daudzums munīcijas priekš %s!"
 msgid "%s team has skipped its turn."
 msgstr "%s komnda izlaiž gājienu."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, fuzzy, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -194,7 +194,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, fuzzy, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -245,7 +245,7 @@ msgstr[0] "%s komanda ir ieguvusi %u lēkājošo bumbu!"
 msgstr[1] "%s komanda ir ieguvusi %u lēkājošās bumbas!"
 msgstr[2] "%s komanda ir ieguvusi %u lēkājošās bumbas!"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, fuzzy, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -286,7 +286,7 @@ msgstr[0] "%s komanda ir ieguvusi %u dinamītu!"
 msgstr[1] "%s komanda ir ieguvusi %u dinamītus!"
 msgstr[2] "%s komanda ir ieguvusi %u dinamītus!"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, fuzzy, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -586,7 +586,7 @@ msgstr ""
 "Šaušana : platais taustiņš (atstarpe)\n"
 "šāviens gājienā"
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "Lakta"
 
@@ -811,11 +811,11 @@ msgstr "Klienta režīms"
 msgid "Clumsiest"
 msgstr "Visneveiklākais"
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "Ķekarbumba"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 #, fuzzy
 msgid "Cluzooka"
 msgstr "Bazuka"
@@ -1081,7 +1081,7 @@ msgstr ""
 msgid "Flame Thrower"
 msgstr ""
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 #, fuzzy
 msgid "Football Bomb"
 msgstr "Dumpja bumba"
@@ -1254,7 +1254,7 @@ msgstr ""
 msgid "Initial energy"
 msgstr "Enerģija"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 #, fuzzy
 msgid ""
@@ -2097,11 +2097,11 @@ msgstr ""
 msgid "Teleportation"
 msgstr "Teleportācija"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Ķekarbumba nokrita no spēles laukuma pirms paguva uzsprāgt."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 #, fuzzy
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "Ķekarbumba nokrita no spēles laukuma pirms paguva uzsprāgt."
@@ -2171,7 +2171,7 @@ msgstr "Citi gaida uz tevi! Dari kaut ko :-)"
 msgid "The parachute is activated automatically."
 msgstr "Parašūts aktivizējas automātiski."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Raķete izgāja no spēles laukuma..."
@@ -2219,7 +2219,7 @@ msgid ""
 "Click to pause"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 #, fuzzy
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
@@ -2351,7 +2351,7 @@ msgid ""
 "Press space till desired strength"
 msgstr ""
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 #, fuzzy
 msgid ""
 "Usage: left click on the target\n"
@@ -2534,7 +2534,7 @@ msgstr "Jums nepieciešamas vismaz divas derīgas komandas !"
 msgid "You won't be able to play before selecting a team!"
 msgstr ""
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "Jūs netrāpijāt!"
 

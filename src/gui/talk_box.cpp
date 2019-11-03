@@ -82,7 +82,7 @@ bool TalkBox::TextHasFocus() const
   return line_to_send_tbox->HasFocus();
 }
 
-bool TalkBox::SendKey(SDL_keysym key)
+bool TalkBox::SendKey(const SDL_keysym &key)
 {
   bool r = false;
 

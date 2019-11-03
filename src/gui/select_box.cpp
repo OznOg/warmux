@@ -176,7 +176,7 @@ void SelectBox::RemoveSelected()
     SetFocusOnPreviousWidget();
     RemoveWidget(m_items[selected_item]);
     m_items.erase(m_items.begin() + selected_item);
-    selected_item =- 1;
+    selected_item = -1;
   }
   NeedRedrawing();
 }

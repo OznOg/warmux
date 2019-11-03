@@ -57,7 +57,10 @@ public:
   void Refresh() override;
   virtual void Shoot(Double strength);
   bool IsImmobile() const override;
-  virtual void SetEnergyDelta(int delta, bool do_report = true);
+  void SetEnergyDelta(int /*delta*/, Character * /*dealer*/) override {
+      // Don't call Explosion here, we're already in an explosion
+      m_energy = 0;
+  }
 
   void IncrementTimeOut();
   void DecrementTimeOut();

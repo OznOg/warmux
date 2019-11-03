@@ -164,7 +164,7 @@ msgstr "Drużyna %s posiada już nieograniczoną liczbę amunicji dla %s!"
 msgid "%s team has skipped its turn."
 msgstr "Drużyna %s pominęła swoją turę."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -209,7 +209,7 @@ msgstr[2] ""
 "Drużyna %s zyskała %u młotów pneumatycznych! Nie rób nimi zbyt wiele hałasu. "
 "Dziękujemy, twoi sąsiedzi."
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -266,7 +266,7 @@ msgstr[0] "Drużyna %s zyskała %u odbijającą się kulę! Bęc!"
 msgstr[1] "Drużyna %s zyskała %u odbijające się kule! Bęc!"
 msgstr[2] "Drużyna %s zyskała %u odbijających się kuli! Bęc!"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -311,7 +311,7 @@ msgstr[0] "Drużyna %s zyskała %u miotacz płomieni!"
 msgstr[1] "Drużyna %s zyskała %u miotacze płomieni!"
 msgstr[2] "Drużyna %s zyskała %u miotaczy płomieni!"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -619,7 +619,7 @@ msgstr ""
 "Strzał: spacja\n"
 "Jeden strzał na turę"
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "Kowadło"
 
@@ -848,11 +848,11 @@ msgstr "Tryb klienta"
 msgid "Clumsiest"
 msgstr "Naj. niezdarny"
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "Bomba rozpryskowa"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 msgid "Cluzooka"
 msgstr "Granatnik"
 
@@ -1127,7 +1127,7 @@ msgstr "Nazwa pliku:"
 msgid "Flame Thrower"
 msgstr "Miotacz płomieni"
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 msgid "Football Bomb"
 msgstr "Bomba futbolowa"
 
@@ -1306,7 +1306,7 @@ msgstr "Widok w grze"
 msgid "Initial energy"
 msgstr "Energia początkowa"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 msgid ""
 "Initial fire angle: Up/Down\n"
@@ -2158,11 +2158,11 @@ msgstr "Drużyny według malejącej energii"
 msgid "Teleportation"
 msgstr "Teleportacja"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Bomba rozpryskowa opuściła pole bitwy zanim mogła wybuchnąć."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "Bomba futbolowa opuściła pole bitwy zanim mogła wybuchnąć."
 
@@ -2230,7 +2230,7 @@ msgstr "Inne drużyny czekają na Ciebie! Obudź się :-)"
 msgid "The parachute is activated automatically."
 msgstr "Spadochron jest aktywowany automatycznie."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Rakieta opuściła pole bitwy..."
@@ -2281,7 +2281,7 @@ msgstr ""
 "Czas pozostały w tej turze i czas, który upłynął od rozpoczęcia gry.\n"
 "Kliknij, aby zatrzymać"
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
 "Angle: Up/Down\n"
@@ -2417,7 +2417,7 @@ msgstr ""
 "Ustaw zapalnik na 1-6 używając +/- lub klawiszy 1-6\n"
 "Naciśnij i przytrzymaj spację aż do uzyskania pożądanej siły"
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 msgid ""
 "Usage: left click on the target\n"
 "Anvil kill all characters beneath.\n"
@@ -2597,7 +2597,7 @@ msgstr "Musisz ustawić przynajmniej dwie prawidłowe drużyny!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "Nie można rozpocząć gry przed wybraniem drużyny!"
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "Pudło!"
 

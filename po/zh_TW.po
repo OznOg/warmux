@@ -153,7 +153,7 @@ msgstr "%s 隊已經有無限發 %s 彈藥了！"
 msgid "%s team has skipped its turn."
 msgstr "%s 隊跳過一回合。"
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -181,7 +181,7 @@ msgid_plural ""
 "your neighbours."
 msgstr[0] "%s 隊得到了 %u 台氣動鎚！不要製造噪音，謝謝！您的鄰居敬上。"
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -220,7 +220,7 @@ msgid "%s team has won %u bounce ball! Boing!"
 msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "%s 隊得到了 %u 顆彈跳球！蹦蹦蹦！"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -251,7 +251,7 @@ msgid "%s team has won %u flame-thrower!"
 msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "%s 隊得到了 %u 把火焰噴射器！"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -503,7 +503,7 @@ msgstr ""
 "發射：空白鍵\n"
 "每回合一發"
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "鐵砧"
 
@@ -732,11 +732,11 @@ msgstr "客人模式"
 msgid "Clumsiest"
 msgstr "最蠢的"
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "集束炸彈"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 msgid "Cluzooka"
 msgstr "集束火箭筒"
 
@@ -1005,7 +1005,7 @@ msgstr "檔案名稱："
 msgid "Flame Thrower"
 msgstr "火焰噴射器"
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 msgid "Football Bomb"
 msgstr "橄欖球炸彈"
 
@@ -1181,7 +1181,7 @@ msgstr "遊戲內顯示"
 msgid "Initial energy"
 msgstr "起始生命值"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 msgid ""
 "Initial fire angle: Up/Down\n"
@@ -2040,11 +2040,11 @@ msgstr ""
 msgid "Teleportation"
 msgstr "傳送機"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "集束炸彈在爆炸之前飛出戰場。"
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "橄欖球炸彈在爆炸之前跑到界外去了。"
 
@@ -2110,7 +2110,7 @@ msgstr "快醒來！其他人在等你呢！:-)"
 msgid "The parachute is activated automatically."
 msgstr "降落傘會自動啟動。"
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "火箭飛到戰場外了..."
@@ -2158,7 +2158,7 @@ msgstr ""
 "以及遊戲進行多久。\n"
 "點選它將會暫停"
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
 "Angle: Up/Down\n"
@@ -2292,7 +2292,7 @@ msgstr ""
 "設定倒數 1-6 秒：使用 +/- 或是 1-6 鍵\n"
 "按住空白鍵累積所需力量"
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 msgid ""
 "Usage: left click on the target\n"
 "Anvil kill all characters beneath.\n"
@@ -2467,7 +2467,7 @@ msgstr "至少需要兩組有效隊伍！"
 msgid "You won't be able to play before selecting a team!"
 msgstr "沒有任何隊伍，遊戲是無法開始的！"
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "子彈打歪了！"
 

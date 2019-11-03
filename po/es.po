@@ -159,7 +159,7 @@ msgstr "¡el equipo %s ahora tiene municion infinita para %s!"
 msgid "%s team has skipped its turn."
 msgstr "%s ha perdido su turno."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -196,7 +196,7 @@ msgstr[1] ""
 "¡El equipo %s ha conseguido %u martillos voladores! No hagas demasiado ruido "
 "con ellos! Gracias! Vuestros vecinos."
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -241,7 +241,7 @@ msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "¡El equipo %s ha conseguido %u pelota!"
 msgstr[1] "¡El equipo %s ha conseguido %u pelotas!"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -281,7 +281,7 @@ msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "¡El equipo %s ha conseguido %u lanzallamas!"
 msgstr[1] "¡El equipo %s ha conseguido %u lanzallamas!"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -570,7 +570,7 @@ msgstr ""
 "Fuego: barra espaciadora\n"
 "un tiro por turno"
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "Yunque"
 
@@ -793,11 +793,11 @@ msgstr "Modo cliente"
 msgid "Clumsiest"
 msgstr "El más torpe"
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "Granada de fragmentación"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 msgid "Cluzooka"
 msgstr "Bazooka"
 
@@ -1070,7 +1070,7 @@ msgstr "Nombre de juego:"
 msgid "Flame Thrower"
 msgstr "Lanzallamas"
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 msgid "Football Bomb"
 msgstr "Bomba de futbol"
 
@@ -1242,7 +1242,7 @@ msgstr ""
 msgid "Initial energy"
 msgstr "Energia inicial"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 #, fuzzy
 msgid ""
@@ -2083,13 +2083,13 @@ msgstr ""
 msgid "Teleportation"
 msgstr "Teletransportación"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr ""
 "La bomba de fragmentación ha abandonado el campo de batalla antes de que "
 "pudiera explotar."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr ""
 "La bomba de fragmentación ha abandonado el campo de batalla antes de que "
@@ -2155,7 +2155,7 @@ msgstr "¡Todos están esperando! Venga que todos están por ti :-)"
 msgid "The parachute is activated automatically."
 msgstr "El paracaídas se activa automáticamente."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "El cohete ha ido a otro mundo..."
@@ -2203,7 +2203,7 @@ msgid ""
 "Click to pause"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 #, fuzzy
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
@@ -2336,7 +2336,7 @@ msgid ""
 "Press space till desired strength"
 msgstr ""
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 #, fuzzy
 msgid ""
 "Usage: left click on the target\n"
@@ -2519,7 +2519,7 @@ msgstr "¡Necesitas al menos dos equipos válidos!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "¡No podrás jugar antes de seleccionar un equipo!"
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "¡Has fallado el tiro!"
 

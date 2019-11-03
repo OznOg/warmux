@@ -155,7 +155,7 @@ msgstr "Meeskonnal %s on nüüd %s jaoks lõputult laskemoona!"
 msgid "%s team has skipped its turn."
 msgstr "Meeskond %s jäi vahele."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -191,7 +191,7 @@ msgstr[1] ""
 "Meeskond %s võitis %u suruõhuhaamrit! Ära kasuta lärmakaid kodumasinaid "
 "peale kella 11!"
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -240,7 +240,7 @@ msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "Meeskond %s võitis %u põrkepalli! Boing!"
 msgstr[1] "Meeskond %s võitis %u põrkepalli! Boing!"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -276,7 +276,7 @@ msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "Meeskond %s võitis %u leegiheitja!"
 msgstr[1] "Meeskond %s võitis %u leegiheitjat!"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -559,7 +559,7 @@ msgstr ""
 "Tulistamine : tühik\n"
 "üks lask käigu kohta"
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "Alasi"
 
@@ -784,11 +784,11 @@ msgstr "Kliendire¸iim"
 msgid "Clumsiest"
 msgstr "Lollakaim"
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "Kildgranaat"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 msgid "Cluzooka"
 msgstr "Granaadiheitja"
 
@@ -1055,7 +1055,7 @@ msgstr "Mängu nimi:"
 msgid "Flame Thrower"
 msgstr "Leegiheitja"
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 msgid "Football Bomb"
 msgstr "Jalgpomm"
 
@@ -1229,7 +1229,7 @@ msgstr ""
 msgid "Initial energy"
 msgstr "Elupunkte alguses"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 #, fuzzy
 msgid ""
@@ -2070,11 +2070,11 @@ msgstr ""
 msgid "Teleportation"
 msgstr "Teleport"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Granaat lahkus mänguväljalt enne, kui see jõudis plahvatada."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "Jalgpomm lahkus mänguväljalt enne, kui see jõudis plahvatada."
 
@@ -2145,7 +2145,7 @@ msgstr "Teised ootavad sinu järel! Ärka üles!"
 msgid "The parachute is activated automatically."
 msgstr "Langevari avaneb automaatselt."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Rakett lahkus mänguväljalt enne, kui see jõudis plahvatada."
@@ -2191,7 +2191,7 @@ msgid ""
 "Click to pause"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 #, fuzzy
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
@@ -2325,7 +2325,7 @@ msgid ""
 "Press space till desired strength"
 msgstr ""
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 #, fuzzy
 msgid ""
 "Usage: left click on the target\n"
@@ -2510,7 +2510,7 @@ msgstr "Sul on vaja vähemalt kahte meeskonda!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "Sa ei saa mängida enne, kui oled meeskonna valinud!"
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "Mööda lasid!"
 

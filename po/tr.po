@@ -156,7 +156,7 @@ msgstr "%s takımı zaten %s için sınırsız cephaneye sahip!"
 msgid "%s team has skipped its turn."
 msgstr "%s takımı sırasını atladı."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, fuzzy, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -184,7 +184,7 @@ msgid_plural ""
 "your neighbours."
 msgstr[0] ""
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, fuzzy, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -223,7 +223,7 @@ msgid "%s team has won %u bounce ball! Boing!"
 msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "%s takımı %u %s kazandı!"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, fuzzy, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -254,7 +254,7 @@ msgid "%s team has won %u flame-thrower!"
 msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "%s takımı %u %s kazandı!"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, fuzzy, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -504,7 +504,7 @@ msgid ""
 "a hit per turn"
 msgstr ""
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "Örs"
 
@@ -725,11 +725,11 @@ msgstr ""
 msgid "Clumsiest"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "Şarapnelli Bomba"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 #, fuzzy
 msgid "Cluzooka"
 msgstr "Bazuka"
@@ -994,7 +994,7 @@ msgstr ""
 msgid "Flame Thrower"
 msgstr ""
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 #, fuzzy
 msgid "Football Bomb"
 msgstr "Ses Bombası"
@@ -1165,7 +1165,7 @@ msgstr ""
 msgid "Initial energy"
 msgstr "Başlangıç enerjisi"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 msgid ""
 "Initial fire angle: Up/Down\n"
@@ -1998,11 +1998,11 @@ msgstr ""
 msgid "Teleportation"
 msgstr "Işınlanma"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Şarapnel Bombası patlamadan, savaş alanını terketti."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 #, fuzzy
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "Şarapnel Bombası patlamadan, savaş alanını terketti."
@@ -2071,7 +2071,7 @@ msgstr ""
 msgid "The parachute is activated automatically."
 msgstr "Paraşüt otomatik olarak etkinleştirildi."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Roket savaş alanını terketti..."
@@ -2116,7 +2116,7 @@ msgid ""
 "Click to pause"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
 "Angle: Up/Down\n"
@@ -2238,7 +2238,7 @@ msgid ""
 "Press space till desired strength"
 msgstr ""
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 msgid ""
 "Usage: left click on the target\n"
 "Anvil kill all characters beneath.\n"
@@ -2408,7 +2408,7 @@ msgstr "En az iki geçerli takıma ihtiyacınız var !"
 msgid "You won't be able to play before selecting a team!"
 msgstr ""
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "Iskaladın!"
 

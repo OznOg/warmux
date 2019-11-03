@@ -61,7 +61,8 @@ public:
   FootBomb(FootBombConfig& cfg,
               WeaponLauncher * p_launcher);
   void Refresh() override;
-  void SetEnergyDelta(int delta, bool do_report = true) override;
+  void SetEnergyDelta(int /*delta*/, Character * /*dealer*/) override {}
+
   void Shoot(const Point2i & pos, Double strength, Double angle, int recursions);
 
 protected:
@@ -137,8 +138,6 @@ void FootBomb::DoExplosion()
     ObjectsList::GetRef().AddObject(cluster);
   }
 }
-
-void FootBomb::SetEnergyDelta(int /* delta */, bool /* do_report */){};
 
 //-----------------------------------------------------------------------------
 

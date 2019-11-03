@@ -28,6 +28,8 @@ public:
   virtual bool Read(const xmlNode* father) const = 0;
   virtual void Write(XmlWriter& writer, xmlNode* elem) const = 0;
 
+  virtual ~ConfigElement() = default;
+
 protected:
   ConfigElement(Type t, const char *n, bool attr, bool imp = false)
     : m_type(t), m_name(n), m_attribute(attr), m_important(imp) { }

@@ -154,7 +154,7 @@ msgstr "%s tím už má neobmedzenú muníciu pre %s!"
 msgid "%s team has skipped its turn."
 msgstr "%s tím vynechal ťah."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -194,7 +194,7 @@ msgstr[2] ""
 "Tím %s získal %u zbíjačiek! Nerobte s nimi veľa hluku! Ďakujeme, Vaši "
 "susedia."
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -251,7 +251,7 @@ msgstr[0] "Tím %s získal %u skákajúcu loptičku! Ping, ping, bum!"
 msgstr[1] "Tím %s získal %u skákajúce loptičky! Ping, ping, bum!"
 msgstr[2] "Tím %s získal %u skákajúcich loptičiek! Ping, ping, bum!"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -304,7 +304,7 @@ msgstr[0] "Tím %s získal %u plameňomet!"
 msgstr[1] "Tím %s získal %u plameňomety!"
 msgstr[2] "Tím %s získal %u plameňometov!"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -618,7 +618,7 @@ msgstr ""
 "Streľba : Medzerník\n"
 "a hit per turn"
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "Kovadlina"
 
@@ -841,11 +841,11 @@ msgstr "Mód klienta"
 msgid "Clumsiest"
 msgstr "Najväčšie trdlo"
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "Trieštivá bomba"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 msgid "Cluzooka"
 msgstr "Cluzuka"
 
@@ -1112,7 +1112,7 @@ msgstr "Názov hry:"
 msgid "Flame Thrower"
 msgstr "Plameňomet"
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 msgid "Football Bomb"
 msgstr "Futbalová bomba"
 
@@ -1284,7 +1284,7 @@ msgstr ""
 msgid "Initial energy"
 msgstr "Počiatočná energia"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 #, fuzzy
 msgid ""
@@ -2121,11 +2121,11 @@ msgstr ""
 msgid "Teleportation"
 msgstr "Teleportácia"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Združená bomba opustila bojové pole pred tým než by mohla explodovať."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr ""
 "Futbalová bomba opustila bojové pole ešte pred tým než by vôbec stihla "
@@ -2193,7 +2193,7 @@ msgstr "Vstávaj! Ostatný čakajú už len na teba! :-)"
 msgid "The parachute is activated automatically."
 msgstr "Padák je aktivovaný automaticky."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Raketa opustila bojové pole..."
@@ -2242,7 +2242,7 @@ msgid ""
 "Click to pause"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 #, fuzzy
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
@@ -2374,7 +2374,7 @@ msgid ""
 "Press space till desired strength"
 msgstr ""
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 #, fuzzy
 msgid ""
 "Usage: left click on the target\n"
@@ -2557,7 +2557,7 @@ msgstr "Potrebuješ aspoň dva platné tímy!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "Nemôžeš hrať pred tým než si vyberieš tím!"
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "Strela minula cieľ!"
 

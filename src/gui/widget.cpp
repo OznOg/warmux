@@ -66,7 +66,7 @@ Widget::Widget(const Point2i &size, bool clickable)
 
 Widget::Widget(Profile * _profile,
                const xmlNode * _widgetNode)
-  : Rectanglei(0, 0, size.x, size.y)
+  : Rectanglei(0, 0, 0, 0)
   , has_focus(false)
   , visible(true)
   , is_highlighted(false)

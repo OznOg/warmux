@@ -52,7 +52,7 @@ public:
           WeaponLauncher * p_launcher);
   void Refresh() override;
   void Shoot(const Point2i & pos, Double strength, Double angle);
-  void SetEnergyDelta(int delta, bool do_report = true) override;
+  void SetEnergyDelta(int /*delta*/, Character * /*dealer*/) override {}
 
 protected:
   void SignalTimeout() override;
@@ -67,7 +67,7 @@ public:
   ClusterBomb(ClusterBombConfig& cfg,
               WeaponLauncher * p_launcher);
   void Refresh() override;
-  void SetEnergyDelta(int delta, bool do_report = true) override;
+  void SetEnergyDelta(int /*delta*/, Character * /*dealer*/) override {}
 
 protected:
   void DoExplosion() override;
@@ -119,7 +119,6 @@ void Cluster::DoExplosion()
   ApplyExplosion(GetPosition(), cfg, "weapon/explosion", false, ParticleEngine::LittleESmoke);
 }
 
-void Cluster::SetEnergyDelta(int /* delta */, bool /* do_report */){};
 // because of game mechanics, clusters will inherit timeout from its parent bomb,
 // and as such, will explode right after launch - something we don't want
 void Cluster::SignalTimeout(){};
@@ -169,8 +168,6 @@ void ClusterBomb::DoExplosion()
     ObjectsList::GetRef().AddObject(cluster);
   }
 }
-
-void ClusterBomb::SetEnergyDelta(int /* delta */, bool /* do_report */){};
 
 //-----------------------------------------------------------------------------
 

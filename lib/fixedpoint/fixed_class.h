@@ -214,7 +214,7 @@ inline int uround(const fixed_point<16>& r)
 }
 
 namespace detail {
-  static bool isDigit(int c) {
+  static constexpr bool isDigit(int c) {
     return c >= '0' &&  c <= '9';
   }
 }

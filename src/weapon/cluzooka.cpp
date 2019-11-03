@@ -105,7 +105,7 @@ public:
 #else
   void Shoot(const Point2i & start_pos, Double strength, Double angle);
 #endif
-  void SetEnergyDelta(int delta, bool do_report = true) override;
+  void SetEnergyDelta(int /*delta*/, Character * /*dealer*/) override {}
 
 protected:
   void DoSpawn();
@@ -207,9 +207,6 @@ void CluzookaCluster::Draw()
   // custom Draw() is needed to avoid drawing timeout on top of clusters
   image->Draw(GetPosition());
 };
-
-void CluzookaCluster::SetEnergyDelta(int /* delta */, bool /* do_report */){};
-
 
 class CluzookaRocket : public WeaponProjectile, public ClusterSpawner< CluzookaCluster >
 {

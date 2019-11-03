@@ -252,11 +252,6 @@ void WeaponProjectile::Refresh()
   }
 }
 
-void WeaponProjectile::SetEnergyDelta(int /*delta*/, bool /*do_report*/)
-{
-  // Don't call Explosion here, we're already in an explosion
-  m_energy = 0;
-}
 
 void WeaponProjectile::Draw()
 {

@@ -56,7 +56,7 @@ public:
   // From Widget
   void Pack() override;
   void Draw(const Point2i & mousePosition) override;
-  virtual Widget * Click(const Point2i &/*mousePosition*/, uint /*button*/) const { return NULL; };
+  Widget * Click(const Point2i &/*mousePosition*/, uint /*button*/) override { return NULL; };
   Widget * ClickUp(const Point2i & mousePosition, uint button) override;
   bool LoadXMLConfiguration(void) override;
 

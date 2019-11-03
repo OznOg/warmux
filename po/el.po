@@ -159,7 +159,7 @@ msgstr "Η ομάδα %s έχει ήδη άπειρα πυρομαχικά γι�
 msgid "%s team has skipped its turn."
 msgstr "Η ομάδα %s παρέλειψε το γύρο της."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -195,7 +195,7 @@ msgstr[1] ""
 "Η ομάδα %s κέρδισε %u τρυπάνια! Μην κάνεις πολύ φασαρία θα ξυπνήσεις τους "
 "γείτονες!"
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -246,7 +246,7 @@ msgstr[0] "Η ομάδα %s κέρδισε %u μπάλα αναπήδησης! �
 msgstr[1] "Η ομάδα %s κέρδισε %u μπάλες αναπήδησης! Φσσστ Μπόινγκ!"
 
 # L'équipe %s a gagné %u bombe à fragmentation ! Attention à ne pas trop se disperser !
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -288,7 +288,7 @@ msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "Η ομάδα %s κέρδισε %u φλογοβόλο! Μύρισε ψητό..."
 msgstr[1] "Η ομάδα %s κέρδισε %u φλογοβόλα! Μύρισε ψητό..."
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -579,7 +579,7 @@ msgstr ""
 "ένα χτύπημα ανά γύρο"
 
 # Enclume
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "Αμόνι"
 
@@ -810,12 +810,12 @@ msgid "Clumsiest"
 msgstr "Πιο αδέξιος"
 
 # Grenade à fragmentation
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "Χειροβομβίδα διασποράς"
 
 # Bazooka à fragmentation
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 msgid "Cluzooka"
 msgstr "Μπαζούκα διασποράς"
 
@@ -1096,7 +1096,7 @@ msgid "Flame Thrower"
 msgstr "Φλογοβόλο"
 
 # Ballon explosif
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 msgid "Football Bomb"
 msgstr "Εκρηκτική μπάλα"
 
@@ -1276,7 +1276,7 @@ msgstr "Εμφάνιση παιχνιδιού"
 msgid "Initial energy"
 msgstr "Αρχική ενέργεια"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 msgid ""
 "Initial fire angle: Up/Down\n"
@@ -2135,11 +2135,11 @@ msgid "Teleportation"
 msgstr "Τηλεμεταφορά"
 
 # La grenade à fragmentation a quitté le champ de bataille avant d'exploser.
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Η χειροβομβίδα διασποράς εγκατέλειψε το πεδίο μάχης πριν την έκρηξη."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "Η εκρηκτική μπάλα εγκατέλειψε το πεδίο μάχης πριν την έκρηξη."
 
@@ -2214,7 +2214,7 @@ msgid "The parachute is activated automatically."
 msgstr "Το αλεξίπτωτο ενεργοποιείται αυτομάτως."
 
 # La roquette est partie dans un autre monde...
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Η ρουκέτα έφυγε για άλλους κόσμους..."
@@ -2268,7 +2268,7 @@ msgstr ""
 "παιχνιδιού\n"
 "Κλικ για παύση"
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
 "Angle: Up/Down\n"
@@ -2400,7 +2400,7 @@ msgstr ""
 
 # Usage : clic gauche sur la cible\n
 # une munition par tour
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 msgid ""
 "Usage: left click on the target\n"
 "Anvil kill all characters beneath.\n"
@@ -2583,7 +2583,7 @@ msgstr "Χρειάζονται τουλάχιστον δύο έγκυρες ομ
 msgid "You won't be able to play before selecting a team!"
 msgstr "Δεν μπορείτε να παίξετε χωρίς να διαλέξετε ομάδα!"
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "Αστόχησες..."
 

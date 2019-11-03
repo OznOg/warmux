@@ -37,10 +37,10 @@ class WeaponStrengthBar : public ProgressBar
 public:
   WeaponStrengthBar();
   ~WeaponStrengthBar() override;
-  virtual void DrawXY(const Point2i &pos);
+  void DrawXY(const Point2i &pos) const override;
   void InitPos (uint x, uint y, uint larg, uint haut) override;
   Color ComputeValueColor(int val) const;
-  bool IsVisible() { return visible; }
+  bool IsVisible() const { return visible; }
 };
 
 #endif // WEAPON_STRENGTH_BAR_H

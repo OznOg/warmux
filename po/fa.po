@@ -152,7 +152,7 @@ msgstr ""
 msgid "%s team has skipped its turn."
 msgstr "تیم %s نوبت خود را خارج کرد."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, fuzzy, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -182,7 +182,7 @@ msgstr[0] ""
 "تیم %s برنده‌ی %u بیل مکانیکی شد! لطفا زیادی سر و صدا نکنید! مرسی،از طرف "
 "همسایه‌ها!"
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -221,7 +221,7 @@ msgid "%s team has won %u bounce ball! Boing!"
 msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "تیم %s برنده‌ی %u شیطونک شد! کووورتییییش!"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -253,7 +253,7 @@ msgid "%s team has won %u flame-thrower!"
 msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "تیم %s برنده‌ی %u اسلحه‌ی آتیشی شد!"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, fuzzy, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -520,7 +520,7 @@ msgstr ""
 "شلیک : کلید Space\n"
 "یک ضربه در هر نوبت"
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "سندان"
 
@@ -745,11 +745,11 @@ msgstr "حالت کارگیر (کلاینت)"
 msgid "Clumsiest"
 msgstr "احمق‌ترین"
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "بمب خوشه‌ای"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 #, fuzzy
 msgid "Cluzooka"
 msgstr "باوکا"
@@ -1014,7 +1014,7 @@ msgstr ""
 msgid "Flame Thrower"
 msgstr "اسلحه‌ی آتیشی"
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 #, fuzzy
 msgid "Football Bomb"
 msgstr "بمب تخریبی"
@@ -1187,7 +1187,7 @@ msgstr ""
 msgid "Initial energy"
 msgstr "انرژی آغازی"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 #, fuzzy
 msgid ""
@@ -2029,11 +2029,11 @@ msgstr ""
 msgid "Teleportation"
 msgstr "جابجایی"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "بمب خوشه‌ای قبل از اینکه عمل کند از زمین جنگ خارج شد."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 #, fuzzy
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "بمب خوشه‌ای قبل از اینکه عمل کند از زمین جنگ خارج شد."
@@ -2103,7 +2103,7 @@ msgstr "بقیه منتظر شما هستند! بجنب دیگه!"
 msgid "The parachute is activated automatically."
 msgstr "بادکنک نجات به صورت اتوماتیم فعال خواهد شد."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "موشک از زمین جنگ خارج شد..."
@@ -2149,7 +2149,7 @@ msgid ""
 "Click to pause"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 #, fuzzy
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
@@ -2280,7 +2280,7 @@ msgid ""
 "Press space till desired strength"
 msgstr ""
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 #, fuzzy
 msgid ""
 "Usage: left click on the target\n"
@@ -2462,7 +2462,7 @@ msgstr "شما حداقل به ۲ تیم نیاز دارید!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "شما قبل از اینکه تیمی انتخاب کنید نمی‌توانید بازی کنید!"
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "شلیک شما از دست رفت!"
 

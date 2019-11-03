@@ -162,7 +162,7 @@ msgstr "Joukkueella %s on jo loputtomat ammukset aseelle %s!"
 msgid "%s team has skipped its turn."
 msgstr "Joukkue %s luovutti vuoron."
 
-#: src/weapon/cluzooka.cpp:377
+#: src/weapon/cluzooka.cpp:374
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -198,7 +198,7 @@ msgstr[1] ""
 "Joukkue %s voitti %u katuporaa! Älä metelöi liikaa! Kiitoksia, terveisin "
 "naapurit."
 
-#: src/weapon/anvil.cpp:183
+#: src/weapon/anvil.cpp:184
 #, c-format
 msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
@@ -247,7 +247,7 @@ msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "Joukkue %s voitti %u pomppupallon! Bojoing!"
 msgstr[1] "Joukkue %s voitti %u pomppupalloa! Bojoing!"
 
-#: src/weapon/cluster_bomb.cpp:206
+#: src/weapon/cluster_bomb.cpp:203
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -285,7 +285,7 @@ msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "Joukkue %s voitti %u liekinheittimen!"
 msgstr[1] "Joukkue %s voitti %u liekinheitintä!"
 
-#: src/weapon/footbomb.cpp:173
+#: src/weapon/footbomb.cpp:172
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -564,7 +564,7 @@ msgstr ""
 "Ammu : välilyönti\n"
 "lyönti per vuoro"
 
-#: src/weapon/anvil.cpp:137
+#: src/weapon/anvil.cpp:138
 msgid "Anvil"
 msgstr "Alasin"
 
@@ -791,11 +791,11 @@ msgstr "Asiakastila"
 msgid "Clumsiest"
 msgstr "Kömpelöin"
 
-#: src/weapon/cluster_bomb.cpp:189
+#: src/weapon/cluster_bomb.cpp:186
 msgid "Cluster Bomb"
 msgstr "Rypälepommi"
 
-#: src/weapon/cluzooka.cpp:371
+#: src/weapon/cluzooka.cpp:368
 msgid "Cluzooka"
 msgstr "Rypälesinko"
 
@@ -1067,7 +1067,7 @@ msgstr "Tiedoston nimi:"
 msgid "Flame Thrower"
 msgstr "Liekinheitin"
 
-#: src/weapon/footbomb.cpp:157
+#: src/weapon/footbomb.cpp:156
 msgid "Football Bomb"
 msgstr "Jalkapallopommi"
 
@@ -1245,7 +1245,7 @@ msgstr "Peli"
 msgid "Initial energy"
 msgstr "Aloitusvoima"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:372
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
 #: src/weapon/riot_bomb.cpp:120
 msgid ""
 "Initial fire angle: Up/Down\n"
@@ -2097,11 +2097,11 @@ msgstr "Joukkueet voima-järjestyksessä"
 msgid "Teleportation"
 msgstr "Teleportaatio"
 
-#: src/weapon/cluster_bomb.cpp:147
+#: src/weapon/cluster_bomb.cpp:146
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Rypälepommi on poistunut taistelukentältä räjähtämättömänä."
 
-#: src/weapon/footbomb.cpp:113
+#: src/weapon/footbomb.cpp:114
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "Jalkapallopommi poistui kentältä ennen kuin ehti räjähtää."
 
@@ -2167,7 +2167,7 @@ msgstr "Muut odottavat sinua! Herätys! :-)"
 msgid "The parachute is activated automatically."
 msgstr "Laskuvarjo aukeaa automaattisesti."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:321
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Ohjus on poistunut taistelukentältä..."
@@ -2217,7 +2217,7 @@ msgstr ""
 "Vuorolla jäljellä oleva aika ja aika pelin alusta.\n"
 "Klikkaamalla saat tauon"
 
-#: src/weapon/cluster_bomb.cpp:190 src/weapon/footbomb.cpp:158
+#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
 "Angle: Up/Down\n"
@@ -2347,7 +2347,7 @@ msgstr ""
 "Ylös/alas: tähtää\n"
 "Aseta ajastin 1-6 s +/- tai 1-6 Pidä välilyönti pohjassa voiman säätämiseksi"
 
-#: src/weapon/anvil.cpp:138
+#: src/weapon/anvil.cpp:139
 msgid ""
 "Usage: left click on the target\n"
 "Anvil kill all characters beneath.\n"
@@ -2523,7 +2523,7 @@ msgstr "Tarvitset ainakin kaksi kelvollista joukkuetta!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "Et voi aloittaa peliä ennen kuin olet olet valinnut joukkueen!"
 
-#: src/weapon/weapon_launcher.cpp:551
+#: src/weapon/weapon_launcher.cpp:546
 msgid "Your shot has missed!"
 msgstr "Ammuit ohi!"
 

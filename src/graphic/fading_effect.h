@@ -272,7 +272,7 @@ int aafadingLineColorInt(SDL_Surface * dst, Sint16 x1, Sint16 y1, Sint16 x2, Sin
                          Uint32 color1, Uint32 color2, int draw_endpoint)
 {
   Sint32 xx0, yy0, xx1, yy1;
-  int result;
+  int result = 0;
   int dx, dy, tmp, xdir;
   Uint32 color = color1;
   float step;

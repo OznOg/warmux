@@ -41,7 +41,7 @@ template<class T> class rectangle
     /** Position of the rectangle. */
     Vector2<T> position;
     /** Size of the rectangle. */
-    Vector2<T> size;
+    Vector2<T> size{};
 
   public:
     /**

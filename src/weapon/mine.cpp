@@ -141,9 +141,9 @@ void ObjMine::Detection()
   }
 }
 
-void ObjMine::SetEnergyDelta(int delta, bool do_report)
+void ObjMine::SetEnergyDelta(int delta, Character *dealer)
 {
-  WeaponProjectile::SetEnergyDelta(delta, do_report);
+  WeaponProjectile::SetEnergyDelta(delta, dealer);
   // Don't call Explosion here, we're already in an explosion
   attente = 0;
   animation = true;

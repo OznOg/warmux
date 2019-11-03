@@ -50,7 +50,8 @@ public:
 
   void PlayFallSound();
   void PlayCollisionSound();
-  void SetEnergyDelta(int /*delta*/, bool /*do_report = true*/) override { };
+  void SetEnergyDelta(int /*delta*/, Character * /*dealer*/) override {}
+
 protected:
   void SignalGroundCollision(const Point2d& /* speed_before */, const Double& /*contactAngle*/) override;
   void SignalObjectCollision(const Point2d& /* my_speed_before */,
