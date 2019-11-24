@@ -36,6 +36,8 @@
 #include "interface/mouse.h"
 #include "map/maps_list.h"
 
+#include <memory>
+
 #ifdef WIN32
    // Protects against macro definition of LoadImage when this header is included last.
 #  undef LoadImage
@@ -50,17 +52,16 @@ class Profile
 {
 protected:
   friend class ResourceManager;
-  int ref_count;
+  int ref_count = 1;
   std::string name;
-  Profile(const std::string& name) : ref_count(1), name(name) { doc = nullptr; }
-  ~Profile() { if (doc) delete doc; }
+  Profile(const std::string& name, std::unique_ptr<XmlReader> &&doc) : name(name), doc(std::move(doc)) { }
 
 public:
-  XmlReader *doc; //TODO move to private
+  std::unique_ptr<XmlReader> doc; //TODO move to private
   std::string filename;
   std::string relative_path;
 
-  XmlReader * GetXMLDocument(void) const { return this->doc; }
+  XmlReader * GetXMLDocument(void) const { return this->doc.get(); }
 };
 
 class ResourceManager : public Singleton<ResourceManager>

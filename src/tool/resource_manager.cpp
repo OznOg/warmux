@@ -161,7 +161,7 @@ Profile *ResourceManager::LoadXMLProfile(const std::string& xml_filename, bool i
   }
 
   MSG_DEBUG("xml.load", "Loading uncached %s\n", xml_filename.c_str());
-  XmlReader *doc = new XmlReader;
+  auto doc = std::make_unique<XmlReader>();
   std::string filename, path;
   if (!is_absolute_path) {
     path = base_path;
@@ -175,13 +175,11 @@ Profile *ResourceManager::LoadXMLProfile(const std::string& xml_filename, bool i
    // Load the XML
   if (!doc->Load(filename)) {
     // TODO raise an "can't load file" exception
-    delete doc;
     Error("ResourceManager: can't load profile "+filename);
     return nullptr;
   }
 
-  Profile *profile = new Profile(xml_filename);
-  profile->doc = doc;
+  Profile *profile = new Profile(xml_filename, std::move(doc));
   profile->filename = xml_filename;
   profile->relative_path = path;
   profiles[xml_filename] = profile;
