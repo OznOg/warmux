@@ -94,15 +94,12 @@ public:
 
 class SpriteCache : public std::vector<SpriteFrameCache>
 {
-  Sprite &sprite;
-
   uint rotation_cache_size;
   bool have_flipping_cache;
 
 public:
-  explicit SpriteCache(Sprite &spr)
-    : sprite(spr)
-    , rotation_cache_size(0)
+  explicit SpriteCache(Sprite &)
+    : rotation_cache_size(0)
     , have_flipping_cache(false)
   { }
 

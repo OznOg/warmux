@@ -42,7 +42,6 @@ class MapSelectionBox : public VBox
   ItemBox *box;
   uint selected_map_index;
   bool display_only;
-  bool selectable;
 
   Label *map_name_label;
   Label *map_author_label;

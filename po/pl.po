@@ -424,7 +424,7 @@ msgstr[0] "Drużyna %s zyskała %u spoliczkowanie!"
 msgstr[1] "Drużyna %s zyskała %u spoliczkowania!"
 msgstr[2] "Drużyna %s zyskała %u spoliczkowań!"
 
-#: src/weapon/snipe_rifle.cpp:259
+#: src/weapon/snipe_rifle.cpp:258
 #, c-format
 msgid "%s team has won %u sniper rifle! Aim and shoot between the eyes!"
 msgid_plural ""
@@ -791,7 +791,7 @@ msgstr "Chat"
 msgid "Check updates online?"
 msgstr "Sprawdzanie dostępności aktualizacji"
 
-#: src/menu/map_selection_box.cpp:104
+#: src/menu/map_selection_box.cpp:103
 msgid "Choose randomly between the different maps"
 msgstr "Wybiera mapę drogą losowania"
 
@@ -1777,7 +1777,7 @@ msgstr ""
 "Spróbuj uzyskać łagodne lądowanie."
 
 #: src/weapon/gun.cpp:73 src/weapon/shotgun.cpp:87
-#: src/weapon/snipe_rifle.cpp:248
+#: src/weapon/snipe_rifle.cpp:247
 msgid ""
 "Press space to shoot\n"
 "Use Up/Down to change initial angle"
@@ -1853,7 +1853,7 @@ msgid "Rail Gun"
 msgstr "Railgun"
 
 #. Random map selected
-#: src/menu/map_selection_box.cpp:103
+#: src/menu/map_selection_box.cpp:102
 msgid "Random map"
 msgstr "Losowa mapa"
 
@@ -2041,7 +2041,7 @@ msgstr "Spoliczkuj wroga, aby trochę podskoczył."
 msgid "Smaller aim angle and walk step"
 msgstr "Mniejszy kąt celowania i wolniejszy chód"
 
-#: src/weapon/snipe_rifle.cpp:247
+#: src/weapon/snipe_rifle.cpp:246
 msgid "Sniper Rifle"
 msgstr "Snajperka"
 

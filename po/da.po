@@ -373,7 +373,7 @@ msgid_plural "%s team has won %u slaps! Dodge this!"
 msgstr[0] "Holdet %s har fået %u slag!"
 msgstr[1] "Holdet %s har fået %u slag! Smag lidt på den her!"
 
-#: src/weapon/snipe_rifle.cpp:259
+#: src/weapon/snipe_rifle.cpp:258
 #, c-format
 msgid "%s team has won %u sniper rifle! Aim and shoot between the eyes!"
 msgid_plural ""
@@ -725,7 +725,7 @@ msgstr "Chat"
 msgid "Check updates online?"
 msgstr "Check for opdateringer på nettet?"
 
-#: src/menu/map_selection_box.cpp:104
+#: src/menu/map_selection_box.cpp:103
 msgid "Choose randomly between the different maps"
 msgstr "Skift tilfældigt rundt mellem de forskellige baner"
 
@@ -1710,7 +1710,7 @@ msgstr ""
 "Prøv at sørge for at lande blødt."
 
 #: src/weapon/gun.cpp:73 src/weapon/shotgun.cpp:87
-#: src/weapon/snipe_rifle.cpp:248
+#: src/weapon/snipe_rifle.cpp:247
 msgid ""
 "Press space to shoot\n"
 "Use Up/Down to change initial angle"
@@ -1785,7 +1785,7 @@ msgid "Rail Gun"
 msgstr "Magnetisk gevær"
 
 #. Random map selected
-#: src/menu/map_selection_box.cpp:103
+#: src/menu/map_selection_box.cpp:102
 msgid "Random map"
 msgstr "Tilfældig bane"
 
@@ -1973,7 +1973,7 @@ msgstr "Slå fjenden for at få ham til at flytte sig lidt."
 msgid "Smaller aim angle and walk step"
 msgstr "Mindre sigtevinkel og skridt"
 
-#: src/weapon/snipe_rifle.cpp:247
+#: src/weapon/snipe_rifle.cpp:246
 msgid "Sniper Rifle"
 msgstr "Sniper-riffel"
 

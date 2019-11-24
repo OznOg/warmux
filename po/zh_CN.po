@@ -335,7 +335,7 @@ msgid "%s team has won %u slap!"
 msgid_plural "%s team has won %u slaps! Dodge this!"
 msgstr[0] "%s 队拿到 %u 拍子了！快窜！"
 
-#: src/weapon/snipe_rifle.cpp:259
+#: src/weapon/snipe_rifle.cpp:258
 #, c-format
 msgid "%s team has won %u sniper rifle! Aim and shoot between the eyes!"
 msgid_plural ""
@@ -677,7 +677,7 @@ msgstr "聊天"
 msgid "Check updates online?"
 msgstr "网上检查升级？"
 
-#: src/menu/map_selection_box.cpp:104
+#: src/menu/map_selection_box.cpp:103
 msgid "Choose randomly between the different maps"
 msgstr "在地图中随机选择"
 
@@ -1645,7 +1645,7 @@ msgstr ""
 "和缓地着陆"
 
 #: src/weapon/gun.cpp:73 src/weapon/shotgun.cpp:87
-#: src/weapon/snipe_rifle.cpp:248
+#: src/weapon/snipe_rifle.cpp:247
 msgid ""
 "Press space to shoot\n"
 "Use Up/Down to change initial angle"
@@ -1721,7 +1721,7 @@ msgid "Rail Gun"
 msgstr "轨道枪"
 
 #. Random map selected
-#: src/menu/map_selection_box.cpp:103
+#: src/menu/map_selection_box.cpp:102
 msgid "Random map"
 msgstr "随机读取地图"
 
@@ -1909,7 +1909,7 @@ msgstr "拍一下，让那家伙跳一跳"
 msgid "Smaller aim angle and walk step"
 msgstr "慢步精准"
 
-#: src/weapon/snipe_rifle.cpp:247
+#: src/weapon/snipe_rifle.cpp:246
 msgid "Sniper Rifle"
 msgstr "狙击步枪"
 

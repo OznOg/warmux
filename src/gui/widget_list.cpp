@@ -129,14 +129,14 @@ Widget* WidgetList::GetFirstWidget() const
   for (auto it : widget_list) {
     if (it->IsWidgetBrowser()) {
       MSG_DBG_RTTI("widgetlist", "%s:%p is a widget browser!\n",
-                   typeid(*it).name(), (*it));
+                   typeid(*it).name(), it);
 
       first = it->GetFirstWidget();
       if (first != nullptr)
         return first;
     } else {
       MSG_DBG_RTTI("widgetlist", "%s:%p is NOT a widget browser!\n",
-                   typeid(*it).name(), (*it));
+                   typeid(*it).name(), it);
 
       return it;
     }

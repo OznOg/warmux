@@ -26,8 +26,6 @@
 #include "tool/resource_manager.h"
 #include "map/maps_list.h"
 
-const uint living_time = 5000;
-
 WaterParticle::WaterParticle()
   : Particle("water_particle")
 {

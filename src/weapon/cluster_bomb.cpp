@@ -51,7 +51,7 @@ public:
   Cluster(ClusterBombConfig& cfg,
           WeaponLauncher * p_launcher);
   void Refresh() override;
-  void Shoot(const Point2i & pos, Double strength, Double angle);
+  void doShoot(const Point2i & pos, Double strength, Double angle);
   void SetEnergyDelta(int /*delta*/, Character * /*dealer*/) override {}
 
 protected:
@@ -81,7 +81,7 @@ Cluster::Cluster(ClusterBombConfig& cfg,
   explode_colliding_character = true;
 }
 
-void Cluster::Shoot(const Point2i & pos, Double strength, Double angle)
+void Cluster::doShoot(const Point2i & pos, Double strength, Double angle)
 {
   SetCollisionModel(true, true, false ); // a bit hackish...
   // we do need to collide with objects, but if we allow for this, the clusters
@@ -163,7 +163,7 @@ void ClusterBomb::DoExplosion()
     Double speed = RandomSync().GetDouble(10, 25);
 
     cluster = new Cluster(static_cast<ClusterBombConfig &>(cfg), launcher);
-    cluster->Shoot( pos, speed, angle + cluster_deviation );
+    cluster->doShoot( pos, speed, angle + cluster_deviation );
 
     ObjectsList::GetRef().AddObject(cluster);
   }

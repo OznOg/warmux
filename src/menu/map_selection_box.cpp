@@ -39,7 +39,6 @@ MapSelectionBox::MapSelectionBox(const Point2i &_size, bool show_border, bool _d
   : VBox(_size.x, show_border, false)
   , selected_map_index(0)
   , display_only(_display_only)
-  , selectable(true)
   , common(MapsList::GetInstance()->lst) // Created with an already initialized list
 {
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml",false);

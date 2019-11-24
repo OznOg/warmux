@@ -41,7 +41,6 @@
 const uint SNIPE_RIFLE_BEAM_START = 5;
 const uint SNIPE_RIFLE_BULLET_SPEED = 28;
 const uint SNIPE_RIFLE_MAX_BEAM_SIZE = 500;
-const uint SNIPE_RIFLE_FADE_BEAM_SIZE = 400;
 
 //-----------------------------------------------------------------------------
 

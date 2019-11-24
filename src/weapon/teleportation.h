@@ -30,7 +30,6 @@ class Teleportation : public Weapon
 {
   private:
     bool target_chosen;
-    uint animation_duration;
     Point2i src, dst;
     bool done;
   protected:

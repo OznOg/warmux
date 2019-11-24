@@ -390,7 +390,7 @@ msgid_plural "%s team has won %u slaps! Dodge this!"
 msgstr[0] "Η ομάδα %s κέρδισε %u χαστούκι!"
 msgstr[1] "Η ομάδα %s κέρδισε %u χαστούκια!"
 
-#: src/weapon/snipe_rifle.cpp:259
+#: src/weapon/snipe_rifle.cpp:258
 #, c-format
 msgid "%s team has won %u sniper rifle! Aim and shoot between the eyes!"
 msgid_plural ""
@@ -752,7 +752,7 @@ msgstr "Συνομιλία"
 msgid "Check updates online?"
 msgstr "Έλεγχος ενημερώσεων στο διαδίκτυο;"
 
-#: src/menu/map_selection_box.cpp:104
+#: src/menu/map_selection_box.cpp:103
 msgid "Choose randomly between the different maps"
 msgstr "Επίλεξε τυχαία έναν μεταξύ των διαφορετικών χαρτών"
 
@@ -1749,7 +1749,7 @@ msgstr ""
 "Προσπάθησε να έχεις μαλακή προσγείωση."
 
 #: src/weapon/gun.cpp:73 src/weapon/shotgun.cpp:87
-#: src/weapon/snipe_rifle.cpp:248
+#: src/weapon/snipe_rifle.cpp:247
 msgid ""
 "Press space to shoot\n"
 "Use Up/Down to change initial angle"
@@ -1827,7 +1827,7 @@ msgid "Rail Gun"
 msgstr "Αυτόματο"
 
 #. Random map selected
-#: src/menu/map_selection_box.cpp:103
+#: src/menu/map_selection_box.cpp:102
 msgid "Random map"
 msgstr "Τυχαίος χάρτης"
 
@@ -2016,7 +2016,7 @@ msgid "Smaller aim angle and walk step"
 msgstr "Μικρότερη γωνία σκόπευσης και βηματισμός"
 
 # Fusil sniper
-#: src/weapon/snipe_rifle.cpp:247
+#: src/weapon/snipe_rifle.cpp:246
 msgid "Sniper Rifle"
 msgstr "Τουφέκι με σκόπευτρο"
 

@@ -443,7 +443,7 @@ msgstr[1] "Para %s re waynyas %u veltynk! Skap hemma!"
 msgstr[2] "Para %s re waynyas %u beltynk! Skap hemma!"
 msgstr[3] "Para %s re waynyas %u beltynk! Skap hemma!"
 
-#: src/weapon/snipe_rifle.cpp:259
+#: src/weapon/snipe_rifle.cpp:258
 #, c-format
 msgid "%s team has won %u sniper rifle! Aim and shoot between the eyes!"
 msgid_plural ""
@@ -828,7 +828,7 @@ msgstr ""
 msgid "Check updates online?"
 msgstr "Checkya nowedhansow warlinen?"
 
-#: src/menu/map_selection_box.cpp:104
+#: src/menu/map_selection_box.cpp:103
 msgid "Choose randomly between the different maps"
 msgstr "Dewis dre hap ynter an mappaow dyffrans"
 
@@ -1801,7 +1801,7 @@ msgid ""
 msgstr ""
 
 #: src/weapon/gun.cpp:73 src/weapon/shotgun.cpp:87
-#: src/weapon/snipe_rifle.cpp:248
+#: src/weapon/snipe_rifle.cpp:247
 msgid ""
 "Press space to shoot\n"
 "Use Up/Down to change initial angle"
@@ -1865,7 +1865,7 @@ msgid "Rail Gun"
 msgstr ""
 
 #. Random map selected
-#: src/menu/map_selection_box.cpp:103
+#: src/menu/map_selection_box.cpp:102
 msgid "Random map"
 msgstr "Mappa dre hap"
 
@@ -2047,7 +2047,7 @@ msgstr "Ri beltynk dhe'n eskar may hwra'va lamma tamm."
 msgid "Smaller aim angle and walk step"
 msgstr "Lehe elin medra ha kamm kerdhes"
 
-#: src/weapon/snipe_rifle.cpp:247
+#: src/weapon/snipe_rifle.cpp:246
 msgid "Sniper Rifle"
 msgstr "Kelsethwon"
 

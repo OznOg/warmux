@@ -40,18 +40,20 @@ const uint REAL_THINK_TIME_PER_REFRESH_IN_MS = 1;
 //#define DBG_AI_TIME
 
 class AIStats {
+#ifdef DBG_AI_TIME
   const char *name;
-  uint64_t time;
-  uint64_t sq_time;
-  uint     calls;
-  uint     min;
-  uint     max;
+  uint64_t time = 0;
+  uint64_t sq_time = 0;
+  uint     calls = 0;
+  uint     min = 0xFFFFFFFFU;
+  uint     max = 0;
+#endif
 
 public:
+#ifdef DBG_AI_TIME
   AIStats(const char *n) : name(n), time(0), sq_time(0), calls(0), min(0xFFFFFFFFU), max(0) { };
   ~AIStats()
   {
-#ifdef DBG_AI_TIME
     if (calls) {
       float avg = time/(float)calls;
       printf("Strategy '%s': calls=%u  total=%llums  min=%ums  max=%ums  avg=%.2fms  stddev=%.3fms\n",
@@ -59,8 +61,10 @@ public:
     } else {
       printf("Strategy '%s': not called\n", name);
     }
-#endif
   }
+#else
+  AIStats(const char *) {}
+#endif
 
 #ifdef DBG_AI_TIME
   void AddTiming(uint t)

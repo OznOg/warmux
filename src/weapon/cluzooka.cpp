@@ -65,9 +65,9 @@ protected:
 
       cluster = new ClusterType(cfg, p_launcher);
 #ifdef CLUSTERS_SPAWN_CLUSTERS
-      cluster->Shoot(pos, speed, angle+cluster_deviation, recursion_depth);
+      cluster->doShoot(pos, speed, angle+cluster_deviation, recursion_depth);
 #else
-      cluster->Shoot(pos, speed, angle+cluster_deviation);
+      cluster->doShoot(pos, speed, angle+cluster_deviation);
 #endif
 
       ObjectsList::GetRef().AddObject(cluster);
@@ -101,9 +101,9 @@ public:
   CluzookaCluster(ExplosiveWeaponConfig& cfg, WeaponLauncher * p_launcher);
   void Refresh() override;
 #ifdef CLUSTERS_SPAWN_CLUSTERS
-  void Shoot(const Point2i & start_pos, Double strength, Double angle, uint recurse_times);
+  void doShoot(const Point2i & start_pos, Double strength, Double angle, uint recurse_times);
 #else
-  void Shoot(const Point2i & start_pos, Double strength, Double angle);
+  void doShoot(const Point2i & start_pos, Double strength, Double angle);
 #endif
   void SetEnergyDelta(int /*delta*/, Character * /*dealer*/) override {}
 
@@ -122,11 +122,11 @@ CluzookaCluster::CluzookaCluster(ExplosiveWeaponConfig& cfg,
 }
 
 #ifdef CLUSTERS_SPAWN_CLUSTERS
-void CluzookaCluster::Shoot(const Point2i & start_pos, Double strength, Double angle, uint recurse_times)
+void CluzookaCluster::doShoot(const Point2i & start_pos, Double strength, Double angle, uint recurse_times)
 {
   m_recursion_depth = recurse_times;
 #else
-void CluzookaCluster::Shoot(const Point2i & start_pos, Double strength, Double angle)
+void CluzookaCluster::doShoot(const Point2i & start_pos, Double strength, Double angle)
 {
 #endif
 

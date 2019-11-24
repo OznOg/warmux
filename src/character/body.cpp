@@ -121,7 +121,6 @@ void Body::Init(void) {
   ASSERT(skeletons);
 
   xmlNodeArray nodes = XmlReader::GetNamedChildren(skeletons, "sprite");
-  xmlNodeArray::const_iterator it;
 
   LoadMembers(nodes, mainFolder);
   LoadClothes(nodes, mainXmlNode);

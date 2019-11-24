@@ -43,7 +43,6 @@
 
 Menu::Menu(const std::string& bg, t_action _actions)
   : actions(_actions)
-  , selected_widget(nullptr)
 {
   close_menu = false ;
   Surface& window = GetMainWindow();
@@ -86,7 +85,6 @@ Menu::Menu(void)
   : widgets()
   , actions(vNo)
   , background(nullptr)
-  , selected_widget(nullptr)
   , b_cancel(nullptr)
   , b_ok(nullptr)
   , close_menu(false)

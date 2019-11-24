@@ -388,7 +388,7 @@ msgid_plural "%s team has won %u slaps! Dodge this!"
 msgstr[0] "O equipo %s gañou %u labazada! Alguén vai levar un sopapo..."
 msgstr[1] "O equipo %s gañou %u labazadas! Alguén vai levar unha malleira..."
 
-#: src/weapon/snipe_rifle.cpp:259
+#: src/weapon/snipe_rifle.cpp:258
 #, c-format
 msgid "%s team has won %u sniper rifle! Aim and shoot between the eyes!"
 msgid_plural ""
@@ -748,7 +748,7 @@ msgid "Check updates online?"
 msgstr ""
 "Empregar a Internet para comprobar se hai unha nova versión dispoñíbel?"
 
-#: src/menu/map_selection_box.cpp:104
+#: src/menu/map_selection_box.cpp:103
 msgid "Choose randomly between the different maps"
 msgstr "Elixir un dos escenarios ao chou."
 
@@ -1747,7 +1747,7 @@ msgstr ""
 "Procura aterrar a modo."
 
 #: src/weapon/gun.cpp:73 src/weapon/shotgun.cpp:87
-#: src/weapon/snipe_rifle.cpp:248
+#: src/weapon/snipe_rifle.cpp:247
 msgid ""
 "Press space to shoot\n"
 "Use Up/Down to change initial angle"
@@ -1823,7 +1823,7 @@ msgid "Rail Gun"
 msgstr "Rifle eléctrico"
 
 #. Random map selected
-#: src/menu/map_selection_box.cpp:103
+#: src/menu/map_selection_box.cpp:102
 msgid "Random map"
 msgstr "Escenario ao chou"
 
@@ -2012,7 +2012,7 @@ msgstr ""
 msgid "Smaller aim angle and walk step"
 msgstr "Ángulo de tiro máis pequeno e dar un paso."
 
-#: src/weapon/snipe_rifle.cpp:247
+#: src/weapon/snipe_rifle.cpp:246
 msgid "Sniper Rifle"
 msgstr "Rifle de francotirador"
 

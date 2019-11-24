@@ -79,7 +79,6 @@ class Network : public Singleton<Network>
   std::string password;
 
   Player player;
-  bool turn_master_player;
 
   void CheckOneHostTeams(Player& player, DistantComputer* new_host,
                          const std::vector<Team*>& local_list,

@@ -25,8 +25,6 @@
 
 class ExplosionParticle : public Particle
 {
-  int creation_time;
-
 public:
   ExplosionParticle();
   void Draw() override;

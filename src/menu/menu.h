@@ -70,7 +70,6 @@ public:
 
 private:
   Sprite *background;
-  Widget *selected_widget;
 
   void LoadBackground(std::shared_ptr<Profile> profile,
                       const xmlNode * rootMenuNode);

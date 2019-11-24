@@ -63,7 +63,7 @@ public:
   void Refresh() override;
   void SetEnergyDelta(int /*delta*/, Character * /*dealer*/) override {}
 
-  void Shoot(const Point2i & pos, Double strength, Double angle, int recursions);
+  void doShoot(const Point2i & pos, Double strength, Double angle, int recursions);
 
 protected:
   void DoExplosion() override;
@@ -85,7 +85,7 @@ FootBomb::FootBomb(FootBombConfig& cfg, WeaponLauncher * p_launcher)
   SetUniqueId("footbomb");
 }
 
-void FootBomb::Shoot(const Point2i & pos, Double strength, Double angle, int recursions)
+void FootBomb::doShoot(const Point2i & pos, Double strength, Double angle, int recursions)
 {
   m_recursions = recursions;
   SetCollisionModel(true, true, false ); // a bit hackish...
@@ -132,7 +132,7 @@ void FootBomb::DoExplosion()
     Double speed = RandomSync().GetDouble(config.nb_min_speed, config.nb_max_speed);
 
     FootBomb *cluster = new FootBomb(config, launcher);
-    cluster->Shoot(pos, speed, angle+cluster_deviation, m_recursions-1);
+    cluster->doShoot(pos, speed, angle+cluster_deviation, m_recursions-1);
     cluster->SetTimeOut(cfg.timeout + m_timeout_modifier);
 
     ObjectsList::GetRef().AddObject(cluster);

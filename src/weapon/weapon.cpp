@@ -49,7 +49,7 @@
 //# define DEBUG_HOLE
 #endif
 
-extern std::shared_ptr<Profile> weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
+std::shared_ptr<Profile> weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
 
 
 const int INFINITE_AMMO = -1;

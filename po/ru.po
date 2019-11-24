@@ -425,7 +425,7 @@ msgstr[0] "Команда %s выиграла %u удар-шлепок по вр
 msgstr[1] "Команда %s выиграла %u удара-шлепка по врагу! Попробуй увернись!"
 msgstr[2] "Команда %s выиграла %u ударов-шлепков по врагу! Попробуй увернись!"
 
-#: src/weapon/snipe_rifle.cpp:259
+#: src/weapon/snipe_rifle.cpp:258
 #, c-format
 msgid "%s team has won %u sniper rifle! Aim and shoot between the eyes!"
 msgid_plural ""
@@ -798,7 +798,7 @@ msgstr "Чат"
 msgid "Check updates online?"
 msgstr "Проверять обновления игры?"
 
-#: src/menu/map_selection_box.cpp:104
+#: src/menu/map_selection_box.cpp:103
 msgid "Choose randomly between the different maps"
 msgstr "Выбрать карту случайно"
 
@@ -1774,7 +1774,7 @@ msgstr ""
 "Постарайтесь мягко приземлиться"
 
 #: src/weapon/gun.cpp:73 src/weapon/shotgun.cpp:87
-#: src/weapon/snipe_rifle.cpp:248
+#: src/weapon/snipe_rifle.cpp:247
 msgid ""
 "Press space to shoot\n"
 "Use Up/Down to change initial angle"
@@ -1850,7 +1850,7 @@ msgid "Rail Gun"
 msgstr "Рельсотрон"
 
 #. Random map selected
-#: src/menu/map_selection_box.cpp:103
+#: src/menu/map_selection_box.cpp:102
 msgid "Random map"
 msgstr "Случайная карта"
 
@@ -2036,7 +2036,7 @@ msgstr "Ударьте врага так, чтобы тот подпрыгнул
 msgid "Smaller aim angle and walk step"
 msgstr "Меньший угол прицела и шаг хода"
 
-#: src/weapon/snipe_rifle.cpp:247
+#: src/weapon/snipe_rifle.cpp:246
 msgid "Sniper Rifle"
 msgstr "Снайперская винтовка"
 
