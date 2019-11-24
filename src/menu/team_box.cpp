@@ -53,7 +53,7 @@ TeamBox::TeamBox(const std::string& _player_name, const Point2i& _size, uint g)
   SetBorder(transparent_color, 4);
   WidgetList::SetBackgroundColor(transparent_color);
 
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
   player_local[0] = LOAD_RES_IMAGE("menu/player_local_human");
   player_local[1] = LOAD_RES_IMAGE("menu/player_local_ai");

@@ -47,7 +47,7 @@ ComboBox::ComboBox (const std::string &label,
   position = Point2i(-1, -1);
   size = _size;
 
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   torus = new TorusCache(res, resource_id, BIG_R, SMALL_R);
 
   txt_label = new Text(label, dark_gray_color, legend_fsize, Font::FONT_NORMAL);

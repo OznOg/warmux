@@ -48,7 +48,7 @@ public:
                const std::string& user, const std::string& pwd, bool saved)
     : HBox(122*factor, false)
   {
-    Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+    auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
     Font::font_size_t fbig = Font::GetFixedSize(Font::FONT_BIG*factor+0.5f);
     Font::font_size_t fmedium = Font::GetFixedSize(Font::FONT_MEDIUM*factor+0.5f);
 

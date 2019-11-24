@@ -102,7 +102,7 @@ MainMenu::MainMenu() :
 
 void MainMenu::Init(void)
 {
-  Profile * xmlProfile = GetResourceManager().LoadXMLProfile("menu.xml", false);
+  auto xmlProfile = GetResourceManager().LoadXMLProfile("menu.xml", false);
   XmlReader * xmlFile = xmlProfile->GetXMLDocument();
 
   const xmlNode * mainMenuNode = xmlFile->GetFirstNamedChild(xmlFile->GetRoot(), "MainMenu");

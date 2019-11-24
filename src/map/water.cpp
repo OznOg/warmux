@@ -86,7 +86,7 @@ void Water::Init()
   std::string image = "gfx/";
   image += water_type;
 
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
   type_color = new Color(GetResourceManager().LoadColor(res, "water_colors/" + water_type));
 #ifdef HAVE_HANDHELD

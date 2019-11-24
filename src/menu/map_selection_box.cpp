@@ -42,7 +42,7 @@ MapSelectionBox::MapSelectionBox(const Point2i &_size, bool show_border, bool _d
   , selectable(true)
   , common(MapsList::GetInstance()->lst) // Created with an already initialized list
 {
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml",false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml",false);
 
   // random map
   random_map_preview = LOAD_RES_IMAGE("menu/random_map");

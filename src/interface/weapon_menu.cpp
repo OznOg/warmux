@@ -167,7 +167,7 @@ WeaponsMenu::WeaponsMenu()
   , old_pointer(Mouse::POINTER_SELECT)
 {
   // Loading value from XML
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   m_not_yet_available = LOAD_RES_SPRITE("interface/hourglass");
 
   // Polygon Size

@@ -404,7 +404,7 @@ void Config::LoadDefaultValue()
 #else
   m_default_config = GetDataDir() + "warmux_default_config.xml";
 #endif
-  Profile *res = GetResourceManager().LoadXMLProfile(m_default_config, true);
+  auto res = GetResourceManager().LoadXMLProfile(m_default_config, true);
 
   std::cout << "o " << _("Reading the default config file") << std::endl;
   std::ostringstream section;

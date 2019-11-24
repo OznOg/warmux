@@ -603,7 +603,7 @@ void DecoratedBox::SetPosition(Double x, Double y)
 
 void GenerateStyledBorder(Surface & source, DecoratedBox::Style style)
 {
-  Profile     *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   Surface     rounding_style[3][3];
   std::string style_str;
   int         i, j;

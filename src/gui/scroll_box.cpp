@@ -62,7 +62,7 @@ ScrollBox::ScrollBox(const Point2i & _size, bool force, bool alt, bool v)
 
 {
   // Load buttons
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   if (v) {
     m_dec = new Button(res, "menu/up");
     m_inc = new Button(res, "menu/down");

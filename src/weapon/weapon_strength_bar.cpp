@@ -55,7 +55,7 @@ void WeaponStrengthBar::InitPos(uint px, uint py, uint pwidth, uint pheight)
 {
   ProgressBar::InitPos(px, py, pwidth, pheight);
 
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   if (last_fire)
     delete last_fire;
   last_fire = new Sprite(LOAD_RES_IMAGE("interface/weapon_strength_bar_last_fire"));

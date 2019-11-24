@@ -48,7 +48,7 @@ SpinButton::SpinButton (const std::string & _label,
   size.y = (*Font::GetInstance(Font::FONT_SMALL)).GetHeight();
   shadowed = _shadowed;
 
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
   txtLabel = new Label(_label, 100, Font::FONT_SMALL, Font::FONT_NORMAL,
                        color, Text::ALIGN_LEFT_TOP, shadowed);

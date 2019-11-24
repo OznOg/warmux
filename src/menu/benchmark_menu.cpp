@@ -51,7 +51,7 @@ public:
     : HBox(height, false, false, true /* use full height */)
     , type(t)
   {
-    Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+    auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
     bench = new Label(name, 0, Font::FONT_BIG, Font::FONT_BOLD,
                       dark_gray_color, Text::ALIGN_CENTER);

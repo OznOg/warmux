@@ -43,7 +43,7 @@ WeaponHelp::WeaponHelp()
   , motion_start_time(0)
 {
   // Loading value from XML
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
   // Polygon Size
   background = LOAD_RES_IMAGE("interface/background_help");

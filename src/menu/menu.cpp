@@ -48,7 +48,7 @@ Menu::Menu(const std::string& bg, t_action _actions)
   close_menu = false ;
   Surface& window = GetMainWindow();
 
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   background = new Sprite(GetResourceManager().LoadImage(res, bg, false));
 
   b_ok = nullptr;

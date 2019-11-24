@@ -33,7 +33,7 @@ Question::Question(type _type)
   background = nullptr;
   text = nullptr;
 
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   switch (_type) {
   case WARNING:
     icon = new Sprite(GetResourceManager().LoadImage(res,"menu/ico_warning"));
@@ -176,7 +176,7 @@ void Question::Set (const std::string &pmessage,
   }
 
   if (bg_sprite != "") {
-    Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+    auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
     background = new Sprite(LOAD_RES_IMAGE(bg_sprite));
     background->ScaleSize(GetMainWindow().GetSize());
   } else {

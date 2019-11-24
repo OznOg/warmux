@@ -32,7 +32,7 @@ ButtonPic::ButtonPic(const std::string &label,
          const Point2i &_size) :
   Widget(_size)
 {
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   m_img_normal = GetResourceManager().LoadImage(res, resource_id, true);
 
   txt_label = new Text(label, dark_gray_color, Font::FONT_SMALL);

@@ -40,7 +40,7 @@ PictureTextCBox::PictureTextCBox(const std::string & label,
   m_disabled_back()
 {
   SetFont(dark_gray_color, fsize, Font::FONT_NORMAL, false);
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   m_image = LOAD_RES_IMAGE(resource_id);
   m_enabled = LOAD_RES_IMAGE("menu/enabled");
   m_disabled_front = LOAD_RES_IMAGE("menu/disabled_front");

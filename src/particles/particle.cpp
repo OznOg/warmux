@@ -141,7 +141,7 @@ void ParticleEngine::Load()
     return;
 
   // Pre-load the sprite of each particle
-  Profile *res = GetResourceManager().LoadXMLProfile("weapons.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("weapons.xml", false);
   particle_sprite[SMOKE_spr] = LOAD_RES_SPRITE("smoke");
   particle_sprite[EXPLOSION_SMOKE_spr] = LOAD_RES_SPRITE("smoke_explosion");
   particle_sprite[EXPLOSION_BIG_SMOKE_spr] = LOAD_RES_SPRITE("smoke_big_explosion");

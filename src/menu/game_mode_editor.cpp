@@ -46,7 +46,7 @@ static bool warned = false;
 GameModeEditor::GameModeEditor(const Point2i& size, float zoom, bool _draw_border)
   : VBox(size.x, _draw_border)
 {
-  Profile *res  = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res  = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   Font::font_size_t fmedium = Font::GetFixedSize(Font::FONT_MEDIUM*zoom+0.5f);
   Font::font_size_t fsmall  = Font::GetFixedSize(Font::FONT_SMALL*zoom+0.5f);
   zoom = fsmall * 1.0 / Font::FONT_SMALL;

@@ -173,7 +173,7 @@ static void NetworkInterfaceEvent(bool new_network_interface_up)
 NetworkConnectionMenu::NetworkConnectionMenu(network_menu_action_t action) :
   Menu("menu/bg_network", vOkCancel)
 {
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml",false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml",false);
 
   uint max_width = 0.95f*GetMainWindow().GetWidth();
   uint offset    = (GetMainWindow().GetWidth() - max_width)/2;

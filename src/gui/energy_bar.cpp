@@ -48,7 +48,7 @@ EnergyBar::EnergyBar(uint _x,
   widgetNode(nullptr),
   listThresholds()
 {
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
   for (uint i = 0; i < NB_OF_ENERGY_COLOR ;i++) {
     std::ostringstream color_name;

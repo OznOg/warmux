@@ -67,7 +67,7 @@ MultiTabs::MultiTabs(const Point2i& size, Font::font_size_t fs)
  , tab_header_width(TAB_MIN_WIDTH)
  , fsize(fs)
 {
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml",false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml",false);
 
   prev_tab_bt = new Button(res, "menu/really_big_minus", false);
   next_tab_bt = new Button(res, "menu/really_big_plus", false);

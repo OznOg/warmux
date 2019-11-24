@@ -131,7 +131,7 @@ void Interface::LoadDataInternal(Profile *res)
 
 void Interface::LoadData()
 {
-  Profile *res   = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res   = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   LoadDataInternal(res);
 }
 
@@ -160,7 +160,7 @@ Interface::Interface()
   , mask(nullptr)
   , scratch(nullptr)
 {
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
   m_text_color = LOAD_RES_COLOR("interface/text_color");
   m_energy_text_color = LOAD_RES_COLOR("interface/energy_text_color");

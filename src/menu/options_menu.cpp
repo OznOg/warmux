@@ -62,7 +62,7 @@ OptionMenu::OptionMenu() :
 {
   AppWarmux * app = AppWarmux::GetInstance();
   Config * config = Config::GetInstance();
-  Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   int window_w = app->video->window.GetWidth();
   int window_h = app->video->window.GetHeight();
 

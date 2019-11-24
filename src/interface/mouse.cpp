@@ -77,7 +77,7 @@ Mouse::Mouse()
   visible = MOUSE_VISIBLE;
 
   // Load the different pointers
-  Profile *res = GetResourceManager().LoadXMLProfile("cursors.xml", false);
+  auto res = GetResourceManager().LoadXMLProfile("cursors.xml", false);
 
   for (int i=POINTER_SELECT; i < POINTER_ATTACK; i++) {
     cursors.insert(std::make_pair(Mouse::pointer_t(i),

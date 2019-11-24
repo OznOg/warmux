@@ -241,7 +241,7 @@ ResultsMenu::ResultsMenu(std::vector<TeamResults*>& v, bool disconnected)
   , winner_box(nullptr)
   , save(nullptr)
 {
-  Profile *res  = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+  auto res  = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   Point2i wsize = GetMainWindow().GetSize();
   bool    small = !IsPodiumSeparate();
   uint x        = wsize.GetX() * 0.02f;

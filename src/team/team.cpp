@@ -62,7 +62,7 @@ Team* Team::LoadTeam(const std::string &teams_dir, const std::string &id, std::s
     return nullptr;
   }
 
-  Profile *res = GetResourceManager().LoadXMLProfile(nomfich, true);
+  auto res = GetResourceManager().LoadXMLProfile(nomfich, true);
   if (!res) {
     error = "Invalid file structure: cannot load resources";
     return nullptr;
