@@ -49,7 +49,7 @@ public:
              int max_value,
              const Color & color = white_color,
              bool shadowed = true);
-  SpinButton(Profile * profile,
+  SpinButton(std::shared_ptr<Profile> profile,
              const xmlNode * spinButtonNode);
   ~SpinButton(void) override;
 

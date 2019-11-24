@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-Country: Ukraine\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Мапа %s не знайдена :-("
@@ -48,23 +48,23 @@ msgstr[0] "%i гравець готовий"
 msgstr[1] "%i гравця готові"
 msgstr[2] "%i гравців готові"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s>, також відомий як %s з %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> з %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr "Команда %s"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr "Команда %s - Віддалено"
@@ -518,7 +518,7 @@ msgstr "Змінити вид зброї"
 msgid "'Tool' weapon category"
 msgstr "Змінити вид зброї"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(мертвий)"
 
@@ -532,7 +532,7 @@ msgid "(unknown time)"
 msgstr "(невідомий час)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(нескінченно)"
 
@@ -1006,7 +1006,7 @@ msgstr "Помилка при завантаженні команди :"
 msgid "Error loading team :"
 msgstr "Помилка при завантаженні команди :"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1181,8 +1181,8 @@ msgid "Have a good game!"
 msgstr "Гарної гри!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Провідник"
 
@@ -1368,7 +1368,7 @@ msgstr "Мишка шульги?"
 msgid "Lists the connected players"
 msgstr "Список підключених гравців"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "Завантаження мап:"
 
@@ -1407,7 +1407,7 @@ msgstr "З'єднання вручну"
 msgid "Map"
 msgstr "Мапа"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr ""
@@ -1582,7 +1582,7 @@ msgstr "Курсори руху"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Елемент <%s> не знайдений в файлі з налаштуваннями!"
@@ -1602,7 +1602,7 @@ msgid "None"
 msgstr "Добре"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "Кількість гравців"
 
@@ -1803,7 +1803,7 @@ msgstr "Випадкова мапа"
 msgid "Reading the default config file"
 msgstr "Зчитування налаштувань за замовчанням"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 msgid "Reading the personal config file"
 msgstr "Зчитування персональних налаштувань"
 
@@ -2018,7 +2018,7 @@ msgstr "Звуки"
 msgid "Starting a new game"
 msgstr "Починаємо нову гру"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "В запасі:"
 
@@ -2170,7 +2170,7 @@ msgstr "Сервер відхилив з'єднання."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Сервер відхилив з'єднання: невірне гасло!"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2282,12 +2282,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Не вийшло з'єднатись з хостом."
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Неможливо відкрити каталог з мапами (%s)!"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Неможливо відкрити персональний каталог з мапами (%s)!"
@@ -2497,7 +2497,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 msgid "You need at least one valid map!"
 msgstr "Вам потрібна хоча б одна карта !"
 
@@ -2527,7 +2527,7 @@ msgstr ""
 "Бомбардування : клацніть лівою кнопкою мишки на цілі\n"
 "Одне бомбардування за хід"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "не можу завантажити налаштування"
 
@@ -2540,7 +2540,7 @@ msgstr "Створений гравець"
 msgid "done"
 msgstr "Добре"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "помилка розбору конфігураційного файлу"
 
@@ -2552,7 +2552,7 @@ msgstr "з"
 msgid "loading..."
 msgstr ""
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "немає конфігураційного файлу!"
 

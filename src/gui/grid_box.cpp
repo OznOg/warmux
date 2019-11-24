@@ -35,7 +35,7 @@ GridBox::GridBox(uint _lines,
   InitGrid();
 }
 
-GridBox::GridBox(Profile * profile,
+GridBox::GridBox(std::shared_ptr<Profile> profile,
                  const xmlNode * gridBoxNode) :
   Box(profile, gridBoxNode),
   autoResize(false),

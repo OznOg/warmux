@@ -25,7 +25,6 @@
 #include "particles/particle.h"
 #include <WARMUX_point.h>
 
-class Profile;
 class ExplosiveWeaponConfig;
 
 int GetDamageFromExplosion(const ExplosiveWeaponConfig &config, Double distance);
@@ -37,7 +36,5 @@ void ApplyExplosion(const Point2i &pos,
                     bool fire_particle = true,
                     ParticleEngine::ESmokeStyle smoke = ParticleEngine::BigESmoke
                     );
-
-extern Profile *weapons_res_profile;
 
 #endif //WEAPON_TOOLS_H

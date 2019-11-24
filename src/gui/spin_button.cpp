@@ -70,7 +70,7 @@ SpinButton::SpinButton (const std::string & _label,
   ValueHasChanged();
 }
 
-SpinButton::SpinButton(Profile * profile,
+SpinButton::SpinButton(std::shared_ptr<Profile> profile,
                        const xmlNode * spinButtonNode) :
   AbstractSpinButton(profile, spinButtonNode),
   shadowed(false),

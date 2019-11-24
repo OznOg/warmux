@@ -43,7 +43,7 @@ public:
            bool value = true,
            Font::font_size_t fsize = Font::FONT_SMALL,
            Font::font_style_t font_style = Font::FONT_BOLD);
-  CheckBox(Profile * profile,
+  CheckBox(std::shared_ptr<Profile> profile,
            const xmlNode * checkBoxNode);
   ~CheckBox() override;
 

@@ -86,7 +86,6 @@ Mouse::Mouse()
   }
 
   current_pointer = POINTER_STANDARD;
-  GetResourceManager().UnLoadXMLProfile(res);
 
 #ifdef HAVE_TOUCHSCREEN
   SDL_ShowCursor(false);

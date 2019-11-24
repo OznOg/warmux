@@ -25,7 +25,7 @@
 #include "graphic/video.h"
 #include "tool/resource_manager.h"
 
-Button::Button(const Profile * res_profile,
+Button::Button(const std::shared_ptr<Profile> res_profile,
                const std::string & resource_id,
                bool _img_scale):
   img_scale(_img_scale),
@@ -35,7 +35,7 @@ Button::Button(const Profile * res_profile,
   size = image->GetSize();
 }
 
-Button::Button(Profile * profile,
+Button::Button(std::shared_ptr<Profile> profile,
                const xmlNode * buttonNode) :
   Widget(profile, buttonNode),
   img_scale(true),

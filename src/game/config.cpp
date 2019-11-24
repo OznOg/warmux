@@ -454,8 +454,6 @@ void Config::LoadDefaultValue()
       resolution_available.push_back(tmp);
   }
 #endif
-
-  GetResourceManager().UnLoadXMLProfile(res);
 }
 
 void Config::ReadTeams(std::list<ConfigTeam>& teams, const xmlNode* elem)

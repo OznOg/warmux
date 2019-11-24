@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0 \n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "！地图 %s未找到 :-("
@@ -41,23 +41,23 @@ msgid "%i player ready"
 msgid_plural "%i players ready"
 msgstr[0] "%i 玩家准备好了"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s> aka %s 从 %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> 从 %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr " %s 队伍"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr " %s 队伍- 遥控"
@@ -416,7 +416,7 @@ msgstr "‘投掷‘武器分类"
 msgid "'Tool' weapon category"
 msgstr "‘工具‘武器分类"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(死掉的)"
 
@@ -430,7 +430,7 @@ msgid "(unknown time)"
 msgstr "(未知时间)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(无限的)"
 
@@ -913,7 +913,7 @@ msgstr "读取地面出错:"
 msgid "Error loading team :"
 msgstr "读取队伍出错 :"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1087,8 +1087,8 @@ msgid "Have a good game!"
 msgstr "来吧！"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "指挥官"
 
@@ -1273,7 +1273,7 @@ msgstr "左手鼠标？"
 msgid "Lists the connected players"
 msgstr "列出已经连接的玩家"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "读取地图:"
 
@@ -1312,7 +1312,7 @@ msgstr "手动连接"
 msgid "Map"
 msgstr "地图"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr "地图 %s (位于 '%s' 不可用 %s)"
@@ -1483,7 +1483,7 @@ msgstr "下一个角色"
 msgid "No comment."
 msgstr "评论："
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "没找到 <%s>重点 xml配置文件 ！"
@@ -1502,7 +1502,7 @@ msgid "None"
 msgstr "无"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "角色数目"
 
@@ -1729,7 +1729,7 @@ msgstr "随机读取地图"
 msgid "Reading the default config file"
 msgstr "正读取默认设置文件"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 msgid "Reading the personal config file"
 msgstr "正读取个人设置文件"
 
@@ -1955,7 +1955,7 @@ msgstr "声音"
 msgid "Starting a new game"
 msgstr "重新来游戏"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "箱子:"
 
@@ -2104,7 +2104,7 @@ msgstr "服务器拒绝"
 msgid "The server rejected the connection: wrong password!"
 msgstr "服务器拒绝: 密码错了。"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2214,12 +2214,12 @@ msgstr "触碰/点击跳跃——持续不断则高跳。"
 msgid "Unable to contact the host."
 msgstr "连不上主机"
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "打不开地图目录(%s)！"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "无法打开个人地图目录 (%s)！"
@@ -2432,7 +2432,7 @@ msgstr "你是新回合的控制者！键入 /help 了解你的新力量"
 msgid "You must fill Head Commander and all player names"
 msgstr "你必须输入指挥官和全部玩家名称"
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 msgid "You need at least one valid map!"
 msgstr "你需要可用的地图！"
 
@@ -2463,7 +2463,7 @@ msgstr ""
 "爆炸 : 左键点击目标\n"
 "每回合一次"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "无法读取设置"
 
@@ -2476,7 +2476,7 @@ msgstr "玩家设置"
 msgid "done"
 msgstr "成"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "粘贴配置文件出错"
 
@@ -2489,7 +2489,7 @@ msgstr "从"
 msgid "loading..."
 msgstr "正在装载..."
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "没有配置文件！"
 

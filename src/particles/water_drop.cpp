@@ -24,6 +24,7 @@
 #include "particles/water_drop.h"
 #include "particles/particle.h"
 #include "tool/resource_manager.h"
+#include "map/maps_list.h"
 
 const uint living_time = 5000;
 

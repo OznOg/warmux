@@ -38,7 +38,7 @@ public:
                   const Point2i & size,
                   bool value = true,
                   Font::font_size_t fsize = Font::FONT_SMALL);
-  PictureTextCBox(Profile * profile,
+  PictureTextCBox(std::shared_ptr<Profile> profile,
                   const xmlNode * pictureNode);
 
   bool LoadXMLConfiguration(void) override;

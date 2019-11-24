@@ -32,7 +32,6 @@ class Text;
 
 class LoadingScreen
 {
-  Profile * res;
   Sprite * loading_bg;
   Text * loading_text;
   int icon_count;

@@ -36,10 +36,10 @@ protected:
   Sprite * image;
 
 public:
-  Button (const Profile * res_profile,
+  Button (const std::shared_ptr<Profile> res_profile,
           const std::string & resource_id,
           bool img_scale = false);
-  Button(Profile * profile,
+  Button(std::shared_ptr<Profile> profile,
          const xmlNode * baseListBoxNode);
   ~Button() override;
 

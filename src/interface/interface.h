@@ -137,7 +137,6 @@ private:
   void DrawReplayInfo() const;
   void DrawSmallInterface() const;
 
-  void LoadDataInternal(Profile *res);
   int GetWidth() const { return default_toolbar.GetWidth(); }
   int GetHeight() const;
   Point2i GetSize() const { return Point2i(GetWidth(), GetHeight()); }

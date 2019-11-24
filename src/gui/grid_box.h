@@ -46,7 +46,7 @@ class GridBox : public Box
             uint columns,
             uint margin,
             bool _draw_border = true);
-    GridBox(Profile * _profile,
+    GridBox(std::shared_ptr<Profile> _profile,
             const xmlNode * _gridBoxNode);
     ~GridBox(void) override;
     void AddWidget(Widget * widget) override;

@@ -51,8 +51,9 @@
 #define MARGIN          4
 #define WIND_ICON_WIDTH 79
 
-void Interface::LoadDataInternal(Profile *res)
+void Interface::LoadData()
 {
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   Surface tmp     = LOAD_RES_IMAGE("interface/background_interface");
 
   FreeDrawElements();
@@ -129,12 +130,6 @@ void Interface::LoadDataInternal(Profile *res)
   wind_bar.InitPos(0, 0, 82*zoom-1.5f, 15*zoom-1.5f);
 }
 
-void Interface::LoadData()
-{
-  auto res   = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  LoadDataInternal(res);
-}
-
 Interface::Interface()
   : global_timer(nullptr)
   , timer(nullptr)
@@ -161,7 +156,6 @@ Interface::Interface()
   , scratch(nullptr)
 {
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-
   m_text_color = LOAD_RES_COLOR("interface/text_color");
   m_energy_text_color = LOAD_RES_COLOR("interface/energy_text_color");
 
@@ -234,7 +228,8 @@ void Interface::Reset()
   character_under_cursor = nullptr;
   weapon_under_cursor = nullptr;
 
-  LoadDataInternal(GetResourceManager().LoadXMLProfile("graphism.xml", false));
+  LoadData();
+
   mode = Replay::GetConstInstance()->IsPlaying() ? MODE_REPLAY : MODE_NORMAL;
 
   weapons_menu.Reset();

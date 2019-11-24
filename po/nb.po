@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! %s-kartet ble ikke funnet :-("
@@ -40,23 +40,23 @@ msgid_plural "%i players ready"
 msgstr[0] " %i spiller klar"
 msgstr[1] " %i spillere klare"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s> dit %s fra %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> fra %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr "%s -laget"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr "%s -laget - Fjernstyrt"
@@ -471,7 +471,7 @@ msgstr "Antall lagmedlemmer"
 msgid "'Tool' weapon category"
 msgstr "Antall lagmedlemmer"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(død)"
 
@@ -485,7 +485,7 @@ msgid "(unknown time)"
 msgstr "(ukjent tid)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(uendelig)"
 
@@ -969,7 +969,7 @@ msgstr "Lasting av %s-laget feilet :"
 msgid "Error loading team :"
 msgstr "Lasting av %s-laget feilet :"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1146,8 +1146,8 @@ msgid "Have a good game!"
 msgstr "Ha et godt spill !"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Kommandant"
 
@@ -1336,7 +1336,7 @@ msgstr ""
 msgid "Lists the connected players"
 msgstr "Tilkoblet !"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "Last kart :"
 
@@ -1375,7 +1375,7 @@ msgstr "Manuell tilkobling"
 msgid "Map"
 msgstr "Kart"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr ""
@@ -1555,7 +1555,7 @@ msgstr "Fallskjerm"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Ikke noe element <%s> kunne bli funnet i konfigurasjonsfilet for XML !"
@@ -1576,7 +1576,7 @@ msgid "None"
 msgstr "ferdig"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "Antall lagmedlemmer"
 
@@ -1783,7 +1783,7 @@ msgstr "Tilfeldig kart"
 msgid "Reading the default config file"
 msgstr "Laster standard konfigurasjonsfil"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 #, fuzzy
 msgid "Reading the personal config file"
 msgstr "Laster personlig konfigurasjonsfil"
@@ -1999,7 +1999,7 @@ msgstr "Lyder"
 msgid "Starting a new game"
 msgstr "Laster et nytt spill"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "Lager :"
 
@@ -2159,7 +2159,7 @@ msgstr "Tjeneren nektet tilkoblingen"
 msgid "The server rejected the connection: wrong password!"
 msgstr "Tjeneren nektet tilkoblingen: feil passord!"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2271,12 +2271,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Umulig å koble til tjeneren."
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, fuzzy, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "kunne ikke åpne kartmappen (%s) !"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, fuzzy, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "kunne ikke åpne den personlige kartmappen (%s) !"
@@ -2486,7 +2486,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 #, fuzzy
 msgid "You need at least one valid map!"
 msgstr "Du må ha i hvert fall ett godkjent kart !"
@@ -2518,7 +2518,7 @@ msgid ""
 msgstr ""
 "angrepsretning: venstre/høyreå bombe: ventreklikk på måleten bombe per runde"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "Kunne ikke laste konfigurasjonsfilen"
 
@@ -2531,7 +2531,7 @@ msgstr ""
 msgid "done"
 msgstr "ferdig"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "Feil under lasting av konfigurasjonsfil"
 
@@ -2543,7 +2543,7 @@ msgstr "fra"
 msgid "loading..."
 msgstr ""
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "Konfigurasjonsfilen ble ikke funnet!"
 

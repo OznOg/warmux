@@ -43,8 +43,6 @@ LoadingScreen::LoadingScreen(int icon_count):
   std::string loading_str(_("loading..."));
   loading_text = new Text(loading_str, white_color, Font::FONT_HUGE);
 
-  // Get profile from resource manager
-  res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   DrawBackground();
 }
 
@@ -70,6 +68,8 @@ void LoadingScreen::StartLoading(uint nb, const std::string& resource,
                                  const std::string& label) const
 {
   int index = nb-1;
+  // Get profile from resource manager
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   const Surface& image = GetResourceManager().LoadImage(res, "loading_screen/"+resource);
 
   int slot_margin_x = (120/2 - image.GetWidth()/2);

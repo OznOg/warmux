@@ -22,7 +22,7 @@
 #include "gui/button_text.h"
 #include "graphic/text.h"
 
-ButtonText::ButtonText(const Profile *res_profile,
+ButtonText::ButtonText(const std::shared_ptr<Profile> res_profile,
                        const std::string& resource_id,
                        const std::string &new_text,
                        Font::font_size_t font_size,

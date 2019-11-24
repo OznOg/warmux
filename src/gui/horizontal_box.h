@@ -32,7 +32,7 @@ class HBox : public Box
   public:
     HBox(uint height, bool draw_border = true, bool shadowed = true,
          bool force_widget_size = true);
-    HBox(Profile * profile,
+    HBox(std::shared_ptr<Profile> profile,
          const xmlNode * horizontalBoxNode);
 
     ~HBox() override { }

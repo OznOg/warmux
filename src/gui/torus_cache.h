@@ -25,7 +25,6 @@
 #include <WARMUX_rectangle.h>
 #include "graphic/surface.h"
 
-class Profile;
 class Sprite;
 
 class TorusCache
@@ -39,7 +38,7 @@ class TorusCache
   int      m_small_r;
 
 public:
-  TorusCache(Profile *res, const std::string& resource_id, int bigr, int smallr);
+  TorusCache(const std::string& resource_id, int bigr, int smallr);
   ~TorusCache();
   void Draw(const Rectanglei& box);
   void Refresh(float angle, float open);

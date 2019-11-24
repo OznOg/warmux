@@ -45,7 +45,7 @@ public:
   static const uint NB_OF_ENERGY_COLOR = 6;
 
 private:
-  Profile * profile;
+  std::shared_ptr<Profile> profile;
   const xmlNode * widgetNode;
   std::vector<Threshold> listThresholds;
 
@@ -58,7 +58,7 @@ public:
             int minValue = 0,
             int maxValue = 100,
             enum orientation _orientation = PROG_BAR_HORIZONTAL);
-  EnergyBar(Profile * _profile,
+  EnergyBar(std::shared_ptr<Profile> _profile,
             const xmlNode * _widgetNode);
   ~EnergyBar(void) override {}
 

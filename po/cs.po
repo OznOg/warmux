@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Mapa %s nebyla nalezena :-("
@@ -44,23 +44,23 @@ msgstr[0] "%i hráč připraven"
 msgstr[1] "%i hráči připraveni"
 msgstr[2] "%i hráčů připraveno"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s> jako %s z %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> z %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr "%s Tým"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr "%s Tým - Vzdálený"
@@ -510,7 +510,7 @@ msgstr "Změnit druh zbraně"
 msgid "'Tool' weapon category"
 msgstr "Změnit druh zbraně"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(mrtvý)"
 
@@ -524,7 +524,7 @@ msgid "(unknown time)"
 msgstr "(neznámý čas)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(neomezeně)"
 
@@ -1007,7 +1007,7 @@ msgstr "Chyba při nahrávání týmu :"
 msgid "Error loading team :"
 msgstr "Chyba při nahrávání týmu :"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1188,8 +1188,8 @@ msgid "Have a good game!"
 msgstr "Přeji dobrou hru!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Velitel"
 
@@ -1382,7 +1382,7 @@ msgstr ""
 msgid "Lists the connected players"
 msgstr "Vypsat připojené hráče"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "Nahrát mapy:"
 
@@ -1421,7 +1421,7 @@ msgstr "Připojit se ručně"
 msgid "Map"
 msgstr "Mapa"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr ""
@@ -1602,7 +1602,7 @@ msgstr "Padák"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "V konfiguračním xml souboru nebyl nalezen žádný element <%s>!"
@@ -1623,7 +1623,7 @@ msgid "None"
 msgstr "hotovo"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "Počet hráčů"
 
@@ -1832,7 +1832,7 @@ msgstr "Náhodná mapa"
 msgid "Reading the default config file"
 msgstr "Čtu výchozí konfigurační soubor"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 #, fuzzy
 msgid "Reading the personal config file"
 msgstr "Čtu osobní konfigurační soubor"
@@ -2053,7 +2053,7 @@ msgstr "Zvuky"
 msgid "Starting a new game"
 msgstr "Spouštím novou hru"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "Zásoby:"
 
@@ -2213,7 +2213,7 @@ msgstr "Server odmítl spojení."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Server odmítl spojení: špatné heslo!"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2330,12 +2330,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Nepodařilo kontaktovat hostitele."
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, fuzzy, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Nepodařilo se otevřít adresář s mapami (%s)!"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, fuzzy, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Nepodařilo se otevřít osobní adresář s mapami (%s)!"
@@ -2554,7 +2554,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 #, fuzzy
 msgid "You need at least one valid map!"
 msgstr "Potřebujete nejméně jednu použitelnou mapu!"
@@ -2588,7 +2588,7 @@ msgstr ""
 "Bombardování : kliknout levým tlačítkem na cíl\n"
 "bombardování letí obloukem"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "nepodařilo se načíst konfigurační soubor"
 
@@ -2601,7 +2601,7 @@ msgstr ""
 msgid "done"
 msgstr "hotovo"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "chyba při zpracovávání konfiguračního souboru"
 
@@ -2613,7 +2613,7 @@ msgstr "z"
 msgid "loading..."
 msgstr ""
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "žádný konfigurační soubor!"
 

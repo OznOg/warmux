@@ -27,7 +27,7 @@ HBox::HBox(uint height, bool draw_border, bool shadowed, bool _force_widget_size
 {
 }
 
-HBox::HBox(Profile * profile,
+HBox::HBox(std::shared_ptr<Profile> profile,
            const xmlNode * horizontalBoxNode) :
   Box(profile, horizontalBoxNode),
   force_widget_size(true)

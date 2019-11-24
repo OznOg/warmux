@@ -30,6 +30,7 @@
 
 #include "map/maps_list.h"
 #include "map/water.h"
+#include "map/random_map.h"
 #include "game/config.h"
 #include "graphic/surface.h"
 #include "gui/question.h"
@@ -96,11 +97,6 @@ InfoMapBasicAccessor* InfoMap::LoadBasicInfo()
   return basic;
 
 err:
-  if (res_profile) {
-    GetResourceManager().UnLoadXMLProfile(res_profile);
-    res_profile = nullptr;
-  }
-
   Question question(Question::WARNING);
   std::string msg = Format(_("Map %s in folder '%s' is invalid: %s"),
                            m_map_name.c_str(), m_directory.c_str(), error.c_str());
@@ -211,6 +207,14 @@ InfoMap::~InfoMap()
     delete basic;
 }
 
+std::string InfoMap::GenerateMap(std::shared_ptr<Profile> profile, InfoMap::Island_type generator,
+                                         const int width, const int height) const
+{
+  RandomMap random_map(profile, width, height);
+  random_map.Generate(generator);
+  return random_map.SaveMap();
+}
+
 InfoMapAccessor *InfoMap::LoadData()
 {
   if (normal)
@@ -237,8 +241,7 @@ InfoMapAccessor *InfoMap::LoadData()
   if (!random_generated) {
     ground_filename = GetResourceManager().LoadImageFilename(res_profile, "map");
   } else {
-    ground_filename = GetResourceManager().GenerateMap(res_profile, island_type,
-                                                       img_sky.GetWidth(), img_sky.GetHeight());
+    ground_filename = GenerateMap(res_profile, island_type, img_sky.GetWidth(), img_sky.GetHeight());
   }
   if (!DoesFileExist(ground_filename))
     return nullptr;

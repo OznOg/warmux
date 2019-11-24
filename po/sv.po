@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2;plural=n != 1;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Banan %s hittades inte :-("
@@ -41,23 +41,23 @@ msgid_plural "%i players ready"
 msgstr[0] "%i spelare redo"
 msgstr[1] "%i spelare redo"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s> även känd som %s från %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> från %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr "Lag %s"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr "Lag %s - Fjärr"
@@ -475,7 +475,7 @@ msgstr "Ändra vapenkategori"
 msgid "'Tool' weapon category"
 msgstr "Ändra vapenkategori"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(död)"
 
@@ -489,7 +489,7 @@ msgid "(unknown time)"
 msgstr "(okänd tid)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(obegränsat)"
 
@@ -971,7 +971,7 @@ msgstr "Fel vid inläsning av lag :"
 msgid "Error loading team :"
 msgstr "Fel vid inläsning av lag :"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1149,8 +1149,8 @@ msgid "Have a good game!"
 msgstr "Lycka till i spelet!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Ledare"
 
@@ -1342,7 +1342,7 @@ msgstr "Vänsterhänt mus?"
 msgid "Lists the connected players"
 msgstr "Lista anslutna spelare"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "Läs in banor:"
 
@@ -1381,7 +1381,7 @@ msgstr "Manuell anslutning"
 msgid "Map"
 msgstr "Bana"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr ""
@@ -1560,7 +1560,7 @@ msgstr "Flyttar lagmedlemen"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Inget <%s>-element hittades i xml-konfigurationsfilen!"
@@ -1580,7 +1580,7 @@ msgid "None"
 msgstr "klar"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "Antal lagmedlemmar"
 
@@ -1787,7 +1787,7 @@ msgstr "Slumpad bana"
 msgid "Reading the default config file"
 msgstr "Läser in standardkonfigurationsfilen"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 msgid "Reading the personal config file"
 msgstr "Läser in personlig konfigurationsfil"
 
@@ -2004,7 +2004,7 @@ msgstr "Ljud"
 msgid "Starting a new game"
 msgstr "Startar ett nytt spel"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "Antal:"
 
@@ -2160,7 +2160,7 @@ msgstr "Servern nekade anslutningen."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Servern nekade anslutningen: fel lösenord!"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2275,12 +2275,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Kunde inte kontakta värden."
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Kunde inte öppna bankatalogen (%s)!"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Kunde inte öppna den personliga bankatalogen (%s)!"
@@ -2494,7 +2494,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 msgid "You need at least one valid map!"
 msgstr "Du behöver åtminstone en giltig bana!"
 
@@ -2525,7 +2525,7 @@ msgstr ""
 "Bombning : vänsterklicka på målet\n"
 "en bombning per omgång"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "konfigurationen kunde inte laddas"
 
@@ -2538,7 +2538,7 @@ msgstr "egen spelare"
 msgid "done"
 msgstr "klar"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "Fel vid läsning av konfigurationsfilen"
 
@@ -2550,7 +2550,7 @@ msgstr "från"
 msgid "loading..."
 msgstr ""
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "konfigurationsfil saknas!"
 

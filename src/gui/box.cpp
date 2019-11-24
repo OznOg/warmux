@@ -44,7 +44,7 @@ Box::Box(const Point2i & size, bool _draw_border, bool shadowed)
   }
 }
 
-Box::Box(Profile * profile,
+Box::Box(std::shared_ptr<Profile> profile,
          const xmlNode * boxNode) :
   WidgetList(profile, boxNode),
   margin(5)

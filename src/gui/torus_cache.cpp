@@ -34,12 +34,14 @@ static Sprite  *img_plus = nullptr;
 static Sprite  *img_minus = nullptr;
 static Color    progress_color;
 
-TorusCache::TorusCache(Profile *res, const std::string& resource_id, int bigr, int smallr)
+TorusCache::TorusCache(const std::string& resource_id, int bigr, int smallr)
   : m_last_angle(-1.0)
   , m_torus(nullptr)
   , m_big_r(bigr)
   , m_small_r(smallr)
 {
+  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
+
   // Load the shared resources
   if (!annulus_background)
     annulus_background = new Surface(LOAD_RES_IMAGE("menu/annulus_background"));

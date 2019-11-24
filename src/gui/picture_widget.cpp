@@ -57,7 +57,7 @@ PictureWidget::PictureWidget(const Surface & s, ScalingType type)
   SetSurface(s, type);
 }
 
-PictureWidget::PictureWidget(Profile * profile,
+PictureWidget::PictureWidget(std::shared_ptr<Profile> profile,
                              const xmlNode * pictureNode)
   : Widget(profile, pictureNode)
   , disabled(false)

@@ -51,7 +51,7 @@ PictureTextCBox::PictureTextCBox(const std::string & label,
   SetSize(_size);
 }
 
-PictureTextCBox::PictureTextCBox(Profile * profile,
+PictureTextCBox::PictureTextCBox(std::shared_ptr<Profile> profile,
                                  const xmlNode * widgetNode) :
   CheckBox(profile, widgetNode),
   m_image(),

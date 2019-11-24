@@ -28,6 +28,8 @@
 #include <WARMUX_debug.h>
 #include <WARMUX_point.h>
 
+#include "tool/resource_manager.h"
+
 class Character;
 class Sprite;
 class EmptyWeaponConfig;
@@ -44,6 +46,8 @@ extern const uint WEAPON_ICO_WIDTH;
 extern const uint WEAPON_ICO_HEIGHT;
 
 //-----------------------------------------------------------------------------
+
+extern std::shared_ptr<Profile> weapons_res_profile;
 
 class Weapon
 {

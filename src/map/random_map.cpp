@@ -49,7 +49,7 @@ RandomElementList::~RandomElementList()
   }
 }
 
-RandomMap::RandomMap(Profile *profile, const int width, const int height)
+RandomMap::RandomMap(std::shared_ptr<Profile> profile, const int width, const int height)
 {
   this->profile = profile;
   SetSize(width, height);

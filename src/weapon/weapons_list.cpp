@@ -43,16 +43,12 @@ WeaponsList::~WeaponsList()
     delete *it;
 
   // no need to delete objects in m_weapons_launcher_list nor clear the 2 lists !
-  // no need either to release profile, ResourceManager will do it on exit
-  weapons_res_profile = nullptr;
 }
 
 //-----------------------------------------------------------------------------
 
 WeaponsList::WeaponsList(const xmlNode* weapons_xml)
 {
-  weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
-
   // First launcher weapons
   m_launcher_weapons_list.push_back(new AnvilLauncher);
   m_launcher_weapons_list.push_back(new TuxLauncher);

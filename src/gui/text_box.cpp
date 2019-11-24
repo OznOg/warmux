@@ -50,7 +50,7 @@ TextBox::TextBox(const std::string &label, uint width,
   Widget::SetHighlightBgColor(highlightOptionColorBox);
 }
 
-TextBox::TextBox(Profile * profile,
+TextBox::TextBox(std::shared_ptr<Profile> profile,
                  const xmlNode * textBoxNode) :
   Label(profile, textBoxNode),
   max_nb_chars(0),

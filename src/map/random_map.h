@@ -73,7 +73,7 @@ protected:
   Polygon * expanded_bezier_shape;
 
   // Internal parameters
-  Profile *profile;
+  std::shared_ptr<Profile> profile;
   Color border_color;
   Surface texture;
   Surface element;
@@ -84,7 +84,7 @@ protected:
   std::vector<MapElement> element_list;
 
 public:
-  RandomMap(Profile *profile, const int width, const int height);
+  RandomMap(std::shared_ptr<Profile> profile, const int width, const int height);
   void SetSize(const int w, const int h) { width = w; height = h; }
   Point2i GetSize() const { return Point2i(width, height); };
   int GetWidth() const { return width; };

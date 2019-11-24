@@ -37,7 +37,7 @@ WidgetList::WidgetList(const Point2i &size)
 {
 }
 
-WidgetList::WidgetList(Profile * profile, const xmlNode * widgetListNode)
+WidgetList::WidgetList(std::shared_ptr<Profile> profile, const xmlNode * widgetListNode)
   : Widget(profile, widgetListNode)
   , selected_widget(nullptr)
 {

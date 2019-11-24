@@ -19,7 +19,7 @@ msgstr ""
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! マップ「%s」が見つかりません :-("
@@ -41,23 +41,23 @@ msgid "%i player ready"
 msgid_plural "%i players ready"
 msgstr[0] "%i人のプレイヤーの準備ができました"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s> aka %s from %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> from %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr " %s チーム"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr " %s チーム - 操作"
@@ -428,7 +428,7 @@ msgstr "武器カテゴリを切り替える"
 msgid "'Tool' weapon category"
 msgstr "武器カテゴリを切り替える"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(死)"
 
@@ -442,7 +442,7 @@ msgid "(unknown time)"
 msgstr "(不明な時間)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(無制限)"
 
@@ -925,7 +925,7 @@ msgstr "チーム読み込みエラー :"
 msgid "Error loading team :"
 msgstr "チーム読み込みエラー :"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1101,8 +1101,8 @@ msgid "Have a good game!"
 msgstr "楽しんで！"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "指揮官"
 
@@ -1292,7 +1292,7 @@ msgstr "左手マウス？"
 msgid "Lists the connected players"
 msgstr "接続したプレイヤーのリスト"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "マップ読込:"
 
@@ -1331,7 +1331,7 @@ msgstr "マニュアル接続"
 msgid "Map"
 msgstr "マップ"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr ""
@@ -1509,7 +1509,7 @@ msgstr "キャラクターの移動"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "xml設定ファイル内に<%s>要素が見つかりません！"
@@ -1529,7 +1529,7 @@ msgid "None"
 msgstr "完了"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "キャラクター数"
 
@@ -1736,7 +1736,7 @@ msgstr "ランダムマップ"
 msgid "Reading the default config file"
 msgstr "デフォルト構成ファイルの読込中"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 msgid "Reading the personal config file"
 msgstr "個人構成ファイルを読込中"
 
@@ -1954,7 +1954,7 @@ msgstr "サウンド"
 msgid "Starting a new game"
 msgstr "ゲームを開始中"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "残り:"
 
@@ -2106,7 +2106,7 @@ msgstr "サーバーから接続が拒否されました。"
 msgid "The server rejected the connection: wrong password!"
 msgstr "サーバーから接続が拒否されました: パスワードが違います！"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2222,12 +2222,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "ホストにコンタクトできません。"
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "マップディレクトリが開けません (%s)!"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "個人マップディレクトリが開けません (%s)!"
@@ -2441,7 +2441,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 msgid "You need at least one valid map!"
 msgstr "最低1つの有効なマップが必要です！"
 
@@ -2473,7 +2473,7 @@ msgstr ""
 "爆撃 : 目標を左クリック\n"
 "ターン毎で1回"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "構成が読み込めませんでした。"
 
@@ -2486,7 +2486,7 @@ msgstr "カスタムプレイヤー"
 msgid "done"
 msgstr "完了"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "構成ファイルを解析しているエラー"
 
@@ -2499,7 +2499,7 @@ msgstr "from"
 msgid "loading..."
 msgstr ""
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "構成ファイルがありません！"
 

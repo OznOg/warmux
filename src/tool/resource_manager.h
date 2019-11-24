@@ -34,7 +34,7 @@
 #include <WARMUX_singleton.h>
 #include "graphic/surface.h"
 #include "interface/mouse.h"
-#include "map/maps_list.h"
+#include "tool/xml_document.h"
 
 #include <memory>
 
@@ -44,19 +44,16 @@
 #endif
 
 class Sprite;
-class XmlReader;
-typedef struct _xmlNode xmlNode;
 class MouseCursor;
 
 class Profile
 {
 protected:
-  friend class ResourceManager;
   int ref_count = 1;
   std::string name;
-  Profile(const std::string& name, std::unique_ptr<XmlReader> &&doc) : name(name), doc(std::move(doc)) { }
 
 public:
+  Profile(const std::string& name, std::unique_ptr<XmlReader> &&doc) : name(name), doc(std::move(doc)) { }
   std::unique_ptr<XmlReader> doc; //TODO move to private
   std::string filename;
   std::string relative_path;
@@ -80,23 +77,21 @@ public:
 
   std::shared_ptr<Profile> LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const;
 
-  MouseCursor LoadMouseCursor(const Profile *profile, const std::string& resource_name, Mouse::pointer_t pointer_id) const;
-  Color LoadColor(const Profile *profile, const std::string& resource_name) const;
-  int LoadInt(const Profile *profile, const std::string& resource_name) const;
-  Double LoadDouble(const Profile *profile, const std::string& resource_name) const;
-  Point2i LoadPoint2i(const Profile *profile, const std::string& resource_name) const;
-  Point2d LoadPoint2d(const Profile *profile, const std::string& resource_name) const;
-  std::string LoadImageFilename(const Profile *profile, const std::string& resource_name) const;
-  Surface LoadImage(const Profile *profile, const std::string& resource_name, bool alpha = true) const;
+  MouseCursor LoadMouseCursor(const std::shared_ptr<Profile> profile, const std::string& resource_name, Mouse::pointer_t pointer_id) const;
+  Color LoadColor(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
+  int LoadInt(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
+  Double LoadDouble(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
+  Point2i LoadPoint2i(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
+  Point2d LoadPoint2d(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
+  std::string LoadImageFilename(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
+  Surface LoadImage(const std::shared_ptr<Profile> profile, const std::string& resource_name, bool alpha = true) const;
 
-  Sprite *LoadSprite(const Profile *profile, const std::string& resource_name) const;
+  Sprite *LoadSprite(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
 
   // the following method is usefull if you have direct access to the xml file
   Sprite *LoadSprite(const xmlNode* sprite_elem, const std::string& resource_name, const std::string& main_folder) const;
 
-  std::string GenerateMap(Profile *profile, InfoMap::Island_type generator,
-                          const int width, const int height) const;
-  const xmlNode*  GetElement(const Profile *profile, const std::string& ressource_type,
+  const xmlNode*  GetElement(const std::shared_ptr<Profile> profile, const std::string& ressource_type,
                              const std::string& ressource_name) const;
 };
 

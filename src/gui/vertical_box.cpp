@@ -27,7 +27,7 @@ VBox::VBox(uint width, bool draw_border, bool shadowed, bool _force_widget_size)
 {
 }
 
-VBox::VBox(Profile * profile,
+VBox::VBox(std::shared_ptr<Profile> profile,
            const xmlNode * verticalBoxNode) :
   Box(profile, verticalBoxNode),
   force_widget_size(false)

@@ -43,7 +43,7 @@ class AbstractSpinButton : public Widget
                        int step, 
                        int min_value, 
                        int max_value);
-    AbstractSpinButton(Profile * profile,
+    AbstractSpinButton(std::shared_ptr<Profile> profile,
                        const xmlNode * spinButtonNode);
     ~AbstractSpinButton(void) override {}
 

@@ -27,11 +27,11 @@
 #include <WARMUX_base.h>
 #include <WARMUX_singleton.h>
 #include "graphic/surface.h"
+#include "tool/resource_manager.h"
 #include "tool/xml_document.h"
 
 // Forward declarations
 class Action;
-class Profile;
 class Water;
 class InfoMapBasicAccessor;
 class InfoMapAccessor;
@@ -87,10 +87,12 @@ protected:
   InfoMapBasicAccessor *basic;
   InfoMapAccessor      *normal;
 
-  Profile *res_profile;
+  std::shared_ptr<Profile> res_profile;
 
   bool ProcessXmlData(const xmlNode* xml);
 
+  std::string GenerateMap(std::shared_ptr<Profile> profile, InfoMap::Island_type generator,
+                          const int width, const int height) const;
 public:
   InfoMap(const std::string&, const std::string&);
   ~InfoMap();
@@ -100,7 +102,7 @@ public:
   const std::string& GetDirectory() const { return m_directory; }
   std::string GetConfigFilepath() const { return m_directory + PATH_SEPARATOR + "config.xml"; }
 
-  Profile * ResProfile() const { return res_profile; }
+  std::shared_ptr<Profile> ResProfile() const { return res_profile; }
 
   // Shouldn't those be protected?
   const struct s_wind& GetWind() const { return wind; }

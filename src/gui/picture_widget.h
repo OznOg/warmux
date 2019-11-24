@@ -59,7 +59,7 @@ public:
   PictureWidget(const Point2i & size,
                 const std::string & resource_id,
                 ScalingType type = NO_SCALING);
-  PictureWidget(Profile * profile,
+  PictureWidget(std::shared_ptr<Profile> profile,
                 const xmlNode * pictureNode);
   ~PictureWidget() override;
 

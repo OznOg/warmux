@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-Country: FINLAND\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Karttaa %s ei löydy :-("
@@ -46,23 +46,23 @@ msgid_plural "%i players ready"
 msgstr[0] "%i pelaaja valmiina"
 msgstr[1] "%i pelaajaa valmiina"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s> aka %s, kotipaikka: %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> maasta %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr "Joukkue %s"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr "%s Joukkue - Etä"
@@ -474,7 +474,7 @@ msgstr "'Heitto' aseluokka"
 msgid "'Tool' weapon category"
 msgstr "'Työkalu' aseluokka"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(kuollut)"
 
@@ -488,7 +488,7 @@ msgid "(unknown time)"
 msgstr "(tuntematon aika)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(rajaton)"
 
@@ -974,7 +974,7 @@ msgstr "Virhe ladattaessa maastoa"
 msgid "Error loading team :"
 msgstr "Virhe ladattaessa joukkuetta :"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1156,8 +1156,8 @@ msgid "Have a good game!"
 msgstr "Pidähän hauskaa!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Ylikomentaja"
 
@@ -1344,7 +1344,7 @@ msgstr "Vasenkätisen hiiri"
 msgid "Lists the connected players"
 msgstr "Listaa liittyneet pelaajat"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "Lataa kartat:"
 
@@ -1383,7 +1383,7 @@ msgstr "Manuaalinen yhteys"
 msgid "Map"
 msgstr "Kartta"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr "Kartta %s kansiossa '%s' on virheellinen: %s"
@@ -1554,7 +1554,7 @@ msgstr "Seuraava hahmo"
 msgid "No comment."
 msgstr "Kommentti:"
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Elementtiä <%s> ei löytynyt xml-tiedostosta !"
@@ -1573,7 +1573,7 @@ msgid "None"
 msgstr "Ei mitään"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "Pelaajien määrä"
 
@@ -1800,7 +1800,7 @@ msgstr "Satunnainen kartta"
 msgid "Reading the default config file"
 msgstr "Luetaan oletusasetuksia"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 msgid "Reading the personal config file"
 msgstr "Luetaan henkilökohtaisia asetuksia"
 
@@ -2027,7 +2027,7 @@ msgstr "Ääniasetukset"
 msgid "Starting a new game"
 msgstr "Aloitetaan uusi peli"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "Varasto:"
 
@@ -2180,7 +2180,7 @@ msgstr "Palvelin hylkäsi yhteyden."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Palvelin hylkäsi yhteyden: väärä salasana!"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2294,12 +2294,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Ei saatu yhteyttä isäntään."
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Karttahakemiston avaaminen epäonnistui (%s)!"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Henkilökohtaisten karttojen avaaminen epäonnistui (%s)!"
@@ -2511,7 +2511,7 @@ msgstr "Olet uusi vuoromestari! Opi uusista kyvyistä kirjoittamalla /help"
 msgid "You must fill Head Commander and all player names"
 msgstr "Ylikomentajan ja kaikkien pelaajien nimet pitää täyttää"
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 msgid "You need at least one valid map!"
 msgstr "Tarvitset ainakin yhden kunnollisen kartan !"
 
@@ -2541,7 +2541,7 @@ msgstr ""
 "Pommitus : valitse kohde klikkaamalla kartalta\n"
 "Yksi pommitus per vuoro"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "ei voitu lukea asetuksia"
 
@@ -2554,7 +2554,7 @@ msgstr "henkilökohtainen pelaaja"
 msgid "done"
 msgstr "valmis"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "virhe luettaessa asetustiedostoa"
 
@@ -2566,7 +2566,7 @@ msgstr ", "
 msgid "loading..."
 msgstr "ladataan..."
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "ei asetustiedostoa!"
 

@@ -44,7 +44,7 @@ protected:
 public:
   WidgetList();
   WidgetList(const Point2i &size);
-  WidgetList(Profile * profile,
+  WidgetList(std::shared_ptr<Profile> profile,
              const xmlNode * widgetListNode);
   ~WidgetList() override;
 

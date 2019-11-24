@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "Mape %s no trobat :-("
@@ -47,23 +47,23 @@ msgid_plural "%i players ready"
 msgstr[0] "%i jugador preparat"
 msgstr[1] "%i jugadors preparats"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s> aka %s de %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> de %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr "Equip %s"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr "%s Equip - Remot"
@@ -463,7 +463,7 @@ msgstr "Canviar la categoria d'arma "
 msgid "'Tool' weapon category"
 msgstr "Canviar la categoria d'arma "
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(mort)"
 
@@ -477,7 +477,7 @@ msgid "(unknown time)"
 msgstr "(temps desconegut)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(ilimitat)"
 
@@ -961,7 +961,7 @@ msgstr "Error carregant l'equip:"
 msgid "Error loading team :"
 msgstr "Error carregant l'equip:"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1143,8 +1143,8 @@ msgid "Have a good game!"
 msgstr "Que tinguis una bona partida!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Comandant cap"
 
@@ -1338,7 +1338,7 @@ msgstr ""
 msgid "Lists the connected players"
 msgstr "Connectat"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "Carrega els mapas:"
 
@@ -1377,7 +1377,7 @@ msgstr "Connexió manual"
 msgid "Map"
 msgstr "Mapa"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr ""
@@ -1557,7 +1557,7 @@ msgstr "Moure el personatge"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Cap element <%s> trobat en el arxiu de configuració xml!"
@@ -1578,7 +1578,7 @@ msgid "None"
 msgstr "Acabat"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "Nombre de jugadors"
 
@@ -1786,7 +1786,7 @@ msgstr "Mapa aleatori"
 msgid "Reading the default config file"
 msgstr "Llegint fitxer de configuració"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 #, fuzzy
 msgid "Reading the personal config file"
 msgstr "Llegint fitxer de configuració personal"
@@ -2008,7 +2008,7 @@ msgstr "Sons"
 msgid "Starting a new game"
 msgstr "Començant un nou joc"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "Munició:"
 
@@ -2174,7 +2174,7 @@ msgstr "El servidor ha rebutjat la connexió."
 msgid "The server rejected the connection: wrong password!"
 msgstr "El servidor ha rebutjat la connexió: password erroni"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2290,12 +2290,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Impossible contactar amb el servidor! "
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, fuzzy, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Imposible obrir el directori dels mapas (%s)!"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, fuzzy, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Impossible obrir el directori dels mapes (%s)!"
@@ -2514,7 +2514,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 #, fuzzy
 msgid "You need at least one valid map!"
 msgstr "Tu necesites almenys un mapa vàlid!"
@@ -2548,7 +2548,7 @@ msgstr ""
 "Per a bombardejar: clic dret sobre l'objectiu\n"
 "un atac per torn"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "No es pot carregar el fitxer de configuració"
 
@@ -2561,7 +2561,7 @@ msgstr "jugador personalitzat"
 msgid "done"
 msgstr "Acabat"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "Llegint fitxer de configuració"
 
@@ -2573,7 +2573,7 @@ msgstr "de"
 msgid "loading..."
 msgstr ""
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "no hi ha un fitxer de configuració"
 

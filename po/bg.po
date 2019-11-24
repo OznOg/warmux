@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Не мога да намеря картата %s :-("
@@ -44,23 +44,23 @@ msgid_plural "%i players ready"
 msgstr[0] "%i играч е готов"
 msgstr[1] "%i играчи са готови"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s> познат и като %s от %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> от %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr "%s Отбор"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr "Отбор  %s - Отдалечен"
@@ -477,7 +477,7 @@ msgstr "Смени категорията на оъжието"
 msgid "'Tool' weapon category"
 msgstr "Смени категорията на оъжието"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(мъртъв)"
 
@@ -491,7 +491,7 @@ msgid "(unknown time)"
 msgstr "(незнайно време)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(безкраен)"
 
@@ -973,7 +973,7 @@ msgstr "Грешка при зареждането на отбор %s:"
 msgid "Error loading team :"
 msgstr "Грешка при зареждането на отбор %s:"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1148,8 +1148,8 @@ msgid "Have a good game!"
 msgstr "Приятна игра!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Командир"
 
@@ -1341,7 +1341,7 @@ msgstr "Мишка за лява ръка?"
 msgid "Lists the connected players"
 msgstr "Покажи свързаните играчи"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "Карти които да заредя:"
 
@@ -1380,7 +1380,7 @@ msgstr "Ръчна връзка"
 msgid "Map"
 msgstr "Карта"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr ""
@@ -1558,7 +1558,7 @@ msgstr "Премести войника"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Не намерих елемента <%s> в XML-конфигурационният файл! "
@@ -1578,7 +1578,7 @@ msgid "None"
 msgstr "готово"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "Войници"
 
@@ -1785,7 +1785,7 @@ msgstr "Случайна карта"
 msgid "Reading the default config file"
 msgstr "Чета първоначалния конфигурационен файл"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 msgid "Reading the personal config file"
 msgstr "Чета персоналния конфигурационен фаил"
 
@@ -2003,7 +2003,7 @@ msgstr "Звуци"
 msgid "Starting a new game"
 msgstr "Стартирам нова игра"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "Наличност:"
 
@@ -2155,7 +2155,7 @@ msgstr "Сървърът отказа връзката."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Сървърът отказа връзката: Грешна парола!"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2272,12 +2272,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Не може да се свърже с хоста!"
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Не мога да отворя директорията за карти! (%s)"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Не мога да отворя личната директорията за карти (%s) !"
@@ -2493,7 +2493,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 msgid "You need at least one valid map!"
 msgstr "Трябва ми поне една валидна карта!"
 
@@ -2524,7 +2524,7 @@ msgstr ""
 "Бомбандиране : Ляв клик на целта\n"
 "едно бомбиране на ход"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "не мога да заредя конфигурацията"
 
@@ -2537,7 +2537,7 @@ msgstr "личен играч"
 msgid "done"
 msgstr "готово"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "грешка при четенето на конфигурационен файл"
 
@@ -2549,7 +2549,7 @@ msgstr "от"
 msgid "loading..."
 msgstr ""
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "конфигурационният файл липсва!"
 

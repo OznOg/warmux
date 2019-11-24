@@ -35,7 +35,7 @@ public:
   Box(const Point2i & size,
       bool _draw_border = true,
       bool shadowed = true);
-  Box(Profile * _profile,
+  Box(std::shared_ptr<Profile> _profile,
       const xmlNode * _boxNode);
   ~Box() override;
 

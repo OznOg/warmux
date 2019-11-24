@@ -44,7 +44,7 @@ CheckBox::CheckBox(const std::string & label,
   Init(width);
 }
 
-CheckBox::CheckBox(Profile * profile,
+CheckBox::CheckBox(std::shared_ptr<Profile> profile,
                    const xmlNode * checkBoxNode) :
   Widget(profile, checkBoxNode),
   m_value(false),

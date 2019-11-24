@@ -61,7 +61,7 @@ EnergyBar::EnergyBar(uint _x,
   SortThresholds();
 }
 
-EnergyBar::EnergyBar(Profile * _profile,
+EnergyBar::EnergyBar(std::shared_ptr<Profile> _profile,
                      const xmlNode * _widgetNode) :
   profile(_profile),
   widgetNode(_widgetNode),

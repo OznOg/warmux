@@ -37,6 +37,8 @@
 #include "team/custom_teams_list.h"
 #include "tool/resource_manager.h"
 
+#include <cassert>
+
 #define CHAR_COUNT_WIDGET_SIZE  120
 
 static const std::string ai_names[] = { NO_AI_NAME, DEFAULT_AI_NAME, DUMB_AI_NAME, STRONG_AI_NAME };

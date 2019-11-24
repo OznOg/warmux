@@ -39,7 +39,7 @@ public:
           uint width,
           Font::font_size_t fsize = Font::FONT_SMALL,
           Font::font_style_t fstyle = Font::FONT_BOLD);
-  TextBox(Profile * profile,
+  TextBox(std::shared_ptr<Profile> profile,
           const xmlNode * textBoxNode);
   ~TextBox() override { };
 
@@ -68,7 +68,7 @@ public:
   {
     BasicSetText(label);
   }
-  PasswordBox(Profile * profile, const xmlNode * passwordBoxNode)
+  PasswordBox(std::shared_ptr<Profile> profile, const xmlNode * passwordBoxNode)
     : TextBox(profile, passwordBoxNode) { }
 
   bool SendKey(const SDL_keysym & key) override;

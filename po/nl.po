@@ -19,7 +19,7 @@ msgstr ""
 "X-Poedit-Country: NETHERLANDS\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Kaart %s niet gevonden :-("
@@ -43,23 +43,23 @@ msgid_plural "%i players ready"
 msgstr[0] "%i speler is gereed"
 msgstr[1] "%i spelers zijn gereed"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s> aka %s uit %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> uit %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr "Team %s"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr "Team %s - Op afstand"
@@ -492,7 +492,7 @@ msgstr "Wapencategorie veranderen"
 msgid "'Tool' weapon category"
 msgstr "Wapencategorie veranderen"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(dood)"
 
@@ -506,7 +506,7 @@ msgid "(unknown time)"
 msgstr "(onbekende tijd)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(onbegrensd)"
 
@@ -989,7 +989,7 @@ msgstr "Fout bij het laden van team :"
 msgid "Error loading team :"
 msgstr "Fout bij het laden van team :"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1167,8 +1167,8 @@ msgid "Have a good game!"
 msgstr "Succes!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Hoofdcommandant"
 
@@ -1360,7 +1360,7 @@ msgstr "Linkshandige muis?"
 msgid "Lists the connected players"
 msgstr "Een lijst met verbonden spelers weergeven"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "Kaarten worden geladen:"
 
@@ -1399,7 +1399,7 @@ msgstr "Handmatige verbinding"
 msgid "Map"
 msgstr "Kaart"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr ""
@@ -1577,7 +1577,7 @@ msgstr "Bewegen"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Element <%s> niet gevonden het xml config bestand!"
@@ -1597,7 +1597,7 @@ msgid "None"
 msgstr "klaar"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "Aantal karakters"
 
@@ -1804,7 +1804,7 @@ msgstr "Willekeurige kaart"
 msgid "Reading the default config file"
 msgstr "Standaard configbestand wordt gelezen"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 msgid "Reading the personal config file"
 msgstr "Persoonlijk configbestand wordt gelezen"
 
@@ -2023,7 +2023,7 @@ msgstr "Geluiden"
 msgid "Starting a new game"
 msgstr "Starten van een nieuw spel"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "Voorraad:"
 
@@ -2176,7 +2176,7 @@ msgstr "De server weigerde de verbinding."
 msgid "The server rejected the connection: wrong password!"
 msgstr "De server weigerde de verbinding. Verkeerd wachtwoord!"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2293,12 +2293,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Kon geen verbinding maken met host."
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Kon de kaartendirectory (%s) niet openen!"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Kon de persoonlijke kaartendirectory (%s) niet openen!"
@@ -2513,7 +2513,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 msgid "You need at least one valid map!"
 msgstr "U heeft minimaal één geldige kaart nodig!"
 
@@ -2544,7 +2544,7 @@ msgstr ""
 "Bombarderen: klik met de linkermuisknop op het doel\n"
 "één bombardement per beurt"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "kan de configuratie niet laden"
 
@@ -2557,7 +2557,7 @@ msgstr "aangepaste speler"
 msgid "done"
 msgstr "klaar"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "fout bij het analyseren van het configuratiebestand"
 
@@ -2569,7 +2569,7 @@ msgstr "uit"
 msgid "loading..."
 msgstr ""
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "geen configuratiebestand!"
 

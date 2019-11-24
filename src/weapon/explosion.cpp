@@ -41,8 +41,6 @@
 #include <WARMUX_random.h>
 #include "weapon/weapon.h"
 
-Profile *weapons_res_profile = nullptr;
-
 int GetDamageFromExplosion(const ExplosiveWeaponConfig &config, Double distance)
 {
   if (distance > config.explosion_range)

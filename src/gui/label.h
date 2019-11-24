@@ -39,7 +39,7 @@ public:
         bool shadowed = false,
         const Color & shadowColor = black_color);
   Label(const Point2i & size);
-  Label(Profile * profile,
+  Label(std::shared_ptr<Profile> profile,
         const xmlNode * pictureNode);
   Label(void) {}
   ~Label() override;

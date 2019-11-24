@@ -64,7 +64,7 @@ Widget::Widget(const Point2i &size, bool clickable)
 {
 }
 
-Widget::Widget(Profile * _profile,
+Widget::Widget(std::shared_ptr<Profile> _profile,
                const xmlNode * _widgetNode)
   : Rectanglei(0, 0, 0, 0)
   , has_focus(false)

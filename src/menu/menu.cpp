@@ -102,7 +102,7 @@ Menu::~Menu()
   }
 }
 
-void Menu::LoadMenu(Profile * profile,
+void Menu::LoadMenu(std::shared_ptr<Profile> profile,
                     const xmlNode * rootMenuNode)
 {
   LoadBackground(profile, rootMenuNode);
@@ -110,7 +110,7 @@ void Menu::LoadMenu(Profile * profile,
   widgets.Pack();
 }
 
-void Menu::LoadBackground(Profile * profile,
+void Menu::LoadBackground(std::shared_ptr<Profile> profile,
                           const xmlNode * rootMenuNode)
 {
   XmlReader * xmlFile = profile->GetXMLDocument();
@@ -121,7 +121,7 @@ void Menu::LoadBackground(Profile * profile,
   background = new Sprite(surface);
 }
 
-void Menu::LoadWidget(Profile * profile,
+void Menu::LoadWidget(std::shared_ptr<Profile> profile,
                       const xmlNode * rootMenuNode,
                       WidgetList * container)
 {
@@ -152,7 +152,7 @@ void Menu::LoadWidget(Profile * profile,
   }
 }
 
-Widget * Menu::CreateWidget(Profile * profile,
+Widget * Menu::CreateWidget(std::shared_ptr<Profile> profile,
                             const xmlNode * widgetNode,
                             std::string & widgetName)
 {

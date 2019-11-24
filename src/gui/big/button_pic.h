@@ -37,7 +37,7 @@ public:
   ButtonPic(const std::string & label,
             const std::string & resource_id,
             const Point2i & size);
-  ButtonPic(Profile * profile,
+  ButtonPic(std::shared_ptr<Profile> profile,
             const xmlNode * buttonPicNode);
   ~ButtonPic() override;
 

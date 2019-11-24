@@ -72,7 +72,7 @@ Team* Team::LoadTeam(const std::string &teams_dir, const std::string &id, std::s
   return new Team(doc, res, name, id);
 }
 
-Team::Team(XmlReader& doc, Profile* res,
+Team::Team(XmlReader& doc, std::shared_ptr<Profile> res,
            const std::string& name, const std::string &id)
   : m_id(id)
   , m_name(name)

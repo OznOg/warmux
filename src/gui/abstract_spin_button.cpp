@@ -35,7 +35,7 @@ AbstractSpinButton::AbstractSpinButton(int value,
   ASSERT(m_step <= (m_max_value - m_min_value));
 }
 
-AbstractSpinButton::AbstractSpinButton(Profile * profile,
+AbstractSpinButton::AbstractSpinButton(std::shared_ptr<Profile> profile,
                                        const xmlNode * spinButtonNode) :
   Widget(profile, spinButtonNode),
   m_value(0),

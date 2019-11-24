@@ -46,7 +46,7 @@ ButtonPic::~ButtonPic()
   }
 }
 
-ButtonPic::ButtonPic(Profile * profile,
+ButtonPic::ButtonPic(std::shared_ptr<Profile> profile,
                      const xmlNode * buttonPicNode) :
   Widget(profile, buttonPicNode)
 {

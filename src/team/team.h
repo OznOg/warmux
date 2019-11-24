@@ -31,6 +31,8 @@
 #include "weapon/crosshair.h"
 #include "weapon/weapon.h"
 
+#include <memory>
+
 #define NO_AI_NAME       "none"
 #define DEFAULT_AI_NAME  "default"
 #define DUMB_AI_NAME     "dumb"
@@ -86,7 +88,7 @@ private:
   bool AddPlayingCharacters(const std::vector<std::string> characters);
 
 protected:
-  Team(XmlReader& doc, Profile* res,
+  Team(XmlReader& doc, std::shared_ptr<Profile> res,
        const std::string& name, const std::string &id);
 
 public:

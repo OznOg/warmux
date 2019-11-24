@@ -43,7 +43,7 @@ Label::Label(const Point2i & size)
   align = Text::ALIGN_LEFT_TOP;
 }
 
-Label::Label(Profile * profile,
+Label::Label(std::shared_ptr<Profile> profile,
              const xmlNode * labelNode)
   : Widget(profile, labelNode)
 {

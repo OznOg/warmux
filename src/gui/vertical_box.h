@@ -32,7 +32,7 @@ protected:
 public:
   VBox(uint width, bool draw_border = true, bool shadowed = true,
        bool force_widget_size = true);
-  VBox(Profile * profile,
+  VBox(std::shared_ptr<Profile> profile,
        const xmlNode * verticalBoxNode);
   ~VBox() override { }
 

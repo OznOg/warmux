@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: KBabel 1.0.2\n"
 
 # "Plural-Forms: nplurals=2; plural=(n > 1);"
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "Mapa %s no encontrado :-("
@@ -45,23 +45,23 @@ msgid_plural "%i players ready"
 msgstr[0] "%i jugador listo"
 msgstr[1] "%i jugadores listos"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s> aka %s de %s"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> de %s"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr "%s Equipo"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr "%s Equipo - Remoto"
@@ -478,7 +478,7 @@ msgstr "Cambia la categoría de arma"
 msgid "'Tool' weapon category"
 msgstr "Cambia la categoría de arma"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(muerto)"
 
@@ -492,7 +492,7 @@ msgid "(unknown time)"
 msgstr "(tiempo desconocido)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(ilimitado)"
 
@@ -973,7 +973,7 @@ msgstr "Error cargando el equipo:"
 msgid "Error loading team :"
 msgstr "Error cargando el equipo:"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1153,8 +1153,8 @@ msgid "Have a good game!"
 msgstr "¡Que tengas una buena partida!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Comandante jefe"
 
@@ -1347,7 +1347,7 @@ msgstr "¿Ratón para zurdos?"
 msgid "Lists the connected players"
 msgstr "Lista de jugadores conectados"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "Carga el mapa %s:"
 
@@ -1386,7 +1386,7 @@ msgstr "Conexión manual"
 msgid "Map"
 msgstr "Mapa"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr ""
@@ -1564,7 +1564,7 @@ msgstr "Mover el personaje"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "¡Ningun elemento <%s> encontrado en el archivo de configuración xml!"
@@ -1584,7 +1584,7 @@ msgid "None"
 msgstr "Terminado"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "Numero de jugadores por equipo"
 
@@ -1791,7 +1791,7 @@ msgstr "Mapa aleatorio"
 msgid "Reading the default config file"
 msgstr "Leyendo fichero de configuración"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 msgid "Reading the personal config file"
 msgstr "Leyendo fichero de configuración personal"
 
@@ -2012,7 +2012,7 @@ msgstr "Opciones de sonido"
 msgid "Starting a new game"
 msgstr "Empezando un nuevo juego"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "Munición:"
 
@@ -2168,7 +2168,7 @@ msgstr "El servidor ha rechazado la conexión"
 msgid "The server rejected the connection: wrong password!"
 msgstr "El servidor ha rechazado la conexión: password erroneo"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2285,12 +2285,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "¡Imposible contactar con el servidor!"
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "¡Imposible abrir el directorio de los mapas (%s)!"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "¡Imposible abrir el directorio personal de mapas (%s)!"
@@ -2507,7 +2507,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 msgid "You need at least one valid map!"
 msgstr "¡Necesitas al menos un mapa válido!"
 
@@ -2538,7 +2538,7 @@ msgstr ""
 "Para bombardear: clic derecho sobre el objetivo\n"
 "un ataque por turno"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "No se puede cargar el fichero de configuración"
 
@@ -2551,7 +2551,7 @@ msgstr "jugador personalizado"
 msgid "done"
 msgstr "Terminado"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "Leyendo fichero de configuración"
 
@@ -2563,7 +2563,7 @@ msgstr "de "
 msgid "loading..."
 msgstr ""
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "no hay un fichero de configuración"
 

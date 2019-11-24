@@ -35,7 +35,6 @@
 #include "game/config.h"
 #include "graphic/sprite.h"
 #include "graphic/polygon_generator.h"
-#include "map/random_map.h"
 #include "interface/mouse_cursor.h"
 
 ResourceManager::ProfileMap ResourceManager::profiles;
@@ -49,7 +48,7 @@ ResourceManager::~ResourceManager()
   xmlCleanupParser();
 }
 
-int ResourceManager::LoadInt(const Profile *profile, const std::string& resource_name) const
+int ResourceManager::LoadInt(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   int tmp = 0;
   const xmlNode* elem = GetElement(profile, "int", resource_name);
@@ -60,7 +59,7 @@ int ResourceManager::LoadInt(const Profile *profile, const std::string& resource
   return tmp;
 }
 
-Double ResourceManager::LoadDouble(const Profile *profile, const std::string& resource_name) const
+Double ResourceManager::LoadDouble(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   Double tmp = ZERO;
   const xmlNode* elem = GetElement(profile, "Double", resource_name);
@@ -71,7 +70,7 @@ Double ResourceManager::LoadDouble(const Profile *profile, const std::string& re
   return tmp;
 }
 
-Color ResourceManager::LoadColor(const Profile *profile, const std::string& resource_name) const
+Color ResourceManager::LoadColor(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   const xmlNode* elem = GetElement(profile, "color", resource_name);
   if (!elem)
@@ -86,7 +85,7 @@ Color ResourceManager::LoadColor(const Profile *profile, const std::string& reso
   return Color(chanel_color[0], chanel_color[1], chanel_color[2], chanel_color[3]);
 }
 
-Point2i ResourceManager::LoadPoint2i(const Profile *profile, const std::string& resource_name) const
+Point2i ResourceManager::LoadPoint2i(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   const xmlNode* elem = GetElement(profile, "point", resource_name);
   if (!elem)
@@ -101,7 +100,7 @@ Point2i ResourceManager::LoadPoint2i(const Profile *profile, const std::string& 
   return Point2i(point[0], point[1]);
 }
 
-Point2d ResourceManager::LoadPoint2d(const Profile *profile, const std::string& resource_name) const
+Point2d ResourceManager::LoadPoint2d(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   const xmlNode* elem = GetElement(profile, "point", resource_name);
   if (!elem)
@@ -116,7 +115,7 @@ Point2d ResourceManager::LoadPoint2d(const Profile *profile, const std::string& 
   return Point2d(point[0], point[1]);
 }
 
-MouseCursor ResourceManager::LoadMouseCursor(const Profile *profile, const std::string& resource_name,
+MouseCursor ResourceManager::LoadMouseCursor(const std::shared_ptr<Profile> profile, const std::string& resource_name,
                                              Mouse::pointer_t _pointer_id) const
 {
   const xmlNode* elem = GetElement(profile, "mouse_cursor", resource_name);
@@ -184,7 +183,7 @@ std::shared_ptr<Profile> ResourceManager::LoadXMLProfile(const std::string& xml_
   return profile;
 }
 
-const xmlNode*  ResourceManager::GetElement(const Profile *profile, const std::string& resource_type,
+const xmlNode*  ResourceManager::GetElement(const std::shared_ptr<Profile> profile, const std::string& resource_type,
                                             const std::string& resource_name) const
 {
   const xmlNode* elem = profile->doc->Access(profile->doc->GetRoot(), resource_type, resource_name);
@@ -203,7 +202,7 @@ const xmlNode*  ResourceManager::GetElement(const Profile *profile, const std::s
   return elem;
 }
 
-std::string ResourceManager::LoadImageFilename(const Profile *profile, const std::string& resource_name) const
+std::string ResourceManager::LoadImageFilename(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   const xmlNode* elem = GetElement(profile, "surface", resource_name);
   if (!elem)
@@ -216,7 +215,7 @@ std::string ResourceManager::LoadImageFilename(const Profile *profile, const std
   return profile->relative_path+filename;
 }
 
-Surface ResourceManager::LoadImage(const Profile *profile, const std::string& resource_name, bool alpha) const
+Surface ResourceManager::LoadImage(const std::shared_ptr<Profile> profile, const std::string& resource_name, bool alpha) const
 {
   std::string    filename = LoadImageFilename(profile, resource_name);
   Surface        image    = LoadImage(filename, alpha);
@@ -250,7 +249,7 @@ Surface ResourceManager::LoadImage(const Profile *profile, const std::string& re
   //      By now force alpha and no colorkey
 }
 
-Sprite *ResourceManager::LoadSprite(const Profile *profile, const std::string& resource_name) const
+Sprite *ResourceManager::LoadSprite(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   const xmlNode* elem_sprite = GetElement(profile, "sprite", resource_name);
   if (!elem_sprite)
@@ -342,14 +341,6 @@ Sprite *ResourceManager::LoadSprite(const xmlNode* elem_sprite, const std::strin
 
   }
   return sprite;
-}
-
-std::string ResourceManager::GenerateMap(Profile *profile, InfoMap::Island_type generator,
-                                         const int width, const int height) const
-{
-  RandomMap random_map(profile, width, height);
-  random_map.Generate(generator);
-  return random_map.SaveMap();
 }
 
 

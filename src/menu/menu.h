@@ -52,7 +52,7 @@ public:
   ~Menu() override;
 
   // Start the xml menu configuration.
-  void LoadMenu(Profile * profile,
+  void LoadMenu(std::shared_ptr<Profile> profile,
                 const xmlNode * rootMenuNode);
 
   void Run(bool skip=false);
@@ -72,16 +72,16 @@ private:
   Sprite *background;
   Widget *selected_widget;
 
-  void LoadBackground(Profile * profile,
+  void LoadBackground(std::shared_ptr<Profile> profile,
                       const xmlNode * rootMenuNode);
 
   // Recursive function wich load the widgets, and fill the containers widgets.
-  void LoadWidget(Profile * profile,
+  void LoadWidget(std::shared_ptr<Profile> profile,
                   const xmlNode * rootMenuNode,
                   WidgetList * container);
 
   // Detect and instanciate a widget.
-  Widget * CreateWidget(Profile * profile,
+  Widget * CreateWidget(std::shared_ptr<Profile> profile,
                         const xmlNode * rootMenuNode,
                         std::string & widgetName);
 

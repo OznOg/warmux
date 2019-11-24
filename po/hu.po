@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/map/maps_list.cpp:379
+#: src/map/maps_list.cpp:382
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "A(z) %s pálya nem található"
@@ -35,23 +35,23 @@ msgid_plural "%i players ready"
 msgstr[0] "%i játékos áll készen"
 msgstr[1] "%i játékos áll készen"
 
-#: src/map/maps_list.cpp:141
+#: src/map/maps_list.cpp:137
 #, c-format
 msgid "%s <%s> aka %s from %s"
 msgstr "%s <%s>, ismertebb nevén %s a(z) %s csapatból"
 
-#: src/map/maps_list.cpp:148
+#: src/map/maps_list.cpp:144
 #, c-format
 msgid "%s <%s> from %s"
 msgstr "%s <%s> a(z) %s csapatból"
 
-#: src/menu/team_box.cpp:286
+#: src/menu/team_box.cpp:288
 #, c-format
 msgid "%s Team"
 msgstr "%s Csapat"
 
 #. translators: this is the team listing and will expand in a context like "OOo team - Remote"
-#: src/menu/team_box.cpp:278
+#: src/menu/team_box.cpp:280
 #, c-format
 msgid "%s Team - Remote"
 msgstr "%s Csapat - Távoli"
@@ -462,7 +462,7 @@ msgstr "Fegyverkategória váltása"
 msgid "'Tool' weapon category"
 msgstr "Fegyverkategória váltása"
 
-#: src/interface/interface.cpp:292
+#: src/interface/interface.cpp:287
 msgid "(dead)"
 msgstr "(halott)"
 
@@ -476,7 +476,7 @@ msgid "(unknown time)"
 msgstr "(ismeretlen idõ)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:315
+#: src/interface/interface.cpp:310
 msgid "(unlimited)"
 msgstr "(korlátlan)"
 
@@ -963,7 +963,7 @@ msgstr "Hiba a csapat betöltése közben:"
 msgid "Error loading team :"
 msgstr "Hiba a csapat betöltése közben:"
 
-#: src/game/config.cpp:603 src/team/custom_team.cpp:155
+#: src/game/config.cpp:601 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1144,8 +1144,8 @@ msgid "Have a good game!"
 msgstr "Jó játékot!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:281 src/menu/options_menu.cpp:180
-#: src/menu/team_box.cpp:103
+#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Parancsnok"
 
@@ -1337,7 +1337,7 @@ msgstr ""
 msgid "Lists the connected players"
 msgstr "VÄ‚Â„Ã‚Â‚Ä‚Â‚Ã‚Â„Ã„Â‚Ã‚Â‚Ä‚Â‚Ã‚Â‚Ã„Â‚Ã‚Â„Ã„Å¡Ã„Â„Ã„Â‚Ã‚Â‚Ä‚Â‚Ã‚Â ge!"
 
-#: src/map/maps_list.cpp:276
+#: src/map/maps_list.cpp:279
 msgid "Load maps:"
 msgstr "Térképek betöltése:"
 
@@ -1376,7 +1376,7 @@ msgstr "Kézi kapcsolat"
 msgid "Map"
 msgstr "Pálya"
 
-#: src/map/maps_list.cpp:105
+#: src/map/maps_list.cpp:101
 #, c-format
 msgid "Map %s in folder '%s' is invalid: %s"
 msgstr ""
@@ -1556,7 +1556,7 @@ msgstr "Karakter mozgatása"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/weapon/weapon.cpp:644
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "A(z) <%s> elem nem található a konfigurációs XML fájlban!"
@@ -1577,7 +1577,7 @@ msgid "None"
 msgstr "kész"
 
 #. *********     Number of characters        *********
-#: src/menu/team_box.cpp:140
+#: src/menu/team_box.cpp:142
 msgid "Number of characters"
 msgstr "Karakterek száma"
 
@@ -1785,7 +1785,7 @@ msgstr "Véletlen pálya"
 msgid "Reading the default config file"
 msgstr "Alapértelmezett konfigurációs fájl beolvasása"
 
-#: src/game/config.cpp:490
+#: src/game/config.cpp:488
 #, fuzzy
 msgid "Reading the personal config file"
 msgstr "Személyes konfigurációs fájl olvasása"
@@ -2005,7 +2005,7 @@ msgstr "Hangok"
 msgid "Starting a new game"
 msgstr "Új játék indítása"
 
-#: src/interface/interface.cpp:316
+#: src/interface/interface.cpp:311
 msgid "Stock:"
 msgstr "Készlet:"
 
@@ -2166,7 +2166,7 @@ msgstr "A szerver elutasította a kapcsolatot."
 msgid "The server rejected the connection: wrong password!"
 msgstr "A szerver elutasította a kapcsolatot: hibás jelszó!"
 
-#: src/weapon/weapon.cpp:655
+#: src/weapon/weapon.cpp:656
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2282,12 +2282,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Nem sikerült csatlakozni a kiszolgálóhoz."
 
-#: src/map/maps_list.cpp:288
+#: src/map/maps_list.cpp:291
 #, fuzzy, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Nem sikerült megnyitni a pályák könyvtárát (%s)!"
 
-#: src/map/maps_list.cpp:302
+#: src/map/maps_list.cpp:305
 #, fuzzy, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Nem sikerült megnyitni a személyes pályák könyvtárát (%s)!"
@@ -2503,7 +2503,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:311
+#: src/map/maps_list.cpp:314
 #, fuzzy
 msgid "You need at least one valid map!"
 msgstr "Választanod kell legalább egy pályát!"
@@ -2537,7 +2537,7 @@ msgstr ""
 "Bombázás : bal klikk a célponton\n"
 "egy bombázás körönként"
 
-#: src/map/maps_list.cpp:83
+#: src/map/maps_list.cpp:84
 msgid "couldn't load config"
 msgstr "nem tudom betölteni a konfigurációt"
 
@@ -2550,7 +2550,7 @@ msgstr "egyéni játékos"
 msgid "done"
 msgstr "kész"
 
-#: src/map/maps_list.cpp:90
+#: src/map/maps_list.cpp:91
 msgid "error parsing the config file"
 msgstr "hiba a konfigurációs fájl olvasása közben"
 
@@ -2562,7 +2562,7 @@ msgstr "a következõtõl:"
 msgid "loading..."
 msgstr ""
 
-#: src/map/maps_list.cpp:76
+#: src/map/maps_list.cpp:77
 msgid "no configuration file!"
 msgstr "nincs konfigurációs fájl!"
 

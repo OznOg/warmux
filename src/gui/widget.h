@@ -53,7 +53,7 @@ protected:
   bool clickable;
 
   // Attributs for XML loading process
-  Profile * profile;
+  std::shared_ptr<Profile> profile;
   const xmlNode * widgetNode;
 
   // Attributs used to link a widget with an action
@@ -76,7 +76,7 @@ protected:
 public:
   Widget();
   Widget(const Point2i & size, bool clickable = true);
-  Widget(Profile * profile,
+  Widget(std::shared_ptr<Profile> profile,
          const xmlNode * widgetNode);
   ~Widget() override { };
 

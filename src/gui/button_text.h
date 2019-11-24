@@ -32,7 +32,7 @@ class ButtonText : public Button
 Text * text;
 
 public:
-  ButtonText(const Profile * res_profile,
+  ButtonText(const std::shared_ptr<Profile> res_profile,
              const std::string & resource_id,
              const std::string & new_text,
              Font::font_size_t font_size,
