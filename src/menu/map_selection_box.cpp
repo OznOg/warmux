@@ -116,7 +116,7 @@ void MapSelectionBox::UpdateMapInfo()
 Widget* MapSelectionBox::ClickUp(const Point2i &mousePosition, uint button)
 {
   if (display_only)
-    return NULL;
+    return nullptr;
 
   if (button == SDL_BUTTON_WHEELDOWN)
     ChangeMap(selected_map_index -1);
@@ -238,7 +238,7 @@ void MapSelectionBox::RefreshBox()
   pw = new PictureWidget(img_size);
   pw->SetSurface(random_map_preview, PictureWidget::FIT_SCALING);
   pw->Pack();
-  box->AddItem(selected_map_index==common.size(), pw, NULL);
+  box->AddItem(selected_map_index==common.size(), pw, nullptr);
 
   if (error) {
     // Inform network if need be - will call back up to this very function

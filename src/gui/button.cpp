@@ -39,20 +39,20 @@ Button::Button(Profile * profile,
                const xmlNode * buttonNode) :
   Widget(profile, buttonNode),
   img_scale(true),
-  image(NULL)
+  image(nullptr)
 {
 }
 
 Button::~Button()
 {
-  if (NULL != image) {
+  if (nullptr != image) {
     delete image;
   }
 }
 
 bool Button::LoadXMLConfiguration()
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     return false;
   }
 

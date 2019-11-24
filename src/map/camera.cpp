@@ -68,7 +68,7 @@ Camera::Camera()
   , m_last_mouse_pos(0, 0)
   , m_scroll_vector(0.0f, 0.0f)
   , auto_crop(true)
-  , followed_object(NULL)
+  , followed_object(nullptr)
 {
   pointer_used_before_scroll = Mouse::POINTER_SELECT;
 }
@@ -77,7 +77,7 @@ void Camera::Reset()
 {
   m_stop = false;
   auto_crop = true;
-  followed_object = NULL;
+  followed_object = nullptr;
   m_begin_controlled_move_time = 0;
   m_control_mode = NO_CAMERA_CONTROL;
   SetXYabs(GetWorld().GetSize() / 2);
@@ -257,7 +257,7 @@ void Camera::ScrollCamera()
 
   if (!Config::GetInstance()->GetScrollOnBorder()) {
     /* Kinetic scrolling */
-    if (!SDL_GetMouseState(NULL, NULL) || over_interface) {
+    if (!SDL_GetMouseState(nullptr, nullptr) || over_interface) {
       m_scroll_start_pos = Point2i();
       m_last_mouse_pos   = Point2i();
       m_mouse_counter    = 0;
@@ -456,7 +456,7 @@ void Camera::FollowObject(const PhysicalObj *obj, bool follow_closely)
 void Camera::StopFollowingObj(const PhysicalObj* obj)
 {
   if (followed_object == obj) {
-    followed_object = NULL;
+    followed_object = nullptr;
     m_stop = true;
     m_speed = Point2f(0,0);
   }

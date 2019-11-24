@@ -55,7 +55,7 @@ PhysicalObj::PhysicalObj(const std::string &name, const std::string &xml_config)
   m_collides_with_characters(false),
   m_collides_with_objects(false),
   m_go_through_objects(false),
-  m_last_collided_object(NULL),
+  m_last_collided_object(nullptr),
   m_rebound_position(-1,-1),
   m_test_left(0),
   m_test_right(0),
@@ -65,7 +65,7 @@ PhysicalObj::PhysicalObj(const std::string &name, const std::string &xml_config)
   m_height(0),
   can_be_ghost(true),
   // No collision with this object until we have gone out of his collision rectangle
-  m_overlapping_object(NULL),
+  m_overlapping_object(nullptr),
   m_minimum_overlapse_time(0),
   m_ignore_movements(false),
   m_is_character(false),
@@ -130,7 +130,7 @@ void PhysicalObj::SetOverlappingObject(PhysicalObj* obj, int timeout)
               GetName().c_str(), obj->GetName().c_str(), timeout);
   } else {
     if (m_overlapping_object) {
-      m_overlapping_object = NULL;
+      m_overlapping_object = nullptr;
       ObjectsList::GetRef().RemoveOverlappedObject(this);
       MSG_DEBUG("physic.overlapping", "clearing overlapping object in \"%s\"", GetName().c_str());
     }
@@ -153,7 +153,7 @@ void PhysicalObj::CheckOverlapping()
     MSG_DEBUG("physic.overlapping", "\"%s\" just stopped overlapping with \"%s\" (%d ms left)",
               GetName().c_str(), m_overlapping_object->GetName().c_str(),
               (m_minimum_overlapse_time - GameTime::GetInstance()->Read()));
-    SetOverlappingObject(NULL);
+    SetOverlappingObject(nullptr);
   } else {
     MSG_DEBUG("physic.overlapping", "\"%s\" is overlapping with \"%s\"",
               GetName().c_str(), m_overlapping_object->GetName().c_str());
@@ -194,7 +194,7 @@ collision_t PhysicalObj::NotifyMove(Point2d oldPos, Point2d newPos)
   Point2d contactPos;
   Double contactAngle;
   Point2d pos, offset;
-  PhysicalObj* collided_obj = NULL;
+  PhysicalObj* collided_obj = nullptr;
 
   collision_t collision = NO_COLLISION;
 
@@ -270,12 +270,12 @@ collision_t PhysicalObj::NotifyMove(Point2d oldPos, Point2d newPos)
         }
         m_last_collided_object = collided_obj;
       } else {
-        collided_obj = NULL;
+        collided_obj = nullptr;
         collision = NO_COLLISION;
       }
     } else if (!IsInVacuumXY(tmpPos, false)) {
       collision = COLLISION_ON_GROUND;
-      m_last_collided_object = NULL;
+      m_last_collided_object = nullptr;
     }
 
     if (collision != NO_COLLISION) {
@@ -511,7 +511,7 @@ void PhysicalObj::Init()
   if (m_alive != ALIVE)
     MSG_DEBUG("physic.state", "%s - Init.", GetName().c_str());
   m_alive = ALIVE;
-  SetOverlappingObject(NULL);
+  SetOverlappingObject(nullptr);
   StopMoving();
 }
 
@@ -575,7 +575,7 @@ void PhysicalObj::SignalRebound()
     JukeBox::GetInstance()->Play("default", m_rebound_sound);
 
   // It's ok to collide the same object again
-  m_last_collided_object = NULL;
+  m_last_collided_object = nullptr;
 }
 
 void PhysicalObj::SetCollisionModel(bool collides_with_ground,
@@ -679,7 +679,7 @@ inline bool PhysicalObj::Intersect(const Rectanglei & rect) const
 PhysicalObj* PhysicalObj::CollidedObjectXY(const Point2i & position) const
 {
   if (IsOutsideWorldXY(position))
-    return NULL;
+    return nullptr;
 
   Rectanglei rect(position.x + m_test_left, position.y + m_test_top,
                  m_width - m_test_right - m_test_left, m_height - m_test_bottom - m_test_top);
@@ -724,7 +724,7 @@ PhysicalObj* PhysicalObj::CollidedObjectXY(const Point2i & position) const
     }
   }
 
-  return NULL;
+  return nullptr;
 }
 
 bool PhysicalObj::FootsInVacuumXY(const Point2i &position) const

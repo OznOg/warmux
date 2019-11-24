@@ -313,7 +313,7 @@ void TileItem_BaseColorKey::MergeSprite(const Point2i &position, Surface& spr)
 TileItem_ColorKey16::TileItem_ColorKey16(void *pixels, int pitch, uint8_t threshold)
   : TileItem_BaseColorKey(threshold)
 {
-  SDL_PixelFormat fmt = { NULL /* palette */, 32 /*bpp*/, 4 /*Bpp*/,
+  SDL_PixelFormat fmt = { nullptr /* palette */, 32 /*bpp*/, 4 /*Bpp*/,
                           0 /*Rloss*/, 0 /*Gloss*/, 0 /*Bloss*/, 0 /*Aloss*/,
                           16 /*Rshift*/, 8 /*Gshift*/, 0 /*Bshift*/, 24 /*Ashift*/,
                           0xFF0000, 0xFF00, 0xFF, 0xFF000000

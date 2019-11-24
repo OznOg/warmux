@@ -45,7 +45,7 @@ CustomTeam *CustomTeamsList::GetByName(std::string name)
       return full_list[i];
     }
   }
-  return NULL;
+  return nullptr;
 }
 
 void CustomTeamsList::LoadList()
@@ -60,7 +60,7 @@ void CustomTeamsList::LoadList()
   if (f) {
     bool search_files = false;
     const char *name;
-    while ((name = FolderSearchNext(f, search_files)) != NULL)
+    while ((name = FolderSearchNext(f, search_files)) != nullptr)
       LoadOneTeam(dirname, name);
     CloseFolder(f);
   } else {

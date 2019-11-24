@@ -61,7 +61,7 @@ public:
 
   // Specific to selection
   int MouseIsOnWhichItem(const Point2i & mousePosition) const;
-  Widget* GetSelectedWidget() const { return (selected_item==-1) ? NULL : m_items[selected_item]; };
+  Widget* GetSelectedWidget() const { return (selected_item==-1) ? nullptr : m_items[selected_item]; };
   int GetSelectedItem() const { return selected_item; };
   bool IsItemSelected() const { return selected_item != -1; }
   int Size() { return m_items.size(); }
@@ -74,7 +74,7 @@ public:
   Widget* MouseIsOnWhichWidget(const Point2i & mousePosition) const
   {
     int index = MouseIsOnWhichItem(mousePosition);
-    return (index==-1) ? NULL : m_items[selected_item];
+    return (index==-1) ? nullptr : m_items[selected_item];
   }
   const std::vector<Widget*>& GetWidgets() { return m_items; }
 };
@@ -101,7 +101,7 @@ public:
   void Empty() override { m_values.clear(); SelectBox::Empty(); }
   void Clear() override { m_values.clear(); SelectBox::Clear(); }
 
-  const void* GetSelectedValue() const { return (selected_item==-1) ? NULL : m_values[selected_item]; }
+  const void* GetSelectedValue() const { return (selected_item==-1) ? nullptr : m_values[selected_item]; }
   // Our accessors somewhat ensures that this is a label, but beware
   const char* GetSelectedName() const;
 };

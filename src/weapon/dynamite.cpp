@@ -134,7 +134,7 @@ bool Dynamite::p_Shoot ()
   else
     projectile->SetSpeed(3.0, -THREE * QUARTER_PI);
 
-  projectile = NULL;
+  projectile = nullptr;
   ReloadLauncher();
   return true;
 }

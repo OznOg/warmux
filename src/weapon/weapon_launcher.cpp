@@ -168,7 +168,7 @@ void WeaponProjectile::Shoot(Double strength)
 
   Init();
 
-  if (launcher != NULL)
+  if (launcher != nullptr)
     launcher->IncActiveProjectile();
 
   // Set the physical factors
@@ -298,7 +298,7 @@ void WeaponProjectile::SignalObjectCollision(const Point2d& /* my_speed_before *
                                              PhysicalObj * obj,
                                              const Point2d& /* obj_speed_before */)
 {
-  ASSERT(obj != NULL);
+  ASSERT(obj != nullptr);
   MSG_DEBUG("weapon.projectile", "SignalObjectCollision \"%s\" with \"%s\": %d, %d",
             m_name.c_str(), obj->GetName().c_str(), GetX(), GetY());
   if (explode_colliding_character)
@@ -321,7 +321,7 @@ void WeaponProjectile::SignalGroundCollision(const Point2d& /*speed_before*/, co
 void WeaponProjectile::Collision()
 {
   MSG_DEBUG("weapon.projectile", "Collision \"%s\": %d, %d", m_name.c_str(), GetX(), GetY());
-  if (launcher != NULL && !launcher->ignore_collision_signal)
+  if (launcher != nullptr && !launcher->ignore_collision_signal)
     launcher->SignalProjectileCollision();
 }
 
@@ -331,7 +331,7 @@ void WeaponProjectile::SignalDrowning()
 {
   MSG_DEBUG("weapon.projectile", "SignalDrowning \"%s\": %d, %d", m_name.c_str(), GetX(), GetY());
   PhysicalObj::SignalDrowning();
-  if (launcher != NULL && !launcher->ignore_drowning_signal)
+  if (launcher != nullptr && !launcher->ignore_drowning_signal)
     launcher->SignalProjectileDrowning();
 
   if (can_drown) JukeBox::GetInstance()->Play("default", "sink");
@@ -343,7 +343,7 @@ void WeaponProjectile::SignalGoingOutOfWater()
 {
   MSG_DEBUG("weapon.projectile", "SignalDrowning \"%s\": %d, %d", m_name.c_str(), GetX(), GetY());
   PhysicalObj::SignalGoingOutOfWater();
-  if (launcher != NULL && !launcher->ignore_going_out_of_water_signal)
+  if (launcher != nullptr && !launcher->ignore_going_out_of_water_signal)
     launcher->SignalProjectileGoingOutOfWater();
 }
 
@@ -351,7 +351,7 @@ void WeaponProjectile::SignalGoingOutOfWater()
 void WeaponProjectile::SignalGhostState(bool)
 {
   MSG_DEBUG("weapon.projectile", "SignalGhostState \"%s\": %d, %d", m_name.c_str(), GetX(), GetY());
-  if (launcher != NULL && !launcher->ignore_ghost_state_signal)
+  if (launcher != nullptr && !launcher->ignore_ghost_state_signal)
     launcher->SignalProjectileGhostState();
 }
 
@@ -372,7 +372,7 @@ void WeaponProjectile::Explosion()
 void WeaponProjectile::SignalExplosion()
 {
   MSG_DEBUG("weapon.projectile", "SignalExplosion \"%s\": %d, %d", m_name.c_str(), GetX(), GetY());
-  if (launcher != NULL && !launcher->ignore_explosion_signal)
+  if (launcher != nullptr && !launcher->ignore_explosion_signal)
     launcher->SignalProjectileExplosion();
 }
 
@@ -423,7 +423,7 @@ uint WeaponProjectile::GetMSSinceTimeoutStart() const
 void WeaponProjectile::SignalTimeout()
 {
   MSG_DEBUG("weapon.projectile", "\"%s\" timeout has expired", m_name.c_str());
-  if (launcher != NULL && !launcher->ignore_timeout_signal)
+  if (launcher != nullptr && !launcher->ignore_timeout_signal)
     launcher->SignalProjectileTimeout();
   if (explode_with_timeout)
     Explosion();
@@ -443,7 +443,7 @@ WeaponLauncher::WeaponLauncher(Weapon_type type,
                                bool drawable) :
     Weapon(type, id, params, drawable)
 {
-  projectile = NULL;
+  projectile = nullptr;
   nb_active_projectile = 0;
   missed_shots = 0;
   announce_missed_shots = true;
@@ -476,7 +476,7 @@ bool WeaponLauncher::p_Shoot()
 //     return true;
 //   }
   projectile->Shoot(m_strength);
-  projectile = NULL;
+  projectile = nullptr;
   ReloadLauncher();
   return true;
 }

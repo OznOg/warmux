@@ -35,7 +35,7 @@ void RandomSyncGen::InitRandom()
       MSG_DEBUG("random.set", "no, unrandom set");
       return;
     }
-    int seed = time(NULL);
+    int seed = time(nullptr);
     SetRand(seed);
   } else if (Network::GetInstance()->IsGameMaster()) {
     int seed;
@@ -44,7 +44,7 @@ void RandomSyncGen::InitRandom()
       MSG_DEBUG("random.set", "no, unrandom set");
       seed = 0;
     } else {
-      seed = time(NULL);
+      seed = time(nullptr);
       SetRand(seed);
     }
 

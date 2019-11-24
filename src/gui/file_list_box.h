@@ -42,7 +42,7 @@ public:
     : ItemBox(size, false), list_files(list) { }
   ~FileListBox() override { Clear(); }
 
-  void StartListing(const char* dirname = NULL);
+  void StartListing(const char* dirname = nullptr);
   const std::string& GetCurrentFolder() const { return new_path; }
 
   /* Beware: all those strings are UTF-8, so you must convert them to WCHAR under Windows */

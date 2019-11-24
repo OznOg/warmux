@@ -38,7 +38,7 @@
 
 ReplayMenu::ReplayMenu()
   : Menu("menu/bg_play")
-  , selected(NULL)
+  , selected(nullptr)
 {
   // Center the boxes!
   uint h      = GetMainWindow().GetHeight();
@@ -133,7 +133,7 @@ void ReplayMenu::ClearReplayInfo()
 void ReplayMenu::ChangeReplay()
 {
   const std::string *name = replay_lbox->GetSelectedFile();
-  selected = NULL;
+  selected = nullptr;
   if (!name) {
     ClearReplayInfo();
     return;

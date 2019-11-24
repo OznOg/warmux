@@ -65,7 +65,7 @@ std::string Format(const char *format, ...)
     result = std::string(buffer);
   } else {
     char *bigBuffer = (char *)malloc((size + 1) * sizeof(char));
-    if (bigBuffer == NULL)
+    if (bigBuffer == nullptr)
       Error("Out of memory !");
 
     // We need to redo va_start/va_end before calling vsnprintf

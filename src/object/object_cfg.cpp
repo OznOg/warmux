@@ -47,7 +47,7 @@ ObjectConfig::ObjectConfig(void):
 void ObjectConfig::LoadXml(const std::string & obj_name, 
                            const std::string & config_file)
 {
-  const xmlNode* elem = NULL;
+  const xmlNode* elem = nullptr;
   XmlReader      doc;
 
   if ("" == config_file) {
@@ -66,7 +66,7 @@ void ObjectConfig::LoadXml(const std::string & obj_name,
     elem = XmlReader::GetMarker(doc.GetRoot(), obj_name);
   }
 
-  ASSERT(elem != NULL);
+  ASSERT(elem != nullptr);
   XmlReader::ReadDouble(elem, "mass",                m_mass);
   XmlReader::ReadDouble(elem, "wind_factor",         m_wind_factor);
   XmlReader::ReadDouble(elem, "air_resist_factor",   m_air_resist_factor);

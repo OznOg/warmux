@@ -111,7 +111,7 @@ public:
   ResultBox(uint size, const std::string& type)
     : HBox(size, false, false, false)
   {
-    SetWidgets(type, "?", NULL);
+    SetWidgets(type, "?", nullptr);
     WidgetList::SetBackgroundColor(transparent_color);
   }
   ResultBox(uint size, const std::string& type, uint score, const Character* player)
@@ -201,9 +201,9 @@ public:
 
 bool compareTeamResults(const TeamResults* a, const TeamResults* b)
 {
-  if (a->getTeam() == NULL)
+  if (a->getTeam() == nullptr)
     return false;
-  if (b->getTeam() == NULL)
+  if (b->getTeam() == nullptr)
     return true;
 
   const Team* team_a = a->getTeam();
@@ -234,12 +234,12 @@ static bool IsPodiumSeparate()
 ResultsMenu::ResultsMenu(std::vector<TeamResults*>& v, bool disconnected)
   : Menu("menu/bg_results", vOkCancel)
   , results(v)
-  , first_team(NULL)
-  , second_team(NULL)
-  , third_team(NULL)
-  , msg_box(NULL)
-  , winner_box(NULL)
-  , save(NULL)
+  , first_team(nullptr)
+  , second_team(nullptr)
+  , third_team(nullptr)
+  , msg_box(nullptr)
+  , winner_box(nullptr)
+  , save(nullptr)
 {
   Profile *res  = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   Point2i wsize = GetMainWindow().GetSize();
@@ -412,7 +412,7 @@ void ResultsMenu::ComputeTeamsOrder()
   if (results.size() > 3)
     third_team = results.at(2)->getTeam();
   else
-    third_team = NULL;
+    third_team = nullptr;
 }
 
 void ResultsMenu::DrawTeamOnPodium(const Team& team, const Point2i& relative_position)

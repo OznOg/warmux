@@ -64,12 +64,12 @@ void EnergyList::AddValue(uint value)
 uint TeamEnergy::bar_spacing = MAX_BAR_SPACING;
 
 TeamEnergy::TeamEnergy(Team * _team)
-  : energy_bar(NULL)
+  : energy_bar(nullptr)
   , value(0)
   , new_value(0)
   , max_value(0)
   , team(_team)
-  , icon(NULL)
+  , icon(nullptr)
   , t_team_energy(new Text("None", black_color,
                            Font::FONT_SMALL, Font::FONT_BOLD, false))
   , dx(0)

@@ -223,14 +223,14 @@ Config::Config()
   const char * c_config_dir = std::getenv("XDG_CONFIG_HOME");
   const char * c_data_dir = std::getenv("XDG_DATA_HOME");
 
-  if (c_config_dir == NULL)
+  if (c_config_dir == nullptr)
     personal_config_dir = GetHome() + "/.config";
   else
     personal_config_dir = c_config_dir;
 
   personal_config_dir += "/wormux/";
 
-  if (c_data_dir == NULL) {
+  if (c_data_dir == nullptr) {
     personal_data_dir = GetHome() + "/.local/share";
   }
   else
@@ -619,7 +619,7 @@ void Config::WriteTeams(const std::list<ConfigTeam>& teams, XmlWriter& doc, xmlN
   for (uint i=0; it!=end; ++it, i++) {
     std::string name = "team_"+uint2str(i);
     xmlNode* a_team = xmlAddChild(xml,
-                                  xmlNewNode(NULL /* empty prefix */, (const xmlChar*)name.c_str()));
+                                  xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)name.c_str()));
     doc.WriteElement(a_team, "id", (*it).id);
     doc.WriteElement(a_team, "player_name", (*it).player_name);
     doc.WriteElement(a_team, "nb_characters", uint2str((*it).nb_characters));
@@ -646,7 +646,7 @@ bool Config::SaveXml(bool save_current_teams)
 
   //=== Teams ===
   xmlNode *team_elements = xmlAddChild(root,
-                                       xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"teams"));
+                                       xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"teams"));
 
   if (TeamsList::IsLoaded()) {
     if (save_current_teams) {
@@ -673,7 +673,7 @@ bool Config::SaveXml(bool save_current_teams)
 
   //=== Video ===
   Video * video = AppWarmux::GetInstance()->video;
-  xmlNode* video_node = xmlAddChild(root, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"video"));
+  xmlNode* video_node = xmlAddChild(root, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"video"));
   doc.WriteElement(video_node, "wind_particles_percentage", uint2str(wind_particles_percentage));
   doc.WriteElement(video_node, "display_multi_layer_sky", bool2str(display_multi_layer_sky));
   doc.WriteElement(video_node, "display_energy_character", bool2str(display_energy_character));
@@ -689,7 +689,7 @@ bool Config::SaveXml(bool save_current_teams)
   doc.WriteElement(video_node, "max_fps", uint2str(video->GetMaxFps()));
 
   //=== Sound ===
-  xmlNode *sound_node = xmlAddChild(root, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"sound"));
+  xmlNode *sound_node = xmlAddChild(root, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"sound"));
   doc.WriteElement(sound_node, "music",  bool2str(sound_music));
   doc.WriteElement(sound_node, "effects", bool2str(sound_effects));
 #ifndef HAVE_HANDHELD
@@ -699,25 +699,25 @@ bool Config::SaveXml(bool save_current_teams)
   doc.WriteElement(sound_node, "volume_effects", uint2str(volume_effects));
 
   //=== Network ===
-  xmlNode *net_node = xmlAddChild(root, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"network"));
+  xmlNode *net_node = xmlAddChild(root, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"network"));
 
   // Network as client parameters
-  xmlNode *net_as_client_node = xmlAddChild(net_node, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"as_client"));
+  xmlNode *net_as_client_node = xmlAddChild(net_node, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"as_client"));
   doc.WriteElement(net_as_client_node, "host", m_network_client_host);
   doc.WriteElement(net_as_client_node, "port", m_network_client_port);
 
   // Network as server parameters
-  xmlNode *net_as_server_node = xmlAddChild(net_node, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"as_server"));
+  xmlNode *net_as_server_node = xmlAddChild(net_node, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"as_server"));
   doc.WriteElement(net_as_server_node, "game_name", m_network_server_game_name);
   doc.WriteElement(net_as_server_node, "port", m_network_server_port);
   doc.WriteElement(net_as_server_node, "public", bool2str(m_network_server_public));
 
   // personal teams used durint last network game
-  xmlNode *net_teams = xmlAddChild(net_node, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"local_teams"));
+  xmlNode *net_teams = xmlAddChild(net_node, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"local_teams"));
   WriteTeams(network_local_teams, doc, net_teams);
 
   //=== Misc ===
-  xmlNode *misc_node = xmlAddChild(root, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"misc"));
+  xmlNode *misc_node = xmlAddChild(root, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"misc"));
   doc.WriteElement(misc_node, "check_updates", bool2str(check_updates));
   doc.WriteElement(misc_node, "left-handed_mouse", bool2str(lefthanded_mouse));
 
@@ -742,7 +742,7 @@ bool Config::SaveXml(bool save_current_teams)
   doc.WriteElement(root, "game_mode", m_game_mode);
 
   //=== controls ===
-  xmlNode *controls_node = xmlAddChild(root, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"controls"));
+  xmlNode *controls_node = xmlAddChild(root, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"controls"));
   Keyboard::GetInstance()->SaveConfig(controls_node);
 
   return doc.Save();

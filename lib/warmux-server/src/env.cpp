@@ -30,7 +30,7 @@
 #include <WSERVER_config.h>
 #include <WSERVER_debug.h>
 
-ServerConfig * Env::config = NULL;
+ServerConfig * Env::config = nullptr;
 
 void Env::SetConfigClass(ServerConfig& _config)
 {
@@ -168,7 +168,7 @@ void Env::MaskSigPipe()
   sa.sa_flags = SA_SIGINFO;
   sigemptyset(&sa.sa_mask);
   sa.sa_sigaction = signal_handler;
-  if (sigaction(SIGPIPE, &sa, NULL) == -1)
+  if (sigaction(SIGPIPE, &sa, nullptr) == -1)
     PRINT_FATAL_ERROR;
 #endif
 }
@@ -185,7 +185,7 @@ void Env::SetupAutoReloadConf()
   sa.sa_flags = SA_SIGINFO;
   sigemptyset(&sa.sa_mask);
   sa.sa_sigaction = reload_config;
-  if (sigaction(SIGHUP, &sa, NULL) == -1)
+  if (sigaction(SIGHUP, &sa, nullptr) == -1)
     PRINT_FATAL_ERROR;
 #endif
 }

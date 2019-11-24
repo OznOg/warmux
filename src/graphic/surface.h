@@ -47,7 +47,7 @@ public:
    *
    * Build a null surface with autoFree at true.
    */
-  explicit Surface() : surface(NULL), autoFree(true) { };
+  explicit Surface() : surface(nullptr), autoFree(true) { };
   /**
    * Constructor building a surface object using an existing SDL_Surface pointer.
    *
@@ -63,7 +63,7 @@ public:
    * @see NewSurface
    */
   explicit Surface(const Point2i &size, Uint32 flags, bool useAlpha = true)
-  : surface(NULL), autoFree(true) { NewSurface(size, flags, useAlpha); }
+  : surface(nullptr), autoFree(true) { NewSurface(size, flags, useAlpha); }
   explicit Surface(const std::string &filename);
   Surface(const Surface &src);
   /**
@@ -119,7 +119,7 @@ public:
    *
    * @param src The source surface.
    */
-  int Blit(const Surface& src) { return Blit(src, NULL, NULL); };
+  int Blit(const Surface& src) { return Blit(src, nullptr, nullptr); };
   int Blit(const Surface& src, const Point2i& dst);
   int Blit(const Surface& src, const Rectanglei& srcRect, const Point2i &dstPoint);
 
@@ -165,7 +165,7 @@ public:
   Uint32 GetPixel(int x, int y) const;
   void PutPixel(int x, int y, Uint32 pixel) const;
 
-  bool IsNull() const { return surface == NULL; };
+  bool IsNull() const { return surface == nullptr; };
   Point2i GetSize() const { return Point2i( GetWidth(), GetHeight() ); };
 
   inline int GetWidth() const { return surface->w; }

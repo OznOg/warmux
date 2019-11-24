@@ -153,7 +153,7 @@ void Keyboard::SetConfig(const xmlNode *node)
 
 void Keyboard::SaveConfig(xmlNode *node) const
 {
-  xmlNode *keyboard_node = xmlAddChild(node, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"keyboard"));
+  xmlNode *keyboard_node = xmlAddChild(node, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"keyboard"));
   std::map<int, std::vector<Key_t> >::const_iterator it;
 
   for (it = layout.begin(); it != layout.end(); it++) {
@@ -182,7 +182,7 @@ void Keyboard::SaveConfig(xmlNode *node) const
       }
 
       //Generate node
-      xmlNode *bind = xmlAddChild(keyboard_node, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"bind"));
+      xmlNode *bind = xmlAddChild(keyboard_node, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"bind"));
       xmlSetProp(bind, (const xmlChar*)"key", (const xmlChar*)GetKeyNameFromKey(key).c_str());
       xmlSetProp(bind, (const xmlChar*)"action", (const xmlChar*)GetActionNameFromAction(actions.at(i)).c_str());
       if (shift) xmlSetProp(bind, (const xmlChar*)"shift", (const xmlChar*)"true");

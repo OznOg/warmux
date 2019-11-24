@@ -157,7 +157,7 @@ Widget * TextBox::ClickUp(const Point2i & mousePosition, uint button)
 
     if (new_txt != GetText())
       BasicSetText(new_txt);
-    return used ? this : NULL;
+    return used ? this : nullptr;
   } else if (button == SDL_BUTTON_LEFT) {
     const std::string&     cur_txt = GetText();
     const Font*            font    = Font::GetInstance(GetFontSize(), GetFontStyle());

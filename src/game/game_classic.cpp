@@ -200,9 +200,9 @@ void GameClassic::ApplyDeathMode () const
       if (static_cast<uint>(character->GetEnergy()) >
           GameMode::GetInstance()->damage_per_turn_during_death_mode)
         // No damage dealer, thus pass NULL
-        character->SetEnergyDelta(-(int)GameMode::GetInstance()->damage_per_turn_during_death_mode, NULL);
+        character->SetEnergyDelta(-(int)GameMode::GetInstance()->damage_per_turn_during_death_mode, nullptr);
       else
-        character->SetEnergy(1, NULL);
+        character->SetEnergy(1, nullptr);
     }
   }
 }

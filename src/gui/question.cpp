@@ -30,8 +30,8 @@
 
 Question::Question(type _type)
 {
-  background = NULL;
-  text = NULL;
+  background = nullptr;
+  text = nullptr;
 
   Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   switch (_type) {
@@ -39,20 +39,20 @@ Question::Question(type _type)
     icon = new Sprite(GetResourceManager().LoadImage(res,"menu/ico_warning"));
     break;
   case NO_TYPE:
-    icon = NULL;
+    icon = nullptr;
     break;
   }
 }
 
 Question::~Question()
 {
-  if (background != NULL)
+  if (background != nullptr)
     delete background;
 
-  if (text != NULL)
+  if (text != nullptr)
     delete text;
 
-  if (icon != NULL)
+  if (icon != nullptr)
     delete icon;
 }
 
@@ -80,7 +80,7 @@ void Question::Draw() const
 
   Point2i icon_size(0,0);
   Point2i icon_border(0,0);
-  if (icon != NULL) {
+  if (icon != nullptr) {
     icon_size = icon->GetSize();
     icon_border = Point2i(10, 10);
   }
@@ -88,7 +88,7 @@ void Question::Draw() const
   Rectanglei rect;
   Point2i top_corner;
 
-  if (background != NULL) {
+  if (background != nullptr) {
     top_corner = app->video->window.GetSize() / 2 - background->GetSize() / 2;
     rect = Rectanglei(top_corner, background->GetSize());
     background->Blit(app->video->window,  top_corner);
@@ -106,7 +106,7 @@ void Question::Draw() const
     appli->video->window.RectangleColor(rect, defaultColorRect);
   }
 
-  if (icon != NULL) {
+  if (icon != nullptr) {
     Point2i icon_position = top_corner + Point2i(5, rect.GetSizeY()/2 - icon_size.GetY() /2);
     icon->Blit(app->video->window, icon_position);
   }
@@ -172,7 +172,7 @@ void Question::Set (const std::string &pmessage,
 
   if (background) {
     delete background;
-    background = NULL;
+    background = nullptr;
   }
 
   if (bg_sprite != "") {

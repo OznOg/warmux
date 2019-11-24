@@ -33,7 +33,7 @@ protected:
 public:
   const LRMoveIntention * GetLastLRMoveIntention() const
   {
-    return (lr_move_intentions.empty()) ? NULL : lr_move_intentions.back();
+    return (lr_move_intentions.empty()) ? nullptr : lr_move_intentions.back();
   }
   void AddLRMoveIntention(const LRMoveIntention * intention)
   {
@@ -46,7 +46,7 @@ public:
 
   const UDMoveIntention * GetLastUDMoveIntention() const
   {
-    return (ud_move_intentions.empty()) ? NULL : ud_move_intentions.back();
+    return (ud_move_intentions.empty()) ? nullptr : ud_move_intentions.back();
   }
   void AddUDMoveIntention(const UDMoveIntention * intention)
   {

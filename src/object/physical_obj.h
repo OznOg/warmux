@@ -89,7 +89,7 @@ protected:
 
   void StartMoving() override
   {
-    m_last_collided_object = NULL;
+    m_last_collided_object = nullptr;
     Physics::StartMoving();
   }
 

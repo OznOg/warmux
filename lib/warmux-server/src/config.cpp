@@ -52,7 +52,7 @@ void ServerConfig::Load(const std::string & _config_file)
   }
 
   // Get its full pathname to allow "automatic" reloading
-  char *config_path = realpath((_config_file.c_str()), NULL);
+  char *config_path = realpath((_config_file.c_str()), nullptr);
   if (!config_path) {
     DPRINTMSG(stderr, "Unable to open config file %s: %s", _config_file.c_str(), strerror(errno));
     exit(EXIT_FAILURE);

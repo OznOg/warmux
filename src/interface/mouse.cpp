@@ -68,7 +68,7 @@ std::map<Mouse::pointer_t, MouseCursor> Mouse::cursors;
 Mouse::Mouse()
   : lastpos(-1,-1)
   , last_hide_time(0)
-  , long_click_timer(0)
+  , long_click_timer(nullptr)
   , click_pos(-1,-1)
   , is_long_click(false)
   , was_long_click(false)
@@ -97,7 +97,7 @@ void Mouse::EndLongClickTimer()
 {
   if (long_click_timer) {
     SDL_RemoveTimer(long_click_timer);
-    long_click_timer = 0;
+    long_click_timer = nullptr;
   }
   is_long_click = false;
   was_long_click = false;
@@ -290,7 +290,7 @@ void Mouse::GetDesignatedCharacter() const
   const Point2i pos_monde = GetWorldPosition();
 
   // Which character is pointed by the mouse ? (appart from the active one)
-  Interface::GetInstance()->character_under_cursor = NULL;
+  Interface::GetInstance()->character_under_cursor = nullptr;
   FOR_ALL_LIVING_CHARACTERS(team, character) {
     if (&(*character) != &ActiveCharacter()
         && character->GetRect().Contains(pos_monde)) {

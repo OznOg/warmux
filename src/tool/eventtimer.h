@@ -32,7 +32,7 @@ class EventTimer: public Singleton<EventTimer>
 private:
   TimerID timer_id;
 public:
-  EventTimer() {timer_id = 0;}
+  EventTimer() {timer_id = nullptr;}
   void Start(int interval);
   void Stop();
   bool IsRunning() const;

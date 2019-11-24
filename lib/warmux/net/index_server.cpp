@@ -44,7 +44,7 @@ IndexServer::~IndexServer()
   Disconnect();
 
   SDL_DestroySemaphore(action_sem);
-  action_sem = NULL;
+  action_sem = nullptr;
 }
 
 void IndexServer::Lock()
@@ -144,7 +144,7 @@ connection_state_t IndexServer::ConnectTo(const std::string& address, const int&
   if (r != CONNECTED)
     goto err_handshake;
 
-  time_pong = time(NULL);
+  time_pong = time(nullptr);
 
   return r;
 
@@ -427,7 +427,7 @@ bool IndexServer::SendPong()
   WNet::FinalizeBatch(buffer, used);
   r = socket.SendBuffer(buffer, used);
 
-  time_pong = time(NULL);
+  time_pong = time(nullptr);
 
   return r;
 }
@@ -443,7 +443,7 @@ void IndexServer::Refresh(bool nowait)
   // Send regularly a Pong message even if we have not received a ping message.
   // This is needed to detect that the connexion have been closed by index
   // server.
-  if (difftime(time(NULL), time_pong) > 30.0)
+  if (difftime(time(nullptr), time_pong) > 30.0)
     SendPong();
 
   if (nowait) {

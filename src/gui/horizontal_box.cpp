@@ -66,7 +66,7 @@ void HBox::Pack()
 
 bool HBox::LoadXMLConfiguration(void)
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     return false;
   }
 

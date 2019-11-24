@@ -79,7 +79,7 @@ bool force_refresh = false;
 
 std::string Game::current_rules = "none";
 
-Menu *Game::menu = NULL;
+Menu *Game::menu = nullptr;
 
 Game * Game::GetInstance()
 {
@@ -96,7 +96,7 @@ Game * Game::GetInstance()
       fprintf(stderr, "%s game rules not implemented\n", GameMode::GetRef().rules.c_str());
       exit(1);
     }
-    singleton->menu = NULL;
+    singleton->menu = nullptr;
   }
   return singleton;
 }
@@ -297,7 +297,7 @@ void Game::EndInitGameData_NetClient()
 void Game::InitWeapons()
 {
   if (current_mode != GameMode::GetRef().GetName()) {
-    weapons_list = NULL;
+    weapons_list = nullptr;
     current_mode = GameMode::GetRef().GetName();
   }
 
@@ -474,7 +474,7 @@ Game::Game()
   , give_objbox(true)
   , last_clock_update(0)
   , isGameLaunched(false)
-  , current_ObjBox(NULL)
+  , current_ObjBox(nullptr)
   , ask_for_menu(false)
   , ask_for_help_menu(false)
   , ask_for_end(false)
@@ -487,7 +487,7 @@ Game::Game()
   , character_already_chosen(false)
   , m_current_turn(0)
   , waiting_for_network_text("Waiting for turn master")
-  , weapons_list(NULL)
+  , weapons_list(nullptr)
 { }
 
 Game::~Game()
@@ -1159,7 +1159,7 @@ PhysicalObj* Game::GetMovingObject() const
     MSG_DEBUG("game.endofturn", "ParticleEngine (%s) is moving", obj->GetName().c_str());
     return obj;
   }
-  return NULL;
+  return nullptr;
 }
 
 bool Game::IsAnythingMoving() const
@@ -1316,7 +1316,7 @@ bool Game::MenuQuitPause()
   menu = new PauseMenu(exit);
   menu->Run();
   delete menu;
-  menu = NULL;
+  menu = nullptr;
 
   GameTime::GetInstance()->SetWaitingForUser(false);
 
@@ -1337,7 +1337,7 @@ void Game::MenuHelpPause()
   menu = new HelpMenu();
   menu->Run();
   delete menu;
-  menu = NULL;
+  menu = nullptr;
 
   GameTime::GetInstance()->SetWaitingForUser(false);
 

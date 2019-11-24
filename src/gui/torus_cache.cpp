@@ -28,15 +28,15 @@
 #include "tool/resource_manager.h"
 
 static int      ref_count = 0;
-static Surface *annulus_background = 0;
-static Surface *annulus_foreground = 0;
-static Sprite  *img_plus = 0;
-static Sprite  *img_minus = 0;
+static Surface *annulus_background = nullptr;
+static Surface *annulus_foreground = nullptr;
+static Sprite  *img_plus = nullptr;
+static Sprite  *img_minus = nullptr;
 static Color    progress_color;
 
 TorusCache::TorusCache(Profile *res, const std::string& resource_id, int bigr, int smallr)
   : m_last_angle(-1.0)
-  , m_torus(NULL)
+  , m_torus(nullptr)
   , m_big_r(bigr)
   , m_small_r(smallr)
 {
@@ -69,10 +69,10 @@ TorusCache::~TorusCache()
   // Check whether to free static resources
   ref_count--;
   if (!ref_count) {
-    delete annulus_background; annulus_background = NULL;
-    delete annulus_foreground; annulus_foreground = NULL;
-    delete img_plus; img_plus = NULL;
-    delete img_minus; img_minus = NULL;
+    delete annulus_background; annulus_background = nullptr;
+    delete annulus_foreground; annulus_foreground = nullptr;
+    delete img_plus; img_plus = nullptr;
+    delete img_minus; img_minus = nullptr;
   }
 }
 
@@ -105,7 +105,7 @@ void TorusCache::Refresh(float angle, float open)
 {
   if (m_last_angle != angle) {
     delete m_torus;
-    m_torus = NULL;
+    m_torus = nullptr;
   }
   if (!m_torus) {
     m_torus = new Surface(Point2i(m_big_r*2+2, m_big_r*2+2), 0, true);

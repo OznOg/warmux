@@ -75,7 +75,7 @@ Action::~Action()
 {
   if (m_var)
     free(m_var);
-  m_write = m_read = m_var = NULL;
+  m_write = m_read = m_var = nullptr;
   m_header.len = 0;
   m_bufsize = 0;
 }
@@ -99,7 +99,7 @@ Action::Action(const char *buffer, DistantComputer* _creator)
     m_read = m_write = m_var = (uint8_t*)malloc(m_bufsize);
     memcpy(m_var, buffer, m_bufsize);
   } else {
-    m_read = m_write = m_var = NULL;
+    m_read = m_write = m_var = nullptr;
   }
 }
 
@@ -108,8 +108,8 @@ void Action::Init(Action_t type)
   m_header.type = (uint8_t)type;
   m_header.len = 0;
   m_bufsize = 0;
-  m_write = m_read = m_var = NULL;
-  m_creator = NULL;
+  m_write = m_read = m_var = nullptr;
+  m_creator = nullptr;
 }
 
 void Action::Resize(uint n)

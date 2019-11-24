@@ -96,8 +96,8 @@ Weapon::Weapon(Weapon_type type,
 
   m_can_change_weapon = false;
 
-  m_image = NULL;
-  m_weapon_fire = NULL;
+  m_image = nullptr;
+  m_weapon_fire = nullptr;
 
   if (!use_flipping && !EqualsZero(min_angle - max_angle))
     use_flipping = true;
@@ -697,7 +697,7 @@ xmlNode* Weapon::SaveXml(XmlWriter& writer, xmlNode*  weapon) const
   xmlNode* elem = XmlWriter::AddNode(weapon, m_id.c_str());
   if (!elem) {
     fprintf(stderr, "Couldn't save weapon config for %s\n", m_id.c_str());
-    return NULL;
+    return nullptr;
   }
 
   writer.WriteElement(elem, "available_after_turn", int2str(m_available_after_turn));

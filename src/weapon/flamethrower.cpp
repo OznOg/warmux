@@ -151,7 +151,7 @@ void FlameThrower::IncMissedShots()
 bool FlameThrower::p_Shoot()
 {
   projectile->Shoot(FLAMETHROWER_BULLET_SPEED);
-  projectile = NULL;
+  projectile = nullptr;
   ReloadLauncher();
 
   Point2i pos;

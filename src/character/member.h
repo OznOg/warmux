@@ -87,8 +87,8 @@ public:
   Member * parent;
 
   junction():
-    member(NULL),
-    parent(NULL) {};
+    member(nullptr),
+    parent(nullptr) {};
 };
 
 class Member

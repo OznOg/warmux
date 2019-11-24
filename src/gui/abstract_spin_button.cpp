@@ -47,7 +47,7 @@ AbstractSpinButton::AbstractSpinButton(Profile * profile,
 
 bool AbstractSpinButton::LoadXMLConfiguration(void)
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     return false;
   }
 

@@ -118,6 +118,6 @@ public:
 
   visibility_t GetVisibility() const { return visible; }
 
-  void SetLongClick() { is_long_click = true; long_click_timer = 0; }
+  void SetLongClick() { is_long_click = true; long_click_timer = nullptr; }
 };
 #endif

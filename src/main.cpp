@@ -75,7 +75,7 @@ static MainMenu::menu_item choice = MainMenu::NONE;
 static bool skip_menu = false;
 static NetworkConnectionMenu::network_menu_action_t net_action = NetworkConnectionMenu::NET_NOTHING;
 
-AppWarmux *AppWarmux::singleton = NULL;
+AppWarmux *AppWarmux::singleton = nullptr;
 
 AppWarmux *AppWarmux::GetInstance()
 {
@@ -87,7 +87,7 @@ AppWarmux *AppWarmux::GetInstance()
 
 AppWarmux::AppWarmux():
   video(new Video()),
-  menu(NULL)
+  menu(nullptr)
 {
   RandomLocal().InitRandom();
   std::cout << "[ " << _("Run game") << " ]" << std::endl;
@@ -99,7 +99,7 @@ AppWarmux::~AppWarmux()
   ParticleEngine::FreeMem();
   Font::ReleaseInstances();
   BaseSingleton::ReleaseSingletons();
-  singleton = NULL;
+  singleton = nullptr;
 }
 
 static std::string replay;
@@ -190,7 +190,7 @@ int AppWarmux::Main(void)
       default:
         break;
     }
-    SetCurrentMenu(NULL);
+    SetCurrentMenu(nullptr);
     choice = MainMenu::NONE;
     skip_menu = false;
     net_action = NetworkConnectionMenu::NET_NOTHING;
@@ -331,7 +331,7 @@ bool AppWarmux::CheckInactive(SDL_Event& evnt)
           menu = new PauseMenu(exit);
           menu->Run();
           delete menu;
-          menu = NULL;
+          menu = nullptr;
           if (exit)
             Game::GetInstance()->UserAsksForEnd();
         }
@@ -412,21 +412,21 @@ void ParseArgs(int argc, char * argv[])
   int c;
   int option_index = 0;
   struct option long_options[] = {
-    {"unrandom",   no_argument,       NULL, 'u'},
-    {"force-refresh", no_argument,    NULL, 'f'},
-    {"help",       no_argument,       NULL, 'h'},
-    {"version",    no_argument,       NULL, 'v'},
-    {"play",       no_argument,       NULL, 'p'},
-    {"quick-quit", no_argument,       NULL, 'q'},
-    {"client",     optional_argument, NULL, 'c'},
-    {"server",     no_argument,       NULL, 's'},
-    {"index-server", optional_argument, NULL, 'i'},
-    {"game-mode",  required_argument, NULL, 'g'},
-    {"debug",      required_argument, NULL, 'd'},
-    {"reset-config", no_argument,     NULL, 'r'},
-    {"size",       required_argument, NULL, 'S'},
-    {"replay",     required_argument, NULL, 'R'},
-    {NULL,         no_argument,       NULL,  0 }
+    {"unrandom",   no_argument,       nullptr, 'u'},
+    {"force-refresh", no_argument,    nullptr, 'f'},
+    {"help",       no_argument,       nullptr, 'h'},
+    {"version",    no_argument,       nullptr, 'v'},
+    {"play",       no_argument,       nullptr, 'p'},
+    {"quick-quit", no_argument,       nullptr, 'q'},
+    {"client",     optional_argument, nullptr, 'c'},
+    {"server",     no_argument,       nullptr, 's'},
+    {"index-server", optional_argument, nullptr, 'i'},
+    {"game-mode",  required_argument, nullptr, 'g'},
+    {"debug",      required_argument, nullptr, 'd'},
+    {"reset-config", no_argument,     nullptr, 'r'},
+    {"size",       required_argument, nullptr, 'S'},
+    {"replay",     required_argument, nullptr, 'R'},
+    {nullptr,         no_argument,       nullptr,  0 }
   };
 
   while ((c = getopt_long(argc, argv, "ufhvpqc::si::g:d:rS:R:",

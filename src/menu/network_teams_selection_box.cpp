@@ -55,7 +55,7 @@ NetworkTeamsSelectionBox::NetworkTeamsSelectionBox(const Point2i &_size, bool w_
 Widget* NetworkTeamsSelectionBox::ClickUp(const Point2i &mousePosition, uint button)
 {
   if (!Contains(mousePosition))
-    return NULL;
+    return nullptr;
 
   uint current_nb_teams = local_teams_nb->GetValue();
 
@@ -71,7 +71,7 @@ Widget* NetworkTeamsSelectionBox::ClickUp(const Point2i &mousePosition, uint but
     return DefaultClickUp(mousePosition, button);
   }
 
-  return NULL;
+  return nullptr;
 }
 
 const std::string NetworkTeamsSelectionBox::GetLocalPlayerName()
@@ -220,7 +220,7 @@ Team * NetworkTeamsSelectionBox::FindById(const std::string& id, int& index)
     }
   }
   index = -1;
-  return NULL;
+  return nullptr;
 }
 
 Team * NetworkTeamsSelectionBox::FindUnusedTeam(const std::string& default_team_id)

@@ -149,10 +149,10 @@ void WeaponMenuItem::Draw(Surface * dest)
 
 
 WeaponsMenu::WeaponsMenu()
-  : m_not_yet_available(NULL)
-  , weapons_menu(NULL)
-  , tools_menu(NULL)
-  , current_overfly_item(NULL)
+  : m_not_yet_available(nullptr)
+  , weapons_menu(nullptr)
+  , tools_menu(nullptr)
+  , current_overfly_item(nullptr)
   , position()
   , shear()
   , rotation()
@@ -267,7 +267,7 @@ void WeaponsMenu::Show(const Point2i& pos)
 void WeaponsMenu::Hide(bool play_sound)
 {
   if (show) {
-    Interface::GetInstance()->SetCurrentOverflyWeapon(NULL);
+    Interface::GetInstance()->SetCurrentOverflyWeapon(nullptr);
     if (motion_start_time + GetIconsDrawTime() < GameTime::GetInstance()->Read())
       motion_start_time = GameTime::GetInstance()->Read();
     else
@@ -283,7 +283,7 @@ void WeaponsMenu::Hide(bool play_sound)
 
 void WeaponsMenu::Reset()
 {
-  Interface::GetInstance()->SetCurrentOverflyWeapon(NULL);
+  Interface::GetInstance()->SetCurrentOverflyWeapon(nullptr);
   RefreshWeaponList();
   motion_start_time = 0;
   show = false;
@@ -395,10 +395,10 @@ void WeaponsMenu::Draw()
 Weapon * WeaponsMenu::UpdateCurrentOverflyItem(const Polygon * poly)
 {
   if (!show)
-    return NULL;
+    return nullptr;
   const std::vector<PolygonItem *>& items = poly->GetItem();
   WeaponMenuItem * tmp;
-  Interface::GetInstance()->SetCurrentOverflyWeapon(NULL);
+  Interface::GetInstance()->SetCurrentOverflyWeapon(nullptr);
   std::vector<PolygonItem *>::const_iterator item = items.begin();
   for (; item != items.end(); item++) {
     tmp = (WeaponMenuItem *)(*item);
@@ -412,7 +412,7 @@ Weapon * WeaponsMenu::UpdateCurrentOverflyItem(const Polygon * poly)
       return tmp->GetWeapon();
     }
   }
-  return NULL;
+  return nullptr;
 }
 
 bool WeaponsMenu::ActionClic(const Point2i &/*mouse_pos*/)

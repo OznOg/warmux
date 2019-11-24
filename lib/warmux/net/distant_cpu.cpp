@@ -90,7 +90,7 @@ void DistantComputer::DelPlayer(uint player_id)
 
 Player* DistantComputer::GetPlayer(uint player_id)
 {
-  Player* player = NULL;
+  Player* player = nullptr;
 
   std::list<Player>::iterator player_it;
   for (player_it = players.begin(); player_it != players.end(); player_it++) {

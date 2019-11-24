@@ -32,7 +32,7 @@
 #include "tool/resource_manager.h"
 #include "tool/xml_document.h"
 
-Sprite* Medkit::icon = NULL;
+Sprite* Medkit::icon = nullptr;
 int Medkit::icon_ref = 0;
 MedkitSettings Medkit::settings;
 
@@ -61,7 +61,7 @@ Medkit::~Medkit()
   icon_ref--;
   if (!icon_ref) {
     delete icon;
-    icon = NULL;
+    icon = nullptr;
   }
 }
 

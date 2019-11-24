@@ -177,7 +177,7 @@ Profile *ResourceManager::LoadXMLProfile(const std::string& xml_filename, bool i
     // TODO raise an "can't load file" exception
     delete doc;
     Error("ResourceManager: can't load profile "+filename);
-    return NULL;
+    return nullptr;
   }
 
   Profile *profile = new Profile(xml_filename);
@@ -207,7 +207,7 @@ const xmlNode*  ResourceManager::GetElement(const Profile *profile, const std::s
     std::string r_name = resource_name;
     const xmlNode* cur_elem = profile->doc->GetRoot();
 
-    while((r_name.find("/") != r_name.npos) && (cur_elem != NULL)) {
+    while((r_name.find("/") != r_name.npos) && (cur_elem != nullptr)) {
       cur_elem = profile->doc->Access(cur_elem, "section", r_name.substr(0, r_name.find("/")));
       r_name = r_name.substr(r_name.find("/") + 1, r_name.length());
     }
@@ -289,7 +289,7 @@ Sprite *ResourceManager::LoadSprite(const xmlNode* elem_sprite, const std::strin
   //      By now force alpha and no colorkey
 
   bool alpha = true;
-  Sprite *sprite = NULL;
+  Sprite *sprite = nullptr;
 
   const xmlNode* elem_grid = XmlReader::GetMarker(elem_image, "grid");
 
@@ -326,10 +326,10 @@ Sprite *ResourceManager::LoadSprite(const xmlNode* elem_sprite, const std::strin
     sprite->Init(surface, frameSize, nb_frames_x, nb_frames_y);
   }
 
-  ASSERT(sprite != NULL);
+  ASSERT(sprite != nullptr);
 
   const xmlNode* elem = XmlReader::GetMarker(elem_sprite, "animation");
-  if (elem != NULL) {
+  if (elem != nullptr) {
     std::string str;
     // Set the frame speed
     if (XmlReader::ReadStringAttr(elem, "speed", str))

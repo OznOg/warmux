@@ -59,7 +59,7 @@ public:
 
   void Pack() override;
   void Draw(const Point2i &mousePosition) override;
-  Widget* Click(const Point2i&, uint) override { return NULL; }
+  Widget* Click(const Point2i&, uint) override { return nullptr; }
   Widget* ClickUp(const Point2i &mousePosition, uint button) override;
 
   const std::string& GetValue() const { return m_choices[m_index].first; };

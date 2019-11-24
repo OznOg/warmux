@@ -36,7 +36,7 @@
 Video::Video()
   :SDLReady(false)
   , fullscreen(false)
-  , icon(NULL)
+  , icon(nullptr)
 {
   SetMaxFps(50);
 
@@ -58,10 +58,10 @@ Video::Video()
 #endif
   // SDL_WM_SetIcon must be called before the first call to SDL_SetVideoMode
 #ifndef MAEMO
-  SDL_WM_SetIcon(icon, NULL);
+  SDL_WM_SetIcon(icon, nullptr);
 #endif
 
-  window.SetSurface(NULL, false);
+  window.SetSurface(nullptr, false);
   window.SetAutoFree(false);
 
   ComputeAvailableConfigs();
@@ -89,7 +89,7 @@ Video::~Video()
 {
   if (icon) {
     SDL_FreeSurface(icon);
-    icon = NULL;
+    icon = nullptr;
   }
   if (SDLReady) {
     SDL_QuitSubSystem(SDL_INIT_VIDEO);
@@ -138,10 +138,10 @@ void Video::ComputeAvailableConfigs()
   SDL_Rect **modes;
 
   // Get available fullscreen modes
-  modes = SDL_ListModes(NULL, SDL_FULLSCREEN|SDL_SWSURFACE);
+  modes = SDL_ListModes(nullptr, SDL_FULLSCREEN|SDL_SWSURFACE);
 
   // Check is there are any modes available
-  if (modes != NULL){
+  if (modes != nullptr){
     // We also had the current window resolution if it is not already in the list!
     for (int i=0;modes[i];++i) {
       if (modes[i]->w>=480 && modes[i]->h>=320) {
@@ -253,7 +253,7 @@ void Video::ToggleFullscreen()
 
 void Video::SetWindowCaption(const std::string& caption) const
 {
-  SDL_WM_SetCaption(caption.c_str(), NULL);
+  SDL_WM_SetCaption(caption.c_str(), nullptr);
 }
 
 void Video::InitSDL()

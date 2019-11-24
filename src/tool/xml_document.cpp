@@ -59,7 +59,7 @@ void XmlReader::Reset()
   if (doc)
      xmlFreeDoc(doc);
 
-  doc = NULL;
+  doc = nullptr;
 }
 
 XmlReader::~XmlReader()
@@ -113,10 +113,10 @@ bool XmlReader::LoadFromString(const std::string &contents)
 
 std::string XmlReader::ExportToString() const
 {
-  xmlChar *buffer = NULL;
+  xmlChar *buffer = nullptr;
   int     length  = 0;
   xmlDocDumpFormatMemoryEnc(doc, &buffer, &length,
-                            NULL /* default UTF-8 encoding */, 0 /* Don't format */);
+                            nullptr /* default UTF-8 encoding */, 0 /* Don't format */);
   ASSERT(buffer);
   std::string ret((char *)buffer, length);
   xmlFree(buffer);
@@ -150,7 +150,7 @@ const xmlNode* XmlReader::GetMarker(const xmlNode* x, const std::string &name)
     fprintf(stderr, "Fail to read %s\n", looked_name.c_str());
   }
 #endif
-  return NULL;
+  return nullptr;
 }
 
 xmlNodeArray XmlReader::GetNamedChildren(const xmlNode* father, const std::string& name)
@@ -294,7 +294,7 @@ const xmlNode* XmlReader::Access(const xmlNode* x,
       }
       xmlFree(value);
     }
-    return NULL;
+    return nullptr;
   }
 
   // look at its children
@@ -316,7 +316,7 @@ const xmlNode* XmlReader::Access(const xmlNode* x,
     }
   }
 
-  return NULL;
+  return nullptr;
 }
 
 /* In spite of what a primary analysis would lead to, it is bothersome to:
@@ -574,7 +574,7 @@ void XmlWriter::Reset()
 {
   if (m_doc)
     xmlFreeDoc(m_doc);
-  m_doc = NULL;
+  m_doc = nullptr;
 
 #if 0
    if (m_root)
@@ -591,7 +591,7 @@ XmlWriter::~XmlWriter()
 
 xmlNode *XmlWriter::AddNode(xmlNode* x, const char* name)
 {
-  return xmlAddChild(x, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)name));
+  return xmlAddChild(x, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)name));
 }
 
 xmlNode *XmlWriter::WriteElement(xmlNode* x,
@@ -626,7 +626,7 @@ bool XmlWriter::Create(const std::string &filename,const std::string &root,
   m_filename = filename;
   m_encoding = encoding;
   m_doc = xmlNewDoc((const xmlChar*)version.c_str());
-  xmlNode* node = xmlNewDocNode(m_doc, 0, (const xmlChar*)root.c_str(), 0);
+  xmlNode* node = xmlNewDocNode(m_doc, nullptr, (const xmlChar*)root.c_str(), nullptr);
   xmlDocSetRootElement(m_doc, node);
   m_root = xmlDocGetRootElement(m_doc);
 
@@ -646,16 +646,16 @@ bool XmlWriter::Save()
   if (m_save) return true;
   m_save = true;
   int result = xmlSaveFormatFileEnc(m_filename.c_str(), m_doc,
-                                    m_encoding.empty() ? NULL : m_encoding.c_str(), true);
+                                    m_encoding.empty() ? nullptr : m_encoding.c_str(), true);
   return (result != -1);
 }
 
 std::string XmlWriter::SaveToString() const
 {
-  xmlChar *buffer = NULL;
+  xmlChar *buffer = nullptr;
   int     length  = 0;
 
-  xmlDocDumpFormatMemoryEnc(m_doc, &buffer, &length, NULL, 0);
+  xmlDocDumpFormatMemoryEnc(m_doc, &buffer, &length, nullptr, 0);
   ASSERT(buffer);
 
   std::string ret((char *)buffer, length);

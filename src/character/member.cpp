@@ -33,13 +33,13 @@
 std::vector<std::string> MemberType::Map;
 
 Member::Member(const std::string& name_)
-  : parent(NULL)
+  : parent(nullptr)
   , angle_rad(0)
   , alpha(0)
   , go_through_ground(false)
   , pos(0,0)
   , scale(0,0)
-  , spr(NULL)
+  , spr(nullptr)
   , name(name_)
   , type(name_)
   , anchor(0,0)
@@ -48,13 +48,13 @@ Member::Member(const std::string& name_)
 
 Member::Member(const xmlNode *     xml,
                const std::string & main_folder)
-  : parent(NULL)
+  : parent(nullptr)
   , angle_rad(0)
   , alpha(0)
   , go_through_ground(false)
   , pos(0,0)
   , scale(0,0)
-  , spr(NULL)
+  , spr(nullptr)
   , name("")
   , type("")
   , anchor(0,0)
@@ -141,7 +141,7 @@ Member::Member(const xmlNode *     xml,
 }
 
 Member::Member(const Member & m)
-  : parent(NULL)
+  : parent(nullptr)
   , angle_rad(m.angle_rad)
   , alpha(m.alpha)
   , go_through_ground(m.go_through_ground)

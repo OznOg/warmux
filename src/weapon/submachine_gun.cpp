@@ -118,7 +118,7 @@ void SubMachineGun::p_Deselect()
 bool SubMachineGun::p_Shoot()
 {
   projectile->Shoot(SUBMACHINE_BULLET_SPEED);
-  projectile = NULL;
+  projectile = nullptr;
   ReloadLauncher();
 
   Point2i pos;

@@ -157,7 +157,7 @@ team_error:
 
 ReplayInfo *ReplayInfo::ReplayInfoFromCurrent(uint32_t duration, const char* comment)
 {
-  ReplayInfo *info    = new ReplayInfo(time(NULL), duration);
+  ReplayInfo *info    = new ReplayInfo(time(nullptr), duration);
 
   info->version = Constants::WARMUX_VERSION; // Copy ?
   info->comment = (comment) ? comment : _("No comment.");

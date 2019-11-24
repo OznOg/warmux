@@ -60,7 +60,7 @@ public:
 };
 
 Obus::Obus(AirAttackConfig& cfg) :
-  WeaponProjectile("air_attack_projectile", cfg, NULL)
+  WeaponProjectile("air_attack_projectile", cfg, nullptr)
 {
   explode_colliding_character = true;
   falling_sound.Play("default", "weapon/aircraft_bomb_falling");
@@ -71,12 +71,12 @@ Obus::~Obus()
   falling_sound.Stop();
 
   if (Plane::last_dropped_bomb == this)
-    Plane::last_dropped_bomb = NULL;
+    Plane::last_dropped_bomb = nullptr;
 }
 
 //-----------------------------------------------------------------------------
 
-Obus* Plane::last_dropped_bomb = NULL;
+Obus* Plane::last_dropped_bomb = nullptr;
 
 Plane::Plane(AirAttackConfig &p_cfg) :
   PhysicalObj("air_attack_plane"),
@@ -102,7 +102,7 @@ void Plane::Shoot(Double speed, const Point2i& target)
 {
   MSG_DEBUG("weapon.shoot", "Plane Shoot");
   nb_dropped_bombs = 0;
-  last_dropped_bomb = NULL;
+  last_dropped_bomb = nullptr;
 
   cible_x = target.x;
   SetY(0);

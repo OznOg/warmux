@@ -138,7 +138,7 @@ public:
   bool IsActiveCharacter() const;
   // Disease handling
   bool IsDiseased() const { return disease_duration > 0 && !IsDead(); };
-  void Cure() { disease_dealer = NULL; disease_duration = 0; disease_damage_per_turn = 0; }
+  void Cure() { disease_dealer = nullptr; disease_duration = 0; disease_damage_per_turn = 0; }
   void ApplyDiseaseDamage();
 
   void SetDiseaseDamage(Character *dealer, const uint damage_per_turn, const uint duration)
@@ -158,7 +158,7 @@ public:
     if (disease_duration > 0) disease_duration--;
     else {
       disease_damage_per_turn = 0;
-      disease_dealer = NULL;
+      disease_dealer = nullptr;
     }
   }
 

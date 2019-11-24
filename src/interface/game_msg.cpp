@@ -41,7 +41,7 @@ void GameMessages::Reset()
     Message * msg = *it;
     ASSERT(msg); /* the message must be valid if nothing went wrong */
     delete (msg);
-    msg = NULL;
+    msg = nullptr;
   }
   list.clear();
 }

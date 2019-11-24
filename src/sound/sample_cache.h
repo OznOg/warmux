@@ -38,7 +38,7 @@ class SampleCache
         std::string     m_filename;
 
         CachedChunk()
-         : m_chunk( NULL ), m_refcount( 0 ), m_times_used( 0 ) {};
+         : m_chunk( nullptr ), m_refcount( 0 ), m_times_used( 0 ) {};
     };
 
     std::vector< CachedChunk >  m_cache;

@@ -37,7 +37,7 @@
 #include "tool/xml_document.h"
 #include "tool/string_tools.h"
 
-Sprite* BonusBox::icon = NULL;
+Sprite* BonusBox::icon = nullptr;
 int BonusBox::icon_ref = 0;
 
 BonusBox::BonusBox(Weapon * weapon):
@@ -64,7 +64,7 @@ BonusBox::~BonusBox()
   icon_ref--;
   if (!icon_ref) {
     delete icon;
-    icon = NULL;
+    icon = nullptr;
   }
 }
 

@@ -128,7 +128,7 @@ void SampleCache::Clear()
         Mix_FreeChunk( chk.m_chunk );
 
         // reset memory
-        chk.m_chunk = NULL;
+        chk.m_chunk = nullptr;
         chk.m_refcount = 0;
         chk.m_times_used = 0;
         chk.m_filename = "";

@@ -177,7 +177,7 @@ void Polecat::SignalOutOfMap()
 
 PolecatLauncher::PolecatLauncher() :
   WeaponLauncher(WEAPON_POLECAT, "polecatlauncher", new ExplosiveWeaponConfig()),
-  current_polecat(NULL),
+  current_polecat(nullptr),
   polecat_death_time(0)
 {
   UpdateTranslationStrings();
@@ -258,7 +258,7 @@ void PolecatLauncher::SignalEndOfProjectile()
   if (!current_polecat)
     return;
 
-  current_polecat = NULL;
+  current_polecat = nullptr;
   polecat_death_time = GameTime::GetInstance()->Read();
 }
 

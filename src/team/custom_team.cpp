@@ -78,12 +78,12 @@ CustomTeam* CustomTeam::LoadCustomTeam(const std::string &custom_teams_dir,
   // Load XML
   if (!doc.Load(filename)) {
     error = "unable to load file "+ filename + "of team data";
-    return NULL;
+    return nullptr;
   }
 
   if (!XmlReader::ReadString(doc.GetRoot(), "name", teamname)) {
     error = "Invalid file structure: cannot find a name for team in " + filename;
-    return NULL;
+    return nullptr;
   }
 
   // Create the characters
@@ -105,7 +105,7 @@ CustomTeam* CustomTeam::LoadCustomTeam(const std::string &custom_teams_dir,
 
   if (list.size() > MAX_CHARACTERS) {
     error = "Too many players in " + filename;
-    return NULL;
+    return nullptr;
   }
 
   return new CustomTeam(teamname, directory, list);
@@ -200,10 +200,10 @@ bool CustomTeam::SaveXml()
   xmlNode *root = doc.GetRoot();
   doc.WriteElement(root, "name", name);
 
-  xmlNode* team_node = xmlAddChild(root, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"team"));
+  xmlNode* team_node = xmlAddChild(root, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"team"));
 
   for (uint i = 0 ; i < characters_name_list.size(); i++) {
-    xmlNode* character = xmlAddChild(team_node, xmlNewNode(NULL /* empty prefix */, (const xmlChar*)"character"));
+    xmlNode* character = xmlAddChild(team_node, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"character"));
     doc.WriteElement(character, "name", characters_name_list[i]);
   }
 

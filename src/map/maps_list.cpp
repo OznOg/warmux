@@ -53,9 +53,9 @@ InfoMap::InfoMap(const std::string &map_name, const std::string &directory)
   , random_generated(false)
   , island_type(RANDOM_GENERATED)
   , water_type("no")
-  , basic(NULL)
-  , normal(NULL)
-  , res_profile(NULL)
+  , basic(nullptr)
+  , normal(nullptr)
+  , res_profile(nullptr)
 {
   wind.nb_sprite = 0;
   wind.need_flip = false;
@@ -98,7 +98,7 @@ InfoMapBasicAccessor* InfoMap::LoadBasicInfo()
 err:
   if (res_profile) {
     GetResourceManager().UnLoadXMLProfile(res_profile);
-    res_profile = NULL;
+    res_profile = nullptr;
   }
 
   Question question(Question::WARNING);
@@ -108,7 +108,7 @@ err:
   question.Set(msg, 1, 0);
   question.Ask();
 
-  return NULL;
+  return nullptr;
 }
 
 bool InfoMap::ProcessXmlData(const xmlNode *xml)
@@ -204,7 +204,7 @@ bool InfoMap::ProcessXmlData(const xmlNode *xml)
 InfoMap::~InfoMap()
 {
   // No need to unload profile, it will get automatically cleaned by ResourceManager
-  res_profile = NULL;
+  res_profile = nullptr;
   if (normal)
     delete normal;
   if (basic)
@@ -241,7 +241,7 @@ InfoMapAccessor *InfoMap::LoadData()
                                                        img_sky.GetWidth(), img_sky.GetHeight());
   }
   if (!DoesFileExist(ground_filename))
-    return NULL;
+    return nullptr;
 
   normal = new InfoMapAccessor(this);
   return normal;
@@ -258,7 +258,7 @@ void InfoMap::FreeData()
   }
   sky_layer.clear();
 
-  delete normal; normal = NULL;
+  delete normal; normal = nullptr;
 }
 
 /* ========================================================================== */
@@ -281,7 +281,7 @@ MapsList::MapsList()
   if (f) {
     const char *name;
     bool search_files = false;
-    while ((name = FolderSearchNext(f, search_files)) != NULL)
+    while ((name = FolderSearchNext(f, search_files)) != nullptr)
       LoadOneMap(dirname, name);
     CloseFolder(f);
   } else {
@@ -294,7 +294,7 @@ MapsList::MapsList()
   if (f) {
     bool search_files = false;
     const char *name;
-    while ((name = FolderSearchNext(f, search_files)) != NULL)
+    while ((name = FolderSearchNext(f, search_files)) != nullptr)
       LoadOneMap(dirname, name);
     CloseFolder(f);
   } else {

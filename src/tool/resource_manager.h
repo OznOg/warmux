@@ -52,7 +52,7 @@ protected:
   friend class ResourceManager;
   int ref_count;
   std::string name;
-  Profile(const std::string& name) : ref_count(1), name(name) { doc = NULL; }
+  Profile(const std::string& name) : ref_count(1), name(name) { doc = nullptr; }
   ~Profile() { if (doc) delete doc; }
 
 public:

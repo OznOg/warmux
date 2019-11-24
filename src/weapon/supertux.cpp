@@ -195,7 +195,7 @@ TuxLauncher::TuxLauncher()
   UpdateTranslationStrings();
 
   m_category = SPECIAL;
-  current_tux = NULL;
+  current_tux = nullptr;
   tux_death_time = 0;
   ReloadLauncher();
 
@@ -252,7 +252,7 @@ void TuxLauncher::SignalEndOfProjectile()
   if (!current_tux)
     return;
 
-  current_tux = NULL;
+  current_tux = nullptr;
   tux_death_time = GameTime::GetInstance()->Read();
 }
 

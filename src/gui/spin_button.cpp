@@ -38,10 +38,10 @@ SpinButton::SpinButton (const std::string & _label,
                      min_value,
                      max_value),
   shadowed(false),
-  txtLabel(NULL),
-  txtValue(NULL),
-  m_plus(NULL),
-  m_minus(NULL)
+  txtLabel(nullptr),
+  txtValue(nullptr),
+  m_plus(nullptr),
+  m_minus(nullptr)
 {
   position = Point2i(-1, -1);
   size.x = width;
@@ -74,32 +74,32 @@ SpinButton::SpinButton(Profile * profile,
                        const xmlNode * spinButtonNode) :
   AbstractSpinButton(profile, spinButtonNode),
   shadowed(false),
-  txtLabel(NULL),
-  txtValue(NULL),
-  m_plus(NULL),
-  m_minus(NULL)
+  txtLabel(nullptr),
+  txtValue(nullptr),
+  m_plus(nullptr),
+  m_minus(nullptr)
 {
 }
 
 SpinButton::~SpinButton()
 {
-  if (NULL != txtLabel) {
+  if (nullptr != txtLabel) {
     delete txtLabel;
   }
-  if (NULL != txtValue) {
+  if (nullptr != txtValue) {
     delete txtValue;
   }
-  if (NULL != m_plus) {
+  if (nullptr != m_plus) {
     delete m_plus;
   }
-  if (NULL != m_minus) {
+  if (nullptr != m_minus) {
     delete m_minus;
   }
 }
 
 bool SpinButton::LoadXMLConfiguration(void)
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     return false;
   }
 
@@ -110,7 +110,7 @@ bool SpinButton::LoadXMLConfiguration(void)
   XmlReader * xmlFile = profile->GetXMLDocument();
 
   const xmlNode * labelNode = xmlFile->GetFirstNamedChild(widgetNode, "Label");
-  if (NULL != labelNode) {
+  if (nullptr != labelNode) {
     txtLabel = new Label(profile, labelNode);
     txtLabel->LoadXMLConfiguration();
   } else {
@@ -121,7 +121,7 @@ bool SpinButton::LoadXMLConfiguration(void)
                         position.y + (size.y / 2) - (txtLabel->GetSizeY() / 2));
 
   const xmlNode * valueNode = xmlFile->GetFirstNamedChild(widgetNode, "Value");
-  if (NULL != valueNode) {
+  if (nullptr != valueNode) {
     txtValue = new Label(profile, valueNode);
     txtValue->LoadXMLConfiguration();
   } else {
@@ -135,7 +135,7 @@ bool SpinButton::LoadXMLConfiguration(void)
   ValueHasChanged();
 
   const xmlNode * buttonMinusNode = xmlFile->GetFirstNamedChild(widgetNode, "ButtonMinus");
-  if (NULL != buttonMinusNode) {
+  if (nullptr != buttonMinusNode) {
     m_minus = new Button(profile, buttonMinusNode);
     m_minus->LoadXMLConfiguration();
     m_minus->SetPosition(position.x + size.x - m_minus->GetSizeX(),
@@ -143,7 +143,7 @@ bool SpinButton::LoadXMLConfiguration(void)
   }
 
   const xmlNode * buttonPlusNode = xmlFile->GetFirstNamedChild(widgetNode, "ButtonPlus");
-  if (NULL != buttonPlusNode) {
+  if (nullptr != buttonPlusNode) {
     m_plus = new Button(profile, buttonPlusNode);
     m_plus->LoadXMLConfiguration();
     m_plus->SetPosition(position.x + size.x - m_plus->GetSizeX(),
@@ -198,7 +198,7 @@ Widget * SpinButton::ClickUp(const Point2i & mousePosition,
     IncValue();
     return this;
   }
-  return NULL;
+  return nullptr;
 }
 
 void SpinButton::ValueHasChanged()

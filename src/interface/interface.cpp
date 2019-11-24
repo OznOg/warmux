@@ -136,29 +136,29 @@ void Interface::LoadData()
 }
 
 Interface::Interface()
-  : global_timer(NULL)
-  , timer(NULL)
-  , energy_bar(NULL)
-  , t_character_name(NULL)
-  , t_team_name(NULL)
-  , t_player_name(NULL)
-  , t_character_energy(NULL)
-  , t_weapon_name(NULL)
-  , t_weapon_stock(NULL)
-  , t_speed(NULL)
+  : global_timer(nullptr)
+  , timer(nullptr)
+  , energy_bar(nullptr)
+  , t_character_name(nullptr)
+  , t_team_name(nullptr)
+  , t_player_name(nullptr)
+  , t_character_energy(nullptr)
+  , t_weapon_name(nullptr)
+  , t_weapon_stock(nullptr)
+  , t_speed(nullptr)
   , mode(MODE_NORMAL)
   , start_hide_display(0)
   , start_show_display(0)
   , display_minimap(true)
-  , clock(NULL)
-  , clock_normal(NULL)
-  , clock_emergency(NULL)
+  , clock(nullptr)
+  , clock_normal(nullptr)
+  , clock_emergency(nullptr)
   , zoom(1.0f)
-  , minimap(NULL)
+  , minimap(nullptr)
   , m_last_minimap_redraw(0)
   , m_last_preview_size(0, 0)
-  , mask(NULL)
-  , scratch(NULL)
+  , mask(nullptr)
+  , scratch(nullptr)
 {
   Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
@@ -220,19 +220,19 @@ void Interface::FreeDrawElements()
   if (t_weapon_stock) delete t_weapon_stock;
   if (t_speed) {
     delete t_speed;
-    t_speed = NULL;
+    t_speed = nullptr;
   }
 }
 
 void Interface::Reset()
 {
   delete minimap;
-  minimap = NULL;
+  minimap = nullptr;
   m_last_minimap_redraw = 0;
   start_hide_display = 0;
   start_show_display = 0;
-  character_under_cursor = NULL;
-  weapon_under_cursor = NULL;
+  character_under_cursor = nullptr;
+  weapon_under_cursor = nullptr;
 
   LoadDataInternal(GetResourceManager().LoadXMLProfile("graphism.xml", false));
   mode = Replay::GetConstInstance()->IsPlaying() ? MODE_REPLAY : MODE_NORMAL;
@@ -438,7 +438,7 @@ void Interface::DrawMapPreview()
                       color);
     }
   } else {
-    if (minimap == NULL ||
+    if (minimap == nullptr ||
         ground.GetLastPreviewRedrawTime() > m_last_minimap_redraw ||
         GetWorld().water.GetLastPreviewRedrawTime() > m_last_minimap_redraw) {
 
@@ -449,15 +449,15 @@ void Interface::DrawMapPreview()
       if (m_last_preview_size != preview_size) {
         if (mask) {
           delete mask;
-          mask = NULL;
+          mask = nullptr;
         }
         if (minimap) {
           delete minimap;
-          minimap = NULL;
+          minimap = nullptr;
         }
         if (scratch) {
           delete scratch;
-          scratch = NULL;
+          scratch = nullptr;
         }
       }
 

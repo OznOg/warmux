@@ -106,7 +106,7 @@ void MainMenu::Init(void)
   XmlReader * xmlFile = xmlProfile->GetXMLDocument();
 
   const xmlNode * mainMenuNode = xmlFile->GetFirstNamedChild(xmlFile->GetRoot(), "MainMenu");
-  if (NULL == mainMenuNode) {
+  if (nullptr == mainMenuNode) {
     Error("MainMenu: can't load 'MainMenu' xml node from menu.xml");
     exit(EXIT_FAILURE);
   }

@@ -44,8 +44,8 @@ EnergyBar::EnergyBar(uint _x,
               minValue,
               maxValue,
               _orientation),
-  profile(NULL),
-  widgetNode(NULL),
+  profile(nullptr),
+  widgetNode(nullptr),
   listThresholds()
 {
   Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
@@ -71,7 +71,7 @@ EnergyBar::EnergyBar(Profile * _profile,
 
 bool EnergyBar::LoadXMLConfiguration()
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     return false;
   }
   XmlReader * xmlFile = profile->GetXMLDocument();

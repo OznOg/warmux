@@ -30,7 +30,7 @@ SelectBox::SelectBox(const Point2i& size, bool always,
   , default_item_color(defaultListColor3)
   , always_one_selected(always)
   , selected_item(-1)
-  , last(NULL)
+  , last(nullptr)
 {
   box->SetMargin(0);
 }
@@ -110,8 +110,8 @@ void SelectBox::AddWidgetItem(bool select, Widget* w)
 
 void SelectBox::Empty()
 {
-  last = NULL;
-  SetFocusOn(NULL);
+  last = nullptr;
+  SetFocusOn(nullptr);
   m_items.clear();
   selected_item = -1;
   ScrollBox::Empty();
@@ -119,8 +119,8 @@ void SelectBox::Empty()
 
 void SelectBox::Clear()
 {
-  last = NULL;
-  SetFocusOn(NULL);
+  last = nullptr;
+  SetFocusOn(nullptr);
   m_items.clear();
   selected_item = -1;
   ScrollBox::Clear();
@@ -148,7 +148,7 @@ void SelectBox::Deselect()
     //m_items[selected_item]->NeedRedrawing();
   }
   selected_item = -1;
-  SetFocusOn(NULL);
+  SetFocusOn(nullptr);
   NeedRedrawing();
 }
 
@@ -172,7 +172,7 @@ void SelectBox::RemoveSelected()
 
   if (selected_item != -1) {
     if (last == m_items[selected_item])
-      last = NULL;
+      last = nullptr;
     SetFocusOnPreviousWidget();
     RemoveWidget(m_items[selected_item]);
     m_items.erase(m_items.begin() + selected_item);
@@ -232,7 +232,7 @@ void ItemBox::AddLabelItem(bool selected,
 const char* ItemBox::GetSelectedName() const
 {
   if (selected_item==-1)
-    return NULL;
+    return nullptr;
   // Our accessors somewhat ensures that this is a label, but beware
   return static_cast<Label*>(m_items[selected_item])->GetText().c_str();
 }

@@ -33,8 +33,8 @@
 static std::string txt;
 
 GameMode::GameMode()
-  : weapons_list(NULL)
-  , doc_objects(NULL)
+  : weapons_list(nullptr)
+  , doc_objects(nullptr)
 {
   m_current = "classic";
 
@@ -122,11 +122,11 @@ GameMode::~GameMode()
 {
   if (doc_objects) {
     delete doc_objects;
-    doc_objects = NULL;
+    doc_objects = nullptr;
   }
   if (weapons_list) {
     delete weapons_list;
-    weapons_list = NULL;
+    weapons_list = nullptr;
   }
 }
 
@@ -250,7 +250,7 @@ XmlWriter* GameMode::SaveXml(const std::string&, const std::string& file_name) c
 {
   XmlWriter *out = new XmlWriter();
   if (!out->Create(file_name, "game_mode", "1.0", "utf-8"))
-    return NULL;
+    return nullptr;
 
   xmlNode *node = out->GetRoot();
   main_settings.SaveXml(*out, node);
@@ -326,7 +326,7 @@ std::vector<std::pair<std::string, std::string> > GameMode::ListGameModes()
   if (f) {
     bool is_file = true;
     const char *name;
-    while ((name = FolderSearchNext(f, is_file)) != NULL) {
+    while ((name = FolderSearchNext(f, is_file)) != nullptr) {
 
       // Only check files
       if (is_file) {

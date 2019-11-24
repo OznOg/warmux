@@ -252,7 +252,7 @@ std::string GetHome()
 {
   char *txt = std::getenv("HOME");
 
-  if (txt == NULL)
+  if (txt == nullptr)
     Error(_("HOME directory (environment variable $HOME) could not be found!"));
 
   return txt;
@@ -288,7 +288,7 @@ FolderSearch* OpenFolder(const std::string& dirname)
 
   if (!f->dir) {
     delete f;
-    return NULL;
+    return nullptr;
   }
 
   return f;
@@ -296,7 +296,7 @@ FolderSearch* OpenFolder(const std::string& dirname)
 
 const char* FolderSearchNext(FolderSearch *f, bool& file)
 {
-  while ((f->file = readdir(f->dir)) != NULL) {
+  while ((f->file = readdir(f->dir)) != nullptr) {
 
     if (
 #ifdef __SYMBIAN32__
@@ -325,7 +325,7 @@ const char* FolderSearchNext(FolderSearch *f, bool& file)
 
     // Not something we like, so skip it
   }
-  return NULL;
+  return nullptr;
 }
 
 void CloseFolder(FolderSearch *f)

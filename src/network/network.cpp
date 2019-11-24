@@ -83,7 +83,7 @@
 
 //-----------------------------------------------------------------------------
 
-SDL_Thread* NetworkThread::thread = NULL;
+SDL_Thread* NetworkThread::thread = nullptr;
 bool NetworkThread::stop_thread = false;
 
 int NetworkThread::ThreadRun(void* /*no_param*/)
@@ -96,17 +96,17 @@ int NetworkThread::ThreadRun(void* /*no_param*/)
 
 void NetworkThread::Start()
 {
-  thread = SDL_CreateThread(NetworkThread::ThreadRun, NULL);
+  thread = SDL_CreateThread(NetworkThread::ThreadRun, nullptr);
   stop_thread = false;
 }
 
 void NetworkThread::Wait()
 {
-  if (thread != NULL && SDL_ThreadID() != SDL_GetThreadID(thread)) {
-    SDL_WaitThread(thread, NULL);
+  if (thread != nullptr && SDL_ThreadID() != SDL_GetThreadID(thread)) {
+    SDL_WaitThread(thread, nullptr);
   }
 
-  thread = NULL;
+  thread = nullptr;
   stop_thread = false;
 }
 
@@ -217,7 +217,7 @@ Network * Network::GetInstance()
 NetworkServer * Network::GetInstanceServer()
 {
   if (!singleton || !singleton->IsServer()) {
-    return NULL;
+    return nullptr;
   }
   return (NetworkServer*)singleton;
 }
@@ -228,12 +228,12 @@ Network::Network(const std::string& _game_name, const std::string& passwd) :
   password(passwd),
   game_master_player(false),
   state(WNet::NO_NETWORK),// useless value at beginning
-  socket_set(NULL),
+  socket_set(nullptr),
 #ifdef LOG_NETWORK
   fout(0),
   fin(0),
 #endif
-  network_menu(NULL)
+  network_menu(nullptr)
 {
   cpus_lock = SDL_CreateMutex();
   player.SetNickname(Player::GetDefaultNickname());
@@ -301,7 +301,7 @@ void Network::RemoveRemoteHost(std::list<DistantComputer*>::iterator host_it)
 Player * Network::LockRemoteHostsAndGetPlayer(uint player_id)
 {
   SDL_LockMutex(cpus_lock);
-  Player * player = NULL;
+  Player * player = nullptr;
 
   if (GetPlayer().GetId() == player_id)
     player = &(GetPlayer());
@@ -358,7 +358,7 @@ void Network::DisconnectNetwork()
 
   if (socket_set) {
     delete socket_set;
-    socket_set = NULL;
+    socket_set = nullptr;
   }
 }
 
@@ -374,7 +374,7 @@ void Network::SendActionToAll(const Action& a, bool lock) const
     frames++;
     if (frames == Action::MAX_FRAMES) {
       Action b(Action::ACTION_GAME_PACK_CALCULATED_FRAMES, Action::MAX_FRAMES);
-      SendAction(b, NULL, false, lock);
+      SendAction(b, nullptr, false, lock);
       printf("Sending pack for %u frames\n", Action::MAX_FRAMES);
       frames = 0;
     }
@@ -388,7 +388,7 @@ void Network::SendActionToAll(const Action& a, bool lock) const
 
     // The clients must have seen all previous frames for this to occur
     Action b(Action::ACTION_GAME_PACK_CALCULATED_FRAMES, frames);
-    SendAction(b, NULL, false, lock);
+    SendAction(b, nullptr, false, lock);
     printf("Sending pack for %u frames because of action '%s'\n",
            frames, ActionHandler::GetActionName(a.GetType()).c_str());
     frames = 0;
@@ -402,7 +402,7 @@ void Network::SendActionToAll(const Action& a, bool lock) const
   MSG_DEBUG("network.traffic", "Send action %s to all remote computers",
             ActionHandler::GetActionName(a.GetType()).c_str());
 
-  SendAction(a, NULL, false, lock);
+  SendAction(a, nullptr, false, lock);
 }
 
 void Network::SendActionToOne(const Action& a, DistantComputer* client, bool lock) const
@@ -432,7 +432,7 @@ void Network::SendAction(const Action& a, DistantComputer* client, bool clt_as_r
   int size;
 
   a.WriteToPacket(packet, size);
-  ASSERT(packet != NULL);
+  ASSERT(packet != nullptr);
 
 #ifdef LOG_NETWORK
   if (fout != 0) {
@@ -481,7 +481,7 @@ connection_state_t Network::ClientStart(const std::string& host,
     // revert change if connection failed
     singleton = prev;
     delete net;
-  } else if (prev != NULL) {
+  } else if (prev != nullptr) {
     delete prev;
   }
   AppWarmux::GetInstance()->video->SetWindowCaption(std::string("WarMUX ") +
@@ -509,7 +509,7 @@ connection_state_t Network::ServerStart(const std::string& port, const std::stri
     // revert change
     singleton = prev;
     delete net;
-  } else if (prev != NULL) {
+  } else if (prev != nullptr) {
     delete prev;
   }
 

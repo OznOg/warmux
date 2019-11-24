@@ -54,18 +54,18 @@ Team* Team::LoadTeam(const std::string &teams_dir, const std::string &id, std::s
   // Load XML
   if (!doc.Load(nomfich)) {
     error = "Unable to load file of team data";
-    return NULL;
+    return nullptr;
   }
 
   if (!XmlReader::ReadString(doc.GetRoot(), "name", name)) {
     error = "Invalid file structure: cannot find a name for team";
-    return NULL;
+    return nullptr;
   }
 
   Profile *res = GetResourceManager().LoadXMLProfile(nomfich, true);
   if (!res) {
     error = "Invalid file structure: cannot load resources";
-    return NULL;
+    return nullptr;
   }
 
   // The constructor will unload res
@@ -78,9 +78,9 @@ Team::Team(XmlReader& doc, Profile* res,
   , m_name(name)
   , m_player_name("")
   , remote(false)
-  , ai(NULL)
+  , ai(nullptr)
   , ai_name(NO_AI_NAME)
-  , active_weapon(NULL)
+  , active_weapon(nullptr)
   , abandoned(false)
   , team_color(white_color)
   , group(0)
@@ -205,7 +205,7 @@ uint Team::ReadEnergy() const
 
 void Team::SelectCharacter(Character * c)
 {
-  ASSERT(c != NULL);
+  ASSERT(c != nullptr);
 
   if (!c->IsActiveCharacter()) {
     ActiveCharacter().StopPlaying();
@@ -315,7 +315,7 @@ void Team::PrepareTurn()
   // Sound the bell, so the local players know when it is their turn
   if (IsLocalHuman())
     JukeBox::GetInstance()->Play("default", "start_turn");
-  if (ai != NULL)
+  if (ai != nullptr)
     ai->PrepareTurn();
 }
 
@@ -384,9 +384,9 @@ void Team::UnloadGamingData()
 
   if (ai) {
     delete ai;
-    ai = NULL;
+    ai = nullptr;
   }
-  weapons_list = NULL;
+  weapons_list = nullptr;
 }
 
 void Team::LoadAI()
@@ -404,7 +404,7 @@ void Team::LoadAI()
 
 void Team::RefreshAI()
 {
-  if (ai != NULL)
+  if (ai != nullptr)
     ai->Refresh();
 }
 

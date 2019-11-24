@@ -38,7 +38,7 @@ const uint AUTHOR_INFO_TIME = 5000; // ms
 const uint AUTHOR_INFO_X = 100;
 const uint AUTHOR_INFO_Y = 50;
 
-Map::Map() : author_info1(NULL), author_info2(NULL)
+Map::Map() : author_info1(nullptr), author_info2(nullptr)
 {
   min_distance_between_characters = MINIMUM_DISTANCE_BETWEEN_CHARACTERS;
 
@@ -69,10 +69,10 @@ void Map::Reset()
 
   if (author_info1)
     delete author_info1;
-  author_info1 = NULL;
+  author_info1 = nullptr;
   if (author_info2)
     delete author_info2;
-  author_info2 = NULL;
+  author_info2 = nullptr;
 
   to_redraw->clear();
   to_redraw_now->clear();
@@ -412,15 +412,15 @@ bool Map::IsInVacuum_right(const PhysicalObj &obj, int dx, int dy) const
 void Map::DrawAuthorName()
 {
   if (AUTHOR_INFO_TIME < GameTime::GetInstance()->Read()) {
-    if (author_info1 != NULL) {
+    if (author_info1 != nullptr) {
       delete author_info1;
       delete author_info2;
-      author_info1 = author_info2 = NULL;
+      author_info1 = author_info2 = nullptr;
     }
     return;
   }
 
-  if (author_info1 == NULL) {
+  if (author_info1 == nullptr) {
     InfoMapBasicAccessor *basic = ActiveMap()->LoadBasicInfo();
     std::string txt = Format(_("Map %s, a creation of: "), basic->ReadFullMapName().c_str());
     author_info1 = new Text(txt, white_color, Font::FONT_SMALL, Font::FONT_BOLD, true);

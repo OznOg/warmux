@@ -38,7 +38,7 @@ FramePerSecond::FramePerSecond()
   , nb_valid_values(-1)
   , average(-1)
   , time_in_second(0)
-  , text(NULL)
+  , text(nullptr)
   , display(true)
 {
   for (uint i=0; i<=MIN_NB_VALUES; ++i)

@@ -29,17 +29,17 @@
 #include "team/macro.h"
 
 TopCharacters::TopCharacters()
-  : Violent(NULL)
+  : Violent(nullptr)
   , violence(0)
-  , Useful(NULL)
+  , Useful(nullptr)
   , usefulness(0)
-  , Useless(NULL)
+  , Useless(nullptr)
   , uselessness(0xFFFFFFFFU)
-  , Traitor(NULL)
+  , Traitor(nullptr)
   , treachery(0)
-  , Clumsy(NULL)
+  , Clumsy(nullptr)
   , clumsyness(0)
-  , Accurate(NULL)
+  , Accurate(nullptr)
   , accuracy(0.0)
   , death_time(0)
 {}
@@ -150,7 +150,7 @@ TeamResults* TeamResults::createGlobalResults()
 
   // We'll do as if NULL is for all teams
   //top->death_time = 0;
-  return new TeamResults(NULL, top);
+  return new TeamResults(nullptr, top);
 }
 
 std::vector<TeamResults*>* TeamResults::createAllResults(void)
@@ -170,7 +170,7 @@ std::vector<TeamResults*>* TeamResults::createAllResults(void)
   }
 
   // Add overall results to list
-  results = new TeamResults(NULL, top);
+  results = new TeamResults(nullptr, top);
   results_list->insert(results_list->begin(), results);
 
   return results_list;

@@ -114,7 +114,7 @@ bool Shotgun::p_Shoot ()
 
   for(int i = 0; i < SHOTGUN_BULLETS; i++) {
     projectile->Shoot(SHOTGUN_BUCKSHOT_SPEED);
-    projectile = NULL;
+    projectile = nullptr;
     ReloadLauncher();
   }
   ShootSound();

@@ -47,7 +47,7 @@
 static const Double DEGREE = TWO_PI/360;
 
 Water::Water()
-  : type_color(NULL)
+  : type_color(nullptr)
   , height_mvt(0)
   , shift1(0)
   , water_height(0)
@@ -110,7 +110,7 @@ void Water::Reset()
 
   if (type_color)
     delete type_color;
-  type_color = NULL;
+  type_color = nullptr;
 
   if (!IsActive())
     return;

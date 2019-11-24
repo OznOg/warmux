@@ -56,7 +56,7 @@ Label::~Label()
 
 bool Label::LoadXMLConfiguration()
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     return false;
   }
 

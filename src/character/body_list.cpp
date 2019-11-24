@@ -63,13 +63,13 @@ void BodyList::Load(const std::string & name)
 
 Body * BodyList::GetBody(const std::string & name)
 {
-  if (list[name] == NULL) {
+  if (list[name] == nullptr) {
     Load(name);
   }
 
-  if (list[name] == NULL) {
+  if (list[name] == nullptr) {
     std::cerr << "Unable to load body \"" << name << "\"" << std::endl;
-    return NULL;
+    return nullptr;
   }
 
   return new Body(*list[name]);

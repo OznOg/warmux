@@ -174,7 +174,7 @@ void ObjMine::Refresh()
       else
         FakeExplosion();
 
-      if (launcher != NULL)
+      if (launcher != nullptr)
         launcher->SignalProjectileTimeout();
     }
   }
@@ -239,7 +239,7 @@ void Mine::Add(int x, int y)
     projectile->SetSpeed(1.0, -THREE * QUARTER_PI);
 
   ObjectsList::GetRef().AddObject (projectile);
-  projectile = NULL;
+  projectile = nullptr;
   ReloadLauncher();
 }
 

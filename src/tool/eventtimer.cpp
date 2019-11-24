@@ -30,8 +30,8 @@ static Uint32 send_null_event(Uint32 interval, void */*param*/)
 
   userevent.type = SDL_USEREVENT;
   userevent.code = 0;
-  userevent.data1 = NULL;
-  userevent.data2 = NULL;
+  userevent.data1 = nullptr;
+  userevent.data2 = nullptr;
 
   event.type = SDL_USEREVENT;
   event.user = userevent;
@@ -42,21 +42,21 @@ static Uint32 send_null_event(Uint32 interval, void */*param*/)
 
 void EventTimer::Start(int interval)
 {
-  if (timer_id == 0)
-    timer_id = SDL_AddTimer(interval, send_null_event, NULL);
+  if (timer_id == nullptr)
+    timer_id = SDL_AddTimer(interval, send_null_event, nullptr);
 }
 
 void EventTimer::Stop()
 {
-  if (timer_id != 0) {
+  if (timer_id != nullptr) {
     SDL_RemoveTimer(timer_id);
-    timer_id = 0;
+    timer_id = nullptr;
   }
 }
 
 bool EventTimer::IsRunning() const
 {
-  if (timer_id != 0)
+  if (timer_id != nullptr)
     return true;
   return false;
 }

@@ -23,7 +23,7 @@
 #include <WSERVER_debug.h>
 #include <WSERVER_logfile.h>
 
-LogFile::LogFile(const std::string &suffix) : suffix_filename(suffix), fd(NULL)
+LogFile::LogFile(const std::string &suffix) : suffix_filename(suffix), fd(nullptr)
 {
 }
 
@@ -35,7 +35,7 @@ LogFile::~LogFile()
 void LogFile::OpenFile()
 {
   struct tm* t;
-  time_t now = time(NULL);
+  time_t now = time(nullptr);
   t = localtime(&now);
   char time_str[1024];
   snprintf(time_str, 1024, "%4i-%02i-%02i_",
@@ -66,7 +66,7 @@ void LogFile::CloseFile()
 
   if (fd)
     fclose(fd);
-  fd = NULL;
+  fd = nullptr;
 }
 
 void LogFile::Rotate()

@@ -97,7 +97,7 @@ struct shared_net_info {
 
 static void InitNetInfo()
 {
-  net_info.thread_refresh = NULL;
+  net_info.thread_refresh = nullptr;
   net_info.index_conn_state = CONNECTED;
   net_info.lock = SDL_CreateSemaphore(1);
   net_info.todisplay = false;
@@ -111,7 +111,7 @@ static void CleanNetInfo()
   int status;
   if (net_info.thread_refresh)
     SDL_WaitThread(net_info.thread_refresh, &status);
-  net_info.thread_refresh = NULL;
+  net_info.thread_refresh = nullptr;
   net_info.finished = true;
   net_info.lst_games.clear();
 }
@@ -441,7 +441,7 @@ void NetworkConnectionMenu::ThreadRefreshList()
 #endif
   SDL_SemWait(net_info.lock);
 
-  if (net_info.thread_refresh != NULL) {
+  if (net_info.thread_refresh != nullptr) {
     // Check if the thread finished
     if (net_info.finished) {
       int status;
@@ -455,7 +455,7 @@ void NetworkConnectionMenu::ThreadRefreshList()
   SDL_SemPost(net_info.lock);
 
   net_info.finished = false;
-  net_info.thread_refresh = SDL_CreateThread(RefreshNetInfo, NULL);
+  net_info.thread_refresh = SDL_CreateThread(RefreshNetInfo, nullptr);
 }
 
 void NetworkConnectionMenu::HandleEvent(const SDL_Event& evnt)
@@ -624,7 +624,7 @@ bool NetworkConnectionMenu::signal_ok()
     NetworkMenu nm;
     Network::GetInstance()->network_menu = &nm;
     nm.Run();
-    Network::GetInstance()->network_menu = NULL;
+    Network::GetInstance()->network_menu = nullptr;
     IndexServer::GetInstance()->Disconnect();
 
     Network::Disconnect();

@@ -40,12 +40,12 @@
 
 Body::Body(const xmlNode *     xml,
            const std::string & main_folder):
-  current_clothe(NULL),
-  current_mvt(NULL),
+  current_clothe(nullptr),
+  current_mvt(nullptr),
   current_loop(0),
   current_frame(0),
-  previous_clothe(NULL),
-  previous_mvt(NULL),
+  previous_clothe(nullptr),
+  previous_mvt(nullptr),
   mvt_locked(false),
   weapon_member(new WeaponMember()),
   last_refresh(0),
@@ -55,19 +55,19 @@ Body::Body(const xmlNode *     xml,
   animation_number(0),
   need_rebuild(false),
   need_refreshsprites(true),
-  owner(NULL),
+  owner(nullptr),
   mainXmlNode(xml),
   mainFolder(main_folder)
 {
 }
 
 Body::Body(const Body & _body):
-  current_clothe(NULL),
-  current_mvt(NULL),
+  current_clothe(nullptr),
+  current_mvt(nullptr),
   current_loop(0),
   current_frame(0),
-  previous_clothe(NULL),
-  previous_mvt(NULL),
+  previous_clothe(nullptr),
+  previous_mvt(nullptr),
   mvt_locked(false),
   weapon_member(new WeaponMember()),
   last_refresh(0),
@@ -76,7 +76,7 @@ Body::Body(const Body & _body):
   direction(DIRECTION_RIGHT),
   animation_number(_body.animation_number),
   need_rebuild(true),
-  owner(NULL)
+  owner(nullptr)
 {
   // Add a special weapon member to the body
   members_lst["weapon"] = weapon_member;
@@ -479,11 +479,11 @@ void Body::Build()
 
           if (previous_clothe) {
             SetClothe(previous_clothe->GetName());
-            previous_clothe = NULL;
+            previous_clothe = nullptr;
           }
           if (previous_mvt) {
             SetMovement(previous_mvt->GetType());
-            previous_mvt = NULL;
+            previous_mvt = nullptr;
           }
         }
       }
@@ -643,7 +643,7 @@ void Body::BuildSqueleton()
       // TODO lami : overwrite junction constructor
       junction * body = new junction();
       body->member = member;
-      body->parent = NULL;
+      body->parent = nullptr;
       skel_lst.push_back(body);
       break;
     }
@@ -677,7 +677,7 @@ void Body::SetClothe(const std::string & name)
     BuildSqueleton();
     main_rotation_rad = 0;
     need_rebuild      = true;
-    previous_clothe   = NULL;
+    previous_clothe   = nullptr;
   } else {
     MSG_DEBUG("body", "Clothe not found");
   }
@@ -705,7 +705,7 @@ void Body::SetMovement(const std::string & name)
     last_refresh      = GameTime::GetInstance()->Read();
     main_rotation_rad = 0;
     need_rebuild      = true;
-    previous_mvt      = NULL;
+    previous_mvt      = nullptr;
   } else {
     MSG_DEBUG("body", "Movement not found");
   }

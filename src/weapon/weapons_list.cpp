@@ -44,7 +44,7 @@ WeaponsList::~WeaponsList()
 
   // no need to delete objects in m_weapons_launcher_list nor clear the 2 lists !
   // no need either to release profile, ResourceManager will do it on exit
-  weapons_res_profile = NULL;
+  weapons_res_profile = nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -205,7 +205,7 @@ Weapon * WeaponsList::GetRandomWeaponToDrop()
     total_bf_weapon = total_after_weapon;
   }
   ASSERT(false);
-  return NULL;
+  return nullptr;
 }
 
 //-----------------------------------------------------------------------------

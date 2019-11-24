@@ -45,7 +45,7 @@ class ActionHandler : public Singleton<ActionHandler>, public WActionHandler
 
 public:
   void NewAction(Action* a, bool repeat_to_network=true);
-  void NewActionActiveCharacter(const Team* team = NULL, int index=-1); // send infos (on the network) about active character
+  void NewActionActiveCharacter(const Team* team = nullptr, int index=-1); // send infos (on the network) about active character
 
   void NewRequestTeamAction(const ConfigTeam & team);
 

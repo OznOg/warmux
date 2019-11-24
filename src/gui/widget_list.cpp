@@ -27,19 +27,19 @@
 #include "interface/mouse.h"
 
 WidgetList::WidgetList()
-  : selected_widget(NULL)
+  : selected_widget(nullptr)
 {
 }
 
 WidgetList::WidgetList(const Point2i &size)
   : Widget(size)
-  , selected_widget(NULL)
+  , selected_widget(nullptr)
 {
 }
 
 WidgetList::WidgetList(Profile * profile, const xmlNode * widgetListNode)
   : Widget(profile, widgetListNode)
-  , selected_widget(NULL)
+  , selected_widget(nullptr)
 {
 }
 
@@ -73,16 +73,16 @@ void WidgetList::DelFirstWidget()
 
 void WidgetList::AddWidget(Widget* w)
 {
-  ASSERT(w!=NULL);
+  ASSERT(w!=nullptr);
   widget_list.push_back(w);
   w->SetContainer(this);
 }
 
 void WidgetList::RemoveWidget(Widget* w)
 {
-  ASSERT(w!=NULL);
+  ASSERT(w!=nullptr);
   widget_list.remove(w);
-  w->SetContainer(NULL);
+  w->SetContainer(nullptr);
   delete w;
 }
 
@@ -106,7 +106,7 @@ void WidgetList::SetFocusOn(Widget* widget, bool force_mouse_position)
     return;
 
   // Previous selection ?
-  if (selected_widget != NULL) {
+  if (selected_widget != nullptr) {
     selected_widget->SetFocus(false);
   }
 
@@ -126,7 +126,7 @@ void WidgetList::SetFocusOn(Widget* widget, bool force_mouse_position)
 
 Widget* WidgetList::GetFirstWidget() const
 {
-  Widget *first = NULL;
+  Widget *first = nullptr;
 
   MSG_DEBUG("widgetlist", "%p::GetFirstWidget()", this);
 
@@ -136,7 +136,7 @@ Widget* WidgetList::GetFirstWidget() const
                    typeid(*it).name(), (*it));
 
       first = (*it)->GetFirstWidget();
-      if (first != NULL)
+      if (first != nullptr)
         return first;
     } else {
       MSG_DBG_RTTI("widgetlist", "%s:%p is NOT a widget browser!\n",
@@ -146,12 +146,12 @@ Widget* WidgetList::GetFirstWidget() const
     }
   }
 
-  return NULL;
+  return nullptr;
 }
 
 Widget* WidgetList::GetLastWidget() const
 {
-  Widget *last = NULL;
+  Widget *last = nullptr;
 
   for (crwit it = widget_list.rbegin(); it != widget_list.rend(); it++) {
     if ((*it)->IsWidgetBrowser()) {
@@ -163,12 +163,12 @@ Widget* WidgetList::GetLastWidget() const
     }
   }
 
-  return NULL;
+  return nullptr;
 }
 
 Widget* WidgetList::GetNextWidget(const Widget *w, bool loop) const
 {
-  Widget *r = NULL;
+  Widget *r = nullptr;
 
   ASSERT(!w || !w->IsWidgetBrowser());
 
@@ -176,10 +176,10 @@ Widget* WidgetList::GetNextWidget(const Widget *w, bool loop) const
                this, typeid(w).name(), w);
 
   if (widget_list.size() == 0) {
-    return NULL;
+    return nullptr;
   }
 
-  if (w == NULL) {
+  if (w == nullptr) {
     r = GetFirstWidget();
     MSG_DBG_RTTI("widgetlist", "%p::GetNextWidget(%s:%p) ==> %s%p",
                  this, typeid(w).name(), w, typeid(r).name(), r);
@@ -243,7 +243,7 @@ void WidgetList::SetFocusOnNextWidget()
 {
   // No widget => exit
   if (widget_list.size() == 0) {
-    selected_widget = NULL;
+    selected_widget = nullptr;
     return;
   }
 
@@ -256,13 +256,13 @@ void WidgetList::SetFocusOnNextWidget()
 
 Widget* WidgetList::GetPreviousWidget(const Widget *w, bool loop) const
 {
-  Widget *r = NULL;
+  Widget *r = nullptr;
 
   if (widget_list.size() == 0) {
-    return NULL;
+    return nullptr;
   }
 
-  if (w == NULL) {
+  if (w == nullptr) {
     r = GetLastWidget();
     return r;
   }
@@ -277,7 +277,7 @@ Widget* WidgetList::GetPreviousWidget(const Widget *w, bool loop) const
       else if (loop)
         r = (*widget_list.rbegin());
       else
-        r = NULL;
+        r = nullptr;
       break;
     }
   }
@@ -289,7 +289,7 @@ void WidgetList::SetFocusOnPreviousWidget()
 {
   // No widget => exit
   if (widget_list.size() == 0) {
-    selected_widget = NULL;
+    selected_widget = nullptr;
     return;
   }
 
@@ -299,7 +299,7 @@ void WidgetList::SetFocusOnPreviousWidget()
 
 bool WidgetList::SendKey(const SDL_keysym &key)
 {
-  if (selected_widget != NULL)
+  if (selected_widget != nullptr)
     return selected_widget->SendKey(key);
 
   return false;
@@ -382,7 +382,7 @@ Widget* WidgetList::ClickUp(const Point2i &mousePosition, uint button)
     }
   }
 
-  return NULL;
+  return nullptr;
 }
 
 Widget* WidgetList::Click(const Point2i &mousePosition, uint button)
@@ -391,7 +391,7 @@ Widget* WidgetList::Click(const Point2i &mousePosition, uint button)
     if ((*w)->Contains(mousePosition))
       (*w)->Click(mousePosition,button);
 
-  return NULL;
+  return nullptr;
 }
 
 void WidgetList::NeedRedrawing()

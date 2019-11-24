@@ -120,7 +120,7 @@ class ConfigElementList : public std::list<ConfigElement*>
   const char                    *node;
 
 public:
-  ConfigElementList() : node(NULL) { }
+  ConfigElementList() : node(nullptr) { }
   virtual ~ConfigElementList();
 
   typedef std::list<ConfigElement*>::iterator iterator;

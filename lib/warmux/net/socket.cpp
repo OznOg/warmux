@@ -46,7 +46,7 @@ WSocketSet* WSocketSet::GetSocketSet(uint maxsockets)
   SDLNet_SocketSet sdl_socket_set = SDLNet_AllocSocketSet(maxsockets);
   if (!sdl_socket_set) {
     print_net_error("SDLNet_AllocSocketSet");
-    return NULL;
+    return nullptr;
   }
   return new WSocketSet(maxsockets, sdl_socket_set);
 }
@@ -81,7 +81,7 @@ bool WSocketSet::AddSocket(WSocket* socket)
 {
   Lock();
 
-  ASSERT(socket_set != NULL);
+  ASSERT(socket_set != nullptr);
 
   if (!socket->AddToSocketSet(this))
     return false;
@@ -97,7 +97,7 @@ void WSocketSet::RemoveSocket(WSocket* socket)
 {
   Lock();
 
-  ASSERT(socket_set != NULL);
+  ASSERT(socket_set != nullptr);
   sockets.remove(socket);
 
   socket->RemoveFromSocketSet();
@@ -137,7 +137,7 @@ WSocket::WSocket(TCPsocket _socket, WSocketSet* _socket_set) :
   socket_set(_socket_set),
   lock(SDL_CreateMutex()),
   using_tmp_socket_set(false),
-  m_packet(NULL),
+  m_packet(nullptr),
   m_packet_size(0),
   m_received(0),
   address_field_valid(false)
@@ -152,10 +152,10 @@ WSocket::WSocket(TCPsocket _socket, WSocketSet* _socket_set) :
 
 WSocket::WSocket(TCPsocket _socket):
   socket(_socket),
-  socket_set(NULL),
+  socket_set(nullptr),
   lock(SDL_CreateMutex()),
   using_tmp_socket_set(false),
-  m_packet(NULL),
+  m_packet(nullptr),
   m_packet_size(0),
   m_received(0),
   address_field_valid(false)
@@ -163,11 +163,11 @@ WSocket::WSocket(TCPsocket _socket):
 }
 
 WSocket::WSocket():
-  socket(NULL),
-  socket_set(NULL),
+  socket(nullptr),
+  socket_set(nullptr),
   lock(SDL_CreateMutex()),
   using_tmp_socket_set(false),
-  m_packet(NULL),
+  m_packet(nullptr),
   m_packet_size(0),
   m_received(0),
   address_field_valid(false)
@@ -193,7 +193,7 @@ connection_state_t WSocket::ConnectTo(const std::string &host, const int &port)
 #endif
   
   Lock();
-  ASSERT(socket == NULL);
+  ASSERT(socket == nullptr);
 
   IPaddress ip;
   TCPsocket tcp_socket;
@@ -232,10 +232,10 @@ bool WSocket::AcceptIncoming(const int& port)
   WNet::Init();
 
   Lock();
-  ASSERT(socket == NULL);
+  ASSERT(socket == nullptr);
 
   IPaddress ip;
-  if (SDLNet_ResolveHost(&ip, NULL, (Uint16)port) != 0) {
+  if (SDLNet_ResolveHost(&ip, nullptr, (Uint16)port) != 0) {
     print_net_error("SDLNet_ResolveHost");
     goto error;
   }
@@ -257,7 +257,7 @@ WSocket* WSocket::LookForClient()
 {
   TCPsocket client_sock = SDLNet_TCP_Accept(socket);
   if (!client_sock)
-    return NULL;
+    return nullptr;
 
   WSocket* client = new WSocket(client_sock);
   return client;
@@ -272,12 +272,12 @@ void WSocket::Disconnect()
     if (using_tmp_socket_set) {
       delete socket_set;
     }
-    socket_set = NULL;
+    socket_set = nullptr;
   }
 
   if (socket) {
     SDLNet_TCP_Close(socket);
-    socket = NULL;
+    socket = nullptr;
   }
 
   if (m_packet)
@@ -290,7 +290,7 @@ void WSocket::Disconnect()
 
 bool WSocket::AddToSocketSet(WSocketSet* _socket_set)
 {
-  ASSERT(socket_set == NULL);
+  ASSERT(socket_set == nullptr);
   int r;
 
   Lock();
@@ -319,13 +319,13 @@ void WSocket::RemoveFromSocketSet()
     print_net_error("SDLNet_TCP_DelSocket");
     ASSERT(false);
   }
-  socket_set = NULL;
+  socket_set = nullptr;
   UnLock();
 }
 
 bool WSocket::AddToTmpSocketSet()
 {
-  ASSERT(socket_set == NULL);
+  ASSERT(socket_set == nullptr);
   int r;
 
   Lock();
@@ -365,7 +365,7 @@ void WSocket::RemoveFromTmpSocketSet()
   socket_set->sockets.remove(this);
   socket_set->UnLock();
   delete socket_set;
-  socket_set = NULL;
+  socket_set = nullptr;
 
   using_tmp_socket_set = false;
 
@@ -516,7 +516,7 @@ bool WSocket::ReceiveBuffer(void* data, size_t len)
 {
   bool r;
 
-  ASSERT(socket_set != NULL);
+  ASSERT(socket_set != nullptr);
 
   if (!IsReady(5000)) {
     return false;
@@ -549,7 +549,7 @@ bool WSocket::ReceiveInt_NoLock(int& nbr)
 bool WSocket::ReceiveInt(int& nbr)
 {
   bool r;
-  ASSERT(socket_set != NULL);
+  ASSERT(socket_set != nullptr);
 
   if (!IsReady(5000)) {
     return false;
@@ -602,7 +602,7 @@ bool WSocket::ReceiveStr_NoLock(std::string &_str, size_t maxlen)
 bool WSocket::ReceiveStr(std::string &_str, size_t maxlen)
 {
   bool r;
-  ASSERT(socket_set != NULL);
+  ASSERT(socket_set != nullptr);
 
   if (!IsReady(5000)) {
     return false;
@@ -710,7 +710,7 @@ bool WSocket::ReceivePacket(char** data, size_t* len)
   *len = m_packet_size;
 
  out_finished:
-  m_packet = NULL;
+  m_packet = nullptr;
   m_packet_size = 0;
   m_received = 0;
 
@@ -725,7 +725,7 @@ bool WSocket::ReceivePacket(char** data, size_t* len)
   goto out_finished;
 
  err_not_enough_data:
-  *data = NULL;
+  *data = nullptr;
   *len = 0;
   r = true;
   UnLock();
@@ -735,11 +735,11 @@ bool WSocket::ReceivePacket(char** data, size_t* len)
 
 bool WSocket::IsReady(int timeout, bool force_check_activity) const
 {
-  if (socket == NULL)
+  if (socket == nullptr)
     return false;
 
   if (timeout != 0 || force_check_activity) {
-    ASSERT(socket_set != NULL);
+    ASSERT(socket_set != nullptr);
     int sockets_ready = socket_set->CheckActivity(timeout);
 
     if (sockets_ready == -1) {
@@ -761,7 +761,7 @@ bool WSocket::IsReady(int timeout) const
 
 const std::string WSocket::GetAddress()
 {
-  ASSERT(socket != NULL);
+  ASSERT(socket != nullptr);
   // Resolve the address only once,
   // as this method get called by some debug logging code quite often.
   if (!address_field_valid) {

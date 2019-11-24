@@ -71,7 +71,7 @@ bool BaseSnipeRifle::p_Shoot()
     return false;
 
   projectile->Shoot(SNIPE_RIFLE_BULLET_SPEED);
-  projectile = NULL;
+  projectile = nullptr;
   ReloadLauncher();
   return true;
 }

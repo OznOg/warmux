@@ -49,7 +49,7 @@ protected:
   void FakeExplosion();
 public:
   ObjMine(MineConfig &cfg,
-          WeaponLauncher * p_launcher = NULL);
+          WeaponLauncher * p_launcher = nullptr);
 
   void StartTimeout();
   void Detection();

@@ -61,7 +61,7 @@ ButtonPic::ButtonPic(Profile * profile,
 */
 bool ButtonPic::LoadXMLConfiguration(void)
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     //TODO error ... xml attributs not initialized !
     return false;
   }

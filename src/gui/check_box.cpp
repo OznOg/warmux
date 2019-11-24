@@ -39,7 +39,7 @@ CheckBox::CheckBox(const std::string & label,
        false,
        black_color),
   m_value(value),
-  m_checked_image(NULL)
+  m_checked_image(nullptr)
 {
   Init(width);
 }
@@ -48,7 +48,7 @@ CheckBox::CheckBox(Profile * profile,
                    const xmlNode * checkBoxNode) :
   Widget(profile, checkBoxNode),
   m_value(false),
-  m_checked_image(NULL)
+  m_checked_image(nullptr)
 {
 }
 
@@ -64,7 +64,7 @@ void CheckBox::Init(uint width)
 
 CheckBox::~CheckBox()
 {
-  if (NULL != m_checked_image) {
+  if (nullptr != m_checked_image) {
     delete m_checked_image;
   }
 }
@@ -77,7 +77,7 @@ void CheckBox::Pack()
 
 bool CheckBox::LoadXMLConfiguration()
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     return false;
   }
 

@@ -42,7 +42,7 @@
 #include "team/teams_list.h"
 
 Replay::Replay()
-  : buf(NULL)
+  : buf(nullptr)
   , bufsize(0)
   , is_recorder(true)
 {
@@ -236,7 +236,7 @@ bool Replay::LoadReplay(const std::string& name)
   char           temp[TEMP_SIZE];
   bool           status     = false;
   std::streampos pos;
-  ReplayInfo     *info      = NULL;
+  ReplayInfo     *info      = nullptr;
   GameMode       *game_mode = GameMode::GetInstance();
   int            map_id, val;
 
@@ -356,16 +356,16 @@ Action* Replay::GetAction()
   // Does it contain the 2 elements needed to decode at least
   // action header?
   if (MemUsed() > bufsize-sizeof(Action::Header)) {
-    return NULL;
+    return nullptr;
   }
 
   // Read action
-  Action *a = new Action((char*)ptr, NULL);
+  Action *a = new Action((char*)ptr, nullptr);
   Action::Action_t type = a->GetType();
   if (type > Action::ACTION_TIME_VERIFY_SYNC) {
     Error(Format(_("Malformed replay: action with unknow type %08X"), type));
     StopPlaying();
-    return NULL;
+    return nullptr;
   }
 
   // Move pointer
@@ -373,7 +373,7 @@ Action* Replay::GetAction()
   if (MemUsed() > bufsize-size) {
     Error(Format(_("Malformed replay: action with datasize=%u"), size));
     StopPlaying();
-    return NULL;
+    return nullptr;
   }
   ptr += size;
 

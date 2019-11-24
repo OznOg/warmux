@@ -30,7 +30,7 @@ GridBox::GridBox(uint _lines,
   fixedMargin(margin),
   lines(_lines),
   columns(_columns),
-  grid(NULL)
+  grid(nullptr)
 {
   InitGrid();
 }
@@ -42,7 +42,7 @@ GridBox::GridBox(Profile * profile,
   fixedMargin(0),
   lines(10),
   columns(10),
-  grid(NULL)
+  grid(nullptr)
 {
 }
 
@@ -56,7 +56,7 @@ GridBox::~GridBox(void)
 
 bool GridBox::LoadXMLConfiguration(void)
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     return false;
   }
 
@@ -81,7 +81,7 @@ void GridBox::InitGrid(void)
   for (uint i = 0; i < lines; ++i) {
     grid[i] = new Widget*[columns];
     for (uint j = 0; j < columns; ++j) {
-      grid[i][j] = NULL;
+      grid[i][j] = nullptr;
     }
   }
 }
@@ -98,11 +98,11 @@ void GridBox::PlaceWidget(Widget * widget,
 
 void GridBox::AddWidget(Widget * widget)
 {
-  ASSERT(widget != NULL);
+  ASSERT(widget != nullptr);
 
   for (uint i = 0; i < lines; ++i) {
     for (uint j = 0; j < columns; ++j) {
-      if (NULL == grid[i][j]) {
+      if (nullptr == grid[i][j]) {
         grid[i][j] = widget;
         WidgetList::AddWidget(widget);
         return;
@@ -115,18 +115,18 @@ void GridBox::AddWidget(Widget * widget,
                         uint line,
                         uint column)
 {
-  ASSERT(widget != NULL);
+  ASSERT(widget != nullptr);
   grid[line][column] = widget;
 }
 
 int GridBox::GetMaxHeightByLine(uint line)
 {
   int height = 0;
-  Widget * widget = NULL;
+  Widget * widget = nullptr;
 
   for (uint i = 0; i < columns; ++i) {
     widget = grid[line][i];
-    if (NULL == widget) {
+    if (nullptr == widget) {
       continue;
     }
     widget->Pack();
@@ -140,11 +140,11 @@ int GridBox::GetMaxHeightByLine(uint line)
 int GridBox::GetMaxWidthByColumn(uint column)
 {
   int width = 0;
-  Widget * widget = NULL;
+  Widget * widget = nullptr;
 
   for (uint i = 0; i < lines; ++i) {
     widget = grid[i][column];
-    if (NULL == widget) {
+    if (nullptr == widget) {
       continue;
     }
     widget->Pack();
@@ -196,7 +196,7 @@ void GridBox::Pack()
       widthMax = GetMaxWidthByColumn(columnIt);
       gridWidth += widthMax + marginX;
 
-      if (NULL != grid[lineIt][columnIt]) {
+      if (nullptr != grid[lineIt][columnIt]) {
         Widget * widget = grid[lineIt][columnIt];
         widget->Pack();
 

@@ -86,7 +86,7 @@ public:
   void RefreshSort(); //Refresh energy bar position
   void ChangeSelection(const std::list<uint>& liste);
   bool IsSelected(uint index);
-  static bool IsLoaded() { return singleton != NULL; }
+  static bool IsLoaded() { return singleton != nullptr; }
 
   // Find a team by its id or index (in full_list)
   Team* FindById (const std::string &id, int &pos);

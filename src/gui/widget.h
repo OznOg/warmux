@@ -125,10 +125,10 @@ public:
   void SetContainer(Container * _ct) { ct = _ct; }
 
   // to manage browsing between the widgets with keyboard
-  virtual Widget * GetFirstWidget() const { return NULL; }
-  virtual Widget * GetLastWidget() const { return NULL; }
-  virtual Widget * GetNextWidget(const Widget */*w*/, bool /*loop*/) const { return NULL; }
-  virtual Widget * GetPreviousWidget(const Widget */*w*/, bool /*loop*/) const { return NULL; }
+  virtual Widget * GetFirstWidget() const { return nullptr; }
+  virtual Widget * GetLastWidget() const { return nullptr; }
+  virtual Widget * GetNextWidget(const Widget */*w*/, bool /*loop*/) const { return nullptr; }
+  virtual Widget * GetPreviousWidget(const Widget */*w*/, bool /*loop*/) const { return nullptr; }
   virtual bool IsWidgetBrowser() const { return false; }
 
   virtual void Pack() = 0;

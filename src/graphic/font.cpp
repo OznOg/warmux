@@ -43,7 +43,7 @@ Font* Font::GetInstance(font_size_t _fontSize,
   }
   LIB_INIT = true;
 
-  Font * font = NULL;
+  Font * font = nullptr;
 
   switch (fontStyle) {
     case FONT_BOLD :
@@ -78,7 +78,7 @@ Font* Font::GetInstance(font_size_t _fontSize,
 
 Font::Font(int size):
   surface_text_table(),
-  m_font(NULL)
+  m_font(nullptr)
 {
   const std::string& filename = Config::GetConstInstance()->GetTtfFilename();
 
@@ -95,9 +95,9 @@ Font::Font(int size):
 
 Font::~Font()
 {
-  if (m_font != NULL) {
+  if (m_font != nullptr) {
     TTF_CloseFont(m_font);
-    m_font = NULL;
+    m_font = nullptr;
   }
 
   txt_iterator it;
@@ -206,7 +206,7 @@ int Font::GetWidth(const std::string & txt) const
 {
   int width=-1;
 
-  TTF_SizeUTF8(m_font, txt.c_str(), &width, NULL);
+  TTF_SizeUTF8(m_font, txt.c_str(), &width, nullptr);
 
   return width;
 }
@@ -219,7 +219,7 @@ int Font::GetHeight() const
 int Font::GetHeight(const std::string & str) const
 {
   int height = -1;
-  TTF_SizeUTF8(m_font, str.c_str(), NULL, &height);
+  TTF_SizeUTF8(m_font, str.c_str(), nullptr, &height);
   return height;
 }
 

@@ -59,7 +59,7 @@ public:
   // Get all info from file
   static ReplayInfo  *ReplayInfoFromFile(FILE *in);
   // Get all info from current game
-  static ReplayInfo  *ReplayInfoFromCurrent(uint32_t duration, const char* comment = NULL);
+  static ReplayInfo  *ReplayInfoFromCurrent(uint32_t duration, const char* comment = nullptr);
   // Dump to file
   bool               DumpToFile(FILE *out);
 

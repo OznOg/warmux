@@ -68,7 +68,7 @@ const std::string* FileListBox::GetSelectedFile() const
     if (str && DoesFileExist(*str))
       return str;
   }
-  return NULL;
+  return nullptr;
 }
 
 const std::string* FileListBox::GetSelectedFolder() const
@@ -76,7 +76,7 @@ const std::string* FileListBox::GetSelectedFolder() const
   const std::string* str = static_cast<const std::string*>(ItemBox::GetSelectedValue());
   if (str && DoesFolderExist(*str))
     return str;
-  return NULL;
+  return nullptr;
 }
 
 void FileListBox::StartListing(const char* dirname)
@@ -123,7 +123,7 @@ void FileListBox::PopulateFileList(const std::string& path)
     bool is_file = list_files;
     const char *name;
 
-    while ((name = FolderSearchNext(f, is_file)) != NULL) {
+    while ((name = FolderSearchNext(f, is_file)) != nullptr) {
       if (is_file) {
         // We have a file, check that it validates the list
         if (MatchFilter(name)) {
@@ -169,7 +169,7 @@ void FileListBox::PopulateFileList(const std::string& path)
 Widget* FileListBox::ClickUp(const Point2i & mousePosition, uint button)
 {
   if (!Contains(mousePosition))
-    return NULL;
+    return nullptr;
 
   ItemBox::ClickUp(mousePosition, button);
 
@@ -180,8 +180,8 @@ Widget* FileListBox::ClickUp(const Point2i & mousePosition, uint button)
     // Check we didn't click too fast
     if (now - last_time > 1000)
       PopulateFileList(name->c_str());
-    return NULL;
+    return nullptr;
   }
 
-  return (name) ? this : NULL;
+  return (name) ? this : nullptr;
 }

@@ -24,7 +24,7 @@
 
 SingletonList singletons;
 
-SDL_mutex* BaseSingleton::singleton_mutex = NULL;
+SDL_mutex* BaseSingleton::singleton_mutex = nullptr;
 
 BaseSingleton::BaseSingleton()
 {
@@ -59,6 +59,6 @@ void BaseSingleton::ReleaseSingletons()
 
   if (singleton_mutex)
     SDL_DestroyMutex(singleton_mutex);
-  singleton_mutex = NULL;
+  singleton_mutex = nullptr;
 }
 

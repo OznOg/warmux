@@ -134,7 +134,7 @@ xmlNode* ConfigElementList::SaveXml(XmlWriter& writer, xmlNode* elem) const
   if (node && elem)
     elem = XmlWriter::AddNode(elem, node);
   if (!elem)
-    return NULL;
+    return nullptr;
 
   for (const_iterator it = begin(); it != end(); ++it)
     (*it)->Write(writer, elem);

@@ -26,13 +26,13 @@ static char date_str[16];
 
 BasicClock::BasicClock()
 {
-  start_time = time(NULL);
+  start_time = time(nullptr);
 }
 
 const char* BasicClock::TimeStr()
 {
   struct tm* t;
-  time_t now = time(NULL);
+  time_t now = time(nullptr);
   t = localtime(&now);
   snprintf(time_str, 16, "%2i:%02i:%02i", t->tm_hour,
            t->tm_min, t->tm_sec);
@@ -42,7 +42,7 @@ const char* BasicClock::TimeStr()
 const char* BasicClock::DateStr()
 {
   struct tm* t;
-  time_t now = time(NULL);
+  time_t now = time(nullptr);
   t = localtime(&now);
   snprintf(date_str, 16, "%2i/%02i/%04i", t->tm_mday, t->tm_mon+1, t->tm_year+1900);
   return date_str;
@@ -50,7 +50,7 @@ const char* BasicClock::DateStr()
 
 const char* BasicClock::UpTimeStr()
 {
-  double d = difftime(time(NULL), start_time);
+  double d = difftime(time(nullptr), start_time);
 
   unsigned long t = (unsigned long) d;
   unsigned short sec, min, hr, day;

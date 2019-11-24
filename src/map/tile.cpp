@@ -36,7 +36,7 @@ static TileItem_Empty EmptyTile;
 Tile::Tile()
   : m_use_alpha(true)
   , nbCells(Point2i(0, 0))
-  , m_preview(NULL)
+  , m_preview(nullptr)
   , m_last_preview_redraw(0)
 {
   ASSERT(CELL_BITS > 3);
@@ -53,7 +53,7 @@ void Tile::FreeMem()
   item.clear();
   if (m_preview)
     delete m_preview;
-  m_preview = NULL;
+  m_preview = nullptr;
 
   crc = 0;
 }
@@ -177,7 +177,7 @@ void Tile::Dig(const Point2i &center, const uint radius)
 TileItem_NonEmpty* Tile::GetNonEmpty(uint x, uint y)
 {
   TileItem          *ti  = item[y*nbCells.x + x];
-  TileItem_NonEmpty *tin = NULL;
+  TileItem_NonEmpty *tin = nullptr;
 
   if (ti->IsTotallyEmpty()) {
     // Do not delete the tile, it's a empty one!
@@ -403,7 +403,7 @@ static void read_png_rows(png_structp png_ptr, uint8_t *buffer,
                           uint height, int stride)
 {
   while (height--) {
-    png_read_row(png_ptr, buffer, NULL);
+    png_read_row(png_ptr, buffer, nullptr);
     buffer += stride;
   }
 }
@@ -413,11 +413,11 @@ bool Tile::LoadImage(const std::string& filename,
                      const Point2i & upper_left_offset,
                      const Point2i & lower_right_offset)
 {
-  FILE        *f        = NULL;
-  png_structp  png_ptr  = NULL;
-  png_infop    info_ptr = NULL;
+  FILE        *f        = nullptr;
+  png_structp  png_ptr  = nullptr;
+  png_infop    info_ptr = nullptr;
   bool         ret      = false;
-  uint8_t     *buffer   = NULL;
+  uint8_t     *buffer   = nullptr;
   int          stride;
   int          offsetx, offsety, endoffy;
   Point2i      i, world_size;
@@ -430,7 +430,7 @@ bool Tile::LoadImage(const std::string& filename,
     goto end;
 
   // Creating a png ...
-  png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+  png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
   if (!png_ptr) // Structure and ...
     goto end;
   info_ptr = png_create_info_struct(png_ptr);
@@ -555,7 +555,7 @@ end:
   if (buffer)
     delete[] buffer;
   if (png_ptr)
-    png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
+    png_destroy_read_struct(&png_ptr, &info_ptr, nullptr);
   if (info_ptr)
     png_destroy_info_struct(png_ptr, &info_ptr);
   if (f)

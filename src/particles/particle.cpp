@@ -56,7 +56,7 @@ Particle::Particle(const std::string &name) :
   m_check_move_on_end_turn(false),
   m_time_between_scale(0),
   m_last_refresh(GameTime::GetInstance()->Read()),
-  image(NULL)
+  image(nullptr)
 {
   SetCollisionModel(false, false, false);
 }
@@ -182,7 +182,7 @@ Sprite* ParticleEngine::GetSprite(particle_spr type)
 {
   ASSERT(type < particle_spr_nbr);
   if (!sprites_loaded)
-    return NULL;
+    return nullptr;
 
   return new Sprite(*(particle_sprite[type]));
 }
@@ -194,7 +194,7 @@ void ParticleEngine::AddNow(const Point2i &position,
   if (!sprites_loaded)
     return;
 
-  Particle *particle = NULL;
+  Particle *particle = nullptr;
   Double tmp_angle, tmp_norme;
 
   for (uint i=0; i<nb_particles; i++) {
@@ -286,7 +286,7 @@ void ParticleEngine::AddBigESmoke(const Point2i &position, const uint &radius)
   static const float little_sin[] = { 0.000000f,  0.587785f,  0.951057f,  0.951056f,  0.587785f,
                                      -0.000000f, -0.587785f, -0.951056f, -0.951056f, -0.587785f };
 
-  Particle *particle = NULL;
+  Particle *particle = nullptr;
 
   for (uint i=0; i<little_partic_nbr; i++) {
 //      angle = (Double) i * PI * 2.0 / (Double) little_partic_nbr;
@@ -318,7 +318,7 @@ void ParticleEngine::AddLittleESmoke(const Point2i &position, const uint &radius
   static const float big_cos[] = { 1.000000f, -0.809017f,  0.309017f, 0.309017f, -0.809017f };
   static const float big_sin[] = { 0.000000f,  0.587785f, -0.951056f, 0.951057f, -0.587785f };
 
-  Particle *particle = NULL;
+  Particle *particle = nullptr;
   for (uint i=0; i<big_partic_nbr; i++) {
 //      angle = (Double) i * PI * 4.0 / (Double)big_partic_nbr;
     uint size = radius;
@@ -396,5 +396,5 @@ PhysicalObj * ParticleEngine::IsSomethingMoving()
   for (Particle_it=lst_particles.begin(); Particle_it!=lst_particles.end(); ++Particle_it)
     if ((*Particle_it)->CheckOnEndTurn() && (*Particle_it)->StillUseful())
       return *Particle_it;
-  return NULL;
+  return nullptr;
 }

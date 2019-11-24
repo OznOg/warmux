@@ -110,7 +110,7 @@ bool RailGun::p_Shoot()
 
   hits = 0;
   projectile->Shoot(RAIL_BULLET_SPEED);
-  projectile = NULL;
+  projectile = nullptr;
   ReloadLauncher();
   return true;
 }

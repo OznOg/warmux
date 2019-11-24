@@ -17,7 +17,7 @@ class XmlReader
 {
   xmlDoc*  doc;
 public:
-  XmlReader() : doc(NULL) { };
+  XmlReader() : doc(nullptr) { };
   ~XmlReader();
 
   // Load an XML document from a file
@@ -27,7 +27,7 @@ public:
   bool LoadFromString(const std::string &contents);
   std::string ExportToString() const;
 
-  bool IsOk() const { return doc != NULL; }
+  bool IsOk() const { return doc != nullptr; }
 
   // Return the *exploitable* root (use root->parent for the real one) */
   const xmlNode* GetRoot() const;
@@ -132,7 +132,7 @@ protected:
   std::string m_encoding;
 
 public:
-  XmlWriter() : m_doc(NULL), m_root(NULL), m_save(false) { } ;
+  XmlWriter() : m_doc(nullptr), m_root(nullptr), m_save(false) { } ;
   ~XmlWriter();
 
   bool Create(const std::string &filename, const std::string &root,

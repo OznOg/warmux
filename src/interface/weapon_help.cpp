@@ -37,7 +37,7 @@
 #define ICON_SIZE         48
 
 WeaponHelp::WeaponHelp()
-  : weapon_icon(NULL)
+  : weapon_icon(nullptr)
   , help("", black_color, Font::FONT_SMALL, Font::FONT_NORMAL, false)
   , show(false)
   , motion_start_time(0)

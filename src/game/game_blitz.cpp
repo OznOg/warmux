@@ -64,7 +64,7 @@ GameBlitz::time_iterator GameBlitz::KillGroup(GameBlitz::time_iterator cur)
   TeamGroup& group = TeamsList::GetInstance()->GetGroupList()[cur->first];
   for (TeamGroup::iterator it = group.begin(); it != group.end(); ++it) {
     FOR_EACH_LIVING_CHARACTER((*it), character)
-      character->Die(NULL);
+      character->Die(nullptr);
   }
   GameMessages::GetInstance()->Add(Format(_("Group %u was fragged down."), cur->first),
                                    TeamGroup::Colors[cur->first]);

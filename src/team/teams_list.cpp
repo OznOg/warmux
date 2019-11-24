@@ -150,7 +150,7 @@ void TeamsList::LoadList()
   if (f) {
     const char *name;
     bool search_file = false;
-    while ((name = FolderSearchNext(f, search_file)) != NULL)
+    while ((name = FolderSearchNext(f, search_file)) != nullptr)
       LoadOneTeam(dirname, name);
     CloseFolder(f);
   } else {
@@ -163,7 +163,7 @@ void TeamsList::LoadList()
   if (f) {
     bool search_files = false;
     const char *name;
-    while ((name = FolderSearchNext(f, search_files)) != NULL)
+    while ((name = FolderSearchNext(f, search_files)) != nullptr)
       LoadOneTeam(dirname, name);
     CloseFolder(f);
   } else {
@@ -257,7 +257,7 @@ Team *TeamsList::FindById(const std::string &id, int &pos)
     }
   }
   pos = -1;
-  return NULL;
+  return nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -266,7 +266,7 @@ Team *TeamsList::FindByIndex(uint index)
 {
   if (full_list.size() < index+1) {
     ASSERT(false);
-    return NULL;
+    return nullptr;
   }
 
   full_iterator it = full_list.begin(), end = full_list.end();
@@ -276,7 +276,7 @@ Team *TeamsList::FindByIndex(uint index)
       return (*it);
   }
 
-  return NULL;
+  return nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -292,7 +292,7 @@ Team* TeamsList::FindPlayingById(const std::string &id, int &index)
 
   index = -1;
   ASSERT(false);
-  return NULL;
+  return nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -467,7 +467,7 @@ bool TeamsList::IsSelected(uint index)
 void TeamsList::AddTeam(Team* the_team, int pos, const ConfigTeam &the_team_cfg,
                         bool is_local)
 {
-  ASSERT(the_team != NULL);
+  ASSERT(the_team != nullptr);
 
   the_team->SetRemote(!is_local);
   UpdateTeam(the_team, the_team_cfg);
@@ -483,7 +483,7 @@ void TeamsList::AddTeam(const ConfigTeam &the_team_cfg, bool is_local,
 
   int pos;
   Team *the_team = FindById(the_team_cfg.id, pos);
-  if (the_team != NULL) {
+  if (the_team != nullptr) {
     AddTeam(the_team, pos, the_team_cfg, is_local);
   } else {
     std::string msg = Format(_("Can't find team %s!"), the_team_cfg.id.c_str());
@@ -511,7 +511,7 @@ Team* TeamsList::UpdateTeam(const std::string& old_team_id,
                             const ConfigTeam &the_team_cfg)
 {
   int pos;
-  Team *the_team = NULL;
+  Team *the_team = nullptr;
 
   MSG_DEBUG("team", "%s/%s\n", old_team_id.c_str(), the_team_cfg.id.c_str());
 
@@ -532,13 +532,13 @@ Team* TeamsList::UpdateTeam(const std::string& old_team_id,
   Team *the_old_team = FindById(old_team_id, pos);
   if (!the_old_team) {
     Error(Format(_("Can't find team %s!"), old_team_id.c_str()));
-    return NULL;
+    return nullptr;
   }
 
   the_team = FindById(the_team_cfg.id, pos);
   if (!the_team) {
     Error(Format(_("Can't find team %s!"), old_team_id.c_str()));
-    return NULL;
+    return nullptr;
   }
 
   bool is_local = the_old_team->IsLocal();

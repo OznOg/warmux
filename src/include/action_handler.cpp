@@ -185,7 +185,7 @@ static void Action_Network_Set_GameMaster(Action */*a*/)
 {
   Network::GetInstance()->SetGameMaster();
 
-  if (Network::GetInstance()->network_menu != NULL) {
+  if (Network::GetInstance()->network_menu != nullptr) {
     Network::GetInstance()->network_menu->SetGameMasterCallback();
   }
 
@@ -371,7 +371,7 @@ static void Action_Game_CalculateFrame(Action */*a*/)
 static void Action_DropBonusBox(Action */*a*/)
 {
   ObjBox* current_box = Game::GetInstance()->GetCurrentBox();
-  if (current_box != NULL) {
+  if (current_box != nullptr) {
     current_box->DropBox();
   }
 }
@@ -449,7 +449,7 @@ static void Action_ChatMessage(Action *a)
   uint player_id = a->PopInt();
   std::string message = a->PopString();
   DistantComputer *cpu = a->GetCreator();
-  const Team *team = NULL;
+  const Team *team = nullptr;
   std::string nickname = "?";
   const Player* player = (cpu) ? cpu->GetPlayer(player_id)
                                : &Network::GetInstance()->GetPlayer();
@@ -597,7 +597,7 @@ static void Action_Game_ForceTeamList(Action *a)
 
 static Player* _Action_GetPlayer(Action *a, uint player_id)
 {
-  Player *player = NULL;
+  Player *player = nullptr;
 
   if (Network::IsConnected()) {
     if (a->GetCreator()) {
@@ -637,7 +637,7 @@ static void _Action_AddTeam(Action *a, Player* player, bool skip = false)
 
   GetTeamsList().AddTeam(the_team, local_team);
 
-  if (Network::GetInstance()->network_menu != NULL)
+  if (Network::GetInstance()->network_menu != nullptr)
     Network::GetInstance()->network_menu->AddTeamCallback(the_team.id);
 
   ASSERT (player);
@@ -657,7 +657,7 @@ static void Action_Game_Info(Action *a)
   for (uint i = 0; i < nb_players; i++) {
     uint player_id = a->PopInt();
 
-    ASSERT (a->GetCreator() && a->GetCreator()->GetPlayer(player_id) == NULL);
+    ASSERT (a->GetCreator() && a->GetCreator()->GetPlayer(player_id) == nullptr);
     bool skip = player_id == Network::GetInstance()->GetPlayer().GetId();
     if (!skip)
       a->GetCreator()->AddPlayer(player_id);
@@ -704,10 +704,10 @@ static void Action_Game_UpdateTeam(Action *a)
   team_cfg.group = uint(a->PopInt());
 
   Team* the_team = GetTeamsList().UpdateTeam(old_team_id, team_cfg);
-  ASSERT(the_team != NULL);
+  ASSERT(the_team != nullptr);
   the_team->SetCustomCharactersNamesFromAction(a);
 
-  if (Network::GetInstance()->network_menu != NULL)
+  if (Network::GetInstance()->network_menu != nullptr)
     Network::GetInstance()->network_menu->UpdateTeamCallback(old_team_id, team_cfg.id);
 
   Player* player = _Action_GetPlayer(a, player_id);
@@ -727,7 +727,7 @@ static void _Action_DelTeam(Player *player, const std::string& team_id)
 
   GetTeamsList().DelTeam(team_id);
 
-  if (Network::GetInstance()->network_menu != NULL)
+  if (Network::GetInstance()->network_menu != nullptr)
     Network::GetInstance()->network_menu->DelTeamCallback(team_id);
 }
 
@@ -1113,7 +1113,7 @@ static void Action_Info_ClientConnect(Action *a)
   int player_id = a->PopInt();
   std::string host_info = a->PopString();
 
-  ASSERT(a->GetCreator() && a->GetCreator()->GetPlayer(player_id) == NULL);
+  ASSERT(a->GetCreator() && a->GetCreator()->GetPlayer(player_id) == nullptr);
   a->GetCreator()->AddPlayer(player_id);
 
   _Info_ConnectHost(host_info);
@@ -1184,7 +1184,7 @@ void WARMUX_DisconnectHost(DistantComputer& host)
   }
 
   // Passing NULL for action makes it not parse the action but do the remaining processing
-  Action_Game_SetMapList(NULL);
+  Action_Game_SetMapList(nullptr);
 }
 // ########################################################
 // ########################################################

@@ -32,7 +32,7 @@ const uint y_min = 5; //number of pixels between the bottom of the arrow and the
 
 CharacterCursor::CharacterCursor()
 {
-  arrow = NULL;
+  arrow = nullptr;
 
   Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   arrow_jump = GetResourceManager().LoadSprite(res, "gfx/arrow-jump");
@@ -64,7 +64,7 @@ void CharacterCursor::Refresh()
   if (!arrow) return;
 
   if (arrow->IsFinished()) {
-    arrow = NULL;
+    arrow = nullptr;
     return;
   }
 
@@ -87,7 +87,7 @@ void CharacterCursor::Reset()
 {
   arrow_jump->animation.SetLoopMode(true);
   arrow_change->animation.SetLoopMode(true);
-  arrow = NULL;
+  arrow = nullptr;
 }
 
 void CharacterCursor::FollowActiveCharacter()

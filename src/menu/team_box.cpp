@@ -47,7 +47,7 @@ TeamBox::TeamBox(const std::string& _player_name, const Point2i& _size, uint g)
   , ai_level(0)
   , group(g)
 {
-  associated_team = NULL;
+  associated_team = nullptr;
 
   SetMargin(2);
   SetBorder(transparent_color, 4);
@@ -116,8 +116,8 @@ TeamBox::TeamBox(const std::string& _player_name, const Point2i& _size, uint g)
                               Font::FONT_SMALL, Font::FONT_BOLD);
     tmp_player_box->AddWidget(player_name);
 
-    next_custom_team = NULL;
-    previous_custom_team = NULL;
+    next_custom_team = nullptr;
+    previous_custom_team = nullptr;
 
   } else {
     next_custom_team = new Button(res, "menu/big_plus");
@@ -145,7 +145,7 @@ TeamBox::TeamBox(const std::string& _player_name, const Point2i& _size, uint g)
 
 void TeamBox::ClearTeam()
 {
-  associated_team = NULL;
+  associated_team = nullptr;
   ai_level = 0;
 
   NeedRedrawing();
@@ -154,7 +154,7 @@ void TeamBox::ClearTeam()
 CustomTeam* TeamBox::GetCustomTeam() const
 {
   if (custom_team_list.empty()) {
-    return NULL;
+    return nullptr;
   }
 
   return GetCustomTeamsList().GetByName(player_name->GetText());
@@ -209,7 +209,7 @@ Widget* TeamBox::ClickUp(const Point2i &mousePosition, uint button)
   if (associated_team) {
 
     if (!associated_team->IsLocal())
-      return NULL; // it's not a local team, we can't configure it !!
+      return nullptr; // it's not a local team, we can't configure it !!
 
     Widget* w = WidgetList::ClickUp(mousePosition, button);
 
@@ -262,7 +262,7 @@ Widget* TeamBox::ClickUp(const Point2i &mousePosition, uint button)
       }
     }
   }
-  return NULL;
+  return nullptr;
 }
 
 void TeamBox::SetTeam(Team& _team, bool read_team_values)

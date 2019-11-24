@@ -142,12 +142,12 @@ void Gnu::SignalOutOfMap()
 
 GnuLauncher::GnuLauncher() :
   WeaponLauncher(WEAPON_GNU, "gnulauncher", new ExplosiveWeaponConfig()),
-  current_gnu(NULL),
+  current_gnu(nullptr),
   gnu_death_time(0)
 {
   UpdateTranslationStrings();
 
-  current_gnu = NULL;
+  current_gnu = nullptr;
   gnu_death_time = 0;
 
   m_category = SPECIAL;
@@ -224,7 +224,7 @@ void GnuLauncher::SignalEndOfProjectile()
   if (!current_gnu)
     return;
 
-  current_gnu = NULL;
+  current_gnu = nullptr;
   gnu_death_time = GameTime::GetInstance()->Read();
 }
 

@@ -143,7 +143,7 @@ Widget* ComboBox::ClickUp(const Point2i &mousePosition, uint button)
     return this;
   }
 
-  return NULL;
+  return nullptr;
 }
 
 void ComboBox::SetChoice(std::vector<std::string>::size_type index)

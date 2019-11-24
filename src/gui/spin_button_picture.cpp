@@ -128,7 +128,7 @@ Widget* SpinButtonWithPicture::ClickUp(const Point2i &mousePosition, uint button
   NeedRedrawing();
 
   if (!Contains(mousePosition)) {
-    return NULL;
+    return nullptr;
   }
 
   bool is_click = Mouse::IS_CLICK_BUTTON(button);
@@ -144,7 +144,7 @@ Widget* SpinButtonWithPicture::ClickUp(const Point2i &mousePosition, uint button
     return this;
   }
 
-  return NULL;
+  return nullptr;
 }
 
 void SpinButtonWithPicture::ValueHasChanged()

@@ -84,7 +84,7 @@ bool Gun::p_Shoot()
     return false;
 
   projectile->Shoot (GUN_BULLET_SPEED);
-  projectile = NULL;
+  projectile = nullptr;
   ReloadLauncher();
   return true;
 }

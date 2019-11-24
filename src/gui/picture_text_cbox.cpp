@@ -63,7 +63,7 @@ PictureTextCBox::PictureTextCBox(Profile * profile,
 
 bool PictureTextCBox::LoadXMLConfiguration()
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     return false;
   }
 

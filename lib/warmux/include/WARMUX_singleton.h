@@ -54,7 +54,7 @@ protected:
     MSG_DBG_RTTI("singleton", "Deleting singleton %p of type %s",
                  singleton, typeid(T).name());
     if (singleton == this)
-      singleton = NULL;
+      singleton = nullptr;
   }
 
 public:
@@ -77,7 +77,7 @@ public:
 };
 
 template<typename T>
-T* Singleton<T>::singleton = NULL;
+T* Singleton<T>::singleton = nullptr;
 
 #endif // SINGLETON_H
 

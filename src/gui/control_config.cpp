@@ -133,7 +133,7 @@ public:
   Widget* ClickUp(const Point2i &mousePosition, uint button) override
   {
     WidgetList::ClickUp(mousePosition, button);
-    return NULL;
+    return nullptr;
   }
 
   bool SendKey(const SDL_keysym & key) override
@@ -275,7 +275,7 @@ public:
   }
 };
 
-std::vector<ControlItem*>* ControlItem::selves = NULL;
+std::vector<ControlItem*>* ControlItem::selves = nullptr;
 
 class HeaderItem : public HBox
 {

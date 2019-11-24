@@ -77,7 +77,7 @@ public:
   {
     if (run->Contains(mousePosition))
       return this;
-    return NULL;
+    return nullptr;
   }
 
   void Pack() override
@@ -204,7 +204,7 @@ bool BenchmarkMenu::Launch(BenchItem *b)
               / (1000.0f * time);
         fmt = "%.0f";
 
-        res.item = NULL;
+        res.item = nullptr;
         res.color = primary_red_color;
         graph->AddResult(res);
       } else {

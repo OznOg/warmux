@@ -219,15 +219,15 @@ OptionMenu::OptionMenu() :
     teams_editor_inf->Pack();
     teams_editor->AddWidget(teams_editor_inf);
     tabs->AddNewTab("unused", _("Teams editor"), teams_editor);
-    selected_team = NULL;
+    selected_team = nullptr;
     ReloadTeamList();
   } else {
-    lbox_teams = NULL;
-    add_team = NULL;
-    delete_team = NULL;
-    selected_team = NULL;
-    tbox_team_name = NULL;
-    team_name = NULL;
+    lbox_teams = nullptr;
+    add_team = nullptr;
+    delete_team = nullptr;
+    selected_team = nullptr;
+    tbox_team_name = nullptr;
+    team_name = nullptr;
   }
 
 #if USE_MISC_TAB
@@ -605,7 +605,7 @@ void OptionMenu::DeleteTeam()
 
   if (selected_team) {
     selected_team->Delete();
-    selected_team = NULL;
+    selected_team = nullptr;
     if (lbox_teams->IsItemSelected()) {
       lbox_teams->Deselect();
     }

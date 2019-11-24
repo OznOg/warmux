@@ -291,7 +291,7 @@ Widget* MultiTabs::Click(const Point2i &mousePosition, uint button)
   if (!tabs.empty())
     return tabs[current_tab].box->Click(mousePosition, button);
 
-  return NULL;
+  return nullptr;
 }
 
 Widget* MultiTabs::ClickUp(const Point2i &mousePosition, uint button)
@@ -329,7 +329,7 @@ Widget* MultiTabs::ClickUp(const Point2i &mousePosition, uint button)
   if (!tabs.empty())
     return tabs[current_tab].box->ClickUp(mousePosition, button);
 
-  return NULL;
+  return nullptr;
 }
 
 const std::string& MultiTabs::GetCurrentTabId() const

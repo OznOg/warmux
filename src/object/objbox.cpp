@@ -67,13 +67,13 @@ ObjBox::ObjBox(const std::string &name)
 ObjBox::~ObjBox()
 {
   delete anim;
-  Game::GetInstance()->SetCurrentBox(NULL);
+  Game::GetInstance()->SetCurrentBox(nullptr);
 }
 
 void ObjBox::CloseParachute()
 {
   SetAirResistFactor(1.0);
-  Game::GetInstance()->SetCurrentBox(NULL);
+  Game::GetInstance()->SetCurrentBox(nullptr);
   MSG_DEBUG("box", "End of the fall: parachute=%d", parachute);
   hit.Play("default", "box/hitting_ground");
   if (!parachute) return;

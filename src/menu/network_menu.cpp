@@ -59,7 +59,7 @@ static const uint MARGIN_BOTTOM = 40;
 
 NetworkMenu::NetworkMenu()
   : Menu("menu/bg_network")
-  , opt_game_mode(NULL)
+  , opt_game_mode(nullptr)
 {
   waiting_for_server = false;
 
@@ -188,7 +188,7 @@ NetworkMenu::NetworkMenu()
 
 void NetworkMenu::AddGameModeTab()
 {
-  ASSERT(opt_game_mode == NULL);
+  ASSERT(opt_game_mode == nullptr);
   opt_game_mode = new GameModeEditor(Point2i(tabs->GetSizeX()-8, tabs->GetSizeY()-tabs->GetHeaderHeight()-4),
                                       (tabs->GetSizeY()-8)/420.0f, false);
   tabs->AddNewTab("TAB_Game", _("Game"), opt_game_mode );
@@ -310,7 +310,7 @@ bool NetworkMenu::signal_ok()
 
   // Disconnection :-/
   if (!Network::IsConnected()) {
-    Network::GetInstance()->network_menu = NULL;
+    Network::GetInstance()->network_menu = nullptr;
     return true;
 
   } else {
@@ -334,7 +334,7 @@ bool NetworkMenu::signal_ok()
       return false;
     }
 
-    Network::GetInstance()->network_menu = NULL;
+    Network::GetInstance()->network_menu = nullptr;
   }
 
   Network::Disconnect();

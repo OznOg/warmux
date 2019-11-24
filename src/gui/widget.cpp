@@ -37,11 +37,11 @@ Widget::Widget()
   , border_size(0)
   , background_color(transparent_color)
   , highlight_bg_color(transparent_color)
-  , ct(NULL)
+  , ct(nullptr)
   , need_redrawing(true)
   , clickable(true)
-  , profile(NULL)
-  , widgetNode(NULL)
+  , profile(nullptr)
+  , widgetNode(nullptr)
   , actionName("NoAction")
 {
 }
@@ -55,11 +55,11 @@ Widget::Widget(const Point2i &size, bool clickable)
   , border_size(0)
   , background_color(transparent_color)
   , highlight_bg_color(transparent_color)
-  , ct(NULL)
+  , ct(nullptr)
   , need_redrawing(true)
   , clickable(clickable)
-  , profile(NULL)
-  , widgetNode(NULL)
+  , profile(nullptr)
+  , widgetNode(nullptr)
   , actionName("NoAction")
 {
 }
@@ -74,7 +74,7 @@ Widget::Widget(Profile * _profile,
   , border_size(0)
   , background_color(transparent_color)
   , highlight_bg_color(transparent_color)
-  , ct(NULL)
+  , ct(nullptr)
   , need_redrawing(true)
   , profile(_profile)
   , widgetNode(_widgetNode)
@@ -85,7 +85,7 @@ Widget::Widget(Profile * _profile,
 // From Container: it redraws the border and the background
 void Widget::RedrawBackground(const Rectanglei& rect) const
 {
-  if (ct != NULL)
+  if (ct != nullptr)
     ct->RedrawBackground(rect);
 
   if (!visible)
@@ -234,7 +234,7 @@ bool Widget::Update(const Point2i &mousePosition,
   bool updated = false;
   if (need_redrawing ||
       IsScrolling() ||
-      (SDL_GetMouseState(NULL, NULL) && Rectanglei::Contains(mousePosition)) ||
+      (SDL_GetMouseState(nullptr, nullptr) && Rectanglei::Contains(mousePosition)) ||
       (Rectanglei::Contains(mousePosition) && !Rectanglei::Contains(lastMousePosition)) ||
       (Rectanglei::Contains(lastMousePosition) && !Rectanglei::Contains(mousePosition))) {
 
@@ -269,7 +269,7 @@ Widget* Widget::Click(const Point2i &mousePosition, uint /* button */)
     return this;
   }
 
-  return NULL;
+  return nullptr;
 }
 
 Widget* Widget::ClickUp(const Point2i &mousePosition, uint /* button */)
@@ -279,7 +279,7 @@ Widget* Widget::ClickUp(const Point2i &mousePosition, uint /* button */)
     return this;
   }
 
-  return NULL;
+  return nullptr;
 }
 
 void Widget::SetVisible(bool _visible)

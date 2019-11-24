@@ -102,7 +102,7 @@ bool BounceBallLauncher::p_Shoot ()
     projectile->Shoot (10);
   else
     projectile->Shoot (m_strength);
-  projectile = NULL;
+  projectile = nullptr;
   ReloadLauncher();
   return true;
 }

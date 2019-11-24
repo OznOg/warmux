@@ -47,8 +47,8 @@ Chat::~Chat()
 }
 
 Chat::Chat():
-  input(NULL),
-  msg(NULL),
+  input(nullptr),
+  msg(nullptr),
   cursor_pos(0),
   check_input(false),
   last_time(0)

@@ -47,8 +47,8 @@ static const Color  c_odd(0x80, 0x80, 0x80, 0x20);
 ScrollBox::ScrollBox(const Point2i & _size, bool force, bool alt, bool v)
   : WidgetList(_size)
   , alternate_colors(alt)
-  , m_dec(NULL)
-  , m_inc(NULL)
+  , m_dec(nullptr)
+  , m_inc(nullptr)
   , scroll_target(0)
   , scroll_counter(0)
   , start_drag(NO_DRAG)
@@ -106,7 +106,7 @@ Widget * ScrollBox::ClickUp(const Point2i & mousePosition, uint button)
   }
 
   if (!box->GetFirstWidget()) {
-    return NULL;
+    return nullptr;
   }
 
   // Handle the click up as a widget click only if we weren't dragging
@@ -173,7 +173,7 @@ Widget * ScrollBox::ClickUp(const Point2i & mousePosition, uint button)
     return this;
   }
 
-  return NULL;
+  return nullptr;
 }
 
 Widget * ScrollBox::Click(const Point2i & mousePosition, uint button)
@@ -181,7 +181,7 @@ Widget * ScrollBox::Click(const Point2i & mousePosition, uint button)
   first_mouse_position = mousePosition;
   scroll_counter = 0;
   if (!Contains(mousePosition)) {
-    return NULL;
+    return nullptr;
   }
 
   if (HasScrollBar() && Mouse::IS_CLICK_BUTTON(button)) {

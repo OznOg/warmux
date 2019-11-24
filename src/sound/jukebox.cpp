@@ -39,7 +39,7 @@
 #endif
 
 JukeBox::JukeBox()
-  : music(NULL)
+  : music(nullptr)
   , m_init(false)
   , m_cache(0) // Defaults to unlimited cache
 {
@@ -286,7 +286,7 @@ void JukeBox::EndMusic()
     return;
 
   Mix_FreeMusic(jukebox->music);
-  jukebox->music = 0;
+  jukebox->music = nullptr;
 
   if (!Config::GetInstance()->GetSoundMusic() || !jukebox->IsPlayingMusic())
     return;
@@ -529,5 +529,5 @@ void JukeBox::EndChunk(int channel)
 
   //Mix_FreeChunk(chk);
   jukebox->m_cache.FreeChunk(chk);
-  jukebox->chunks[channel] = 0;
+  jukebox->chunks[channel] = nullptr;
 }

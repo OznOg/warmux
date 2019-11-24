@@ -186,13 +186,13 @@ bool StopMovingCommand::Execute()
 
 SetDirectionCommand::SetDirectionCommand(LRDirection direction):
   direction(direction),
-  commands(NULL)
+  commands(nullptr)
 {
 }
 
 bool SetDirectionCommand::Execute()
 {
-  if (commands == NULL) {
+  if (commands == nullptr) {
     if (ActiveCharacter().GetDirection() == direction) {
       return true;
     } else {

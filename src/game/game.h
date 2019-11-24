@@ -189,7 +189,7 @@ public:
   void RequestTime(uint time) { request_time = time; }
 
   // Signal death of a player
-  void SignalCharacterDeath(const Character *character, const Character* killer = NULL);
+  void SignalCharacterDeath(const Character *character, const Character* killer = nullptr);
 
   // Signal character damage
   void SignalCharacterDamage(const Character *character);

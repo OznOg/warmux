@@ -44,7 +44,7 @@
  */
 Surface::Surface(const std::string &filename)
 {
-  surface = NULL;
+  surface = nullptr;
   autoFree = true;
   if (!ImgLoad(filename))
     Error(Format("Unable to open image file '%s': %s", filename.c_str(), IMG_GetError()));
@@ -83,7 +83,7 @@ void Surface::Free()
 {
   if (!IsNull()) {
     SDL_FreeSurface(surface);
-    surface = NULL;
+    surface = nullptr;
   }
 }
 
@@ -212,7 +212,7 @@ int Surface::Blit(const Surface& src, const Point2i &dst)
 {
   SDL_Rect dstRect = GetSDLRect(dst);
 
-  return Blit(src, NULL, &dstRect);
+  return Blit(src, nullptr, &dstRect);
 }
 
 /**
@@ -538,7 +538,7 @@ int Surface::TexturedPolygon(std::list<Point2i> polygon, const Surface * texture
  */
 int Surface::Fill(Uint32 color) const
 {
-  return SDL_FillRect(surface, NULL, color);
+  return SDL_FillRect(surface, nullptr, color);
 }
 
 int Surface::Fill(const Color &color) const
@@ -590,24 +590,24 @@ bool Surface::ImgSave(const std::string& filename, bool bmp)
     return (surface) ? SDL_SaveBMP(surface, filename.c_str())==0 : false;
   }
 
-  FILE            *f        = NULL;
-  png_structp      png_ptr  = NULL;
-  png_infop        info_ptr = NULL;
+  FILE            *f        = nullptr;
+  png_structp      png_ptr  = nullptr;
+  png_infop        info_ptr = nullptr;
   SDL_PixelFormat *spr_fmt  = surface->format;
   bool             ret      = false;
-  Uint8           *tmp_line = NULL;
+  Uint8           *tmp_line = nullptr;
 
   // Creating a png ...
-  png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
-  if (png_ptr == NULL) // Structure and ...
+  png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
+  if (png_ptr == nullptr) // Structure and ...
     return 1;
   info_ptr = png_create_info_struct(png_ptr);
-  if (info_ptr == NULL) // Information.
+  if (info_ptr == nullptr) // Information.
     goto end;
 
   // Opening a new file
   f = fopen(filename.c_str(), "wb");
-  if (f == NULL)
+  if (f == nullptr)
     goto end;
 
   png_init_io(png_ptr, f); // Associate png struture with a file
@@ -644,7 +644,7 @@ bool Surface::ImgSave(const std::string& filename, bool bmp)
 
 end:
   if (info_ptr) png_destroy_info_struct(png_ptr, &info_ptr);
-  if (png_ptr) png_destroy_write_struct(&png_ptr, NULL);
+  if (png_ptr) png_destroy_write_struct(&png_ptr, nullptr);
   if (f) fclose(f);
   return ret;
 }

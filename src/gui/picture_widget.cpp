@@ -31,7 +31,7 @@ PictureWidget::PictureWidget(const Point2i & _size)
   , loaded(false)
   , type(NO_SCALING)
   , picture_size(0, 0)
-  , spr(NULL)
+  , spr(nullptr)
 {
 }
 
@@ -44,7 +44,7 @@ PictureWidget::PictureWidget(const Point2i & _size,
   , name(resource_id)
   , type(_type)
   , picture_size(0, 0)
-  , spr(NULL)
+  , spr(nullptr)
 {
 }
 
@@ -52,7 +52,7 @@ PictureWidget::PictureWidget(const Surface & s, ScalingType type)
   : Widget(s.GetSize(), false)
   , disabled(false)
   , type(type)
-  , spr(NULL)
+  , spr(nullptr)
 {
   SetSurface(s, type);
 }
@@ -62,13 +62,13 @@ PictureWidget::PictureWidget(Profile * profile,
   : Widget(profile, pictureNode)
   , disabled(false)
   , type(NO_SCALING)
-  , spr(NULL)
+  , spr(nullptr)
 {
 }
 
 PictureWidget::~PictureWidget()
 {
-  if (spr != NULL) {
+  if (spr != nullptr) {
     delete spr;
   }
 }
@@ -84,7 +84,7 @@ PictureWidget::~PictureWidget()
 */
 bool PictureWidget::LoadXMLConfiguration()
 {
-  if (NULL == profile || NULL == widgetNode) {
+  if (nullptr == profile || nullptr == widgetNode) {
     //TODO error ... xml attributs not initialized !
     return false;
   }
@@ -161,7 +161,7 @@ void PictureWidget::SetNoSurface()
 
   if (spr)
     delete spr;
-  spr = NULL;
+  spr = nullptr;
 }
 
 void PictureWidget::Draw(const Point2i &/*mousePosition*/)

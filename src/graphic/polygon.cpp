@@ -73,7 +73,7 @@ void PolygonBuffer::SetSize(const int size)
 PolygonItem::PolygonItem()
 {
   transformed_position = position = Point2d(0, 0);
-  SetSprite(NULL);
+  SetSprite(nullptr);
   SetAlignment(H_CENTERED, V_CENTERED);
 }
 
@@ -169,19 +169,19 @@ Polygon::~Polygon()
     delete plane_color;
   delete shape_buffer;
 
-  shape_buffer = NULL;
-  border_color = NULL;
-  plane_color = NULL;
-  texture = NULL;
+  shape_buffer = nullptr;
+  border_color = nullptr;
+  plane_color = nullptr;
+  texture = nullptr;
 }
 
 // Only called by constructor, so setting pointer values is valid
 void Polygon::Init()
 {
   is_closed = true;
-  texture = NULL;
-  plane_color = NULL;
-  border_color = NULL;
+  texture = nullptr;
+  plane_color = nullptr;
+  border_color = nullptr;
   original_shape.clear();
   transformed_shape.clear();
   items.clear();
@@ -556,7 +556,7 @@ void Polygon::DrawOnScreen()
 
 DecoratedBox::DecoratedBox(Double width, Double height)
  : Polygon()
- , m_border(NULL)
+ , m_border(nullptr)
  , m_style(DecoratedBox::STYLE_ROUNDED)
 {
   min = Point2d(0.0, 0.0);
@@ -710,7 +710,7 @@ void DecoratedBox::ApplyTransformation(const AffineTransform2D & trans, bool sav
   if ( round(max.x - min.x +ONE_HALF) != round(new_max.x -new_min.x+ONE_HALF) ||
        round(max.y - min.y) != round(new_max.y -new_min.y) ) {
     delete m_border;
-    m_border = NULL;
+    m_border = nullptr;
   }
 
   min = new_min;
@@ -732,7 +732,7 @@ void DecoratedBox::ResetTransformation()
   if ( round(max.x - min.x)!=round(original_max.x -original_min.x) ||
        round(max.y - min.y)!=round(original_max.y -original_min.y) ) {
       delete m_border;
-      m_border = NULL;
+      m_border = nullptr;
    }
 
    min = original_min;

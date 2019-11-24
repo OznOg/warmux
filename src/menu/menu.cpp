@@ -43,7 +43,7 @@
 
 Menu::Menu(const std::string& bg, t_action _actions)
   : actions(_actions)
-  , selected_widget(NULL)
+  , selected_widget(nullptr)
 {
   close_menu = false ;
   Surface& window = GetMainWindow();
@@ -51,11 +51,11 @@ Menu::Menu(const std::string& bg, t_action _actions)
   Profile *res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   background = new Sprite(GetResourceManager().LoadImage(res, bg, false));
 
-  b_ok = NULL;
-  b_cancel = NULL;
+  b_ok = nullptr;
+  b_cancel = nullptr;
 
   if (actions == vNo) {
-    actions_buttons = NULL;
+    actions_buttons = nullptr;
   } else {
     actions_buttons = new HBox(50, false, false);
 
@@ -85,18 +85,18 @@ Menu::Menu(const std::string& bg, t_action _actions)
 Menu::Menu(void)
   : widgets()
   , actions(vNo)
-  , background(NULL)
-  , selected_widget(NULL)
-  , b_cancel(NULL)
-  , b_ok(NULL)
+  , background(nullptr)
+  , selected_widget(nullptr)
+  , b_cancel(nullptr)
+  , b_ok(nullptr)
   , close_menu(false)
-  , actions_buttons(NULL)
+  , actions_buttons(nullptr)
 {
 }
 
 Menu::~Menu()
 {
-  AppWarmux::GetInstance()->SetCurrentMenu(NULL);
+  AppWarmux::GetInstance()->SetCurrentMenu(nullptr);
   if (background) {
     delete background;
   }
@@ -156,7 +156,7 @@ Widget * Menu::CreateWidget(Profile * profile,
                             const xmlNode * widgetNode,
                             std::string & widgetName)
 {
-  Widget * widget = NULL;
+  Widget * widget = nullptr;
 
   if ("Picture" == widgetName) {
     widget = new PictureWidget(profile, widgetNode);
@@ -185,9 +185,9 @@ Widget * Menu::CreateWidget(Profile * profile,
   }
 
   if (widget) {
-    return widget->LoadXMLConfiguration() ? widget : NULL;
+    return widget->LoadXMLConfiguration() ? widget : nullptr;
   }
-  return NULL;
+  return nullptr;
 }
 
 void Menu::play_ok_sound()
@@ -315,8 +315,8 @@ void Menu::WakeUpOnCallback()
   SDL_Event evnt;
   evnt.type = SDL_USEREVENT;
   evnt.user.code = 0;
-  evnt.user.data1 = NULL;
-  evnt.user.data2 = NULL;
+  evnt.user.data1 = nullptr;
+  evnt.user.data2 = nullptr;
   SDL_PushEvent(&evnt);
 }
 
@@ -486,7 +486,7 @@ void Menu::Display(const Point2i& mousePosition)
 
 void Menu::SetActionButtonsXY(int x, int y)
 {
-  if (actions_buttons != NULL) {
+  if (actions_buttons != nullptr) {
     actions_buttons->SetPosition(x, y);
   }
 }

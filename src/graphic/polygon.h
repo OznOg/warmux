@@ -162,9 +162,9 @@ public:
   PolygonBuffer * GetPolygonBuffer() { return shape_buffer; }
 
   // Type of the polygon
-  bool IsTextured() const { return texture != NULL; }
-  bool IsPlaneColor() const { return plane_color != NULL; }
-  bool IsBordered() const { return border_color != NULL; }
+  bool IsTextured() const { return texture != nullptr; }
+  bool IsPlaneColor() const { return plane_color != nullptr; }
+  bool IsBordered() const { return border_color != nullptr; }
   bool IsClosed() const;
 
   // Set type to Open

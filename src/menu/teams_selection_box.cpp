@@ -137,7 +137,7 @@ TeamsSelectionBox::TeamsSelectionBox(const Point2i &_size, bool network, bool w_
 
     AddWidget(list_box);
   } else {
-    list_box = NULL;
+    list_box = nullptr;
     Box * teams_grid_box = new GridBox(grid_dim.y, grid_dim.x, 10, false);
     teams_grid_box->SetNoBorder();
 
@@ -159,7 +159,7 @@ void TeamsSelectionBox::Draw(const Point2i& mousePosition)
 
 Widget* TeamsSelectionBox::Click(const Point2i &mousePosition, uint button)
 {
-  return (list_box) ? list_box->Click(mousePosition, button) : NULL;
+  return (list_box) ? list_box->Click(mousePosition, button) : nullptr;
 }
 
 Widget* TeamsSelectionBox::DefaultClickUp(const Point2i &mousePosition, uint button)
@@ -223,14 +223,14 @@ LocalTeamsSelectionBox::LocalTeamsSelectionBox(const Point2i &size, bool border)
 Widget* LocalTeamsSelectionBox::ClickUp(const Point2i &mousePosition, uint button)
 {
   if (!Contains(mousePosition))
-    return NULL;
+    return nullptr;
 
   if (local_teams_nb->ClickUp(mousePosition, button))
     SetNbTeams(local_teams_nb->GetValue());
   else
     return DefaultClickUp(mousePosition, button);
 
-  return NULL;
+  return nullptr;
 }
 
 void LocalTeamsSelectionBox::PrevTeam(uint i)

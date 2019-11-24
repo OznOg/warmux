@@ -110,7 +110,7 @@ bool Player::UpdateTeam(const std::string& old_team_id, const ConfigTeam& team_c
 std::string Player::GetDefaultNickname()
 {
   std::string s_nick;
-  const char *nick = NULL;
+  const char *nick = nullptr;
 #ifdef WIN32
   char  buffer[32];
   DWORD size = 32;

@@ -38,7 +38,7 @@
 Surface * RandomElementList::GetRandomElement()
 {
   if (empty())
-    return NULL;
+    return nullptr;
   return (*this)[RandomSync().GetInt(0, size() - 1)];
 }
 
@@ -54,9 +54,9 @@ RandomMap::RandomMap(Profile *profile, const int width, const int height)
   this->profile = profile;
   SetSize(width, height);
   result = Surface(Point2i(width, height), SDL_SWSURFACE|SDL_SRCALPHA, true);
-  random_shape = NULL;
-  bezier_shape = NULL;
-  expanded_bezier_shape = NULL;
+  random_shape = nullptr;
+  bezier_shape = nullptr;
+  expanded_bezier_shape = nullptr;
 
   number_of_element = 0;
   XmlReader::ReadUint(profile->doc->GetRoot(), "nb_element", number_of_element);
@@ -142,7 +142,7 @@ void RandomMap::GeneratePlatforms()
       Surface * random_element = random_element_list.GetRandomElement();
       int dx = RandomSync().GetInt((int)(x+10), (int)(x+wid-10));
       int dy = (int) (y+(minhei / 2));
-      if (random_element != NULL) {
+      if (random_element != nullptr) {
         Surface * tmp_surf = new Surface(random_element->GetSurface());
         AddElement(tmp_surf, Point2i(dx, dy));
       }

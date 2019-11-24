@@ -39,7 +39,7 @@
 PauseMenu::PauseMenu(bool& _exit_game)
   : Menu("interface/quit_screen", vNo)
   , exit_game(_exit_game)
-  , sub_menu(NULL)
+  , sub_menu(nullptr)
 {
   Point2i size(100, 100);
 
@@ -85,7 +85,7 @@ void PauseMenu::RunOptionsMenu()
 {
   sub_menu = new OptionMenu();
   sub_menu->Run();
-  sub_menu = NULL;
+  sub_menu = nullptr;
   close_menu = true;
 }
 
@@ -93,7 +93,7 @@ void PauseMenu::RunHelpMenu()
 {
   sub_menu = new HelpMenu();
   sub_menu->Run();
-  sub_menu = NULL;
+  sub_menu = nullptr;
   close_menu = true;
 }
 

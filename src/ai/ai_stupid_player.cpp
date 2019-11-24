@@ -102,8 +102,8 @@ AIStupidPlayer::AIStupidPlayer(Team * team, float accuracy)
   : team(team)
   , accuracy(accuracy)
   , item_iterator(items.begin())
-  , command(NULL)
-  , best_strategy(NULL)
+  , command(nullptr)
+  , best_strategy(nullptr)
 {
   AllStats *stats = AllStats::GetInstance();
   items.push_back(std::make_pair(new SkipTurnIdea(), &stats->SkipTurn));
@@ -174,7 +174,7 @@ void AIStupidPlayer::Reset()
 {
   if (command) {
     delete command;
-    command = NULL;
+    command = nullptr;
   }
   command_executed = false;
   if (best_strategy)
@@ -196,7 +196,7 @@ void AIStupidPlayer::Refresh()
   if (command_executed)
     return;
   uint now = GameTime::GetInstance()->Read();
-  bool is_thinking = (command == NULL);
+  bool is_thinking = (command == nullptr);
   if (is_thinking) {
     bool think_time_over = now >= game_time_at_turn_start + MAX_GAME_TIME_USED_THINKING_IN_MS;
     if (!think_time_over) {

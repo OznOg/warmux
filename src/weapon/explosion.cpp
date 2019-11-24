@@ -41,7 +41,7 @@
 #include <WARMUX_random.h>
 #include "weapon/weapon.h"
 
-Profile *weapons_res_profile = NULL;
+Profile *weapons_res_profile = nullptr;
 
 int GetDamageFromExplosion(const ExplosiveWeaponConfig &config, Double distance)
 {
@@ -105,7 +105,7 @@ void ApplyExplosion (const Point2i &pos,
   // Apply damage on the character.
   // Do not care about the death of the active character.
   Double highest_force = ZERO;
-  Character* fastest_character = NULL;
+  Character* fastest_character = nullptr;
   Character* player = &ActiveCharacter();
   FOR_ALL_CHARACTERS(team, character) {
     Double distance = pos.Distance(character -> GetCenter());
@@ -148,7 +148,7 @@ void ApplyExplosion (const Point2i &pos,
     }
   }
 
-  if (fastest_character != NULL)
+  if (fastest_character != nullptr)
     Camera::GetInstance()->FollowObject(fastest_character);
 
   // Apply the blast on physical objects.
