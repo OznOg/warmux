@@ -47,8 +47,6 @@ ResourceManager::ResourceManager() : base_path("")
 ResourceManager::~ResourceManager()
 {
   xmlCleanupParser();
-  for (auto & profile : profiles)
-    delete profile.second;
 }
 
 int ResourceManager::LoadInt(const Profile *profile, const std::string& resource_name) const
@@ -151,13 +149,13 @@ Surface ResourceManager::LoadImage(const std::string& filename,
   return (alpha) ? surface.DisplayFormatAlpha() : surface.DisplayFormat();
 }
 
-Profile *ResourceManager::LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const
+std::shared_ptr<Profile> ResourceManager::LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const
 {
-  ProfileMap::iterator it = profiles.find(xml_filename);
-  if (it != profiles.end() && it->second) {
+  /* Nex test may create a empt week_ptr, but this is harmless as it will be
+   * filled hereafter in this case. */
+  if (auto sp = profiles[xml_filename].lock()) {
     MSG_DEBUG("xml.cached_load", "Returning cached %s\n", xml_filename.c_str());
-    it->second->ref_count++;
-    return it->second;
+    return sp;
   }
 
   MSG_DEBUG("xml.load", "Loading uncached %s\n", xml_filename.c_str());
@@ -179,21 +177,11 @@ Profile *ResourceManager::LoadXMLProfile(const std::string& xml_filename, bool i
     return nullptr;
   }
 
-  Profile *profile = new Profile(xml_filename, std::move(doc));
+  auto profile = std::make_shared<Profile>(xml_filename, std::move(doc));
   profile->filename = xml_filename;
   profile->relative_path = path;
   profiles[xml_filename] = profile;
   return profile;
-}
-
-void ResourceManager::UnLoadXMLProfile(Profile *profile) const
-{
-  // Let's greedily cache all documents!
-  --profile->ref_count;
-  if (!profile->ref_count) {
-    profiles.erase(profile->filename);
-    delete profile;
-  }
 }
 
 const xmlNode*  ResourceManager::GetElement(const Profile *profile, const std::string& resource_type,

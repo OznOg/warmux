@@ -69,7 +69,7 @@ class ResourceManager : public Singleton<ResourceManager>
   ResourceManager();
   ~ResourceManager() override;
   friend class Singleton<ResourceManager>;
-  typedef std::map<std::string, Profile*> ProfileMap;
+  typedef std::map<std::string, std::weak_ptr<Profile>> ProfileMap;
   static ProfileMap profiles;
   std::string base_path;
 
@@ -78,8 +78,7 @@ public:
   Surface LoadImage(const std::string& ressource_str, bool alpha = false,
                     bool set_colorkey = false, Uint32 colorkey = 0) const;
 
-  Profile *LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const;
-  void UnLoadXMLProfile(Profile *profile) const;
+  std::shared_ptr<Profile> LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const;
 
   MouseCursor LoadMouseCursor(const Profile *profile, const std::string& resource_name, Mouse::pointer_t pointer_id) const;
   Color LoadColor(const Profile *profile, const std::string& resource_name) const;
