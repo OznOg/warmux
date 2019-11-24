@@ -29,17 +29,15 @@
 
 void CompositeShape::ApplyTransformation(const AffineTransform2D & trans)
 {
-  for(std::vector<Polygon *>::iterator poly = layers.begin();
-      poly != layers.end(); poly++) {
-    (*poly)->ApplyTransformation(trans);
+  for(auto & layer : layers) {
+    layer->ApplyTransformation(trans);
   }
 }
 
 void CompositeShape::Draw(Surface * dest)
 {
-  for(std::vector<Polygon *>::iterator poly = layers.begin();
-      poly != layers.end(); poly++) {
-    (*poly)->Draw(dest);
+  for(auto & layer : layers) {
+    layer->Draw(dest);
   }
 }
 

@@ -62,8 +62,8 @@ GameBlitz::time_iterator GameBlitz::GetCurrentTeam()
 GameBlitz::time_iterator GameBlitz::KillGroup(GameBlitz::time_iterator cur)
 {
   TeamGroup& group = TeamsList::GetInstance()->GetGroupList()[cur->first];
-  for (TeamGroup::iterator it = group.begin(); it != group.end(); ++it) {
-    FOR_EACH_LIVING_CHARACTER((*it), character)
+  for (auto & it : group) {
+    FOR_EACH_LIVING_CHARACTER(it, character)
       character->Die(nullptr);
   }
   GameMessages::GetInstance()->Add(Format(_("Group %u was fragged down."), cur->first),
@@ -78,8 +78,8 @@ bool GameBlitz::Run()
   // Make sure map is empty
   times.clear();
   const TeamsList::GroupList& glist = TeamsList::GetInstance()->GetGroupList();
-  for (TeamsList::GroupList::const_iterator git = glist.begin(); git != glist.end(); ++git)
-    times[git->first] = GameMode::GetInstance()->duration_turn;
+  for (const auto & git : glist)
+    times[git.first] = GameMode::GetInstance()->duration_turn;
 
   counter = 0;
   return Game::Run();
@@ -215,8 +215,8 @@ bool GameBlitz::IsGameFinished() const
 {
   uint num = 0;
 
-  for (std::map<uint, uint>::const_iterator it = times.begin(); it != times.end(); ++it) {
-    if (it->second) //!= 0 && it->first->NbAliveCharacter())
+  for (auto time : times) {
+    if (time.second) //!= 0 && it->first->NbAliveCharacter())
       num++;
   }
 

@@ -43,8 +43,8 @@
 
 void EnergyList::Reset()
 {
-  for (EnergyList::iterator it = begin(); it != end(); ++it)
-    delete *(it);
+  for (auto & it : *this)
+    delete it;
 
   clear();
 }

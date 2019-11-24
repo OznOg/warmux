@@ -116,13 +116,13 @@ void CreditsMenu::PrepareAuthorsList()
   // Use an array for this is the best solution I think, but there is perhaps a better code...
   static const std::string teams[] = { "team", "contributors", "thanks" };
 
-  for (uint i = 0; i < (sizeof teams / sizeof* teams); ++i) {
-    xmlNodeArray team = XmlReader::GetNamedChildren(doc.GetRoot(), teams[i]);
+  for (const auto & i : teams) {
+    xmlNodeArray team = XmlReader::GetNamedChildren(doc.GetRoot(), i);
 
     if (team.empty())
       continue;
 
-    std::string team_title = teams[i];
+    std::string team_title = i;
     std::transform(team_title.begin(), team_title.end(), team_title.begin(),
                    static_cast<int (*)(int)>(toupper) );
 

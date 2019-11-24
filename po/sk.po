@@ -93,7 +93,7 @@ msgstr "%s z tímu %s sa príliš silno udrel o zem!"
 msgid "%s from %s team is dead because he is clumsy!"
 msgstr "%s z tímu %s zomrel pretože je nemotorný!"
 
-#: src/network/admin_commands.cpp:69
+#: src/network/admin_commands.cpp:67
 #, c-format
 msgid "%s has address %s"
 msgstr ""
@@ -121,23 +121,23 @@ msgid "%s is next to a mine!"
 msgstr "%s stupil na mínu!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1031
+#: src/include/action_handler.cpp:1029
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "Nie je pripojený žiadny hráč"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1146
+#: src/include/action_handler.cpp:1144
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "Nie je pripojený žiadny hráč"
 
-#: src/network/admin_commands.cpp:66
+#: src/network/admin_commands.cpp:64
 #, c-format
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:486
+#: src/include/action_handler.cpp:484
 #, c-format
 msgid "%s needs a pause."
 msgstr "%s potrebuje pauzu."
@@ -312,7 +312,7 @@ msgstr[0] "Tím %s získal %u futbalovú bombu!"
 msgstr[1] "Tím %s získal %u futbalové bomby!"
 msgstr[2] "Tím %s získal %u futbalových bômb!"
 
-#: src/weapon/grapple.cpp:716
+#: src/weapon/grapple.cpp:714
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -486,7 +486,7 @@ msgstr[2] ""
 msgid "%s took a member of the %s team to the grave with him!"
 msgstr "%s pochoval člena %s tímu do hrobu s ním!"
 
-#: src/network/admin_commands.cpp:81
+#: src/network/admin_commands.cpp:79
 #, c-format
 msgid "%s: no such nickame"
 msgstr ""
@@ -833,7 +833,7 @@ msgid ""
 msgstr ""
 
 #. Client Mode
-#: src/menu/network_menu.cpp:174 src/network/network.cpp:489
+#: src/menu/network_menu.cpp:174 src/network/network.cpp:488
 msgid "Client mode"
 msgstr "Mód klienta"
 
@@ -875,7 +875,7 @@ msgstr "Pripojenie k hre"
 msgid "Connected !"
 msgstr "Pripojený !"
 
-#: src/network/admin_commands.cpp:96
+#: src/network/admin_commands.cpp:94
 msgid "Connected players: "
 msgstr "Pripojený hráči:"
 
@@ -1007,7 +1007,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Energia"
 
-#: src/include/action_handler.cpp:282
+#: src/include/action_handler.cpp:280
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "Chyba pri inicializácii siete: Klient %s nesúhlasí s tebou!! - %s"
@@ -1041,12 +1041,12 @@ msgid "Error while deleting the file \"%s\". Unable to delete the custom team."
 msgstr "Chyba pri mazaní súboru \"%s\". Nie je možné vymazať vlastný tím."
 
 #. translators: %s:%s will expand to something like "example.org:9999"
-#: src/menu/network_connection_menu.cpp:552
+#: src/menu/network_connection_menu.cpp:551
 #, c-format
 msgid "Error: Unable to connect to %s:%s"
 msgstr "Chyba: Nemôžem sa pripojiť na %s:%s"
 
-#: src/menu/network_connection_menu.cpp:502
+#: src/menu/network_connection_menu.cpp:501
 msgid "Error: Unable to contact the index server to host a game"
 msgstr "Chyba: Nemôžem sa spojiť s hlavným serverom pre hostovanie hry"
 
@@ -1056,11 +1056,11 @@ msgid ""
 msgstr ""
 "Chyba: Nemôžem sa spojiť s hlavným serverom pre hľadanie hry po internete"
 
-#: src/menu/network_connection_menu.cpp:530
+#: src/menu/network_connection_menu.cpp:529
 msgid "Error: Unable to start the server"
 msgstr "Chyba: Nemôžem naštartovať server"
 
-#: src/menu/network_connection_menu.cpp:523
+#: src/menu/network_connection_menu.cpp:522
 #, c-format
 msgid ""
 "Error: Your server is not reachable from the internet. Check your firewall "
@@ -1124,7 +1124,7 @@ msgstr "Na celú obrazovku"
 msgid "Game"
 msgstr "Hra"
 
-#: src/include/action_handler.cpp:1003
+#: src/include/action_handler.cpp:1001
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1610,7 +1610,7 @@ msgstr ""
 msgid "No element <%s> found in the xml config file!"
 msgstr "Nenašiel som element <%s> v konfiguračnom xml súbore!"
 
-#: src/network/admin_commands.cpp:92
+#: src/network/admin_commands.cpp:90
 msgid "No player connected"
 msgstr "Nie je pripojený žiadny hráč"
 
@@ -1931,7 +1931,7 @@ msgid "Server available on Internet"
 msgstr "Server dostupný na internet"
 
 #. Server Mode
-#: src/menu/network_menu.cpp:180 src/network/network.cpp:519
+#: src/menu/network_menu.cpp:180 src/network/network.cpp:518
 msgid "Server mode"
 msgstr "Server mód"
 
@@ -2020,7 +2020,7 @@ msgstr "Ha! V debne bola nastražená pasca pre hlupákov!"
 msgid "Sorry, currently, no game is waiting for players"
 msgstr "Prepáč, ale žiadna hra nečaká na hráčov"
 
-#: src/menu/network_connection_menu.cpp:472
+#: src/menu/network_connection_menu.cpp:471
 #, fuzzy, c-format
 msgid ""
 "Sorry, your version is not supported anymore. Supported versions are %s. You "
@@ -2337,11 +2337,11 @@ msgstr "Nemôžem otvoriť osobný priečinok s mapami (%s)!"
 msgid "Unable to use this port!"
 msgstr "Nemôžem použiť tento port!"
 
-#: src/network/admin_commands.cpp:122
+#: src/network/admin_commands.cpp:118
 msgid "Unknown command"
 msgstr "Neznámy príkaz"
 
-#: src/network/admin_commands.cpp:72
+#: src/network/admin_commands.cpp:70
 #, fuzzy, c-format
 msgid "Unknown command of type %i"
 msgstr "Neznámy príkaz"

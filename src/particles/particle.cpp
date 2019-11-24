@@ -174,8 +174,8 @@ void ParticleEngine::FreeMem()
   // and it would be a waste to discard the cache already available
   sprites_loaded = false;
 
-  for (int i=0; i<particle_spr_nbr ; i++)
-    delete particle_sprite[i];
+  for (auto & i : particle_sprite)
+    delete i;
 }
 
 Sprite* ParticleEngine::GetSprite(particle_spr type)

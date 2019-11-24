@@ -94,8 +94,8 @@ public:
     HBox::Pack();
 
     // Set proper height now
-    for (wit it = widget_list.begin(); it != widget_list.end(); ++it)
-      (*it)->SetSizeY(height);
+    for (auto & it : widget_list)
+      it->SetSizeY(height);
   }
 };
 

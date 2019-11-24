@@ -26,8 +26,8 @@
 
 TextList::~TextList()
 {
-  for (std::list<Text*>::iterator t=list.begin(); t!=list.end(); t++)
-     delete *t;
+  for (auto & t : list)
+     delete t;
 
   list.clear();
 }

@@ -51,9 +51,9 @@ void GameMessages::Draw()
   // Display messages
   uint msgy = 50;
 
-  for (iterator i=list.begin(); i!=list.end(); ++i) {
-    (*i)->DrawCenterTop(Point2i(GetMainWindow().GetWidth()/2, msgy));
-    msgy += (*i)->GetHeight() + MIN_LINE_SPACING;
+  for (auto & i : list) {
+    i->DrawCenterTop(Point2i(GetMainWindow().GetWidth()/2, msgy));
+    msgy += i->GetHeight() + MIN_LINE_SPACING;
   }
 }
 

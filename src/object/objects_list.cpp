@@ -101,14 +101,12 @@ void ObjectsList::Refresh()
 //-----------------------------------------------------------------------------
 void ObjectsList::Draw()
 {
-  for (ObjectsList::iterator it = begin();
-       it != end();
-       ++it)
+  for (auto & it : *this)
   {
-    ASSERT((*it) != NULL);
+    ASSERT(it != NULL);
 
-    if (!(*it)->IsGhost())
-      (*it)->Draw();
+    if (!it->IsGhost())
+      it->Draw();
   }
 }
 

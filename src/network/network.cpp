@@ -449,11 +449,10 @@ void Network::SendAction(const Action& a, DistantComputer* client, bool clt_as_r
   } else {
 
     if (lock) SDL_LockMutex(cpus_lock);
-    for (std::list<DistantComputer*>::const_iterator it = cpu.begin();
-         it != cpu.end(); it++) {
+    for (auto it : cpu) {
 
-      if ((*it) != client) {
-        (*it)->SendData(packet, size);
+      if (it != client) {
+        it->SendData(packet, size);
       }
     }
     if (lock) SDL_UnlockMutex(cpus_lock);
@@ -570,10 +569,8 @@ uint Network::GetNbPlayersConnected() const
   uint r = 0;
 
   SDL_LockMutex(cpus_lock);
-  for (std::list<DistantComputer*>::const_iterator client = cpu.begin();
-       client != cpu.end();
-       client++) {
-    r += (*client)->GetPlayers().size();
+  for (auto client : cpu) {
+    r += client->GetPlayers().size();
   }
   SDL_UnlockMutex(cpus_lock);
 
@@ -585,10 +582,8 @@ uint Network::GetNbPlayersWithState(Player::State player_state) const
   uint counter = 0;
 
   SDL_LockMutex(cpus_lock);
-  for (std::list<DistantComputer*>::const_iterator client = cpu.begin();
-       client != cpu.end();
-       client++) {
-    counter += (*client)->GetNumberOfPlayersWithState(player_state);
+  for (auto client : cpu) {
+    counter += client->GetNumberOfPlayersWithState(player_state);
   }
   SDL_UnlockMutex(cpus_lock);
 
@@ -638,8 +633,8 @@ void Network::SendMapsList()
     Action a(Action::ACTION_GAME_FORCE_MAP_LIST);
 
     a.Push(common_list.size());
-    for (uint i=0; i<common_list.size(); i++)
-      a.Push(map_list->lst[common_list[i]]->GetRawName());
+    for (unsigned int i : common_list)
+      a.Push(map_list->lst[i]->GetRawName());
     //map_list->FillActionMenuSetMap(a);
 
     SendActionToAll(a, false);
@@ -658,8 +653,8 @@ void Network::SendMapsList()
   MSG_DEBUG("action_handler.map", "Sending list to %p\n", host);
   Action a(Action::ACTION_GAME_SET_MAP_LIST);
   a.Push(map_list->lst.size());
-  for (uint i=0; i<map_list->lst.size(); i++)
-    a.Push(map_list->lst[i]->GetRawName());
+  for (auto & i : map_list->lst)
+    a.Push(i->GetRawName());
 
   // We only send to game master, which should be the only one anyway
   SendActionToOne(a, host, false);
@@ -687,8 +682,8 @@ void Network::CheckOneHostTeams(Player& player, DistantComputer* new_host,
 
     // Search if the common list holds current team
     bool found = false;
-    for (uint i=0; i<common_list.size(); i++) {
-      if (config->id == local_list[common_list[i]]->GetId()) {
+    for (unsigned int i : common_list) {
+      if (config->id == local_list[i]->GetId()) {
         found = true;
         break;
       }
@@ -729,8 +724,8 @@ void Network::SendTeamsList()
   // Build vector of teams
   std::vector<Team*> local_list;
   const std::list<Team *>& flist = team_list->full_list;
-  for (std::list<Team *>::const_iterator it = flist.begin(); it != flist.end(); ++it)
-    local_list.push_back(*it);
+  for (auto it : flist)
+    local_list.push_back(it);
 
   DistantComputer* host = cpu.back();
   if (IsGameMaster()) {
@@ -770,8 +765,8 @@ void Network::SendTeamsList()
     Action a(Action::ACTION_GAME_FORCE_TEAM_LIST);
 
     a.Push(common_list.size());
-    for (uint i=0; i<common_list.size(); i++)
-      a.Push(local_list[common_list[i]]->GetId());
+    for (unsigned int i : common_list)
+      a.Push(local_list[i]->GetId());
 
     SendActionToAll(a, false);
     int id = host->GetPlayers().back().GetId();
@@ -787,8 +782,8 @@ void Network::SendTeamsList()
             (uint)local_list.size(), host);
   Action a(Action::ACTION_GAME_SET_TEAM_LIST);
   a.Push(local_list.size());
-  for (uint i=0; i<local_list.size(); i++)
-    a.Push(local_list[i]->GetId());
+  for (auto & i : local_list)
+    a.Push(i->GetId());
 
   // We only send to game master, which should be the only one anyway
   SendActionToOne(a, host, false);

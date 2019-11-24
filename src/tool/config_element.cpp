@@ -110,8 +110,8 @@ void StringConfigElement::Write(XmlWriter& writer, xmlNode* father) const
 
 ConfigElementList::~ConfigElementList()
 {
-  for (iterator it = begin(); it != end(); ++it)
-    delete (*it);
+  for (auto & it : *this)
+    delete it;
 }
 
 void ConfigElementList::LoadXml(const xmlNode* elem) const
@@ -125,8 +125,8 @@ void ConfigElementList::LoadXml(const xmlNode* elem) const
   for (; itc != children.end(); ++itc)
     (*itc)->LoadXml(elem);
 
-  for (const_iterator it = begin(); it != end(); ++it)
-    (*it)->Read(elem);
+  for (auto it : *this)
+    it->Read(elem);
 }
 
 xmlNode* ConfigElementList::SaveXml(XmlWriter& writer, xmlNode* elem) const
@@ -136,8 +136,8 @@ xmlNode* ConfigElementList::SaveXml(XmlWriter& writer, xmlNode* elem) const
   if (!elem)
     return nullptr;
 
-  for (const_iterator it = begin(); it != end(); ++it)
-    (*it)->Write(writer, elem);
+  for (auto it : *this)
+    it->Write(writer, elem);
 
   std::list<ConfigElementList*>::const_iterator itc = children.begin();
   for (; itc != children.end(); ++itc)

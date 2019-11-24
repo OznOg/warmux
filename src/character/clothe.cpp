@@ -66,10 +66,8 @@ Clothe::Clothe(Clothe *                         c,
                std::map<std::string, Member*> & members_lst):
   name(c->name)
 {
-  for (std::vector<Member*>::iterator it = c->layers.begin();
-      it != c->layers.end();
-      ++it) {
-    Member *member = members_lst.find((*it)->GetName())->second;
+  for (auto & layer : c->layers) {
+    Member *member = members_lst.find(layer->GetName())->second;
     layers.push_back(member);
     // Weapon member doesn't have a sprite, don't check it
     if (member->GetType()!="weapon") {

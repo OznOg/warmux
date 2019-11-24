@@ -52,21 +52,19 @@ static void UserCommand(const std::string& nick, UserCommandType type)
   std::string msg;
   std::list<DistantComputer*>& hosts = Network::GetInstance()->LockRemoteHosts();
 
-  for (std::list<DistantComputer*>::iterator cpu = hosts.begin();
-       cpu != hosts.end();
-       ++cpu) {
+  for (auto & host : hosts) {
 
-    const std::vector<std::string>& nicks = (*cpu)->GetNicknames();
+    const std::vector<std::string>& nicks = host->GetNicknames();
     if (std::find(nicks.begin(), nicks.end(), nick) != nicks.end()) {
       found = true;
 
       switch (type) {
       case USER_KICK:
-        (*cpu)->ForceDisconnection();
+        host->ForceDisconnection();
         msg = std::string(Format(_("%s kicked from game"), nick.c_str()));
         break;
       case USER_ADDRESS:
-        msg = std::string(Format(_("%s has address %s"), nick.c_str(), (*cpu)->GetAddress().c_str()));
+        msg = std::string(Format(_("%s has address %s"), nick.c_str(), host->GetAddress().c_str()));
         break;
       default:
         msg = std::string(_("Unknown command of type %i"), type);
@@ -97,10 +95,8 @@ static void ListPlayers()
 
   std::list<DistantComputer*>& hosts = Network::GetInstance()->LockRemoteHosts();
 
-  for (std::list<DistantComputer*>::iterator cpu = hosts.begin();
-      cpu != hosts.end();
-      ++cpu) {
-    AppWarmux::GetInstance()->ReceiveMsgCallback((*cpu)->ToString(), primary_red_color);
+  for (auto & host : hosts) {
+    AppWarmux::GetInstance()->ReceiveMsgCallback(host->ToString(), primary_red_color);
   }
 
   Network::GetInstance()->UnlockRemoteHosts();

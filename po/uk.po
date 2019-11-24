@@ -101,7 +101,7 @@ msgstr "Гравець %s з команди %s дуже сильно вдари�
 msgid "%s from %s team is dead because he is clumsy!"
 msgstr "Гравець %s з команди %s загинув, тому що він незграбний!"
 
-#: src/network/admin_commands.cpp:69
+#: src/network/admin_commands.cpp:67
 #, c-format
 msgid "%s has address %s"
 msgstr ""
@@ -130,23 +130,23 @@ msgid "%s is next to a mine!"
 msgstr "%s поруч з міною!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1031
+#: src/include/action_handler.cpp:1029
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "%i гравець приєднався"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1146
+#: src/include/action_handler.cpp:1144
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "%i гравець приєднався"
 
-#: src/network/admin_commands.cpp:66
+#: src/network/admin_commands.cpp:64
 #, c-format
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:486
+#: src/include/action_handler.cpp:484
 #, c-format
 msgid "%s needs a pause."
 msgstr "%s потребує паузи."
@@ -311,7 +311,7 @@ msgstr[0] "Команда %s виграла %u футбольну бомбу!"
 msgstr[1] "Команда %s виграла %u футбольні бомби!"
 msgstr[2] "Команда %s виграла %u футбольних бомб!"
 
-#: src/weapon/grapple.cpp:716
+#: src/weapon/grapple.cpp:714
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -485,7 +485,7 @@ msgstr[2] ""
 msgid "%s took a member of the %s team to the grave with him!"
 msgstr "%s потягнув члена команди %s за собою в могилу!"
 
-#: src/network/admin_commands.cpp:81
+#: src/network/admin_commands.cpp:79
 #, c-format
 msgid "%s: no such nickame"
 msgstr ""
@@ -817,7 +817,7 @@ msgid ""
 msgstr ""
 
 #. Client Mode
-#: src/menu/network_menu.cpp:174 src/network/network.cpp:489
+#: src/menu/network_menu.cpp:174 src/network/network.cpp:488
 msgid "Client mode"
 msgstr "Режим клієнта"
 
@@ -859,7 +859,7 @@ msgstr "Підключитись до гри"
 msgid "Connected !"
 msgstr "Підключений !"
 
-#: src/network/admin_commands.cpp:96
+#: src/network/admin_commands.cpp:94
 #, fuzzy
 msgid "Connected players: "
 msgstr "Підключений !"
@@ -992,7 +992,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Енергія"
 
-#: src/include/action_handler.cpp:282
+#: src/include/action_handler.cpp:280
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "Помилка ініціалізації мережі: Клієнт %s не згоден з Вами!! - %s"
@@ -1028,12 +1028,12 @@ msgstr ""
 "Помилка при видаленні файлу \"%s\": не вийшло видалити особисту команду."
 
 #. translators: %s:%s will expand to something like "example.org:9999"
-#: src/menu/network_connection_menu.cpp:552
+#: src/menu/network_connection_menu.cpp:551
 #, c-format
 msgid "Error: Unable to connect to %s:%s"
 msgstr "Помилка: не вийшло підключитись к %s: %s"
 
-#: src/menu/network_connection_menu.cpp:502
+#: src/menu/network_connection_menu.cpp:501
 msgid "Error: Unable to contact the index server to host a game"
 msgstr "Помилка: Не вийшло з'єднатися з сервером, щоб створити гру"
 
@@ -1043,11 +1043,11 @@ msgid ""
 msgstr ""
 "Помилка: Не вийшло з'єднатися з вказаним сервером, щоб знайти інтернет-гру"
 
-#: src/menu/network_connection_menu.cpp:530
+#: src/menu/network_connection_menu.cpp:529
 msgid "Error: Unable to start the server"
 msgstr "Помилка: Не вийшло запустити сервер"
 
-#: src/menu/network_connection_menu.cpp:523
+#: src/menu/network_connection_menu.cpp:522
 #, c-format
 msgid ""
 "Error: Your server is not reachable from the internet. Check your firewall "
@@ -1111,7 +1111,7 @@ msgstr "На весь екран?"
 msgid "Game"
 msgstr "Гра"
 
-#: src/include/action_handler.cpp:1003
+#: src/include/action_handler.cpp:1001
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1587,7 +1587,7 @@ msgstr ""
 msgid "No element <%s> found in the xml config file!"
 msgstr "Елемент <%s> не знайдений в файлі з налаштуваннями!"
 
-#: src/network/admin_commands.cpp:92
+#: src/network/admin_commands.cpp:90
 #, fuzzy
 msgid "No player connected"
 msgstr "%i гравець приєднався"
@@ -1900,7 +1900,7 @@ msgid "Server available on Internet"
 msgstr "Сервер доступний в інтернеті"
 
 #. Server Mode
-#: src/menu/network_menu.cpp:180 src/network/network.cpp:519
+#: src/menu/network_menu.cpp:180 src/network/network.cpp:518
 msgid "Server mode"
 msgstr "Режим сервера"
 
@@ -1987,7 +1987,7 @@ msgstr "В контейнері була міна-пастка!"
 msgid "Sorry, currently, no game is waiting for players"
 msgstr "Вибачте, на даний момент немає ігор, що очікують гравців"
 
-#: src/menu/network_connection_menu.cpp:472
+#: src/menu/network_connection_menu.cpp:471
 #, fuzzy, c-format
 msgid ""
 "Sorry, your version is not supported anymore. Supported versions are %s. You "
@@ -2296,11 +2296,11 @@ msgstr "Неможливо відкрити персональний катал�
 msgid "Unable to use this port!"
 msgstr "Не виходить використати цей порт!"
 
-#: src/network/admin_commands.cpp:122
+#: src/network/admin_commands.cpp:118
 msgid "Unknown command"
 msgstr "Невідома команда"
 
-#: src/network/admin_commands.cpp:72
+#: src/network/admin_commands.cpp:70
 #, c-format
 msgid "Unknown command of type %i"
 msgstr "Невідома команда %i"

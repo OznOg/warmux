@@ -97,7 +97,7 @@ msgstr "%s da equipa %s bateu no chão com muita força!"
 msgid "%s from %s team is dead because he is clumsy!"
 msgstr "%s da equipa %s morreu porque é um trapalhão!"
 
-#: src/network/admin_commands.cpp:69
+#: src/network/admin_commands.cpp:67
 #, fuzzy, c-format
 msgid "%s has address %s"
 msgstr "%s muda de alvo para %s"
@@ -125,23 +125,23 @@ msgid "%s is next to a mine!"
 msgstr "%s está perto de uma mina!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1031
+#: src/include/action_handler.cpp:1029
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "%i jogador ligado"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1146
+#: src/include/action_handler.cpp:1144
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "%i jogador ligado"
 
-#: src/network/admin_commands.cpp:66
+#: src/network/admin_commands.cpp:64
 #, c-format
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:486
+#: src/include/action_handler.cpp:484
 #, c-format
 msgid "%s needs a pause."
 msgstr ""
@@ -291,7 +291,7 @@ msgid_plural "%s team has won %u football bombs!"
 msgstr[0] "A equipa %s ganhou %u bomba futebol!"
 msgstr[1] "A equipa %s ganhou %u bombas futebol!"
 
-#: src/weapon/grapple.cpp:716
+#: src/weapon/grapple.cpp:714
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -444,7 +444,7 @@ msgstr[1] ""
 msgid "%s took a member of the %s team to the grave with him!"
 msgstr "%s levou um membro da equipa %s para a sepultura com ele!"
 
-#: src/network/admin_commands.cpp:81
+#: src/network/admin_commands.cpp:79
 #, c-format
 msgid "%s: no such nickame"
 msgstr ""
@@ -791,7 +791,7 @@ msgid ""
 msgstr ""
 
 #. Client Mode
-#: src/menu/network_menu.cpp:174 src/network/network.cpp:489
+#: src/menu/network_menu.cpp:174 src/network/network.cpp:488
 msgid "Client mode"
 msgstr "Modo cliente"
 
@@ -833,7 +833,7 @@ msgstr "Ligar ao jogo"
 msgid "Connected !"
 msgstr "Ligado !"
 
-#: src/network/admin_commands.cpp:96
+#: src/network/admin_commands.cpp:94
 msgid "Connected players: "
 msgstr "Jogadores ligados:"
 
@@ -965,7 +965,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Energia"
 
-#: src/include/action_handler.cpp:282
+#: src/include/action_handler.cpp:280
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "Erro ao iniciar rede: O cliente %s não concorda consigo!! - %s"
@@ -1002,12 +1002,12 @@ msgstr ""
 "Erro ao apagar o ficheiro \"%s\": incapaz de apagar a equipa personalizada."
 
 #. translators: %s:%s will expand to something like "example.org:9999"
-#: src/menu/network_connection_menu.cpp:552
+#: src/menu/network_connection_menu.cpp:551
 #, c-format
 msgid "Error: Unable to connect to %s:%s"
 msgstr "Erro: Incapaz de ligar a %s:%s"
 
-#: src/menu/network_connection_menu.cpp:502
+#: src/menu/network_connection_menu.cpp:501
 msgid "Error: Unable to contact the index server to host a game"
 msgstr "Erro: Incapaz de contactar o servidor de index para receber um jogo"
 
@@ -1018,11 +1018,11 @@ msgstr ""
 "Erro: Incapaz de contactar o servidor de index para procurar por um jogo na "
 "internet"
 
-#: src/menu/network_connection_menu.cpp:530
+#: src/menu/network_connection_menu.cpp:529
 msgid "Error: Unable to start the server"
 msgstr "Erro: Incapaz de iniciar o servidor"
 
-#: src/menu/network_connection_menu.cpp:523
+#: src/menu/network_connection_menu.cpp:522
 #, c-format
 msgid ""
 "Error: Your server is not reachable from the internet. Check your firewall "
@@ -1087,7 +1087,7 @@ msgstr "Ecrã inteiro?"
 msgid "Game"
 msgstr "Jogo"
 
-#: src/include/action_handler.cpp:1003
+#: src/include/action_handler.cpp:1001
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1575,7 +1575,7 @@ msgstr ""
 msgid "No element <%s> found in the xml config file!"
 msgstr "Nenhum elemento <%s> encontrado no ficheiro de configuração xml!"
 
-#: src/network/admin_commands.cpp:92
+#: src/network/admin_commands.cpp:90
 msgid "No player connected"
 msgstr "Nenhum jogador ligado"
 
@@ -1895,7 +1895,7 @@ msgid "Server available on Internet"
 msgstr "Servidor disponível na Internet"
 
 #. Server Mode
-#: src/menu/network_menu.cpp:180 src/network/network.cpp:519
+#: src/menu/network_menu.cpp:180 src/network/network.cpp:518
 msgid "Server mode"
 msgstr "Modo servidor"
 
@@ -1984,7 +1984,7 @@ msgstr "Alguém colocou uma armadilha no baú!"
 msgid "Sorry, currently, no game is waiting for players"
 msgstr "Desculpa, de momento, nenhum jogo está à espera de jogadores"
 
-#: src/menu/network_connection_menu.cpp:472
+#: src/menu/network_connection_menu.cpp:471
 #, fuzzy, c-format
 msgid ""
 "Sorry, your version is not supported anymore. Supported versions are %s. You "
@@ -2297,11 +2297,11 @@ msgstr "Incapaz de abrir o diretório dos mapas pessoais (%s)!"
 msgid "Unable to use this port!"
 msgstr "Incapaz de usar esta porta!"
 
-#: src/network/admin_commands.cpp:122
+#: src/network/admin_commands.cpp:118
 msgid "Unknown command"
 msgstr "Comando desconhecido"
 
-#: src/network/admin_commands.cpp:72
+#: src/network/admin_commands.cpp:70
 #, fuzzy, c-format
 msgid "Unknown command of type %i"
 msgstr "Comando desconhecido"

@@ -321,8 +321,8 @@ MapsList::MapsList()
 
 MapsList::~MapsList()
 {
-  for (uint i=0; i < lst.size(); ++i)
-    delete lst[i];
+  for (auto & i : lst)
+    delete i;
 }
 
 void MapsList::LoadOneMap(const std::string &dir, const std::string &map_name)
@@ -407,8 +407,8 @@ std::vector<std::string> MapsList::GetAvailableMaps() const
 {
   std::vector<std::string> list;
   MSG_DEBUG("map.list", "Converting available maps\n");
-  for (uint i=0; i<lst.size(); ++i)
-    list.push_back(lst[i]->GetRawName());
+  for (auto i : lst)
+    list.push_back(i->GetRawName());
 
   return list;
 }

@@ -323,10 +323,8 @@ void WeaponsMenu::RefreshWeaponList()
   tools_menu->ClearItem(false);
   // Reinserting weapon
   WeaponsList * weapons_list = Game::GetInstance()->GetWeaponsList();
-  for (WeaponsList::iterator it=weapons_list->GetList().begin();
-       it != weapons_list->GetList().end();
-       ++it)
-    AddWeapon(*it);
+  for (auto it : weapons_list->GetList())
+    AddWeapon(it);
 }
 
 AffineTransform2D WeaponsMenu::ComputeToolTransformation()

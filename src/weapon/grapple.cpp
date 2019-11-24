@@ -703,11 +703,9 @@ void Grapple::PrintDebugRope()
 {
   std::cout << ActiveCharacter().GetX() << " " << ActiveCharacter().GetY() << " " << ActiveCharacter().GetRopeAngle() << std::endl;
 
-  for (std::list<rope_node_t>::iterator it = rope_nodes.begin();
-       it != rope_nodes.end();
-       it++) {
+  for (auto & rope_node : rope_nodes) {
 
-    std::cout << it->pos.x << " " << it->pos.y << " " << it->angle << std::endl;
+    std::cout << rope_node.pos.x << " " << rope_node.pos.y << " " << rope_node.angle << std::endl;
   }
 }
 

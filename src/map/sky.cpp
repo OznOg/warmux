@@ -34,8 +34,8 @@ void Sky::Init()
   const std::vector<Surface>& sky_layer = normal->ReadSkyLayer();
 
   if (0 < sky_layer.size()) {
-    for (uint i = 0; i < sky_layer.size(); i++) {
-      images.push_back(&(sky_layer[i]));
+    for (const auto & i : sky_layer) {
+      images.push_back(&i);
     }
   } else {
     images.push_back(&normal->ReadImgSky());
@@ -71,8 +71,8 @@ void Sky::RedrawParticleList(const std::list<Rectanglei>& list) const
   for (uint layer = 0; layer < images.size(); ++layer)
     sky_pos.push_back(GetSkyPos(layer));
 
-  for (std::list<Rectanglei>::const_iterator it = list.begin() ; it != list.end(); ++it)
-    RedrawParticle(*it, sky_pos);
+  for (const auto & it : list)
+    RedrawParticle(it, sky_pos);
 }
 
 void Sky::RedrawParticle(const Rectanglei& particle, const std::vector<Point2i>& sky_pos) const

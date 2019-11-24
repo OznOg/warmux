@@ -70,10 +70,10 @@ GameModeEditor::GameModeEditor(const Point2i& size, float zoom, bool _draw_borde
   vbox->AddWidget(new Label(_("Game mode"), fsmall*10, fmedium, Font::FONT_BOLD, c_red));
   opt_game_mode = new ItemBox(Point2i(fsmall*10, 4*fsmall + 18));
   game_modes = GameMode::ListGameModes();
-  for (uint i=0; i<game_modes.size(); i++) {
-    if (game_modes[i].first != "skin_viewer")
-      opt_game_mode->AddLabelItem(game_modes[i].first==selected_gamemode,
-                                  game_modes[i].second, &game_modes[i].first, fsmall);
+  for (auto & game_mode : game_modes) {
+    if (game_mode.first != "skin_viewer")
+      opt_game_mode->AddLabelItem(game_mode.first==selected_gamemode,
+                                  game_mode.second, &game_mode.first, fsmall);
   }
   vbox->AddWidget(opt_game_mode);
 
@@ -221,50 +221,50 @@ public:
 
     // List config values and add the important ones
     EmptyWeaponConfig* cfg = w->GetConfig();
-    for (EmptyWeaponConfig::iterator it = cfg->begin(); it != cfg->end(); ++it) {
-      if ((*it)->m_important) {
-        switch ((*it)->m_type) {
+    for (auto & it : *cfg) {
+      if (it->m_important) {
+        switch (it->m_type) {
         case ConfigElement::TYPE_DOUBLE:
           {
-            DoubleConfigElement* element = static_cast<DoubleConfigElement*>(*it);
+            DoubleConfigElement* element = static_cast<DoubleConfigElement*>(it);
             int val = *element->m_val;
             SpinButtonWithPicture *tmp =
               new SpinButtonWithPicture(element->m_name, "menu/ico_help", Point2i(100, 100),
                                         val, FindStep(val), element->m_min, (val) ? 2*val : 10);
             AddWidget(tmp);
-            values.push_back(std::make_pair(tmp, *it));
+            values.push_back(std::make_pair(tmp, it));
             break;
           }
         case ConfigElement::TYPE_INT:
           {
-            IntConfigElement* element = static_cast<IntConfigElement*>(*it);
+            IntConfigElement* element = static_cast<IntConfigElement*>(it);
             int val = *element->m_val;
             SpinButtonWithPicture *tmp =
               new SpinButtonWithPicture(element->m_name, "menu/ico_help", Point2i(100, 100),
                                         val, FindStep(val), element->m_min, (val) ? 2*val : 10);
             AddWidget(tmp);
-            values.push_back(std::make_pair(tmp, *it));
+            values.push_back(std::make_pair(tmp, it));
             break;
           }
         case ConfigElement::TYPE_UINT:
           {
-            UintConfigElement* element = static_cast<UintConfigElement*>(*it);
+            UintConfigElement* element = static_cast<UintConfigElement*>(it);
             int val = *element->m_val;
             SpinButtonWithPicture *tmp =
               new SpinButtonWithPicture(element->m_name, "menu/ico_help", Point2i(100, 100),
                                         val, FindStep(val), element->m_min, (val) ? 2*val : 10);
             AddWidget(tmp);
-            values.push_back(std::make_pair(tmp, *it));
+            values.push_back(std::make_pair(tmp, it));
             break;
           }
         case ConfigElement::TYPE_BOOL:
           {
-            BoolConfigElement* element = static_cast<BoolConfigElement*>(*it);
+            BoolConfigElement* element = static_cast<BoolConfigElement*>(it);
             SpinButtonWithPicture *tmp =
               new SpinButtonWithPicture(element->m_name, "menu/ico_help",
                                         Point2i(100, 100), (int)*element->m_val, 1, 0, 1);
             AddWidget(tmp);
-            values.push_back(std::make_pair(tmp, *it));
+            values.push_back(std::make_pair(tmp, it));
             break;
           }
         }
@@ -352,8 +352,8 @@ void GameModeEditor::LoadGameMode(bool force)
   opt_weapons_cfg->Clear();
   weapon_cfg_list.clear(); // Widgets already deleted above
   const WeaponsList::weapons_list_type& wlist = game_mode->GetWeaponsList()->GetList();
-  for (WeaponsList::iterator it = wlist.begin(); it != wlist.end(); ++it) {
-    WeaponCfgBox *w = new WeaponCfgBox(*it, 100);
+  for (auto it : wlist) {
+    WeaponCfgBox *w = new WeaponCfgBox(it, 100);
     opt_weapons_cfg->AddWidget(w);
     weapon_cfg_list.push_back(w);
   }

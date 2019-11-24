@@ -91,7 +91,7 @@ msgstr ""
 msgid "%s from %s team is dead because he is clumsy!"
 msgstr "%s کشته شد، بخاطر اینکه او یک احمق بود!"
 
-#: src/network/admin_commands.cpp:69
+#: src/network/admin_commands.cpp:67
 #, c-format
 msgid "%s has address %s"
 msgstr ""
@@ -119,23 +119,23 @@ msgid "%s is next to a mine!"
 msgstr "%s نزدیک یک مین است!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1031
+#: src/include/action_handler.cpp:1029
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "بازیکن %i وصل شد"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1146
+#: src/include/action_handler.cpp:1144
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "بازیکن %i وصل شد"
 
-#: src/network/admin_commands.cpp:66
+#: src/network/admin_commands.cpp:64
 #, c-format
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:486
+#: src/include/action_handler.cpp:484
 #, c-format
 msgid "%s needs a pause."
 msgstr ""
@@ -259,7 +259,7 @@ msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
 msgstr[0] "تیم %s برنده‌ی %u بمب تخریبی شد!"
 
-#: src/weapon/grapple.cpp:716
+#: src/weapon/grapple.cpp:714
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -389,7 +389,7 @@ msgstr[0] ""
 msgid "%s took a member of the %s team to the grave with him!"
 msgstr ""
 
-#: src/network/admin_commands.cpp:81
+#: src/network/admin_commands.cpp:79
 #, c-format
 msgid "%s: no such nickame"
 msgstr ""
@@ -737,7 +737,7 @@ msgid ""
 msgstr ""
 
 #. Client Mode
-#: src/menu/network_menu.cpp:174 src/network/network.cpp:489
+#: src/menu/network_menu.cpp:174 src/network/network.cpp:488
 msgid "Client mode"
 msgstr "حالت کارگیر (کلاینت)"
 
@@ -781,7 +781,7 @@ msgstr "اتصال به بازی"
 msgid "Connected !"
 msgstr "اتصال برقرار شد!"
 
-#: src/network/admin_commands.cpp:96
+#: src/network/admin_commands.cpp:94
 #, fuzzy
 msgid "Connected players: "
 msgstr "اتصال برقرار شد!"
@@ -913,7 +913,7 @@ msgstr ""
 msgid "Energy"
 msgstr ""
 
-#: src/include/action_handler.cpp:282
+#: src/include/action_handler.cpp:280
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr ""
@@ -946,12 +946,12 @@ msgid "Error while deleting the file \"%s\". Unable to delete the custom team."
 msgstr "مشکل در ساخت پوشه‌ی جدید \"%s\": ناتوان در ذخیره‌ی پرونده‌ی تنظیمات."
 
 #. translators: %s:%s will expand to something like "example.org:9999"
-#: src/menu/network_connection_menu.cpp:552
+#: src/menu/network_connection_menu.cpp:551
 #, c-format
 msgid "Error: Unable to connect to %s:%s"
 msgstr "مشکل: ناتوان در اتصال به %s:%s"
 
-#: src/menu/network_connection_menu.cpp:502
+#: src/menu/network_connection_menu.cpp:501
 #, fuzzy
 msgid "Error: Unable to contact the index server to host a game"
 msgstr "مشکل: ناتوان در ارتباط با کارگزار برای میزبانی یک بازی"
@@ -962,12 +962,12 @@ msgid ""
 "Error: Unable to contact the index server to search for an internet game"
 msgstr "مشکل: ناتوان در ارتباط با کارگزار برای جستجوی یک بازی اینترنتی"
 
-#: src/menu/network_connection_menu.cpp:530
+#: src/menu/network_connection_menu.cpp:529
 #, fuzzy
 msgid "Error: Unable to start the server"
 msgstr "مشکل: ناتوان در راه‌اندازی یک کارگزار"
 
-#: src/menu/network_connection_menu.cpp:523
+#: src/menu/network_connection_menu.cpp:522
 #, c-format
 msgid ""
 "Error: Your server is not reachable from the internet. Check your firewall "
@@ -1027,7 +1027,7 @@ msgstr "تمام صفحه؟"
 msgid "Game"
 msgstr ""
 
-#: src/include/action_handler.cpp:1003
+#: src/include/action_handler.cpp:1001
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1516,7 +1516,7 @@ msgstr ""
 msgid "No element <%s> found in the xml config file!"
 msgstr "هیچ عنصر <%s> در پرونده‌ی تنظیم xml پیدا نشد!"
 
-#: src/network/admin_commands.cpp:92
+#: src/network/admin_commands.cpp:90
 #, fuzzy
 msgid "No player connected"
 msgstr "بازیکن %i وصل شد"
@@ -1838,7 +1838,7 @@ msgid "Server available on Internet"
 msgstr "کارگزار حاضر در اینترنت"
 
 #. Server Mode
-#: src/menu/network_menu.cpp:180 src/network/network.cpp:519
+#: src/menu/network_menu.cpp:180 src/network/network.cpp:518
 msgid "Server mode"
 msgstr "حالت کارگزار"
 
@@ -1927,7 +1927,7 @@ msgstr ""
 msgid "Sorry, currently, no game is waiting for players"
 msgstr "شرمنده، در حال حاضر، هیچ بازی منتظر بازیکنان دیگر نیست."
 
-#: src/menu/network_connection_menu.cpp:472
+#: src/menu/network_connection_menu.cpp:471
 #, c-format
 msgid ""
 "Sorry, your version is not supported anymore. Supported versions are %s. You "
@@ -2243,11 +2243,11 @@ msgstr "ناتوان در بازکردن پرونده‌ی نقشه‌های ش�
 msgid "Unable to use this port!"
 msgstr "ناتوان در استفاده از این پورت!"
 
-#: src/network/admin_commands.cpp:122
+#: src/network/admin_commands.cpp:118
 msgid "Unknown command"
 msgstr ""
 
-#: src/network/admin_commands.cpp:72
+#: src/network/admin_commands.cpp:70
 #, c-format
 msgid "Unknown command of type %i"
 msgstr ""

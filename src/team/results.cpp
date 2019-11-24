@@ -179,10 +179,8 @@ std::vector<TeamResults*>* TeamResults::createAllResults(void)
 void TeamResults::deleteAllResults(std::vector<TeamResults*>* results_list)
 {
   // Build results list
-  for (std::vector<TeamResults*>::iterator it = results_list->begin();
-       it != results_list->end();
-       ++it)
-    delete *it;
+  for (auto & it : *results_list)
+    delete it;
 
   // Add overall results to list
   delete results_list;

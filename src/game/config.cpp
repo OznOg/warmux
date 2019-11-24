@@ -431,12 +431,12 @@ void Config::LoadDefaultValue()
   node = GetResourceManager().GetElement(res, "section", "default_language_fonts");
   if (node) {
     xmlNodeArray list = XmlReader::GetNamedChildren(node, "language");
-    for (xmlNodeArray::iterator it = list.begin(); it != list.end(); ++it) {
+    for (auto & it : list) {
       std::string lang, font;
-      if (res->doc->ReadStringAttr(*it, "name", lang) &&
-         res->doc->ReadStringAttr(*it, "file", font)) {
+      if (res->doc->ReadStringAttr(it, "name", lang) &&
+         res->doc->ReadStringAttr(it, "file", font)) {
         bool rel = false;
-        res->doc->ReadBoolAttr(*it, "relative", rel);
+        res->doc->ReadBoolAttr(it, "relative", rel);
         fonts[lang] = (rel) ? font_dir + font : font;
         //std::cout << "Language " << lang << ": " << fonts[lang] << std::endl;
       }

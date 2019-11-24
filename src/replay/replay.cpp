@@ -287,9 +287,9 @@ ok:
   teams_list.playing_list.clear();
 
   // Teams
-  for (uint i = 0; i<info->GetTeams().size(); i++) {
+  for (const auto & i : info->GetTeams()) {
     ConfigTeam team_cfg;
-    teams_list.AddTeam(info->GetTeams()[i], true);
+    teams_list.AddTeam(i, true);
   }
 
   // Game mode

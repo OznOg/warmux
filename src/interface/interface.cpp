@@ -522,19 +522,17 @@ void Interface::DrawMapPreview()
   FOR_EACH_TEAM(team) {
     const Surface & icon = (*team)->GetMiniFlag();
 
-    for (Team::iterator character = (*(team))->begin(), end_character = (*(team))->end();
-         character != end_character;
-         ++character) {
+    for (auto & character : *(*(team))) {
 
-      if (character->IsDead()) {
+      if (character.IsDead()) {
         continue;
       }
 
-      coord = ground.PreviewCoordinates(character->GetPosition()) + offset;
+      coord = ground.PreviewCoordinates(character.GetPosition()) + offset;
       Point2i icoord = coord - (icon.GetSize()>>1);
       window.Blit(icon, icoord);
 
-      if (character->IsActiveCharacter()) {
+      if (character.IsActiveCharacter()) {
         uint radius = (icon.GetSize().x < icon.GetSize().y) ? icon.GetSize().y : icon.GetSize().x;
         radius = (radius/2) + 1;
         window.CircleColor(coord.x, coord.y, radius, m_playing_character_preview_color);

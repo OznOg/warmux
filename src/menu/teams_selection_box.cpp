@@ -53,8 +53,8 @@ TeamScrollBox::~TeamScrollBox()
   box->Empty();
 
   // Destroy widgets
-  for (uint i=0; i<teams.size() ; i++)
-    delete (teams[i]);
+  for (auto & team : teams)
+    delete team;
 
   teams.clear();
 }
@@ -332,16 +332,15 @@ void LocalTeamsSelectionBox::SetNbTeams(uint nb_teams)
 void LocalTeamsSelectionBox::ValidTeamsSelection()
 {
   uint nb_teams=0;
-  for (uint i=0; i < teams_selections.size(); i++) {
-    if (teams_selections[i]->GetTeam())
+  for (auto & teams_selection : teams_selections) {
+    if (teams_selection->GetTeam())
       nb_teams++;
   }
 
   if (nb_teams >= 2) {
     std::list<uint> selection;
 
-    for (uint i=0; i < teams_selections.size(); i++) {
-      TeamBox *at = teams_selections[i];
+    for (auto at : teams_selections) {
       if (at->GetTeam()) {
 
         int index = -1;

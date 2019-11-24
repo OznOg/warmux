@@ -88,7 +88,7 @@ msgstr "%s a(z) %s csapatból túl keményen érkezett a földre!"
 msgid "%s from %s team is dead because he is clumsy!"
 msgstr "%s a(z) %s csapatból meghalt, mert egy kicsit ügyefogyott volt!"
 
-#: src/network/admin_commands.cpp:69
+#: src/network/admin_commands.cpp:67
 #, c-format
 msgid "%s has address %s"
 msgstr ""
@@ -116,23 +116,23 @@ msgid "%s is next to a mine!"
 msgstr "%s egy taposóakna mellett mászkál!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1031
+#: src/include/action_handler.cpp:1029
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "%i játékos lépett be"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1146
+#: src/include/action_handler.cpp:1144
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "%i játékos lépett be"
 
-#: src/network/admin_commands.cpp:66
+#: src/network/admin_commands.cpp:64
 #, c-format
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:486
+#: src/include/action_handler.cpp:484
 #, c-format
 msgid "%s needs a pause."
 msgstr ""
@@ -277,7 +277,7 @@ msgid_plural "%s team has won %u football bombs!"
 msgstr[0] "%s csapat %u rögbibombát kapott!"
 msgstr[1] "%s csapat %u rögbibombát kapott!"
 
-#: src/weapon/grapple.cpp:716
+#: src/weapon/grapple.cpp:714
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -422,7 +422,7 @@ msgstr[1] "%s csapat %u pingvinkilövõt kapott! Sosem láttál repülõ pingvint?"
 msgid "%s took a member of the %s team to the grave with him!"
 msgstr "%s sírba vitte magával a(z) %s csapat tagját!"
 
-#: src/network/admin_commands.cpp:81
+#: src/network/admin_commands.cpp:79
 #, c-format
 msgid "%s: no such nickame"
 msgstr ""
@@ -774,7 +774,7 @@ msgid ""
 msgstr ""
 
 #. Client Mode
-#: src/menu/network_menu.cpp:174 src/network/network.cpp:489
+#: src/menu/network_menu.cpp:174 src/network/network.cpp:488
 msgid "Client mode"
 msgstr "Kliens mód"
 
@@ -816,7 +816,7 @@ msgstr "Kapcsolódás játékhoz"
 msgid "Connected !"
 msgstr "Kapcsolódva !"
 
-#: src/network/admin_commands.cpp:96
+#: src/network/admin_commands.cpp:94
 #, fuzzy
 msgid "Connected players: "
 msgstr "VÄ‚Â„Ã‚Â‚Ä‚Â‚Ã‚Â„Ã„Â‚Ã‚Â‚Ä‚Â‚Ã‚Â‚Ã„Â‚Ã‚Â„Ã„Å¡Ã„Â„Ã„Â‚Ã‚Â‚Ä‚Â‚Ã‚Â ge!"
@@ -949,7 +949,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Energia"
 
-#: src/include/action_handler.cpp:282
+#: src/include/action_handler.cpp:280
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "Hiba a hálózat inicializálásakor: %s kliens nem ért veled egyet!! - %s"
@@ -987,12 +987,12 @@ msgstr ""
 "Hiba a(z) \"%s\" fájl törlése közben: nem lehet az egyéni csapatot törölni."
 
 #. translators: %s:%s will expand to something like "example.org:9999"
-#: src/menu/network_connection_menu.cpp:552
+#: src/menu/network_connection_menu.cpp:551
 #, c-format
 msgid "Error: Unable to connect to %s:%s"
 msgstr "Hiba: Nem sikerült csatlakozni (%s:%s)"
 
-#: src/menu/network_connection_menu.cpp:502
+#: src/menu/network_connection_menu.cpp:501
 msgid "Error: Unable to contact the index server to host a game"
 msgstr ""
 "Hiba: Nem sikerült kapcsolódni a központi szerverhez a játék létrehozásához"
@@ -1003,12 +1003,12 @@ msgid ""
 msgstr ""
 "Hiba: Nem sikerült a központi szerverhez kapcsolódni játékok kereséséhez"
 
-#: src/menu/network_connection_menu.cpp:530
+#: src/menu/network_connection_menu.cpp:529
 #, fuzzy
 msgid "Error: Unable to start the server"
 msgstr "Hiba: Nem sikerült a szerver indítása"
 
-#: src/menu/network_connection_menu.cpp:523
+#: src/menu/network_connection_menu.cpp:522
 #, fuzzy, c-format
 msgid ""
 "Error: Your server is not reachable from the internet. Check your firewall "
@@ -1072,7 +1072,7 @@ msgstr "Teljesképernyõs"
 msgid "Game"
 msgstr "Játék beállítások"
 
-#: src/include/action_handler.cpp:1003
+#: src/include/action_handler.cpp:1001
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1561,7 +1561,7 @@ msgstr ""
 msgid "No element <%s> found in the xml config file!"
 msgstr "A(z) <%s> elem nem található a konfigurációs XML fájlban!"
 
-#: src/network/admin_commands.cpp:92
+#: src/network/admin_commands.cpp:90
 #, fuzzy
 msgid "No player connected"
 msgstr "%i játékos lépett be"
@@ -1884,7 +1884,7 @@ msgid "Server available on Internet"
 msgstr "Interneten elérhetõ szerver"
 
 #. Server Mode
-#: src/menu/network_menu.cpp:180 src/network/network.cpp:519
+#: src/menu/network_menu.cpp:180 src/network/network.cpp:518
 msgid "Server mode"
 msgstr "Szerver mód"
 
@@ -1974,7 +1974,7 @@ msgstr "Valaki bombát rejtett a ládába!"
 msgid "Sorry, currently, no game is waiting for players"
 msgstr "Sajnálom, most egy játék sem vár játékosokat!"
 
-#: src/menu/network_connection_menu.cpp:472
+#: src/menu/network_connection_menu.cpp:471
 #, fuzzy, c-format
 msgid ""
 "Sorry, your version is not supported anymore. Supported versions are %s. You "
@@ -2296,11 +2296,11 @@ msgstr "Nem sikerült megnyitni a személyes pályák könyvtárát (%s)!"
 msgid "Unable to use this port!"
 msgstr "Nem sikerült megnyitni a portot!"
 
-#: src/network/admin_commands.cpp:122
+#: src/network/admin_commands.cpp:118
 msgid "Unknown command"
 msgstr "Ismeretlen parancs"
 
-#: src/network/admin_commands.cpp:72
+#: src/network/admin_commands.cpp:70
 #, fuzzy, c-format
 msgid "Unknown command of type %i"
 msgstr "Ismeretlen parancs"

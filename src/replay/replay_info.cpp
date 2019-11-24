@@ -165,10 +165,10 @@ ReplayInfo *ReplayInfo::ReplayInfoFromCurrent(uint32_t duration, const char* com
 
   //Teams
   const std::vector<Team*>& plist = GetTeamsList().playing_list;
-  for (uint i=0; i<plist.size(); i++) {
-    ConfigTeam team_cfg = { plist[i]->GetId(), plist[i]->GetPlayerName(),
-                            plist[i]->GetNbCharacters(), plist[i]->GetAIName(),
-                            plist[i]->GetGroup() };
+  for (auto i : plist) {
+    ConfigTeam team_cfg = { i->GetId(), i->GetPlayerName(),
+                            i->GetNbCharacters(), i->GetAIName(),
+                            i->GetGroup() };
     info->teams.push_back(team_cfg);
   }
 
@@ -203,12 +203,12 @@ ReplayInfo::DumpToFile(FILE *out)
   fprintf(out, "%s\n", map_id.c_str());     // Mad ID
 
   Write32(out, teams.size());
-  for (uint i=0; i<teams.size(); i++) {     // Team No.i
-    fprintf(out, "%s\n", teams[i].id.c_str());
-    fprintf(out, "%s\n", teams[i].player_name.c_str());
-    fputc(teams[i].nb_characters, out);
-    fprintf(out, "%s\n", teams[i].ai.c_str());
-    fputc(teams[i].group, out);
+  for (auto & team : teams) {     // Team No.i
+    fprintf(out, "%s\n", team.id.c_str());
+    fprintf(out, "%s\n", team.player_name.c_str());
+    fputc(team.nb_characters, out);
+    fprintf(out, "%s\n", team.ai.c_str());
+    fputc(team.group, out);
   }
 
   //Game mode

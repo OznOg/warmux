@@ -189,9 +189,9 @@ bool CustomTeam::SaveXml()
   XmlWriter doc;
   std::string unix_name = name;
 
-  for (uint i = 0; i < unix_name.size(); i++) {
-    if (unix_name[i] == ' ') {
-      unix_name[i] = '_';
+  for (char & i : unix_name) {
+    if (i == ' ') {
+      i = '_';
     }
   }
 
@@ -202,9 +202,9 @@ bool CustomTeam::SaveXml()
 
   xmlNode* team_node = xmlAddChild(root, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"team"));
 
-  for (uint i = 0 ; i < characters_name_list.size(); i++) {
+  for (const auto & i : characters_name_list) {
     xmlNode* character = xmlAddChild(team_node, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"character"));
-    doc.WriteElement(character, "name", characters_name_list[i]);
+    doc.WriteElement(character, "name", i);
   }
 
   return doc.Save();

@@ -92,7 +92,7 @@ msgstr "%s (%s 隊伍) 重重摔到地球表面！"
 msgid "%s from %s team is dead because he is clumsy!"
 msgstr "%s (%s 隊伍) 死亡，因為他太蠢了！"
 
-#: src/network/admin_commands.cpp:69
+#: src/network/admin_commands.cpp:67
 #, c-format
 msgid "%s has address %s"
 msgstr "%s 的位址 %s"
@@ -120,23 +120,23 @@ msgid "%s is next to a mine!"
 msgstr "地雷在 %s 的腳下！"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1031
+#: src/include/action_handler.cpp:1029
 #, c-format
 msgid "%s just connected"
 msgstr "%s 剛剛上線"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1146
+#: src/include/action_handler.cpp:1144
 #, c-format
 msgid "%s just disconnected"
 msgstr "%s 剛剛下線"
 
-#: src/network/admin_commands.cpp:66
+#: src/network/admin_commands.cpp:64
 #, c-format
 msgid "%s kicked from game"
 msgstr "%s 被踢出遊戲"
 
-#: src/include/action_handler.cpp:486
+#: src/include/action_handler.cpp:484
 #, c-format
 msgid "%s needs a pause."
 msgstr "%s 需要暫停。"
@@ -257,7 +257,7 @@ msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
 msgstr[0] "%s 隊得到了 %u 顆橄欖球炸彈！"
 
-#: src/weapon/grapple.cpp:716
+#: src/weapon/grapple.cpp:714
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -380,7 +380,7 @@ msgstr[0] "%s 隊得到了 %u 把 Tux 企鵝發射器！有沒有看過會飛的
 msgid "%s took a member of the %s team to the grave with him!"
 msgstr "%s 把 %s 隊伍的一位成員拖去陪葬了！"
 
-#: src/network/admin_commands.cpp:81
+#: src/network/admin_commands.cpp:79
 #, c-format
 msgid "%s: no such nickame"
 msgstr "%s：沒有這個暱稱"
@@ -724,7 +724,7 @@ msgstr ""
 "無法重複選擇同一種隊伍。"
 
 #. Client Mode
-#: src/menu/network_menu.cpp:174 src/network/network.cpp:489
+#: src/menu/network_menu.cpp:174 src/network/network.cpp:488
 msgid "Client mode"
 msgstr "客人模式"
 
@@ -766,7 +766,7 @@ msgstr "連上遊戲"
 msgid "Connected !"
 msgstr "已連接！"
 
-#: src/network/admin_commands.cpp:96
+#: src/network/admin_commands.cpp:94
 msgid "Connected players: "
 msgstr "已連接的玩家："
 
@@ -905,7 +905,7 @@ msgstr ""
 msgid "Energy"
 msgstr "生命值"
 
-#: src/include/action_handler.cpp:282
+#: src/include/action_handler.cpp:280
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "初始化網路時發生錯誤：客戶端 %s 並不同意你！！ - %s"
@@ -937,12 +937,12 @@ msgid "Error while deleting the file \"%s\". Unable to delete the custom team."
 msgstr "刪除檔案「%s」時發生錯誤。無法刪除自訂隊伍。"
 
 #. translators: %s:%s will expand to something like "example.org:9999"
-#: src/menu/network_connection_menu.cpp:552
+#: src/menu/network_connection_menu.cpp:551
 #, c-format
 msgid "Error: Unable to connect to %s:%s"
 msgstr "錯誤：無法連接至 %s:%s"
 
-#: src/menu/network_connection_menu.cpp:502
+#: src/menu/network_connection_menu.cpp:501
 msgid "Error: Unable to contact the index server to host a game"
 msgstr "錯誤：無法連接至索引伺服器來主辦遊戲"
 
@@ -951,11 +951,11 @@ msgid ""
 "Error: Unable to contact the index server to search for an internet game"
 msgstr "錯誤：無法連接至索引伺服器來搜索線上遊戲"
 
-#: src/menu/network_connection_menu.cpp:530
+#: src/menu/network_connection_menu.cpp:529
 msgid "Error: Unable to start the server"
 msgstr "錯誤：無法啟動伺服器"
 
-#: src/menu/network_connection_menu.cpp:523
+#: src/menu/network_connection_menu.cpp:522
 #, c-format
 msgid ""
 "Error: Your server is not reachable from the internet. Check your firewall "
@@ -1017,7 +1017,7 @@ msgstr "全螢幕？"
 msgid "Game"
 msgstr "遊戲"
 
-#: src/include/action_handler.cpp:1003
+#: src/include/action_handler.cpp:1001
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1497,7 +1497,7 @@ msgstr "註解"
 msgid "No element <%s> found in the xml config file!"
 msgstr "在 XML 設定檔內未發現元素 <%s>！"
 
-#: src/network/admin_commands.cpp:92
+#: src/network/admin_commands.cpp:90
 msgid "No player connected"
 msgstr "沒有玩家連接"
 
@@ -1841,7 +1841,7 @@ msgid "Server available on Internet"
 msgstr "網際網路上有可用的伺服器"
 
 #. Server Mode
-#: src/menu/network_menu.cpp:180 src/network/network.cpp:519
+#: src/menu/network_menu.cpp:180 src/network/network.cpp:518
 msgid "Server mode"
 msgstr "伺服器模式"
 
@@ -1938,7 +1938,7 @@ msgstr "有人在箱子裡面放了陷阱！"
 msgid "Sorry, currently, no game is waiting for players"
 msgstr "抱歉，目前沒有任何遊戲有空缺"
 
-#: src/menu/network_connection_menu.cpp:472
+#: src/menu/network_connection_menu.cpp:471
 #, fuzzy, c-format
 msgid ""
 "Sorry, your version is not supported anymore. Supported versions are %s. You "
@@ -2252,11 +2252,11 @@ msgstr "無法開啟個人地圖目錄 (%s)！"
 msgid "Unable to use this port!"
 msgstr "無法使用該連接埠！"
 
-#: src/network/admin_commands.cpp:122
+#: src/network/admin_commands.cpp:118
 msgid "Unknown command"
 msgstr "未知的指令"
 
-#: src/network/admin_commands.cpp:72
+#: src/network/admin_commands.cpp:70
 #, c-format
 msgid "Unknown command of type %i"
 msgstr "未知的指令類型 %i"

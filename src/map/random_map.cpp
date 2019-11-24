@@ -44,8 +44,8 @@ Surface * RandomElementList::GetRandomElement()
 
 RandomElementList::~RandomElementList()
 {
-  for (iterator elt = begin(); elt != end(); elt++) {
-    delete((*elt));
+  for (auto & elt : *this) {
+    delete(elt);
   }
 }
 
@@ -77,9 +77,9 @@ RandomMap::RandomMap(Profile *profile, const int width, const int height)
 
 void RandomMap::DrawElement()
 {
-  for (std::vector<MapElement>::iterator elt = element_list.begin(); elt != element_list.end(); elt++) {
-    Surface & tmp = elt->GetElement();
-    result.MergeSurface(tmp, elt->GetPosition() - Point2i((int)(tmp.GetWidth() / 2.0), tmp.GetHeight()));
+  for (auto & elt : element_list) {
+    Surface & tmp = elt.GetElement();
+    result.MergeSurface(tmp, elt.GetPosition() - Point2i((int)(tmp.GetWidth() / 2.0), tmp.GetHeight()));
   }
 }
 

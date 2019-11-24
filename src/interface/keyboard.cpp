@@ -113,16 +113,16 @@ void Keyboard::SetConfig(const xmlNode *node)
   ClearKeyBindings();
 
   xmlNodeArray list = XmlReader::GetNamedChildren(node, "bind");
-  for (xmlNodeArray::iterator it = list.begin(); it != list.end(); ++it) {
+  for (auto & it : list) {
     std::string key_name, action_name;
     bool shift = false, control = false, alt = false;
 
     //Extract XML config
-    XmlReader::ReadStringAttr(*it, "key", key_name);
-    XmlReader::ReadStringAttr(*it, "action", action_name);
-    XmlReader::ReadBoolAttr(*it, "shift", shift);
-    XmlReader::ReadBoolAttr(*it, "control", control);
-    XmlReader::ReadBoolAttr(*it, "alt", alt);
+    XmlReader::ReadStringAttr(it, "key", key_name);
+    XmlReader::ReadStringAttr(it, "action", action_name);
+    XmlReader::ReadBoolAttr(it, "shift", shift);
+    XmlReader::ReadBoolAttr(it, "control", control);
+    XmlReader::ReadBoolAttr(it, "alt", alt);
 
     //Generate key and action value
     int key;
@@ -158,7 +158,7 @@ void Keyboard::SaveConfig(xmlNode *node) const
 
   for (it = layout.begin(); it != layout.end(); it++) {
     const std::vector<Key_t>& actions = it->second;
-    for (uint i = 0; i < actions.size(); i++) {
+    for (auto action : actions) {
       int key = it->first;
 
       if (key == SDLK_UNKNOWN)
@@ -184,7 +184,7 @@ void Keyboard::SaveConfig(xmlNode *node) const
       //Generate node
       xmlNode *bind = xmlAddChild(keyboard_node, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"bind"));
       xmlSetProp(bind, (const xmlChar*)"key", (const xmlChar*)GetKeyNameFromKey(key).c_str());
-      xmlSetProp(bind, (const xmlChar*)"action", (const xmlChar*)GetActionNameFromAction(actions.at(i)).c_str());
+      xmlSetProp(bind, (const xmlChar*)"action", (const xmlChar*)GetActionNameFromAction(action).c_str());
       if (shift) xmlSetProp(bind, (const xmlChar*)"shift", (const xmlChar*)"true");
       if (control) xmlSetProp(bind, (const xmlChar*)"control", (const xmlChar*)"true");
       if (alt) xmlSetProp(bind, (const xmlChar*)"alt", (const xmlChar*)"true");
@@ -295,13 +295,13 @@ bool Keyboard::HandleKeyEvent(const SDL_Event& evnt)
   if (IsModifier(basic_key_code)) {
     int modifier_changed = modifier_only_bits ^ GetModifierBits();
     if (event_type == KEY_RELEASED) {
-      for (std::set<SDLKey>::const_iterator it = pressed_keys.begin(); it != pressed_keys.end(); it++ ) {
-        int key_code = *it + MODIFIER_OFFSET * modifier_changed;
+      for (auto pressed_key : pressed_keys) {
+        int key_code = pressed_key + MODIFIER_OFFSET * modifier_changed;
         HandleKeyComboEvent(key_code, KEY_RELEASED);
       }
     } else if (modifier_only_bits && event_type == KEY_PRESSED) {
-      for (std::set<SDLKey>::const_iterator it = pressed_keys.begin(); it != pressed_keys.end(); it++ ) {
-        int key_code = *it + MODIFIER_OFFSET * modifier_only_bits;
+      for (auto pressed_key : pressed_keys) {
+        int key_code = pressed_key + MODIFIER_OFFSET * modifier_only_bits;
         HandleKeyComboEvent(key_code, KEY_RELEASED);
       }
     }

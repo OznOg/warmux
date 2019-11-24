@@ -103,14 +103,14 @@ WeaponsList::WeaponsList(const xmlNode* weapons_xml)
 
 void WeaponsList::Init(const xmlNode* weapons_xml) const
 {
-  for (iterator it = m_weapons_list.begin(); it != m_weapons_list.end(); it++)
-    (*it)->LoadXml(weapons_xml);
+  for (auto it : m_weapons_list)
+    it->LoadXml(weapons_xml);
 }
 
 bool WeaponsList::Save(XmlWriter& writer, xmlNode* weapons_xml) const
 {
-  for (iterator it = m_weapons_list.begin(); it != m_weapons_list.end(); it++) {
-    if (!(*it)->SaveXml(writer, weapons_xml))
+  for (auto it : m_weapons_list) {
+    if (!it->SaveXml(writer, weapons_xml))
       return false;
   }
 
@@ -121,8 +121,8 @@ bool WeaponsList::Save(XmlWriter& writer, xmlNode* weapons_xml) const
 
 void WeaponsList::UpdateTranslation() const
 {
-  for (iterator it = m_weapons_list.begin(); it != m_weapons_list.end(); it++)
-    (*it)->UpdateTranslationStrings();
+  for (auto it : m_weapons_list)
+    it->UpdateTranslationStrings();
 }
 
 //-----------------------------------------------------------------------------

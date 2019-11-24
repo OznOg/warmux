@@ -152,10 +152,8 @@ void Video::ComputeAvailableConfigs()
 
   // If biggest resolution is big enough, we propose standard resolutions
   // such as 1600x1200, 1280x1024, 1024x768, 800x600.
-  for (std::list<Point2i>::iterator res = Config::GetInstance()->GetResolutionAvailable().begin();
-       res != Config::GetInstance()->GetResolutionAvailable().end();
-       res++) {
-    AddUniqueConfigSorted((*res).GetX(), (*res).GetY());
+  for (auto & res : Config::GetInstance()->GetResolutionAvailable()) {
+    AddUniqueConfigSorted(res.GetX(), res.GetY());
   }
 }
 

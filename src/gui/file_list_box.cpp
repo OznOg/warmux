@@ -30,9 +30,9 @@
 
 void FileListBox::Empty()
 {
-  for (uint i=0; i<m_values.size(); i++) {
-    if (m_values[i]) {
-      const std::string* str = static_cast<const std::string*>(m_values[i]);
+  for (auto & m_value : m_values) {
+    if (m_value) {
+      const std::string* str = static_cast<const std::string*>(m_value);
       delete str;
     }
   }
@@ -41,9 +41,9 @@ void FileListBox::Empty()
 
 void FileListBox::Clear()
 {
-  for (uint i=0; i<m_values.size(); i++) {
-    if (m_values[i]) {
-      const std::string* str = static_cast<const std::string*>(m_values[i]);
+  for (auto & m_value : m_values) {
+    if (m_value) {
+      const std::string* str = static_cast<const std::string*>(m_value);
       delete str;
     }
   }

@@ -416,10 +416,9 @@ void NetworkConnectionMenu::__RefreshList()
     return;
   }
 
-  for (std::list<GameServerInfo>::iterator it = net_info.lst_games.begin();
-       it != net_info.lst_games.end(); ++it) {
-    cl_net_games_lst->AddItem(false, it->passworded, it->ip_address,
-                              it->port, it->game_name);
+  for (auto & lst_game : net_info.lst_games) {
+    cl_net_games_lst->AddItem(false, lst_game.passworded, lst_game.ip_address,
+                              lst_game.port, lst_game.game_name);
   }
   SDL_SemPost(net_info.lock);
 

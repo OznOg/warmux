@@ -255,10 +255,8 @@ static std::string NetErrorId_2_String(enum net_error error)
 static void ForceGlobalDisconnection()
 {
   std::list<DistantComputer*>& cpus = Network::GetInstance()->GetRemoteHosts();
-  for (std::list<DistantComputer*>::iterator itcpu = cpus.begin();
-       itcpu != cpus.end();
-       ++itcpu) {
-    (*itcpu)->ForceDisconnection();
+  for (auto & cpu : cpus) {
+    cpu->ForceDisconnection();
   }
 }
 

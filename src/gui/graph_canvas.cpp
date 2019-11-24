@@ -81,8 +81,7 @@ void GraphCanvas::DrawGraph(uint i, float xmax, float xmin,
   MSG_DEBUG("menu", "   First point: (%.3f,%.3f) -> (%i,%i)",
             res.list[0].first, res.list[0].second, sx, sy);
 
-  for (uint i=0; i<res.list.size(); i++) {
-    const Value& val = res.list[i];
+  for (const auto & val : res.list) {
     int ex = x+int((val.first-xmin)*xscale),
         ey = y-int(val.second*yscale);
 
@@ -119,13 +118,13 @@ void GraphCanvas::DrawGraph(int x, int y, int w, int h) const
     float  xmax      = 0;
     float  xmin      = std::numeric_limits<float>::max();
 
-    for (uint i=0; i<results.size(); i++) {
-      if (results[i].ymax > max_value)
-        max_value = results[i].ymax;
-      if (results[i].xmax > xmax)
-        xmax = results[i].xmax;
-      if (results[i].list[0].first < xmin)
-        xmin = results[i].list[0].first;
+    for (const auto & result : results) {
+      if (result.ymax > max_value)
+        max_value = result.ymax;
+      if (result.xmax > xmax)
+        xmax = result.xmax;
+      if (result.list[0].first < xmin)
+        xmin = result.list[0].first;
     }
     // needed to see correctly energy at the end if two teams have same
     // energy just before the final blow

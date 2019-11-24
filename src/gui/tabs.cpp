@@ -79,8 +79,8 @@ MultiTabs::MultiTabs(const Point2i& size, Font::font_size_t fs)
 
 MultiTabs::~MultiTabs()
 {
-  for (std::vector<Tab>::iterator t=tabs.begin(); t != tabs.end(); t++)
-    delete t->box;
+  for (auto & tab : tabs)
+    delete tab.box;
 
   delete prev_tab_bt;
   delete next_tab_bt;
@@ -238,10 +238,10 @@ void MultiTabs::Pack()
   Point2i tab_pos(position.x + MARGIN, position.y + GetHeaderHeight());
   Point2i tab_size(size.x - 2*MARGIN, size.y - GetHeaderHeight() - MARGIN);
 
-  for (std::vector<Tab>::iterator it=tabs.begin(); it!=tabs.end(); it++) {
-    (*it).box->SetPosition(tab_pos);
-    (*it).box->SetSize(tab_size);
-    (*it).box->Pack();
+  for (auto & tab : tabs) {
+    tab.box->SetPosition(tab_pos);
+    tab.box->SetSize(tab_size);
+    tab.box->Pack();
   }
 
   // Compute how many tabs can be displayed

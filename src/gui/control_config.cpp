@@ -251,8 +251,8 @@ public:
 
     // Set proper height now
     int height = size.y-2*border_size;
-    for (wit it = widget_list.begin(); it != widget_list.end(); ++it)
-      (*it)->SetSizeY(height);
+    for (auto & it : widget_list)
+      it->SetSizeY(height);
   }
 
   void SaveAction(Keyboard *kbd)
@@ -320,8 +320,8 @@ public:
 
     // Set proper height now
     int height = size.y-2*border_size;
-    for (wit it = widget_list.begin(); it != widget_list.end(); ++it)
-      (*it)->SetSizeY(height);
+    for (auto & it : widget_list)
+      it->SetSizeY(height);
   }
 };
 
@@ -349,8 +349,8 @@ void ControlConfig::SaveControlConfig() const
     return;
 
   Keyboard *kbd = Keyboard::GetInstance();
-  for (uint i=0; i<items.size(); i++) {
-    items[i]->SaveAction(kbd);
+  for (auto item : items) {
+    item->SaveAction(kbd);
   }
 }
 

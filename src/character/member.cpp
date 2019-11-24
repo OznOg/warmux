@@ -154,10 +154,8 @@ Member::Member(const Member & m)
 {
   spr->SetRotation_HotSpot(anchor);
 
-  for (AttachTypeMap::const_iterator it = m.attached_types.begin();
-       it != m.attached_types.end();
-       ++it) {
-    attached_types[it->first] = it->second;
+  for (const auto & attached_type : m.attached_types) {
+    attached_types[attached_type.first] = attached_type.second;
   }
 
   // No need to copy attached_members, this will be rebuilt
@@ -270,24 +268,24 @@ void Member::ApplyMovement(const member_mvt &mvt)
 
   // We first apply to the child (makes computations simpler in this order):
   if (check) {
-    for (uint i=0; i<attached_members.size(); i++) {
+    for (auto & attached_member : attached_members) {
       // Calculate the movement to apply to the child
       member_mvt child_mvt;
       child_mvt.SetAngle(mvt.GetAngle());
       child_mvt.pos = mvt.pos;
 
-      (*attached_members[i].second)[frame].Propagate(child_mvt.pos, mvt.GetAngle(), angle_rad);
+      (*attached_member.second)[frame].Propagate(child_mvt.pos, mvt.GetAngle(), angle_rad);
 
       // Apply recursively to children:
-      attached_members[i].first->ApplyMovement(child_mvt);
+      attached_member.first->ApplyMovement(child_mvt);
     }
     SetAngle(angle_rad + mvt.GetAngle());
   } else {
     // No check to perform !
-    for (uint i=0; i<attached_members.size(); i++) {
+    for (auto & attached_member : attached_members) {
 
       // Apply recursively to children:
-      attached_members[i].first->ApplyMovement(mvt);
+      attached_member.first->ApplyMovement(mvt);
     }
   }
 
@@ -320,11 +318,9 @@ void Member::BuildAttachMemberMap(const std::vector<junction*> & skel_lst)
        ++child) {
 
     // Find this member in the skeleton:
-    for (std::vector<junction *>::const_iterator junction = skel_lst.begin();
-         junction != skel_lst.end();
-         ++junction) {
+    for (auto junction : skel_lst) {
 
-      Member *member = (*junction)->member;
+      Member *member = junction->member;
       if (member->type == child->first) {
         // Build the member map, but only have a pointer to the v_attached,
         // in order to keep synch if needed, and save memory

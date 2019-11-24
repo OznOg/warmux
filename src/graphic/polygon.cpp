@@ -153,8 +153,8 @@ Polygon::Polygon(Polygon & poly)
   }
   transformed_shape = original_shape = poly.original_shape;
   shape_buffer->SetSize(original_shape.size());
-  for (std::vector<PolygonItem *>::iterator elt = poly.items.begin(); elt != poly.items.end(); elt++) {
-    AddItem((*elt)->GetSprite(), (*elt)->GetPosition(), (*elt)->GetHAlign(), (*elt)->GetVAlign());
+  for (auto & item : poly.items) {
+    AddItem(item->GetSprite(), item->GetPosition(), item->GetHAlign(), item->GetVAlign());
   }
 }
 
@@ -206,9 +206,8 @@ void Polygon::ApplyTransformation(const AffineTransform2D & trans, bool save_tra
       min = min.min(transformed_shape[i]);
     }
   }
-  for (std::vector<PolygonItem *>::iterator item = items.begin();
-      item != items.end(); item++) {
-    (*item)->ApplyTransformation(trans);
+  for (auto & item : items) {
+    item->ApplyTransformation(trans);
   }
 }
 
@@ -345,10 +344,9 @@ void Polygon::DelItem(int index)
 
 void Polygon::ClearItem(bool free_mem)
 {
-  for (std::vector<PolygonItem *>::iterator item = items.begin();
-       item != items.end(); item++) {
+  for (auto & item : items) {
     if (free_mem)
-      delete (*item);
+      delete item;
   }
   items.clear();
 }
@@ -456,8 +454,8 @@ Polygon * Polygon::GetBezierInterpolation(Double smooth_value, int num_steps, Do
 
     shape->AddBezierCurve(p1, v1, v2, p2, num_steps, false);
   }
-  for (std::vector<PolygonItem *>::iterator elt = items.begin(); elt != items.end(); elt++) {
-    shape->AddItem((*elt)->GetSprite(), (*elt)->GetPosition(), (*elt)->GetHAlign(), (*elt)->GetVAlign());
+  for (auto & item : items) {
+    shape->AddItem(item->GetSprite(), item->GetPosition(), item->GetHAlign(), item->GetVAlign());
   }
   return shape;
 }
@@ -539,9 +537,8 @@ void Polygon::Draw(Surface * dest)
     }
   }
   // Draw Item
-  for (std::vector<PolygonItem *>::iterator item = items.begin();
-       item != items.end(); item++) {
-    (*item)->Draw(dest);
+  for (auto & item : items) {
+    item->Draw(dest);
   }
 }
 
@@ -583,20 +580,18 @@ void DecoratedBox::Draw(Surface * dest)
 
 
   // Draw Item
-  for (std::vector<PolygonItem *>::iterator item = items.begin();
-      item != items.end(); item++) {
-    (*item)->Draw(dest);
+  for (auto & item : items) {
+    item->Draw(dest);
   }
 }
 
 void DecoratedBox::SetPosition(Double x, Double y)
 {
-    for (std::vector<PolygonItem *>::iterator item = items.begin();
-      item != items.end(); item++) {
-      Point2d old_pos = (*item)->GetPosition();
+    for (auto & item : items) {
+      Point2d old_pos = item->GetPosition();
       old_pos.x += x - min.x;
       old_pos.y += y - min.y;
-      (*item)->SetPosition(old_pos);
+      item->SetPosition(old_pos);
     }
     max.x = x - min.x +max.x ;
     max.y = y - min.y +max.y;
@@ -721,9 +716,8 @@ void DecoratedBox::ApplyTransformation(const AffineTransform2D & trans, bool sav
     original_max = max;
   }
 
-  for (std::vector<PolygonItem *>::iterator item = items.begin();
-       item != items.end(); item++) {
-    (*item)->ApplyTransformation(trans);
+  for (auto & item : items) {
+    item->ApplyTransformation(trans);
   }
 }
 

@@ -108,11 +108,8 @@ void SampleCache::FreeChunk( Mix_Chunk * pchk )
 
 void SampleCache::Clear()
 {
-    for ( std::vector< CachedChunk >::iterator iter = m_cache.begin();
-          iter != m_cache.end(); iter ++ )
+    for (auto & chk : m_cache)
     {
-        CachedChunk & chk = *iter;
-
         m_used_memory -= chk.m_chunk->alen;
         if ( chk.m_refcount != 0 )
         {

@@ -32,17 +32,17 @@
 
 void CustomTeamsList::Clear()
 {
-  for (uint i = 0; i < full_list.size(); i++) {
-    delete full_list[i];
+  for (auto & i : full_list) {
+    delete i;
   }
   full_list.clear();
 }
 
 CustomTeam *CustomTeamsList::GetByName(std::string name)
 {
-  for (uint i = 0; i < full_list.size(); i++) {
-    if (full_list[i]->GetName() == name) {
-      return full_list[i];
+  for (auto & i : full_list) {
+    if (i->GetName() == name) {
+      return i;
     }
   }
   return nullptr;

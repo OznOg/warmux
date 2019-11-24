@@ -563,8 +563,8 @@ bool OptionMenu::TeamInfoValid()
   if (tbox_team_name->GetText().empty())
     return false;
 
-  for (uint i = 0; i < tbox_character_name_list.size(); i++) {
-    if (tbox_character_name_list[i]->GetText().empty()) {
+  for (auto & i : tbox_character_name_list) {
+    if (i->GetText().empty()) {
       return false;
     }
   }
@@ -635,8 +635,8 @@ void OptionMenu::LoadTeam()
   } else {
     tbox_team_name->SetText("");
 
-    for (uint i = 0; i < tbox_character_name_list.size(); i++) {
-      tbox_character_name_list[i]->SetText("");
+    for (auto & i : tbox_character_name_list) {
+      i->SetText("");
     }
   }
 }
@@ -655,15 +655,15 @@ void OptionMenu::ReloadTeamList()
   GetCustomTeamsList().LoadList();
   std::vector<CustomTeam *> custom_team_list = GetCustomTeamsList().GetList();
 
-  for (uint i = 0; i < custom_team_list.size(); i++) {
-    if (custom_team_list[i]->GetName() == selected_team_name) {
-      selected_team = custom_team_list[i];
+  for (auto & i : custom_team_list) {
+    if (i->GetName() == selected_team_name) {
+      selected_team = i;
       LoadTeam();
     }
 
-    lbox_teams->AddLabelItem((selected_team == custom_team_list[i]),
-                             custom_team_list[i]->GetName(),
-                             custom_team_list[i]->GetName().c_str());
+    lbox_teams->AddLabelItem((selected_team == i),
+                             i->GetName(),
+                             i->GetName().c_str());
 
   }
 }

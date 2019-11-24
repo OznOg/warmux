@@ -47,20 +47,16 @@ WidgetList::~WidgetList()
 {
   // Do not use Clear/Empty methods, they might be implemented
   // for other purposes
-  for (std::list<Widget*>::iterator w=widget_list.begin();
-       w != widget_list.end();
-       w++)
-    delete *w;
+  for (auto & w : widget_list)
+    delete w;
 
   widget_list.clear();
 }
 
 void WidgetList::Clear()
 {
-  for (std::list<Widget*>::iterator w=widget_list.begin();
-       w != widget_list.end();
-       w++)
-    delete *w;
+  for (auto & w : widget_list)
+    delete w;
 
   Empty();
 }
@@ -89,15 +85,15 @@ void WidgetList::RemoveWidget(Widget* w)
 void WidgetList::SetVisible(bool v)
 {
   Widget::SetVisible(v);
-  for (wit w = widget_list.begin(); w != widget_list.end(); w++)
-    (*w)->SetVisible(v);
+  for (auto & w : widget_list)
+    w->SetVisible(v);
 }
 
 void WidgetList::SetHighlighted(bool focus)
 {
   Widget::SetHighlighted(focus);
-  for (wit w = widget_list.begin(); w != widget_list.end(); w++)
-    (*w)->SetHighlighted(focus);
+  for (auto & w : widget_list)
+    w->SetHighlighted(focus);
 }
 
 void WidgetList::SetFocusOn(Widget* widget, bool force_mouse_position)
@@ -130,19 +126,19 @@ Widget* WidgetList::GetFirstWidget() const
 
   MSG_DEBUG("widgetlist", "%p::GetFirstWidget()", this);
 
-  for (cwit it = widget_list.begin(); it != widget_list.end(); it++) {
-    if ((*it)->IsWidgetBrowser()) {
+  for (auto it : widget_list) {
+    if (it->IsWidgetBrowser()) {
       MSG_DBG_RTTI("widgetlist", "%s:%p is a widget browser!\n",
                    typeid(*it).name(), (*it));
 
-      first = (*it)->GetFirstWidget();
+      first = it->GetFirstWidget();
       if (first != nullptr)
         return first;
     } else {
       MSG_DBG_RTTI("widgetlist", "%s:%p is NOT a widget browser!\n",
                    typeid(*it).name(), (*it));
 
-      return (*it);
+      return it;
     }
   }
 
@@ -371,9 +367,9 @@ void WidgetList::Draw(const Point2i &mousePosition)
 
 Widget* WidgetList::ClickUp(const Point2i &mousePosition, uint button)
 {
-  for (wit w=widget_list.begin(); w != widget_list.end(); w++) {
-    if ((*w)->Contains(mousePosition)) {
-      Widget* child = (*w)->ClickUp(mousePosition,button);
+  for (auto & w : widget_list) {
+    if (w->Contains(mousePosition)) {
+      Widget* child = w->ClickUp(mousePosition,button);
 
       if (child)
         SetFocusOn(child);
@@ -387,9 +383,9 @@ Widget* WidgetList::ClickUp(const Point2i &mousePosition, uint button)
 
 Widget* WidgetList::Click(const Point2i &mousePosition, uint button)
 {
-  for (wit w=widget_list.begin(); w != widget_list.end(); w++)
-    if ((*w)->Contains(mousePosition))
-      (*w)->Click(mousePosition,button);
+  for (auto & w : widget_list)
+    if (w->Contains(mousePosition))
+      w->Click(mousePosition,button);
 
   return nullptr;
 }
@@ -398,14 +394,14 @@ void WidgetList::NeedRedrawing()
 {
   need_redrawing = true;
 
-  for (wit w=widget_list.begin(); w != widget_list.end(); w++)
-    (*w)->NeedRedrawing();
+  for (auto & w : widget_list)
+    w->NeedRedrawing();
 }
 
 void WidgetList::Pack()
 {
-  for (wit w=widget_list.begin(); w != widget_list.end(); w++)
-    (*w)->Pack();
+  for (auto & w : widget_list)
+    w->Pack();
 }
 
 void WidgetList::SetSelfBackgroundColor(const Color &background_color)
@@ -421,13 +417,13 @@ void WidgetList::SetSelfHighlightBgColor(const Color &highlight_bg_color)
 void WidgetList::SetBackgroundColor(const Color &background_color)
 {
   Widget::SetBackgroundColor(background_color);
-  for (wit w=widget_list.begin(); w != widget_list.end(); w++)
-    (*w)->SetBackgroundColor(background_color);
+  for (auto & w : widget_list)
+    w->SetBackgroundColor(background_color);
 }
 
 void WidgetList::SetHighlightBgColor(const Color &highlight_bg_color)
 {
   Widget::SetHighlightBgColor(highlight_bg_color);
-  for (wit w=widget_list.begin(); w != widget_list.end(); w++)
-    (*w)->SetHighlightBgColor(highlight_bg_color);
+  for (auto & w : widget_list)
+    w->SetHighlightBgColor(highlight_bg_color);
 }

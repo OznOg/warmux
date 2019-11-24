@@ -51,8 +51,8 @@ TeamsList::~TeamsList()
 {
   UnloadGamingData();
   Clear();
-  for (full_iterator it = full_list.begin(); it != full_list.end(); ++it)
-    delete (*it);
+  for (auto & it : full_list)
+    delete it;
   full_list.clear();
   groups.clear();
 }

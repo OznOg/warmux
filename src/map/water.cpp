@@ -170,9 +170,9 @@ void Water::CalculateWaveHeights()
   Double angle1 = -shift1;
   Double angle2 = shift1;
 
-  for (uint x = 0; x < PATTERN_WIDTH; x++) {
+  for (signed char & x : height) {
     // TODO: delete the first dimension of wave_height (now unused)
-    height[x] = static_cast<int>(sin(angle1)*WAVE_HEIGHT_A + sin(angle2)*WAVE_HEIGHT_B);
+    x = static_cast<int>(sin(angle1)*WAVE_HEIGHT_A + sin(angle2)*WAVE_HEIGHT_B);
 
     angle1 += 2*DEGREE;
     angle2 += 4*DEGREE;

@@ -197,9 +197,9 @@ void ReplayMenu::ChangeReplay()
 
   // Teams
   teams_lbox->Clear();
-  for (uint i=0; i<info->GetTeams().size(); i++) {
-    printf("Adding %s\n", info->GetTeams()[i].id.c_str());
-    teams_lbox->AddWidget(new Label(info->GetTeams()[i].id, 0, Font::FONT_MEDIUM));
+  for (const auto & i : info->GetTeams()) {
+    printf("Adding %s\n", i.id.c_str());
+    teams_lbox->AddWidget(new Label(i.id, 0, Font::FONT_MEDIUM));
   }
   teams_lbox->Pack();
   teams_lbox->NeedRedrawing();

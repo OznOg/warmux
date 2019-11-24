@@ -47,8 +47,8 @@ ResourceManager::ResourceManager() : base_path("")
 ResourceManager::~ResourceManager()
 {
   xmlCleanupParser();
-  for (ProfileMap::iterator it = profiles.begin(); it != profiles.end(); ++it)
-    delete it->second;
+  for (auto & profile : profiles)
+    delete profile.second;
 }
 
 int ResourceManager::LoadInt(const Profile *profile, const std::string& resource_name) const

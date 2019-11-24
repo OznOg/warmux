@@ -178,8 +178,7 @@ std::vector<uint> DistantComputer::GetCommonMaps(const std::list<DistantComputer
 
   std::list<DistantComputer*>::const_iterator first = cpu.begin();
   const std::vector<uint>& start_list = (*first)->GetAvailableMaps();
-  for (uint n=0; n<start_list.size(); n++) {
-    uint index = start_list[n];
+  for (unsigned int index : start_list) {
     std::list<DistantComputer*>::const_iterator client = first;
     bool found = true;
     client++;
@@ -218,8 +217,7 @@ std::vector<uint> DistantComputer::GetCommonTeams(const std::list<DistantCompute
 
   std::list<DistantComputer*>::const_iterator first = cpu.begin();
   const std::vector<uint>& start_list = (*first)->GetAvailableTeams();
-  for (uint n=0; n<start_list.size(); n++) {
-    uint index = start_list[n];
+  for (unsigned int index : start_list) {
     std::list<DistantComputer*>::const_iterator client = first;
     bool found = true;
     client++;

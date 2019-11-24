@@ -192,13 +192,13 @@ void MapSelectionBox::Pack()
   if (h > 225) h = 225;
   uint w = (h<<2)/3;
   const std::vector<Widget*>& wlist = box->GetWidgets();
-  for (uint i=0; i<wlist.size(); i++) {
+  for (auto i : wlist) {
 #if 0 // Cause some refresh problems
     if (wlist[i] == box->GetSelectedWidget())
       wlist[i]->SetSize((size.y<<1)/3, size.y>>1);
     else
 #endif
-      wlist[i]->SetSize(w, h);
+      i->SetSize(w, h);
   }
   VBox::Pack();
   ChangeMapCallback();

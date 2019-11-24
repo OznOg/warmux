@@ -313,10 +313,10 @@ ResultsMenu::ResultsMenu(std::vector<TeamResults*>& v, bool disconnected)
   stats = new MultiTabs(tab_size - 2*DEF_BORDER);
   stats->SetMaxVisibleTabs(1);
   stats->SetNoBorder();
-  for (uint i=0; i<v.size(); i++) {
-    const Team* team = v[i]->getTeam();
+  for (auto & i : v) {
+    const Team* team = i->getTeam();
     const std::string name = (team) ? team->GetName() : _("All teams");
-    stats->AddNewTab(name, name, new ResultListBox(v[i], tab_size - 4*DEF_BORDER));
+    stats->AddNewTab(name, name, new ResultListBox(i, tab_size - 4*DEF_BORDER));
   }
   tabs->AddNewTab("TAB_team", _("Team stats"), stats);
 

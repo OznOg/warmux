@@ -372,18 +372,18 @@ std::string FormatFileName(const std::string &name)
 {
  std::string formated_name = name;
 
-  for (uint i=0; i<formated_name.size();i++) {
-    if (formated_name[i] == ' '){
-      formated_name[i] = '_';
+  for (char & i : formated_name) {
+    if (i == ' '){
+      i = '_';
     }
-    if (formated_name[i] == '.') {
-      formated_name[i] = '_';
+    if (i == '.') {
+      i = '_';
     }
-    if (formated_name[i] == '/') {
-      formated_name[i] = '_';
+    if (i == '/') {
+      i = '_';
     }
-    if (formated_name[i] == '\\') {
-      formated_name[i] = '_';
+    if (i == '\\') {
+      i = '_';
     }
   }
 

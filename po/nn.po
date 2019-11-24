@@ -93,7 +93,7 @@ msgstr "%s frå %s-laget trefte bakken for hardt!"
 msgid "%s from %s team is dead because he is clumsy!"
 msgstr "%s frå %s-laget døydde fordi han var klønete!"
 
-#: src/network/admin_commands.cpp:69
+#: src/network/admin_commands.cpp:67
 #, c-format
 msgid "%s has address %s"
 msgstr "%s har adressa %s"
@@ -122,23 +122,23 @@ msgid "%s is next to a mine!"
 msgstr "%s står ved sidan av ei mine!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1031
+#: src/include/action_handler.cpp:1029
 #, c-format
 msgid "%s just connected"
 msgstr "%s kopla nettopp til"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1146
+#: src/include/action_handler.cpp:1144
 #, c-format
 msgid "%s just disconnected"
 msgstr "%s kopla nettopp frå"
 
-#: src/network/admin_commands.cpp:66
+#: src/network/admin_commands.cpp:64
 #, c-format
 msgid "%s kicked from game"
 msgstr "\"%s vart sparka ut frå spelet"
 
-#: src/include/action_handler.cpp:486
+#: src/include/action_handler.cpp:484
 #, c-format
 msgid "%s needs a pause."
 msgstr "%s treng ein pause."
@@ -283,7 +283,7 @@ msgid_plural "%s team has won %u football bombs!"
 msgstr[0] "%s-laget vann %u fotballbombe!"
 msgstr[1] "%s-laget vann %u fotballbomber!"
 
-#: src/weapon/grapple.cpp:716
+#: src/weapon/grapple.cpp:714
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -436,7 +436,7 @@ msgstr[1] ""
 msgid "%s took a member of the %s team to the grave with him!"
 msgstr "%s tok eit medlem av %s-laget med seg i grava!"
 
-#: src/network/admin_commands.cpp:81
+#: src/network/admin_commands.cpp:79
 #, c-format
 msgid "%s: no such nickame"
 msgstr "%s: ugyldig kallenamn"
@@ -777,7 +777,7 @@ msgstr ""
 "Du kan berre velja kvart lag éin gong."
 
 #. Client Mode
-#: src/menu/network_menu.cpp:174 src/network/network.cpp:489
+#: src/menu/network_menu.cpp:174 src/network/network.cpp:488
 msgid "Client mode"
 msgstr "Klientmodus"
 
@@ -820,7 +820,7 @@ msgstr "Kopla til spel"
 msgid "Connected !"
 msgstr "Kopla til!"
 
-#: src/network/admin_commands.cpp:96
+#: src/network/admin_commands.cpp:94
 msgid "Connected players: "
 msgstr "Tilkopla spelarar: "
 
@@ -955,7 +955,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Energi"
 
-#: src/include/action_handler.cpp:282
+#: src/include/action_handler.cpp:280
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "Nettverksfeil: Klienten %s er ikkje einig med deg! – %s"
@@ -990,12 +990,12 @@ msgstr ""
 "Klarte ikkje sletta fila «%s», og kan derfor ikkje sletta tilpassa lag."
 
 #. translators: %s:%s will expand to something like "example.org:9999"
-#: src/menu/network_connection_menu.cpp:552
+#: src/menu/network_connection_menu.cpp:551
 #, c-format
 msgid "Error: Unable to connect to %s:%s"
 msgstr "Feil: Klarte ikkje kopla til %s:%s."
 
-#: src/menu/network_connection_menu.cpp:502
+#: src/menu/network_connection_menu.cpp:501
 msgid "Error: Unable to contact the index server to host a game"
 msgstr "Feil: Klarte ikkje kontakta hovudtenaren for å vera vert."
 
@@ -1004,11 +1004,11 @@ msgid ""
 "Error: Unable to contact the index server to search for an internet game"
 msgstr "Feil: Klarte ikkje kontakta hovudtenaren for å søkje etter spel."
 
-#: src/menu/network_connection_menu.cpp:530
+#: src/menu/network_connection_menu.cpp:529
 msgid "Error: Unable to start the server"
 msgstr "Feil: Klarte ikkje starta tenaren."
 
-#: src/menu/network_connection_menu.cpp:523
+#: src/menu/network_connection_menu.cpp:522
 #, c-format
 msgid ""
 "Error: Your server is not reachable from the internet. Check your firewall "
@@ -1071,7 +1071,7 @@ msgstr "Fullskjerm"
 msgid "Game"
 msgstr "Spel"
 
-#: src/include/action_handler.cpp:1003
+#: src/include/action_handler.cpp:1001
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1551,7 +1551,7 @@ msgstr "Kommentar:"
 msgid "No element <%s> found in the xml config file!"
 msgstr "Fann ikkje elementet <%s> i XML-oppsettfila."
 
-#: src/network/admin_commands.cpp:92
+#: src/network/admin_commands.cpp:90
 msgid "No player connected"
 msgstr "Ingen spelarar kopla til"
 
@@ -1893,7 +1893,7 @@ msgid "Server available on Internet"
 msgstr "Tenar tilgjengeleg på nettet"
 
 #. Server Mode
-#: src/menu/network_menu.cpp:180 src/network/network.cpp:519
+#: src/menu/network_menu.cpp:180 src/network/network.cpp:518
 msgid "Server mode"
 msgstr "Tenarmodus"
 
@@ -1988,7 +1988,7 @@ msgstr "Nokon har lagt ei bombe i kassen!"
 msgid "Sorry, currently, no game is waiting for players"
 msgstr "Det er for tida ingen spel som ventar på spelarar."
 
-#: src/menu/network_connection_menu.cpp:472
+#: src/menu/network_connection_menu.cpp:471
 #, fuzzy, c-format
 msgid ""
 "Sorry, your version is not supported anymore. Supported versions are %s. You "
@@ -2301,11 +2301,11 @@ msgstr "Klarte ikkje opna den personlege kartmappa (%s)."
 msgid "Unable to use this port!"
 msgstr "Kan ikkje bruka denne porten."
 
-#: src/network/admin_commands.cpp:122
+#: src/network/admin_commands.cpp:118
 msgid "Unknown command"
 msgstr "Ukjend kommando"
 
-#: src/network/admin_commands.cpp:72
+#: src/network/admin_commands.cpp:70
 #, c-format
 msgid "Unknown command of type %i"
 msgstr "Ukjend kommando av type «%i»"

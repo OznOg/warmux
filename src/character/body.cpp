@@ -281,8 +281,8 @@ void Body::FreeSkeletonVector()
 
 void Body::ResetMovement() const
 {
-  for (size_t layer=0; layer < current_clothe->GetLayers().size(); layer++) {
-    current_clothe->GetLayers()[layer]->ResetMovement();
+  for (auto layer : current_clothe->GetLayers()) {
+    layer->ResetMovement();
   }
 }
 
@@ -501,9 +501,7 @@ void Body::Build()
 
   int y_max = 0;
   const std::vector<Member*>& layers = current_clothe->GetNonWeaponLayers();
-  for (uint lay=0; lay < layers.size(); lay++) {
-    Member *member = layers[lay];
-
+  for (auto member : layers) {
     if (!member->IsGoingThroughGround()) {
       // Rotate sprite, because the next part need to know the height
       // of the sprite once it is rotated
@@ -531,14 +529,14 @@ void Body::RefreshSprites()
 {
   if (need_refreshsprites) {
     const std::vector<Member*>& layers = current_clothe->GetNonWeaponLayers();
-    for (uint layer=0; layer < layers.size(); layer++)
-      layers[layer]->RefreshSprite(direction);
+    for (auto layer : layers)
+      layer->RefreshSprite(direction);
 
     need_refreshsprites = false;
   } else {
     const std::vector<Member*>& must = current_clothe->MustRefreshMembers();
-    for (uint layer=0; layer < must.size(); layer++)
-      must[layer]->RefreshSprite(direction);
+    for (auto layer : must)
+      layer->RefreshSprite(direction);
   }
 }
 
@@ -574,8 +572,7 @@ void Body::Draw(const Point2i & _pos)
 
   // Finally draw each layer one by one
   const std::vector<Member*>& layers = current_clothe->GetLayers();
-  for (uint layer=0; layer < layers.size() ;layer++) {
-    Member *member = layers[layer];
+  for (auto member : layers) {
     if (member == weapon_member) {
       // We draw the weapon member only if currently drawing the active character
       if (owner->IsActiveCharacter()) {
@@ -609,8 +606,7 @@ void Body::AddChildMembers(Member * parent)
   for ( ; child != attached.end(); ++child) {
 
     // Find if the current clothe uses this member:
-    for (uint lay = 0; lay < layers.size(); lay++) {
-      Member *member = layers[lay];
+    for (auto member : layers) {
       if (member->GetType() == child->first) {
         // This child member is attached to his parent
         junction * body = new junction();
@@ -636,8 +632,7 @@ void Body::BuildSqueleton()
 
   // Find the "body" member as it is the top of the skeleton
   const std::vector<Member*>& layers = current_clothe->GetLayers();
-  for (uint lay = 0; lay < layers.size(); lay++) {
-    Member *member = layers[lay];
+  for (auto member : layers) {
     if (member->GetType() == "body") {
 
       // TODO lami : overwrite junction constructor
@@ -657,8 +652,8 @@ void Body::BuildSqueleton()
   AddChildMembers(skel_lst.front()->member);
 
   // Now that the skeleton is built, inform each member
-  for (uint i=0; i<skel_lst.size(); i++)
-    skel_lst[i]->member->BuildAttachMemberMap(skel_lst);
+  for (auto & i : skel_lst)
+    i->member->BuildAttachMemberMap(skel_lst);
 
   need_refreshsprites = true;
 }
@@ -847,8 +842,7 @@ void Body::MakeParticles(const Point2i & pos)
   Build();
 
   const std::vector<Member*>& layers = current_clothe->GetNonWeaponLayers();
-  for (uint layer=0; layer < layers.size() ;layer++) {
-    Member* member = layers[layer];
+  for (auto member : layers) {
     ParticleEngine::AddNow(new BodyMemberParticle(member->GetSprite(), member->GetPos()+pos));
   }
 }
@@ -858,8 +852,7 @@ void Body::MakeTeleportParticles(const Point2i& pos, const Point2i& dst)
   Build();
 
   const std::vector<Member*>& layers = current_clothe->GetNonWeaponLayers();
-  for (uint layer=0;layer < layers.size() ;layer++) {
-    Member *member = layers[layer];
+  for (auto member : layers) {
     ParticleEngine::AddNow(new TeleportMemberParticle(member->GetSprite(),
                                                       member->GetPos()+pos, member->GetPos()+dst));
   }

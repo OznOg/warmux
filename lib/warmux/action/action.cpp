@@ -245,9 +245,9 @@ Double Action::PopDouble()
   } tmp;
   
   static const uint len = sizeof(fixedpoint::fixint_t)/4;
-  for (uint i=0; i<len; i++) {
+  for (unsigned int & i : tmp.u32) {
 #  if SDL_BYTEORDER == SDL_LIL_ENDIAN
-    tmp.u32[i] = SDLNet_Read32(m_read);
+    i = SDLNet_Read32(m_read);
 #  else
     tmp.u32[len-1-i] = SDLNet_Read32(m_read);
 #  endif

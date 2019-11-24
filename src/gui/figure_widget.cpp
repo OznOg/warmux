@@ -28,11 +28,11 @@ void FigureWidget::Draw(const Point2i& mousePosition)
 
   Point2f zoom = GetScale();
 
-  for (uint i=0; i<captions.size(); i++) {
-    uint lsize = captions[i].w*zoom.GetX();
-    Text tmp(captions[i].string, color, fsize*zoom.GetX(), fstyle, false);
+  for (auto & caption : captions) {
+    uint lsize = caption.w*zoom.GetX();
+    Text tmp(caption.string, color, fsize*zoom.GetX(), fstyle, false);
     tmp.SetMaxWidth(lsize);
-    Point2i pos = Point2i(zoom.x * captions[i].x, zoom.y * captions[i].y)
+    Point2i pos = Point2i(zoom.x * caption.x, zoom.y * caption.y)
                 + GetPicturePosition();
 
     tmp.DrawCenter(pos);
