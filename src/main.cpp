@@ -98,7 +98,6 @@ AppWarmux::~AppWarmux()
   delete video;
   ParticleEngine::FreeMem();
   Font::ReleaseInstances();
-  BaseSingleton::ReleaseSingletons();
   singleton = nullptr;
 }
 

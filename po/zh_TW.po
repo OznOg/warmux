@@ -120,13 +120,13 @@ msgid "%s is next to a mine!"
 msgstr "地雷在 %s 的腳下！"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1029
+#: src/include/action_handler.cpp:1030
 #, c-format
 msgid "%s just connected"
 msgstr "%s 剛剛上線"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1144
+#: src/include/action_handler.cpp:1145
 #, c-format
 msgid "%s just disconnected"
 msgstr "%s 剛剛下線"
@@ -136,7 +136,7 @@ msgstr "%s 剛剛下線"
 msgid "%s kicked from game"
 msgstr "%s 被踢出遊戲"
 
-#: src/include/action_handler.cpp:484
+#: src/include/action_handler.cpp:485
 #, c-format
 msgid "%s needs a pause."
 msgstr "%s 需要暫停。"
@@ -165,7 +165,7 @@ msgid "%s team has won %u Gnu! Blow them all, cowboy!"
 msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "%s 隊得到了 %u 隻 Gnu 牛羚！牛仔們，轟了他們！"
 
-#: src/weapon/air_attack.cpp:257
+#: src/weapon/air_attack.cpp:259
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -469,7 +469,7 @@ msgstr ""
 msgid "Action"
 msgstr "動作"
 
-#: src/weapon/air_attack.cpp:215
+#: src/weapon/air_attack.cpp:217
 msgid "Air Attack"
 msgstr "空襲"
 
@@ -511,7 +511,7 @@ msgstr "鐵砧"
 msgid "Area currently displayed"
 msgstr "目前顯示的區域"
 
-#: src/main.cpp:362
+#: src/main.cpp:361
 msgid "Authors:"
 msgstr "作者："
 
@@ -905,7 +905,7 @@ msgstr ""
 msgid "Energy"
 msgstr "生命值"
 
-#: src/include/action_handler.cpp:280
+#: src/include/action_handler.cpp:281
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "初始化網路時發生錯誤：客戶端 %s 並不同意你！！ - %s"
@@ -1017,7 +1017,7 @@ msgstr "全螢幕？"
 msgid "Game"
 msgstr "遊戲"
 
-#: src/include/action_handler.cpp:1001
+#: src/include/action_handler.cpp:1002
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1041,7 +1041,7 @@ msgstr "遊戲模式"
 msgid "Game name:"
 msgstr "遊戲名稱："
 
-#: src/include/action_handler.cpp:245
+#: src/include/action_handler.cpp:246
 msgid "Game out of sync!"
 msgstr "遊戲不同步！"
 
@@ -1128,7 +1128,7 @@ msgstr "快一點，您們有夠慢吞吞的！！"
 msgid "I like WarMUX :)"
 msgstr "我喜歡 WarMUX :)"
 
-#: src/main.cpp:294
+#: src/main.cpp:293
 msgid ""
 "If you found a bug or have a feature request send us an email (in english, "
 "please):"
@@ -1492,7 +1492,7 @@ msgstr "下一個角色"
 msgid "No comment."
 msgstr "註解"
 
-#: src/weapon/weapon.cpp:644
+#: src/weapon/weapon.cpp:643
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "在 XML 設定檔內未發現元素 <%s>！"
@@ -1720,7 +1720,7 @@ msgstr ""
 msgid "Quit"
 msgstr "離開"
 
-#: src/main.cpp:283
+#: src/main.cpp:282
 msgid "Quit Warmux"
 msgstr "離開 Warmux"
 
@@ -2123,7 +2123,7 @@ msgstr "伺服器拒絕連線。"
 msgid "The server rejected the connection: wrong password!"
 msgstr "伺服器拒絕連線：密碼錯誤！"
 
-#: src/weapon/weapon.cpp:656
+#: src/weapon/weapon.cpp:655
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2319,7 +2319,7 @@ msgid "User"
 msgstr ""
 
 #. Version
-#: src/main.cpp:210 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
+#: src/main.cpp:209 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
 msgid "Version"
 msgstr "版本"
 
@@ -2351,11 +2351,11 @@ msgstr "等待遠端玩家中"
 msgid "Waiting for the server. All you can do is cancel or chat!"
 msgstr "等待伺服器中。你可以按取消、或者和大家聊個天！"
 
-#: src/main.cpp:221
+#: src/main.cpp:220
 msgid "Warmux launching..."
 msgstr "Warmux 啟動中..."
 
-#: src/main.cpp:361
+#: src/main.cpp:360
 msgid "Warmux version "
 msgstr "Warmux 版本"
 
@@ -2379,7 +2379,7 @@ msgstr ""
 msgid "Weapons"
 msgstr "武器"
 
-#: src/main.cpp:371
+#: src/main.cpp:370
 msgid "Website: "
 msgstr "網站："
 
@@ -2430,15 +2430,15 @@ msgstr "錯誤的隊伍！"
 msgid "Woah! Combo of %u!"
 msgstr "哇喔！%u 連擊！"
 
-#: src/include/action_handler.cpp:241
+#: src/include/action_handler.cpp:242
 msgid "Wrong map CRC!"
 msgstr "錯誤的地圖 CRC！"
 
-#: src/include/action_handler.cpp:239
+#: src/include/action_handler.cpp:240
 msgid "Wrong map name!"
 msgstr "錯誤的地圖名稱！"
 
-#: src/include/action_handler.cpp:243
+#: src/include/action_handler.cpp:244
 msgid "Wrong team!"
 msgstr "錯誤的隊伍！"
 
@@ -2467,7 +2467,7 @@ msgstr "至少需要兩組有效隊伍！"
 msgid "You won't be able to play before selecting a team!"
 msgstr "沒有任何隊伍，遊戲是無法開始的！"
 
-#: src/weapon/weapon_launcher.cpp:546
+#: src/weapon/weapon_launcher.cpp:548
 msgid "Your shot has missed!"
 msgstr "子彈打歪了！"
 
@@ -2475,7 +2475,7 @@ msgstr "子彈打歪了！"
 msgid "aka"
 msgstr "即"
 
-#: src/weapon/air_attack.cpp:216
+#: src/weapon/air_attack.cpp:218
 msgid ""
 "attack direction: Left/Right\n"
 "Bombing: Left click on the target\n"

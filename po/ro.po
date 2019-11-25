@@ -131,13 +131,13 @@ msgid "%s is next to a mine!"
 msgstr "%s e lângă o mină!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1029
+#: src/include/action_handler.cpp:1030
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "%i jucător conectat"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1144
+#: src/include/action_handler.cpp:1145
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "%i jucător conectat"
@@ -147,7 +147,7 @@ msgstr "%i jucător conectat"
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:484
+#: src/include/action_handler.cpp:485
 #, c-format
 msgid "%s needs a pause."
 msgstr ""
@@ -187,7 +187,7 @@ msgstr[0] "Echipa %s a câștigat %u antilopă gnu! Rade-i pe toți!"
 msgstr[1] "Echipa %s a câștigat %u antilope gnu! Rade-i pe toți!"
 msgstr[2] "Echipa %s a câștigat %u de antilope gnu! Rade-i pe toți!"
 
-#: src/weapon/air_attack.cpp:257
+#: src/weapon/air_attack.cpp:259
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -727,7 +727,7 @@ msgstr ""
 msgid "Action"
 msgstr "fiecare deconectare!"
 
-#: src/weapon/air_attack.cpp:215
+#: src/weapon/air_attack.cpp:217
 msgid "Air Attack"
 msgstr "Atac aerian"
 
@@ -770,7 +770,7 @@ msgstr "Nicovală"
 msgid "Area currently displayed"
 msgstr ""
 
-#: src/main.cpp:362
+#: src/main.cpp:361
 msgid "Authors:"
 msgstr "Autori:"
 
@@ -1153,7 +1153,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Energie"
 
-#: src/include/action_handler.cpp:280
+#: src/include/action_handler.cpp:281
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "Eroare de inițializare a rețelei: Clientul %s nu este de acord!! - %s"
@@ -1278,7 +1278,7 @@ msgstr "Tot ecranul?"
 msgid "Game"
 msgstr "Joc"
 
-#: src/include/action_handler.cpp:1001
+#: src/include/action_handler.cpp:1002
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1300,7 +1300,7 @@ msgstr "Modul jocului"
 msgid "Game name:"
 msgstr "Numele jocului:"
 
-#: src/include/action_handler.cpp:245
+#: src/include/action_handler.cpp:246
 msgid "Game out of sync!"
 msgstr ""
 
@@ -1385,7 +1385,7 @@ msgstr "Grăbește-te te miști prea încet!!"
 msgid "I like WarMUX :)"
 msgstr ""
 
-#: src/main.cpp:294
+#: src/main.cpp:293
 msgid ""
 "If you found a bug or have a feature request send us an email (in english, "
 "please):"
@@ -1763,7 +1763,7 @@ msgstr "Mută personajul"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:644
+#: src/weapon/weapon.cpp:643
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Nu a fost găsit nici un element <%s> în fișierul xml de configurare!"
@@ -1970,7 +1970,7 @@ msgstr ""
 msgid "Quit"
 msgstr "Ieșire"
 
-#: src/main.cpp:283
+#: src/main.cpp:282
 #, fuzzy
 msgid "Quit Warmux"
 msgstr "Ieșire din Warmux"
@@ -2366,7 +2366,7 @@ msgstr "Serverul a refuzat conexiunea."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Serverul a refuzat conexiunea: parolă greșită!"
 
-#: src/weapon/weapon.cpp:656
+#: src/weapon/weapon.cpp:655
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2566,7 +2566,7 @@ msgid "User"
 msgstr "Jucător"
 
 #. Version
-#: src/main.cpp:210 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
+#: src/main.cpp:209 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
 msgid "Version"
 msgstr "Versiunea"
 
@@ -2601,12 +2601,12 @@ msgstr "Se așteaptă harta"
 msgid "Waiting for the server. All you can do is cancel or chat!"
 msgstr "Se așteaptă serverul. Tot ce puteți face e să anulați sau să vorbiți!"
 
-#: src/main.cpp:221
+#: src/main.cpp:220
 #, fuzzy
 msgid "Warmux launching..."
 msgstr "Se lansează Warmux..."
 
-#: src/main.cpp:361
+#: src/main.cpp:360
 #, fuzzy
 msgid "Warmux version "
 msgstr "Versiunea Warmux "
@@ -2631,7 +2631,7 @@ msgstr "Armă: Foc / Cutie cu bonus: cadere rapidă"
 msgid "Weapons"
 msgstr "Arme"
 
-#: src/main.cpp:371
+#: src/main.cpp:370
 msgid "Website: "
 msgstr "Saitul web: "
 
@@ -2684,15 +2684,15 @@ msgstr "Echipa e greșită!"
 msgid "Woah! Combo of %u!"
 msgstr ""
 
-#: src/include/action_handler.cpp:241
+#: src/include/action_handler.cpp:242
 msgid "Wrong map CRC!"
 msgstr "Suma de control a hărții e greșită!"
 
-#: src/include/action_handler.cpp:239
+#: src/include/action_handler.cpp:240
 msgid "Wrong map name!"
 msgstr "Numele hărții e greșit!"
 
-#: src/include/action_handler.cpp:243
+#: src/include/action_handler.cpp:244
 msgid "Wrong team!"
 msgstr "Echipa e greșită!"
 
@@ -2721,7 +2721,7 @@ msgstr "Ai nevoie de cel puțin două echipe valide!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "Nu vei putea să joci dacă nu selectezi o echipă!"
 
-#: src/weapon/weapon_launcher.cpp:546
+#: src/weapon/weapon_launcher.cpp:548
 msgid "Your shot has missed!"
 msgstr "Focul dvs. a fost tras în aer!"
 
@@ -2730,7 +2730,7 @@ msgstr "Focul dvs. a fost tras în aer!"
 msgid "aka"
 msgstr "zis"
 
-#: src/weapon/air_attack.cpp:216
+#: src/weapon/air_attack.cpp:218
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

@@ -83,7 +83,6 @@
     <ClCompile Include="..\..\..\lib\warmux\action\action_handler.cpp" />
     <ClCompile Include="..\..\..\lib\warmux\base\error.cpp" />
     <ClCompile Include="..\..\..\lib\warmux\base\i18n.cpp" />
-    <ClCompile Include="..\..\..\lib\warmux\base\singleton.cpp" />
     <ClCompile Include="..\..\..\lib\warmux\maths\euler_vector.cpp" />
     <ClCompile Include="..\..\..\lib\warmux\net\distant_cpu.cpp" />
     <ClCompile Include="..\..\..\lib\warmux\net\download.cpp" />

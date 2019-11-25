@@ -124,13 +124,13 @@ msgid "%s is next to a mine!"
 msgstr "Yma %s ogas dhe grampothen dardhus!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1029
+#: src/include/action_handler.cpp:1030
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "%i gwarier re omjunyas"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1144
+#: src/include/action_handler.cpp:1145
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "%i gwarier re omjunyas"
@@ -140,7 +140,7 @@ msgstr "%i gwarier re omjunyas"
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:484
+#: src/include/action_handler.cpp:485
 #, c-format
 msgid "%s needs a pause."
 msgstr ""
@@ -175,7 +175,7 @@ msgstr[1] "Para %s re waynyas %u Nu! Tardh-i, bughwas!"
 msgstr[2] "Para %s re waynyas %u Gnu! Tardh-i, bughwas!"
 msgstr[3] "Para %s re waynyas %u Gnu! Tardh-i, bughwas!"
 
-#: src/weapon/air_attack.cpp:257
+#: src/weapon/air_attack.cpp:259
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -617,7 +617,7 @@ msgstr ""
 msgid "Action"
 msgstr "Etholyow"
 
-#: src/weapon/air_attack.cpp:215
+#: src/weapon/air_attack.cpp:217
 msgid "Air Attack"
 msgstr "Omsettyans Ayr"
 
@@ -660,7 +660,7 @@ msgstr "Anwan"
 msgid "Area currently displayed"
 msgstr ""
 
-#: src/main.cpp:362
+#: src/main.cpp:361
 msgid "Authors:"
 msgstr "Awtours:"
 
@@ -1042,7 +1042,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Nerth"
 
-#: src/include/action_handler.cpp:280
+#: src/include/action_handler.cpp:281
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "Gwall pan dharbaras an rosweyth: Ny akord an omajer %s orthis!! - %s"
@@ -1161,7 +1161,7 @@ msgstr "Skrin leun?"
 msgid "Game"
 msgstr "Gwari"
 
-#: src/include/action_handler.cpp:1001
+#: src/include/action_handler.cpp:1002
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1183,7 +1183,7 @@ msgstr "Modh gwari"
 msgid "Game name:"
 msgstr "Hanow an gwari ma:"
 
-#: src/include/action_handler.cpp:245
+#: src/include/action_handler.cpp:246
 msgid "Game out of sync!"
 msgstr ""
 
@@ -1269,7 +1269,7 @@ msgstr "Gwra feski, re lent os ta!!"
 msgid "I like WarMUX :)"
 msgstr ""
 
-#: src/main.cpp:294
+#: src/main.cpp:293
 #, fuzzy
 msgid ""
 "If you found a bug or have a feature request send us an email (in english, "
@@ -1646,7 +1646,7 @@ msgstr "Movya person"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:644
+#: src/weapon/weapon.cpp:643
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Ny gavas elven <%s> yn restren restransow xml!"
@@ -1851,7 +1851,7 @@ msgstr ""
 msgid "Quit"
 msgstr "Kwitya"
 
-#: src/main.cpp:283
+#: src/main.cpp:282
 #, fuzzy
 msgid "Quit Warmux"
 msgstr "Kwitya Warmux"
@@ -2254,7 +2254,7 @@ msgstr "An servyer a nahas an junyans."
 msgid "The server rejected the connection: wrong password!"
 msgstr "An servyer a nahas an junyans: ger-tremena kamm!"
 
-#: src/weapon/weapon.cpp:656
+#: src/weapon/weapon.cpp:655
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2453,7 +2453,7 @@ msgid "User"
 msgstr ""
 
 #. Version
-#: src/main.cpp:210 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
+#: src/main.cpp:209 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
 msgid "Version"
 msgstr "Versyon"
 
@@ -2489,12 +2489,12 @@ msgstr ""
 msgid "Waiting for the server. All you can do is cancel or chat!"
 msgstr "Ow kortos an servyer, ny yl'ta saw hedhi po klappya!"
 
-#: src/main.cpp:221
+#: src/main.cpp:220
 #, fuzzy
 msgid "Warmux launching..."
 msgstr "Yma Warmux ow lonchya..."
 
-#: src/main.cpp:361
+#: src/main.cpp:360
 #, fuzzy
 msgid "Warmux version "
 msgstr "Versyon Warmux"
@@ -2519,7 +2519,7 @@ msgstr "Arv: Tenna / Kyst vonus: A godh yn uskis"
 msgid "Weapons"
 msgstr "Arvow"
 
-#: src/main.cpp:371
+#: src/main.cpp:370
 msgid "Website: "
 msgstr "Gwiasva: "
 
@@ -2571,15 +2571,15 @@ msgstr "Para kamm!"
 msgid "Woah! Combo of %u!"
 msgstr ""
 
-#: src/include/action_handler.cpp:241
+#: src/include/action_handler.cpp:242
 msgid "Wrong map CRC!"
 msgstr "Mappa CRC kamm!"
 
-#: src/include/action_handler.cpp:239
+#: src/include/action_handler.cpp:240
 msgid "Wrong map name!"
 msgstr "Hanow an mappa yw kamm!"
 
-#: src/include/action_handler.cpp:243
+#: src/include/action_handler.cpp:244
 msgid "Wrong team!"
 msgstr "Para kamm!"
 
@@ -2612,7 +2612,7 @@ msgstr "Res yw bos dhe'n leha dew bara da!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "Ny yllydh gwari kyns dewis para!"
 
-#: src/weapon/weapon_launcher.cpp:546
+#: src/weapon/weapon_launcher.cpp:548
 msgid "Your shot has missed!"
 msgstr "Dha denn re fyllis!"
 
@@ -2620,7 +2620,7 @@ msgstr "Dha denn re fyllis!"
 msgid "aka"
 msgstr "leshenwys"
 
-#: src/weapon/air_attack.cpp:216
+#: src/weapon/air_attack.cpp:218
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

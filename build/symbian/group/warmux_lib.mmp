@@ -35,7 +35,7 @@ SOURCE fixed_func.cpp
 SOURCEPATH ..\..\..\lib\warmux\action
 SOURCE action.cpp action_handler.cpp
 SOURCEPATH ..\..\..\lib\warmux\base
-SOURCE error.cpp i18n.cpp singleton.cpp
+SOURCE error.cpp i18n.cpp
 SOURCEPATH ..\..\..\lib\warmux\maths
 SOURCE euler_vector.cpp
 SOURCEPATH ..\..\..\lib\warmux\net

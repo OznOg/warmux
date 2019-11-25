@@ -129,13 +129,13 @@ msgid "%s is next to a mine!"
 msgstr "%s je blizu mine!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1029
+#: src/include/action_handler.cpp:1030
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "povezan %i igralec"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1144
+#: src/include/action_handler.cpp:1145
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "povezan %i igralec"
@@ -145,7 +145,7 @@ msgstr "povezan %i igralec"
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:484
+#: src/include/action_handler.cpp:485
 #, c-format
 msgid "%s needs a pause."
 msgstr "%s rabi pavzo."
@@ -180,7 +180,7 @@ msgstr[1] "Ekipa %s je osvojila %u gnuja! Razstreli jih, kavboj!"
 msgstr[2] "Ekipa %s je osvojila %u gnuje! Razstreli jih, kavboj!"
 msgstr[3] "Ekipa %s je osvojila %u gnujev! Razstreli jih, kavboj!"
 
-#: src/weapon/air_attack.cpp:257
+#: src/weapon/air_attack.cpp:259
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -599,7 +599,7 @@ msgstr ""
 msgid "Action"
 msgstr "Nastavitve"
 
-#: src/weapon/air_attack.cpp:215
+#: src/weapon/air_attack.cpp:217
 msgid "Air Attack"
 msgstr "Zračni napad"
 
@@ -642,7 +642,7 @@ msgstr "Nakovalo"
 msgid "Area currently displayed"
 msgstr ""
 
-#: src/main.cpp:362
+#: src/main.cpp:361
 msgid "Authors:"
 msgstr "Avtorji:"
 
@@ -1017,7 +1017,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Energija"
 
-#: src/include/action_handler.cpp:280
+#: src/include/action_handler.cpp:281
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr ""
@@ -1138,7 +1138,7 @@ msgstr "Celozaslonski način?"
 msgid "Game"
 msgstr "Igra"
 
-#: src/include/action_handler.cpp:1001
+#: src/include/action_handler.cpp:1002
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1160,7 +1160,7 @@ msgstr "Vrsta igre"
 msgid "Game name:"
 msgstr "Ime igre:"
 
-#: src/include/action_handler.cpp:245
+#: src/include/action_handler.cpp:246
 msgid "Game out of sync!"
 msgstr ""
 
@@ -1245,7 +1245,7 @@ msgstr "Pohitite, prepočasni ste!!"
 msgid "I like WarMUX :)"
 msgstr ""
 
-#: src/main.cpp:294
+#: src/main.cpp:293
 msgid ""
 "If you found a bug or have a feature request send us an email (in english, "
 "please):"
@@ -1617,7 +1617,7 @@ msgstr "Premakni člana"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:644
+#: src/weapon/weapon.cpp:643
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "V xml nastavitveni datoteki ni bil najden noben element <%s>!"
@@ -1820,7 +1820,7 @@ msgstr "Takojšnji izhod iz igre (s ctrl)"
 msgid "Quit"
 msgstr "Končaj"
 
-#: src/main.cpp:283
+#: src/main.cpp:282
 #, fuzzy
 msgid "Quit Warmux"
 msgstr "Končaj Warmux"
@@ -2213,7 +2213,7 @@ msgstr "Strežnik je zavrnil povezavo."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Strežnik je zavrnil povezavo: napačno geslo!"
 
-#: src/weapon/weapon.cpp:656
+#: src/weapon/weapon.cpp:655
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2410,7 +2410,7 @@ msgid "User"
 msgstr ""
 
 #. Version
-#: src/main.cpp:210 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
+#: src/main.cpp:209 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
 msgid "Version"
 msgstr "Različica"
 
@@ -2445,12 +2445,12 @@ msgstr "Čakanje na oddaljene igralce"
 msgid "Waiting for the server. All you can do is cancel or chat!"
 msgstr "Čakanje na strežnik, lahko se samo pogovarjate!"
 
-#: src/main.cpp:221
+#: src/main.cpp:220
 #, fuzzy
 msgid "Warmux launching..."
 msgstr "Warmux se zaganja ..."
 
-#: src/main.cpp:361
+#: src/main.cpp:360
 #, fuzzy
 msgid "Warmux version "
 msgstr "Warmux različica "
@@ -2474,7 +2474,7 @@ msgstr "Orožje: streljaj / Paket: hiter padec"
 msgid "Weapons"
 msgstr "Orožja"
 
-#: src/main.cpp:371
+#: src/main.cpp:370
 msgid "Website: "
 msgstr "Spletna stran: "
 
@@ -2526,15 +2526,15 @@ msgstr "Napačna ekipa!"
 msgid "Woah! Combo of %u!"
 msgstr ""
 
-#: src/include/action_handler.cpp:241
+#: src/include/action_handler.cpp:242
 msgid "Wrong map CRC!"
 msgstr "Napačna kartna vsota CRC"
 
-#: src/include/action_handler.cpp:239
+#: src/include/action_handler.cpp:240
 msgid "Wrong map name!"
 msgstr "Napačno ime karte!"
 
-#: src/include/action_handler.cpp:243
+#: src/include/action_handler.cpp:244
 msgid "Wrong team!"
 msgstr "Napačna ekipa!"
 
@@ -2563,7 +2563,7 @@ msgstr "Potrebujete vsaj dve veljavni ekipi !"
 msgid "You won't be able to play before selecting a team!"
 msgstr "Dokler ne izberete ekipe ne boste mogli igrati!"
 
-#: src/weapon/weapon_launcher.cpp:546
+#: src/weapon/weapon_launcher.cpp:548
 msgid "Your shot has missed!"
 msgstr "Zgrešili ste!"
 
@@ -2571,7 +2571,7 @@ msgstr "Zgrešili ste!"
 msgid "aka"
 msgstr "kot"
 
-#: src/weapon/air_attack.cpp:216
+#: src/weapon/air_attack.cpp:218
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

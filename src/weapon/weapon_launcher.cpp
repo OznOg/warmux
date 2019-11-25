@@ -143,6 +143,8 @@ WeaponProjectile::WeaponProjectile(const std::string &name,
   can_drown = true;
   camera_follow_closely = false;
 
+  auto weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
+
   image = GetResourceManager().LoadSprite(weapons_res_profile, name);
   SetSize(image->GetSize());
 

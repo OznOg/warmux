@@ -126,13 +126,13 @@ msgid "%s is next to a mine!"
 msgstr "O %s είναι δίπλα σε νάρκη!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1029
+#: src/include/action_handler.cpp:1030
 #, c-format
 msgid "%s just connected"
 msgstr "%s μόλις συνδέθηκε"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1144
+#: src/include/action_handler.cpp:1145
 #, c-format
 msgid "%s just disconnected"
 msgstr "%s μόλις αποσυνδέθηκε"
@@ -142,7 +142,7 @@ msgstr "%s μόλις αποσυνδέθηκε"
 msgid "%s kicked from game"
 msgstr "%s αποβλήθηκε από το παιχνίδι"
 
-#: src/include/action_handler.cpp:484
+#: src/include/action_handler.cpp:485
 #, c-format
 msgid "%s needs a pause."
 msgstr "Ο %s χρειάζεται ένα διάλειμμα."
@@ -173,7 +173,7 @@ msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "Η ομάδα %s κέρδισε %u Gnu! Τα κεφάλια κάτω, καουμπόηδες!"
 msgstr[1] "Η ομάδα %s κέρδισε %u Gnus! Τα κεφάλια κάτω, καουμπόηδες!"
 
-#: src/weapon/air_attack.cpp:257
+#: src/weapon/air_attack.cpp:259
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -543,7 +543,7 @@ msgstr ""
 msgid "Action"
 msgstr "Δράση"
 
-#: src/weapon/air_attack.cpp:215
+#: src/weapon/air_attack.cpp:217
 msgid "Air Attack"
 msgstr "Εναέρια επίθεση"
 
@@ -587,7 +587,7 @@ msgstr "Αμόνι"
 msgid "Area currently displayed"
 msgstr "Περιοχή που εμφανίζεται"
 
-#: src/main.cpp:362
+#: src/main.cpp:361
 msgid "Authors:"
 msgstr "Συγγραφείς:"
 
@@ -981,7 +981,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Ενέργεια"
 
-#: src/include/action_handler.cpp:280
+#: src/include/action_handler.cpp:281
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "Λάθος αρχικοποίησης δικτύου: Ο πελάτης %s δεν συμφωνεί μαζί σου!! - %s"
@@ -1108,7 +1108,7 @@ msgstr "Πλήρης οθόνη;"
 msgid "Game"
 msgstr "Παιχνίδι"
 
-#: src/include/action_handler.cpp:1001
+#: src/include/action_handler.cpp:1002
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1134,7 +1134,7 @@ msgstr "Κατάσταση παιχνιδιού"
 msgid "Game name:"
 msgstr "Όνομα παιχνιδιού:"
 
-#: src/include/action_handler.cpp:245
+#: src/include/action_handler.cpp:246
 msgid "Game out of sync!"
 msgstr "Παιχνίδι εκτός συγχρονισμού!"
 
@@ -1222,7 +1222,7 @@ msgid "I like WarMUX :)"
 msgstr "Μ΄αρέσει το WarMUX :)"
 
 # Si vous trouvez un bug ou si vous pensez qu'il manque quelque chose à Warmux, envoyez un mail (en anglais, svp) :
-#: src/main.cpp:294
+#: src/main.cpp:293
 msgid ""
 "If you found a bug or have a feature request send us an email (in english, "
 "please):"
@@ -1585,7 +1585,7 @@ msgstr "Επόμενος χαρακτήρας"
 msgid "No comment."
 msgstr "Σχόλιο"
 
-#: src/weapon/weapon.cpp:644
+#: src/weapon/weapon.cpp:643
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Κανένα στοιχείο <%s> δεν βρέθηκε στο αρχείο διαμόρφωσης XML!"
@@ -1814,7 +1814,7 @@ msgstr "Γρήγορα εγκατάλειψε το παιχνίδι με το Ct
 msgid "Quit"
 msgstr "Εγκατάλειψε"
 
-#: src/main.cpp:283
+#: src/main.cpp:282
 msgid "Quit Warmux"
 msgstr "Εγκατάλειψε το  Warmux"
 
@@ -2229,7 +2229,7 @@ msgstr "Ο διακομιστής απέρριψε τη σύνδεση."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Ο διακομιστής απέρριψε τη σύνδεση: λάθος κωδικός!"
 
-#: src/weapon/weapon.cpp:656
+#: src/weapon/weapon.cpp:655
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2427,7 +2427,7 @@ msgid "User"
 msgstr ""
 
 #. Version
-#: src/main.cpp:210 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
+#: src/main.cpp:209 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
 msgid "Version"
 msgstr "Έκδοση"
 
@@ -2461,11 +2461,11 @@ msgstr "Περιμένοντας για απομακρυσμένους παίκ�
 msgid "Waiting for the server. All you can do is cancel or chat!"
 msgstr "Αναμένοντας το διακομιστή, μπορείτε να ακυρώσετε ή να συζητήσετε!"
 
-#: src/main.cpp:221
+#: src/main.cpp:220
 msgid "Warmux launching..."
 msgstr "Έναρξη του Warmux..."
 
-#: src/main.cpp:361
+#: src/main.cpp:360
 msgid "Warmux version "
 msgstr "Έκδοση του Warmux"
 
@@ -2487,7 +2487,7 @@ msgstr "Όπλο: Πυρ / Κουτί δώρο: πτώση"
 msgid "Weapons"
 msgstr "Όπλα"
 
-#: src/main.cpp:371
+#: src/main.cpp:370
 msgid "Website: "
 msgstr "Ιστοσελίδα: "
 
@@ -2543,15 +2543,15 @@ msgstr "Ουάου! Συνδυασμός %u!"
 
 # cyclic redundancy check (CRC) checksum
 # CRC terrain erroné !
-#: src/include/action_handler.cpp:241
+#: src/include/action_handler.cpp:242
 msgid "Wrong map CRC!"
 msgstr "Λάθος CRC χάρτη!"
 
-#: src/include/action_handler.cpp:239
+#: src/include/action_handler.cpp:240
 msgid "Wrong map name!"
 msgstr "Λάθος όνομα χάρτη!"
 
-#: src/include/action_handler.cpp:243
+#: src/include/action_handler.cpp:244
 msgid "Wrong team!"
 msgstr "Λάθος ομάδα!"
 
@@ -2583,7 +2583,7 @@ msgstr "Χρειάζονται τουλάχιστον δύο έγκυρες ομ
 msgid "You won't be able to play before selecting a team!"
 msgstr "Δεν μπορείτε να παίξετε χωρίς να διαλέξετε ομάδα!"
 
-#: src/weapon/weapon_launcher.cpp:546
+#: src/weapon/weapon_launcher.cpp:548
 msgid "Your shot has missed!"
 msgstr "Αστόχησες..."
 
@@ -2591,7 +2591,7 @@ msgstr "Αστόχησες..."
 msgid "aka"
 msgstr "ψευδώνυμο:"
 
-#: src/weapon/air_attack.cpp:216
+#: src/weapon/air_attack.cpp:218
 msgid ""
 "attack direction: Left/Right\n"
 "Bombing: Left click on the target\n"

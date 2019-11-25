@@ -26,30 +26,12 @@
 #include <list>
 #include <WARMUX_debug.h>
 
-// Forward declarations
-class BaseSingleton;
-struct SDL_mutex;
-
-typedef std::list<BaseSingleton*> SingletonList;
-extern SingletonList singletons;
-
-class BaseSingleton
-{
-  static SDL_mutex* singleton_mutex;
-protected:
-  BaseSingleton();
-  virtual ~BaseSingleton();
-
-public:
-  static void ReleaseSingletons();
-};
-
 template<typename T>
-class Singleton : public BaseSingleton
+class Singleton
 {
 protected:
   static T* singleton;
-  ~Singleton() override
+  virtual ~Singleton()
   {
     MSG_DBG_RTTI("singleton", "Deleting singleton %p of type %s",
                  singleton, typeid(T).name());

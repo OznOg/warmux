@@ -128,13 +128,13 @@ msgid "%s is next to a mine!"
 msgstr "%s ist neben einer Mine!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1029
+#: src/include/action_handler.cpp:1030
 #, c-format
 msgid "%s just connected"
 msgstr "Spieler %s verbunden"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1144
+#: src/include/action_handler.cpp:1145
 #, c-format
 msgid "%s just disconnected"
 msgstr "Spieler %s getrennt"
@@ -144,7 +144,7 @@ msgstr "Spieler %s getrennt"
 msgid "%s kicked from game"
 msgstr "%s wurde rausgeschmissen"
 
-#: src/include/action_handler.cpp:484
+#: src/include/action_handler.cpp:485
 #, c-format
 msgid "%s needs a pause."
 msgstr "%s braucht eine Pause."
@@ -175,7 +175,7 @@ msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "Team %s hat %u Gnu gewonnen! Spreng sie in die Luft, Cowboy!"
 msgstr[1] "Team %s hat %u Gnus gewonnen! Spreng sie in die Luft, Cowboy!"
 
-#: src/weapon/air_attack.cpp:257
+#: src/weapon/air_attack.cpp:259
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -534,7 +534,7 @@ msgstr ""
 msgid "Action"
 msgstr "Aktion"
 
-#: src/weapon/air_attack.cpp:215
+#: src/weapon/air_attack.cpp:217
 msgid "Air Attack"
 msgstr "Luftangriff"
 
@@ -576,7 +576,7 @@ msgstr "Amboss"
 msgid "Area currently displayed"
 msgstr "sichtbarer Kartenausschnitt"
 
-#: src/main.cpp:362
+#: src/main.cpp:361
 msgid "Authors:"
 msgstr "Autoren:"
 
@@ -962,7 +962,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Lebenspunkte"
 
-#: src/include/action_handler.cpp:280
+#: src/include/action_handler.cpp:281
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr ""
@@ -1081,7 +1081,7 @@ msgstr "Vollbild?"
 msgid "Game"
 msgstr "Spiel"
 
-#: src/include/action_handler.cpp:1001
+#: src/include/action_handler.cpp:1002
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1108,7 +1108,7 @@ msgstr "Spielmodus"
 msgid "Game name:"
 msgstr "Spielname:"
 
-#: src/include/action_handler.cpp:245
+#: src/include/action_handler.cpp:246
 msgid "Game out of sync!"
 msgstr "Synchronisation fehlgeschlagen!"
 
@@ -1195,7 +1195,7 @@ msgstr "Beeilung, ihr seid zu langsam!"
 msgid "I like WarMUX :)"
 msgstr "WarMUX ist toll!!!"
 
-#: src/main.cpp:294
+#: src/main.cpp:293
 msgid ""
 "If you found a bug or have a feature request send us an email (in english, "
 "please):"
@@ -1560,7 +1560,7 @@ msgstr "nächste Figur"
 msgid "No comment."
 msgstr "Anmerkungen"
 
-#: src/weapon/weapon.cpp:644
+#: src/weapon/weapon.cpp:643
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Kein Element <%s> in der XML-Config-Datei gefunden!"
@@ -1783,7 +1783,7 @@ msgstr "[Strg] + [Esc] Bosskey"
 msgid "Quit"
 msgstr "Verlassen"
 
-#: src/main.cpp:283
+#: src/main.cpp:282
 msgid "Quit Warmux"
 msgstr "Warmux verlassen"
 
@@ -2189,7 +2189,7 @@ msgstr "Der Server hat die Verbindung zurückgewiesen."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Der Server hat die Verbindung nicht akzeptiert: Falsches Passwort!"
 
-#: src/weapon/weapon.cpp:656
+#: src/weapon/weapon.cpp:655
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2385,7 +2385,7 @@ msgid "User"
 msgstr "Benutzer"
 
 #. Version
-#: src/main.cpp:210 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
+#: src/main.cpp:209 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
 msgid "Version"
 msgstr "Version"
 
@@ -2418,11 +2418,11 @@ msgstr "Warte auf Netzwerk-Spieler"
 msgid "Waiting for the server. All you can do is cancel or chat!"
 msgstr "Warte auf den Server. Du kannst abbrechen oder chatten!"
 
-#: src/main.cpp:221
+#: src/main.cpp:220
 msgid "Warmux launching..."
 msgstr "Warmux startet …"
 
-#: src/main.cpp:361
+#: src/main.cpp:360
 msgid "Warmux version "
 msgstr "Warmux-Version "
 
@@ -2446,7 +2446,7 @@ msgstr ""
 msgid "Weapons"
 msgstr "Waffen"
 
-#: src/main.cpp:371
+#: src/main.cpp:370
 msgid "Website: "
 msgstr "Webseite: "
 
@@ -2496,15 +2496,15 @@ msgstr "Im Team"
 msgid "Woah! Combo of %u!"
 msgstr "Was für ein Schuss! Das waren %u auf einmal."
 
-#: src/include/action_handler.cpp:241
+#: src/include/action_handler.cpp:242
 msgid "Wrong map CRC!"
 msgstr "Falsche Kartenprüfsumme!"
 
-#: src/include/action_handler.cpp:239
+#: src/include/action_handler.cpp:240
 msgid "Wrong map name!"
 msgstr "Falscher Kartenname!"
 
-#: src/include/action_handler.cpp:243
+#: src/include/action_handler.cpp:244
 msgid "Wrong team!"
 msgstr "Falsches Team!"
 
@@ -2535,7 +2535,7 @@ msgstr "Du brauchst mindestens zwei gültige Teams!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "Du kannst erst spielen, wenn du ein Team gewählt hast!"
 
-#: src/weapon/weapon_launcher.cpp:546
+#: src/weapon/weapon_launcher.cpp:548
 msgid "Your shot has missed!"
 msgstr "Dein Schuss ging daneben!"
 
@@ -2543,7 +2543,7 @@ msgstr "Dein Schuss ging daneben!"
 msgid "aka"
 msgstr "alias"
 
-#: src/weapon/air_attack.cpp:216
+#: src/weapon/air_attack.cpp:218
 msgid ""
 "attack direction: Left/Right\n"
 "Bombing: Left click on the target\n"

@@ -84,6 +84,8 @@ Plane::Plane(AirAttackConfig &p_cfg) :
 {
   SetCollisionModel(false, false, false);
 
+  auto weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
+
   image = GetResourceManager().LoadSprite(weapons_res_profile, "air_attack_plane");
   image->EnableCaches(true, 0);
   SetSize(image->GetSize());

@@ -33,7 +33,6 @@ libwarmux_a_SOURCES = \
 	./action/action_handler.cpp \
 	./base/error.cpp \
 	./base/i18n.cpp \
-	./base/singleton.cpp \
 	./maths/euler_vector.cpp \
 	./net/distant_cpu.cpp \
 	./net/download.cpp \

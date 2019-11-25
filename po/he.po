@@ -121,13 +121,13 @@ msgid "%s is next to a mine!"
 msgstr "%s סמוך למוקש!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1029
+#: src/include/action_handler.cpp:1030
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "שחקן %i מחובר"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1144
+#: src/include/action_handler.cpp:1145
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "שחקן %i מחובר"
@@ -137,7 +137,7 @@ msgstr "שחקן %i מחובר"
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:484
+#: src/include/action_handler.cpp:485
 #, c-format
 msgid "%s needs a pause."
 msgstr ""
@@ -168,7 +168,7 @@ msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "צוות %s זכה בגנו! חסל אותם, קאובוי!"
 msgstr[1] "צוות %s זכה ב-%u גנואים! חסל אותם, קאובוי!"
 
-#: src/weapon/air_attack.cpp:257
+#: src/weapon/air_attack.cpp:259
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -512,7 +512,7 @@ msgstr ""
 msgid "Action"
 msgstr "אפשרויות"
 
-#: src/weapon/air_attack.cpp:215
+#: src/weapon/air_attack.cpp:217
 msgid "Air Attack"
 msgstr "התקפה אווירית"
 
@@ -556,7 +556,7 @@ msgstr "סדן"
 msgid "Area currently displayed"
 msgstr ""
 
-#: src/main.cpp:362
+#: src/main.cpp:361
 msgid "Authors:"
 msgstr "מחברים:"
 
@@ -941,7 +941,7 @@ msgstr ""
 msgid "Energy"
 msgstr ""
 
-#: src/include/action_handler.cpp:280
+#: src/include/action_handler.cpp:281
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr ""
@@ -1055,7 +1055,7 @@ msgstr "Plein Ã©cran ?"
 msgid "Game"
 msgstr ""
 
-#: src/include/action_handler.cpp:1001
+#: src/include/action_handler.cpp:1002
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1078,7 +1078,7 @@ msgstr "מצב לקוח"
 msgid "Game name:"
 msgstr ""
 
-#: src/include/action_handler.cpp:245
+#: src/include/action_handler.cpp:246
 msgid "Game out of sync!"
 msgstr ""
 
@@ -1162,7 +1162,7 @@ msgstr "קדימה, אתה איטי מדי!!"
 msgid "I like WarMUX :)"
 msgstr ""
 
-#: src/main.cpp:294
+#: src/main.cpp:293
 #, fuzzy
 msgid ""
 "If you found a bug or have a feature request send us an email (in english, "
@@ -1539,7 +1539,7 @@ msgstr "מצנח"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:644
+#: src/weapon/weapon.cpp:643
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "לא נמצא אלמנט <%s> בקובץ ה-xml!"
@@ -1743,7 +1743,7 @@ msgstr ""
 msgid "Quit"
 msgstr "יציאה"
 
-#: src/main.cpp:283
+#: src/main.cpp:282
 #, fuzzy
 msgid "Quit Warmux"
 msgstr "יציאה מ-Warmux"
@@ -2146,7 +2146,7 @@ msgstr "השרת סירב לבקשת החיבור."
 msgid "The server rejected the connection: wrong password!"
 msgstr "השרת סירב לבקשת החיבור."
 
-#: src/weapon/weapon.cpp:656
+#: src/weapon/weapon.cpp:655
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2339,7 +2339,7 @@ msgid "User"
 msgstr ""
 
 #. Version
-#: src/main.cpp:210 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
+#: src/main.cpp:209 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
 msgid "Version"
 msgstr "גירסה"
 
@@ -2373,12 +2373,12 @@ msgstr ""
 msgid "Waiting for the server. All you can do is cancel or chat!"
 msgstr "ממתין לשרת, כרגע תוכל רק לבטל או להשתמש בצ'אט!"
 
-#: src/main.cpp:221
+#: src/main.cpp:220
 #, fuzzy
 msgid "Warmux launching..."
 msgstr "Warmux נטען..."
 
-#: src/main.cpp:361
+#: src/main.cpp:360
 #, fuzzy
 msgid "Warmux version "
 msgstr "גירסת Warmux "
@@ -2402,7 +2402,7 @@ msgstr ""
 msgid "Weapons"
 msgstr "כלי נשק"
 
-#: src/main.cpp:371
+#: src/main.cpp:370
 msgid "Website: "
 msgstr "אתר: "
 
@@ -2452,15 +2452,15 @@ msgstr ""
 msgid "Woah! Combo of %u!"
 msgstr ""
 
-#: src/include/action_handler.cpp:241
+#: src/include/action_handler.cpp:242
 msgid "Wrong map CRC!"
 msgstr ""
 
-#: src/include/action_handler.cpp:239
+#: src/include/action_handler.cpp:240
 msgid "Wrong map name!"
 msgstr ""
 
-#: src/include/action_handler.cpp:243
+#: src/include/action_handler.cpp:244
 msgid "Wrong team!"
 msgstr ""
 
@@ -2493,7 +2493,7 @@ msgstr "אתה זקוק לשני צוותים תקינים לפחות!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "לא תוכל לשחק לפני שתבחר צוות!"
 
-#: src/weapon/weapon_launcher.cpp:546
+#: src/weapon/weapon_launcher.cpp:548
 msgid "Your shot has missed!"
 msgstr "הירייה שלך החטיאה!"
 
@@ -2501,7 +2501,7 @@ msgstr "הירייה שלך החטיאה!"
 msgid "aka"
 msgstr "המכונה"
 
-#: src/weapon/air_attack.cpp:216
+#: src/weapon/air_attack.cpp:218
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

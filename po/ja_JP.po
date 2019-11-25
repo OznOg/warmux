@@ -124,13 +124,13 @@ msgid "%s is next to a mine!"
 msgstr "%s の近くに地雷が！"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1029
+#: src/include/action_handler.cpp:1030
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "%i人のプレイヤーが接続しています"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1144
+#: src/include/action_handler.cpp:1145
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "%i人のプレイヤーが接続しています"
@@ -140,7 +140,7 @@ msgstr "%i人のプレイヤーが接続しています"
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:484
+#: src/include/action_handler.cpp:485
 #, c-format
 msgid "%s needs a pause."
 msgstr "%s はポーズが必要です"
@@ -169,7 +169,7 @@ msgid "%s team has won %u Gnu! Blow them all, cowboy!"
 msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "%s チームは %u の Gnu! を獲得。カウボーイ！"
 
-#: src/weapon/air_attack.cpp:257
+#: src/weapon/air_attack.cpp:259
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -485,7 +485,7 @@ msgstr ""
 msgid "Action"
 msgstr "オプション"
 
-#: src/weapon/air_attack.cpp:215
+#: src/weapon/air_attack.cpp:217
 msgid "Air Attack"
 msgstr "空爆"
 
@@ -528,7 +528,7 @@ msgstr "ハンマー台"
 msgid "Area currently displayed"
 msgstr ""
 
-#: src/main.cpp:362
+#: src/main.cpp:361
 msgid "Authors:"
 msgstr "作者:"
 
@@ -911,7 +911,7 @@ msgstr ""
 msgid "Energy"
 msgstr "ライフ"
 
-#: src/include/action_handler.cpp:280
+#: src/include/action_handler.cpp:281
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "ネットワーク初期化エラー : クライアント %s はあなたに同意しません - %s"
@@ -1030,7 +1030,7 @@ msgstr "フルスクリーン？"
 msgid "Game"
 msgstr "ゲーム"
 
-#: src/include/action_handler.cpp:1001
+#: src/include/action_handler.cpp:1002
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1052,7 +1052,7 @@ msgstr "ゲームモード"
 msgid "Game name:"
 msgstr "ゲーム名"
 
-#: src/include/action_handler.cpp:245
+#: src/include/action_handler.cpp:246
 msgid "Game out of sync!"
 msgstr ""
 
@@ -1137,7 +1137,7 @@ msgstr "急げ、遅すぎるぞ！！"
 msgid "I like WarMUX :)"
 msgstr ""
 
-#: src/main.cpp:294
+#: src/main.cpp:293
 msgid ""
 "If you found a bug or have a feature request send us an email (in english, "
 "please):"
@@ -1509,7 +1509,7 @@ msgstr "キャラクターの移動"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:644
+#: src/weapon/weapon.cpp:643
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "xml設定ファイル内に<%s>要素が見つかりません！"
@@ -1714,7 +1714,7 @@ msgstr "Ctrlでクイック終了"
 msgid "Quit"
 msgstr "終了"
 
-#: src/main.cpp:283
+#: src/main.cpp:282
 #, fuzzy
 msgid "Quit Warmux"
 msgstr "Warmux を終了"
@@ -2106,7 +2106,7 @@ msgstr "サーバーから接続が拒否されました。"
 msgid "The server rejected the connection: wrong password!"
 msgstr "サーバーから接続が拒否されました: パスワードが違います！"
 
-#: src/weapon/weapon.cpp:656
+#: src/weapon/weapon.cpp:655
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2301,7 +2301,7 @@ msgid "User"
 msgstr ""
 
 #. Version
-#: src/main.cpp:210 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
+#: src/main.cpp:209 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
 msgid "Version"
 msgstr "バージョン"
 
@@ -2333,12 +2333,12 @@ msgstr "リモートプレイヤーを待っています"
 msgid "Waiting for the server. All you can do is cancel or chat!"
 msgstr "サーバーを待っています。キャンセルとチャットができます！"
 
-#: src/main.cpp:221
+#: src/main.cpp:220
 #, fuzzy
 msgid "Warmux launching..."
 msgstr "Warmux を起動中..."
 
-#: src/main.cpp:361
+#: src/main.cpp:360
 #, fuzzy
 msgid "Warmux version "
 msgstr " Warmux バージョン"
@@ -2363,7 +2363,7 @@ msgstr "武器：攻撃 / ボーナスボックス: 急落下"
 msgid "Weapons"
 msgstr "武器"
 
-#: src/main.cpp:371
+#: src/main.cpp:370
 msgid "Website: "
 msgstr "Webサイト: "
 
@@ -2416,15 +2416,15 @@ msgstr "チームが間違っています！"
 msgid "Woah! Combo of %u!"
 msgstr ""
 
-#: src/include/action_handler.cpp:241
+#: src/include/action_handler.cpp:242
 msgid "Wrong map CRC!"
 msgstr "CRCが間違っているマップです！"
 
-#: src/include/action_handler.cpp:239
+#: src/include/action_handler.cpp:240
 msgid "Wrong map name!"
 msgstr "名前が間違っているマップです！"
 
-#: src/include/action_handler.cpp:243
+#: src/include/action_handler.cpp:244
 msgid "Wrong team!"
 msgstr "チームが間違っています！"
 
@@ -2453,7 +2453,7 @@ msgstr "最低2つの有効なチームが必要です！"
 msgid "You won't be able to play before selecting a team!"
 msgstr "ゲーム開始前にチームを選択してください！"
 
-#: src/weapon/weapon_launcher.cpp:546
+#: src/weapon/weapon_launcher.cpp:548
 msgid "Your shot has missed!"
 msgstr "ミス！"
 
@@ -2462,7 +2462,7 @@ msgstr "ミス！"
 msgid "aka"
 msgstr "aka"
 
-#: src/weapon/air_attack.cpp:216
+#: src/weapon/air_attack.cpp:218
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

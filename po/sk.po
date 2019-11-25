@@ -121,13 +121,13 @@ msgid "%s is next to a mine!"
 msgstr "%s stupil na mínu!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1029
+#: src/include/action_handler.cpp:1030
 #, fuzzy, c-format
 msgid "%s just connected"
 msgstr "Nie je pripojený žiadny hráč"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1144
+#: src/include/action_handler.cpp:1145
 #, fuzzy, c-format
 msgid "%s just disconnected"
 msgstr "Nie je pripojený žiadny hráč"
@@ -137,7 +137,7 @@ msgstr "Nie je pripojený žiadny hráč"
 msgid "%s kicked from game"
 msgstr ""
 
-#: src/include/action_handler.cpp:484
+#: src/include/action_handler.cpp:485
 #, c-format
 msgid "%s needs a pause."
 msgstr "%s potrebuje pauzu."
@@ -170,7 +170,7 @@ msgstr[0] "Tím %s získal %u Gnu! Všetkých ich rozmetajte!"
 msgstr[1] "Tím %s získal %u Gnu! Všetkých ich rozmetajte!"
 msgstr[2] "Tím %s získal %u Gnu! Všetkých ich rozmetajte!"
 
-#: src/weapon/air_attack.cpp:257
+#: src/weapon/air_attack.cpp:259
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -583,7 +583,7 @@ msgstr ""
 msgid "Action"
 msgstr "Nastavenia"
 
-#: src/weapon/air_attack.cpp:215
+#: src/weapon/air_attack.cpp:217
 msgid "Air Attack"
 msgstr "Vzdušný útok"
 
@@ -626,7 +626,7 @@ msgstr "Kovadlina"
 msgid "Area currently displayed"
 msgstr ""
 
-#: src/main.cpp:362
+#: src/main.cpp:361
 msgid "Authors:"
 msgstr "Autori:"
 
@@ -1007,7 +1007,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Energia"
 
-#: src/include/action_handler.cpp:280
+#: src/include/action_handler.cpp:281
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "Chyba pri inicializácii siete: Klient %s nesúhlasí s tebou!! - %s"
@@ -1124,7 +1124,7 @@ msgstr "Na celú obrazovku"
 msgid "Game"
 msgstr "Hra"
 
-#: src/include/action_handler.cpp:1001
+#: src/include/action_handler.cpp:1002
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1146,7 +1146,7 @@ msgstr "Herný mód"
 msgid "Game name:"
 msgstr "Názov hry:"
 
-#: src/include/action_handler.cpp:245
+#: src/include/action_handler.cpp:246
 msgid "Game out of sync!"
 msgstr ""
 
@@ -1231,7 +1231,7 @@ msgstr "Zobuď sa, si príliš pomalý !!"
 msgid "I like WarMUX :)"
 msgstr ""
 
-#: src/main.cpp:294
+#: src/main.cpp:293
 msgid ""
 "If you found a bug or have a feature request send us an email (in english, "
 "please):"
@@ -1605,7 +1605,7 @@ msgstr "Presunúť postavu"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:644
+#: src/weapon/weapon.cpp:643
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Nenašiel som element <%s> v konfiguračnom xml súbore!"
@@ -1810,7 +1810,7 @@ msgstr "Rýchly odchod pomocou Ctrl"
 msgid "Quit"
 msgstr "Opustiť hru"
 
-#: src/main.cpp:283
+#: src/main.cpp:282
 #, fuzzy
 msgid "Quit Warmux"
 msgstr "Opustiť Warmux"
@@ -2206,7 +2206,7 @@ msgstr "Server odmietol spojenie"
 msgid "The server rejected the connection: wrong password!"
 msgstr "Server odmietol spojenie: zle zadané heslo!"
 
-#: src/weapon/weapon.cpp:656
+#: src/weapon/weapon.cpp:655
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2403,7 +2403,7 @@ msgid "User"
 msgstr ""
 
 #. Version
-#: src/main.cpp:210 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
+#: src/main.cpp:209 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
 msgid "Version"
 msgstr "Verzia"
 
@@ -2438,12 +2438,12 @@ msgid "Waiting for the server. All you can do is cancel or chat!"
 msgstr ""
 "Čakanie na server. Všetko čo môžeš urobiť je zrušiť operáciu alebo chatovať!"
 
-#: src/main.cpp:221
+#: src/main.cpp:220
 #, fuzzy
 msgid "Warmux launching..."
 msgstr "Warmux sa spúšťa"
 
-#: src/main.cpp:361
+#: src/main.cpp:360
 #, fuzzy
 msgid "Warmux version "
 msgstr "Verzia hry"
@@ -2468,7 +2468,7 @@ msgstr "Zbraň: Paľba / Bonusová krabica: padá rýchlo"
 msgid "Weapons"
 msgstr "Zbrane"
 
-#: src/main.cpp:371
+#: src/main.cpp:370
 msgid "Website: "
 msgstr "Web stránka:"
 
@@ -2520,15 +2520,15 @@ msgstr "Neplatný tím"
 msgid "Woah! Combo of %u!"
 msgstr ""
 
-#: src/include/action_handler.cpp:241
+#: src/include/action_handler.cpp:242
 msgid "Wrong map CRC!"
 msgstr "Neplatné CRC mapy"
 
-#: src/include/action_handler.cpp:239
+#: src/include/action_handler.cpp:240
 msgid "Wrong map name!"
 msgstr "Neplatný názov mapy"
 
-#: src/include/action_handler.cpp:243
+#: src/include/action_handler.cpp:244
 msgid "Wrong team!"
 msgstr "Neplatný tím"
 
@@ -2557,7 +2557,7 @@ msgstr "Potrebuješ aspoň dva platné tímy!"
 msgid "You won't be able to play before selecting a team!"
 msgstr "Nemôžeš hrať pred tým než si vyberieš tím!"
 
-#: src/weapon/weapon_launcher.cpp:546
+#: src/weapon/weapon_launcher.cpp:548
 msgid "Your shot has missed!"
 msgstr "Strela minula cieľ!"
 
@@ -2565,7 +2565,7 @@ msgstr "Strela minula cieľ!"
 msgid "aka"
 msgstr "aka"
 
-#: src/weapon/air_attack.cpp:216
+#: src/weapon/air_attack.cpp:218
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

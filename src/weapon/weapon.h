@@ -47,8 +47,6 @@ extern const uint WEAPON_ICO_HEIGHT;
 
 //-----------------------------------------------------------------------------
 
-extern std::shared_ptr<Profile> weapons_res_profile;
-
 class Weapon
 {
 public:
@@ -90,6 +88,7 @@ private:
 protected:
   Weapon::Weapon_type m_type;
   Weapon::category_t  m_category;
+  std::shared_ptr<Profile> weapons_res_profile;
 
   std::string m_id;
   std::string m_name;

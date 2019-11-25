@@ -49,9 +49,6 @@
 //# define DEBUG_HOLE
 #endif
 
-std::shared_ptr<Profile> weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
-
-
 const int INFINITE_AMMO = -1;
 const uint MAX_TIME_LOADING = 3500;
 
@@ -104,6 +101,8 @@ Weapon::Weapon(Weapon_type type,
     use_flipping = true;
 
   extra_params = params;
+
+  weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
 
   if (drawable) {
     m_image = new Sprite(GetResourceManager().LoadImage(weapons_res_profile, m_id));

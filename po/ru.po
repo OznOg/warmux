@@ -133,13 +133,13 @@ msgid "%s is next to a mine!"
 msgstr "%s рядом с миной!"
 
 #. For translators: extended in "<nickname> (<host>) just connected
-#: src/include/action_handler.cpp:1029
+#: src/include/action_handler.cpp:1030
 #, c-format
 msgid "%s just connected"
 msgstr "%s только что присоединился"
 
 #. For translators: extended in "<nickname> (<host>) just disconnected
-#: src/include/action_handler.cpp:1144
+#: src/include/action_handler.cpp:1145
 #, c-format
 msgid "%s just disconnected"
 msgstr "%s только что отсоединился"
@@ -149,7 +149,7 @@ msgstr "%s только что отсоединился"
 msgid "%s kicked from game"
 msgstr "%s был выкинут из игры"
 
-#: src/include/action_handler.cpp:484
+#: src/include/action_handler.cpp:485
 #, c-format
 msgid "%s needs a pause."
 msgstr "%s нуждается в паузе."
@@ -182,7 +182,7 @@ msgstr[0] "Команда %s выиграла %u антилопу! Взорви 
 msgstr[1] "Команда %s выиграла %u антилопы! Взорви их всех, ковбой!"
 msgstr[2] "Команда %s выиграла %u антилоп! Взорви их всех, ковбой!"
 
-#: src/weapon/air_attack.cpp:257
+#: src/weapon/air_attack.cpp:259
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -592,7 +592,7 @@ msgstr ""
 msgid "Action"
 msgstr "Действие"
 
-#: src/weapon/air_attack.cpp:215
+#: src/weapon/air_attack.cpp:217
 msgid "Air Attack"
 msgstr "Воздушная атака"
 
@@ -634,7 +634,7 @@ msgstr "Наковальня"
 msgid "Area currently displayed"
 msgstr "Видимая область"
 
-#: src/main.cpp:362
+#: src/main.cpp:361
 msgid "Authors:"
 msgstr "Авторы:"
 
@@ -1023,7 +1023,7 @@ msgstr ""
 msgid "Energy"
 msgstr "Энергия"
 
-#: src/include/action_handler.cpp:280
+#: src/include/action_handler.cpp:281
 #, c-format
 msgid "Error initializing network: Client %s does not agree with you!! - %s"
 msgstr "Ошибка инициализации сети: Клиент %s не согласен с Вами!! - %s"
@@ -1139,7 +1139,7 @@ msgstr "На весь экран?"
 msgid "Game"
 msgstr "Игра"
 
-#: src/include/action_handler.cpp:1001
+#: src/include/action_handler.cpp:1002
 msgid ""
 "Game is not synchronized anymore! This is BAD, the network game will be "
 "interrupted, sorry. Please, report the bug to the Warmux Team by mail or "
@@ -1164,7 +1164,7 @@ msgstr "Режим игры"
 msgid "Game name:"
 msgstr "Имя игры:"
 
-#: src/include/action_handler.cpp:245
+#: src/include/action_handler.cpp:246
 msgid "Game out of sync!"
 msgstr "Игра не может синхронизироваться"
 
@@ -1251,7 +1251,7 @@ msgstr "Торопитесь, вы слишком медленные !!"
 msgid "I like WarMUX :)"
 msgstr "Я торчу от WarMUX :)"
 
-#: src/main.cpp:294
+#: src/main.cpp:293
 msgid ""
 "If you found a bug or have a feature request send us an email (in english, "
 "please):"
@@ -1615,7 +1615,7 @@ msgstr "Следующий персонаж"
 msgid "No comment."
 msgstr "Комментарий"
 
-#: src/weapon/weapon.cpp:644
+#: src/weapon/weapon.cpp:643
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "Элемент <%s> не найден в файле с настройками!"
@@ -1837,7 +1837,7 @@ msgstr "Быстро выйти из игры используя Ctrl"
 msgid "Quit"
 msgstr "Выйти"
 
-#: src/main.cpp:283
+#: src/main.cpp:282
 msgid "Quit Warmux"
 msgstr "Выйти из Warmux"
 
@@ -2236,7 +2236,7 @@ msgstr "Сервер отклонил соединение."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Сервер отклонил соединение: неверный пароль!"
 
-#: src/weapon/weapon.cpp:656
+#: src/weapon/weapon.cpp:655
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2434,7 +2434,7 @@ msgid "User"
 msgstr ""
 
 #. Version
-#: src/main.cpp:210 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
+#: src/main.cpp:209 src/menu/main_menu.cpp:90 src/menu/replay_menu.cpp:97
 msgid "Version"
 msgstr "Версия"
 
@@ -2470,11 +2470,11 @@ msgstr ""
 "Ожидание сервера. Всё что вы можете сделать, это отменить свою готовность "
 "или поболтать!"
 
-#: src/main.cpp:221
+#: src/main.cpp:220
 msgid "Warmux launching..."
 msgstr "Warmux запускается..."
 
-#: src/main.cpp:361
+#: src/main.cpp:360
 msgid "Warmux version "
 msgstr "Warmux версии "
 
@@ -2496,7 +2496,7 @@ msgstr "Оружие: Огонь / Бонусные коробки: упасть
 msgid "Weapons"
 msgstr "Оружие"
 
-#: src/main.cpp:371
+#: src/main.cpp:370
 msgid "Website: "
 msgstr "Веб-сайт: "
 
@@ -2548,15 +2548,15 @@ msgstr "В команде"
 msgid "Woah! Combo of %u!"
 msgstr "Опа! Это комбо %u!"
 
-#: src/include/action_handler.cpp:241
+#: src/include/action_handler.cpp:242
 msgid "Wrong map CRC!"
 msgstr "Ошибка CRC карты!"
 
-#: src/include/action_handler.cpp:239
+#: src/include/action_handler.cpp:240
 msgid "Wrong map name!"
 msgstr "Неверное имя карты!"
 
-#: src/include/action_handler.cpp:243
+#: src/include/action_handler.cpp:244
 msgid "Wrong team!"
 msgstr "Неверная команда!"
 
@@ -2585,7 +2585,7 @@ msgstr "Вам нужны хотя бы две полноценные коман
 msgid "You won't be able to play before selecting a team!"
 msgstr "Вы не сможете играть не выбрав команду!"
 
-#: src/weapon/weapon_launcher.cpp:546
+#: src/weapon/weapon_launcher.cpp:548
 msgid "Your shot has missed!"
 msgstr "Вы промазали!"
 
@@ -2593,7 +2593,7 @@ msgstr "Вы промазали!"
 msgid "aka"
 msgstr "также известный как"
 
-#: src/weapon/air_attack.cpp:216
+#: src/weapon/air_attack.cpp:218
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

@@ -179,10 +179,6 @@
 					RelativePath="..\..\..\lib\warmux\base\i18n.cpp"
 					>
 				</File>
-				<File
-					RelativePath="..\..\..\lib\warmux\base\singleton.cpp"
-					>
-				</File>
 			</Filter>
 			<Filter
 				Name="maths"
