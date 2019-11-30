@@ -114,17 +114,20 @@ public:
   void Write(XmlWriter& writer, xmlNode* father) const override;
 };
 
-class ConfigElementList : public std::list<ConfigElement*>
+class ConfigElementList : private std::list<ConfigElement*>
 {
   std::list<ConfigElementList*>  children;
   const char                    *node;
 
 public:
+  using std::list<ConfigElement*>::push_back;
+  using std::list<ConfigElement*>::begin;
+  using std::list<ConfigElement*>::end;
   ConfigElementList() : node(nullptr) { }
   virtual ~ConfigElementList();
 
-  typedef std::list<ConfigElement*>::iterator iterator;
-  typedef std::list<ConfigElement*>::const_iterator const_iterator;
+  using std::list<ConfigElement*>::iterator;
+  using std::list<ConfigElement*>::const_iterator;
 
   void LoadXml(const xmlNode* elem) const;
   xmlNode *SaveXml(XmlWriter& writer, xmlNode* elem) const;
