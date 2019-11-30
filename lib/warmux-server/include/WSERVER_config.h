@@ -25,6 +25,7 @@
 
 class ServerConfig
 {
+  virtual ~ServerConfig() = default;
   bool support_versions;
   std::string config_file;
 

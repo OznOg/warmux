@@ -37,7 +37,7 @@ class LogFile
 
  public:
   LogFile(const std::string &suffix);
-  ~LogFile();
+  virtual ~LogFile();
 
   void OpenFile();
   void CloseFile();
