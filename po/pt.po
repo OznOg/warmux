@@ -557,7 +557,7 @@ msgstr "Todas as equipas"
 msgid "Always"
 msgstr "Sempre"
 
-#: src/menu/game_mode_editor.cpp:218
+#: src/menu/game_mode_editor.cpp:228
 msgid "Ammos"
 msgstr ""
 
@@ -636,7 +636,7 @@ msgstr "Antes da acção"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:317 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "Blitz"
 
@@ -755,7 +755,7 @@ msgstr "Procurar por actualizações online?"
 msgid "Choose randomly between the different maps"
 msgstr "Escolher aleatóriamente entre os diferentes mapas"
 
-#: src/game/game_mode.cpp:315 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "Clássico"
 
@@ -2115,7 +2115,7 @@ msgstr "A bola saiu do campo de batalha antes de explodir!"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:319
+#: src/menu/game_mode_editor.cpp:304
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2311,7 +2311,7 @@ msgstr "Comando desconhecido"
 msgid "Unknown."
 msgstr "Comando desconhecido"
 
-#: src/game/game_mode.cpp:316
+#: src/game/game_mode.cpp:322
 msgid "Unlimited"
 msgstr "Ilimitada"
 

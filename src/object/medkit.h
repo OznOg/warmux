@@ -39,8 +39,8 @@ public:
   int start_points;
   MedkitSettings()
   {
-    push_back(new IntConfigElement("life_points", &start_points, 41));
-    push_back(new IntConfigElement("energy_boost", &nbr_health, 24));
+    emplace_back(new IntConfigElement("life_points", &start_points, 41));
+    emplace_back(new IntConfigElement("energy_boost", &nbr_health, 24));
   }
 };
 

@@ -38,8 +38,8 @@ public:
   uint turns;
   SyringeConfig()
   {
-    push_back(new DoubleConfigElement("range", &range, 45, 0, 100));
-    push_back(new UintConfigElement("turns", &turns, 10, 1, 50));
+    emplace_back(new DoubleConfigElement("range", &range, 45, 0, 100));
+    emplace_back(new UintConfigElement("turns", &turns, 10, 1, 50));
   }
 };
 

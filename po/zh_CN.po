@@ -487,7 +487,7 @@ msgstr "全部的队伍"
 msgid "Always"
 msgstr "总是"
 
-#: src/menu/game_mode_editor.cpp:218
+#: src/menu/game_mode_editor.cpp:228
 msgid "Ammos"
 msgstr ""
 
@@ -565,7 +565,7 @@ msgstr "行动之前"
 msgid "Benchmark"
 msgstr "评测"
 
-#: src/game/game_mode.cpp:317 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "闪电"
 
@@ -681,7 +681,7 @@ msgstr "网上检查升级？"
 msgid "Choose randomly between the different maps"
 msgstr "在地图中随机选择"
 
-#: src/game/game_mode.cpp:315 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "经典"
 
@@ -2054,7 +2054,7 @@ msgstr "球膨胀前离开战场"
 msgid "The bigger the faster you'll fall!"
 msgstr "越大越快越失败!"
 
-#: src/menu/game_mode_editor.cpp:319
+#: src/menu/game_mode_editor.cpp:304
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2242,7 +2242,7 @@ msgstr "未知命令种类 %i"
 msgid "Unknown."
 msgstr "未知命令"
 
-#: src/game/game_mode.cpp:316
+#: src/game/game_mode.cpp:322
 msgid "Unlimited"
 msgstr "无限"
 

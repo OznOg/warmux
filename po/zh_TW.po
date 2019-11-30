@@ -485,7 +485,7 @@ msgstr "所有隊伍"
 msgid "Always"
 msgstr "總是"
 
-#: src/menu/game_mode_editor.cpp:218
+#: src/menu/game_mode_editor.cpp:228
 msgid "Ammos"
 msgstr ""
 
@@ -563,7 +563,7 @@ msgstr "開始動作前"
 msgid "Benchmark"
 msgstr "評測"
 
-#: src/game/game_mode.cpp:317 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "閃電戰"
 
@@ -680,7 +680,7 @@ msgstr "線上檢查更新？"
 msgid "Choose randomly between the different maps"
 msgstr "在不同地圖間隨機選擇"
 
-#: src/game/game_mode.cpp:315 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "一般"
 
@@ -2069,7 +2069,7 @@ msgstr "球在爆炸前一刻掉出戰場外了！"
 msgid "The bigger the faster you'll fall!"
 msgstr "該值愈大，摔得也越快！"
 
-#: src/menu/game_mode_editor.cpp:319
+#: src/menu/game_mode_editor.cpp:304
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2266,7 +2266,7 @@ msgstr "未知的指令類型 %i"
 msgid "Unknown."
 msgstr "未知的指令"
 
-#: src/game/game_mode.cpp:316
+#: src/game/game_mode.cpp:322
 msgid "Unlimited"
 msgstr "無限制"
 

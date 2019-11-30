@@ -565,7 +565,7 @@ msgstr "Alle teams"
 msgid "Always"
 msgstr "Altijd"
 
-#: src/menu/game_mode_editor.cpp:218
+#: src/menu/game_mode_editor.cpp:228
 msgid "Ammos"
 msgstr ""
 
@@ -644,7 +644,7 @@ msgstr "Alvorens actie"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:317 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "Blitz"
 
@@ -763,7 +763,7 @@ msgstr "Online op updates controleren?"
 msgid "Choose randomly between the different maps"
 msgstr "Kies een willekeurige kaart"
 
-#: src/game/game_mode.cpp:315 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "Klassiek"
 
@@ -2123,7 +2123,7 @@ msgstr "De bal heeft het slagveld verlaten alvorens te ontploffen!"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:319
+#: src/menu/game_mode_editor.cpp:304
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2321,7 +2321,7 @@ msgstr "Onbekend commando"
 msgid "Unknown."
 msgstr "Onbekend commando"
 
-#: src/game/game_mode.cpp:316
+#: src/game/game_mode.cpp:322
 msgid "Unlimited"
 msgstr "Onbegrensd"
 

@@ -608,7 +608,7 @@ msgstr "Все команды"
 msgid "Always"
 msgstr "Всегда"
 
-#: src/menu/game_mode_editor.cpp:218
+#: src/menu/game_mode_editor.cpp:228
 msgid "Ammos"
 msgstr "Вооружение"
 
@@ -686,7 +686,7 @@ msgstr "Телепортация"
 msgid "Benchmark"
 msgstr "Тест"
 
-#: src/game/game_mode.cpp:317 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "Блиц"
 
@@ -802,7 +802,7 @@ msgstr "Проверять обновления игры?"
 msgid "Choose randomly between the different maps"
 msgstr "Выбрать карту случайно"
 
-#: src/game/game_mode.cpp:315 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "Классический"
 
@@ -2182,7 +2182,7 @@ msgstr "Мяч улетел за пределы поля битвы не усп�
 msgid "The bigger the faster you'll fall!"
 msgstr "Чем больше, тем быстрее ты падешь"
 
-#: src/menu/game_mode_editor.cpp:319
+#: src/menu/game_mode_editor.cpp:304
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2381,7 +2381,7 @@ msgstr "Неизвестная команда типа %i"
 msgid "Unknown."
 msgstr "Неизвестная команда"
 
-#: src/game/game_mode.cpp:316
+#: src/game/game_mode.cpp:322
 msgid "Unlimited"
 msgstr "Бесконечный"
 

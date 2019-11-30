@@ -54,8 +54,8 @@ public:
   uint nbr_obus;
   AirAttackConfig()
   {
-    push_back(new UintConfigElement("nbr_obus", &nbr_obus, 3, 1, 8));
-    push_back(new DoubleConfigElement("speed", &speed, 3));
+    emplace_back(new UintConfigElement("nbr_obus", &nbr_obus, 3, 1, 8));
+    emplace_back(new DoubleConfigElement("speed", &speed, 3));
   }
 };
 

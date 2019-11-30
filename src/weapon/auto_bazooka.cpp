@@ -38,10 +38,10 @@ public:
   Double rocket_force;
   AutomaticBazookaConfig()
   {
-    push_back(new DoubleConfigElement("uncontrolled_turn_speed", &uncontrolled_turn_speed, PI*8));
-    push_back(new DoubleConfigElement("max_controlled_turn_speed", &max_controlled_turn_speed, PI*4));
-    push_back(new DoubleConfigElement("fuel_time", &fuel_time, 10));
-    push_back(new DoubleConfigElement("rocket_force", &rocket_force, 2500));
+    emplace_back(new DoubleConfigElement("uncontrolled_turn_speed", &uncontrolled_turn_speed, PI*8));
+    emplace_back(new DoubleConfigElement("max_controlled_turn_speed", &max_controlled_turn_speed, PI*4));
+    emplace_back(new DoubleConfigElement("fuel_time", &fuel_time, 10));
+    emplace_back(new DoubleConfigElement("rocket_force", &rocket_force, 2500));
   }
 };
 

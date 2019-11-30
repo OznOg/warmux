@@ -43,7 +43,7 @@ public:
   uint range;
   BlowtorchConfig()
   {
-    push_back(new UintConfigElement("range", &range, 20, 10, 30));
+    emplace_back(new UintConfigElement("range", &range, 20, 10, 30));
   }
 };
 

@@ -684,7 +684,7 @@ bool Weapon::LoadXml(const xmlNode*  weapon)
 
   // Load extra parameters if existing
   if (extra_params)
-    extra_params->LoadXml(elem);
+      bindExplosiveWeaponConfig(*extra_params)->LoadXml(elem);
 
   if (drawable && origin == weapon_origin_HAND)
     m_image->SetRotation_HotSpot(position);
@@ -730,7 +730,7 @@ xmlNode* Weapon::SaveXml(XmlWriter& writer, xmlNode*  weapon) const
 
   // Save extra parameters if existing
   if (extra_params)
-    extra_params->SaveXml(writer, elem);
+      bindExplosiveWeaponConfig(*extra_params)->SaveXml(writer, elem);
 
   return elem;
 }

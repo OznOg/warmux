@@ -599,7 +599,7 @@ msgstr "Všetky tími"
 msgid "Always"
 msgstr "Vždy"
 
-#: src/menu/game_mode_editor.cpp:218
+#: src/menu/game_mode_editor.cpp:228
 msgid "Ammos"
 msgstr ""
 
@@ -678,7 +678,7 @@ msgstr "Pred akciou"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:317 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "Bleskový"
 
@@ -797,7 +797,7 @@ msgstr "Skontrolovať aktualizácie online?"
 msgid "Choose randomly between the different maps"
 msgstr "Vybrať náhodnú medzi rozdielnymi mapami"
 
-#: src/game/game_mode.cpp:315 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "Klasika"
 
@@ -2152,7 +2152,7 @@ msgstr "Lopta opustila bojové pole ešte pred svojim výbuchom!"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:319
+#: src/menu/game_mode_editor.cpp:304
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2351,7 +2351,7 @@ msgstr "Neznámy príkaz"
 msgid "Unknown."
 msgstr "Neznámy príkaz"
 
-#: src/game/game_mode.cpp:316
+#: src/game/game_mode.cpp:322
 msgid "Unlimited"
 msgstr "Nelimitovaný"
 

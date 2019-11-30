@@ -743,7 +743,7 @@ msgstr "Toate echipele"
 msgid "Always"
 msgstr "Întotdeauna"
 
-#: src/menu/game_mode_editor.cpp:218
+#: src/menu/game_mode_editor.cpp:228
 msgid "Ammos"
 msgstr ""
 
@@ -823,7 +823,7 @@ msgstr "Înaintea acțiunii"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:317 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "Bliț"
 
@@ -942,7 +942,7 @@ msgstr "Se verifică actualizările online?"
 msgid "Choose randomly between the different maps"
 msgstr "Alege la întâmplare una din diferitele hărți"
 
-#: src/game/game_mode.cpp:315 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "Clasic"
 
@@ -2312,7 +2312,7 @@ msgstr "Mingea a părăsit câmpul de luptă înainte de a exploda!"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:319
+#: src/menu/game_mode_editor.cpp:304
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2514,7 +2514,7 @@ msgstr "Comandă necunoscută"
 msgid "Unknown."
 msgstr "Comandă necunoscută"
 
-#: src/game/game_mode.cpp:316
+#: src/game/game_mode.cpp:322
 msgid "Unlimited"
 msgstr "nelimitat"
 

@@ -40,8 +40,8 @@ public:
   uint strength;
   SlapConfig()
   {
-    push_back(new DoubleConfigElement("range", &range, 20, 1, 50));
-    push_back(new UintConfigElement("strength", &strength, 300, 100, 500));
+    emplace_back(new DoubleConfigElement("range", &range, 20, 1, 50));
+    emplace_back(new UintConfigElement("strength", &strength, 300, 100, 500));
   }
 };
 

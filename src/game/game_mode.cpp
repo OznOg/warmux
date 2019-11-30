@@ -30,56 +30,62 @@
 #include "object/bonus_box.h"
 #include "weapon/weapons_list.h"
 
-static std::string txt;
-
 GameMode::GameMode()
   : weapons_list(nullptr)
   , doc_objects(nullptr)
 {
   m_current = "classic";
 
-  main_settings.push_back(new StringConfigElement("rules", &rules, "none"));
-  main_settings.push_back(new BoolConfigElement("auto_change_character", &auto_change_character, true));
-  main_settings.push_back(new StringConfigElement("allow_character_selection", &txt, "always"));
-  main_settings.push_back(new UintConfigElement("duration_turn", &duration_turn, 60));
-  main_settings.push_back(new UintConfigElement("duration_move_player", &duration_move_player, 3));
-  main_settings.push_back(new UintConfigElement("duration_exchange_player", &duration_exchange_player, 2));
-  main_settings.push_back(new UintConfigElement("duration_before_death_mode", &duration_before_death_mode, 20 * 60));
-  main_settings.push_back(new UintConfigElement("damage_per_turn_during_death_mode", &damage_per_turn_during_death_mode, 5));
-  main_settings.push_back(new UintConfigElement("max_teams", &max_teams, 8));
-  main_settings.push_back(new UintConfigElement("nb_characters", &nb_characters, 6));
-  main_settings.push_back(new IntConfigElement("gravity", &gravity, 30));
-  main_settings.push_back(new IntConfigElement("safe_fall", &safe_fall, 10));
-  main_settings.push_back(new UintConfigElement("damage_per_fall_unit", &damage_per_fall_unit, 7));
+  main_settings.emplace_back(new StringConfigElement("rules", &rules, "none"));
+  main_settings.emplace_back(new BoolConfigElement("auto_change_character", &auto_change_character, true));
+  main_settings.emplace_back(new StringConfigElement("allow_character_selection", &txt, "always"));
+  main_settings.emplace_back(new UintConfigElement("duration_turn", &duration_turn, 60));
+  main_settings.emplace_back(new UintConfigElement("duration_move_player", &duration_move_player, 3));
+  main_settings.emplace_back(new UintConfigElement("duration_exchange_player", &duration_exchange_player, 2));
+  main_settings.emplace_back(new UintConfigElement("duration_before_death_mode", &duration_before_death_mode, 20 * 60));
+  main_settings.emplace_back(new UintConfigElement("damage_per_turn_during_death_mode", &damage_per_turn_during_death_mode, 5));
+  main_settings.emplace_back(new UintConfigElement("max_teams", &max_teams, 8));
+  main_settings.emplace_back(new UintConfigElement("nb_characters", &nb_characters, 6));
+  main_settings.emplace_back(new IntConfigElement("gravity", &gravity, 30));
+  main_settings.emplace_back(new IntConfigElement("safe_fall", &safe_fall, 10));
+  main_settings.emplace_back(new UintConfigElement("damage_per_fall_unit", &damage_per_fall_unit, 7));
 
-  char_settings.push_back(new UintConfigElement("mass", &character.mass, 100));
-  char_settings.push_back(new DoubleConfigElement("air_resist_factor", &character.air_resist_factor, 1.0));
-  char_settings.push_back(new UintConfigElement("walking_pause", &character.walking_pause, 50));
-  main_settings.LinkList(&char_settings, "character");
+  auto char_settings = std::make_unique<ConfigElementList>();
+  char_settings->emplace_back(new UintConfigElement("mass", &character.mass, 100));
+  char_settings->emplace_back(new DoubleConfigElement("air_resist_factor", &character.air_resist_factor, 1.0));
+  char_settings->emplace_back(new UintConfigElement("walking_pause", &character.walking_pause, 50));
 
-  energy.push_back(new UintConfigElement("initial", &character.init_energy, 100, 1, 200, true));
-  energy.push_back(new UintConfigElement("maximum", &character.max_energy, 200, 1, 200, true));
-  char_settings.LinkList(&energy, "energy");
+  auto energy = std::make_unique<ConfigElementList>();
+  energy->emplace_back(new UintConfigElement("initial", &character.init_energy, 100, 1, 200, true));
+  energy->emplace_back(new UintConfigElement("maximum", &character.max_energy, 200, 1, 200, true));
+  char_settings->LinkList(std::move(energy), "energy");
+  char_settings->LinkList(bindExplosiveWeaponConfig(death_explosion_cfg), "death_explosion");
 
-  jump.push_back(new IntConfigElement("strength", &character.jump_strength, 8, true));
-  jump.push_back(new AngleConfigElement("angle", &character.jump_angle, -60, true));
-  char_settings.LinkList(&jump, "jump");
+  auto jump = std::make_unique<ConfigElementList>();
+  jump->emplace_back(new IntConfigElement("strength", &character.jump_strength, 8, true));
+  jump->emplace_back(new AngleConfigElement("angle", &character.jump_angle, -60, true));
+  char_settings->LinkList(std::move(jump), "jump");
 
-  super_jump.push_back(new IntConfigElement("strength", &character.super_jump_strength, 11, true));
-  super_jump.push_back(new AngleConfigElement("angle", &character.super_jump_angle, -80, true));
-  char_settings.LinkList(&super_jump, "super_jump");
+  auto super_jump = std::make_unique<ConfigElementList>();
+  super_jump->emplace_back(new IntConfigElement("strength", &character.super_jump_strength, 11, true));
+  super_jump->emplace_back(new AngleConfigElement("angle", &character.super_jump_angle, -80, true));
+  char_settings->LinkList(std::move(super_jump), "super_jump");
 
-  back_jump.push_back(new IntConfigElement("strength", &character.back_jump_strength, 9, true));
-  back_jump.push_back(new AngleConfigElement("angle", &character.back_jump_angle, -100, true));
-  char_settings.LinkList(&back_jump, "back_jump");
+  auto back_jump = std::make_unique<ConfigElementList>();
+  back_jump->emplace_back(new IntConfigElement("strength", &character.back_jump_strength, 9, true));
+  back_jump->emplace_back(new AngleConfigElement("angle", &character.back_jump_angle, -100, true));
+  char_settings->LinkList(std::move(back_jump), "back_jump");
+  main_settings.LinkList(std::move(char_settings), "character");
 
-  barrel.LinkList(&barrel_explosion_cfg, "explosion");
-  main_settings.LinkList(&barrel, "barrel");
+  auto barrel = std::make_unique<ConfigElementList>();
+  barrel->LinkList(bindExplosiveWeaponConfig(barrel_explosion_cfg), "explosion");
+  main_settings.LinkList(std::move(barrel), "barrel");
 
-  bonus_box.LinkList(&bonus_box_explosion_cfg, "explosion");
-  main_settings.LinkList(&bonus_box, "bonus_box");
+  auto bonus_box = std::make_unique<ConfigElementList>();
+  bonus_box->LinkList(bindExplosiveWeaponConfig(bonus_box_explosion_cfg), "explosion");
+  main_settings.LinkList(std::move(bonus_box), "bonus_box");
 
-  main_settings.LinkList(Medkit::GetConfigList(), "medkit");
+  main_settings.LinkList(std::make_unique<MedkitSettings>(), "medkit");
 }
 
 void GameMode::LoadDefaultValues()

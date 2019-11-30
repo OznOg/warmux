@@ -84,8 +84,8 @@ public:
 
   CluzookaConfig()
   {
-    push_back(new UintConfigElement("nb_fragments", &m_fragments, 5, 2, 10));
-    push_back(new UintConfigElement("nb_angle_dispersion", &m_angle_dispersion, 45));
+    emplace_back(new UintConfigElement("nb_fragments", &m_fragments, 5, 2, 10));
+    emplace_back(new UintConfigElement("nb_angle_dispersion", &m_angle_dispersion, 45));
   }
 };
 

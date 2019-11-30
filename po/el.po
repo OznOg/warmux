@@ -560,7 +560,7 @@ msgstr "Όλες οι ομάδες"
 msgid "Always"
 msgstr "Πάντα"
 
-#: src/menu/game_mode_editor.cpp:218
+#: src/menu/game_mode_editor.cpp:228
 msgid "Ammos"
 msgstr ""
 
@@ -640,7 +640,7 @@ msgstr "Πριν τη δράση"
 msgid "Benchmark"
 msgstr "Benchmark"
 
-#: src/game/game_mode.cpp:317 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "Αστραπιαίος πόλεμος"
 
@@ -756,7 +756,7 @@ msgstr "Έλεγχος ενημερώσεων στο διαδίκτυο;"
 msgid "Choose randomly between the different maps"
 msgstr "Επίλεξε τυχαία έναν μεταξύ των διαφορετικών χαρτών"
 
-#: src/game/game_mode.cpp:315 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "Κλασικό"
 
@@ -2168,7 +2168,7 @@ msgstr "Η μπάλα αναπήδησης εγκατέλειψε το πεδί�
 msgid "The bigger the faster you'll fall!"
 msgstr "Όσο μεγαλύτερο τόσο πιο γρήγορα πέφτεις!"
 
-#: src/menu/game_mode_editor.cpp:319
+#: src/menu/game_mode_editor.cpp:304
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2372,7 +2372,7 @@ msgstr "Άγνωστη εντολή τύπου %i "
 msgid "Unknown."
 msgstr "Άγνωστη εντολή"
 
-#: src/game/game_mode.cpp:316
+#: src/game/game_mode.cpp:322
 msgid "Unlimited"
 msgstr "Απεριόριστο"
 

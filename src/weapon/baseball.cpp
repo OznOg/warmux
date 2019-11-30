@@ -113,6 +113,6 @@ std::string Baseball::GetWeaponWinString(const char *TeamName, uint items_count 
 
 BaseballConfig::BaseballConfig()
 {
-  push_back(new UintConfigElement("range", &range, 70));
-  push_back(new UintConfigElement("strength", &strength, 2500, 500, 4000));
+  emplace_back(new UintConfigElement("range", &range, 70));
+  emplace_back(new UintConfigElement("strength", &strength, 2500, 500, 4000));
 }

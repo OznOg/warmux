@@ -41,7 +41,7 @@ public:
   uint nb_fragments;
   ClusterBombConfig()
   {
-    push_back(new UintConfigElement("nb_fragments", &nb_fragments, 5, 2, 10));
+    emplace_back(new UintConfigElement("nb_fragments", &nb_fragments, 5, 2, 10));
   }
 };
 

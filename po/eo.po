@@ -541,7 +541,7 @@ msgstr "Ĉiuj teamoj"
 msgid "Always"
 msgstr "Ĉiam"
 
-#: src/menu/game_mode_editor.cpp:218
+#: src/menu/game_mode_editor.cpp:228
 msgid "Ammos"
 msgstr ""
 
@@ -620,7 +620,7 @@ msgstr "Antaŭ ago"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:317 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr ""
 
@@ -741,7 +741,7 @@ msgstr "Ĉu kontroli la ĝisdatigaĵoj enrete?"
 msgid "Choose randomly between the different maps"
 msgstr "Elekti hazarde el la malsamaj mapoj"
 
-#: src/game/game_mode.cpp:315 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr ""
 
@@ -2106,7 +2106,7 @@ msgstr "La pilko foriris de la batalejo antaŭ ol explodi."
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:319
+#: src/menu/game_mode_editor.cpp:304
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2304,7 +2304,7 @@ msgstr "Nekonata komando"
 msgid "Unknown."
 msgstr "Nekonata komando"
 
-#: src/game/game_mode.cpp:316
+#: src/game/game_mode.cpp:322
 #, fuzzy
 msgid "Unlimited"
 msgstr "(senlimaj)"

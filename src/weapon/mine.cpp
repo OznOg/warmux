@@ -259,8 +259,8 @@ MineConfig& Mine::cfg()
 
 MineConfig::MineConfig()
 {
-  push_back(new DoubleConfigElement("detection_range", &detection_range, 1));
-  push_back(new DoubleConfigElement("speed_detection", &speed_detection, 2));
-  push_back(new UintConfigElement("timeout", &timeout, 2));
-  push_back(new UintConfigElement("escape_time", &escape_time, 2, 1, 4));
+  emplace_back(new DoubleConfigElement("detection_range", &detection_range, 1));
+  emplace_back(new DoubleConfigElement("speed_detection", &speed_detection, 2));
+  emplace_back(new UintConfigElement("timeout", &timeout, 2));
+  emplace_back(new UintConfigElement("escape_time", &escape_time, 2, 1, 4));
 }

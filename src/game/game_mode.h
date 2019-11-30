@@ -37,9 +37,8 @@ class WeaponsList;
 class GameMode : public Singleton<GameMode>
 {
   ConfigElementList  main_settings;
-  ConfigElementList  char_settings, energy, jump, super_jump, back_jump;
-  ConfigElementList  barrel, bonus_box, medkit;
   WeaponsList       *weapons_list;
+  std::string txt;
 
 public:
   std::string rules;
@@ -57,6 +56,7 @@ public:
   ExplosiveWeaponConfig death_explosion_cfg;
   ExplosiveWeaponConfig barrel_explosion_cfg;
   ExplosiveWeaponConfig bonus_box_explosion_cfg;
+
 
   struct s_character
   {

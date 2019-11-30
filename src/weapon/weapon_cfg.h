@@ -60,5 +60,23 @@ public:
   ExplosiveWeaponConfig();
 };
 
+static inline auto bindExplosiveWeaponConfig(EmptyWeaponConfig &ewc) {
+    auto explosion = std::make_unique<ConfigElementList>();
+    if (auto e = dynamic_cast<ExplosiveWeaponConfig *>(&ewc)) {
+        explosion->emplace_back(new UintConfigElement("timeout", &e->timeout, 0));
+        explosion->emplace_back(new BoolConfigElement("allow_change_timeout", &e->allow_change_timeout, false));
+        explosion->emplace_back(new DoubleConfigElement("explosion_range", &e->explosion_range, 0, 0, 200));
+        explosion->emplace_back(new DoubleConfigElement("particle_range", &e->particle_range, 0));
+        explosion->emplace_back(new DoubleConfigElement("blast_range", &e->blast_range, 0));
+        explosion->emplace_back(new DoubleConfigElement("blast_force", &e->blast_force, 0));
+        explosion->emplace_back(new DoubleConfigElement("speed_on_hit", &e->speed_on_hit, 0));
+    }
+
+    if (auto e = dynamic_cast<WeaponConfig *>(&ewc)) {
+        explosion->emplace_back(new UintConfigElement("damage", &e->damage, 10, 0, 2000));
+    }
+    return explosion;
+}
+
 //-----------------------------------------------------------------------------
 #endif

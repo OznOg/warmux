@@ -193,6 +193,16 @@ class WeaponCfgBox : public HBox
   std::list< std::pair<SpinButtonWithPicture*, ConfigElement*> > values;
 
 public:
+  template <class SubElement>
+  void doStuff(ConfigElement &c) {
+      const SubElement &element = static_cast<const SubElement &>(c);
+      int val = *element.m_val;
+      auto tmp = new SpinButtonWithPicture(element.m_name, "menu/ico_help", Point2i(100, 100),
+                  val, FindStep(val), element.m_min, (val) ? 2*val : 10);
+      AddWidget(tmp);
+      values.push_back(std::make_pair(tmp, &c));
+  }
+
   WeaponCfgBox(Weapon *w, uint height)
     : HBox(height), weapon(w)
   {
@@ -225,46 +235,21 @@ public:
       if (it->m_important) {
         switch (it->m_type) {
         case ConfigElement::TYPE_DOUBLE:
-          {
-            DoubleConfigElement* element = static_cast<DoubleConfigElement*>(it);
-            int val = *element->m_val;
-            SpinButtonWithPicture *tmp =
-              new SpinButtonWithPicture(element->m_name, "menu/ico_help", Point2i(100, 100),
-                                        val, FindStep(val), element->m_min, (val) ? 2*val : 10);
-            AddWidget(tmp);
-            values.push_back(std::make_pair(tmp, it));
+            doStuff<DoubleConfigElement>(*it);
             break;
-          }
         case ConfigElement::TYPE_INT:
-          {
-            IntConfigElement* element = static_cast<IntConfigElement*>(it);
-            int val = *element->m_val;
-            SpinButtonWithPicture *tmp =
-              new SpinButtonWithPicture(element->m_name, "menu/ico_help", Point2i(100, 100),
-                                        val, FindStep(val), element->m_min, (val) ? 2*val : 10);
-            AddWidget(tmp);
-            values.push_back(std::make_pair(tmp, it));
+            doStuff<IntConfigElement>(*it);
             break;
-          }
         case ConfigElement::TYPE_UINT:
-          {
-            UintConfigElement* element = static_cast<UintConfigElement*>(it);
-            int val = *element->m_val;
-            SpinButtonWithPicture *tmp =
-              new SpinButtonWithPicture(element->m_name, "menu/ico_help", Point2i(100, 100),
-                                        val, FindStep(val), element->m_min, (val) ? 2*val : 10);
-            AddWidget(tmp);
-            values.push_back(std::make_pair(tmp, it));
+            doStuff<UintConfigElement>(*it);
             break;
-          }
         case ConfigElement::TYPE_BOOL:
           {
-            BoolConfigElement* element = static_cast<BoolConfigElement*>(it);
-            SpinButtonWithPicture *tmp =
-              new SpinButtonWithPicture(element->m_name, "menu/ico_help",
-                                        Point2i(100, 100), (int)*element->m_val, 1, 0, 1);
+            const BoolConfigElement &element = static_cast<const BoolConfigElement &>(*it);
+            auto tmp = new SpinButtonWithPicture(element.m_name, "menu/ico_help",
+                                        Point2i(100, 100), (int)*element.m_val, 1, 0, 1);
             AddWidget(tmp);
-            values.push_back(std::make_pair(tmp, it));
+            values.push_back(std::make_pair(tmp, it.get()));
             break;
           }
         }

@@ -5,6 +5,7 @@
 
 #include <WARMUX_base.h>
 #include <WARMUX_error.h>
+#include <memory>
 
 class XmlWriter;
 typedef struct _xmlNode xmlNode;
@@ -114,28 +115,30 @@ public:
   void Write(XmlWriter& writer, xmlNode* father) const override;
 };
 
-class ConfigElementList : private std::list<ConfigElement*>
+class ConfigElementList : private std::list<std::unique_ptr<ConfigElement>>
 {
-  std::list<ConfigElementList*>  children;
-  const char                    *node;
+  using Container = std::list<std::unique_ptr<ConfigElement>>;
+  std::list<std::unique_ptr<ConfigElementList>>  children;
+  const char                    *node = nullptr;
 
 public:
-  using std::list<ConfigElement*>::push_back;
-  using std::list<ConfigElement*>::begin;
-  using std::list<ConfigElement*>::end;
-  ConfigElementList() : node(nullptr) { }
-  virtual ~ConfigElementList();
+  using Container::push_back;
+  using Container::emplace_back;
+  using Container::begin;
+  using Container::end;
+  ConfigElementList() = default;
+  virtual ~ConfigElementList() = default;
 
-  using std::list<ConfigElement*>::iterator;
-  using std::list<ConfigElement*>::const_iterator;
+  using Container::iterator;
+  using Container::const_iterator;
 
   void LoadXml(const xmlNode* elem) const;
   xmlNode *SaveXml(XmlWriter& writer, xmlNode* elem) const;
 
-  void LinkList(ConfigElementList* child, const char *name)
+  void LinkList(std::unique_ptr<ConfigElementList> child, const char *name)
   {
     child->node = name;
-    children.push_back(child);
+    children.emplace_back(std::move(child));
   }
 };
 

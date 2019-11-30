@@ -180,5 +180,5 @@ AirhammerConfig& Airhammer::cfg()
 
 AirhammerConfig::AirhammerConfig()
 {
-  push_back(new UintConfigElement("range", &range, 30, 1, 50));
+  emplace_back(new UintConfigElement("range", &range, 30, 1, 50));
 }

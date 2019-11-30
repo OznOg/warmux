@@ -48,9 +48,9 @@ public:
 
 ParachuteConfig::ParachuteConfig()
 {
-  push_back(new DoubleConfigElement("wind_factor", &wind_factor, 10));
-  push_back(new DoubleConfigElement("air_resist_factor", &air_resist_factor, 140));
-  push_back(new DoubleConfigElement("force_side_displacement", &wind_factor, 2000));
+  emplace_back(new DoubleConfigElement("wind_factor", &wind_factor, 10));
+  emplace_back(new DoubleConfigElement("air_resist_factor", &air_resist_factor, 140));
+  emplace_back(new DoubleConfigElement("force_side_displacement", &wind_factor, 2000));
 }
 
 //------------------------------------------------------------------------------

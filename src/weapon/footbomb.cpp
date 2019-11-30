@@ -45,11 +45,11 @@ public:
 
   FootBombConfig()
   {
-    push_back(new UintConfigElement("nb_fragments", &nb_fragments, 2, 1, 4));
-    push_back(new UintConfigElement("nb_recursions", &nb_recursions, 2));
-    push_back(new DoubleConfigElement("nb_angle_dispersion", &nb_angle_dispersion, 0));
-    push_back(new DoubleConfigElement("nb_min_speed", &nb_min_speed, 0));
-    push_back(new DoubleConfigElement("nb_max_speed", &nb_max_speed, 0));
+    emplace_back(new UintConfigElement("nb_fragments", &nb_fragments, 2, 1, 4));
+    emplace_back(new UintConfigElement("nb_recursions", &nb_recursions, 2));
+    emplace_back(new DoubleConfigElement("nb_angle_dispersion", &nb_angle_dispersion, 0));
+    emplace_back(new DoubleConfigElement("nb_min_speed", &nb_min_speed, 0));
+    emplace_back(new DoubleConfigElement("nb_max_speed", &nb_max_speed, 0));
   }
 };
 

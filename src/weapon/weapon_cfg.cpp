@@ -26,18 +26,11 @@
 
 WeaponConfig::WeaponConfig()
 {
-  push_back(new UintConfigElement("damage", &damage, 10, 0, 2000));
+  emplace_back(new UintConfigElement("damage", &damage, 10, 0, 2000));
 }
 
 //-----------------------------------------------------------------------------
 
 ExplosiveWeaponConfig::ExplosiveWeaponConfig()
 {
-  push_back(new UintConfigElement("timeout", &timeout, 0));
-  push_back(new BoolConfigElement("allow_change_timeout", &allow_change_timeout, false));
-  push_back(new DoubleConfigElement("explosion_range", &explosion_range, 0, 0, 200));
-  push_back(new DoubleConfigElement("particle_range", &particle_range, 0));
-  push_back(new DoubleConfigElement("blast_range", &blast_range, 0));
-  push_back(new DoubleConfigElement("blast_force", &blast_force, 0));
-  push_back(new DoubleConfigElement("speed_on_hit", &speed_on_hit, 0));
 }

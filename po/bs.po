@@ -538,7 +538,7 @@ msgstr "Svi timovi"
 msgid "Always"
 msgstr "Igraj"
 
-#: src/menu/game_mode_editor.cpp:218
+#: src/menu/game_mode_editor.cpp:228
 msgid "Ammos"
 msgstr ""
 
@@ -618,7 +618,7 @@ msgstr "Teleport"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:317 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr ""
 
@@ -738,7 +738,7 @@ msgstr ""
 msgid "Choose randomly between the different maps"
 msgstr "Nasumice izaberi druge mape"
 
-#: src/game/game_mode.cpp:315 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr ""
 
@@ -2108,7 +2108,7 @@ msgstr "Odskočica je napustila bojište prije nego je explodirala"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:319
+#: src/menu/game_mode_editor.cpp:304
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2305,7 +2305,7 @@ msgstr ""
 msgid "Unknown."
 msgstr ""
 
-#: src/game/game_mode.cpp:316
+#: src/game/game_mode.cpp:322
 #, fuzzy
 msgid "Unlimited"
 msgstr "(neograničeno)"

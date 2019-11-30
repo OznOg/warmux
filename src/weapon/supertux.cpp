@@ -46,7 +46,7 @@ public:
   uint speed;
   SuperTuxWeaponConfig()
   {
-    push_back(new UintConfigElement("speed", &speed, 600, 100, 1000));
+    emplace_back(new UintConfigElement("speed", &speed, 600, 100, 1000));
   }
 };
 

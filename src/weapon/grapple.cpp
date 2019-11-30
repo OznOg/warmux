@@ -133,8 +133,8 @@ public:
 public:
   GrappleConfig()
   {
-    push_back(new UintConfigElement("max_rope_length", &max_rope_length, 450, 200, 800));
-    push_back(new IntConfigElement("push_force", &push_force, 10));
+    emplace_back(new UintConfigElement("max_rope_length", &max_rope_length, 450, 200, 800));
+    emplace_back(new IntConfigElement("push_force", &push_force, 10));
   }
 };
 
