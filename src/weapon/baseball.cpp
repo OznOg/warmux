@@ -33,14 +33,6 @@
 #include "tool/xml_document.h"
 #include "weapon/explosion.h"
 
-class BaseballConfig : public WeaponConfig
-{
-public:
-  uint range;
-  uint strength;
-  BaseballConfig();
-};
-
 Baseball::Baseball() : Weapon(WEAPON_BASEBALL, "baseball", new BaseballConfig())
 {
   UpdateTranslationStrings();
@@ -110,9 +102,3 @@ std::string Baseball::GetWeaponWinString(const char *TeamName, uint items_count 
 }
 
 //-------------------------------------------------------------------
-
-BaseballConfig::BaseballConfig()
-{
-  emplace_back(new UintConfigElement("range", &range, 70));
-  emplace_back(new UintConfigElement("strength", &strength, 2500, 500, 4000));
-}

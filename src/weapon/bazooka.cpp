@@ -46,7 +46,7 @@ protected:
 
 BazookaRocket::BazookaRocket(ExplosiveWeaponConfig& cfg,
                              WeaponLauncher * p_launcher) :
-  WeaponProjectile ("rocket", cfg,p_launcher), smoke_engine(20)
+  WeaponProjectile ("rocket", cfg, p_launcher), smoke_engine(20)
 {
   explode_colliding_character = true;
 }

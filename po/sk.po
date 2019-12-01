@@ -154,7 +154,7 @@ msgstr "%s tím už má neobmedzenú muníciu pre %s!"
 msgid "%s team has skipped its turn."
 msgstr "%s tím vynechal ťah."
 
-#: src/weapon/cluzooka.cpp:374
+#: src/weapon/cluzooka.cpp:361
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -170,7 +170,7 @@ msgstr[0] "Tím %s získal %u Gnu! Všetkých ich rozmetajte!"
 msgstr[1] "Tím %s získal %u Gnu! Všetkých ich rozmetajte!"
 msgstr[2] "Tím %s získal %u Gnu! Všetkých ich rozmetajte!"
 
-#: src/weapon/air_attack.cpp:259
+#: src/weapon/air_attack.cpp:247
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -178,7 +178,7 @@ msgstr[0] "Tím %s získal %u vzdušný útok!"
 msgstr[1] "Tím %s získal %u vzdušné útoky!"
 msgstr[2] "Tím %s získal %u vzdušných útokov!"
 
-#: src/weapon/airhammer.cpp:166
+#: src/weapon/airhammer.cpp:159
 #, c-format
 msgid ""
 "%s team has won %u airhammer! Don't make too much noise with it! Thanks, "
@@ -202,7 +202,7 @@ msgstr[0] "Tím %s získal %u kovadlinu! Rozplacni ich!"
 msgstr[1] "Tím %s získal %u kovadliny! Rozplacni ich!"
 msgstr[2] "Tím %s získal %u kovadlín! Rozplacni ich!"
 
-#: src/weapon/auto_bazooka.cpp:214
+#: src/weapon/auto_bazooka.cpp:198
 #, c-format
 msgid "%s team has won %u automatic bazooka!"
 msgid_plural "%s team has won %u automatic bazookas!"
@@ -210,7 +210,7 @@ msgstr[0] "Tím %s získal %u navádzanú bazuku!"
 msgstr[1] "Tím %s získal %u navádzané bazuky!"
 msgstr[2] "Tím %s získal %u navádzaných bazúk!"
 
-#: src/weapon/baseball.cpp:107
+#: src/weapon/baseball.cpp:99
 #, c-format
 msgid "%s team has won %u baseball bat!"
 msgid_plural "%s team has won %u baseball bats!"
@@ -226,7 +226,7 @@ msgstr[0] "Tým %s získal %u bazuku!"
 msgstr[1] "Tým %s získal %u bazuky!"
 msgstr[2] "Tým %s získal %u bazúk!"
 
-#: src/weapon/blowtorch.cpp:137
+#: src/weapon/blowtorch.cpp:127
 #, c-format
 msgid ""
 "%s team has won %u blowtorch! If you're under 18, ask your parents to use it."
@@ -251,7 +251,7 @@ msgstr[0] "Tím %s získal %u skákajúcu loptičku! Ping, ping, bum!"
 msgstr[1] "Tím %s získal %u skákajúce loptičky! Ping, ping, bum!"
 msgstr[2] "Tím %s získal %u skákajúcich loptičiek! Ping, ping, bum!"
 
-#: src/weapon/cluster_bomb.cpp:203
+#: src/weapon/cluster_bomb.cpp:193
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -304,7 +304,7 @@ msgstr[0] "Tím %s získal %u plameňomet!"
 msgstr[1] "Tím %s získal %u plameňomety!"
 msgstr[2] "Tím %s získal %u plameňometov!"
 
-#: src/weapon/footbomb.cpp:172
+#: src/weapon/footbomb.cpp:153
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -312,7 +312,7 @@ msgstr[0] "Tím %s získal %u futbalovú bombu!"
 msgstr[1] "Tím %s získal %u futbalové bomby!"
 msgstr[2] "Tím %s získal %u futbalových bômb!"
 
-#: src/weapon/grapple.cpp:714
+#: src/weapon/grapple.cpp:700
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -369,7 +369,7 @@ msgstr[0] "Tím %s získal %u mínu!"
 msgstr[1] "Tím %s získal %u míny!"
 msgstr[2] "Tím %s získal %u mín!"
 
-#: src/weapon/parachute.cpp:181
+#: src/weapon/parachute.cpp:165
 #, c-format
 msgid "%s team has won %u parachute!"
 msgid_plural "%s team has won %u parachutes!"
@@ -409,7 +409,7 @@ msgstr[0] "Tím %s získal %u brokovnicu!"
 msgstr[1] "Tím %s získal %u brokovnice!"
 msgstr[2] "Tím %s získal %u brokovníc!"
 
-#: src/weapon/slap.cpp:67
+#: src/weapon/slap.cpp:54
 #, c-format
 msgid "%s team has won %u slap!"
 msgid_plural "%s team has won %u slaps! Dodge this!"
@@ -443,7 +443,7 @@ msgstr[0] "Tím %s získal %u samovraždu!"
 msgstr[1] "Tím %s získal %u samovraždy!"
 msgstr[2] "Tím %s získal %u samovrážd!"
 
-#: src/weapon/syringe.cpp:108
+#: src/weapon/syringe.cpp:94
 #, c-format
 msgid "%s team has won %u syringe!"
 msgid_plural "%s team has won %u syringes!"
@@ -470,7 +470,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Tím %s získal %u možností vynechania ťahu! Neboj sa, zamiluješ si ich!"
 
-#: src/weapon/supertux.cpp:278
+#: src/weapon/supertux.cpp:268
 #, c-format
 msgid "%s team has won %u tux launcher! Never seen a flying penguin?"
 msgid_plural "%s team has won %u tux launchers! Never seen a flying penguin?"
@@ -583,11 +583,11 @@ msgstr ""
 msgid "Action"
 msgstr "Nastavenia"
 
-#: src/weapon/air_attack.cpp:217
+#: src/weapon/air_attack.cpp:205
 msgid "Air Attack"
 msgstr "Vzdušný útok"
 
-#: src/weapon/airhammer.cpp:75
+#: src/weapon/airhammer.cpp:68
 msgid "Airhammer"
 msgstr "Zbíjačka"
 
@@ -607,7 +607,7 @@ msgstr ""
 msgid "And the winner is..."
 msgstr "A víťazom sa stáva..."
 
-#: src/weapon/baseball.cpp:55
+#: src/weapon/baseball.cpp:47
 #, fuzzy
 msgid ""
 "Angle: Up/Down\n"
@@ -630,7 +630,7 @@ msgstr ""
 msgid "Authors:"
 msgstr "Autori:"
 
-#: src/weapon/auto_bazooka.cpp:191
+#: src/weapon/auto_bazooka.cpp:175
 msgid "Automatic Bazooka"
 msgstr "Navádzaná bazuka"
 
@@ -662,7 +662,7 @@ msgstr "Zlý socket..."
 msgid "Bad version: %s != %s"
 msgstr ""
 
-#: src/weapon/baseball.cpp:54
+#: src/weapon/baseball.cpp:46
 msgid "Baseball Bat"
 msgstr "Bejzbolová palica"
 
@@ -678,11 +678,11 @@ msgstr "Pred akciou"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "Bleskový"
 
-#: src/weapon/blowtorch.cpp:64
+#: src/weapon/blowtorch.cpp:54
 msgid "Blowtorch"
 msgstr "Autogén"
 
@@ -690,7 +690,7 @@ msgstr "Autogén"
 msgid "Bounce Ball"
 msgstr "Skákajúca lopta"
 
-#: src/weapon/supertux.cpp:177
+#: src/weapon/supertux.cpp:167
 msgid "Bye bye Tux..."
 msgstr "Pá pá tučniak..."
 
@@ -797,7 +797,7 @@ msgstr "Skontrolovať aktualizácie online?"
 msgid "Choose randomly between the different maps"
 msgstr "Vybrať náhodnú medzi rozdielnymi mapami"
 
-#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "Klasika"
 
@@ -841,11 +841,11 @@ msgstr "Mód klienta"
 msgid "Clumsiest"
 msgstr "Najväčšie trdlo"
 
-#: src/weapon/cluster_bomb.cpp:186
+#: src/weapon/cluster_bomb.cpp:176
 msgid "Cluster Bomb"
 msgstr "Trieštivá bomba"
 
-#: src/weapon/cluzooka.cpp:368
+#: src/weapon/cluzooka.cpp:355
 msgid "Cluzooka"
 msgstr "Cluzuka"
 
@@ -1112,7 +1112,7 @@ msgstr "Názov hry:"
 msgid "Flame Thrower"
 msgstr "Plameňomet"
 
-#: src/weapon/footbomb.cpp:156
+#: src/weapon/footbomb.cpp:137
 msgid "Football Bomb"
 msgstr "Futbalová bomba"
 
@@ -1154,7 +1154,7 @@ msgstr ""
 msgid "Gnu Launcher"
 msgstr "Odpaľovač Gnu"
 
-#: src/weapon/syringe.cpp:58
+#: src/weapon/syringe.cpp:44
 msgid ""
 "Go to player\n"
 "Press space to inject\n"
@@ -1165,7 +1165,7 @@ msgstr ""
 msgid "Graphics"
 msgstr "Grafika"
 
-#: src/weapon/grapple.cpp:167
+#: src/weapon/grapple.cpp:153
 msgid "Grapple"
 msgstr "Kotva"
 
@@ -1284,7 +1284,7 @@ msgstr ""
 msgid "Initial energy"
 msgstr "Počiatočná energia"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:356
 #: src/weapon/riot_bomb.cpp:120
 #, fuzzy
 msgid ""
@@ -1345,7 +1345,7 @@ msgstr "Skok"
 msgid "Jump backwards"
 msgstr "Skok dozadu"
 
-#: src/weapon/blowtorch.cpp:65
+#: src/weapon/blowtorch.cpp:55
 #, fuzzy
 msgid ""
 "Keep the space key pressed\n"
@@ -1658,11 +1658,11 @@ msgstr "Nastavenia"
 msgid "Options menu"
 msgstr "Menu nastavení"
 
-#: src/weapon/parachute.cpp:71
+#: src/weapon/parachute.cpp:55
 msgid "Parachute"
 msgstr "Padák"
 
-#: src/weapon/parachute.cpp:72
+#: src/weapon/parachute.cpp:56
 msgid ""
 "Parachute avoids hitting the ground too hard\n"
 "Opens automatically\n"
@@ -1746,7 +1746,7 @@ msgstr "Zmeniť aktívnu postavu"
 msgid "Press space to commit suicide"
 msgstr "%s z tímu %s spáchal samovraždu!"
 
-#: src/weapon/airhammer.cpp:76
+#: src/weapon/airhammer.cpp:69
 msgid ""
 "Press space to dig\n"
 "Ammo is used when counter reaches zero\n"
@@ -1773,7 +1773,7 @@ msgid ""
 "Change angle while shooting"
 msgstr ""
 
-#: src/weapon/grapple.cpp:168
+#: src/weapon/grapple.cpp:154
 msgid ""
 "Press space to shoot grapple\n"
 "Use left/right to swing\n"
@@ -1935,7 +1935,7 @@ msgstr "Server dostupný na internet"
 msgid "Server mode"
 msgstr "Server mód"
 
-#: src/weapon/supertux.cpp:212
+#: src/weapon/supertux.cpp:202
 msgid ""
 "Set initial direction with up/down\n"
 "Press space to launch\n"
@@ -1991,11 +1991,11 @@ msgstr ""
 msgid "Skip turn"
 msgstr "Vynechať ťah"
 
-#: src/weapon/slap.cpp:60
+#: src/weapon/slap.cpp:47
 msgid "Slap"
 msgstr "Facka"
 
-#: src/weapon/slap.cpp:61
+#: src/weapon/slap.cpp:48
 msgid "Slap the enemy to make him jump a bit."
 msgstr "Udri nepriateľa nech trochu poskočí."
 
@@ -2058,7 +2058,7 @@ msgstr "Počet:"
 msgid "Submachine Gun"
 msgstr "Samopal"
 
-#: src/weapon/supertux.cpp:211
+#: src/weapon/supertux.cpp:201
 msgid "SuperTux"
 msgstr "Supertučniak"
 
@@ -2071,7 +2071,7 @@ msgstr ""
 msgid "Switch between classical and replay interface"
 msgstr ""
 
-#: src/weapon/syringe.cpp:57
+#: src/weapon/syringe.cpp:43
 msgid "Syringe"
 msgstr "Injekčná striekačka"
 
@@ -2121,11 +2121,11 @@ msgstr ""
 msgid "Teleportation"
 msgstr "Teleportácia"
 
-#: src/weapon/cluster_bomb.cpp:146
+#: src/weapon/cluster_bomb.cpp:136
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Združená bomba opustila bojové pole pred tým než by mohla explodovať."
 
-#: src/weapon/footbomb.cpp:114
+#: src/weapon/footbomb.cpp:95
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr ""
 "Futbalová bomba opustila bojové pole ešte pred tým než by vôbec stihla "
@@ -2139,7 +2139,7 @@ msgstr "Pán Gnu opustil bojové pole pred svojim výbuchom"
 msgid "The Polecat left the battlefield before exploding!"
 msgstr "Tchor opustil bojové pole pred svojou explóziou smradu!"
 
-#: src/weapon/auto_bazooka.cpp:166
+#: src/weapon/auto_bazooka.cpp:150
 msgid "The automatic rocket has left the battlefield..."
 msgstr "Navádzaná raketa opustila bojové pole"
 
@@ -2152,7 +2152,7 @@ msgstr "Lopta opustila bojové pole ešte pred svojim výbuchom!"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:304
+#: src/menu/game_mode_editor.cpp:305
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2189,11 +2189,11 @@ msgstr "Granát opustil bojové pole pred tým než stihol vybuchnúť!"
 msgid "The others are waiting for you! Wake up! :-)"
 msgstr "Vstávaj! Ostatný čakajú už len na teba! :-)"
 
-#: src/weapon/parachute.cpp:99
+#: src/weapon/parachute.cpp:83
 msgid "The parachute is activated automatically."
 msgstr "Padák je aktivovaný automaticky."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:305
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Raketa opustila bojové pole..."
@@ -2242,7 +2242,7 @@ msgid ""
 "Click to pause"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
+#: src/weapon/cluster_bomb.cpp:177 src/weapon/footbomb.cpp:138
 #, fuzzy
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
@@ -2351,7 +2351,7 @@ msgstr "Neznámy príkaz"
 msgid "Unknown."
 msgstr "Neznámy príkaz"
 
-#: src/game/game_mode.cpp:322
+#: src/game/game_mode.cpp:323
 msgid "Unlimited"
 msgstr "Nelimitovaný"
 
@@ -2384,7 +2384,7 @@ msgstr ""
 "Ako to použiť : ľavý klik na cieľ\n"
 "jeden zásobník na jeden ťah"
 
-#: src/weapon/auto_bazooka.cpp:192
+#: src/weapon/auto_bazooka.cpp:176
 #, fuzzy
 msgid ""
 "Usage: left click on the target\n"
@@ -2565,7 +2565,7 @@ msgstr "Strela minula cieľ!"
 msgid "aka"
 msgstr "aka"
 
-#: src/weapon/air_attack.cpp:218
+#: src/weapon/air_attack.cpp:206
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

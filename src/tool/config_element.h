@@ -80,7 +80,7 @@ public:
     : ConfigElement(TYPE_DOUBLE, n, attr, false) { m_val = v; *v = m_def = d; }
   DoubleConfigElement(const char *n, Double* v, Double d, Double mi, Double ma, bool attr = false)
     : ConfigElement(TYPE_DOUBLE, n, attr, true)
-  { m_val = v; *v = m_def = d; m_min = mi, m_max = ma; ASSERT(d >= mi && d <= ma); }
+  { m_val = v; m_def = d; m_min = mi, m_max = ma; ASSERT(d >= mi && d <= ma); }
   bool Read(const xmlNode* father) const override;
   void Write(XmlWriter& writer, xmlNode* father) const override;
 };

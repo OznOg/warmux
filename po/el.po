@@ -159,7 +159,7 @@ msgstr "Η ομάδα %s έχει ήδη άπειρα πυρομαχικά γι�
 msgid "%s team has skipped its turn."
 msgstr "Η ομάδα %s παρέλειψε το γύρο της."
 
-#: src/weapon/cluzooka.cpp:374
+#: src/weapon/cluzooka.cpp:361
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -173,14 +173,14 @@ msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "Η ομάδα %s κέρδισε %u Gnu! Τα κεφάλια κάτω, καουμπόηδες!"
 msgstr[1] "Η ομάδα %s κέρδισε %u Gnus! Τα κεφάλια κάτω, καουμπόηδες!"
 
-#: src/weapon/air_attack.cpp:259
+#: src/weapon/air_attack.cpp:247
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
 msgstr[0] "Η ομάδα %s κέρδισε %u εναέρια επίθεση!"
 msgstr[1] "Η ομάδα %s κέρδισε %u εναέριες επιθέσεις!"
 
-#: src/weapon/airhammer.cpp:166
+#: src/weapon/airhammer.cpp:159
 #, c-format
 msgid ""
 "%s team has won %u airhammer! Don't make too much noise with it! Thanks, "
@@ -202,14 +202,14 @@ msgid_plural "%s team has won %u anvils! Splat them all!"
 msgstr[0] "Η ομάδα %s κέρδισε %u αμόνι! Σπάσ' τα όλα!"
 msgstr[1] "Η ομάδα %s κέρδισε %u αμόνια! Σπάσ' τα όλα!"
 
-#: src/weapon/auto_bazooka.cpp:214
+#: src/weapon/auto_bazooka.cpp:198
 #, c-format
 msgid "%s team has won %u automatic bazooka!"
 msgid_plural "%s team has won %u automatic bazookas!"
 msgstr[0] "Η ομάδα %s κέρδισε %u αυτόματο μπαζούκα!"
 msgstr[1] "Η ομάδα %s κέρδισε %u αυτόματα μπαζούκας!"
 
-#: src/weapon/baseball.cpp:107
+#: src/weapon/baseball.cpp:99
 #, c-format
 msgid "%s team has won %u baseball bat!"
 msgid_plural "%s team has won %u baseball bats!"
@@ -224,7 +224,7 @@ msgstr[0] "Η ομάδα %s κέρδισε %u μπαζούκα!"
 msgstr[1] "Η ομάδα %s κέρδισε %u μπαζούκας!"
 
 #  chalumeau
-#: src/weapon/blowtorch.cpp:137
+#: src/weapon/blowtorch.cpp:127
 #, c-format
 msgid ""
 "%s team has won %u blowtorch! If you're under 18, ask your parents to use it."
@@ -246,7 +246,7 @@ msgstr[0] "Η ομάδα %s κέρδισε %u μπάλα αναπήδησης! �
 msgstr[1] "Η ομάδα %s κέρδισε %u μπάλες αναπήδησης! Φσσστ Μπόινγκ!"
 
 # L'équipe %s a gagné %u bombe à fragmentation ! Attention à ne pas trop se disperser !
-#: src/weapon/cluster_bomb.cpp:203
+#: src/weapon/cluster_bomb.cpp:193
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -288,14 +288,14 @@ msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "Η ομάδα %s κέρδισε %u φλογοβόλο! Μύρισε ψητό..."
 msgstr[1] "Η ομάδα %s κέρδισε %u φλογοβόλα! Μύρισε ψητό..."
 
-#: src/weapon/footbomb.cpp:172
+#: src/weapon/footbomb.cpp:153
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
 msgstr[0] "Η ομάδα %s κέρδισε %u εκρηκτική μπάλα!"
 msgstr[1] "Η ομάδα %s κέρδισε %u εκρηκτικές μπάλες!"
 
-#: src/weapon/grapple.cpp:714
+#: src/weapon/grapple.cpp:700
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -345,7 +345,7 @@ msgid_plural "%s team has won %u mines!"
 msgstr[0] "Η ομάδα %s κέρδισε %u νάρκη!"
 msgstr[1] "Η ομάδα %s κέρδισε %u νάρκες!"
 
-#: src/weapon/parachute.cpp:181
+#: src/weapon/parachute.cpp:165
 #, c-format
 msgid "%s team has won %u parachute!"
 msgid_plural "%s team has won %u parachutes!"
@@ -383,7 +383,7 @@ msgid_plural "%s team has won %u shotguns!"
 msgstr[0] "Η ομάδα %s κέρδισε %u καραμπίνα!"
 msgstr[1] "Η ομάδα %s κέρδισε %u καραμπίνες!"
 
-#: src/weapon/slap.cpp:67
+#: src/weapon/slap.cpp:54
 #, c-format
 msgid "%s team has won %u slap!"
 msgid_plural "%s team has won %u slaps! Dodge this!"
@@ -414,7 +414,7 @@ msgid_plural "%s team has won %u suicides! Use them all for an extra bonus!"
 msgstr[0] "Η ομάδα %s κέρδισε %u αυτοκτονία!"
 msgstr[1] "Η ομάδα %s κέρδισε %u αυτοκτονίες!"
 
-#: src/weapon/syringe.cpp:108
+#: src/weapon/syringe.cpp:94
 #, c-format
 msgid "%s team has won %u syringe!"
 msgid_plural "%s team has won %u syringes!"
@@ -438,7 +438,7 @@ msgstr[1] ""
 "Η ομάδα %s κέρδισε %u παραλείψεις γύρου!  Ωωω, τι όπλο μεγάλης ισχύος!"
 
 # Depuis quand les pingouins savent voler ??
-#: src/weapon/supertux.cpp:278
+#: src/weapon/supertux.cpp:268
 #, c-format
 msgid "%s team has won %u tux launcher! Never seen a flying penguin?"
 msgid_plural "%s team has won %u tux launchers! Never seen a flying penguin?"
@@ -543,12 +543,12 @@ msgstr ""
 msgid "Action"
 msgstr "Δράση"
 
-#: src/weapon/air_attack.cpp:217
+#: src/weapon/air_attack.cpp:205
 msgid "Air Attack"
 msgstr "Εναέρια επίθεση"
 
 # Marteau piqueur
-#: src/weapon/airhammer.cpp:75
+#: src/weapon/airhammer.cpp:68
 msgid "Airhammer"
 msgstr "Τρυπάνι"
 
@@ -568,7 +568,7 @@ msgstr ""
 msgid "And the winner is..."
 msgstr "Και ο νικητής είναι..."
 
-#: src/weapon/baseball.cpp:55
+#: src/weapon/baseball.cpp:47
 msgid ""
 "Angle: Up/Down\n"
 "Fire: space key\n"
@@ -591,7 +591,7 @@ msgstr "Περιοχή που εμφανίζεται"
 msgid "Authors:"
 msgstr "Συγγραφείς:"
 
-#: src/weapon/auto_bazooka.cpp:191
+#: src/weapon/auto_bazooka.cpp:175
 msgid "Automatic Bazooka"
 msgstr "Αυτόματο Μπαζούκα"
 
@@ -623,7 +623,7 @@ msgstr "Λανθασμένη θυρίδα..."
 msgid "Bad version: %s != %s"
 msgstr ""
 
-#: src/weapon/baseball.cpp:54
+#: src/weapon/baseball.cpp:46
 msgid "Baseball Bat"
 msgstr "Ρόπαλο Μπέιζμπολ"
 
@@ -640,11 +640,11 @@ msgstr "Πριν τη δράση"
 msgid "Benchmark"
 msgstr "Benchmark"
 
-#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "Αστραπιαίος πόλεμος"
 
-#: src/weapon/blowtorch.cpp:64
+#: src/weapon/blowtorch.cpp:54
 msgid "Blowtorch"
 msgstr "Λυχνία Συγκόλλησης"
 
@@ -652,7 +652,7 @@ msgstr "Λυχνία Συγκόλλησης"
 msgid "Bounce Ball"
 msgstr "Μπάλα Αναπήδησης"
 
-#: src/weapon/supertux.cpp:177
+#: src/weapon/supertux.cpp:167
 msgid "Bye bye Tux..."
 msgstr "Άντε γεια tux..."
 
@@ -756,7 +756,7 @@ msgstr "Έλεγχος ενημερώσεων στο διαδίκτυο;"
 msgid "Choose randomly between the different maps"
 msgstr "Επίλεξε τυχαία έναν μεταξύ των διαφορετικών χαρτών"
 
-#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "Κλασικό"
 
@@ -810,12 +810,12 @@ msgid "Clumsiest"
 msgstr "Πιο αδέξιος"
 
 # Grenade à fragmentation
-#: src/weapon/cluster_bomb.cpp:186
+#: src/weapon/cluster_bomb.cpp:176
 msgid "Cluster Bomb"
 msgstr "Χειροβομβίδα διασποράς"
 
 # Bazooka à fragmentation
-#: src/weapon/cluzooka.cpp:368
+#: src/weapon/cluzooka.cpp:355
 msgid "Cluzooka"
 msgstr "Μπαζούκα διασποράς"
 
@@ -1096,7 +1096,7 @@ msgid "Flame Thrower"
 msgstr "Φλογοβόλο"
 
 # Ballon explosif
-#: src/weapon/footbomb.cpp:156
+#: src/weapon/footbomb.cpp:137
 msgid "Football Bomb"
 msgstr "Εκρηκτική μπάλα"
 
@@ -1142,7 +1142,7 @@ msgstr "Παιχνίδι εκτός συγχρονισμού!"
 msgid "Gnu Launcher"
 msgstr "Εκτόξευση Gnu"
 
-#: src/weapon/syringe.cpp:58
+#: src/weapon/syringe.cpp:44
 msgid ""
 "Go to player\n"
 "Press space to inject\n"
@@ -1156,7 +1156,7 @@ msgstr ""
 msgid "Graphics"
 msgstr "Γραφικά"
 
-#: src/weapon/grapple.cpp:167
+#: src/weapon/grapple.cpp:153
 msgid "Grapple"
 msgstr "Γάντζος"
 
@@ -1276,7 +1276,7 @@ msgstr "Εμφάνιση παιχνιδιού"
 msgid "Initial energy"
 msgstr "Αρχική ενέργεια"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:356
 #: src/weapon/riot_bomb.cpp:120
 msgid ""
 "Initial fire angle: Up/Down\n"
@@ -1335,7 +1335,7 @@ msgstr "Άλμα"
 msgid "Jump backwards"
 msgstr "Άλμα προς τα πίσω"
 
-#: src/weapon/blowtorch.cpp:65
+#: src/weapon/blowtorch.cpp:55
 msgid ""
 "Keep the space key pressed\n"
 "Angle: Up/Down\n"
@@ -1634,11 +1634,11 @@ msgstr "Επιλογές"
 msgid "Options menu"
 msgstr "Επιλογές"
 
-#: src/weapon/parachute.cpp:71
+#: src/weapon/parachute.cpp:55
 msgid "Parachute"
 msgstr "Αλεξίπτωτο"
 
-#: src/weapon/parachute.cpp:72
+#: src/weapon/parachute.cpp:56
 msgid ""
 "Parachute avoids hitting the ground too hard\n"
 "Opens automatically\n"
@@ -1730,7 +1730,7 @@ msgstr ""
 msgid "Press space to commit suicide"
 msgstr "Πάτα space για να διαπράξεις αυτοκτονία"
 
-#: src/weapon/airhammer.cpp:76
+#: src/weapon/airhammer.cpp:69
 msgid ""
 "Press space to dig\n"
 "Ammo is used when counter reaches zero\n"
@@ -1767,7 +1767,7 @@ msgstr ""
 "Χρησιμοποίησε το Πάνω/Κάτω για άλλη αρχική γωνία\n"
 "Άλλαξε γωνία όσο ρίχνεις "
 
-#: src/weapon/grapple.cpp:168
+#: src/weapon/grapple.cpp:154
 msgid ""
 "Press space to shoot grapple\n"
 "Use left/right to swing\n"
@@ -1939,7 +1939,7 @@ msgstr "Διακομιστής διαθέσιμος στο διαδίκτυο"
 msgid "Server mode"
 msgstr "Κατάσταση διακομιστή"
 
-#: src/weapon/supertux.cpp:212
+#: src/weapon/supertux.cpp:202
 msgid ""
 "Set initial direction with up/down\n"
 "Press space to launch\n"
@@ -2002,11 +2002,11 @@ msgstr "Δείχνει την διεύθυνση του παίκτη"
 msgid "Skip turn"
 msgstr "Παράλειψη γύρου"
 
-#: src/weapon/slap.cpp:60
+#: src/weapon/slap.cpp:47
 msgid "Slap"
 msgstr "Χαστούκι"
 
-#: src/weapon/slap.cpp:61
+#: src/weapon/slap.cpp:48
 msgid "Slap the enemy to make him jump a bit."
 msgstr "Χαστούκισε τον αντίπαλο για να τον κάνεις να αναπηδήσει λίγο."
 
@@ -2072,7 +2072,7 @@ msgstr "Απόθεμα:"
 msgid "Submachine Gun"
 msgstr "Οπλοπολυβόλο"
 
-#: src/weapon/supertux.cpp:211
+#: src/weapon/supertux.cpp:201
 msgid "SuperTux"
 msgstr "Υπέρ-Tux"
 
@@ -2085,7 +2085,7 @@ msgstr ""
 msgid "Switch between classical and replay interface"
 msgstr "Άλλαξε διεπαφή μεταξύ κλασικής και επανάληψης"
 
-#: src/weapon/syringe.cpp:57
+#: src/weapon/syringe.cpp:43
 msgid "Syringe"
 msgstr "Σύριγγα"
 
@@ -2135,11 +2135,11 @@ msgid "Teleportation"
 msgstr "Τηλεμεταφορά"
 
 # La grenade à fragmentation a quitté le champ de bataille avant d'exploser.
-#: src/weapon/cluster_bomb.cpp:146
+#: src/weapon/cluster_bomb.cpp:136
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Η χειροβομβίδα διασποράς εγκατέλειψε το πεδίο μάχης πριν την έκρηξη."
 
-#: src/weapon/footbomb.cpp:114
+#: src/weapon/footbomb.cpp:95
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "Η εκρηκτική μπάλα εγκατέλειψε το πεδίο μάχης πριν την έκρηξη."
 
@@ -2154,7 +2154,7 @@ msgid "The Polecat left the battlefield before exploding!"
 msgstr "Ο Ασβός εγκατέλειψε το πεδίο μάχης πριν την έκρηξη."
 
 # La roquette automatique est partie dans un autre monde...
-#: src/weapon/auto_bazooka.cpp:166
+#: src/weapon/auto_bazooka.cpp:150
 msgid "The automatic rocket has left the battlefield..."
 msgstr "Η αυτόματη ρουκέτα έφυγε για άλλους κόσμους..."
 
@@ -2168,7 +2168,7 @@ msgstr "Η μπάλα αναπήδησης εγκατέλειψε το πεδί�
 msgid "The bigger the faster you'll fall!"
 msgstr "Όσο μεγαλύτερο τόσο πιο γρήγορα πέφτεις!"
 
-#: src/menu/game_mode_editor.cpp:304
+#: src/menu/game_mode_editor.cpp:305
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2209,12 +2209,12 @@ msgstr "Η χειροβομβίδα εγκατέλειψε το πεδίο μά�
 msgid "The others are waiting for you! Wake up! :-)"
 msgstr "Εσένα θα περιμένουμε; Ξύπνα :-)"
 
-#: src/weapon/parachute.cpp:99
+#: src/weapon/parachute.cpp:83
 msgid "The parachute is activated automatically."
 msgstr "Το αλεξίπτωτο ενεργοποιείται αυτομάτως."
 
 # La roquette est partie dans un autre monde...
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:305
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Η ρουκέτα έφυγε για άλλους κόσμους..."
@@ -2268,7 +2268,7 @@ msgstr ""
 "παιχνιδιού\n"
 "Κλικ για παύση"
 
-#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
+#: src/weapon/cluster_bomb.cpp:177 src/weapon/footbomb.cpp:138
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
 "Angle: Up/Down\n"
@@ -2372,7 +2372,7 @@ msgstr "Άγνωστη εντολή τύπου %i "
 msgid "Unknown."
 msgstr "Άγνωστη εντολή"
 
-#: src/game/game_mode.cpp:322
+#: src/game/game_mode.cpp:323
 msgid "Unlimited"
 msgstr "Απεριόριστο"
 
@@ -2410,7 +2410,7 @@ msgstr ""
 "Το αμόνι σκοτώνει όλους τους χαρακτήρες από κάτω\n"
 "ένα από τα πολεμοφόδια ανά γύρο"
 
-#: src/weapon/auto_bazooka.cpp:192
+#: src/weapon/auto_bazooka.cpp:176
 msgid ""
 "Usage: left click on the target\n"
 "Initial fire angle: Up/Down\n"
@@ -2591,7 +2591,7 @@ msgstr "Αστόχησες..."
 msgid "aka"
 msgstr "ψευδώνυμο:"
 
-#: src/weapon/air_attack.cpp:218
+#: src/weapon/air_attack.cpp:206
 msgid ""
 "attack direction: Left/Right\n"
 "Bombing: Left click on the target\n"

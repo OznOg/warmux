@@ -155,7 +155,7 @@ msgstr "%s-laget har alt uendeleg ammunisjon for %s!"
 msgid "%s team has skipped its turn."
 msgstr "%s hoppa over sin tur."
 
-#: src/weapon/cluzooka.cpp:374
+#: src/weapon/cluzooka.cpp:361
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -169,14 +169,14 @@ msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "%s-laget vann %u gnu! Spreng dei alle saman, cowboy!"
 msgstr[1] "%s-laget vann %u gnuar! Spreng dei alle saman, cowboy!"
 
-#: src/weapon/air_attack.cpp:259
+#: src/weapon/air_attack.cpp:247
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
 msgstr[0] "%s-laget vann %u luftangrep!"
 msgstr[1] "%s-laget vann %u luftangrep!"
 
-#: src/weapon/airhammer.cpp:166
+#: src/weapon/airhammer.cpp:159
 #, c-format
 msgid ""
 "%s team has won %u airhammer! Don't make too much noise with it! Thanks, "
@@ -198,14 +198,14 @@ msgid_plural "%s team has won %u anvils! Splat them all!"
 msgstr[0] "%s-laget vann %u ambolt! Mos alle saman!"
 msgstr[1] "%s-laget vann %u amboltar! Mos alle saman!"
 
-#: src/weapon/auto_bazooka.cpp:214
+#: src/weapon/auto_bazooka.cpp:198
 #, c-format
 msgid "%s team has won %u automatic bazooka!"
 msgid_plural "%s team has won %u automatic bazookas!"
 msgstr[0] "%s-laget vann %u laserstyrde rakett!"
 msgstr[1] "%s-laget vann %u laserstyrde rakettar!"
 
-#: src/weapon/baseball.cpp:107
+#: src/weapon/baseball.cpp:99
 #, c-format
 msgid "%s team has won %u baseball bat!"
 msgid_plural "%s team has won %u baseball bats!"
@@ -219,7 +219,7 @@ msgid_plural "%s team has won %u bazookas!"
 msgstr[0] "%s-laget vann %u rakett!"
 msgstr[1] "%s-laget vann %u rakettar!"
 
-#: src/weapon/blowtorch.cpp:137
+#: src/weapon/blowtorch.cpp:127
 #, c-format
 msgid ""
 "%s team has won %u blowtorch! If you're under 18, ask your parents to use it."
@@ -240,7 +240,7 @@ msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "%s-laget vann %u sprettball!"
 msgstr[1] "%s-laget vann %u sprettballar!"
 
-#: src/weapon/cluster_bomb.cpp:203
+#: src/weapon/cluster_bomb.cpp:193
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -276,14 +276,14 @@ msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "%s-laget vann %u flammekastar!"
 msgstr[1] "%s-laget vann %u flammekastarar!"
 
-#: src/weapon/footbomb.cpp:172
+#: src/weapon/footbomb.cpp:153
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
 msgstr[0] "%s-laget vann %u fotballbombe!"
 msgstr[1] "%s-laget vann %u fotballbomber!"
 
-#: src/weapon/grapple.cpp:714
+#: src/weapon/grapple.cpp:700
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -332,7 +332,7 @@ msgid_plural "%s team has won %u mines!"
 msgstr[0] "%s-laget vann %u mine!"
 msgstr[1] "%s-laget vann %u miner!"
 
-#: src/weapon/parachute.cpp:181
+#: src/weapon/parachute.cpp:165
 #, c-format
 msgid "%s team has won %u parachute!"
 msgid_plural "%s team has won %u parachutes!"
@@ -367,7 +367,7 @@ msgid_plural "%s team has won %u shotguns!"
 msgstr[0] "%s-laget vann %u hagle!"
 msgstr[1] "%s-laget vann %u hagler!"
 
-#: src/weapon/slap.cpp:67
+#: src/weapon/slap.cpp:54
 #, c-format
 msgid "%s team has won %u slap!"
 msgid_plural "%s team has won %u slaps! Dodge this!"
@@ -397,7 +397,7 @@ msgstr[0] "%s-laget vann %u sjølvmordsbombe!"
 msgstr[1] ""
 "%s-laget vann %u sjølvmordsbomber! Bruk alle for å få ein ekstrabonus!"
 
-#: src/weapon/syringe.cpp:108
+#: src/weapon/syringe.cpp:94
 #, c-format
 msgid "%s team has won %u syringe!"
 msgid_plural "%s team has won %u syringes!"
@@ -422,7 +422,7 @@ msgstr[1] ""
 "%s-laget vann %u moglegheiter til å hoppa over ein runde! Eg veit du vil "
 "elska dei!"
 
-#: src/weapon/supertux.cpp:278
+#: src/weapon/supertux.cpp:268
 #, c-format
 msgid "%s team has won %u tux launcher! Never seen a flying penguin?"
 msgid_plural "%s team has won %u tux launchers! Never seen a flying penguin?"
@@ -525,11 +525,11 @@ msgstr ""
 msgid "Action"
 msgstr "Handling"
 
-#: src/weapon/air_attack.cpp:217
+#: src/weapon/air_attack.cpp:205
 msgid "Air Attack"
 msgstr "Luftangrep"
 
-#: src/weapon/airhammer.cpp:75
+#: src/weapon/airhammer.cpp:68
 msgid "Airhammer"
 msgstr "Pressluftbor"
 
@@ -549,7 +549,7 @@ msgstr ""
 msgid "And the winner is..."
 msgstr "Og vinnaren er …"
 
-#: src/weapon/baseball.cpp:55
+#: src/weapon/baseball.cpp:47
 msgid ""
 "Angle: Up/Down\n"
 "Fire: space key\n"
@@ -571,7 +571,7 @@ msgstr "Området som vert vist"
 msgid "Authors:"
 msgstr "Utviklarar:"
 
-#: src/weapon/auto_bazooka.cpp:191
+#: src/weapon/auto_bazooka.cpp:175
 msgid "Automatic Bazooka"
 msgstr "Laserstyrd rakett"
 
@@ -603,7 +603,7 @@ msgstr "Dårleg tilkopling …"
 msgid "Bad version: %s != %s"
 msgstr ""
 
-#: src/weapon/baseball.cpp:54
+#: src/weapon/baseball.cpp:46
 msgid "Baseball Bat"
 msgstr "Balltre"
 
@@ -619,11 +619,11 @@ msgstr "Før handling"
 msgid "Benchmark"
 msgstr "Ytingstest"
 
-#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "Blitskrig"
 
-#: src/weapon/blowtorch.cpp:64
+#: src/weapon/blowtorch.cpp:54
 msgid "Blowtorch"
 msgstr "Blåselampe"
 
@@ -631,7 +631,7 @@ msgstr "Blåselampe"
 msgid "Bounce Ball"
 msgstr "Sprettball"
 
-#: src/weapon/supertux.cpp:177
+#: src/weapon/supertux.cpp:167
 msgid "Bye bye Tux..."
 msgstr "Ha det, Tux …"
 
@@ -735,7 +735,7 @@ msgstr "Sjå etter oppdateringar på Internett"
 msgid "Choose randomly between the different maps"
 msgstr "Vel eit tilfeldig kart"
 
-#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "Klassisk"
 
@@ -785,11 +785,11 @@ msgstr "Klientmodus"
 msgid "Clumsiest"
 msgstr "Mest klønete"
 
-#: src/weapon/cluster_bomb.cpp:186
+#: src/weapon/cluster_bomb.cpp:176
 msgid "Cluster Bomb"
 msgstr "Klasebombe"
 
-#: src/weapon/cluzooka.cpp:368
+#: src/weapon/cluzooka.cpp:355
 msgid "Cluzooka"
 msgstr "Klaserakett"
 
@@ -1059,7 +1059,7 @@ msgstr "Filnamn:"
 msgid "Flame Thrower"
 msgstr "Flammekastar"
 
-#: src/weapon/footbomb.cpp:156
+#: src/weapon/footbomb.cpp:137
 msgid "Football Bomb"
 msgstr "Fotballbombe"
 
@@ -1104,7 +1104,7 @@ msgstr "Spelet er usynkronisert"
 msgid "Gnu Launcher"
 msgstr "Gnu"
 
-#: src/weapon/syringe.cpp:58
+#: src/weapon/syringe.cpp:44
 msgid ""
 "Go to player\n"
 "Press space to inject\n"
@@ -1118,7 +1118,7 @@ msgstr ""
 msgid "Graphics"
 msgstr "Grafikk"
 
-#: src/weapon/grapple.cpp:167
+#: src/weapon/grapple.cpp:153
 msgid "Grapple"
 msgstr "Entrehake"
 
@@ -1237,7 +1237,7 @@ msgstr "Inforuter i spelet"
 msgid "Initial energy"
 msgstr "Energi ved start"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:356
 #: src/weapon/riot_bomb.cpp:120
 msgid ""
 "Initial fire angle: Up/Down\n"
@@ -1296,7 +1296,7 @@ msgstr "Hopp"
 msgid "Jump backwards"
 msgstr "Hopp bakover"
 
-#: src/weapon/blowtorch.cpp:65
+#: src/weapon/blowtorch.cpp:55
 msgid ""
 "Keep the space key pressed\n"
 "Angle: Up/Down\n"
@@ -1595,11 +1595,11 @@ msgstr "Oppsett"
 msgid "Options menu"
 msgstr "Oppsett"
 
-#: src/weapon/parachute.cpp:71
+#: src/weapon/parachute.cpp:55
 msgid "Parachute"
 msgstr "Fallskjerm"
 
-#: src/weapon/parachute.cpp:72
+#: src/weapon/parachute.cpp:56
 msgid ""
 "Parachute avoids hitting the ground too hard\n"
 "Opens automatically\n"
@@ -1689,7 +1689,7 @@ msgstr ""
 msgid "Press space to commit suicide"
 msgstr "Trykk «Mellomrom» for å gjera sjølvmord"
 
-#: src/weapon/airhammer.cpp:76
+#: src/weapon/airhammer.cpp:69
 msgid ""
 "Press space to dig\n"
 "Ammo is used when counter reaches zero\n"
@@ -1726,7 +1726,7 @@ msgstr ""
 "Trykk pil opp/ned for å endra retning.\n"
 "Endra retning mens du skyt."
 
-#: src/weapon/grapple.cpp:168
+#: src/weapon/grapple.cpp:154
 msgid ""
 "Press space to shoot grapple\n"
 "Use left/right to swing\n"
@@ -1897,7 +1897,7 @@ msgstr "Tenar tilgjengeleg på nettet"
 msgid "Server mode"
 msgstr "Tenarmodus"
 
-#: src/weapon/supertux.cpp:212
+#: src/weapon/supertux.cpp:202
 msgid ""
 "Set initial direction with up/down\n"
 "Press space to launch\n"
@@ -1959,11 +1959,11 @@ msgstr "Vis adressa til den valde spelaren"
 msgid "Skip turn"
 msgstr "Hopp over tur"
 
-#: src/weapon/slap.cpp:60
+#: src/weapon/slap.cpp:47
 msgid "Slap"
 msgstr "Dask"
 
-#: src/weapon/slap.cpp:61
+#: src/weapon/slap.cpp:48
 msgid "Slap the enemy to make him jump a bit."
 msgstr "Dask til fienden for å få han til å hoppa litt."
 
@@ -2027,7 +2027,7 @@ msgstr "Lager:"
 msgid "Submachine Gun"
 msgstr "Maskingevær"
 
-#: src/weapon/supertux.cpp:211
+#: src/weapon/supertux.cpp:201
 msgid "SuperTux"
 msgstr "SuperTux"
 
@@ -2040,7 +2040,7 @@ msgstr ""
 msgid "Switch between classical and replay interface"
 msgstr "Byt mellom klassisk og opptaksgrensesnitt"
 
-#: src/weapon/syringe.cpp:57
+#: src/weapon/syringe.cpp:43
 msgid "Syringe"
 msgstr "Sprøyte"
 
@@ -2089,11 +2089,11 @@ msgstr "Laga ordna etter totalenergi "
 msgid "Teleportation"
 msgstr "Teleportering"
 
-#: src/weapon/cluster_bomb.cpp:146
+#: src/weapon/cluster_bomb.cpp:136
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Klasebomba forsvann frå kartet før ho eksploderte."
 
-#: src/weapon/footbomb.cpp:114
+#: src/weapon/footbomb.cpp:95
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "Fotballbomba forsvann frå kartet før ho eksploderte."
 
@@ -2105,7 +2105,7 @@ msgstr "Gnuen forsvann frå kartet før han eksploderte!"
 msgid "The Polecat left the battlefield before exploding!"
 msgstr "Stinkdyret forsvann frå kartet før det eksploderte!"
 
-#: src/weapon/auto_bazooka.cpp:166
+#: src/weapon/auto_bazooka.cpp:150
 msgid "The automatic rocket has left the battlefield..."
 msgstr "Den laserstyrde raketten forsvann frå kartet før han eksploderte."
 
@@ -2118,7 +2118,7 @@ msgstr "Sprettballen forsvann frå karten før han eksploderte!"
 msgid "The bigger the faster you'll fall!"
 msgstr "Høgare verdiar gjer at fell raskare"
 
-#: src/menu/game_mode_editor.cpp:304
+#: src/menu/game_mode_editor.cpp:305
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2157,11 +2157,11 @@ msgstr "Granaten forsvann frå kartet før han eksploderte!"
 msgid "The others are waiting for you! Wake up! :-)"
 msgstr "Dei andre ventar på deg! Vakna! :–)"
 
-#: src/weapon/parachute.cpp:99
+#: src/weapon/parachute.cpp:83
 msgid "The parachute is activated automatically."
 msgstr "Fallskjermen vert automatisk løyst ut."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:305
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Raketten forsvann frå kartet før han eksploderte."
@@ -2211,7 +2211,7 @@ msgstr ""
 "Tida att i denne runden og tid gått sidan spelet starta.\n"
 "Trykk for å pausa."
 
-#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
+#: src/weapon/cluster_bomb.cpp:177 src/weapon/footbomb.cpp:138
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
 "Angle: Up/Down\n"
@@ -2315,7 +2315,7 @@ msgstr "Ukjend kommando av type «%i»"
 msgid "Unknown."
 msgstr "Ukjend kommando"
 
-#: src/game/game_mode.cpp:322
+#: src/game/game_mode.cpp:323
 msgid "Unlimited"
 msgstr "Uendeleg"
 
@@ -2350,7 +2350,7 @@ msgstr ""
 "Bruk: venstreklikk på målet\n"
 "Éin bruk per omgang"
 
-#: src/weapon/auto_bazooka.cpp:192
+#: src/weapon/auto_bazooka.cpp:176
 msgid ""
 "Usage: left click on the target\n"
 "Initial fire angle: Up/Down\n"
@@ -2525,7 +2525,7 @@ msgstr "Du bomma!"
 msgid "aka"
 msgstr "alias"
 
-#: src/weapon/air_attack.cpp:218
+#: src/weapon/air_attack.cpp:206
 msgid ""
 "attack direction: Left/Right\n"
 "Bombing: Left click on the target\n"

@@ -124,20 +124,6 @@ static bool find_first_contact_point(Point2i from, Double angle, uint length,
   return false;
 }
 
-class GrappleConfig : public EmptyWeaponConfig
-{
-public:
-  uint max_rope_length; // Max rope length in pixels
-  int push_force;
-
-public:
-  GrappleConfig()
-  {
-    emplace_back(new UintConfigElement("max_rope_length", &max_rope_length, 450, 200, 800));
-    emplace_back(new IntConfigElement("push_force", &push_force, 10));
-  }
-};
-
 //-----------------------------------------------------------------------------
 
 Grapple::Grapple() :

@@ -35,16 +35,6 @@
 #include "tool/xml_document.h"
 #include "game/game_time.h"
 
-class ClusterBombConfig : public ExplosiveWeaponConfig
-{
-public:
-  uint nb_fragments;
-  ClusterBombConfig()
-  {
-    emplace_back(new UintConfigElement("nb_fragments", &nb_fragments, 5, 2, 10));
-  }
-};
-
 class Cluster : public WeaponProjectile
 {
 public:

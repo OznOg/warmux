@@ -153,7 +153,7 @@ msgstr "%s 隊已經有無限發 %s 彈藥了！"
 msgid "%s team has skipped its turn."
 msgstr "%s 隊跳過一回合。"
 
-#: src/weapon/cluzooka.cpp:374
+#: src/weapon/cluzooka.cpp:361
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -165,13 +165,13 @@ msgid "%s team has won %u Gnu! Blow them all, cowboy!"
 msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "%s 隊得到了 %u 隻 Gnu 牛羚！牛仔們，轟了他們！"
 
-#: src/weapon/air_attack.cpp:259
+#: src/weapon/air_attack.cpp:247
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
 msgstr[0] "%s 隊得到了 %u 發空襲！"
 
-#: src/weapon/airhammer.cpp:166
+#: src/weapon/airhammer.cpp:159
 #, c-format
 msgid ""
 "%s team has won %u airhammer! Don't make too much noise with it! Thanks, "
@@ -187,13 +187,13 @@ msgid "%s team has won %u anvil! Splat them all!"
 msgid_plural "%s team has won %u anvils! Splat them all!"
 msgstr[0] "%s 隊得到了 %u 組鐵砧！把他們統統砸碎！"
 
-#: src/weapon/auto_bazooka.cpp:214
+#: src/weapon/auto_bazooka.cpp:198
 #, c-format
 msgid "%s team has won %u automatic bazooka!"
 msgid_plural "%s team has won %u automatic bazookas!"
 msgstr[0] "%s 隊得到了 %u 發自動火箭筒！"
 
-#: src/weapon/baseball.cpp:107
+#: src/weapon/baseball.cpp:99
 #, c-format
 msgid "%s team has won %u baseball bat!"
 msgid_plural "%s team has won %u baseball bats!"
@@ -205,7 +205,7 @@ msgid "%s team has won %u bazooka!"
 msgid_plural "%s team has won %u bazookas!"
 msgstr[0] "%s 隊得到了 %u 發火箭筒！"
 
-#: src/weapon/blowtorch.cpp:137
+#: src/weapon/blowtorch.cpp:127
 #, c-format
 msgid ""
 "%s team has won %u blowtorch! If you're under 18, ask your parents to use it."
@@ -220,7 +220,7 @@ msgid "%s team has won %u bounce ball! Boing!"
 msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "%s 隊得到了 %u 顆彈跳球！蹦蹦蹦！"
 
-#: src/weapon/cluster_bomb.cpp:203
+#: src/weapon/cluster_bomb.cpp:193
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -251,13 +251,13 @@ msgid "%s team has won %u flame-thrower!"
 msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "%s 隊得到了 %u 把火焰噴射器！"
 
-#: src/weapon/footbomb.cpp:172
+#: src/weapon/footbomb.cpp:153
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
 msgstr[0] "%s 隊得到了 %u 顆橄欖球炸彈！"
 
-#: src/weapon/grapple.cpp:714
+#: src/weapon/grapple.cpp:700
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -296,7 +296,7 @@ msgid "%s team has won %u mine!"
 msgid_plural "%s team has won %u mines!"
 msgstr[0] "%s 隊得到了 %u 顆地雷！"
 
-#: src/weapon/parachute.cpp:181
+#: src/weapon/parachute.cpp:165
 #, c-format
 msgid "%s team has won %u parachute!"
 msgid_plural "%s team has won %u parachutes!"
@@ -326,7 +326,7 @@ msgid "%s team has won %u shotgun!"
 msgid_plural "%s team has won %u shotguns!"
 msgstr[0] "%s 隊得到了 %u 把霰彈槍！"
 
-#: src/weapon/slap.cpp:67
+#: src/weapon/slap.cpp:54
 #, c-format
 msgid "%s team has won %u slap!"
 msgid_plural "%s team has won %u slaps! Dodge this!"
@@ -351,7 +351,7 @@ msgid "%s team has won %u suicide!"
 msgid_plural "%s team has won %u suicides! Use them all for an extra bonus!"
 msgstr[0] "%s 隊得到了 %u 組自殺攻擊！"
 
-#: src/weapon/syringe.cpp:108
+#: src/weapon/syringe.cpp:94
 #, c-format
 msgid "%s team has won %u syringe!"
 msgid_plural "%s team has won %u syringes!"
@@ -369,7 +369,7 @@ msgid "%s team has won %u turn skip! I know you'll love it."
 msgid_plural "%s team has won %u turn skips! I know you'll love them."
 msgstr[0] "%s 隊得到了 %u 個跳過回合！我知道你喜歡。"
 
-#: src/weapon/supertux.cpp:278
+#: src/weapon/supertux.cpp:268
 #, c-format
 msgid "%s team has won %u tux launcher! Never seen a flying penguin?"
 msgid_plural "%s team has won %u tux launchers! Never seen a flying penguin?"
@@ -469,11 +469,11 @@ msgstr ""
 msgid "Action"
 msgstr "動作"
 
-#: src/weapon/air_attack.cpp:217
+#: src/weapon/air_attack.cpp:205
 msgid "Air Attack"
 msgstr "空襲"
 
-#: src/weapon/airhammer.cpp:75
+#: src/weapon/airhammer.cpp:68
 msgid "Airhammer"
 msgstr "氣動鎚"
 
@@ -493,7 +493,7 @@ msgstr ""
 msgid "And the winner is..."
 msgstr "贏家是..."
 
-#: src/weapon/baseball.cpp:55
+#: src/weapon/baseball.cpp:47
 msgid ""
 "Angle: Up/Down\n"
 "Fire: space key\n"
@@ -515,7 +515,7 @@ msgstr "目前顯示的區域"
 msgid "Authors:"
 msgstr "作者："
 
-#: src/weapon/auto_bazooka.cpp:191
+#: src/weapon/auto_bazooka.cpp:175
 msgid "Automatic Bazooka"
 msgstr "自動火箭筒"
 
@@ -547,7 +547,7 @@ msgstr "壞的 socket ..."
 msgid "Bad version: %s != %s"
 msgstr ""
 
-#: src/weapon/baseball.cpp:54
+#: src/weapon/baseball.cpp:46
 msgid "Baseball Bat"
 msgstr "球棒"
 
@@ -563,11 +563,11 @@ msgstr "開始動作前"
 msgid "Benchmark"
 msgstr "評測"
 
-#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "閃電戰"
 
-#: src/weapon/blowtorch.cpp:64
+#: src/weapon/blowtorch.cpp:54
 msgid "Blowtorch"
 msgstr "噴火槍"
 
@@ -575,7 +575,7 @@ msgstr "噴火槍"
 msgid "Bounce Ball"
 msgstr "彈跳球"
 
-#: src/weapon/supertux.cpp:177
+#: src/weapon/supertux.cpp:167
 msgid "Bye bye Tux..."
 msgstr "再見了小企鵝..."
 
@@ -680,7 +680,7 @@ msgstr "線上檢查更新？"
 msgid "Choose randomly between the different maps"
 msgstr "在不同地圖間隨機選擇"
 
-#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "一般"
 
@@ -732,11 +732,11 @@ msgstr "客人模式"
 msgid "Clumsiest"
 msgstr "最蠢的"
 
-#: src/weapon/cluster_bomb.cpp:186
+#: src/weapon/cluster_bomb.cpp:176
 msgid "Cluster Bomb"
 msgstr "集束炸彈"
 
-#: src/weapon/cluzooka.cpp:368
+#: src/weapon/cluzooka.cpp:355
 msgid "Cluzooka"
 msgstr "集束火箭筒"
 
@@ -1005,7 +1005,7 @@ msgstr "檔案名稱："
 msgid "Flame Thrower"
 msgstr "火焰噴射器"
 
-#: src/weapon/footbomb.cpp:156
+#: src/weapon/footbomb.cpp:137
 msgid "Football Bomb"
 msgstr "橄欖球炸彈"
 
@@ -1049,7 +1049,7 @@ msgstr "遊戲不同步！"
 msgid "Gnu Launcher"
 msgstr "Gnu 牛羚發射器"
 
-#: src/weapon/syringe.cpp:58
+#: src/weapon/syringe.cpp:44
 msgid ""
 "Go to player\n"
 "Press space to inject\n"
@@ -1063,7 +1063,7 @@ msgstr ""
 msgid "Graphics"
 msgstr "畫面"
 
-#: src/weapon/grapple.cpp:167
+#: src/weapon/grapple.cpp:153
 msgid "Grapple"
 msgstr "抓鉤"
 
@@ -1181,7 +1181,7 @@ msgstr "遊戲內顯示"
 msgid "Initial energy"
 msgstr "起始生命值"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:356
 #: src/weapon/riot_bomb.cpp:120
 msgid ""
 "Initial fire angle: Up/Down\n"
@@ -1240,7 +1240,7 @@ msgstr "跳躍"
 msgid "Jump backwards"
 msgstr "向後跳"
 
-#: src/weapon/blowtorch.cpp:65
+#: src/weapon/blowtorch.cpp:55
 msgid ""
 "Keep the space key pressed\n"
 "Angle: Up/Down\n"
@@ -1541,11 +1541,11 @@ msgstr "選項"
 msgid "Options menu"
 msgstr "選單"
 
-#: src/weapon/parachute.cpp:71
+#: src/weapon/parachute.cpp:55
 msgid "Parachute"
 msgstr "降落傘"
 
-#: src/weapon/parachute.cpp:72
+#: src/weapon/parachute.cpp:56
 msgid ""
 "Parachute avoids hitting the ground too hard\n"
 "Opens automatically\n"
@@ -1636,7 +1636,7 @@ msgstr ""
 msgid "Press space to commit suicide"
 msgstr "按下空白鍵進行自殺攻擊"
 
-#: src/weapon/airhammer.cpp:76
+#: src/weapon/airhammer.cpp:69
 msgid ""
 "Press space to dig\n"
 "Ammo is used when counter reaches zero\n"
@@ -1673,7 +1673,7 @@ msgstr ""
 "使用上下鍵改變初始角度\n"
 "射擊時可以改變角度"
 
-#: src/weapon/grapple.cpp:168
+#: src/weapon/grapple.cpp:154
 msgid ""
 "Press space to shoot grapple\n"
 "Use left/right to swing\n"
@@ -1845,7 +1845,7 @@ msgstr "網際網路上有可用的伺服器"
 msgid "Server mode"
 msgstr "伺服器模式"
 
-#: src/weapon/supertux.cpp:212
+#: src/weapon/supertux.cpp:202
 msgid ""
 "Set initial direction with up/down\n"
 "Press space to launch\n"
@@ -1907,11 +1907,11 @@ msgstr "顯示指定玩家位址"
 msgid "Skip turn"
 msgstr "跳過回合"
 
-#: src/weapon/slap.cpp:60
+#: src/weapon/slap.cpp:47
 msgid "Slap"
 msgstr "巴掌"
 
-#: src/weapon/slap.cpp:61
+#: src/weapon/slap.cpp:48
 msgid "Slap the enemy to make him jump a bit."
 msgstr "賞敵人一巴掌，讓他動一動。"
 
@@ -1976,7 +1976,7 @@ msgstr "庫存："
 msgid "Submachine Gun"
 msgstr "衝鋒槍"
 
-#: src/weapon/supertux.cpp:211
+#: src/weapon/supertux.cpp:201
 msgid "SuperTux"
 msgstr "超級企鵝"
 
@@ -1989,7 +1989,7 @@ msgstr ""
 msgid "Switch between classical and replay interface"
 msgstr "在一般和重播模式間切換"
 
-#: src/weapon/syringe.cpp:57
+#: src/weapon/syringe.cpp:43
 msgid "Syringe"
 msgstr "注射器"
 
@@ -2040,11 +2040,11 @@ msgstr ""
 msgid "Teleportation"
 msgstr "傳送機"
 
-#: src/weapon/cluster_bomb.cpp:146
+#: src/weapon/cluster_bomb.cpp:136
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "集束炸彈在爆炸之前飛出戰場。"
 
-#: src/weapon/footbomb.cpp:114
+#: src/weapon/footbomb.cpp:95
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "橄欖球炸彈在爆炸之前跑到界外去了。"
 
@@ -2056,7 +2056,7 @@ msgstr "Gnu 牛羚在爆炸之前離開了戰場！"
 msgid "The Polecat left the battlefield before exploding!"
 msgstr "臭鼬在爆炸之前離開了戰場！"
 
-#: src/weapon/auto_bazooka.cpp:166
+#: src/weapon/auto_bazooka.cpp:150
 msgid "The automatic rocket has left the battlefield..."
 msgstr "自動火箭飛到戰場外了..."
 
@@ -2069,7 +2069,7 @@ msgstr "球在爆炸前一刻掉出戰場外了！"
 msgid "The bigger the faster you'll fall!"
 msgstr "該值愈大，摔得也越快！"
 
-#: src/menu/game_mode_editor.cpp:304
+#: src/menu/game_mode_editor.cpp:305
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2106,11 +2106,11 @@ msgstr "手榴彈在爆炸前一刻掉出戰場外了！"
 msgid "The others are waiting for you! Wake up! :-)"
 msgstr "快醒來！其他人在等你呢！:-)"
 
-#: src/weapon/parachute.cpp:99
+#: src/weapon/parachute.cpp:83
 msgid "The parachute is activated automatically."
 msgstr "降落傘會自動啟動。"
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:305
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "火箭飛到戰場外了..."
@@ -2158,7 +2158,7 @@ msgstr ""
 "以及遊戲進行多久。\n"
 "點選它將會暫停"
 
-#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
+#: src/weapon/cluster_bomb.cpp:177 src/weapon/footbomb.cpp:138
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
 "Angle: Up/Down\n"
@@ -2266,7 +2266,7 @@ msgstr "未知的指令類型 %i"
 msgid "Unknown."
 msgstr "未知的指令"
 
-#: src/game/game_mode.cpp:322
+#: src/game/game_mode.cpp:323
 msgid "Unlimited"
 msgstr "無限制"
 
@@ -2302,7 +2302,7 @@ msgstr ""
 "鐵砧會殺掉擋在它下面的所有角色\n"
 "每回合一發"
 
-#: src/weapon/auto_bazooka.cpp:192
+#: src/weapon/auto_bazooka.cpp:176
 msgid ""
 "Usage: left click on the target\n"
 "Initial fire angle: Up/Down\n"
@@ -2475,7 +2475,7 @@ msgstr "子彈打歪了！"
 msgid "aka"
 msgstr "即"
 
-#: src/weapon/air_attack.cpp:218
+#: src/weapon/air_attack.cpp:206
 msgid ""
 "attack direction: Left/Right\n"
 "Bombing: Left click on the target\n"

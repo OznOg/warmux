@@ -47,18 +47,6 @@ static const uint FORCE_Y_MAX = 40;
 // XXX Unused ?
 //const Double OBUS_SPEED = 7 ;
 
-class AirAttackConfig : public ExplosiveWeaponConfig
-{
-public:
-  Double speed;
-  uint nbr_obus;
-  AirAttackConfig()
-  {
-    emplace_back(new UintConfigElement("nbr_obus", &nbr_obus, 3, 1, 8));
-    emplace_back(new DoubleConfigElement("speed", &speed, 3));
-  }
-};
-
 Obus::Obus(AirAttackConfig& cfg) :
   WeaponProjectile("air_attack_projectile", cfg, nullptr)
 {

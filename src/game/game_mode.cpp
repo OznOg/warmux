@@ -86,6 +86,7 @@ GameMode::GameMode()
   main_settings.LinkList(std::move(bonus_box), "bonus_box");
 
   main_settings.LinkList(std::make_unique<MedkitSettings>(), "medkit");
+  main_settings.LinkList(bindExplosiveWeaponConfig(mines_explosion_cfg), "minelauncher");
 }
 
 void GameMode::LoadDefaultValues()

@@ -187,7 +187,6 @@ POTFILES = \
         src/weapon/supertux.cpp \
         src/weapon/syringe.cpp \
         src/weapon/teleportation.cpp \
-        src/weapon/weapon_cfg.cpp \
         src/weapon/weapon.cpp \
         src/weapon/weapon_launcher.cpp \
         src/weapon/weapons_list.cpp \

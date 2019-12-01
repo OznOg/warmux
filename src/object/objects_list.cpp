@@ -29,6 +29,7 @@
 #include <WARMUX_debug.h>
 #include <WARMUX_rectangle.h>
 #include "game/game_time.h"
+#include "game/game_mode.h"
 #include "weapon/mine.h"
 #include <vector>
 #include <iostream>
@@ -46,9 +47,9 @@ void ObjectsList::PlaceMines()
   MSG_DEBUG("lst_objects","Placing mines");
   for (uint i=0; i<ActiveMap()->LoadedData()->GetNbMine(); ++i)
   {
-    ObjMine *obj = new ObjMine(*MineConfig::GetInstance());
+    ObjMine *obj = new ObjMine(GameMode::GetInstance()->mines_explosion_cfg);
     Double detection_range_factor = 1.5;
-    if (obj->PutRandomly(false, MineConfig::GetInstance()->detection_range * PIXEL_PER_METER * detection_range_factor))
+    if (obj->PutRandomly(false, GameMode::GetInstance()->mines_explosion_cfg.detection_range * PIXEL_PER_METER * detection_range_factor))
       // detection range is in meter
       push_back(obj);
     else

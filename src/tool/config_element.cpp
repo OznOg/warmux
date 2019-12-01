@@ -5,8 +5,10 @@ bool IntConfigElement::Read(const xmlNode* father) const
 {
   bool ok = (m_attribute) ? XmlReader::ReadIntAttr(father, m_name, *m_val)
                           : XmlReader::ReadInt(father, m_name, *m_val);
-  if (!ok)
+  if (!ok) {
+    *m_val = m_def;
     return false;
+  }
 
   ASSERT(!m_important || (*m_val >= m_min && *m_val <= m_max));
   return true;
@@ -38,8 +40,10 @@ bool UintConfigElement::Read(const xmlNode* father) const
   int val;
   bool ok = (m_attribute) ? XmlReader::ReadIntAttr(father, m_name, val)
                           : XmlReader::ReadInt(father, m_name, val);
-  if (!ok || val<0)
+  if (!ok || val < 0) {
+    *m_val = m_def;
     return false;
+  }
 
   *m_val = val;
   ASSERT(!m_important || (*m_val >= m_min && *m_val <= m_max));
@@ -57,8 +61,10 @@ bool DoubleConfigElement::Read(const xmlNode* father) const
 {
   bool ok = (m_attribute) ? XmlReader::ReadDoubleAttr(father, m_name, *m_val)
                           : XmlReader::ReadDouble(father, m_name, *m_val);
-  if (!ok)
+  if (!ok) {
+    *m_val = m_def;
     return false;
+  }
 
   ASSERT(!m_important || (*m_val >= m_min && *m_val <= m_max));
   return true;
@@ -78,8 +84,10 @@ bool AngleConfigElement::Read(const xmlNode* father) const
   int val;
   bool ok = (m_attribute) ? XmlReader::ReadIntAttr(father, m_name, val)
                           : XmlReader::ReadInt(father, m_name, val);
-  if (!ok)
+  if (!ok) {
+    *m_val = m_def;
     return false;
+  }
 
   *m_val = val*ToRad;
   ASSERT(!m_important || (*m_val >= m_min && *m_val <= m_max));

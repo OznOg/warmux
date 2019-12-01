@@ -61,17 +61,6 @@ public:
   void Refresh() override;
 };
 
-class MineConfig : public Singleton<MineConfig>, public ExplosiveWeaponConfig
-{
-protected:
-  friend class Singleton<MineConfig>;
-public:
-  uint escape_time;
-  Double detection_range;
-  Double speed_detection;
-private:
-  MineConfig();
-};
 
 class Mine : public WeaponLauncher
 {

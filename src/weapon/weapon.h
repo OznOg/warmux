@@ -27,6 +27,7 @@
 #include "sound/sound_sample.h"
 #include <WARMUX_debug.h>
 #include <WARMUX_point.h>
+#include "weapon/weapon_cfg.h"
 
 #include "tool/resource_manager.h"
 
@@ -185,6 +186,8 @@ public:
          const std::string &id,
          EmptyWeaponConfig * params,
          bool drawable = true);
+  Weapon(const Weapon&) = delete;
+  const Weapon &operator=(const Weapon&) = delete;
   virtual ~Weapon();
 
   // Select or deselect the weapon
@@ -322,7 +325,7 @@ public:
   const std::string& GetID() const { return m_id; }
   const std::string& GetHelp() const { return m_help; }
   Weapon_type GetType() const { return m_type; }
-  EmptyWeaponConfig* GetConfig() { return extra_params; }
+  auto GetConfig() { return bindExplosiveWeaponConfig(*extra_params); }
 
   // For localization purposes, called when changing language
   virtual void UpdateTranslationStrings() = 0;

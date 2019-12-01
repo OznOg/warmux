@@ -420,7 +420,6 @@ warmux_SOURCES = \
         weapon/teleportation.h \
         weapon/weapon.cpp \
         weapon/weapon.h \
-        weapon/weapon_cfg.cpp \
         weapon/weapon_cfg.h \
         weapon/weapon_launcher.cpp \
         weapon/weapon_launcher.h \

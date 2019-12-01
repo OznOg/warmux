@@ -76,19 +76,6 @@ protected:
   }
 };
 
-class CluzookaConfig : public ExplosiveWeaponConfig
-{
-public:
-  uint m_fragments;
-  uint m_angle_dispersion;
-
-  CluzookaConfig()
-  {
-    emplace_back(new UintConfigElement("nb_fragments", &m_fragments, 5, 2, 10));
-    emplace_back(new UintConfigElement("nb_angle_dispersion", &m_angle_dispersion, 45));
-  }
-};
-
 class CluzookaCluster : public WeaponProjectile, public ClusterSpawner< CluzookaCluster >
 {
 #ifdef CLUSTERS_SPAWN_CLUSTERS

@@ -155,7 +155,7 @@ msgstr "%s teamo jam havas senlimajn municiojn por la %s!"
 msgid "%s team has skipped its turn."
 msgstr "%s teamo malhavis lian vicon."
 
-#: src/weapon/cluzooka.cpp:374
+#: src/weapon/cluzooka.cpp:361
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -169,14 +169,14 @@ msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "%s teamo gajnis %u Gnuon! Eksplodigu ĉiujn, vakero!"
 msgstr[1] "%s teamo gajnis %u Gnuon! Eksplodigu ĉiujn, vakero!"
 
-#: src/weapon/air_attack.cpp:259
+#: src/weapon/air_attack.cpp:247
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
 msgstr[0] "%s teamo gajnis %u aeratakon!"
 msgstr[1] "%s teamo gajnis %u aeratakojn!"
 
-#: src/weapon/airhammer.cpp:166
+#: src/weapon/airhammer.cpp:159
 #, c-format
 msgid ""
 "%s team has won %u airhammer! Don't make too much noise with it! Thanks, "
@@ -197,14 +197,14 @@ msgid_plural "%s team has won %u anvils! Splat them all!"
 msgstr[0] "%s teamo gajnis %u amboson! Platigu ĉiujn!"
 msgstr[1] "%s teamo gajnis %u ambosojn! Platigu ĉiujn!"
 
-#: src/weapon/auto_bazooka.cpp:214
+#: src/weapon/auto_bazooka.cpp:198
 #, c-format
 msgid "%s team has won %u automatic bazooka!"
 msgid_plural "%s team has won %u automatic bazookas!"
 msgstr[0] "%s teamo gajnis %u aŭtomatikan bazukon!"
 msgstr[1] "%s teamo gajnis %u aŭtomatikajn bazukojn!"
 
-#: src/weapon/baseball.cpp:107
+#: src/weapon/baseball.cpp:99
 #, c-format
 msgid "%s team has won %u baseball bat!"
 msgid_plural "%s team has won %u baseball bats!"
@@ -218,7 +218,7 @@ msgid_plural "%s team has won %u bazookas!"
 msgstr[0] "%s teamo gajnis %u bazukon!"
 msgstr[1] "%s teamo gajnis %u bazukojn!"
 
-#: src/weapon/blowtorch.cpp:137
+#: src/weapon/blowtorch.cpp:127
 #, c-format
 msgid ""
 "%s team has won %u blowtorch! If you're under 18, ask your parents to use it."
@@ -239,7 +239,7 @@ msgid_plural "%s team has won %u bounce balls! Boing!"
 msgstr[0] "%s teamo gajnis %u resaltantan pilkon! Ŝpruc!"
 msgstr[1] "%s teamo gajnis %u resaltantajn pilkojn! Ŝpruc!"
 
-#: src/weapon/cluster_bomb.cpp:203
+#: src/weapon/cluster_bomb.cpp:193
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -275,14 +275,14 @@ msgid_plural "%s team has won %u flame-throwers!"
 msgstr[0] "%s teamo gajnis %u flamĵetilon!"
 msgstr[1] "%s teamo gajnis %u flamĵetilojn!"
 
-#: src/weapon/footbomb.cpp:172
+#: src/weapon/footbomb.cpp:153
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
 msgstr[0] "%s teamo gajnis %u futbalbombon!"
 msgstr[1] "%s teamo gajnis %u futbalbombojn!"
 
-#: src/weapon/grapple.cpp:714
+#: src/weapon/grapple.cpp:700
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -327,7 +327,7 @@ msgid_plural "%s team has won %u mines!"
 msgstr[0] "%s teamo gajnis %u minon!"
 msgstr[1] "%s teamo gajnis %u minojn!"
 
-#: src/weapon/parachute.cpp:181
+#: src/weapon/parachute.cpp:165
 #, c-format
 msgid "%s team has won %u parachute!"
 msgid_plural "%s team has won %u parachutes!"
@@ -362,7 +362,7 @@ msgid_plural "%s team has won %u shotguns!"
 msgstr[0] "%s teamo gajnis %u blovfusilon!"
 msgstr[1] "%s teamo gajnis %u blovfusilojn!"
 
-#: src/weapon/slap.cpp:67
+#: src/weapon/slap.cpp:54
 #, c-format
 msgid "%s team has won %u slap!"
 msgid_plural "%s team has won %u slaps! Dodge this!"
@@ -393,7 +393,7 @@ msgid_plural "%s team has won %u suicides! Use them all for an extra bonus!"
 msgstr[0] "%s teamo gajnis %u sinmortigon!"
 msgstr[1] "%s teamo gajnis %u sinmortigojn!"
 
-#: src/weapon/syringe.cpp:108
+#: src/weapon/syringe.cpp:94
 #, c-format
 msgid "%s team has won %u syringe!"
 msgid_plural "%s team has won %u syringes!"
@@ -414,7 +414,7 @@ msgid_plural "%s team has won %u turn skips! I know you'll love them."
 msgstr[0] "%s teamo gajnis %u vicpasigon! Mi scias, ke vi amos ĝin."
 msgstr[1] "%s teamo gajnis %u vicpasigojn! Mi scias, ke vi amos ilin."
 
-#: src/weapon/supertux.cpp:278
+#: src/weapon/supertux.cpp:268
 #, c-format
 msgid "%s team has won %u tux launcher! Never seen a flying penguin?"
 msgid_plural "%s team has won %u tux launchers! Never seen a flying penguin?"
@@ -525,11 +525,11 @@ msgstr ""
 msgid "Action"
 msgstr "Opcioj"
 
-#: src/weapon/air_attack.cpp:217
+#: src/weapon/air_attack.cpp:205
 msgid "Air Attack"
 msgstr "Aeratako"
 
-#: src/weapon/airhammer.cpp:75
+#: src/weapon/airhammer.cpp:68
 msgid "Airhammer"
 msgstr "Pneŭmatika martelo"
 
@@ -549,7 +549,7 @@ msgstr ""
 msgid "And the winner is..."
 msgstr "Kaj la gajnanto estas..."
 
-#: src/weapon/baseball.cpp:55
+#: src/weapon/baseball.cpp:47
 #, fuzzy
 msgid ""
 "Angle: Up/Down\n"
@@ -572,7 +572,7 @@ msgstr ""
 msgid "Authors:"
 msgstr "Aŭtoroj:"
 
-#: src/weapon/auto_bazooka.cpp:191
+#: src/weapon/auto_bazooka.cpp:175
 msgid "Automatic Bazooka"
 msgstr "Aŭtomatika bazuko"
 
@@ -604,7 +604,7 @@ msgstr "Malbona kontaktilo..."
 msgid "Bad version: %s != %s"
 msgstr ""
 
-#: src/weapon/baseball.cpp:54
+#: src/weapon/baseball.cpp:46
 msgid "Baseball Bat"
 msgstr "Basbalbatilo"
 
@@ -620,11 +620,11 @@ msgstr "Antaŭ ago"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr ""
 
-#: src/weapon/blowtorch.cpp:64
+#: src/weapon/blowtorch.cpp:54
 msgid "Blowtorch"
 msgstr "Torĉo"
 
@@ -632,7 +632,7 @@ msgstr "Torĉo"
 msgid "Bounce Ball"
 msgstr "Resaltanta pilko"
 
-#: src/weapon/supertux.cpp:177
+#: src/weapon/supertux.cpp:167
 #, fuzzy
 msgid "Bye bye Tux..."
 msgstr "Adiaŭ, tukso..."
@@ -741,7 +741,7 @@ msgstr "Ĉu kontroli la ĝisdatigaĵoj enrete?"
 msgid "Choose randomly between the different maps"
 msgstr "Elekti hazarde el la malsamaj mapoj"
 
-#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr ""
 
@@ -785,11 +785,11 @@ msgstr "Klientmodo"
 msgid "Clumsiest"
 msgstr "La plej mallerta"
 
-#: src/weapon/cluster_bomb.cpp:186
+#: src/weapon/cluster_bomb.cpp:176
 msgid "Cluster Bomb"
 msgstr "Disgrenado"
 
-#: src/weapon/cluzooka.cpp:368
+#: src/weapon/cluzooka.cpp:355
 msgid "Cluzooka"
 msgstr "Disbazuko"
 
@@ -1058,7 +1058,7 @@ msgstr "Ludnomo:"
 msgid "Flame Thrower"
 msgstr "Flamĵetilo"
 
-#: src/weapon/footbomb.cpp:156
+#: src/weapon/footbomb.cpp:137
 msgid "Football Bomb"
 msgstr "Futbalbombo"
 
@@ -1100,7 +1100,7 @@ msgstr ""
 msgid "Gnu Launcher"
 msgstr "Gnuĵetilo"
 
-#: src/weapon/syringe.cpp:58
+#: src/weapon/syringe.cpp:44
 msgid ""
 "Go to player\n"
 "Press space to inject\n"
@@ -1112,7 +1112,7 @@ msgstr ""
 msgid "Graphics"
 msgstr "Grafikoj"
 
-#: src/weapon/grapple.cpp:167
+#: src/weapon/grapple.cpp:153
 msgid "Grapple"
 msgstr "Alkroĉilo"
 
@@ -1232,7 +1232,7 @@ msgstr ""
 msgid "Initial energy"
 msgstr "Komenca energio"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:356
 #: src/weapon/riot_bomb.cpp:120
 #, fuzzy
 msgid ""
@@ -1293,7 +1293,7 @@ msgstr "Salti"
 msgid "Jump backwards"
 msgstr "Salti malantaŭen"
 
-#: src/weapon/blowtorch.cpp:65
+#: src/weapon/blowtorch.cpp:55
 #, fuzzy
 msgid ""
 "Keep the space key pressed\n"
@@ -1608,11 +1608,11 @@ msgstr "Opcioj"
 msgid "Options menu"
 msgstr "Opciomenuo"
 
-#: src/weapon/parachute.cpp:71
+#: src/weapon/parachute.cpp:55
 msgid "Parachute"
 msgstr "Paraŝuto"
 
-#: src/weapon/parachute.cpp:72
+#: src/weapon/parachute.cpp:56
 msgid ""
 "Parachute avoids hitting the ground too hard\n"
 "Opens automatically\n"
@@ -1696,7 +1696,7 @@ msgstr "Ŝanĝi aktivan ulon"
 msgid "Press space to commit suicide"
 msgstr "%s (teamo %s) mortigis sin!"
 
-#: src/weapon/airhammer.cpp:76
+#: src/weapon/airhammer.cpp:69
 msgid ""
 "Press space to dig\n"
 "Ammo is used when counter reaches zero\n"
@@ -1723,7 +1723,7 @@ msgid ""
 "Change angle while shooting"
 msgstr ""
 
-#: src/weapon/grapple.cpp:168
+#: src/weapon/grapple.cpp:154
 msgid ""
 "Press space to shoot grapple\n"
 "Use left/right to swing\n"
@@ -1886,7 +1886,7 @@ msgstr "Interretebla servilo"
 msgid "Server mode"
 msgstr "Servila modo"
 
-#: src/weapon/supertux.cpp:212
+#: src/weapon/supertux.cpp:202
 msgid ""
 "Set initial direction with up/down\n"
 "Press space to launch\n"
@@ -1943,11 +1943,11 @@ msgstr ""
 msgid "Skip turn"
 msgstr "Pasigi vicon"
 
-#: src/weapon/slap.cpp:60
+#: src/weapon/slap.cpp:47
 msgid "Slap"
 msgstr "Vangofrapi"
 
-#: src/weapon/slap.cpp:61
+#: src/weapon/slap.cpp:48
 msgid "Slap the enemy to make him jump a bit."
 msgstr "Vangofrapi la malamikon por saltigi lin iomete."
 
@@ -2010,7 +2010,7 @@ msgstr "Municioj:"
 msgid "Submachine Gun"
 msgstr "Mitraleto"
 
-#: src/weapon/supertux.cpp:211
+#: src/weapon/supertux.cpp:201
 msgid "SuperTux"
 msgstr "SuperTukso"
 
@@ -2023,7 +2023,7 @@ msgstr ""
 msgid "Switch between classical and replay interface"
 msgstr ""
 
-#: src/weapon/syringe.cpp:57
+#: src/weapon/syringe.cpp:43
 msgid "Syringe"
 msgstr "Injektilo"
 
@@ -2074,11 +2074,11 @@ msgstr ""
 msgid "Teleportation"
 msgstr "Teleportilo"
 
-#: src/weapon/cluster_bomb.cpp:146
+#: src/weapon/cluster_bomb.cpp:136
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "La disgrenado foriris de la batalejo antaŭ ol explodi."
 
-#: src/weapon/footbomb.cpp:114
+#: src/weapon/footbomb.cpp:95
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "La futbalbombo foriris de la batalejo antaŭ ol explodi."
 
@@ -2092,7 +2092,7 @@ msgstr "La Gnuo foriris de la batalejo antaŭ ol explodi."
 msgid "The Polecat left the battlefield before exploding!"
 msgstr "La putoro foriris de la batalejo antaŭ ol explodi."
 
-#: src/weapon/auto_bazooka.cpp:166
+#: src/weapon/auto_bazooka.cpp:150
 msgid "The automatic rocket has left the battlefield..."
 msgstr "La aŭtomatika raketo foriris de la batalejo..."
 
@@ -2106,7 +2106,7 @@ msgstr "La pilko foriris de la batalejo antaŭ ol explodi."
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:304
+#: src/menu/game_mode_editor.cpp:305
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2144,12 +2144,12 @@ msgstr "La grenado foriris de la batalejo antaŭ ol explodi"
 msgid "The others are waiting for you! Wake up! :-)"
 msgstr "La alioj estas atendando vin! Vekiĝu:-)"
 
-#: src/weapon/parachute.cpp:99
+#: src/weapon/parachute.cpp:83
 #, fuzzy
 msgid "The parachute is activated automatically."
 msgstr "Paraŝuto aŭtomatike uziĝis."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:305
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "La raketo foriris de la batalejo..."
@@ -2195,7 +2195,7 @@ msgid ""
 "Click to pause"
 msgstr ""
 
-#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
+#: src/weapon/cluster_bomb.cpp:177 src/weapon/footbomb.cpp:138
 #, fuzzy
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
@@ -2304,7 +2304,7 @@ msgstr "Nekonata komando"
 msgid "Unknown."
 msgstr "Nekonata komando"
 
-#: src/game/game_mode.cpp:322
+#: src/game/game_mode.cpp:323
 #, fuzzy
 msgid "Unlimited"
 msgstr "(senlimaj)"
@@ -2338,7 +2338,7 @@ msgstr ""
 "Kiel uzi ĝin: maldekstrklaku sur celo\n"
 "Unu amunicio vice"
 
-#: src/weapon/auto_bazooka.cpp:192
+#: src/weapon/auto_bazooka.cpp:176
 #, fuzzy
 msgid ""
 "Usage: left click on the target\n"
@@ -2520,7 +2520,7 @@ msgstr "Vi mispafis!"
 msgid "aka"
 msgstr "alinome"
 
-#: src/weapon/air_attack.cpp:218
+#: src/weapon/air_attack.cpp:206
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

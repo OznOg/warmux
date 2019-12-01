@@ -28,20 +28,6 @@
 #include "team/macro.h"
 #include "team/team.h"
 #include <WARMUX_point.h>
-#include "tool/xml_document.h"
-
-class SyringeConfig : public WeaponConfig
-{
-public:
-  Double range;
-  uint damage;
-  uint turns;
-  SyringeConfig()
-  {
-    emplace_back(new DoubleConfigElement("range", &range, 45, 0, 100));
-    emplace_back(new UintConfigElement("turns", &turns, 10, 1, 50));
-  }
-};
 
 //--------------------------------------------------------------------------
 

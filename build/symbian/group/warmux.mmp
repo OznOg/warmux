@@ -76,7 +76,7 @@ SOURCE ansi_convert.cpp
 SOURCEPATH ..\..\..\src\vkeybd
 SOURCE image-map.cpp virtual-keyboard-gui.cpp virtual-keyboard-parser.cpp virtual-keyboard.cpp vkpolygon.cpp
 SOURCEPATH ..\..\..\src\weapon
-SOURCE air_attack.cpp airhammer.cpp anvil.cpp auto_bazooka.cpp baseball.cpp bazooka.cpp blowtorch.cpp bounce_ball.cpp cluster_bomb.cpp cluzooka.cpp construct.cpp crosshair.cpp disco_grenade.cpp dynamite.cpp explosion.cpp flamethrower.cpp footbomb.cpp gnu.cpp grapple.cpp grenade.cpp gun.cpp jetpack.cpp lowgrav.cpp mine.cpp parachute.cpp polecat.cpp rail_gun.cpp riot_bomb.cpp shotgun.cpp skip_turn.cpp slap.cpp snipe_rifle.cpp submachine_gun.cpp suicide.cpp supertux.cpp syringe.cpp target_launcher.cpp teleportation.cpp weapon.cpp weapon_cfg.cpp weapon_launcher.cpp weapon_strength_bar.cpp weapons_list.cpp
+SOURCE air_attack.cpp airhammer.cpp anvil.cpp auto_bazooka.cpp baseball.cpp bazooka.cpp blowtorch.cpp bounce_ball.cpp cluster_bomb.cpp cluzooka.cpp construct.cpp crosshair.cpp disco_grenade.cpp dynamite.cpp explosion.cpp flamethrower.cpp footbomb.cpp gnu.cpp grapple.cpp grenade.cpp gun.cpp jetpack.cpp lowgrav.cpp mine.cpp parachute.cpp polecat.cpp rail_gun.cpp riot_bomb.cpp shotgun.cpp skip_turn.cpp slap.cpp snipe_rifle.cpp submachine_gun.cpp suicide.cpp supertux.cpp syringe.cpp target_launcher.cpp teleportation.cpp weapon.cpp weapon_launcher.cpp weapon_strength_bar.cpp weapons_list.cpp
 SOURCEPATH ..\src
 SOURCE joystick.cpp
 

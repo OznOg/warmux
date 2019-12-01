@@ -398,7 +398,6 @@ echo #define __TIME__ "%TIME" &gt;&gt; resource.h
     <ClCompile Include="..\..\src\weapon\target_launcher.cpp" />
     <ClCompile Include="..\..\src\weapon\teleportation.cpp" />
     <ClCompile Include="..\..\src\weapon\weapon.cpp" />
-    <ClCompile Include="..\..\src\weapon\weapon_cfg.cpp" />
     <ClCompile Include="..\..\src\weapon\weapon_launcher.cpp" />
     <ClCompile Include="..\..\src\weapon\weapon_strength_bar.cpp" />
     <ClCompile Include="..\..\src\weapon\weapons_list.cpp" />

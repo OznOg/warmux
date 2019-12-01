@@ -37,22 +37,6 @@
 #include "tool/resource_manager.h"
 #include "tool/xml_document.h"
 
-class ParachuteConfig : public WeaponConfig
-{
-public:
-  Double wind_factor;
-  Double air_resist_factor;
-  Double force_side_displacement;
-  ParachuteConfig();
-};
-
-ParachuteConfig::ParachuteConfig()
-{
-  emplace_back(new DoubleConfigElement("wind_factor", &wind_factor, 10));
-  emplace_back(new DoubleConfigElement("air_resist_factor", &air_resist_factor, 140));
-  emplace_back(new DoubleConfigElement("force_side_displacement", &wind_factor, 2000));
-}
-
 //------------------------------------------------------------------------------
 
 Parachute::Parachute() : Weapon(WEAPON_PARACHUTE, "parachute", new ParachuteConfig(), false)

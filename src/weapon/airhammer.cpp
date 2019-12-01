@@ -45,13 +45,6 @@ const uint MIN_TIME_BETWEEN_JOLT = 100; // in milliseconds
 
 //-----------------------------------------------------------------------------
 
-class AirhammerConfig : public WeaponConfig
-{
-public:
-  uint range;
-  AirhammerConfig();
-};
-
 //-----------------------------------------------------------------------------
 
 Airhammer::Airhammer():
@@ -176,9 +169,3 @@ AirhammerConfig& Airhammer::cfg()
   return static_cast<AirhammerConfig&>(*extra_params);
 }
 
-//-----------------------------------------------------------------------------
-
-AirhammerConfig::AirhammerConfig()
-{
-  emplace_back(new UintConfigElement("range", &range, 30, 1, 50));
-}

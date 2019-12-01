@@ -33,19 +33,6 @@
 #include "tool/xml_document.h"
 #include "include/action_handler.h"
 
-class SlapConfig : public WeaponConfig
-{
-public:
-  Double range;
-  uint strength;
-  SlapConfig()
-  {
-    emplace_back(new DoubleConfigElement("range", &range, 20, 1, 50));
-    emplace_back(new UintConfigElement("strength", &strength, 300, 100, 500));
-  }
-};
-
-
 //-----------------------------------------------------------------
 
 Slap::Slap() : Weapon(WEAPON_SLAP, "slap", new SlapConfig())

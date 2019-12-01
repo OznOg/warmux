@@ -29,22 +29,6 @@
 #include "weapon/explosion.h"
 #include "weapon/weapon_cfg.h"
 
-class AutomaticBazookaConfig : public ExplosiveWeaponConfig
-{
-public:
-  Double uncontrolled_turn_speed;
-  Double max_controlled_turn_speed;
-  Double fuel_time;
-  Double rocket_force;
-  AutomaticBazookaConfig()
-  {
-    emplace_back(new DoubleConfigElement("uncontrolled_turn_speed", &uncontrolled_turn_speed, PI*8));
-    emplace_back(new DoubleConfigElement("max_controlled_turn_speed", &max_controlled_turn_speed, PI*4));
-    emplace_back(new DoubleConfigElement("fuel_time", &fuel_time, 10));
-    emplace_back(new DoubleConfigElement("rocket_force", &rocket_force, 2500));
-  }
-};
-
 class RPG : public WeaponProjectile
 {
   // Avoid dynamic_cast, hoping no race condition between WeaponProjectile::cfg and it

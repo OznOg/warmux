@@ -166,7 +166,7 @@ msgstr "Команда %s уже имеет бесконечный запас б
 msgid "%s team has skipped its turn."
 msgstr "Команда %s пропустила свой ход."
 
-#: src/weapon/cluzooka.cpp:374
+#: src/weapon/cluzooka.cpp:361
 #, c-format
 msgid "%s team has won %u Cluster bazookas!"
 msgid_plural "%s team has won %u Cluster bazookas!"
@@ -182,7 +182,7 @@ msgstr[0] "Команда %s выиграла %u антилопу! Взорви 
 msgstr[1] "Команда %s выиграла %u антилопы! Взорви их всех, ковбой!"
 msgstr[2] "Команда %s выиграла %u антилоп! Взорви их всех, ковбой!"
 
-#: src/weapon/air_attack.cpp:259
+#: src/weapon/air_attack.cpp:247
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -190,7 +190,7 @@ msgstr[0] "Команда %s выиграла %u воздушную атаку!"
 msgstr[1] "Команда %s выиграла %u воздушные атаки!"
 msgstr[2] "Команда %s выиграла %u воздушных атак!"
 
-#: src/weapon/airhammer.cpp:166
+#: src/weapon/airhammer.cpp:159
 #, c-format
 msgid ""
 "%s team has won %u airhammer! Don't make too much noise with it! Thanks, "
@@ -216,7 +216,7 @@ msgstr[0] "Команда '%s выиграла %u наковальню! Разм
 msgstr[1] "Команда '%s выиграла %u наковальни! Размажьте их!"
 msgstr[2] "Команда '%s выиграла %u наковален! Размажьте их!"
 
-#: src/weapon/auto_bazooka.cpp:214
+#: src/weapon/auto_bazooka.cpp:198
 #, c-format
 msgid "%s team has won %u automatic bazooka!"
 msgid_plural "%s team has won %u automatic bazookas!"
@@ -224,7 +224,7 @@ msgstr[0] "Команда %s выиграла %u автоматическую б
 msgstr[1] "Команда %s выиграла %u автоматические базуки!"
 msgstr[2] "Команда %s выиграла %u автоматических базук!"
 
-#: src/weapon/baseball.cpp:107
+#: src/weapon/baseball.cpp:99
 #, c-format
 msgid "%s team has won %u baseball bat!"
 msgid_plural "%s team has won %u baseball bats!"
@@ -240,7 +240,7 @@ msgstr[0] "Команда %s выиграла %u базуку!"
 msgstr[1] "Команда %s выиграла %u базуки!"
 msgstr[2] "Команда %s выиграла %u базук!"
 
-#: src/weapon/blowtorch.cpp:137
+#: src/weapon/blowtorch.cpp:127
 #, c-format
 msgid ""
 "%s team has won %u blowtorch! If you're under 18, ask your parents to use it."
@@ -265,7 +265,7 @@ msgstr[0] "Команда %s выиграла %u прыгучий мяч! Пры
 msgstr[1] "Команда %s выиграла %u прыгучих мяча! Прыг-скок!"
 msgstr[2] "Команда %s выиграла %u прыгучих мячей! Бонг!"
 
-#: src/weapon/cluster_bomb.cpp:203
+#: src/weapon/cluster_bomb.cpp:193
 #, c-format
 msgid "%s team has won %u cluster bomb!"
 msgid_plural "%s team has won %u cluster bombs!"
@@ -309,7 +309,7 @@ msgstr[0] "Команда %s выиграла %u огнемет!"
 msgstr[1] "Команда %s выиграла %u огнемета!"
 msgstr[2] "Команда %s выиграла %u огнеметов!"
 
-#: src/weapon/footbomb.cpp:172
+#: src/weapon/footbomb.cpp:153
 #, c-format
 msgid "%s team has won %u football bomb!"
 msgid_plural "%s team has won %u football bombs!"
@@ -317,7 +317,7 @@ msgstr[0] "Команда %s выиграла %u футбольную бомбу
 msgstr[1] "Команда %s выиграла %u футбольные бомбы!"
 msgstr[2] "Команда %s выиграла %u пустотных бомб!"
 
-#: src/weapon/grapple.cpp:714
+#: src/weapon/grapple.cpp:700
 #, c-format
 msgid "%s team has won %u grapple!"
 msgid_plural "%s team has won %u grapples!"
@@ -374,7 +374,7 @@ msgstr[0] "Команда %s выиграла %u мину!"
 msgstr[1] "Команда %s выиграла %u мины!"
 msgstr[2] "Команда %s выиграла %u мин!"
 
-#: src/weapon/parachute.cpp:181
+#: src/weapon/parachute.cpp:165
 #, c-format
 msgid "%s team has won %u parachute!"
 msgid_plural "%s team has won %u parachutes!"
@@ -417,7 +417,7 @@ msgstr[0] "Команда %s выиграла %u дробовик!"
 msgstr[1] "Команда %s выиграла %u дробовика!"
 msgstr[2] "Команда %s выиграла %u дробовиков!"
 
-#: src/weapon/slap.cpp:67
+#: src/weapon/slap.cpp:54
 #, c-format
 msgid "%s team has won %u slap!"
 msgid_plural "%s team has won %u slaps! Dodge this!"
@@ -462,7 +462,7 @@ msgstr[2] ""
 "Команда %s выиграла %u суицидов! Используйте их все для получения экстра "
 "бонуса!"
 
-#: src/weapon/syringe.cpp:108
+#: src/weapon/syringe.cpp:94
 #, c-format
 msgid "%s team has won %u syringe!"
 msgid_plural "%s team has won %u syringes!"
@@ -486,7 +486,7 @@ msgstr[0] "Команда %s выиграла %u пропуск хода! Вам
 msgstr[1] "Команда %s выиграла %u пропуска хода! Вам это понравится."
 msgstr[2] "Команда %s выиграла %u пропусков хода! Вам это понравится."
 
-#: src/weapon/supertux.cpp:278
+#: src/weapon/supertux.cpp:268
 #, c-format
 msgid "%s team has won %u tux launcher! Never seen a flying penguin?"
 msgid_plural "%s team has won %u tux launchers! Never seen a flying penguin?"
@@ -592,11 +592,11 @@ msgstr ""
 msgid "Action"
 msgstr "Действие"
 
-#: src/weapon/air_attack.cpp:217
+#: src/weapon/air_attack.cpp:205
 msgid "Air Attack"
 msgstr "Воздушная атака"
 
-#: src/weapon/airhammer.cpp:75
+#: src/weapon/airhammer.cpp:68
 msgid "Airhammer"
 msgstr "Отбойный молоток"
 
@@ -616,7 +616,7 @@ msgstr "Вооружение"
 msgid "And the winner is..."
 msgstr "И победителем станосится..."
 
-#: src/weapon/baseball.cpp:55
+#: src/weapon/baseball.cpp:47
 msgid ""
 "Angle: Up/Down\n"
 "Fire: space key\n"
@@ -638,7 +638,7 @@ msgstr "Видимая область"
 msgid "Authors:"
 msgstr "Авторы:"
 
-#: src/weapon/auto_bazooka.cpp:191
+#: src/weapon/auto_bazooka.cpp:175
 msgid "Automatic Bazooka"
 msgstr "Автоматическая базука"
 
@@ -670,7 +670,7 @@ msgstr "Ошибка сокета ..."
 msgid "Bad version: %s != %s"
 msgstr ""
 
-#: src/weapon/baseball.cpp:54
+#: src/weapon/baseball.cpp:46
 msgid "Baseball Bat"
 msgstr "Бейсбольная бита"
 
@@ -686,11 +686,11 @@ msgstr "Телепортация"
 msgid "Benchmark"
 msgstr "Тест"
 
-#: src/game/game_mode.cpp:323 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
 msgid "Blitz"
 msgstr "Блиц"
 
-#: src/weapon/blowtorch.cpp:64
+#: src/weapon/blowtorch.cpp:54
 msgid "Blowtorch"
 msgstr "Паяльная лампа"
 
@@ -698,7 +698,7 @@ msgstr "Паяльная лампа"
 msgid "Bounce Ball"
 msgstr "Прыгучий мяч"
 
-#: src/weapon/supertux.cpp:177
+#: src/weapon/supertux.cpp:167
 msgid "Bye bye Tux..."
 msgstr "Пока-пока, Tux..."
 
@@ -802,7 +802,7 @@ msgstr "Проверять обновления игры?"
 msgid "Choose randomly between the different maps"
 msgstr "Выбрать карту случайно"
 
-#: src/game/game_mode.cpp:321 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
 msgid "Classic"
 msgstr "Классический"
 
@@ -856,11 +856,11 @@ msgstr "Режим клиента"
 msgid "Clumsiest"
 msgstr "Самый неуклюжий"
 
-#: src/weapon/cluster_bomb.cpp:186
+#: src/weapon/cluster_bomb.cpp:176
 msgid "Cluster Bomb"
 msgstr "Кассетная бомба"
 
-#: src/weapon/cluzooka.cpp:368
+#: src/weapon/cluzooka.cpp:355
 msgid "Cluzooka"
 msgstr "Осколочная базука"
 
@@ -1127,7 +1127,7 @@ msgstr "Имя файла:"
 msgid "Flame Thrower"
 msgstr "Огнемет"
 
-#: src/weapon/footbomb.cpp:156
+#: src/weapon/footbomb.cpp:137
 msgid "Football Bomb"
 msgstr "Футбольная бомба"
 
@@ -1172,7 +1172,7 @@ msgstr "Игра не может синхронизироваться"
 msgid "Gnu Launcher"
 msgstr "Запуск Гну"
 
-#: src/weapon/syringe.cpp:58
+#: src/weapon/syringe.cpp:44
 msgid ""
 "Go to player\n"
 "Press space to inject\n"
@@ -1186,7 +1186,7 @@ msgstr ""
 msgid "Graphics"
 msgstr "Графика"
 
-#: src/weapon/grapple.cpp:167
+#: src/weapon/grapple.cpp:153
 msgid "Grapple"
 msgstr "Крюк"
 
@@ -1306,7 +1306,7 @@ msgstr "Внутреигровой вид"
 msgid "Initial energy"
 msgstr "Начальная энергия"
 
-#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:369
+#: src/weapon/bazooka.cpp:120 src/weapon/cluzooka.cpp:356
 #: src/weapon/riot_bomb.cpp:120
 msgid ""
 "Initial fire angle: Up/Down\n"
@@ -1365,7 +1365,7 @@ msgstr "Прыжок"
 msgid "Jump backwards"
 msgstr "Обратное сальто"
 
-#: src/weapon/blowtorch.cpp:65
+#: src/weapon/blowtorch.cpp:55
 msgid ""
 "Keep the space key pressed\n"
 "Angle: Up/Down\n"
@@ -1664,11 +1664,11 @@ msgstr "Настройки"
 msgid "Options menu"
 msgstr "Меню настроек"
 
-#: src/weapon/parachute.cpp:71
+#: src/weapon/parachute.cpp:55
 msgid "Parachute"
 msgstr "Парашют"
 
-#: src/weapon/parachute.cpp:72
+#: src/weapon/parachute.cpp:56
 msgid ""
 "Parachute avoids hitting the ground too hard\n"
 "Opens automatically\n"
@@ -1758,7 +1758,7 @@ msgstr ""
 msgid "Press space to commit suicide"
 msgstr "НАжмите пробел, чтобы подтвердить самоубийство"
 
-#: src/weapon/airhammer.cpp:76
+#: src/weapon/airhammer.cpp:69
 msgid ""
 "Press space to dig\n"
 "Ammo is used when counter reaches zero\n"
@@ -1792,7 +1792,7 @@ msgstr ""
 "Используйте стрелки Вврех/Вниз, чтобы изменять угол\n"
 "Изменяйте угол в процессе выстрела"
 
-#: src/weapon/grapple.cpp:168
+#: src/weapon/grapple.cpp:154
 msgid ""
 "Press space to shoot grapple\n"
 "Use left/right to swing\n"
@@ -1961,7 +1961,7 @@ msgstr "Сервер доступен в интернете"
 msgid "Server mode"
 msgstr "Режим сервера"
 
-#: src/weapon/supertux.cpp:212
+#: src/weapon/supertux.cpp:202
 msgid ""
 "Set initial direction with up/down\n"
 "Press space to launch\n"
@@ -2023,11 +2023,11 @@ msgstr "Показывает адрес отмеченного игрока"
 msgid "Skip turn"
 msgstr "Пропуск хода"
 
-#: src/weapon/slap.cpp:60
+#: src/weapon/slap.cpp:47
 msgid "Slap"
 msgstr "Шлепок"
 
-#: src/weapon/slap.cpp:61
+#: src/weapon/slap.cpp:48
 msgid "Slap the enemy to make him jump a bit."
 msgstr "Ударьте врага так, чтобы тот подпрыгнул."
 
@@ -2091,7 +2091,7 @@ msgstr "Запас:"
 msgid "Submachine Gun"
 msgstr "Автомат"
 
-#: src/weapon/supertux.cpp:211
+#: src/weapon/supertux.cpp:201
 msgid "SuperTux"
 msgstr "СуперТукс"
 
@@ -2104,7 +2104,7 @@ msgstr ""
 msgid "Switch between classical and replay interface"
 msgstr "Переключиться между классическим интерфейсом и проигрывателем"
 
-#: src/weapon/syringe.cpp:57
+#: src/weapon/syringe.cpp:43
 msgid "Syringe"
 msgstr "Шприц"
 
@@ -2153,11 +2153,11 @@ msgstr "Команды в порядке уменьшения суммарной
 msgid "Teleportation"
 msgstr "Телепортация"
 
-#: src/weapon/cluster_bomb.cpp:146
+#: src/weapon/cluster_bomb.cpp:136
 msgid "The Cluster Bomb has left the battlefield before it could explode."
 msgstr "Кассетная бомба покинула поле битвы не успев взорваться."
 
-#: src/weapon/footbomb.cpp:114
+#: src/weapon/footbomb.cpp:95
 msgid "The Football Bomb has left the battlefield before it could explode."
 msgstr "Футбольная бомба покинула поле битвы не успев взорваться."
 
@@ -2169,7 +2169,7 @@ msgstr "Антилопа покинула поле битвы до взрыва!
 msgid "The Polecat left the battlefield before exploding!"
 msgstr "Скунс покинул поле битвы до взрыва!"
 
-#: src/weapon/auto_bazooka.cpp:166
+#: src/weapon/auto_bazooka.cpp:150
 msgid "The automatic rocket has left the battlefield..."
 msgstr "Автоматическая ракета улетела за пределы поля битвы..."
 
@@ -2182,7 +2182,7 @@ msgstr "Мяч улетел за пределы поля битвы не усп�
 msgid "The bigger the faster you'll fall!"
 msgstr "Чем больше, тем быстрее ты падешь"
 
-#: src/menu/game_mode_editor.cpp:304
+#: src/menu/game_mode_editor.cpp:305
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2219,11 +2219,11 @@ msgstr "Граната улетела за пределы поля битвы п
 msgid "The others are waiting for you! Wake up! :-)"
 msgstr "Все ждут тебя! Проснись! :-)"
 
-#: src/weapon/parachute.cpp:99
+#: src/weapon/parachute.cpp:83
 msgid "The parachute is activated automatically."
 msgstr "Парашют раскрылся автоматически."
 
-#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:318
+#: src/weapon/bazooka.cpp:80 src/weapon/cluzooka.cpp:305
 #: src/weapon/riot_bomb.cpp:85
 msgid "The rocket has left the battlefield..."
 msgstr "Ракета улетела за пределы поля битвы..."
@@ -2276,7 +2276,7 @@ msgstr ""
 "Время хода закончилось и время с начла игры истекло.\n"
 "Кликайте, чтобы поставить на паузу"
 
-#: src/weapon/cluster_bomb.cpp:187 src/weapon/footbomb.cpp:157
+#: src/weapon/cluster_bomb.cpp:177 src/weapon/footbomb.cpp:138
 msgid ""
 "Timeout: Mouse wheel or Page Up/Down\n"
 "Angle: Up/Down\n"
@@ -2381,7 +2381,7 @@ msgstr "Неизвестная команда типа %i"
 msgid "Unknown."
 msgstr "Неизвестная команда"
 
-#: src/game/game_mode.cpp:322
+#: src/game/game_mode.cpp:323
 msgid "Unlimited"
 msgstr "Бесконечный"
 
@@ -2417,7 +2417,7 @@ msgstr ""
 "Наковальня убьет всех под ней.\n"
 "Одно применение за ход"
 
-#: src/weapon/auto_bazooka.cpp:192
+#: src/weapon/auto_bazooka.cpp:176
 msgid ""
 "Usage: left click on the target\n"
 "Initial fire angle: Up/Down\n"
@@ -2593,7 +2593,7 @@ msgstr "Вы промазали!"
 msgid "aka"
 msgstr "также известный как"
 
-#: src/weapon/air_attack.cpp:218
+#: src/weapon/air_attack.cpp:206
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

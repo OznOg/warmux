@@ -194,7 +194,7 @@ void ObjMine::Draw()
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 
-Mine::Mine() : WeaponLauncher(WEAPON_MINE, "minelauncher", MineConfig::GetInstance())
+Mine::Mine() : WeaponLauncher(WEAPON_MINE, "minelauncher", new MineConfig())
 {
   UpdateTranslationStrings();
 
@@ -257,10 +257,3 @@ MineConfig& Mine::cfg()
 
 //-----------------------------------------------------------
 
-MineConfig::MineConfig()
-{
-  emplace_back(new DoubleConfigElement("detection_range", &detection_range, 1));
-  emplace_back(new DoubleConfigElement("speed_detection", &speed_detection, 2));
-  emplace_back(new UintConfigElement("timeout", &timeout, 2));
-  emplace_back(new UintConfigElement("escape_time", &escape_time, 2, 1, 4));
-}

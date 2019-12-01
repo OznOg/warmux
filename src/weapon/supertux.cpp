@@ -40,16 +40,6 @@
 const uint time_delta = 40;
 const uint animation_deltat = 50;
 
-class SuperTuxWeaponConfig : public ExplosiveWeaponConfig
-{
-public:
-  uint speed;
-  SuperTuxWeaponConfig()
-  {
-    emplace_back(new UintConfigElement("speed", &speed, 600, 100, 1000));
-  }
-};
-
 //-----------------------------------------------------------------------------
 
 class SuperTux : public WeaponProjectile

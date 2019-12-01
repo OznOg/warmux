@@ -230,7 +230,8 @@ public:
     AddWidget(ammo);
 
     // List config values and add the important ones
-    EmptyWeaponConfig* cfg = w->GetConfig();
+    auto _cfg = w->GetConfig();
+    auto cfg = _cfg.release();
     for (auto & it : *cfg) {
       if (it->m_important) {
         switch (it->m_type) {
