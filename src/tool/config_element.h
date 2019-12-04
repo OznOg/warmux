@@ -52,9 +52,9 @@ public:
 class BoolConfigElement : public ConfigElement
 {
 public:
-  bool       *m_val, m_def;
+  bool       *m_val, m_def, m_min, m_max;
   BoolConfigElement(const char *n, bool *v, bool d, bool imp = false, bool attr = false)
-    : ConfigElement(TYPE_BOOL, n, attr, imp) { m_val = v; m_def = d; }
+    : ConfigElement(TYPE_BOOL, n, attr, imp),  m_min(false), m_max(true) { m_val = v; m_def = d; }
   bool Read(const xmlNode* father) const override;
   void Write(XmlWriter& writer, xmlNode* father) const override;
 };

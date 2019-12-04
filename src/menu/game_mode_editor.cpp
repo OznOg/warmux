@@ -38,6 +38,7 @@
 #include "gui/vertical_box.h"
 #include "graphic/sprite.h"
 #include "weapon/weapons_list.h"
+#include <functional>
 
 const uint TPS_TOUR_MIN = 10;
 const uint TPS_TOUR_MAX = 240;
@@ -190,17 +191,24 @@ class WeaponCfgBox : public HBox
   Weapon                *weapon;
   PictureWidget         *pw;
   SpinButtonWithPicture *ammo;
-  std::list< std::pair<SpinButtonWithPicture*, ConfigElement*> > values;
+  std::list<std::function<void(void)>> values;
 
 public:
   template <class SubElement>
   void doStuff(ConfigElement &c) {
       const SubElement &element = static_cast<const SubElement &>(c);
       int val = *element.m_val;
-      auto tmp = new SpinButtonWithPicture(element.m_name, "menu/ico_help", Point2i(100, 100),
+      SpinButtonWithPicture *tmp;
+
+      if (std::is_same<SubElement, BoolConfigElement>::value) {
+          tmp = new SpinButtonWithPicture(element.m_name, "menu/ico_help",
+                  Point2i(100, 100), (int)*element.m_val, 1, 0, 1);
+      } else {
+          tmp = new SpinButtonWithPicture(element.m_name, "menu/ico_help", Point2i(100, 100),
                   val, FindStep(val), element.m_min, (val) ? 2*val : 10);
+      }
       AddWidget(tmp);
-      values.push_back(std::make_pair(tmp, &c));
+      values.emplace_back([ val = element.m_val, button = tmp] { *val = button->GetValue(); } );
   }
 
   WeaponCfgBox(Weapon *w, uint height)
@@ -230,8 +238,7 @@ public:
     AddWidget(ammo);
 
     // List config values and add the important ones
-    auto _cfg = w->GetConfig();
-    auto cfg = _cfg.release();
+    auto cfg = w->GetConfig();
     for (auto & it : *cfg) {
       if (it->m_important) {
         switch (it->m_type) {
@@ -245,14 +252,8 @@ public:
             doStuff<UintConfigElement>(*it);
             break;
         case ConfigElement::TYPE_BOOL:
-          {
-            const BoolConfigElement &element = static_cast<const BoolConfigElement &>(*it);
-            auto tmp = new SpinButtonWithPicture(element.m_name, "menu/ico_help",
-                                        Point2i(100, 100), (int)*element.m_val, 1, 0, 1);
-            AddWidget(tmp);
-            values.push_back(std::make_pair(tmp, it.get()));
+            doStuff<BoolConfigElement>(*it);
             break;
-          }
         }
       }
     }
@@ -265,35 +266,8 @@ public:
   {
     weapon->WriteInitialNbAmmo(ammo->GetValue());
 
-    std::list< std::pair<SpinButtonWithPicture*, ConfigElement*> >::const_iterator it = values.begin();
-    for (; it != values.end(); ++it) {
-      ConfigElement *elem = it->second;
-      switch (elem->m_type) {
-        case ConfigElement::TYPE_DOUBLE:
-          {
-            DoubleConfigElement* element = static_cast<DoubleConfigElement*>(elem);
-            *element->m_val = it->first->GetValue();
-            break;
-          }
-        case ConfigElement::TYPE_INT:
-          {
-            IntConfigElement* element = static_cast<IntConfigElement*>(elem);
-            *element->m_val = it->first->GetValue();
-            break;
-          }
-        case ConfigElement::TYPE_UINT:
-          {
-            UintConfigElement* element = static_cast<UintConfigElement*>(elem);
-            *element->m_val = it->first->GetValue();
-            break;
-          }
-        case ConfigElement::TYPE_BOOL:
-          {
-            BoolConfigElement* element = static_cast<BoolConfigElement*>(elem);
-            *element->m_val = it->first->GetValue();
-            break;
-          }
-      }
+    for (auto &v: values) {
+        v();
     }
   }
 };
