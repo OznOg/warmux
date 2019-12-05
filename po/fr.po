@@ -547,11 +547,11 @@ msgstr "Marteau-piqueur"
 msgid "All teams"
 msgstr "Toutes les équipes"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 msgid "Always"
 msgstr "Toujours"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -621,7 +621,7 @@ msgstr "Batte de Baseball"
 msgid "Bazooka"
 msgstr "Bazooka"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 msgid "Before action"
 msgstr "Avant l'action"
 
@@ -629,7 +629,7 @@ msgstr "Avant l'action"
 msgid "Benchmark"
 msgstr "Mesures de performance"
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Partie éclair"
 
@@ -729,7 +729,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "Nom des personnages :"
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 msgid "Character switching"
 msgstr "Changement de personnage"
 
@@ -745,7 +745,7 @@ msgstr "Vérifier les mises à jour ?"
 msgid "Choose randomly between the different maps"
 msgstr "Choisir aléatoirement parmi les différents terrains"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Classique"
 
@@ -886,7 +886,7 @@ msgstr ""
 "Arme utilisée et munitions restantes, clic long pour afficher son aide.\n"
 "Clic pour ouvrir le menu de sélection."
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr "Dégâts par tour durant le mode mort subite"
 
@@ -942,11 +942,11 @@ msgid "Duration"
 msgstr "Durée d'un tour"
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr "Nombre de tours avant le death mode"
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "Durée d'un tour"
 
@@ -1114,7 +1114,7 @@ msgid "Game menu"
 msgstr "Menu de jeu"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "Mode de jeu"
 
@@ -1148,7 +1148,7 @@ msgstr "Graphismes"
 msgid "Grapple"
 msgstr "Grappin"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "Gravité"
 
@@ -1259,7 +1259,7 @@ msgid "Ingame display"
 msgstr "Affichage en cours de jeu"
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "Énergie initiale"
 
@@ -1424,7 +1424,7 @@ msgstr "Terrains"
 msgid "Master mode"
 msgstr "Mode joueur principal"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 msgid "Max energy"
 msgstr "Énergie maximale"
 
@@ -1549,7 +1549,7 @@ msgstr "Jeu en réseau"
 msgid "Network Game"
 msgstr "Jeu en réseau"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr "Jamais"
 
@@ -1869,7 +1869,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "Bombe Anti-émeute"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr ""
 
@@ -1952,7 +1952,7 @@ msgstr ""
 "Réglez le retardateur avec +/- ou les touches 1-6\n"
 "Appuyez sur espace pour poser la dynamite"
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr ""
 
@@ -2146,7 +2146,7 @@ msgstr "La Balle a quitté le champ de bataille avant d'exploser."
 msgid "The bigger the faster you'll fall!"
 msgstr "Plus c'est grand, plus dure sera la chute!"
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2496,7 +2496,7 @@ msgstr ""
 msgid "Winner"
 msgstr "Vainqueur"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 #, fuzzy
 msgid "Within team"
 msgstr "Equipe erronée !"

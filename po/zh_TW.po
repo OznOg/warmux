@@ -481,11 +481,11 @@ msgstr "氣動鎚"
 msgid "All teams"
 msgstr "所有隊伍"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 msgid "Always"
 msgstr "總是"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -555,7 +555,7 @@ msgstr "球棒"
 msgid "Bazooka"
 msgstr "火箭筒"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 msgid "Before action"
 msgstr "開始動作前"
 
@@ -563,7 +563,7 @@ msgstr "開始動作前"
 msgid "Benchmark"
 msgstr "評測"
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "閃電戰"
 
@@ -664,7 +664,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "角色名稱："
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 msgid "Character switching"
 msgstr "角色切換"
 
@@ -680,7 +680,7 @@ msgstr "線上檢查更新？"
 msgid "Choose randomly between the different maps"
 msgstr "在不同地圖間隨機選擇"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "一般"
 
@@ -821,7 +821,7 @@ msgstr ""
 "長按它會顯示說明。\n"
 "點它會開啟選單。"
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr ""
 "死亡模式\n"
@@ -875,13 +875,13 @@ msgid "Duration"
 msgstr "進行時間"
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr ""
 "多久之後\n"
 "進入死亡模式"
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "回合時間長度"
 
@@ -1033,7 +1033,7 @@ msgid "Game menu"
 msgstr "遊戲選單"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "遊戲模式"
 
@@ -1067,7 +1067,7 @@ msgstr "畫面"
 msgid "Grapple"
 msgstr "抓鉤"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "重力"
 
@@ -1177,7 +1177,7 @@ msgid "Ingame display"
 msgstr "遊戲內顯示"
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "起始生命值"
 
@@ -1342,7 +1342,7 @@ msgstr "地圖"
 msgid "Master mode"
 msgstr "主人模式"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 msgid "Max energy"
 msgstr "最大生命值"
 
@@ -1469,7 +1469,7 @@ msgstr "網路"
 msgid "Network Game"
 msgstr "網路遊戲"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr "絕不"
 
@@ -1793,7 +1793,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "防暴炸彈"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr "規則"
 
@@ -1873,7 +1873,7 @@ msgstr ""
 "設定倒數 1-6 秒：使用 +/- 或是 1-6 鍵\n"
 "用空白鍵放置炸藥"
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr "設定"
 
@@ -2069,7 +2069,7 @@ msgstr "球在爆炸前一刻掉出戰場外了！"
 msgid "The bigger the faster you'll fall!"
 msgstr "該值愈大，摔得也越快！"
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2419,7 +2419,7 @@ msgstr "風的力量和方向。點選這裡切換至觸碰控制。"
 msgid "Winner"
 msgstr "贏家"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 #, fuzzy
 msgid "Within team"
 msgstr "錯誤的隊伍！"

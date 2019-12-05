@@ -553,11 +553,11 @@ msgstr "Taladradora"
 msgid "All teams"
 msgstr "Todos os equipos"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 msgid "Always"
 msgstr "Sempre"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -627,7 +627,7 @@ msgstr "Bate de béisbol"
 msgid "Bazooka"
 msgstr "Bazuca"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 msgid "Before action"
 msgstr "Antes da acción"
 
@@ -635,7 +635,7 @@ msgstr "Antes da acción"
 msgid "Benchmark"
 msgstr "Probas de rendemento"
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Agresivo"
 
@@ -735,7 +735,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "Nomes das personaxes:"
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 msgid "Character switching"
 msgstr "Cambio de personaxe"
 
@@ -752,7 +752,7 @@ msgstr ""
 msgid "Choose randomly between the different maps"
 msgstr "Elixir un dos escenarios ao chou."
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Clásico"
 
@@ -897,7 +897,7 @@ msgstr ""
 "axuda.\n"
 "Premer para abrir o menú de selección."
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr "Daño por quenda durante o modo terminal."
 
@@ -952,11 +952,11 @@ msgid "Duration"
 msgstr "Tempo por quenda."
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr "Tempo ata o modo terminal."
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "Tempo por quenda."
 
@@ -1125,7 +1125,7 @@ msgid "Game menu"
 msgstr "Menú do xogo"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "Modo de xogo"
 
@@ -1159,7 +1159,7 @@ msgstr "Gráficos"
 msgid "Grapple"
 msgstr "Gancho"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "Gravidade"
 
@@ -1270,7 +1270,7 @@ msgid "Ingame display"
 msgstr "Pantalla de xogo"
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "Enerxía inicial"
 
@@ -1437,7 +1437,7 @@ msgstr "Escenarios"
 msgid "Master mode"
 msgstr "Modo principal"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 msgid "Max energy"
 msgstr "Enerxía máxima"
 
@@ -1562,7 +1562,7 @@ msgstr "Rede"
 msgid "Network Game"
 msgstr "Partida na rede"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr "Nunca"
 
@@ -1883,7 +1883,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "Bomba antimateria"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr ""
 
@@ -1964,7 +1964,7 @@ msgstr ""
 "Configura a conta atrás coas teclas + e - ou coas teclas do 1 ao 6.\n"
 "Preme a barra espaciadora para soltar a dinamita."
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr ""
 
@@ -2158,7 +2158,7 @@ msgstr "A saltariña saíu do campo de batalla antes de explotar!"
 msgid "The bigger the faster you'll fall!"
 msgstr "Canto máis grande, máis fácil caer!"
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2516,7 +2516,7 @@ msgstr ""
 msgid "Winner"
 msgstr "Gañador"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 #, fuzzy
 msgid "Within team"
 msgstr "Equipo incorrecto!"

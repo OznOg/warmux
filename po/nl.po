@@ -561,11 +561,11 @@ msgstr "Drilboor"
 msgid "All teams"
 msgstr "Alle teams"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 msgid "Always"
 msgstr "Altijd"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -636,7 +636,7 @@ msgstr "Honkbalknuppel"
 msgid "Bazooka"
 msgstr "Bazooka"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 msgid "Before action"
 msgstr "Alvorens actie"
 
@@ -644,7 +644,7 @@ msgstr "Alvorens actie"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Blitz"
 
@@ -747,7 +747,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "Karakter namen:"
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 msgid "Character switching"
 msgstr "Karakter schakeling"
 
@@ -763,7 +763,7 @@ msgstr "Online op updates controleren?"
 msgid "Choose randomly between the different maps"
 msgstr "Kies een willekeurige kaart"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Klassiek"
 
@@ -890,7 +890,7 @@ msgid ""
 "Click to open selection menu."
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr "Schade per beurt tijdens doodsmodus"
 
@@ -945,11 +945,11 @@ msgid "Duration"
 msgstr "Duur van een beurt"
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr "Duur voor doodsmodus"
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "Duur van een beurt"
 
@@ -1110,7 +1110,7 @@ msgid "Game menu"
 msgstr "Spelmodus"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "Spelmodus"
 
@@ -1141,7 +1141,7 @@ msgstr "Grafisch"
 msgid "Grapple"
 msgstr "Haak"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "Zwaartekracht"
 
@@ -1252,7 +1252,7 @@ msgid "Ingame display"
 msgstr ""
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "Initiële energie"
 
@@ -1422,7 +1422,7 @@ msgstr "Kaarten"
 msgid "Master mode"
 msgstr "Beheermodus"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 msgid "Max energy"
 msgstr "Maximale energie"
 
@@ -1554,7 +1554,7 @@ msgstr "Netwerk"
 msgid "Network Game"
 msgstr "Netwerk Spel"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr "Nooit"
 
@@ -1853,7 +1853,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "Rellenbom"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr ""
 
@@ -1927,7 +1927,7 @@ msgid ""
 "Space to place dynamite"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr ""
 
@@ -2123,7 +2123,7 @@ msgstr "De bal heeft het slagveld verlaten alvorens te ontploffen!"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2477,7 +2477,7 @@ msgstr ""
 msgid "Winner"
 msgstr "Winnaar"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 #, fuzzy
 msgid "Within team"
 msgstr "Verkeerd team!"

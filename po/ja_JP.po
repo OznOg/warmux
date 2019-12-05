@@ -497,11 +497,11 @@ msgstr "ドリル"
 msgid "All teams"
 msgstr "全てのチーム"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 msgid "Always"
 msgstr "いつも"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -572,7 +572,7 @@ msgstr "野球バット"
 msgid "Bazooka"
 msgstr "バズーカ"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 msgid "Before action"
 msgstr "行動前"
 
@@ -580,7 +580,7 @@ msgstr "行動前"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "弾丸"
 
@@ -683,7 +683,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "キャラクター名:"
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 msgid "Character switching"
 msgstr "キャラクターの切り替え"
 
@@ -699,7 +699,7 @@ msgstr "アップデートをオンラインでチェックしますか？"
 msgid "Choose randomly between the different maps"
 msgstr "マップの中からランダムに選択"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "クラシック"
 
@@ -826,7 +826,7 @@ msgid ""
 "Click to open selection menu."
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr "デスモード中のターン毎ダメージ"
 
@@ -883,11 +883,11 @@ msgid "Duration"
 msgstr "ターンの時間"
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr "デスモードに入るまで"
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "ターンの時間"
 
@@ -1044,7 +1044,7 @@ msgid "Game menu"
 msgstr "ゲームモード"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "ゲームモード"
 
@@ -1075,7 +1075,7 @@ msgstr "グラフィック"
 msgid "Grapple"
 msgstr "鉤縄"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "重力"
 
@@ -1184,7 +1184,7 @@ msgid "Ingame display"
 msgstr ""
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "初期ライフ"
 
@@ -1354,7 +1354,7 @@ msgstr "マップ"
 msgid "Master mode"
 msgstr "ゲームモード"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 msgid "Max energy"
 msgstr "最大ライフ"
 
@@ -1486,7 +1486,7 @@ msgstr "ネットワークゲーム"
 msgid "Network Game"
 msgstr "ネットワークゲーム"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr "しない"
 
@@ -1785,7 +1785,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "ライオットボム"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr ""
 
@@ -1858,7 +1858,7 @@ msgid ""
 "Space to place dynamite"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr ""
 
@@ -2054,7 +2054,7 @@ msgstr "ボールは、爆発前に戦場から出てしまいました。"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2405,7 +2405,7 @@ msgstr ""
 msgid "Winner"
 msgstr "勝者"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 #, fuzzy
 msgid "Within team"
 msgstr "チームが間違っています！"

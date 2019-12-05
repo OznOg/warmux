@@ -629,11 +629,11 @@ msgstr "Morthol-Ayr"
 msgid "All teams"
 msgstr "Pub para"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 msgid "Always"
 msgstr "Pup-prys"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -704,7 +704,7 @@ msgstr "Bat Pelsel"
 msgid "Bazooka"
 msgstr "Bazooka"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 msgid "Before action"
 msgstr "Kyns gwrians"
 
@@ -712,7 +712,7 @@ msgstr "Kyns gwrians"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Blitz"
 
@@ -816,7 +816,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "Henwyn an bersons:"
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 msgid "Character switching"
 msgstr "Chanjya person"
 
@@ -832,7 +832,7 @@ msgstr "Checkya nowedhansow warlinen?"
 msgid "Choose randomly between the different maps"
 msgstr "Dewis dre hap ynter an mappaow dyffrans"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Klassek"
 
@@ -959,7 +959,7 @@ msgid ""
 "Click to open selection menu."
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr "Damaj orth an dro yn modh marwel"
 
@@ -1014,11 +1014,11 @@ msgid "Duration"
 msgstr "Pesyans unn dro"
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr "Pesyans kyns modh marwel"
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "Pesyans unn dro"
 
@@ -1175,7 +1175,7 @@ msgid "Game menu"
 msgstr "Modh gwari"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "Modh gwari"
 
@@ -1207,7 +1207,7 @@ msgstr "Grafek"
 msgid "Grapple"
 msgstr "Grabel"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "Gravedh"
 
@@ -1319,7 +1319,7 @@ msgid "Ingame display"
 msgstr ""
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "Nerth orth an dalleth"
 
@@ -1490,7 +1490,7 @@ msgstr "Mappaow"
 msgid "Master mode"
 msgstr "Modh arludh"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 msgid "Max energy"
 msgstr "Brassa nerth"
 
@@ -1623,7 +1623,7 @@ msgstr "Gwari Rosweyth"
 msgid "Network Game"
 msgstr "Gwari Rosweyth"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr "Nevra"
 
@@ -1924,7 +1924,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "Tanbellen Wustel"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr ""
 
@@ -1997,7 +1997,7 @@ msgid ""
 "Space to place dynamite"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr ""
 
@@ -2198,7 +2198,7 @@ msgstr "An bel a asas an gaslan kyns omdardha."
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2560,7 +2560,7 @@ msgstr ""
 msgid "Winner"
 msgstr "Gwaynyer"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 #, fuzzy
 msgid "Within team"
 msgstr "Para kamm!"

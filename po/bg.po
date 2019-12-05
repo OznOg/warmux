@@ -546,11 +546,11 @@ msgstr "Пневматичен чук"
 msgid "All teams"
 msgstr "Всички отбори"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 msgid "Always"
 msgstr "Винаги"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -621,7 +621,7 @@ msgstr "ОМС (Особено Мощна Сопа)"
 msgid "Bazooka"
 msgstr "РПГ"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 msgid "Before action"
 msgstr "Преди действие"
 
@@ -629,7 +629,7 @@ msgstr "Преди действие"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Светкавичен"
 
@@ -732,7 +732,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "Имена на войниците:"
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 msgid "Character switching"
 msgstr "Избери друг войник"
 
@@ -748,7 +748,7 @@ msgstr "Да проверявам за нови версии онлайн?"
 msgid "Choose randomly between the different maps"
 msgstr "Избери случайно измежду картите"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Класически"
 
@@ -875,7 +875,7 @@ msgid ""
 "Click to open selection menu."
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr "Вреда на ход до смъртта"
 
@@ -930,11 +930,11 @@ msgid "Duration"
 msgstr "Продължение на хода"
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr "Време до смъртта"
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "Продължение на хода"
 
@@ -1091,7 +1091,7 @@ msgid "Game menu"
 msgstr "Игрови Режим"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "Игрови Режим"
 
@@ -1122,7 +1122,7 @@ msgstr "Графика"
 msgid "Grapple"
 msgstr "Кука"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "Гравитация"
 
@@ -1233,7 +1233,7 @@ msgid "Ingame display"
 msgstr ""
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "Начално здраве"
 
@@ -1403,7 +1403,7 @@ msgstr "Карти"
 msgid "Master mode"
 msgstr "Господарски Режим"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 msgid "Max energy"
 msgstr "Максимално здраве"
 
@@ -1535,7 +1535,7 @@ msgstr "Мрежова игрa"
 msgid "Network Game"
 msgstr "Мрежова игра"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr "Никога"
 
@@ -1834,7 +1834,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "Звуков заряд"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr ""
 
@@ -1908,7 +1908,7 @@ msgid ""
 "Space to place dynamite"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr ""
 
@@ -2103,7 +2103,7 @@ msgstr "Топчето може да попадне в детски ръчичк
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2457,7 +2457,7 @@ msgstr ""
 msgid "Winner"
 msgstr "Победител"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 #, fuzzy
 msgid "Within team"
 msgstr "Грешен отбор !"

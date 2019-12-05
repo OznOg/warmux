@@ -483,11 +483,11 @@ msgstr "飞锤"
 msgid "All teams"
 msgstr "全部的队伍"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 msgid "Always"
 msgstr "总是"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -557,7 +557,7 @@ msgstr "棒球棍"
 msgid "Bazooka"
 msgstr "火箭炮"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 msgid "Before action"
 msgstr "行动之前"
 
@@ -565,7 +565,7 @@ msgstr "行动之前"
 msgid "Benchmark"
 msgstr "评测"
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "闪电"
 
@@ -665,7 +665,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "角色名称："
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 msgid "Character switching"
 msgstr "角色切换"
 
@@ -681,7 +681,7 @@ msgstr "网上检查升级？"
 msgid "Choose randomly between the different maps"
 msgstr "在地图中随机选择"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "经典"
 
@@ -818,7 +818,7 @@ msgid ""
 "Click to open selection menu."
 msgstr "当前武器和弹药剩余，点击显示帮助。点击打开选择菜单。"
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr "死亡模式每回合伤害"
 
@@ -872,11 +872,11 @@ msgid "Duration"
 msgstr "回合时间长度"
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr "多久之后进入死亡模式"
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "回合时间长度"
 
@@ -1027,7 +1027,7 @@ msgid "Game menu"
 msgstr "游戏菜单"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "游戏模式"
 
@@ -1061,7 +1061,7 @@ msgstr "图象"
 msgid "Grapple"
 msgstr "飞索"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "重力"
 
@@ -1170,7 +1170,7 @@ msgid "Ingame display"
 msgstr "游戏内显示"
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "初始耐久"
 
@@ -1335,7 +1335,7 @@ msgstr "地图"
 msgid "Master mode"
 msgstr "控制者模式"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 msgid "Max energy"
 msgstr "最大能量"
 
@@ -1460,7 +1460,7 @@ msgstr "网络"
 msgid "Network Game"
 msgstr "网络游戏"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr "没有"
 
@@ -1781,7 +1781,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "碎片炸弹"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr ""
 
@@ -1862,7 +1862,7 @@ msgstr ""
 "计时器 1-6 使用 +/- 或 1-6\n"
 "按下空格键放置炸药"
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr ""
 
@@ -2054,7 +2054,7 @@ msgstr "球膨胀前离开战场"
 msgid "The bigger the faster you'll fall!"
 msgstr "越大越快越失败!"
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2396,7 +2396,7 @@ msgstr ""
 msgid "Winner"
 msgstr "胜者"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 #, fuzzy
 msgid "Within team"
 msgstr "队伍错了！"

@@ -597,11 +597,11 @@ msgstr "Młot pneumatyczny"
 msgid "All teams"
 msgstr "Wszystkie drużyny"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 msgid "Always"
 msgstr "Zawsze"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -671,7 +671,7 @@ msgstr "Kij bejsbolowy"
 msgid "Bazooka"
 msgstr "Wyrzutnia rakiet"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 msgid "Before action"
 msgstr "Przed działaniem"
 
@@ -679,7 +679,7 @@ msgstr "Przed działaniem"
 msgid "Benchmark"
 msgstr "Wydajność"
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Błyskawiczny"
 
@@ -779,7 +779,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "Nazwy postaci:"
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 msgid "Character switching"
 msgstr "Przełączanie postaci"
 
@@ -795,7 +795,7 @@ msgstr "Sprawdzanie dostępności aktualizacji"
 msgid "Choose randomly between the different maps"
 msgstr "Wybiera mapę drogą losowania"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Klasyczny"
 
@@ -937,7 +937,7 @@ msgstr ""
 "pomoc.\n"
 "Kliknij, aby otworzyć menu wyboru."
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr "Utrata energii podczas trybu nagłej śmieci"
 
@@ -991,11 +991,11 @@ msgid "Duration"
 msgstr "Czas trwania tury"
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr "Czas do rozpoczęcia trybu nagłej śmierci"
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "Czas trwania tury"
 
@@ -1157,7 +1157,7 @@ msgid "Game menu"
 msgstr "Menu gry"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "Tryb gry"
 
@@ -1191,7 +1191,7 @@ msgstr "Grafika"
 msgid "Grapple"
 msgstr "Wyciągarka"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "Ciążenie"
 
@@ -1302,7 +1302,7 @@ msgid "Ingame display"
 msgstr "Widok w grze"
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "Energia początkowa"
 
@@ -1467,7 +1467,7 @@ msgstr "Mapy"
 msgid "Master mode"
 msgstr "Tryb zarządcy"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 msgid "Max energy"
 msgstr "Maksymalna energia"
 
@@ -1592,7 +1592,7 @@ msgstr "Sieć"
 msgid "Network Game"
 msgstr "Gra sieciowa"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr "Nigdy"
 
@@ -1913,7 +1913,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "Riotbomba"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr ""
 
@@ -1994,7 +1994,7 @@ msgstr ""
 "Ustaw zapalnik 1-6 używając +/- lub klawiszy 1-6\n"
 "Naciśnij spację, aby umieścić dynamit"
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr ""
 
@@ -2187,7 +2187,7 @@ msgstr "Kula opuściła pole bitwy zanim wybuchła!"
 msgid "The bigger the faster you'll fall!"
 msgstr "Im wyżej, tym szybciej spadasz!"
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2547,7 +2547,7 @@ msgstr ""
 msgid "Winner"
 msgstr "Zwycięzca"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 #, fuzzy
 msgid "Within team"
 msgstr "Nieprawidłowa drużyna!"

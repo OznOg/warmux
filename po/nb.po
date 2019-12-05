@@ -540,12 +540,12 @@ msgstr "Lufthammer"
 msgid "All teams"
 msgstr "Alle lag"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 #, fuzzy
 msgid "Always"
 msgstr "Spill"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -615,7 +615,7 @@ msgstr "Balltre"
 msgid "Bazooka"
 msgstr "Rakettkaster"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 #, fuzzy
 msgid "Before action"
 msgstr "Teleportering"
@@ -624,7 +624,7 @@ msgstr "Teleportering"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr ""
 
@@ -727,7 +727,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "Fallskjerm"
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 #, fuzzy
 msgid "Character switching"
 msgstr "Fallskjerm"
@@ -744,7 +744,7 @@ msgstr "Sjekke oppdateringer online?"
 msgid "Choose randomly between the different maps"
 msgstr "Velg tilfeldig mellom forskjellige kart"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr ""
 
@@ -873,7 +873,7 @@ msgid ""
 "Click to open selection menu."
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr "Skade per runde i dødsmodus"
 
@@ -927,11 +927,11 @@ msgid "Duration"
 msgstr "Varighet per runde"
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr "Tidsrom før dødsmodus"
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "Varighet per runde"
 
@@ -1088,7 +1088,7 @@ msgid "Game menu"
 msgstr "Spill modus:"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "Spill modus:"
 
@@ -1120,7 +1120,7 @@ msgstr "Grafikk"
 msgid "Grapple"
 msgstr "Entrehaker"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "Tyngdekraft"
 
@@ -1231,7 +1231,7 @@ msgid "Ingame display"
 msgstr ""
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "Livspoeng ved start"
 
@@ -1399,7 +1399,7 @@ msgstr "Kart"
 msgid "Master mode"
 msgstr "Spill modus:"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 #, fuzzy
 msgid "Max energy"
 msgstr "Livspoeng ved start"
@@ -1532,7 +1532,7 @@ msgstr "Nettverksspill"
 msgid "Network Game"
 msgstr "Nettverksspill"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr ""
 
@@ -1833,7 +1833,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "Opprørsbombe"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr ""
 
@@ -1906,7 +1906,7 @@ msgid ""
 "Space to place dynamite"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr ""
 
@@ -2103,7 +2103,7 @@ msgstr "Sprettballen forsvant fra kampplassen uten å eksplodere."
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2450,7 +2450,7 @@ msgstr ""
 msgid "Winner"
 msgstr "Vinner"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 msgid "Within team"
 msgstr ""
 

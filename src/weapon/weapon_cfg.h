@@ -41,109 +41,108 @@ public:
 
 struct WeaponConfig : public EmptyWeaponConfig
 {
-  uint damage;
+  uint damage = 10;
 };
 
 //-----------------------------------------------------------------------------
 
 struct ExplosiveWeaponConfig : public WeaponConfig
 {
-  uint   timeout;
-  bool   allow_change_timeout;
-  Double blast_range;
-  Double blast_force;
-  Double explosion_range;
-  Double particle_range;
-  Double speed_on_hit;
+  uint   timeout = 0;
+  bool   allow_change_timeout = false;
+  Double blast_range = 0;
+  Double blast_force = 0;
+  Double explosion_range = 0;
+  Double particle_range = 0;
+  Double speed_on_hit = 0;
 };
 
 struct SuperTuxWeaponConfig : public ExplosiveWeaponConfig
 {
-  uint speed;
+  uint speed = 600;
 };
 
 struct AirAttackConfig : public ExplosiveWeaponConfig
 {
-  Double speed;
-  uint nbr_obus;
+  Double speed = 3;
+  uint nbr_obus = 3;
 };
 
 struct AutomaticBazookaConfig : public ExplosiveWeaponConfig
 {
-  Double uncontrolled_turn_speed;
-  Double max_controlled_turn_speed;
-  Double fuel_time;
-  Double rocket_force;
+  Double uncontrolled_turn_speed = PI*8;
+  Double max_controlled_turn_speed = PI*4;
+  Double fuel_time = 10;
+  Double rocket_force = 2500;
 };
 
 struct ClusterBombConfig : public ExplosiveWeaponConfig
 {
-  uint nb_fragments;
+  uint nb_fragments = 5;
 };
 
 struct CluzookaConfig : public ExplosiveWeaponConfig
 {
-  uint m_fragments;
-  uint m_angle_dispersion;
+  uint m_fragments = 5;
+  uint m_angle_dispersion = 45;
 };
 
 struct FootBombConfig : public ExplosiveWeaponConfig
 {
-  uint nb_fragments;
-  uint nb_recursions;
-  Double nb_angle_dispersion;
-  Double nb_min_speed;
-  Double nb_max_speed;
+  uint nb_fragments = 2;
+  uint nb_recursions = 2;
+  Double nb_angle_dispersion = 0;
+  Double nb_min_speed = 0;
+  Double nb_max_speed = 0;
 };
 
 struct MineConfig : public ExplosiveWeaponConfig
 {
-  uint escape_time;
-  Double detection_range;
-  Double speed_detection;
+  uint escape_time = 2;
+  Double detection_range = 1;
+  Double speed_detection = 2;
 };
 
 struct SyringeConfig : public WeaponConfig
 {
-  Double range;
-  uint damage;
-  uint turns;
+  Double range = 45;
+  uint turns = 10;
 };
 
 struct BaseballConfig : public WeaponConfig
 {
-  uint range;
-  uint strength;
+  uint range = 70;
+  uint strength = 2500;
 };
 
 struct BlowtorchConfig : public WeaponConfig
 {
-  uint range;
+  uint range = 20;
 };
 
 struct ParachuteConfig : public WeaponConfig
 {
-  Double wind_factor;
-  Double air_resist_factor;
-  Double force_side_displacement;
+  Double wind_factor = 10;
+  Double air_resist_factor = 140;
+  Double force_side_displacement = 2000;
 
 };
 
 struct SlapConfig : public WeaponConfig
 {
-  Double range;
-  uint strength;
+  Double range = 20;
+  uint strength = 300;
 };
 
 struct AirhammerConfig : public WeaponConfig
 {
-  uint range;
+  uint range = 30;
 };
 
 struct GrappleConfig : public EmptyWeaponConfig
 {
-  uint max_rope_length; // Max rope length in pixels
-  int push_force;
+  uint max_rope_length = 450; // Max rope length in pixels
+  int push_force = 10;
 };
 
 static inline auto bindExplosiveWeaponConfig(EmptyWeaponConfig &ewc) {

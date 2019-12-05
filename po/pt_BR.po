@@ -549,11 +549,11 @@ msgstr "Britadeira"
 msgid "All teams"
 msgstr "Todas as equipes"
 
-#: src/menu/game_mode_editor.cpp:115
+#: src/menu/game_mode_editor.cpp:116
 msgid "Always"
 msgstr "Sempre"
 
-#: src/menu/game_mode_editor.cpp:228
+#: src/menu/game_mode_editor.cpp:236
 msgid "Ammos"
 msgstr ""
 
@@ -624,7 +624,7 @@ msgstr "Taco de baseball"
 msgid "Bazooka"
 msgstr "Bazooka"
 
-#: src/menu/game_mode_editor.cpp:117
+#: src/menu/game_mode_editor.cpp:118
 msgid "Before action"
 msgstr "Após a ação"
 
@@ -632,7 +632,7 @@ msgstr "Após a ação"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Blitz"
 
@@ -735,7 +735,7 @@ msgstr ""
 msgid "Character names:"
 msgstr "Nomes dos personagens: "
 
-#: src/menu/game_mode_editor.cpp:120
+#: src/menu/game_mode_editor.cpp:121
 msgid "Character switching"
 msgstr "Mudar de personagem"
 
@@ -751,7 +751,7 @@ msgstr "Verificar atualizações online?"
 msgid "Choose randomly between the different maps"
 msgstr "Escolher de format aleatória entre os mapas"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:101
+#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Classico"
 
@@ -878,7 +878,7 @@ msgid ""
 "Click to open selection menu."
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:142
+#: src/menu/game_mode_editor.cpp:143
 msgid "Damage per turn during death mode"
 msgstr "Dano por rodada durante modo de morte"
 
@@ -933,11 +933,11 @@ msgid "Duration"
 msgstr "Duração de uma rodada:"
 
 #. some death mode options
-#: src/menu/game_mode_editor.cpp:137
+#: src/menu/game_mode_editor.cpp:138
 msgid "Duration before death mode"
 msgstr "Duração depois do modo de morte"
 
-#: src/menu/game_mode_editor.cpp:107
+#: src/menu/game_mode_editor.cpp:108
 msgid "Duration of a turn"
 msgstr "Duração de uma rodada:"
 
@@ -1099,7 +1099,7 @@ msgid "Game menu"
 msgstr "Modo de jogo"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/menu/game_mode_editor.cpp:70 src/menu/help_menu.cpp:73
+#: src/menu/game_mode_editor.cpp:71 src/menu/help_menu.cpp:73
 msgid "Game mode"
 msgstr "Modo de jogo"
 
@@ -1130,7 +1130,7 @@ msgstr "Gráficos"
 msgid "Grapple"
 msgstr "Gancho"
 
-#: src/menu/game_mode_editor.cpp:146
+#: src/menu/game_mode_editor.cpp:147
 msgid "Gravity"
 msgstr "Gravidade"
 
@@ -1241,7 +1241,7 @@ msgid "Ingame display"
 msgstr ""
 
 #. Characters energy
-#: src/menu/game_mode_editor.cpp:125
+#: src/menu/game_mode_editor.cpp:126
 msgid "Initial energy"
 msgstr "Energia inicial"
 
@@ -1412,7 +1412,7 @@ msgstr "Mapas"
 msgid "Master mode"
 msgstr "Modo mestre"
 
-#: src/menu/game_mode_editor.cpp:130
+#: src/menu/game_mode_editor.cpp:131
 msgid "Max energy"
 msgstr "Energia Máxima"
 
@@ -1544,7 +1544,7 @@ msgstr "Jogo em Rede"
 msgid "Network Game"
 msgstr "Jogo em Rede"
 
-#: src/menu/game_mode_editor.cpp:118
+#: src/menu/game_mode_editor.cpp:119
 msgid "Never"
 msgstr "Nunca"
 
@@ -1843,7 +1843,7 @@ msgstr ""
 msgid "Riot Bomb"
 msgstr "Bomba Motim"
 
-#: src/menu/game_mode_editor.cpp:103
+#: src/menu/game_mode_editor.cpp:104
 msgid "Rules"
 msgstr ""
 
@@ -1916,7 +1916,7 @@ msgid ""
 "Space to place dynamite"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:95
+#: src/menu/game_mode_editor.cpp:96
 msgid "Settings"
 msgstr ""
 
@@ -2111,7 +2111,7 @@ msgstr "A bola pula pula deixou o campo de batalha antes de explodir!"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:305
+#: src/menu/game_mode_editor.cpp:279
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2466,7 +2466,7 @@ msgstr ""
 msgid "Winner"
 msgstr "Vencedor"
 
-#: src/menu/game_mode_editor.cpp:116
+#: src/menu/game_mode_editor.cpp:117
 #, fuzzy
 msgid "Within team"
 msgstr "Time errado!"
