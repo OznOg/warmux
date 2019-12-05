@@ -31,33 +31,34 @@ class XmlWriter;
 
 class ObjectConfig
 {
+  static const Double DEFAULT_WATER_RESIST_FACTOR;
+
 public:
   // Masse of the objct
-  Double m_mass;
+  Double m_mass = ONE;
 
   // Wind effect factor on the object. 0 means not affected.
-  Double m_wind_factor;
+  Double m_wind_factor = ONE;
 
   // Air resistance factor. 1 = normal air resistance.
-  Double m_air_resist_factor;
+  Double m_air_resist_factor = ONE;
 
   // Water resistance factor. Related to air_resist_factor.
-  Double m_water_resist_factor;
+  Double m_water_resist_factor = DEFAULT_WATER_RESIST_FACTOR;
 
   // Define how the object is affected by gravity.
-  Double m_gravity_factor;
+  Double m_gravity_factor = ONE;
 
   // Tell if it's a rebounding object...
-  bool  m_rebounding;
+  bool  m_rebounding = false;
 
   // Object rebound factor when the object collide with the ground.
-  Double m_rebound_factor;
+  Double m_rebound_factor = 0.01;
 
   // Active alignment for wind particles
-  bool m_align_particle_state;
+  bool m_align_particle_state = false;
 
-  ObjectConfig(void);
-  virtual ~ObjectConfig() { };
+  virtual ~ObjectConfig() = default;
 
   void LoadXml(const std::string & obj_name, 
                const std::string & config_file);

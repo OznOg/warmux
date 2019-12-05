@@ -30,7 +30,7 @@ class Ground : public Tile
   bool open;
   bool AdjacentPoint(int x,int y, int & p_x,int & p_y,
                      int pas_bon_x,int pas_bon_y) const;
-  Point2i lastPos;
+  Point2i lastPos = { 0, 0 };
 
   uint alpha_threshold; //Keep redundant to rise performance
 

@@ -30,19 +30,7 @@
 #include "tool/xml_document.h"
 //-----------------------------------------------------------------------------
 
-static const Double DEFAULT_WATER_RESIST_FACTOR = 40;
-
-ObjectConfig::ObjectConfig(void):
-  m_mass(ONE),
-  m_wind_factor(ONE),
-  m_air_resist_factor(ONE),
-  m_water_resist_factor(DEFAULT_WATER_RESIST_FACTOR),
-  m_gravity_factor(ONE),
-  m_rebounding(false),
-  m_rebound_factor(0.01),
-  m_align_particle_state(false)
-{
-}
+const Double ObjectConfig::DEFAULT_WATER_RESIST_FACTOR = 40;
 
 void ObjectConfig::LoadXml(const std::string & obj_name, 
                            const std::string & config_file)
