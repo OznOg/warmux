@@ -40,7 +40,7 @@
 Sprite* BonusBox::icon = nullptr;
 int BonusBox::icon_ref = 0;
 
-BonusBox::BonusBox(Weapon * weapon):
+BonusBox::BonusBox(const Weapon &weapon):
   ObjBox("bonus_box"),
   weapon(weapon)
 {
@@ -77,16 +77,16 @@ void BonusBox::ApplyBonus(Character * c)
     Explode();
     return;
   };
-  Weapon::Weapon_type w_type = weapon->GetType();
+  Weapon::Weapon_type w_type = weapon.GetType();
 
   if (c->AccessTeam().ReadNbAmmos(w_type) != INFINITE_AMMO) {
-    int won_ammo = weapon->GetAmmoPerDrop();
+    int won_ammo = weapon.GetAmmoPerDrop();
     c->AccessTeam().m_nb_ammos[w_type] += won_ammo;
-    txt << weapon->GetWeaponWinString(c->AccessTeam().GetName().c_str(), won_ammo);
+    txt << weapon.GetWeaponWinString(c->AccessTeam().GetName().c_str(), won_ammo);
   } else {
     // Can happen if the configuration is wrong...
     txt << Format(_("%s team already has infinite ammo for the %s!"),
-           c->AccessTeam().GetName().c_str(), weapon->GetName().c_str());
+           c->AccessTeam().GetName().c_str(), weapon.GetName().c_str());
   }
   GameMessages::GetInstance()->Add(txt.str(), c->GetTeam().GetColor());
   JukeBox::GetInstance()->Play("default","box/picking_up");

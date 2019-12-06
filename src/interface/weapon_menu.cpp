@@ -60,20 +60,20 @@ const int WeaponsMenu::MAX_NUMBER_OF_WEAPON = 7;
 
 #define MAX_ICON_SIZE          45
 
-WeaponMenuItem::WeaponMenuItem(Weapon * new_weapon, const Point2d & position)
+WeaponMenuItem::WeaponMenuItem(const Weapon &new_weapon, const Point2d & position)
   : PolygonItem()
   , zoom(false)
   , weapon(new_weapon)
   , zoom_start_time(0)
 {
-  SetSprite(new Sprite(weapon->GetIcon()));
+  SetSprite(new Sprite(weapon.GetIcon()));
   SetPosition(position);
   SetZoomTime(ICON_ZOOM_TIME);
 }
 
 bool WeaponMenuItem::IsMouseOver()
 {
-  if (!ActiveTeam().ReadNbAmmos(weapon->GetType())) {
+  if (!ActiveTeam().ReadNbAmmos(weapon.GetType())) {
     if (zoom)
       SetZoom(false);
     return false;
@@ -116,7 +116,7 @@ void WeaponMenuItem::Draw(Surface * dest)
   item->SetAlpha(1);
   item->Scale(scale, scale);
 
-  int nb_bullets = ActiveTeam().ReadNbAmmos(weapon->GetType());
+  int nb_bullets = ActiveTeam().ReadNbAmmos(weapon.GetType());
   Point2i tmp = GetOffsetAlignment() + Point2i(0, item->GetWidth() - 10);
 
   char buffer[5] = { 0, };
@@ -125,7 +125,7 @@ void WeaponMenuItem::Draw(Surface * dest)
     PolygonItem::Draw(dest);
     Font::GetInstance(Font::FONT_MEDIUM, Font::FONT_BOLD)->WriteLeft(tmp, UTF8_INFINITE, dark_gray_color);
   } else if (nb_bullets == 0) {
-      int num = weapon->AvailableAfterTurn() - (int)Game::GetInstance()->GetCurrentTurn();
+      int num = weapon.AvailableAfterTurn() - (int)Game::GetInstance()->GetCurrentTurn();
       if (num > -1){
         PolygonItem::Draw(dest);
         tmp.y -= 4;
@@ -197,13 +197,13 @@ WeaponsMenu::~WeaponsMenu()
 }
 
 // Add a new weapon to the weapon menu.
-void WeaponsMenu::AddWeapon(Weapon* new_item)
+void WeaponsMenu::AddWeapon(const Weapon &new_item)
 {
-  if (!new_item->CanBeUsedOnClosedMap() && !ActiveMap()->LoadedInfo()->IsOpened())
+  if (!new_item.CanBeUsedOnClosedMap() && !ActiveMap()->LoadedInfo()->IsOpened())
     return;
 
   Point2f pos;
-  Weapon::category_t num_sort = new_item->Category();
+  Weapon::category_t num_sort = new_item.Category();
   Polygon *menu;
 
   if (num_sort < 6) {
@@ -323,8 +323,8 @@ void WeaponsMenu::RefreshWeaponList()
   tools_menu->ClearItem(false);
   // Reinserting weapon
   WeaponsList * weapons_list = Game::GetInstance()->GetWeaponsList();
-  for (auto it : weapons_list->GetList())
-    AddWeapon(it);
+  for (const auto &it : weapons_list->GetList())
+    AddWeapon(*it);
 }
 
 AffineTransform2D WeaponsMenu::ComputeToolTransformation()
@@ -390,7 +390,7 @@ void WeaponsMenu::Draw()
   SwapWindowClip(clip);
 }
 
-Weapon * WeaponsMenu::UpdateCurrentOverflyItem(const Polygon * poly)
+const Weapon * WeaponsMenu::UpdateCurrentOverflyItem(const Polygon * poly)
 {
   if (!show)
     return nullptr;
@@ -417,7 +417,7 @@ bool WeaponsMenu::ActionClic(const Point2i &/*mouse_pos*/)
 {
   if (!show)
     return false;
-  Weapon * tmp = UpdateCurrentOverflyItem(weapons_menu);
+  auto tmp = UpdateCurrentOverflyItem(weapons_menu);
   if (!tmp)
     tmp = UpdateCurrentOverflyItem(tools_menu);
   if (tmp) {

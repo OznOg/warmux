@@ -37,7 +37,7 @@ class XmlWriter;
 class WeaponsList
 {
 private:
-  std::list<Weapon*> m_weapons_list;
+  std::list<std::unique_ptr<Weapon>> m_weapons_list;
   Weapon* GetNextWeapon(uint sort, uint index);
 
   /* if you need to use this, implement it */
@@ -45,7 +45,6 @@ private:
 
 public:
   WeaponsList(const xmlNode* weapons_xml);
-  ~WeaponsList();
 
   void Init(const xmlNode* weapons_xml) const;
   bool Save(XmlWriter& writer, xmlNode* weapons_xml) const;
@@ -55,9 +54,9 @@ public:
   // Return a list of  weapons
   const auto& GetList() const { return m_weapons_list; };
   Weapon* GetWeapon(Weapon::Weapon_type type) const;
-  WeaponLauncher* GetWeaponLauncher(Weapon::Weapon_type type) const;
+  const WeaponLauncher* GetWeaponLauncher(Weapon::Weapon_type type) const;
   bool GetWeaponBySort(Weapon::category_t num_sort, Weapon::Weapon_type &type);
-  Weapon * GetRandomWeaponToDrop();
+  const Weapon &GetRandomWeaponToDrop();
 };
 
 //-----------------------------------------------------------------------------

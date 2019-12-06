@@ -188,7 +188,7 @@ static int FindStep(int val)
 
 class WeaponCfgBox : public HBox
 {
-  Weapon                *weapon;
+  Weapon                &weapon;
   PictureWidget         *pw;
   SpinButtonWithPicture *ammo;
   std::list<std::function<void(void)>> values;
@@ -211,7 +211,7 @@ public:
       values.emplace_back([ val = element.m_val, button = tmp] { *val = button->GetValue(); } );
   }
 
-  WeaponCfgBox(Weapon *w, uint height)
+  WeaponCfgBox(Weapon &w, uint height)
     : HBox(height), weapon(w)
   {
     Point2i s(height+10, height);
@@ -223,22 +223,22 @@ public:
     AddWidget(vbox);
     vbox->AddWidget(new NullWidget(Point2i(80, 14)));
 
-    Sprite& spr = w->GetIcon();
+    Sprite& spr = weapon.GetIcon();
     spr.RefreshSurface();
     pw = new PictureWidget(spr.GetSurface().GetSize());
     pw->SetSurface(spr.GetSurface(), PictureWidget::NO_SCALING);
     vbox->AddWidget(pw);
 
-    vbox->AddWidget(new Label(w->GetName(), 80, Font::FONT_SMALL, Font::FONT_BOLD,
+    vbox->AddWidget(new Label(weapon.GetName(), 80, Font::FONT_SMALL, Font::FONT_BOLD,
                               dark_gray_color, Text::ALIGN_CENTER));
 
-    int count = weapon->ReadInitialNbAmmo();
+    int count = weapon.ReadInitialNbAmmo();
     ammo = new SpinButtonWithPicture(_("Ammos"), "menu/sound_effects_enable", s,
                                      count, 1, -1, (count>10) ? count : 10);
     AddWidget(ammo);
 
     // List config values and add the important ones
-    auto cfg = w->GetConfig();
+    auto cfg = weapon.GetConfig();
     for (auto & it : *cfg) {
       if (it->m_important) {
         switch (it->m_type) {
@@ -264,7 +264,7 @@ public:
 
   void Apply() const
   {
-    weapon->WriteInitialNbAmmo(ammo->GetValue());
+    weapon.WriteInitialNbAmmo(ammo->GetValue());
 
     for (auto &v: values) {
         v();
@@ -313,7 +313,7 @@ void GameModeEditor::LoadGameMode(bool force)
   weapon_cfg_list.clear(); // Widgets already deleted above
   const auto &wlist = game_mode->GetWeaponsList()->GetList();
   for (auto &it : wlist) {
-    WeaponCfgBox *w = new WeaponCfgBox(it, 100);
+    WeaponCfgBox *w = new WeaponCfgBox(*it, 100);
     opt_weapons_cfg->AddWidget(w);
     weapon_cfg_list.push_back(w);
   }

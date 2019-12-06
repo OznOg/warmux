@@ -33,14 +33,14 @@ class Weapon;
 
 class BonusBox : public ObjBox
 {
-  Weapon * weapon;
+  const Weapon &weapon;
   static Sprite* icon;
   static int icon_ref;
 
   bool ExplodesInsteadOfBonus(Character * c);
   void ApplyBonus (Team &team, Character &character);
 public:
-  BonusBox(Weapon * weapon);
+  BonusBox(const Weapon &weapon);
   ~BonusBox() override;
 
   void ApplyBonus(Character *) override;

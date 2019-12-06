@@ -61,7 +61,7 @@ public:
   } Mode;
 
   Character *character_under_cursor;
-  Weapon *weapon_under_cursor;
+  const Weapon *weapon_under_cursor;
   WeaponsMenu weapons_menu;
   WeaponHelp *help;
   Team *tmp_team;
@@ -172,7 +172,7 @@ public:
   void Show();
   void Hide();
 
-  void SetCurrentOverflyWeapon(Weapon * weapon) { weapon_under_cursor = weapon; }
+  void SetCurrentOverflyWeapon(const Weapon *weapon) { weapon_under_cursor = weapon; }
   void UpdateTimer(uint utimer, bool emergency, bool reset_anim);
   void UpdateWindIndicator(int wind_value);
   void EnableDisplayTimer(bool _display) { display_timer = _display; }

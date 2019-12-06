@@ -293,14 +293,11 @@ void Team::PrepareTurn()
   CharacterCursor::GetInstance()->FollowActiveCharacter();
 
   // Updating weapon ammos (some weapons are not available from the beginning)
-  const std::list<Weapon *>& l_weapons_list = weapons_list->GetList() ;
-  std::list<Weapon *>::const_iterator itw = l_weapons_list.begin(),
-  end = l_weapons_list.end();
-  for (; itw != end ; ++itw) {
-    if ((*itw)->AvailableAfterTurn() == (int)current_turn) {
+  for (const auto &w : weapons_list->GetList()) {
+    if (w->AvailableAfterTurn() == (int)current_turn) {
       // this weapon is available now
-      m_nb_ammos[ (*itw)->GetType() ] += (*itw)->ReadInitialNbAmmo();
-      m_nb_units[ (*itw)->GetType() ] += (*itw)->ReadInitialNbUnit();
+      m_nb_ammos[ w->GetType() ] += w->ReadInitialNbAmmo();
+      m_nb_units[ w->GetType() ] += w->ReadInitialNbUnit();
     }
   }
 
@@ -347,22 +344,20 @@ void Team::LoadGamingData(WeaponsList * weapons)
   // Reset ammos
   m_nb_ammos.clear();
   m_nb_units.clear();
-  const std::list<Weapon *>& l_weapons_list = weapons_list->GetList() ;
-  std::list<Weapon *>::const_iterator itw = l_weapons_list.begin(),
-                                      end = l_weapons_list.end();
+  auto &l_weapons_list = weapons_list->GetList() ;
 
   m_nb_ammos.assign(l_weapons_list.size(), 0);
   m_nb_units.assign(l_weapons_list.size(), 0);
 
-  for (; itw != end ; ++itw) {
-    if ((*itw)->AvailableAfterTurn() == 0) {
+  for (const auto &w : l_weapons_list) {
+    if (w->AvailableAfterTurn() == 0) {
       // this weapon is available now
-      m_nb_ammos[ (*itw)->GetType() ] = (*itw)->ReadInitialNbAmmo();
-      m_nb_units[ (*itw)->GetType() ] = (*itw)->ReadInitialNbUnit();
+      m_nb_ammos[ w->GetType() ] = w->ReadInitialNbAmmo();
+      m_nb_units[ w->GetType() ] = w->ReadInitialNbUnit();
     } else {
       // this weapon will be available later
-      m_nb_ammos[ (*itw)->GetType() ] = 0;
-      m_nb_units[ (*itw)->GetType() ] = 0;
+      m_nb_ammos[ w->GetType() ] = 0;
+      m_nb_units[ w->GetType() ] = 0;
     }
   }
 

@@ -39,18 +39,18 @@ class WeaponMenuItem : public PolygonItem
   WeaponsMenu *m_parent;
 
 public:
-  Weapon* weapon;
+  const Weapon &weapon;
   int zoom_start_time;
   uint zoom_time;
 
 public:
-  WeaponMenuItem(Weapon * weapon, const Point2d & position);
+  WeaponMenuItem(const Weapon &weapon, const Point2d & position);
   bool IsMouseOver();
   void SetZoom(bool value);
   void Draw(Surface * dest) override;
   uint GetZoomTime() const { return zoom_time; };
   void SetZoomTime(uint time) { zoom_time = time; };
-  Weapon * GetWeapon() const { return weapon; };
+  const Weapon *GetWeapon() const { return &weapon; };
   void SetParent(WeaponsMenu *parent) { m_parent = parent; }
 };
 
@@ -85,7 +85,7 @@ public:
   WeaponsMenu();
   ~WeaponsMenu();
   void RefreshWeaponList();
-  void AddWeapon(Weapon* new_item);
+  void AddWeapon(const Weapon &new_item);
   void Draw();
   void SwitchDisplay(const Point2i& pos = Point2i(-1, -1)) { if (show) Hide(); else Show(pos); };
   AffineTransform2D ComputeWeaponTransformation();
@@ -97,7 +97,7 @@ public:
   bool IsDisplayed() const { return show; };
   bool ActionClic(const Point2i &mouse_pos);
   Sprite * GetInfiniteSymbol() const;
-  Weapon * UpdateCurrentOverflyItem(const Polygon * poly);
+  const Weapon * UpdateCurrentOverflyItem(const Polygon * poly);
   uint GetJellyTime() const { return jelly_time; };
   uint GetIconsDrawTime() const { return icons_draw_time; };
   uint GetRotationTime() const { return rotation_time; };
