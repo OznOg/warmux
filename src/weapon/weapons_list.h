@@ -36,18 +36,10 @@ class XmlWriter;
 // Classe de gestion des armes
 class WeaponsList
 {
-public:
-  typedef std::list<Weapon*> weapons_list_type;
-  typedef std::list<Weapon*>::const_iterator iterator;
-  typedef std::list<WeaponLauncher*> launcher_weapons_list_type;
-  typedef std::list<WeaponLauncher*>::const_iterator launcher_iterator;
-
 private:
-  weapons_list_type m_weapons_list;
-  launcher_weapons_list_type m_launcher_weapons_list;
+  std::list<Weapon*> m_weapons_list;
   Weapon* GetNextWeapon(uint sort, uint index);
 
-protected:
   /* if you need to use this, implement it */
   WeaponsList(const WeaponsList &a_list);
 
@@ -61,7 +53,7 @@ public:
   void UpdateTranslation() const;
 
   // Return a list of  weapons
-  const weapons_list_type& GetList() const { return m_weapons_list; };
+  const auto& GetList() const { return m_weapons_list; };
   Weapon* GetWeapon(Weapon::Weapon_type type) const;
   WeaponLauncher* GetWeaponLauncher(Weapon::Weapon_type type) const;
   bool GetWeaponBySort(Weapon::category_t num_sort, Weapon::Weapon_type &type);

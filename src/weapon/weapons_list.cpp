@@ -38,9 +38,8 @@
 
 WeaponsList::~WeaponsList()
 {
-  iterator it=m_weapons_list.begin(), end=m_weapons_list.end();
-  for (; it != end; ++it)
-    delete *it;
+  for (auto it : m_weapons_list)
+    delete it;
 
   // no need to delete objects in m_weapons_launcher_list nor clear the 2 lists !
 }
@@ -50,33 +49,27 @@ WeaponsList::~WeaponsList()
 WeaponsList::WeaponsList(const xmlNode* weapons_xml)
 {
   // First launcher weapons
-  m_launcher_weapons_list.push_back(new AnvilLauncher);
-  m_launcher_weapons_list.push_back(new TuxLauncher);
-  m_launcher_weapons_list.push_back(new GnuLauncher);
-  m_launcher_weapons_list.push_back(new PolecatLauncher);
-  m_launcher_weapons_list.push_back(new BounceBallLauncher);
-  m_launcher_weapons_list.push_back(new Bazooka);
-  m_launcher_weapons_list.push_back(new AutomaticBazooka);
-  m_launcher_weapons_list.push_back(new GrenadeLauncher);
-  m_launcher_weapons_list.push_back(new DiscoGrenadeLauncher);
-  m_launcher_weapons_list.push_back(new ClusterLauncher);
-  m_launcher_weapons_list.push_back(new FootBombLauncher);
-  m_launcher_weapons_list.push_back(new RiotBomb);
-  m_launcher_weapons_list.push_back(new Cluzooka);
-  m_launcher_weapons_list.push_back(new SubMachineGun);
-  m_launcher_weapons_list.push_back(new Gun);
-  m_launcher_weapons_list.push_back(new Shotgun);
-  m_launcher_weapons_list.push_back(new SnipeRifle);
-  m_launcher_weapons_list.push_back(new RailGun);
-  m_launcher_weapons_list.push_back(new Dynamite);
-  m_launcher_weapons_list.push_back(new FlameThrower);
-  m_launcher_weapons_list.push_back(new Mine);
-
-  // Copy launcher weapons to normal list
-  //m_weapons_list = m_launcher_weapons_list;
-  m_weapons_list.insert(m_weapons_list.end(),
-                        m_launcher_weapons_list.begin(),
-                        m_launcher_weapons_list.end());
+  m_weapons_list.push_back(new AnvilLauncher);
+  m_weapons_list.push_back(new TuxLauncher);
+  m_weapons_list.push_back(new GnuLauncher);
+  m_weapons_list.push_back(new PolecatLauncher);
+  m_weapons_list.push_back(new BounceBallLauncher);
+  m_weapons_list.push_back(new Bazooka);
+  m_weapons_list.push_back(new AutomaticBazooka);
+  m_weapons_list.push_back(new GrenadeLauncher);
+  m_weapons_list.push_back(new DiscoGrenadeLauncher);
+  m_weapons_list.push_back(new ClusterLauncher);
+  m_weapons_list.push_back(new FootBombLauncher);
+  m_weapons_list.push_back(new RiotBomb);
+  m_weapons_list.push_back(new Cluzooka);
+  m_weapons_list.push_back(new SubMachineGun);
+  m_weapons_list.push_back(new Gun);
+  m_weapons_list.push_back(new Shotgun);
+  m_weapons_list.push_back(new SnipeRifle);
+  m_weapons_list.push_back(new RailGun);
+  m_weapons_list.push_back(new Dynamite);
+  m_weapons_list.push_back(new FlameThrower);
+  m_weapons_list.push_back(new Mine);
 
   // Add other weapons
   m_weapons_list.push_back(new Baseball);
@@ -125,52 +118,46 @@ void WeaponsList::UpdateTranslation() const
 
 bool WeaponsList::GetWeaponBySort(Weapon::category_t sort, Weapon::Weapon_type &type)
 {
-  iterator it, end=m_weapons_list.end();
   bool open = ActiveMap()->LoadedData()->IsOpened();
 
-  /* find the current position */
-  it = std::find(m_weapons_list.begin(),
-                 m_weapons_list.end(),
-                 &ActiveTeam().GetWeapon());
+  auto it  = m_weapons_list.begin();
+  if (ActiveTeam().GetWeapon().Category() == sort) {
+      /* find the current position */
+      it = std::find(m_weapons_list.begin(),
+                     m_weapons_list.end(),
+                     &ActiveTeam().GetWeapon());
+      it++;
+  }
+  auto start_it = it;
+  it = std::find_if(it, m_weapons_list.end(), [&](const auto w) {
+              return w->Category() == sort
+                      && ActiveTeam().ReadNbAmmos(w->GetType()) != 0
+                      && (open  || w->CanBeUsedOnClosedMap());
+          });
 
-  /* if the current weapon match the criteria */
-  if (it != end && ActiveTeam().GetWeapon().Category() == sort) {
-    /* try to find the next weapon matching our criteria */
-    do {
-      ++it;
-    } while( it != end
-             && ((*it)->Category() != sort
-                 || ActiveTeam().ReadNbAmmos((*it)->GetType()) == 0
-                 || (!((*it)->CanBeUsedOnClosedMap()) && !open)) );
-
-    /* Ok, a weapon was found let's return it */
-    if (it != end && (*it)->Category() == sort) {
+  /* Ok, a weapon was found let's return it */
+  if (it != m_weapons_list.end()) {
       type = (*it)->GetType();
       return true;
-    }
   }
+
+  if (start_it == m_weapons_list.begin()) {
+      return false;
+  } 
+
   /* we didn't find a valid weapon after the current one ; lets wrap:
    * restart from the begining and try to find the first one matching
    * our criteria */
-  it = m_weapons_list.begin();
-  while(it != end && (*it)->Category() != sort)
-    ++it;
+  it = std::find_if(m_weapons_list.begin(), start_it, [&](const auto w) {
+              return w->Category() == sort
+                      && ActiveTeam().ReadNbAmmos(w->GetType()) != 0
+                      && (open  || w->CanBeUsedOnClosedMap());
+          });
 
-  /* no weapon of this sort was found -> give up... */
-  if (it == end)
-    return false;
-
-  /* try to find the next weapon matching our criteria */
-  while(it != end
-        && ((*it)->Category() != sort
-            || ActiveTeam().ReadNbAmmos((*it)->GetType()) == 0
-            || (!(*it)->CanBeUsedOnClosedMap() && open)))
-    ++it;
-
-  /* Ok, a weapon was found let's return it if it is not the one active */
-  if (it != end && (*it)->Category() == sort && (*it) != &ActiveTeam().GetWeapon()) {
-    type = (*it)->GetType();
-    return true;
+  /* Ok, a weapon was found let's return it */
+  if (it != m_weapons_list.end()) {
+      type = (*it)->GetType();
+      return true;
   }
 
   /* we definitly found nothing... */
@@ -179,10 +166,9 @@ bool WeaponsList::GetWeaponBySort(Weapon::category_t sort, Weapon::Weapon_type &
 
 Weapon * WeaponsList::GetRandomWeaponToDrop()
 {
-  std::list<Weapon*>::iterator it;
   Double probability_sum = 0;
-  for (it = m_weapons_list.begin(); it != m_weapons_list.end(); ++it) {
-    probability_sum += (*it)->GetDropProbability();
+  for (auto &w : m_weapons_list) {
+    probability_sum += w->GetDropProbability();
   }
   ASSERT(probability_sum > 0);
 
@@ -191,8 +177,7 @@ Weapon * WeaponsList::GetRandomWeaponToDrop()
   Double total_bf_weapon = 0;
   Double total_after_weapon = 0;
 
-  for (it = m_weapons_list.begin(); it != m_weapons_list.end(); it++) {
-    Weapon * weapon = *it;
+  for (auto &weapon : m_weapons_list) {
     total_after_weapon = total_bf_weapon + weapon->GetDropProbability();
     if (total_bf_weapon < num && num <= total_after_weapon) {
       MSG_DEBUG("bonus","Weapon choosed: %s", weapon->GetName().c_str());
@@ -216,18 +201,18 @@ public:
 
 Weapon* WeaponsList::GetWeapon(Weapon::Weapon_type type) const
 {
-  iterator it;
-  it = std::find_if(m_weapons_list.begin(), m_weapons_list.end(), test_weapon_type(type));
+  auto it = std::find_if(m_weapons_list.begin(), m_weapons_list.end(), [&] (const Weapon* w) { return w->GetType() == type; });
   ASSERT (it != m_weapons_list.end());
   return *it;
 }
 
 WeaponLauncher* WeaponsList::GetWeaponLauncher(Weapon::Weapon_type type) const
 {
-  launcher_iterator it;
-  it = std::find_if(m_launcher_weapons_list.begin(), m_launcher_weapons_list.end(), test_weapon_type(type));
-  ASSERT (it != m_launcher_weapons_list.end());
-  return *it;
+  auto it = std::find_if(m_weapons_list.begin(), m_weapons_list.end(), [&] (const Weapon* w) { return w->GetType() == type; });
+  ASSERT (it != m_weapons_list.end());
+  auto wl = dynamic_cast<WeaponLauncher *>(*it);
+  ASSERT (wl != nullptr);
+  return wl;
 }
 
 //-----------------------------------------------------------------------------

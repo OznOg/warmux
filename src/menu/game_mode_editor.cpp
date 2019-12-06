@@ -311,8 +311,8 @@ void GameModeEditor::LoadGameMode(bool force)
   // Refill weapon list
   opt_weapons_cfg->Clear();
   weapon_cfg_list.clear(); // Widgets already deleted above
-  const WeaponsList::weapons_list_type& wlist = game_mode->GetWeaponsList()->GetList();
-  for (auto it : wlist) {
+  const auto &wlist = game_mode->GetWeaponsList()->GetList();
+  for (auto &it : wlist) {
     WeaponCfgBox *w = new WeaponCfgBox(it, 100);
     opt_weapons_cfg->AddWidget(w);
     weapon_cfg_list.push_back(w);
