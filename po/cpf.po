@@ -636,9 +636,9 @@ msgstr "Balle y rebondi"
 msgid "Bye bye Tux..."
 msgstr "Nartrouvé tux!!"
 
-#: src/team/teams_list.cpp:489 src/team/teams_list.cpp:525
-#: src/team/teams_list.cpp:534 src/team/teams_list.cpp:540
-#: src/team/teams_list.cpp:598
+#: src/team/teams_list.cpp:474 src/team/teams_list.cpp:510
+#: src/team/teams_list.cpp:519 src/team/teams_list.cpp:525
+#: src/team/teams_list.cpp:583
 #, c-format
 msgid "Can't find team %s!"
 msgstr "Gaingne pas trouver l'équipe %s !"

@@ -192,20 +192,16 @@ void TeamsList::LoadList()
 
 void TeamsList::LoadGamingData(WeaponsList &weapons_list)
 {
-  //std::sort(playing_list.begin(), playing_list.end(), compareTeams); // needed to fix bug #9820
-
-  iterator it=playing_list.begin(), end=playing_list.end();
-
   // Load the data of all teams
-  for (; it != end; ++it) {
-    (*it)->LoadGamingData(weapons_list);
+  for (auto &pt : playing_list) {
+      pt->LoadGamingData(weapons_list);
   }
 
   groups.clear();
-  for (it=playing_list.begin(); it != end; ++it) {
-    groups[ (*it)->GetGroup() ].push_back(*it);
-    if ((*it)->IsLocalAI())
-      (*it)->LoadAI();
+  for (auto &pt : playing_list) {
+    groups[ pt->GetGroup() ].push_back(pt);
+    if (pt->IsLocalAI())
+      pt->LoadAI();
   }
 }
 
@@ -248,16 +244,15 @@ void TeamsList::UnloadGamingData()
 
 Team *TeamsList::FindById(const std::string &id, int &pos)
 {
-  full_iterator it=full_list.begin(), end = full_list.end();
-  int i=0;
-  for (; it != end; ++it, ++i) {
-    if ((*it)->GetId() == id) {
-      pos = i;
-      return (*it);
-    }
+  auto it = std::find_if(full_list.begin(), full_list.end(),
+          [&] (auto &t) { return t->GetId() == id; });
+  if (it == full_list.end()) {
+      pos = -1;
+      return nullptr;
   }
-  pos = -1;
-  return nullptr;
+
+  pos = std::distance(std::begin(full_list), it);
+  return *it;
 }
 
 //-----------------------------------------------------------------------------
@@ -269,14 +264,10 @@ Team *TeamsList::FindByIndex(uint index)
     return nullptr;
   }
 
-  full_iterator it = full_list.begin(), end = full_list.end();
-  uint i=0;
-  for (; it != end; ++it, ++i) {
-    if (i == index)
-      return (*it);
-  }
+  auto it = full_list.begin();
+  std::advance(it, index);
 
-  return nullptr;
+  return it != full_list.end() ? *it : nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -300,9 +291,8 @@ Team* TeamsList::FindPlayingById(const std::string &id, int &index)
 void TeamsList::InitList(const std::list<ConfigTeam> &lst)
 {
   Clear();
-  std::list<ConfigTeam>::const_iterator it=lst.begin(), end=lst.end();
-  for (; it != end; ++it)
-    AddTeam(*it, true, false);
+  for (auto &ct : lst)
+    AddTeam(ct, true, false);
 }
 
 //-----------------------------------------------------------------------------
@@ -311,38 +301,33 @@ void TeamsList::InitEnergy()
 {
   // Looking at team with the greatest energy
   // (in case teams does not have same amount of character)
-  iterator it = playing_list.begin(), end = playing_list.end();
   uint max = 0;
-  for (; it != end; ++it) {
-    if ((**it).ReadEnergy() > max)
-      max = (**it).ReadEnergy();
+  for (auto &t : playing_list) {
+      if (t->ReadEnergy() > max)
+          max = t->ReadEnergy();
   }
 
   // Init each team's energy bar
-  it=playing_list.begin();
-  for (; it != end; ++it)
-    (**it).InitEnergy(max);
+  for (auto &t : playing_list) {
+      t->InitEnergy(max);
+  }
 
   // Initial ranking
-  it=playing_list.begin();
-  for (; it != end; ++it) {
+  for (auto &t : playing_list) {
     uint rank = 0;
-    iterator it2=playing_list.begin();
-    for (; it2 != end; ++it2) {
-      if (it != it2 && (**it2).ReadEnergy() > (**it).ReadEnergy())
+    for (auto &t2 : playing_list) {
+      if (&t != &t2 && t2->ReadEnergy() > t->ReadEnergy())
         ++rank;
     }
-    (**it).energy.rank_tmp = rank;
+    t->energy.rank_tmp = rank;
   }
-  it=playing_list.begin();
-  for (; it != end; ++it) {
-    uint rank = (**it).energy.rank_tmp;
-    iterator it2=playing_list.begin();
-    for (it2 = it; it2 != end; ++it2) {
-      if (it != it2 && (**it2).ReadEnergy() == (**it).ReadEnergy())
+  for (auto &t : playing_list) {
+    uint rank = t->energy.rank_tmp;
+    for (auto &t2 : playing_list) {
+      if (&t != &t2 && t2->ReadEnergy() == t->ReadEnergy())
         ++rank;
     }
-    (**it).energy.SetRanking(rank);
+    t->energy.SetRanking(rank);
   }
 }
 
