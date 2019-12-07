@@ -644,7 +644,7 @@ msgstr "Alvorens actie"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
+#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Blitz"
 
@@ -763,7 +763,7 @@ msgstr "Online op updates controleren?"
 msgid "Choose randomly between the different maps"
 msgstr "Kies een willekeurige kaart"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Klassiek"
 
@@ -2321,7 +2321,7 @@ msgstr "Onbekend commando"
 msgid "Unknown."
 msgstr "Onbekend commando"
 
-#: src/game/game_mode.cpp:323
+#: src/game/game_mode.cpp:319
 msgid "Unlimited"
 msgstr "Onbegrensd"
 

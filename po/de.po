@@ -628,7 +628,7 @@ msgstr "am Zuganfang"
 msgid "Benchmark"
 msgstr "Benchmark"
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
+#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Blitz"
 
@@ -742,7 +742,7 @@ msgstr "Online nach neuen Versionen suchen?"
 msgid "Choose randomly between the different maps"
 msgstr "Zufällige Karte auswählen"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Klassisch"
 
@@ -2332,7 +2332,7 @@ msgstr "Unbekannter Befehl vom Typ %i"
 msgid "Unknown."
 msgstr "Unbekannter Befehl"
 
-#: src/game/game_mode.cpp:323
+#: src/game/game_mode.cpp:319
 msgid "Unlimited"
 msgstr "Unbegrenzt"
 

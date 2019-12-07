@@ -679,7 +679,7 @@ msgstr "Przed działaniem"
 msgid "Benchmark"
 msgstr "Wydajność"
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
+#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Błyskawiczny"
 
@@ -795,7 +795,7 @@ msgstr "Sprawdzanie dostępności aktualizacji"
 msgid "Choose randomly between the different maps"
 msgstr "Wybiera mapę drogą losowania"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Klasyczny"
 
@@ -2391,7 +2391,7 @@ msgstr "Nieznane polecenie typu %i"
 msgid "Unknown."
 msgstr "Nieznane polecenie"
 
-#: src/game/game_mode.cpp:323
+#: src/game/game_mode.cpp:319
 msgid "Unlimited"
 msgstr "Bez ograniczeń"
 

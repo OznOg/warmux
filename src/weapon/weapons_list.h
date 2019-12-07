@@ -38,11 +38,9 @@ class WeaponsList
 {
 private:
   std::list<std::unique_ptr<Weapon>> m_weapons_list;
-  Weapon* GetNextWeapon(uint sort, uint index);
 
-  /* if you need to use this, implement it */
-  WeaponsList(const WeaponsList &a_list);
-
+  template <class... Weapon>
+  void allocate();
 public:
   WeaponsList(const xmlNode* weapons_xml);
 

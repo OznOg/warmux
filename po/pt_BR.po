@@ -632,7 +632,7 @@ msgstr "Após a ação"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
+#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Blitz"
 
@@ -751,7 +751,7 @@ msgstr "Verificar atualizações online?"
 msgid "Choose randomly between the different maps"
 msgstr "Escolher de format aleatória entre os mapas"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Classico"
 
@@ -2309,7 +2309,7 @@ msgstr "Comando desconhecido"
 msgid "Unknown."
 msgstr "Comando desconhecido"
 
-#: src/game/game_mode.cpp:323
+#: src/game/game_mode.cpp:319
 msgid "Unlimited"
 msgstr "Ilimitado"
 

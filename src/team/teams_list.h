@@ -70,7 +70,7 @@ public:
   void NextTeam();
   Team* GetNextTeam();
   Team& ActiveTeam();
-  void LoadGamingData(WeaponsList * weapons_list);
+  void LoadGamingData(WeaponsList &weapons_list);
   void UnloadGamingData();
   void Clear() { selection.clear(); playing_list.clear(); }
   void RandomizeFirstPlayer();

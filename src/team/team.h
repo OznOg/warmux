@@ -104,7 +104,7 @@ public:
   CrossHair        crosshair;
   TeamEnergy       energy;
 
-  void LoadGamingData(WeaponsList * weapons);
+  void LoadGamingData(WeaponsList &weapons);
   void UnloadGamingData();
 
   bool IsSameAs(const Team& other) const { return m_id == other.m_id; }

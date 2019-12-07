@@ -190,7 +190,7 @@ void TeamsList::LoadList()
 
 //-----------------------------------------------------------------------------
 
-void TeamsList::LoadGamingData(WeaponsList * weapons_list)
+void TeamsList::LoadGamingData(WeaponsList &weapons_list)
 {
   //std::sort(playing_list.begin(), playing_list.end(), compareTeams); // needed to fix bug #9820
 

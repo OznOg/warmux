@@ -823,7 +823,7 @@ msgstr "Înaintea acțiunii"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
+#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Bliț"
 
@@ -942,7 +942,7 @@ msgstr "Se verifică actualizările online?"
 msgid "Choose randomly between the different maps"
 msgstr "Alege la întâmplare una din diferitele hărți"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Clasic"
 
@@ -2514,7 +2514,7 @@ msgstr "Comandă necunoscută"
 msgid "Unknown."
 msgstr "Comandă necunoscută"
 
-#: src/game/game_mode.cpp:323
+#: src/game/game_mode.cpp:319
 msgid "Unlimited"
 msgstr "nelimitat"
 

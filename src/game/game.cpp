@@ -302,7 +302,7 @@ void Game::InitWeapons()
   }
 
   if (!weapons_list) {
-    weapons_list = GameMode::GetInstance()->GetWeaponsList();
+    weapons_list = &GameMode::GetInstance()->GetWeaponsList();
   }
 }
 
@@ -322,7 +322,7 @@ void Game::InitTeams()
 
   // Load the teams
   ASSERT(weapons_list); // weapons must be initialized before the teams
-  GetTeamsList().LoadGamingData(weapons_list);
+  GetTeamsList().LoadGamingData(*weapons_list);
 
   GetTeamsList().InitEnergy();
 

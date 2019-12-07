@@ -36,46 +36,21 @@
 
 //-----------------------------------------------------------------------------
 
+template<class... WeaponType>
+void WeaponsList::allocate() {
+  auto unused = { (m_weapons_list.emplace_back(new WeaponType), 0)... };
+  (void)unused;
+}
+
 WeaponsList::WeaponsList(const xmlNode* weapons_xml)
 {
-  // First launcher weapons
-  m_weapons_list.emplace_back(new AnvilLauncher);
-  m_weapons_list.emplace_back(new TuxLauncher);
-  m_weapons_list.emplace_back(new GnuLauncher);
-  m_weapons_list.emplace_back(new PolecatLauncher);
-  m_weapons_list.emplace_back(new BounceBallLauncher);
-  m_weapons_list.emplace_back(new Bazooka);
-  m_weapons_list.emplace_back(new AutomaticBazooka);
-  m_weapons_list.emplace_back(new GrenadeLauncher);
-  m_weapons_list.emplace_back(new DiscoGrenadeLauncher);
-  m_weapons_list.emplace_back(new ClusterLauncher);
-  m_weapons_list.emplace_back(new FootBombLauncher);
-  m_weapons_list.emplace_back(new RiotBomb);
-  m_weapons_list.emplace_back(new Cluzooka);
-  m_weapons_list.emplace_back(new SubMachineGun);
-  m_weapons_list.emplace_back(new Gun);
-  m_weapons_list.emplace_back(new Shotgun);
-  m_weapons_list.emplace_back(new SnipeRifle);
-  m_weapons_list.emplace_back(new RailGun);
-  m_weapons_list.emplace_back(new Dynamite);
-  m_weapons_list.emplace_back(new FlameThrower);
-  m_weapons_list.emplace_back(new Mine);
-
-  // Add other weapons
-  m_weapons_list.emplace_back(new Baseball);
-  m_weapons_list.emplace_back(new AirAttack);
-  m_weapons_list.emplace_back(new Slap);
-  m_weapons_list.emplace_back(new Teleportation);
-  m_weapons_list.emplace_back(new Parachute);
-  m_weapons_list.emplace_back(new Suicide);
-  m_weapons_list.emplace_back(new SkipTurn);
-  m_weapons_list.emplace_back(new JetPack);
-  m_weapons_list.emplace_back(new Airhammer);
-  m_weapons_list.emplace_back(new Construct);
-  m_weapons_list.emplace_back(new LowGrav);
-  m_weapons_list.emplace_back(new Grapple);
-  m_weapons_list.emplace_back(new Blowtorch);
-  m_weapons_list.emplace_back(new Syringe);
+  allocate<AnvilLauncher, TuxLauncher, GnuLauncher,
+          PolecatLauncher, BounceBallLauncher, Bazooka, AutomaticBazooka,
+          GrenadeLauncher, DiscoGrenadeLauncher, ClusterLauncher, FootBombLauncher,
+          RiotBomb, Cluzooka, SubMachineGun, Gun, Shotgun, SnipeRifle, RailGun,
+          Dynamite, FlameThrower, Mine, Baseball, AirAttack, Slap, Teleportation,
+          Parachute, Suicide, SkipTurn, JetPack, Airhammer, Construct, LowGrav,
+          Grapple, Blowtorch, Syringe>();
 
   Init(weapons_xml);
 }

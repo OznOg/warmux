@@ -619,7 +619,7 @@ msgstr "Enne käiku"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
+#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Välk"
 
@@ -740,7 +740,7 @@ msgstr "Kas kontrollida uut väljalaset onlainis?"
 msgid "Choose randomly between the different maps"
 msgstr "Võta mänguväljade hulgast suvaline"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Klassikaline"
 
@@ -2302,7 +2302,7 @@ msgstr "Tundmatu käsk"
 msgid "Unknown."
 msgstr "Tundmatu käsk"
 
-#: src/game/game_mode.cpp:323
+#: src/game/game_mode.cpp:319
 msgid "Unlimited"
 msgstr "Piiramatu"
 

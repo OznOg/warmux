@@ -37,7 +37,7 @@ class WeaponsList;
 class GameMode : public Singleton<GameMode>
 {
   ConfigElementList  main_settings;
-  WeaponsList       *weapons_list;
+  std::unique_ptr<WeaponsList> weapons_list;
   std::string txt;
 
 public:
@@ -104,7 +104,7 @@ private:
 public:
   const std::string& GetName() const { return m_current; }
 
-  WeaponsList* GetWeaponsList() { return weapons_list; }
+  WeaponsList &GetWeaponsList() { return *weapons_list; }
   int GetMaxTeamsPerNetworkPlayer() { return max_teams -1; }
 
   bool Load(void);

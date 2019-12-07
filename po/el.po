@@ -640,7 +640,7 @@ msgstr "Πριν τη δράση"
 msgid "Benchmark"
 msgstr "Benchmark"
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
+#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Αστραπιαίος πόλεμος"
 
@@ -756,7 +756,7 @@ msgstr "Έλεγχος ενημερώσεων στο διαδίκτυο;"
 msgid "Choose randomly between the different maps"
 msgstr "Επίλεξε τυχαία έναν μεταξύ των διαφορετικών χαρτών"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Κλασικό"
 
@@ -2372,7 +2372,7 @@ msgstr "Άγνωστη εντολή τύπου %i "
 msgid "Unknown."
 msgstr "Άγνωστη εντολή"
 
-#: src/game/game_mode.cpp:323
+#: src/game/game_mode.cpp:319
 msgid "Unlimited"
 msgstr "Απεριόριστο"
 

@@ -336,9 +336,9 @@ Character* Team::FindByIndex(uint index)
   return &(*it);
 }
 
-void Team::LoadGamingData(WeaponsList * weapons)
+void Team::LoadGamingData(WeaponsList &weapons)
 {
-  weapons_list = weapons;
+  weapons_list = &weapons;
   current_turn = 0;
 
   // Reset ammos

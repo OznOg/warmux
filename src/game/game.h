@@ -102,7 +102,7 @@ private:
   static uint         last_unique_id;
   uint                m_current_turn;
   Text                waiting_for_network_text;
-  WeaponsList *       weapons_list;
+  WeaponsList        *weapons_list;
 
   void Draw();        // Draw to screen
 

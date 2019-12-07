@@ -627,7 +627,7 @@ msgstr "Innan handling"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
+#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Blixtanfall"
 
@@ -746,7 +746,7 @@ msgstr "Leta uppdateringar online?"
 msgid "Choose randomly between the different maps"
 msgstr "Välj slumpmässigt mellan de olika banorna"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Klassisk"
 
@@ -2303,7 +2303,7 @@ msgstr "Okänt kommando"
 msgid "Unknown."
 msgstr "Okänt kommando"
 
-#: src/game/game_mode.cpp:323
+#: src/game/game_mode.cpp:319
 msgid "Unlimited"
 msgstr "Obegränsat"
 

@@ -131,10 +131,6 @@ GameMode::~GameMode()
     delete doc_objects;
     doc_objects = nullptr;
   }
-  if (weapons_list) {
-    delete weapons_list;
-    weapons_list = nullptr;
-  }
 }
 
 // Load data options from the selected game_mode
@@ -162,9 +158,9 @@ bool GameMode::LoadXml()
   if (weapons_list)
     weapons_list->Init(elem);
   else
-    weapons_list = new WeaponsList(elem);
+    weapons_list = std::make_unique<WeaponsList>(elem);
 
-  return weapons_list;
+  return bool(weapons_list);
 }
 
 bool GameMode::Load(void)

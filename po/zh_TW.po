@@ -563,7 +563,7 @@ msgstr "開始動作前"
 msgid "Benchmark"
 msgstr "評測"
 
-#: src/game/game_mode.cpp:324 src/menu/game_mode_editor.cpp:103
+#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "閃電戰"
 
@@ -680,7 +680,7 @@ msgstr "線上檢查更新？"
 msgid "Choose randomly between the different maps"
 msgstr "在不同地圖間隨機選擇"
 
-#: src/game/game_mode.cpp:322 src/menu/game_mode_editor.cpp:102
+#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "一般"
 
@@ -2266,7 +2266,7 @@ msgstr "未知的指令類型 %i"
 msgid "Unknown."
 msgstr "未知的指令"
 
-#: src/game/game_mode.cpp:323
+#: src/game/game_mode.cpp:319
 msgid "Unlimited"
 msgstr "無限制"
 
