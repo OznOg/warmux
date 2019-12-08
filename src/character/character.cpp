@@ -94,9 +94,9 @@ const int MAX_FALLING_HEIGHT=20;
 
 /* FIXME This methode is really strange, all this should probably be done in
  * constructor of Body...*/
-void Character::SetBody(Body * char_body)
+void Character::SetBody(std::unique_ptr<Body> char_body)
 {
-  body = char_body;
+  body = std::move(char_body);
   body->SetOwner(this);
   SetClothe("normal");
   SetMovement("breathe");
@@ -148,7 +148,7 @@ Character::Character(Team& my_team, const std::string &name, Body *char_body) :
   SetCollisionModel(true, true, true);
   /* body stuff */
   ASSERT(char_body);
-  SetBody(char_body);
+  SetBody(std::unique_ptr<Body>(char_body));
 
   ResetConstants();
   // Allow player to go outside of map by upper bound (bug #10420)
@@ -204,8 +204,7 @@ Character::Character(const Character& acharacter) :
   particle_engine(new ParticleEngine(250)),
   is_playing(acharacter.is_playing),
   last_direction_change(0),
-  previous_strength(acharacter.previous_strength),
-  body(nullptr)
+  previous_strength(acharacter.previous_strength)
 {
   energy_bar = new EnergyBar(acharacter.energy_bar->GetX(),
                              acharacter.energy_bar->GetY(),
@@ -219,8 +218,7 @@ Character::Character(const Character& acharacter) :
   SetEnergy(GameMode::GetInstance()->character.init_energy, nullptr);
 
   if (acharacter.body) {
-    Body * newBody = new Body(*acharacter.body);
-    SetBody(newBody);
+    SetBody(std::make_unique<Body>(*acharacter.body));
   }
 
   if (acharacter.name_text) {
@@ -234,9 +232,6 @@ Character::~Character()
 {
   MSG_DEBUG("character", "Unload character %s at %p",
             character_name.c_str(), this);
-  if (body) {
-    delete body;
-  }
   if (name_text) {
     delete name_text;
   }
@@ -246,7 +241,6 @@ Character::~Character()
   if (energy_bar) {
     delete energy_bar;
   }
-  body            = nullptr;
   name_text       = nullptr;
   particle_engine = nullptr;
   energy_bar      = nullptr;

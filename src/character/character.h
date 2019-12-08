@@ -91,7 +91,7 @@ public:
   // Previous strength
   Double previous_strength;
 
-  Body* body;
+  std::unique_ptr<Body> body;
 
 private:
   bool MustDrawLostEnergy() const;
@@ -107,7 +107,7 @@ private:
                                      PhysicalObj * obj,
                                      const Point2d& obj_speed) override;
   void Collision(const Point2d& speed_vector, const Double& contactAngle);
-  void SetBody(Body* char_body);
+  void SetBody(std::unique_ptr<Body> char_body);
 
   void UpdateFiringAngle();
   void AddFiringAngle(Double angle) { SetFiringAngle(firing_angle + angle); };
@@ -224,7 +224,7 @@ public:
   void ResetDamageStats();
 
   // Body handling
-  Body * GetBody() { return body; };
+  Body &GetBody() { return *body; };
   void SetWeaponClothe();
 
   // "force" option forces to apply the clothe/movement even if character is dead

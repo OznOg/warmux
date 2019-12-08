@@ -320,11 +320,11 @@ void Body::ApplyMovement(Movement * mvt,
       useCrossHair = ActiveTeam().AccessWeapon().UseCrossHair();
 
       if (mb_mvt.follow_crosshair &&
-          ActiveCharacter().body == this &&
+          &ActiveCharacter().GetBody() == this &&
           useCrossHair) {
         ProcessFollowCrosshair(mb_mvt);
       } else if (mb_mvt.follow_half_crosshair &&
-          ActiveCharacter().body == this &&
+          &ActiveCharacter().GetBody() == this &&
           useCrossHair) {
         ProcessFollowHalfCrosshair(mb_mvt);
       } else if (mb_mvt.follow_speed) {
