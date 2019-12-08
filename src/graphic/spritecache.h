@@ -56,14 +56,8 @@ class SpriteSubframeCache
 public:
   Surface              surface;
 
-  SpriteSubframeCache() { };
+  SpriteSubframeCache() = default;
   SpriteSubframeCache(const Surface& surf) : surface(surf) { };
-  SpriteSubframeCache(const SpriteSubframeCache& other)
-    : rotated(other.rotated)
-    , min(other.min)
-    , max(other.max)
-    , surface(other.surface)
-  { }
 
   Surface GetSurfaceForAngle(Double angle);
   void SetCache(uint num, const Double& mini, const Double& maxi);
