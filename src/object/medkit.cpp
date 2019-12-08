@@ -32,8 +32,7 @@
 #include "tool/resource_manager.h"
 #include "tool/xml_document.h"
 
-Sprite* Medkit::icon = nullptr;
-int Medkit::icon_ref = 0;
+std::weak_ptr<Sprite> Medkit::g_icon;
 MedkitSettings Medkit::settings;
 
 Medkit::Medkit()
@@ -48,21 +47,12 @@ Medkit::Medkit()
   anim->animation.SetLoopMode(false);
   anim->SetCurrentFrame(0);
 
-  if (!icon) {
-    icon = CreateIcon();
-  }
-  icon_ref++;
+  icon = g_icon.lock();
+
+  if (!icon)
+    g_icon = icon = CreateIcon();
 
   m_energy = settings.start_points;
-}
-
-Medkit::~Medkit()
-{
-  icon_ref--;
-  if (!icon_ref) {
-    delete icon;
-    icon = nullptr;
-  }
 }
 
 void Medkit::ApplyBonus(Character * c)

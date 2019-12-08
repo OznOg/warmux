@@ -106,7 +106,7 @@ msgid ""
 msgstr ""
 "%s har gjort noko bra for miljøet: Han har ikkje bedt stinkdyret om å fisa."
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s fekk %u livspoeng!"
@@ -144,7 +144,7 @@ msgid "%s needs a pause."
 msgstr "%s treng ein pause."
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "%s-laget har alt uendeleg ammunisjon for %s!"
@@ -1021,7 +1021,7 @@ msgstr ""
 "Viss du ikkje er kopla direkte til Internett, må du sjå til at rutaren er "
 "sett opp slik at TCP-porten %s vert vidaresend til maskina."
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "Feil: Finn ikkje innhaldet «%s» til laget «%s»."
@@ -1980,7 +1980,7 @@ msgstr "Laserrifle"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "Nokon har lagt ei bombe i kassen!"
 

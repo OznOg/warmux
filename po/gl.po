@@ -112,7 +112,7 @@ msgid ""
 "fart."
 msgstr "%s fixo algo polo medio ambiente: non lle mandou peidear á mofeta."
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s gañou %u puntos de enerxía!"
@@ -152,7 +152,7 @@ msgid "%s needs a pause."
 msgstr "%s pediu un descanso."
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "O equipo %s xa conta con munición infinita de %s!"
@@ -1056,7 +1056,7 @@ msgstr ""
 "ollada á configuración do router: o porto TCP %s ten que estar aberto para o "
 "teu computador."
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr ""
@@ -2020,7 +2020,7 @@ msgstr "Rifle de francotirador"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "Alguén puxo unha bomba trampa na caixa!"
 

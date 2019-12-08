@@ -108,7 +108,7 @@ msgid ""
 msgstr ""
 "%s は環境のために何かしたと、彼が屁をするためにスカンクに命令しませんでした。"
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, fuzzy, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s は %u ポイントのライフを獲得した！"
@@ -146,7 +146,7 @@ msgid "%s needs a pause."
 msgstr "%s はポーズが必要です"
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "%s チームの弾薬は %s によって無限だ！"
@@ -979,7 +979,7 @@ msgstr ""
 "あなたは直接インターネットに接続していないなら、ルーターを確認してください。"
 "TCP Port %s は、あなたのコンピュータにフォワーディングする必要があります。"
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "エラー: 見つかりません。 ボディ\"%s\" チーム \"%s\"."
@@ -1915,7 +1915,7 @@ msgstr "スナイパーライフル"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "誰かが箱に罠を仕掛けたぞ！"
 

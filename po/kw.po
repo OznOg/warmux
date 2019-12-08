@@ -108,7 +108,7 @@ msgid ""
 "fart."
 msgstr ""
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, fuzzy, c-format
 msgid "%s has won %u points of energy!"
 msgstr "Gwarier %s re gavas %u poynt a nerth!"
@@ -146,7 +146,7 @@ msgid "%s needs a pause."
 msgstr ""
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "Yma gans bara %s pelennow heb finwedh rag %s seulabrys!"
@@ -1110,7 +1110,7 @@ msgstr ""
 "osta junys yn tidro dhe'n Gesrosweyth, check fyttyans dha routyer: Res yw "
 "dhe'n Port TCP %s bos danvenys pella y'th jynn-amontya."
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "Gwall: Ny allas kavos an skyn \"%s\" rag an para \"%s\"."
@@ -2055,7 +2055,7 @@ msgstr "Kelsethwon"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "Nebonan a worras maglen voba a-berth y'n gyst!"
 

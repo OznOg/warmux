@@ -25,6 +25,8 @@
 #include <WARMUX_base.h>
 #include "object/objbox.h"
 
+#include <memory>
+
 // Forward declarations
 class Character;
 class Action;
@@ -34,14 +36,13 @@ class Weapon;
 class BonusBox : public ObjBox
 {
   const Weapon &weapon;
-  static Sprite* icon;
-  static int icon_ref;
+  std::shared_ptr<Sprite> icon;
+  static std::weak_ptr<Sprite> icon_cache;
 
   bool ExplodesInsteadOfBonus(Character * c);
   void ApplyBonus (Team &team, Character &character);
 public:
   BonusBox(const Weapon &weapon);
-  ~BonusBox() override;
 
   void ApplyBonus(Character *) override;
   const Surface* GetIcon() const override;

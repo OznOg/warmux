@@ -46,14 +46,15 @@ public:
 
 class Medkit : public ObjBox
 {
-  static Sprite* icon;
+  static std::weak_ptr<Sprite> g_icon;
   static int icon_ref;
   static MedkitSettings settings;
+
+  std::shared_ptr<Sprite> icon;
 
   void ApplyMedkit(Team &team, Character &character) const;
 public:
   Medkit();
-  ~Medkit() override;
 
   static ConfigElementList* GetConfigList() { return &settings; }
   void ApplyBonus(Character *) override;

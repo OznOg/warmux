@@ -115,7 +115,7 @@ msgid ""
 msgstr ""
 "%s a făcut ceva pentru mediu, a ordonat sconcsului să nu tragă vânturi."
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, fuzzy, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s a câștigat %u punct de energie!"
@@ -154,7 +154,7 @@ msgstr ""
 
 # XXX: having "the" there is not that smart, translations might not make sense.
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "Echipa %s are deja muniție infinită pentru %s!"
@@ -1227,7 +1227,7 @@ msgstr ""
 "Dacă nu ai conexiune directă la internet, verifică configurația router-ului: "
 "Portul TCP %s trebuie să fie redirectat către calculatorul tău."
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "Eroare: corpul „%s” pentru echipa „%s” nu poate fi găsit."
@@ -2173,7 +2173,7 @@ msgstr "Pușcă cu lunetă"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "Cineva a pus o capcană în cutie!"
 

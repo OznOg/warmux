@@ -37,8 +37,7 @@
 #include "tool/xml_document.h"
 #include "tool/string_tools.h"
 
-Sprite* BonusBox::icon = nullptr;
-int BonusBox::icon_ref = 0;
+std::weak_ptr<Sprite> BonusBox::icon_cache;
 
 BonusBox::BonusBox(const Weapon &weapon):
   ObjBox("bonus_box"),
@@ -53,18 +52,10 @@ BonusBox::BonusBox(const Weapon &weapon):
   anim->animation.SetLoopMode(false);
   anim->SetCurrentFrame(0);
 
-  if (!icon) {
-    icon = CreateIcon();
-  }
-  icon_ref++;
-}
+  icon = icon_cache.lock();
 
-BonusBox::~BonusBox()
-{
-  icon_ref--;
-  if (!icon_ref) {
-    delete icon;
-    icon = nullptr;
+  if (!icon) {
+    icon_cache = icon = CreateIcon();
   }
 }
 
@@ -119,7 +110,7 @@ bool BonusBox::ExplodesInsteadOfBonus(Character * c)
 
 const Surface* BonusBox::GetIcon() const
 {
-  ASSERT(icon);
+  ASSERT(icon != nullptr);
   icon->SetCurrentFrame(anim->GetCurrentFrame());
   icon->RefreshSurface();
   return &icon->GetSurface();

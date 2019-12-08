@@ -104,7 +104,7 @@ msgid ""
 "fart."
 msgstr "%s 是個環境殺手，明明沒有叫那隻臭鼬放響屁！"
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s 得到了 %u 點生命值！"
@@ -142,7 +142,7 @@ msgid "%s needs a pause."
 msgstr "%s 需要暫停。"
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "%s 隊已經有無限發 %s 彈藥了！"
@@ -967,7 +967,7 @@ msgstr ""
 "線。如果你不是直接連接到網路上的話，檢查路由器配置：TCP 埠 %s 必須導向你的電"
 "腦。"
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "錯誤：無法找到「%s」供隊伍「%s」使用。"
@@ -1930,7 +1930,7 @@ msgstr "狙擊步槍"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "有人在箱子裡面放了陷阱！"
 

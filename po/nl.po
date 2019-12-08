@@ -110,7 +110,7 @@ msgstr ""
 "%s heeft iets goeds voor het milieu gedaan, dankzij hem heeft het stinkdier "
 "geen bouten gelegd."
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, fuzzy, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s heeft %u punt energie gekregen!"
@@ -148,7 +148,7 @@ msgid "%s needs a pause."
 msgstr "%s heeft een momentje rust nodig."
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "Team %s heeft al oneindige munitie voor %s!"
@@ -1045,7 +1045,7 @@ msgstr ""
 "Contoleer uw router configuratie wanneer u niet direct met het internet "
 "verbonden bent: TCP Poort %s moet doorgestuurd worden naar deze computer."
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "Fout: kan het lichaam \"%s\" voor het team \"%s\" niet vinden."
@@ -1984,7 +1984,7 @@ msgstr "Scherpschuttersgeweer"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "Iemand heeft een fopcadeau gemaakt!"
 

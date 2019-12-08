@@ -93,7 +93,7 @@ void TopCharacters::merge(const TopCharacters* other)
 void TopCharacters::rankPlayer(const Character *player)
 {
   TopCharacters           top;
-  const DamageStatistics  *stats = player->GetDamageStats();
+  const auto &stats = player->GetDamageStats();
 
   // Build a pseudo top from that player
   top.Violent  = player;
@@ -103,14 +103,14 @@ void TopCharacters::rankPlayer(const Character *player)
   top.Clumsy   = player;
   top.Accurate = player;
 
-  top.violence    = stats->GetMostDamage();
-  top.accuracy    = stats->GetAccuracy();
-  top.usefulness  = stats->GetOthersDamage();
-  top.uselessness = stats->GetOthersDamage();
-  top.treachery   = stats->GetFriendlyFireDamage();
-  top.clumsyness  = stats->GetItselfDamage();
-  top.accuracy    = stats->GetAccuracy();
-  top.death_time  = stats->GetDeathTime();
+  top.violence    = stats.GetMostDamage();
+  top.accuracy    = stats.GetAccuracy();
+  top.usefulness  = stats.GetOthersDamage();
+  top.uselessness = stats.GetOthersDamage();
+  top.treachery   = stats.GetFriendlyFireDamage();
+  top.clumsyness  = stats.GetItselfDamage();
+  top.accuracy    = stats.GetAccuracy();
+  top.death_time  = stats.GetDeathTime();
 
   merge(&top);
 }

@@ -112,7 +112,7 @@ msgstr ""
 "Wir danken %s für sein Umweltengagement, denn er hat das Stinktier nicht "
 "furzen lassen."
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s hat %u Lebenspunkte gewonnen!"
@@ -150,7 +150,7 @@ msgid "%s needs a pause."
 msgstr "%s braucht eine Pause."
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "Team %s hat bereits unendlich Munition für %s!"
@@ -1031,7 +1031,7 @@ msgstr ""
 "Prüfe die Routerkonfiguration, falls du nicht direkt mit dem Internet "
 "verbunden bist: TCP-Port %s muss an deinem Computer weitergeleitet werden."
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "Fehler: kann den Körper »%s« für Team »%s« nicht finden."
@@ -1989,7 +1989,7 @@ msgstr "Scharfschützengewehr"
 msgid "Social"
 msgstr "social"
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "In der Kiste war eine Sprengfalle versteckt!"
 

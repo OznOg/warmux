@@ -25,6 +25,8 @@
 #include "object/physical_obj.h"
 #include "sound/sound_sample.h"
 
+#include <memory>
+
 class Team;
 class Character;
 class Sprite;
@@ -67,7 +69,7 @@ protected:
   void SignalGhostState(bool was_already_dead) override;
 
   // This returns you a scaled version of your anim Sprite*
-  Sprite *CreateIcon();
+  std::shared_ptr<Sprite> CreateIcon();
 };
 
 //-----------------------------------------------------------------------------

@@ -122,8 +122,6 @@ Team::~Team() { }
 
 void Team::AddOnePlayingCharacter(const std::string& character_name, Body *body)
 {
-  // Valgrind reports a leak here of what seems to be containers for the
-  // temporaries created here (32B?). See more some lines below
   Character new_char(*this, character_name, body);
 
   if (!new_char.PutRandomly(false, GetWorld().GetDistanceBetweenCharacters())) {
@@ -139,9 +137,6 @@ void Team::AddOnePlayingCharacter(const std::string& character_name, Body *body)
   }
   new_char.Init();
 
-  // And one more leak for the actual element (created through copy, 64B)
-  // pushed to the std::list
-  // No idea why, it's eating num_games * num_chars * 2 * 32B
   characters.push_back(new_char);
 
   MSG_DEBUG("team", "Add %s in team %s", character_name.c_str(), m_name.c_str());

@@ -107,7 +107,7 @@ msgid ""
 "fart."
 msgstr "%s 造成了环境影响，明明没给那只臭鼬下命令！"
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s 取得了 %u 点能量！"
@@ -145,7 +145,7 @@ msgid "%s needs a pause."
 msgstr "%s 需要叫暂停。"
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "%s 队有无穷的 %s弹夹！"
@@ -962,7 +962,7 @@ msgstr ""
 "连接。加入你不能直接连接互联网，检查路由器设置：TCP端口 %s 必须在你计算机端口"
 "之前。"
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "错误: 找不到 body\"%s\" 队伍 \"%s\"。"
@@ -1917,7 +1917,7 @@ msgstr "狙击步枪"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "有人在箱子里布置了炸弹作礼物！"
 

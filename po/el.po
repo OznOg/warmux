@@ -110,7 +110,7 @@ msgid ""
 msgstr ""
 "Ο %s έκανε κάτι για το περιβάλλον, δε διέταξε τον ασβό να αφήσει αέρια."
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, c-format
 msgid "%s has won %u points of energy!"
 msgstr "Ο παίκτης %s κέρδισε %u πόντους ζωής!"
@@ -148,7 +148,7 @@ msgid "%s needs a pause."
 msgstr "Ο %s χρειάζεται ένα διάλειμμα."
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "Η ομάδα %s έχει ήδη άπειρα πυρομαχικά για  %s!"
@@ -1057,7 +1057,7 @@ msgstr ""
 "ρύθμιση του δρομολογητή:  Η TCP θύρα %s πρέπει να διαβιβάζεται στον "
 "υπολογιστή σας."
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "Λάθος: αδύνατον να βρεθεί το σώμα \"%s\" για την ομάδα \"%s\"."
@@ -2024,7 +2024,7 @@ msgstr "Τουφέκι με σκόπευτρο"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "Κάποιος παγίδευσε το κιβώτιο!"
 

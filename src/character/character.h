@@ -28,6 +28,8 @@
 #include "object/physical_obj.h"
 #include "interface/movable_by_user.h"
 
+#include <memory>
+
 class Body;
 class Text;
 class Team;
@@ -54,7 +56,7 @@ class Character : public PhysicalObj, public MovableByUser
   uint disease_damage_per_turn;
   uint disease_duration; // std::numeric_limits<uint>::max() means unlimited
 
-  DamageStatistics *damage_stats;
+  std::unique_ptr<DamageStatistics> damage_stats;
   EnergyBar * energy_bar;
 
   // survived games
@@ -218,7 +220,7 @@ public:
   void GetRelativeHandPosition(Point2i & result) const;
 
   // Damage report
-  const DamageStatistics* GetDamageStats() const { return damage_stats; };
+  const DamageStatistics &GetDamageStats() const { return *damage_stats; };
   void ResetDamageStats();
 
   // Body handling

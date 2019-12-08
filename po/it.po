@@ -110,7 +110,7 @@ msgstr ""
 "%s ha fatto qualcosa per l'ambiente, non ha ordinato alla puzzola di "
 "scoreggiare."
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, fuzzy, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s ha vinto %u punto di vita!"
@@ -148,7 +148,7 @@ msgid "%s needs a pause."
 msgstr "%s ha bisogno di una pausa."
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "La squadra %s ha già munizioni infinite per %s!"
@@ -1029,7 +1029,7 @@ msgstr ""
 "configurazione del tuo router: Porta TCP %s deve essere re direzionata al "
 "tuo computer."
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "Errore: impossibile trovare l'aspetto \"%s\" per la squadra \"%s\"."
@@ -1968,7 +1968,7 @@ msgstr "Fucile da Cecchino"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "Qualcuno ha messo una trappola esplosiva nella scatola!"
 

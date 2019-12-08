@@ -149,7 +149,7 @@ public:
 
     //Most violent
     if (player)
-      box = new ResultBox(size.x, _("Most violent"), player->GetDamageStats()->GetMostDamage(), player);
+      box = new ResultBox(size.x, _("Most violent"), player->GetDamageStats().GetMostDamage(), player);
     else
       box = new ResultBox(size.x, _("Most violent"));
     AddWidget(box);
@@ -157,7 +157,7 @@ public:
     //Most useful
     player = res->getMostUseful();
     if (player)
-      box = new ResultBox(size.x, _("Most useful"), player->GetDamageStats()->GetOthersDamage(), player);
+      box = new ResultBox(size.x, _("Most useful"), player->GetDamageStats().GetOthersDamage(), player);
     else
       box = new ResultBox(size.x, _("Most useful"));
     AddWidget(box);
@@ -165,7 +165,7 @@ public:
     //Most useless
     player = res->getMostUseless();
     if (player)
-      box = new ResultBox(size.x, _("Most useless"), player->GetDamageStats()->GetOthersDamage(), player);
+      box = new ResultBox(size.x, _("Most useless"), player->GetDamageStats().GetOthersDamage(), player);
     else
       box = new ResultBox(size.x, _("Most useless"));
     AddWidget(box);
@@ -173,7 +173,7 @@ public:
     // Biggest sold-out
     player = res->getBiggestTraitor();
     if (player)
-      box = new ResultBox(size.x, _("Most sold-out"), player->GetDamageStats()->GetFriendlyFireDamage(), player);
+      box = new ResultBox(size.x, _("Most sold-out"), player->GetDamageStats().GetFriendlyFireDamage(), player);
     else
       box = new ResultBox(size.x, _("Most sold-out"));
     AddWidget(box);
@@ -181,7 +181,7 @@ public:
     // Most clumsy
     player = res->getMostClumsy();
     if (player)
-      box = new ResultBox(size.x, _("Clumsiest"), player->GetDamageStats()->GetItselfDamage(), player);
+      box = new ResultBox(size.x, _("Clumsiest"), player->GetDamageStats().GetItselfDamage(), player);
     else
       box = new ResultBox(size.x, _("Clumsiest"));
     AddWidget(box);
@@ -189,7 +189,7 @@ public:
     // Most accurate
     player = res->getMostAccurate();
     if (player)
-      box = new ResultBox(size.x, _("Most accurate"), player->GetDamageStats()->GetAccuracy(), player);
+      box = new ResultBox(size.x, _("Most accurate"), player->GetDamageStats().GetAccuracy(), player);
     else
       box = new ResultBox(size.x, _("Most accurate"));
     AddWidget(box);

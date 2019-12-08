@@ -160,10 +160,10 @@ void ObjBox::SignalGhostState(bool /*was_already_dead*/)
   Explode();
 }
 
-Sprite* ObjBox::CreateIcon()
+std::shared_ptr<Sprite> ObjBox::CreateIcon()
 {
   ASSERT(anim);
-  Sprite *icon = new Sprite(*anim);
+  auto icon = std::make_shared<Sprite>(*anim);
   icon->Scale(0.4, 0.4);
   icon->FixParameters();
   return icon;

@@ -108,7 +108,7 @@ msgstr ""
 "%s a fait un geste pour l'environnement, il n'a pas ordonné au putois de "
 "péter."
 
-#: src/object/medkit.cpp:77
+#: src/object/medkit.cpp:67
 #, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s a gagné %u points de vie !"
@@ -146,7 +146,7 @@ msgid "%s needs a pause."
 msgstr "%s a besoin d'une pause"
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:88
+#: src/object/bonus_box.cpp:79
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "L'équipe %s a déjà un nombre illimité de munitions pour l'arme %s !"
@@ -1046,7 +1046,7 @@ msgstr ""
 "configuration de votre routeur : le port TCP %s doit être redirigé vers "
 "votre ordinateur."
 
-#: src/team/team.cpp:162
+#: src/team/team.cpp:157
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "Erreur : impossible de trouver le skin \"%s\" pour l'équipe \"%s\"."
@@ -2007,7 +2007,7 @@ msgstr "Fusil à lunette"
 msgid "Social"
 msgstr ""
 
-#: src/object/bonus_box.cpp:75
+#: src/object/bonus_box.cpp:66
 msgid "Someone put a booby trap into the crate!"
 msgstr "Quelqu'un a placé un piège dans cette boîte !"
 
