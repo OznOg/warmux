@@ -61,9 +61,6 @@ Video::Video()
   SDL_WM_SetIcon(icon, nullptr);
 #endif
 
-  window.SetSurface(nullptr, false);
-  window.SetAutoFree(false);
-
   ComputeAvailableConfigs();
 
   // See if we can add the current config resolution
@@ -177,7 +174,7 @@ bool Video::__SetConfig(const int width, const int height, const bool _fullscree
   flags = 0;
 #endif
 
-  window.SetSurface(SDL_SetVideoMode(width, height, bpp, flags));
+  window.SetSurface(SDL_SetVideoMode(width, height, bpp, flags), false);
   if (window.IsNull())
     return false;
 
@@ -241,7 +238,7 @@ bool Video::SetConfig(const int width, const int height, const bool _fullscreen)
 void Video::ToggleFullscreen()
 {
 #ifndef WIN32
-  SDL_WM_ToggleFullScreen(window.GetSurface());
+  SDL_WM_ToggleFullScreen(window.GetSurface().lock().get());
   fullscreen = !fullscreen;
 #else
   SetConfig(window.GetWidth(), window.GetHeight(), !fullscreen);

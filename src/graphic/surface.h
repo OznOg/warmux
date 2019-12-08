@@ -29,31 +29,31 @@
 #include <WARMUX_point.h>
 #include <WARMUX_rectangle.h>
 
+#include <memory>
+
 struct SDL_Surface;
 struct SDL_PixelFormat;
 
 class Surface
 {
 private:
-  SDL_Surface* surface;
-  bool autoFree;
+  
+  std::shared_ptr<SDL_Surface> surface;
   int Blit(const Surface& src, SDL_Rect *srcRect, SDL_Rect *dstRect);
   static SDL_Rect GetSDLRect(const Rectanglei &r);
   static SDL_Rect GetSDLRect(const Point2i &r);
 
 public:
-  /**
-   * Default constructor.
-   *
-   * Build a null surface with autoFree at true.
-   */
-  explicit Surface() : surface(nullptr), autoFree(true) { };
+
+  Surface() = default;
+
   /**
    * Constructor building a surface object using an existing SDL_Surface pointer.
    *
    * @param sdl_surface The existing sdl_surface.
    */
-  explicit Surface(SDL_Surface *sdl_surface) : surface(sdl_surface), autoFree(true) { };
+  explicit Surface(SDL_Surface *sdl_surface) : surface(sdl_surface, SDL_FreeSurface) { }
+  explicit Surface(std::weak_ptr<SDL_Surface> sdl_surface) : surface(sdl_surface) { }
   /**
    * Constructor building a surface object using the NewSurface function.
    *
@@ -63,48 +63,32 @@ public:
    * @see NewSurface
    */
   explicit Surface(const Point2i &size, Uint32 flags, bool useAlpha = true)
-  : surface(nullptr), autoFree(true) { NewSurface(size, flags, useAlpha); }
+  : surface(nullptr) { NewSurface(size, flags, useAlpha); }
   explicit Surface(const std::string &filename);
-  Surface(const Surface &src);
-  /**
-   * Destructor of the surface.
-   *
-   * Will free the memory used by the surface if autoFree is set to true and if the counter of reference reach 0
-   */
-  ~Surface() { AutoFree(); };
 
-  Surface &operator=(const Surface &src);
-
-  void Free();
-  void AutoFree() { if (autoFree) Free(); };
-  /**
-   * Set the auto free status of a surface.
-   *
-   * In general it should always be true for non-system surface.
-   * @param newAutoFree the new autoFree status.
-   */
-  void SetAutoFree(bool newAutoFree) { autoFree = newAutoFree; };
+  Surface(const Surface &src) = default;
+  Surface &operator=(const Surface &src) = default;
 
   /**
    * Change the surface pointer.
    *
    * @param newSurface The new surface to use.
-   * @param freePrevius Indicate if the old surface should be freed.
+   * @param freePrevius Indicate if the SDL surface is not owned (Surface is
+   *                    then just a wrapper to handle calls).
    */
   void SetSurface(SDL_Surface *newSurface, bool freePrevious = true){
-    if (freePrevious)
-      Free();
-
-    surface = newSurface;
+    if (freePrevious) {
+        surface = std::shared_ptr<SDL_Surface>(newSurface, SDL_FreeSurface);
+    } else {
+        surface = std::shared_ptr<SDL_Surface>(newSurface, [] (auto &) { /* NOP */});
+    }
   }
 
   /**
    * Return the pointer of the SDL_Surface.
-   *
-   * Should be used carefully.
    */
-  SDL_Surface *GetSurface() { return surface; };
-  const SDL_Surface *GetSurface() const { return surface; };
+  std::weak_ptr<SDL_Surface> GetSurface() { return surface; };
+  const std::weak_ptr<SDL_Surface> GetSurface() const { return surface; };
 
   void NewSurface(const Point2i &size, Uint32 flags, bool useAlpha = true);
   int SetAlpha(Uint32 flags, Uint8 alpha);
@@ -157,7 +141,7 @@ public:
   int FillRect(const Rectanglei &dstRect, Uint32 color) const;
   int FillRect(const Rectanglei &dstRect, const Color &color) const;
 
-  int ImgLoad(const std::string& filename);
+  bool ImgLoad(const std::string& filename);
   bool ImgSave(const std::string& filename, bool bmp=false);
   Surface RotoZoom(Double angle, Double zoomx, Double zoomy);
   Surface DisplayFormatAlpha();

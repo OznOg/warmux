@@ -127,9 +127,6 @@ void Water::Free()
   if (!IsActive()) {
     return;
   }
-
-  surface.Free();
-  pattern.Free();
 }
 
 void Water::Refresh()

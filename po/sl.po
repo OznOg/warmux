@@ -20,7 +20,7 @@ msgstr ""
 "n%100==4 ? 2 : 3);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/map/maps_list.cpp:382
+#: src/map/maps_list.cpp:373
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Karta %s ni bila najdena :-("
@@ -542,7 +542,7 @@ msgstr "Spremeni skupino orožja"
 msgid "'Tool' weapon category"
 msgstr "Spremeni skupino orožja"
 
-#: src/interface/interface.cpp:287
+#: src/interface/interface.cpp:283
 msgid "(dead)"
 msgstr "(mrtev)"
 
@@ -556,7 +556,7 @@ msgid "(unknown time)"
 msgstr "(čas ni znan)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:310
+#: src/interface/interface.cpp:306
 msgid "(unlimited)"
 msgstr "(neomejeno)"
 
@@ -1209,7 +1209,7 @@ msgid "Have a good game!"
 msgstr "Uživajte v igri!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Poveljnik"
@@ -1402,7 +1402,7 @@ msgstr "Miška za levičarje?"
 msgid "Lists the connected players"
 msgstr "Izpiši seznam povezanih igralcev"
 
-#: src/map/maps_list.cpp:279
+#: src/map/maps_list.cpp:270
 msgid "Load maps:"
 msgstr "Nalaganje kart:"
 
@@ -2059,7 +2059,7 @@ msgstr "Zvoki"
 msgid "Starting a new game"
 msgstr "Zagon nove igre"
 
-#: src/interface/interface.cpp:311
+#: src/interface/interface.cpp:307
 msgid "Stock:"
 msgstr "Zaloga:"
 
@@ -2331,12 +2331,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Ni bilo mogoče kontaktirati gostitelja."
 
-#: src/map/maps_list.cpp:291
+#: src/map/maps_list.cpp:282
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Ni bilo mogoče odpreti imenika s kartami (%s)!"
 
-#: src/map/maps_list.cpp:305
+#: src/map/maps_list.cpp:296
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Ni bilo mogoče odpreti zasebnega imenika s kartami (%s)!"
@@ -2551,7 +2551,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:314
+#: src/map/maps_list.cpp:305
 msgid "You need at least one valid map!"
 msgstr "Potrebujete vsaj eno veljavno karto!"
 

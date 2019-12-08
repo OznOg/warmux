@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Basepath: /home/robert/warmux\n"
 
-#: src/map/maps_list.cpp:382
+#: src/map/maps_list.cpp:373
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Karte %s nicht gefunden :-("
@@ -477,7 +477,7 @@ msgstr "Wurfwaffen"
 msgid "'Tool' weapon category"
 msgstr "Werkzeuge"
 
-#: src/interface/interface.cpp:287
+#: src/interface/interface.cpp:283
 msgid "(dead)"
 msgstr "(tot)"
 
@@ -491,7 +491,7 @@ msgid "(unknown time)"
 msgstr "(unbekannte Zeit)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:310
+#: src/interface/interface.cpp:306
 msgid "(unlimited)"
 msgstr "(unbegrenzt)"
 
@@ -1160,7 +1160,7 @@ msgid "Have a good game!"
 msgstr "Viel Spaß beim Spiel!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Anführer"
@@ -1348,7 +1348,7 @@ msgstr "Linkshändermaus?"
 msgid "Lists the connected players"
 msgstr "Gebe eine Liste der verbundenen Spieler aus"
 
-#: src/map/maps_list.cpp:279
+#: src/map/maps_list.cpp:270
 msgid "Load maps:"
 msgstr "Lade Karten:"
 
@@ -2028,7 +2028,7 @@ msgstr "Geräusche"
 msgid "Starting a new game"
 msgstr "Neues Spiel starten"
 
-#: src/interface/interface.cpp:311
+#: src/interface/interface.cpp:307
 msgid "Stock:"
 msgstr "Vorrat:"
 
@@ -2304,12 +2304,12 @@ msgstr "Klicken, um zu springen. Gedrückt halten, um höher zu springen."
 msgid "Unable to contact the host."
 msgstr "Kann Server nicht kontaktieren!"
 
-#: src/map/maps_list.cpp:291
+#: src/map/maps_list.cpp:282
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Kann das Karten-Verzeichnis (%s) nicht öffnen!"
 
-#: src/map/maps_list.cpp:305
+#: src/map/maps_list.cpp:296
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Kann das persönliche Karten-Verzeichnis (%s) nicht öffnen!"
@@ -2523,7 +2523,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr "Du musst den Namen des Kommandanten und aller Spieler eintragen"
 
-#: src/map/maps_list.cpp:314
+#: src/map/maps_list.cpp:305
 msgid "You need at least one valid map!"
 msgstr "Du brauchst mindestens eine gültige Karte!"
 

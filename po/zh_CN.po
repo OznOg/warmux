@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0 \n"
 
-#: src/map/maps_list.cpp:382
+#: src/map/maps_list.cpp:373
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "！地图 %s未找到 :-("
@@ -416,7 +416,7 @@ msgstr "‘投掷‘武器分类"
 msgid "'Tool' weapon category"
 msgstr "‘工具‘武器分类"
 
-#: src/interface/interface.cpp:287
+#: src/interface/interface.cpp:283
 msgid "(dead)"
 msgstr "(死掉的)"
 
@@ -430,7 +430,7 @@ msgid "(unknown time)"
 msgstr "(未知时间)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:310
+#: src/interface/interface.cpp:306
 msgid "(unlimited)"
 msgstr "(无限的)"
 
@@ -1087,7 +1087,7 @@ msgid "Have a good game!"
 msgstr "来吧！"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "指挥官"
@@ -1273,7 +1273,7 @@ msgstr "左手鼠标？"
 msgid "Lists the connected players"
 msgstr "列出已经连接的玩家"
 
-#: src/map/maps_list.cpp:279
+#: src/map/maps_list.cpp:270
 msgid "Load maps:"
 msgstr "读取地图:"
 
@@ -1955,7 +1955,7 @@ msgstr "声音"
 msgid "Starting a new game"
 msgstr "重新来游戏"
 
-#: src/interface/interface.cpp:311
+#: src/interface/interface.cpp:307
 msgid "Stock:"
 msgstr "箱子:"
 
@@ -2214,12 +2214,12 @@ msgstr "触碰/点击跳跃——持续不断则高跳。"
 msgid "Unable to contact the host."
 msgstr "连不上主机"
 
-#: src/map/maps_list.cpp:291
+#: src/map/maps_list.cpp:282
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "打不开地图目录(%s)！"
 
-#: src/map/maps_list.cpp:305
+#: src/map/maps_list.cpp:296
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "无法打开个人地图目录 (%s)！"
@@ -2432,7 +2432,7 @@ msgstr "你是新回合的控制者！键入 /help 了解你的新力量"
 msgid "You must fill Head Commander and all player names"
 msgstr "你必须输入指挥官和全部玩家名称"
 
-#: src/map/maps_list.cpp:314
+#: src/map/maps_list.cpp:305
 msgid "You need at least one valid map!"
 msgstr "你需要可用的地图！"
 

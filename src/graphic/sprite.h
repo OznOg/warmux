@@ -74,8 +74,8 @@ public:
   void Init(Surface& surface, const Point2i &frameSize, int nb_frames_x, int nb_frames_y);
   Surface& GetSurface()
   {
-    ASSERT(!current_surface.IsNull());
-    return current_surface;
+    ASSERT(current_surface);
+    return *current_surface;
   }
   bool IsFlipped() const { return flipped; }
 
@@ -101,8 +101,8 @@ public:
   // gives height of the surface (takes rotations into acount)
   uint GetWidthMax() const
   {
-    if (!current_surface.IsNull())
-      return current_surface.GetWidth();
+    if (current_surface)
+      return current_surface->GetWidth();
     else
       return GetWidth();
   }
@@ -110,8 +110,8 @@ public:
   // gives height of the surface (takes rotations into acount)
   uint GetHeightMax() const
   {
-    if (!current_surface.IsNull())
-      return current_surface.GetHeight();
+    if (current_surface)
+      return current_surface->GetHeight();
     else
       return GetHeight();
   }
@@ -202,7 +202,7 @@ public:
   void Blit(Surface &dest, uint pos_x, uint pos_y)
   {
     RefreshSurface(); // Might be NULL here
-    Blit(dest, pos_x, pos_y, 0, 0, current_surface.GetWidth(), current_surface.GetHeight());
+    Blit(dest, pos_x, pos_y, 0, 0, current_surface->GetWidth(), current_surface->GetHeight());
   }
   void Blit(Surface &dest, const Point2i &pos) { Blit(dest, pos.GetX(), pos.GetY()); };
   void Blit(Surface &dest, const Rectanglei &srcRect, const Point2i &destPos)
@@ -218,7 +218,7 @@ public:
   void FixParameters(bool force_ckey = false);
 
 private:
-  Surface current_surface;
+  std::unique_ptr<Surface> current_surface;
   bool show;
   // Frames
   uint current_frame;
@@ -234,7 +234,7 @@ private:
 
   void Constructor();
   void Calculate_Rotation_Offset(const Surface& tmp_surface);
-  void InvalidLastFrame() { current_surface.Free(); }
+  void InvalidLastFrame() { current_surface.reset(); }
 };
 
 #endif /* _SPRITE_H */

@@ -71,10 +71,8 @@ void Interface::LoadData()
     default_toolbar = tmp.RotoZoom(0.0, zoom, zoom);
     small_interface = LOAD_RES_IMAGE("interface/small_background_interface").RotoZoom(0.0, zoom, zoom);
     if (replay) {
-      control_toolbar.AutoFree();
       replay_toolbar = LOAD_RES_IMAGE("interface/background_replay").RotoZoom(0.0, zoom, zoom);
     } else {
-      replay_toolbar.AutoFree();
       control_toolbar = LOAD_RES_IMAGE("interface/background_control_interface").RotoZoom(0.0, zoom, zoom);
     }
     clock_normal->Scale(zoom, zoom);
@@ -84,10 +82,8 @@ void Interface::LoadData()
     zoom            = 1.0f;
     default_toolbar = tmp;
     if (replay) {
-      control_toolbar.AutoFree();
       replay_toolbar = LOAD_RES_IMAGE("interface/background_replay");
     } else {
-      replay_toolbar.AutoFree();
       control_toolbar = LOAD_RES_IMAGE("interface/background_control_interface");
     }
     small_interface = LOAD_RES_IMAGE("interface/small_background_interface");

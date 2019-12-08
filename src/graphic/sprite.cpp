@@ -67,7 +67,7 @@ Sprite::Sprite(const Sprite &other)
   , animation(other.animation, *this)
 {
   Constructor();
-  current_surface = other.current_surface;
+  current_surface = other.current_surface ? std::make_unique<Surface>(*other.current_surface) : nullptr;
   show = other.show;
   current_frame = other.current_frame;
   frame_width_pix = other.frame_width_pix;
@@ -227,18 +227,19 @@ void Sprite::Blit(Surface &dest, int pos_x, int pos_y, int src_x, int src_y, uin
   Rectanglei srcRect(src_x, src_y, w, h);
   Rectanglei dstRect(pos_x + rotation_point.x, pos_y + rotation_point.y, w, h);
 
+  auto sp = current_surface->GetSurface().lock();
   if (alpha == ONE) {
-    dest.Blit(current_surface, srcRect, dstRect.GetPosition());
-  } else if (current_surface.GetSurface()->format->Amask) {
+    dest.Blit(*current_surface, srcRect, dstRect.GetPosition());
+  } else if (sp->format->Amask) {
     CheckScratch(srcRect.GetSize());
     scratch.Blit(dest, dstRect, Point2i(0,0));
     scratch.SetAlpha(SDL_SRCALPHA, alpha * 255);
-    scratch.Blit(current_surface, srcRect, Point2i(0,0));
+    scratch.Blit(*current_surface, srcRect, Point2i(0,0));
     dest.Blit(scratch, srcRect, dstRect.GetPosition());
   } else {
     // Surface doesn't have alpha, do a simple blit
-    current_surface.SetAlpha(SDL_SRCALPHA, alpha * 255);
-    dest.Blit(current_surface, srcRect, dstRect.GetPosition());
+    current_surface->SetAlpha(SDL_SRCALPHA, alpha * 255);
+    dest.Blit(*current_surface, srcRect, dstRect.GetPosition());
   }
 
   // For the cache mechanism
@@ -276,7 +277,7 @@ void Sprite::DrawXY(const Point2i &pos)
 
 void Sprite::RefreshSurface()
 {
-  if (!current_surface.IsNull())
+  if (current_surface)
     return;
 
   assert(scale_x >= 0);
@@ -292,13 +293,13 @@ void Sprite::RefreshSurface()
     angle = -rotation_rad;
   }
   // RotoZoom already checks angle and scale to do the least work
-  current_surface = tmp.RotoZoom(angle, scale_x, scale_y);
+  current_surface = std::make_unique<Surface>(tmp.RotoZoom(angle, scale_x, scale_y));
 
   // Calculate offset of the sprite depending on hotspot rotation position :
   rotation_point.x=0;
   rotation_point.y=0;
   if (rot_hotspot != center || rotation_rad.IsNotZero())
-    Calculate_Rotation_Offset(current_surface);
+    Calculate_Rotation_Offset(*current_surface);
 }
 
 void Sprite::FixParameters(bool force_ckey)

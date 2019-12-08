@@ -252,15 +252,6 @@ InfoMapAccessor *InfoMap::LoadData()
 
 void InfoMap::FreeData()
 {
-  img_sky.Free();
-
-  std::vector<Surface>::iterator it = sky_layer.begin();
-  while (it != sky_layer.end()) {
-    it->Free();
-    it++;
-  }
-  sky_layer.clear();
-
   delete normal; normal = nullptr;
 }
 

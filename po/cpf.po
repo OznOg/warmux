@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: KBabel 1.11\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/map/maps_list.cpp:382
+#: src/map/maps_list.cpp:373
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Scuse à moins, mais y gaingne pas trouve terrain là : %s"
@@ -468,7 +468,7 @@ msgstr "Nombre de joueurs par équipe"
 msgid "'Tool' weapon category"
 msgstr "Nombre de joueurs par équipe"
 
-#: src/interface/interface.cpp:287
+#: src/interface/interface.cpp:283
 msgid "(dead)"
 msgstr "(kapoute)"
 
@@ -482,7 +482,7 @@ msgid "(unknown time)"
 msgstr ""
 
 #. Display number of ammo
-#: src/interface/interface.cpp:310
+#: src/interface/interface.cpp:306
 msgid "(unlimited)"
 msgstr "(illimitées)"
 
@@ -1147,7 +1147,7 @@ msgid "Have a good game!"
 msgstr "Bonne partie !"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Lo chef"
@@ -1335,7 +1335,7 @@ msgstr ""
 msgid "Lists the connected players"
 msgstr "Connecté à "
 
-#: src/map/maps_list.cpp:279
+#: src/map/maps_list.cpp:270
 msgid "Load maps:"
 msgstr "Terrains lé en train de charger :"
 
@@ -2005,7 +2005,7 @@ msgstr "Options sonores"
 msgid "Starting a new game"
 msgstr "Démarrage d'une nouvelle partie"
 
-#: src/interface/interface.cpp:311
+#: src/interface/interface.cpp:307
 msgid "Stock:"
 msgstr "Munitions :"
 
@@ -2281,12 +2281,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Gaingne pas contact le serveur"
 
-#: src/map/maps_list.cpp:291
+#: src/map/maps_list.cpp:282
 #, fuzzy, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Impossible d'ouvrir le répertoire des terrains (%s) !"
 
-#: src/map/maps_list.cpp:305
+#: src/map/maps_list.cpp:296
 #, fuzzy, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Impossible d'ouvrir le répertoire des terrains (%s)!"
@@ -2500,7 +2500,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:314
+#: src/map/maps_list.cpp:305
 #, fuzzy
 msgid "You need at least one valid map!"
 msgstr "Ou na na besoin d'au moins un terrain correct..."

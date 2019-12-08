@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/map/maps_list.cpp:382
+#: src/map/maps_list.cpp:373
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Nie odnaleziono mapy %s :-("
@@ -529,7 +529,7 @@ msgstr "Kategoria uzbrojenia: 'Rzucane'"
 msgid "'Tool' weapon category"
 msgstr "Kategoria uzbrojenia: 'Narzędzia'"
 
-#: src/interface/interface.cpp:287
+#: src/interface/interface.cpp:283
 msgid "(dead)"
 msgstr "(martwy)"
 
@@ -543,7 +543,7 @@ msgid "(unknown time)"
 msgstr "(nieznany czas)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:310
+#: src/interface/interface.cpp:306
 msgid "(unlimited)"
 msgstr "(bez ograniczeń)"
 
@@ -1217,7 +1217,7 @@ msgid "Have a good game!"
 msgstr "Życzymy miłej gry!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Głównodowodzący"
@@ -1405,7 +1405,7 @@ msgstr "Mysz dla leworęcznych?"
 msgid "Lists the connected players"
 msgstr "Wypisuje podłączonych graczy"
 
-#: src/map/maps_list.cpp:279
+#: src/map/maps_list.cpp:270
 msgid "Load maps:"
 msgstr "Wczytywanie map:"
 
@@ -2088,7 +2088,7 @@ msgstr "Dźwięki"
 msgid "Starting a new game"
 msgstr "Uruchamianie nowej gry"
 
-#: src/interface/interface.cpp:311
+#: src/interface/interface.cpp:307
 msgid "Stock:"
 msgstr "Stan:"
 
@@ -2363,12 +2363,12 @@ msgstr "Dotknij/kliknij, aby skoczyć. Przytrzymaj, aby skoczyć wysoko."
 msgid "Unable to contact the host."
 msgstr "Nie udało się skontaktować z hostem."
 
-#: src/map/maps_list.cpp:291
+#: src/map/maps_list.cpp:282
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Nie można otworzyć katalogu map (%s)!"
 
-#: src/map/maps_list.cpp:305
+#: src/map/maps_list.cpp:296
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Nie można otworzyć osobistego katalogu map (%s)!"
@@ -2585,7 +2585,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr "Musisz wypełnić pole Głównodowodzący i wszystkie imiona graczy"
 
-#: src/map/maps_list.cpp:314
+#: src/map/maps_list.cpp:305
 msgid "You need at least one valid map!"
 msgstr "Musisz mieć przynajmniej jedną prawidłową mapę!"
 

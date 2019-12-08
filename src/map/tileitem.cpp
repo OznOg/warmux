@@ -222,7 +222,10 @@ void TileItem_BaseColorKey::Dig(const Point2i &position, const Surface& dig)
   m_start_check.SetValues(position.max(Point2i(0, 0)));
   m_end_check.SetValues(m_surface.GetSize().min(position+dig.GetSize()));
 
-  const SDL_PixelFormat *fmt = dig.GetSurface()->format;
+  auto surface = dig.GetSurface().lock();
+  // no special care for nullness as the previous code...
+  // FIXME what to do when null?
+  const SDL_PixelFormat *fmt = surface->format;
   Uint32 dig_ckey = (fmt->BitsPerPixel==32) ? 0 : fmt->colorkey;
 
   for (int py = m_start_check.y ; py < m_end_check.y ; py++) {
@@ -274,7 +277,10 @@ void TileItem_BaseColorKey::MergeSprite(const Point2i &position, Surface& spr)
   m_start_check.SetValues(position.max(Point2i(0, 0)));
   m_end_check.SetValues(m_surface.GetSize().min(position+spr.GetSize()));
 
-  const SDL_PixelFormat *fmt = spr.GetSurface()->format;
+  auto surface = spr.GetSurface().lock();
+  // no special care for nullness as the previous code...
+  // FIXME what to do when null?
+  const SDL_PixelFormat *fmt = surface->format;
   Uint32 spr_ckey = (fmt->BitsPerPixel==32) ? 0 : fmt->colorkey;
 
   spr.Lock();

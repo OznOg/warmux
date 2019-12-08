@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 
-#: src/map/maps_list.cpp:382
+#: src/map/maps_list.cpp:373
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Не мога да намеря картата %s :-("
@@ -477,7 +477,7 @@ msgstr "Смени категорията на оъжието"
 msgid "'Tool' weapon category"
 msgstr "Смени категорията на оъжието"
 
-#: src/interface/interface.cpp:287
+#: src/interface/interface.cpp:283
 msgid "(dead)"
 msgstr "(мъртъв)"
 
@@ -491,7 +491,7 @@ msgid "(unknown time)"
 msgstr "(незнайно време)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:310
+#: src/interface/interface.cpp:306
 msgid "(unlimited)"
 msgstr "(безкраен)"
 
@@ -1148,7 +1148,7 @@ msgid "Have a good game!"
 msgstr "Приятна игра!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Командир"
@@ -1341,7 +1341,7 @@ msgstr "Мишка за лява ръка?"
 msgid "Lists the connected players"
 msgstr "Покажи свързаните играчи"
 
-#: src/map/maps_list.cpp:279
+#: src/map/maps_list.cpp:270
 msgid "Load maps:"
 msgstr "Карти които да заредя:"
 
@@ -2003,7 +2003,7 @@ msgstr "Звуци"
 msgid "Starting a new game"
 msgstr "Стартирам нова игра"
 
-#: src/interface/interface.cpp:311
+#: src/interface/interface.cpp:307
 msgid "Stock:"
 msgstr "Наличност:"
 
@@ -2272,12 +2272,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Не може да се свърже с хоста!"
 
-#: src/map/maps_list.cpp:291
+#: src/map/maps_list.cpp:282
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Не мога да отворя директорията за карти! (%s)"
 
-#: src/map/maps_list.cpp:305
+#: src/map/maps_list.cpp:296
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Не мога да отворя личната директорията за карти (%s) !"
@@ -2493,7 +2493,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:314
+#: src/map/maps_list.cpp:305
 msgid "You need at least one valid map!"
 msgstr "Трябва ми поне една валидна карта!"
 

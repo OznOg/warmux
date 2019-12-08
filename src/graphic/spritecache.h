@@ -64,7 +64,6 @@ public:
     , max(other.max)
     , surface(other.surface)
   { }
-  ~SpriteSubframeCache() { rotated.clear(); surface.Free(); }
 
   Surface GetSurfaceForAngle(Double angle);
   void SetCache(uint num, const Double& mini, const Double& maxi);

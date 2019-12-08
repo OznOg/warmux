@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-Country: SLOVAKIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/map/maps_list.cpp:382
+#: src/map/maps_list.cpp:373
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "Mapa %s nebola nájdená"
@@ -526,7 +526,7 @@ msgstr "Zmeniť kategóriu zbraní"
 msgid "'Tool' weapon category"
 msgstr "Zmeniť kategóriu zbraní"
 
-#: src/interface/interface.cpp:287
+#: src/interface/interface.cpp:283
 msgid "(dead)"
 msgstr "(smrť)"
 
@@ -540,7 +540,7 @@ msgid "(unknown time)"
 msgstr "(neznámy čas)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:310
+#: src/interface/interface.cpp:306
 msgid "(unlimited)"
 msgstr "(neobmedzene)"
 
@@ -1195,7 +1195,7 @@ msgid "Have a good game!"
 msgstr "Príjemnú hru!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Hlavný veliteľ"
@@ -1388,7 +1388,7 @@ msgstr "Ovládanie myšky pre ľavákov"
 msgid "Lists the connected players"
 msgstr "Vypísať pripojených hráčov"
 
-#: src/map/maps_list.cpp:279
+#: src/map/maps_list.cpp:270
 msgid "Load maps:"
 msgstr "Nahrať mapy:"
 
@@ -2050,7 +2050,7 @@ msgstr "Zvuky"
 msgid "Starting a new game"
 msgstr "Štart novej hry"
 
-#: src/interface/interface.cpp:311
+#: src/interface/interface.cpp:307
 msgid "Stock:"
 msgstr "Počet:"
 
@@ -2323,12 +2323,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Nemožno kontaktovať host."
 
-#: src/map/maps_list.cpp:291
+#: src/map/maps_list.cpp:282
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Nemôžem otvoriť priečinok s mapami (%s)!"
 
-#: src/map/maps_list.cpp:305
+#: src/map/maps_list.cpp:296
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Nemôžem otvoriť osobný priečinok s mapami (%s)!"
@@ -2545,7 +2545,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:314
+#: src/map/maps_list.cpp:305
 msgid "You need at least one valid map!"
 msgstr "Potrebuješ aspoň jednu platnú mapu!"
 

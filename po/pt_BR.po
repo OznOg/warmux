@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/map/maps_list.cpp:382
+#: src/map/maps_list.cpp:373
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Mapa %s não encontrado :-("
@@ -480,7 +480,7 @@ msgstr "Mudar categoria da arma"
 msgid "'Tool' weapon category"
 msgstr "Mudar categoria da arma"
 
-#: src/interface/interface.cpp:287
+#: src/interface/interface.cpp:283
 msgid "(dead)"
 msgstr "(morto)"
 
@@ -494,7 +494,7 @@ msgid "(unknown time)"
 msgstr "(tempo desconhecido)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:310
+#: src/interface/interface.cpp:306
 msgid "(unlimited)"
 msgstr "(ilimitado)"
 
@@ -1156,7 +1156,7 @@ msgid "Have a good game!"
 msgstr "Tenha um bom jogo!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Comandante"
@@ -1350,7 +1350,7 @@ msgstr "Mouse canhoto?"
 msgid "Lists the connected players"
 msgstr "Listar os jogadores conectados"
 
-#: src/map/maps_list.cpp:279
+#: src/map/maps_list.cpp:270
 msgid "Load maps:"
 msgstr "Carregar mapas:"
 
@@ -2011,7 +2011,7 @@ msgstr "Sons"
 msgid "Starting a new game"
 msgstr "Iniciando um novo jogo"
 
-#: src/interface/interface.cpp:311
+#: src/interface/interface.cpp:307
 msgid "Stock:"
 msgstr "Munição:"
 
@@ -2281,12 +2281,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Não foi possível conectar ao servidor!"
 
-#: src/map/maps_list.cpp:291
+#: src/map/maps_list.cpp:282
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Não foi possível abrir diretório dos mapas (%s)!"
 
-#: src/map/maps_list.cpp:305
+#: src/map/maps_list.cpp:296
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Não foi possível abrir diretório dos mapas (%s)!"
@@ -2502,7 +2502,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr ""
 
-#: src/map/maps_list.cpp:314
+#: src/map/maps_list.cpp:305
 msgid "You need at least one valid map!"
 msgstr "Você precisa de pelo menos um mapa válido!"
 

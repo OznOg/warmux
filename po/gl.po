@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 "X-Generator: Lokalize 1.2\n"
 
-#: src/map/maps_list.cpp:382
+#: src/map/maps_list.cpp:373
 #, c-format
 msgid "! Map %s not found :-("
 msgstr "! Non se atopou o escenario «%s» :-("
@@ -484,7 +484,7 @@ msgstr "Armas de arroxar"
 msgid "'Tool' weapon category"
 msgstr "Ferramentas"
 
-#: src/interface/interface.cpp:287
+#: src/interface/interface.cpp:283
 msgid "(dead)"
 msgstr "(morto)"
 
@@ -498,7 +498,7 @@ msgid "(unknown time)"
 msgstr "(hora descoñecida)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:310
+#: src/interface/interface.cpp:306
 msgid "(unlimited)"
 msgstr "(ilimitada)"
 
@@ -1185,7 +1185,7 @@ msgid "Have a good game!"
 msgstr "Pásao ben!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:276 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Capitán"
@@ -1373,7 +1373,7 @@ msgstr "Rato para zurdos?"
 msgid "Lists the connected players"
 msgstr "Lista os xogadores conectados."
 
-#: src/map/maps_list.cpp:279
+#: src/map/maps_list.cpp:270
 msgid "Load maps:"
 msgstr "Cargar os escenarios:"
 
@@ -2058,7 +2058,7 @@ msgstr "Sons"
 msgid "Starting a new game"
 msgstr "Iniciando unha nova partida"
 
-#: src/interface/interface.cpp:311
+#: src/interface/interface.cpp:307
 msgid "Stock:"
 msgstr "Munición:"
 
@@ -2332,12 +2332,12 @@ msgstr ""
 msgid "Unable to contact the host."
 msgstr "Non se puido contactar co servidor."
 
-#: src/map/maps_list.cpp:291
+#: src/map/maps_list.cpp:282
 #, c-format
 msgid "Unable to open the maps directory (%s)!"
 msgstr "Non se puido abrir o directorio de escenarios (%s)!"
 
-#: src/map/maps_list.cpp:305
+#: src/map/maps_list.cpp:296
 #, c-format
 msgid "Unable to open the personal maps directory (%s)!"
 msgstr "Non se puido abrir o directorio persoal de escenarios (%s)!"
@@ -2554,7 +2554,7 @@ msgstr ""
 msgid "You must fill Head Commander and all player names"
 msgstr "Debes darlles nome ao comandante e ao resto dos xogadores."
 
-#: src/map/maps_list.cpp:314
+#: src/map/maps_list.cpp:305
 msgid "You need at least one valid map!"
 msgstr "Necesitas polo menos un escenario correcto!"
 
