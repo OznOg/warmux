@@ -82,16 +82,14 @@ void Physics::SetPhysXY(Double x, Double y)
 }
 
 // Set the air resist factor
-void Physics::SetSpeedXY(Point2d vector)
+void Physics::SetSpeedXY(const Point2d &vector)
 {
-  if (EqualsZero(vector.x))
-    vector.x = 0;
-  if (EqualsZero(vector.y))
-    vector.y = 0;
   bool was_moving = IsMoving();
 
-  m_pos_x.x1 = vector.x;
-  m_pos_y.x1 = vector.y;
+  if (!EqualsZero(vector.x))
+      m_pos_x.x1 = vector.x;
+  if (!EqualsZero(vector.y))
+      m_pos_y.x1 = vector.y;
   // setting to FreeFall is done in StartMoving()
 
   if (!was_moving && IsMoving()) {
@@ -100,16 +98,14 @@ void Physics::SetSpeedXY(Point2d vector)
   }
 }
 
-void Physics::AddSpeedXY(Point2d vector)
+void Physics::AddSpeedXY(const Point2d &vector)
 {
-  if (EqualsZero(vector.x))
-    vector.x = 0;
-  if (EqualsZero(vector.y))
-    vector.y = 0;
   bool was_moving = IsMoving();
 
-  m_pos_x.x1 += vector.x;
-  m_pos_y.x1 += vector.y;
+  if (!EqualsZero(vector.x))
+      m_pos_x.x1 += vector.x;
+  if (!EqualsZero(vector.y))
+      m_pos_y.x1 += vector.y;
   // setting to FreeFall is done in StartMoving()
 
   if (!was_moving && IsMoving()) {
@@ -478,15 +474,13 @@ void Physics::RunPhysicalEngine()
     ASSERT(now >= m_last_physical_engine_run);
   }
   uint delta_t_ms = now - m_last_physical_engine_run;
-  Point2d oldPos;
-  Point2d newPos;
 
   m_last_physical_engine_run += (delta_t_ms/PHYS_DELTA_T_MS) * PHYS_DELTA_T_MS;
 
   // Compute object move for each physical engine time step.
   while (delta_t_ms >= PHYS_DELTA_T_MS) {
-    oldPos = GetPos();
-    newPos = ComputeNextXY(PHYS_DELTA_T); // causes 11�s error per iteration
+    const auto &oldPos = GetPos();
+    const auto &newPos = ComputeNextXY(PHYS_DELTA_T); // causes 11�s error per iteration
 
     if (newPos != oldPos) {
       // The object has moved. Notify the son class.
@@ -502,7 +496,7 @@ void Physics::RunPhysicalEngine()
 }
 
 /* contact_angle is the angle of the surface we are rebounding on */
-void Physics::Rebound(Point2d /*contactPos*/, Double contact_angle)
+void Physics::Rebound(const Point2d &/*contactPos*/, Double contact_angle)
 {
   Double norme, angle;
 

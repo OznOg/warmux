@@ -69,34 +69,34 @@ msgstr "Ekipa %s"
 msgid "%s Team - Remote"
 msgstr "Ekipa %s - Oddaljena"
 
-#: src/game/game.cpp:1208
+#: src/game/game.cpp:1201
 #, fuzzy, c-format
 msgid "%s from %s team committed suicide!"
 msgstr "%s iz ekipe %s je naredil/a samomor!"
 
 #. Could be modified, but for now, save on translation
-#: src/game/game.cpp:1234 src/game/game.cpp:1253
+#: src/game/game.cpp:1227 src/game/game.cpp:1246
 #, c-format
 msgid "%s from %s team has died."
 msgstr "%s iz ekipe %s je umrl/a."
 
-#: src/game/game.cpp:1200
+#: src/game/game.cpp:1193
 #, c-format
 msgid "%s from %s team has fallen into the water!"
 msgstr "%s iz ekipe %s je padel/a v vodo."
 
-#: src/game/game.cpp:1194
+#: src/game/game.cpp:1187
 #, c-format
 msgid "%s from %s team has fallen off the map!"
 msgstr "%s iz ekipe %s je padel/a s karte!"
 
-#: src/game/game.cpp:1214
+#: src/game/game.cpp:1207
 #, c-format
 msgid "%s from %s team has hit the ground too hard!"
 msgstr "%s iz ekipe %s je premočno zadel ob tla!"
 
 #. The playing character killed himself
-#: src/game/game.cpp:1221
+#: src/game/game.cpp:1214
 #, c-format
 msgid "%s from %s team is dead because he is clumsy!"
 msgstr "%s iz ekipe %s je mrtev, ker je bil neroden!"
@@ -113,12 +113,12 @@ msgid ""
 "fart."
 msgstr "%s je naredil nekaj za okolje - dihurju ni ukazal naj prdne!"
 
-#: src/object/medkit.cpp:67
+#: src/object/medkit.cpp:66
 #, fuzzy, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s je dobil %u točko energije!"
 
-#: src/game/game.cpp:1245
+#: src/game/game.cpp:1238
 #, c-format
 msgid "%s is a psychopath, he has killed a member of the %s team!"
 msgstr "%s je psihopat, saj je ubil člana ekipe %s!"
@@ -151,7 +151,7 @@ msgid "%s needs a pause."
 msgstr "%s rabi pavzo."
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:79
+#: src/object/bonus_box.cpp:81
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "Ekipa %s že ima neskončno streliva za %s!"
@@ -180,7 +180,7 @@ msgstr[1] "Ekipa %s je osvojila %u gnuja! Razstreli jih, kavboj!"
 msgstr[2] "Ekipa %s je osvojila %u gnuje! Razstreli jih, kavboj!"
 msgstr[3] "Ekipa %s je osvojila %u gnujev! Razstreli jih, kavboj!"
 
-#: src/weapon/air_attack.cpp:247
+#: src/weapon/air_attack.cpp:248
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -429,7 +429,7 @@ msgstr[1] "Ekipa %s je osvojila %u klofuto!"
 msgstr[2] "Ekipa %s je osvojila %u klofuti!"
 msgstr[3] "Ekipa %s je osvojila %u klofute!"
 
-#: src/weapon/snipe_rifle.cpp:258
+#: src/weapon/snipe_rifle.cpp:253
 #, c-format
 msgid "%s team has won %u sniper rifle! Aim and shoot between the eyes!"
 msgid_plural ""
@@ -497,7 +497,7 @@ msgstr[2] ""
 msgstr[3] ""
 "Ekipa %s je osvojila %u SuperTux-ov! Še niste videli letečega pingvina?"
 
-#: src/game/game.cpp:1229 src/game/game.cpp:1241
+#: src/game/game.cpp:1222 src/game/game.cpp:1234
 #, c-format
 msgid "%s took a member of the %s team to the grave with him!"
 msgstr "%s je s sabo v grob vzel še člana skupine %s!"
@@ -507,42 +507,42 @@ msgstr "%s je s sabo v grob vzel še člana skupine %s!"
 msgid "%s: no such nickame"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1149
+#: src/interface/man_machine_interface.cpp:1150
 #, fuzzy
 msgid "'Duel' weapon category"
 msgstr "Spremeni skupino orožja"
 
-#: src/interface/man_machine_interface.cpp:1145
+#: src/interface/man_machine_interface.cpp:1146
 #, fuzzy
 msgid "'Heavy' weapon category"
 msgstr "Spremeni skupino orožja"
 
-#: src/interface/man_machine_interface.cpp:1150
+#: src/interface/man_machine_interface.cpp:1151
 #, fuzzy
 msgid "'Move' weapon category"
 msgstr "Spremeni skupino orožja"
 
-#: src/interface/man_machine_interface.cpp:1146
+#: src/interface/man_machine_interface.cpp:1147
 #, fuzzy
 msgid "'Rifle' weapon category"
 msgstr "Spremeni skupino orožja"
 
-#: src/interface/man_machine_interface.cpp:1148
+#: src/interface/man_machine_interface.cpp:1149
 #, fuzzy
 msgid "'Special' weapon category"
 msgstr "Spremeni skupino orožja"
 
-#: src/interface/man_machine_interface.cpp:1147
+#: src/interface/man_machine_interface.cpp:1148
 #, fuzzy
 msgid "'Throwing' weapon category"
 msgstr "Spremeni skupino orožja"
 
-#: src/interface/man_machine_interface.cpp:1151
+#: src/interface/man_machine_interface.cpp:1152
 #, fuzzy
 msgid "'Tool' weapon category"
 msgstr "Spremeni skupino orožja"
 
-#: src/interface/interface.cpp:283
+#: src/interface/interface.cpp:279
 msgid "(dead)"
 msgstr "(mrtev)"
 
@@ -556,7 +556,7 @@ msgid "(unknown time)"
 msgstr "(čas ni znan)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:306
+#: src/interface/interface.cpp:302
 msgid "(unlimited)"
 msgstr "(neomejeno)"
 
@@ -599,7 +599,7 @@ msgstr ""
 msgid "Action"
 msgstr "Nastavitve"
 
-#: src/weapon/air_attack.cpp:205
+#: src/weapon/air_attack.cpp:206
 msgid "Air Attack"
 msgstr "Zračni napad"
 
@@ -615,7 +615,7 @@ msgstr "Vse ekipe"
 msgid "Always"
 msgstr "Vedno"
 
-#: src/menu/game_mode_editor.cpp:236
+#: src/menu/game_mode_editor.cpp:240
 msgid "Ammos"
 msgstr ""
 
@@ -650,7 +650,7 @@ msgstr "Avtorji:"
 msgid "Automatic Bazooka"
 msgstr "Avtomatska Bazuka"
 
-#: src/interface/man_machine_interface.cpp:1174
+#: src/interface/man_machine_interface.cpp:1175
 msgid "Back jump"
 msgstr ""
 
@@ -694,7 +694,7 @@ msgstr "Pred premikom"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
+#: src/game/config.cpp:880 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "Blitz"
 
@@ -710,19 +710,19 @@ msgstr "Skokica"
 msgid "Bye bye Tux..."
 msgstr "Adijo Tux..."
 
-#: src/team/teams_list.cpp:474 src/team/teams_list.cpp:510
-#: src/team/teams_list.cpp:519 src/team/teams_list.cpp:525
-#: src/team/teams_list.cpp:583
+#: src/team/teams_list.cpp:464 src/team/teams_list.cpp:500
+#: src/team/teams_list.cpp:509 src/team/teams_list.cpp:515
+#: src/team/teams_list.cpp:573
 #, c-format
 msgid "Can't find team %s!"
 msgstr "Ni mogoče najti ekipe %s!"
 
-#: src/team/teams_list.cpp:171
+#: src/team/teams_list.cpp:168
 #, c-format
 msgid "Cannot open personal teams directory (%s)!"
 msgstr "Ni mogoče odpreti osebno-ekipnega imenika (%s)!"
 
-#: src/team/teams_list.cpp:157
+#: src/team/teams_list.cpp:154
 #, c-format
 msgid "Cannot open teams directory (%s)!"
 msgstr "Ni mogoče odpreti ekipnega imenika (%s)!"
@@ -737,7 +737,7 @@ msgstr "Ni mogoče odpreti osebnega ekipnega imenika (%s)!"
 msgid "Center camera on character"
 msgstr "Osredotoči kamero na člana"
 
-#: src/interface/man_machine_interface.cpp:1156
+#: src/interface/man_machine_interface.cpp:1157
 #, fuzzy
 msgid "Center on active character"
 msgstr "Zamenjaj aktivnega člana"
@@ -765,7 +765,7 @@ msgid ""
 "Right part displays current speed."
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1176
+#: src/interface/man_machine_interface.cpp:1177
 #, fuzzy
 msgid "Change weapon"
 msgstr "Spremeni skupino orožja"
@@ -796,7 +796,7 @@ msgstr "Imena članov:"
 msgid "Character switching"
 msgstr "Menjava članov"
 
-#: src/interface/man_machine_interface.cpp:1158
+#: src/interface/man_machine_interface.cpp:1159
 msgid "Chat"
 msgstr ""
 
@@ -808,7 +808,7 @@ msgstr "Preveri možno posodobitev?"
 msgid "Choose randomly between the different maps"
 msgstr "Izberi naključno karto"
 
-#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
+#: src/game/config.cpp:878 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "Klasični"
 
@@ -945,15 +945,15 @@ msgstr "Škoda na potezo v fatalnem načinu"
 msgid "Date"
 msgstr "Dinamit"
 
-#: src/interface/man_machine_interface.cpp:1186
+#: src/interface/man_machine_interface.cpp:1187
 msgid "Decrease explosion delay"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1191
+#: src/interface/man_machine_interface.cpp:1192
 msgid "Decrease minimap size"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1193
+#: src/interface/man_machine_interface.cpp:1194
 msgid "Decrease sound volume"
 msgstr ""
 
@@ -969,11 +969,11 @@ msgstr "Prikaže to sporočilo"
 msgid "Don't forget to validate once you have selected your team(s)!"
 msgstr "Po izbiri ekip(e) ne pozabite potrditi igre!"
 
-#: src/interface/man_machine_interface.cpp:1165
+#: src/interface/man_machine_interface.cpp:1166
 msgid "Down"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1166
+#: src/interface/man_machine_interface.cpp:1167
 msgid "Down slowly"
 msgstr ""
 
@@ -1001,7 +1001,7 @@ msgstr "Trajanje poteze"
 msgid "Dynamite"
 msgstr "Dinamit"
 
-#: src/game/game.cpp:526
+#: src/game/game.cpp:519
 msgid "END OF GAME"
 msgstr "KONEC IGRE"
 
@@ -1027,11 +1027,11 @@ msgstr ""
 msgid "Error loading ground"
 msgstr "Napaka pri nalaganju tal"
 
-#: src/team/custom_teams_list.cpp:96 src/team/teams_list.cpp:132
+#: src/team/custom_teams_list.cpp:96 src/team/teams_list.cpp:129
 msgid "Error loading team :"
 msgstr "Napaka pri nalaganju ekipe:"
 
-#: src/game/config.cpp:601 src/team/custom_team.cpp:155
+#: src/game/config.cpp:667 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -1087,7 +1087,7 @@ msgstr ""
 "Če na internet niste povezani neposredno, preverite nastavitve "
 "usmerjevalnika:  vrata TCP %s morajo biti posredovana."
 
-#: src/team/team.cpp:157
+#: src/team/team.cpp:158
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "Napaka: ni bilo mogoče najti telesa \"%s\" za ekipo \"%s\"."
@@ -1096,7 +1096,6 @@ msgstr "Napaka: ni bilo mogoče najti telesa \"%s\" za ekipo \"%s\"."
 msgid "Experiment new game rules"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1177
 #: src/interface/man_machine_interface.cpp:1178
 #: src/interface/man_machine_interface.cpp:1179
 #: src/interface/man_machine_interface.cpp:1180
@@ -1105,6 +1104,7 @@ msgstr ""
 #: src/interface/man_machine_interface.cpp:1183
 #: src/interface/man_machine_interface.cpp:1184
 #: src/interface/man_machine_interface.cpp:1185
+#: src/interface/man_machine_interface.cpp:1186
 #, c-format
 msgid "Explosion delay of %u"
 msgstr ""
@@ -1209,12 +1209,12 @@ msgid "Have a good game!"
 msgstr "Uživajte v igri!"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:268 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "Poveljnik"
 
-#: src/interface/man_machine_interface.cpp:1173 src/menu/main_menu.cpp:67
+#: src/interface/man_machine_interface.cpp:1174 src/menu/main_menu.cpp:67
 #: src/menu/pause_menu.cpp:56
 msgid "Help"
 msgstr "Pomoč"
@@ -1225,7 +1225,7 @@ msgid "High"
 msgstr "Visoki skok"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/interface/man_machine_interface.cpp:1172 src/menu/help_menu.cpp:125
+#: src/interface/man_machine_interface.cpp:1173 src/menu/help_menu.cpp:125
 msgid "High jump"
 msgstr "Visoki skok"
 
@@ -1260,15 +1260,15 @@ msgid ""
 "increase this"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1187
+#: src/interface/man_machine_interface.cpp:1188
 msgid "Increase explosion delay"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1192
+#: src/interface/man_machine_interface.cpp:1193
 msgid "Increase minimap size"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1194
+#: src/interface/man_machine_interface.cpp:1195
 msgid "Increase sound volume"
 msgstr ""
 
@@ -1342,7 +1342,7 @@ msgstr ""
 msgid "Invalid filename"
 msgstr ""
 
-#: src/game/game.cpp:1078
+#: src/game/game.cpp:1071
 msgid "It's a present!"
 msgstr "To je darilo!"
 
@@ -1350,7 +1350,7 @@ msgstr "To je darilo!"
 msgid "Jetpack"
 msgstr "Raketni nahrbtnik"
 
-#: src/interface/man_machine_interface.cpp:1171
+#: src/interface/man_machine_interface.cpp:1172
 msgid "Jump"
 msgstr "Skok"
 
@@ -1406,7 +1406,7 @@ msgstr "Izpiši seznam povezanih igralcev"
 msgid "Load maps:"
 msgstr "Nalaganje kart:"
 
-#: src/team/teams_list.cpp:143
+#: src/team/teams_list.cpp:140
 msgid "Load teams:"
 msgstr "Nalaganje ekip:"
 
@@ -1528,22 +1528,22 @@ msgstr "Najbolj neuporaben"
 msgid "Most violent"
 msgstr "Najbolj nasilen"
 
-#: src/interface/man_machine_interface.cpp:1170
+#: src/interface/man_machine_interface.cpp:1171
 #, fuzzy
 msgid "Move camera down"
 msgstr "Premakni člana"
 
-#: src/interface/man_machine_interface.cpp:1167
+#: src/interface/man_machine_interface.cpp:1168
 #, fuzzy
 msgid "Move camera left"
 msgstr "Premakni člana"
 
-#: src/interface/man_machine_interface.cpp:1168
+#: src/interface/man_machine_interface.cpp:1169
 #, fuzzy
 msgid "Move camera right"
 msgstr "Premakni člana"
 
-#: src/interface/man_machine_interface.cpp:1169
+#: src/interface/man_machine_interface.cpp:1170
 #, fuzzy
 msgid "Move camera up"
 msgstr "Premakni člana"
@@ -1558,19 +1558,19 @@ msgstr "Premakni kamero z miško ali puščicami"
 msgid "Move character"
 msgstr "Premakni člana"
 
-#: src/interface/man_machine_interface.cpp:1159
+#: src/interface/man_machine_interface.cpp:1160
 msgid "Move left"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1160
+#: src/interface/man_machine_interface.cpp:1161
 msgid "Move left slowly"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1161
+#: src/interface/man_machine_interface.cpp:1162
 msgid "Move right"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1162
+#: src/interface/man_machine_interface.cpp:1163
 msgid "Move right slowly"
 msgstr ""
 
@@ -1607,7 +1607,7 @@ msgstr "Nova omrežna igra ob "
 msgid "New player warning?"
 msgstr "Opozori na nove igralce?"
 
-#: src/interface/man_machine_interface.cpp:1188
+#: src/interface/man_machine_interface.cpp:1189
 #, fuzzy
 msgid "Next character"
 msgstr "Premakni člana"
@@ -1617,7 +1617,7 @@ msgstr "Premakni člana"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/game/game_mode.cpp:108
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "V xml nastavitveni datoteki ni bil najden noben element <%s>!"
@@ -1631,7 +1631,7 @@ msgid "Nobody!"
 msgstr "Nihče!"
 
 #: src/gui/control_config.cpp:127 src/gui/control_config.cpp:175
-#: src/interface/man_machine_interface.cpp:1197
+#: src/interface/man_machine_interface.cpp:1198
 #, fuzzy
 msgid "None"
 msgstr "opravljeno"
@@ -1655,7 +1655,7 @@ msgstr "Na člana: spremeni aktivnega"
 msgid "On map: select a target"
 msgstr "Na karto: izbere tarčo"
 
-#: src/interface/man_machine_interface.cpp:1189
+#: src/interface/man_machine_interface.cpp:1190
 #, fuzzy
 msgid "Open options menu"
 msgstr "Nastavitve"
@@ -1690,7 +1690,7 @@ msgstr "Geslo:"
 msgid "Password:"
 msgstr "Geslo:"
 
-#: src/interface/man_machine_interface.cpp:1153
+#: src/interface/man_machine_interface.cpp:1154
 msgid "Pause"
 msgstr "Pavza"
 
@@ -1770,7 +1770,7 @@ msgid ""
 msgstr ""
 
 #: src/weapon/gun.cpp:73 src/weapon/shotgun.cpp:87
-#: src/weapon/snipe_rifle.cpp:247
+#: src/weapon/snipe_rifle.cpp:242
 msgid ""
 "Press space to shoot\n"
 "Use Up/Down to change initial angle"
@@ -1816,7 +1816,7 @@ msgstr ""
 msgid "Quickly quit game with Ctrl"
 msgstr "Takojšnji izhod iz igre (s ctrl)"
 
-#: src/interface/man_machine_interface.cpp:1144 src/menu/main_menu.cpp:76
+#: src/interface/man_machine_interface.cpp:1145 src/menu/main_menu.cpp:76
 msgid "Quit"
 msgstr "Končaj"
 
@@ -1838,11 +1838,11 @@ msgstr ""
 msgid "Random map"
 msgstr "Naključna karta"
 
-#: src/game/config.cpp:409
+#: src/game/config.cpp:458
 msgid "Reading the default config file"
 msgstr "Branje privzete nastavitvene datoteke"
 
-#: src/game/config.cpp:488
+#: src/game/config.cpp:554
 msgid "Reading the personal config file"
 msgstr "Branje osebne nastavitvene datoteke"
 
@@ -1968,7 +1968,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1175
+#: src/interface/man_machine_interface.cpp:1176
 #, fuzzy
 msgid "Shoot"
 msgstr "Šibrovka"
@@ -2012,7 +2012,7 @@ msgstr "Klofni sovražnika, da bo kar poskočil."
 msgid "Smaller aim angle and walk step"
 msgstr "Natančnejši merilni kot in stopinja"
 
-#: src/weapon/snipe_rifle.cpp:246
+#: src/weapon/snipe_rifle.cpp:241
 msgid "Sniper Rifle"
 msgstr "Ostrostrelska puška"
 
@@ -2059,7 +2059,7 @@ msgstr "Zvoki"
 msgid "Starting a new game"
 msgstr "Zagon nove igre"
 
-#: src/interface/interface.cpp:307
+#: src/interface/interface.cpp:303
 msgid "Stock:"
 msgstr "Zaloga:"
 
@@ -2084,7 +2084,7 @@ msgstr ""
 msgid "Syringe"
 msgstr "Injekcija"
 
-#: src/interface/man_machine_interface.cpp:1195
+#: src/interface/man_machine_interface.cpp:1196
 msgid "Take screenshot"
 msgstr ""
 
@@ -2159,7 +2159,7 @@ msgstr "Žoga je zapustila bojišče preden je eksplodirala"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:279
+#: src/menu/game_mode_editor.cpp:283
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2184,7 +2184,7 @@ msgstr "Povezava se je iztekla. Preverite da ni kriv požarni zid!"
 msgid "The disco grenade has left the dance floor before exploding!"
 msgstr "Disko granata je zapustila plesišče preden je eksplodirala"
 
-#: src/game/game.cpp:805
+#: src/game/game.cpp:798
 msgid "The game was interrupted because you got disconnected."
 msgstr "Igra je bila prekinjena zaradi prekinitve povezave."
 
@@ -2213,7 +2213,7 @@ msgstr "Strežnik je zavrnil povezavo."
 msgid "The server rejected the connection: wrong password!"
 msgstr "Strežnik je zavrnil povezavo: napačno geslo!"
 
-#: src/weapon/weapon.cpp:655
+#: src/game/game_mode.cpp:120
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2276,23 +2276,23 @@ msgstr ""
 "ena uporaba na potezo"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/interface/man_machine_interface.cpp:1154 src/menu/help_menu.cpp:131
+#: src/interface/man_machine_interface.cpp:1155 src/menu/help_menu.cpp:131
 #, fuzzy
 msgid "Toggle fullscreen"
 msgstr "Celozaslonski način?"
 
-#: src/interface/man_machine_interface.cpp:1155
+#: src/interface/man_machine_interface.cpp:1156
 #, fuzzy
 msgid "Toggle interface"
 msgstr "Pokaži/skrij vmesnik"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/interface/man_machine_interface.cpp:1190 src/menu/help_menu.cpp:144
+#: src/interface/man_machine_interface.cpp:1191 src/menu/help_menu.cpp:144
 #, fuzzy
 msgid "Toggle minimap"
 msgstr "Pokaži/skrij minikarto"
 
-#: src/interface/man_machine_interface.cpp:1157
+#: src/interface/man_machine_interface.cpp:1158
 #, fuzzy
 msgid "Toggle weapons menu"
 msgstr "Pokaži orožni meni"
@@ -2359,7 +2359,7 @@ msgstr "Neznan ukaz"
 msgid "Unknown."
 msgstr "Neznan ukaz"
 
-#: src/game/game_mode.cpp:319
+#: src/game/config.cpp:879
 msgid "Unlimited"
 msgstr "Neomejen"
 
@@ -2367,11 +2367,11 @@ msgstr "Neomejen"
 msgid "Unspecified error or end of file"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1163
+#: src/interface/man_machine_interface.cpp:1164
 msgid "Up"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1164
+#: src/interface/man_machine_interface.cpp:1165
 msgid "Up slowly"
 msgstr ""
 
@@ -2432,7 +2432,7 @@ msgstr[1] "Počakajte! %i igralca še nista pripravljena!"
 msgstr[2] "Počakajte! %i igralci še niso pripravljeni!"
 msgstr[3] "Počakajte! %i igralcev še ni pripravljenih!"
 
-#: src/game/game.cpp:700
+#: src/game/game.cpp:693
 #, c-format
 msgid "Waiting for %s"
 msgstr "Čakanje na %s"
@@ -2460,7 +2460,7 @@ msgstr "Warmux različica "
 msgid "Warning, malformed replay with data of size %u"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1152
+#: src/interface/man_machine_interface.cpp:1153
 #, fuzzy
 msgid "Weapon category 8"
 msgstr "Spremeni skupino orožja"
@@ -2485,12 +2485,12 @@ msgstr "Spletna stran: "
 msgid "Welcome to %s on %s!"
 msgstr "Dobrodošli v %s na %s!"
 
-#: src/game/game.cpp:1187
+#: src/game/game.cpp:1180
 #, c-format
 msgid "What a beautiful homerun! %s from %s team is in another world..."
 msgstr "Homerun! %s iz ekipe %s je poletel v drug svet!"
 
-#: src/game/game.cpp:1250
+#: src/game/game.cpp:1243
 #, c-format
 msgid "What a shame for %s - he was killed by a simple gun!"
 msgstr "Kakšna sramota za %s - ubit je bil s preprosto pištolo!"
@@ -2555,7 +2555,7 @@ msgstr ""
 msgid "You need at least one valid map!"
 msgstr "Potrebujete vsaj eno veljavno karto!"
 
-#: src/game/game.cpp:320 src/team/teams_list.cpp:179
+#: src/game/game.cpp:313 src/team/teams_list.cpp:176
 msgid "You need at least two valid teams!"
 msgstr "Potrebujete vsaj dve veljavni ekipi !"
 
@@ -2571,7 +2571,7 @@ msgstr "Zgrešili ste!"
 msgid "aka"
 msgstr "kot"
 
-#: src/weapon/air_attack.cpp:206
+#: src/weapon/air_attack.cpp:207
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

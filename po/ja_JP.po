@@ -62,35 +62,35 @@ msgstr " %s チーム"
 msgid "%s Team - Remote"
 msgstr " %s チーム - 操作"
 
-#: src/game/game.cpp:1208
+#: src/game/game.cpp:1201
 #, fuzzy, c-format
 msgid "%s from %s team committed suicide!"
 msgstr "%s (%s) は自殺した！"
 
 #. Could be modified, but for now, save on translation
-#: src/game/game.cpp:1234 src/game/game.cpp:1253
+#: src/game/game.cpp:1227 src/game/game.cpp:1246
 #, c-format
 msgid "%s from %s team has died."
 msgstr "%s (%s) は死んでしまった。"
 
-#: src/game/game.cpp:1200
+#: src/game/game.cpp:1193
 #, c-format
 msgid "%s from %s team has fallen into the water!"
 msgstr "%s (%s) は溺れてしまった。"
 
-#: src/game/game.cpp:1194
+#: src/game/game.cpp:1187
 #, c-format
 msgid "%s from %s team has fallen off the map!"
 msgstr "%s (%s) は星になった。"
 
-#: src/game/game.cpp:1214
+#: src/game/game.cpp:1207
 #, c-format
 msgid "%s from %s team has hit the ground too hard!"
 msgstr "%s (%s) は地面に叩き付けられた。"
 
 # what about female names?
 #. The playing character killed himself
-#: src/game/game.cpp:1221
+#: src/game/game.cpp:1214
 #, c-format
 msgid "%s from %s team is dead because he is clumsy!"
 msgstr "%s (%s) の死因：ヘタクソ！"
@@ -108,12 +108,12 @@ msgid ""
 msgstr ""
 "%s は環境のために何かしたと、彼が屁をするためにスカンクに命令しませんでした。"
 
-#: src/object/medkit.cpp:67
+#: src/object/medkit.cpp:66
 #, fuzzy, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s は %u ポイントのライフを獲得した！"
 
-#: src/game/game.cpp:1245
+#: src/game/game.cpp:1238
 #, c-format
 msgid "%s is a psychopath, he has killed a member of the %s team!"
 msgstr "%s は気が狂ったかのように、味方%sチームのヤツを殺った！"
@@ -146,7 +146,7 @@ msgid "%s needs a pause."
 msgstr "%s はポーズが必要です"
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:79
+#: src/object/bonus_box.cpp:81
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "%s チームの弾薬は %s によって無限だ！"
@@ -169,7 +169,7 @@ msgid "%s team has won %u Gnu! Blow them all, cowboy!"
 msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "%s チームは %u の Gnu! を獲得。カウボーイ！"
 
-#: src/weapon/air_attack.cpp:247
+#: src/weapon/air_attack.cpp:248
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -338,7 +338,7 @@ msgid "%s team has won %u slap!"
 msgid_plural "%s team has won %u slaps! Dodge this!"
 msgstr[0] "%s チームは %u つのビンタを手に入れた！よけてみろ！"
 
-#: src/weapon/snipe_rifle.cpp:258
+#: src/weapon/snipe_rifle.cpp:253
 #, c-format
 msgid "%s team has won %u sniper rifle! Aim and shoot between the eyes!"
 msgid_plural ""
@@ -383,7 +383,7 @@ msgid_plural "%s team has won %u tux launchers! Never seen a flying penguin?"
 msgstr[0] ""
 "%s チームは %u つのスーパーTuxを獲得！空飛ぶペンギンを見た事あるかい？"
 
-#: src/game/game.cpp:1229 src/game/game.cpp:1241
+#: src/game/game.cpp:1222 src/game/game.cpp:1234
 #, c-format
 msgid "%s took a member of the %s team to the grave with him!"
 msgstr "%s は、%s チームのメンバーを道連れにした！"
@@ -393,42 +393,42 @@ msgstr "%s は、%s チームのメンバーを道連れにした！"
 msgid "%s: no such nickame"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1149
+#: src/interface/man_machine_interface.cpp:1150
 #, fuzzy
 msgid "'Duel' weapon category"
 msgstr "武器カテゴリを切り替える"
 
-#: src/interface/man_machine_interface.cpp:1145
+#: src/interface/man_machine_interface.cpp:1146
 #, fuzzy
 msgid "'Heavy' weapon category"
 msgstr "武器カテゴリを切り替える"
 
-#: src/interface/man_machine_interface.cpp:1150
+#: src/interface/man_machine_interface.cpp:1151
 #, fuzzy
 msgid "'Move' weapon category"
 msgstr "武器カテゴリを切り替える"
 
-#: src/interface/man_machine_interface.cpp:1146
+#: src/interface/man_machine_interface.cpp:1147
 #, fuzzy
 msgid "'Rifle' weapon category"
 msgstr "武器カテゴリを切り替える"
 
-#: src/interface/man_machine_interface.cpp:1148
+#: src/interface/man_machine_interface.cpp:1149
 #, fuzzy
 msgid "'Special' weapon category"
 msgstr "武器カテゴリを切り替える"
 
-#: src/interface/man_machine_interface.cpp:1147
+#: src/interface/man_machine_interface.cpp:1148
 #, fuzzy
 msgid "'Throwing' weapon category"
 msgstr "武器カテゴリを切り替える"
 
-#: src/interface/man_machine_interface.cpp:1151
+#: src/interface/man_machine_interface.cpp:1152
 #, fuzzy
 msgid "'Tool' weapon category"
 msgstr "武器カテゴリを切り替える"
 
-#: src/interface/interface.cpp:283
+#: src/interface/interface.cpp:279
 msgid "(dead)"
 msgstr "(死)"
 
@@ -442,7 +442,7 @@ msgid "(unknown time)"
 msgstr "(不明な時間)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:306
+#: src/interface/interface.cpp:302
 msgid "(unlimited)"
 msgstr "(無制限)"
 
@@ -485,7 +485,7 @@ msgstr ""
 msgid "Action"
 msgstr "オプション"
 
-#: src/weapon/air_attack.cpp:205
+#: src/weapon/air_attack.cpp:206
 msgid "Air Attack"
 msgstr "空爆"
 
@@ -501,7 +501,7 @@ msgstr "全てのチーム"
 msgid "Always"
 msgstr "いつも"
 
-#: src/menu/game_mode_editor.cpp:236
+#: src/menu/game_mode_editor.cpp:240
 msgid "Ammos"
 msgstr ""
 
@@ -536,7 +536,7 @@ msgstr "作者:"
 msgid "Automatic Bazooka"
 msgstr "オートバズーカ"
 
-#: src/interface/man_machine_interface.cpp:1174
+#: src/interface/man_machine_interface.cpp:1175
 msgid "Back jump"
 msgstr ""
 
@@ -580,7 +580,7 @@ msgstr "行動前"
 msgid "Benchmark"
 msgstr ""
 
-#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
+#: src/game/config.cpp:880 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "弾丸"
 
@@ -596,19 +596,19 @@ msgstr "バウンスボール"
 msgid "Bye bye Tux..."
 msgstr "バイバイ Tux..."
 
-#: src/team/teams_list.cpp:474 src/team/teams_list.cpp:510
-#: src/team/teams_list.cpp:519 src/team/teams_list.cpp:525
-#: src/team/teams_list.cpp:583
+#: src/team/teams_list.cpp:464 src/team/teams_list.cpp:500
+#: src/team/teams_list.cpp:509 src/team/teams_list.cpp:515
+#: src/team/teams_list.cpp:573
 #, c-format
 msgid "Can't find team %s!"
 msgstr "%s! チームが見つかりません。"
 
-#: src/team/teams_list.cpp:171
+#: src/team/teams_list.cpp:168
 #, c-format
 msgid "Cannot open personal teams directory (%s)!"
 msgstr "個人チームのディレクトリが開けません (%s)!"
 
-#: src/team/teams_list.cpp:157
+#: src/team/teams_list.cpp:154
 #, c-format
 msgid "Cannot open teams directory (%s)!"
 msgstr "チームのディレクトリが開けません (%s)!"
@@ -624,7 +624,7 @@ msgstr "カスタムチームのディレクトリが開けません (%s)!"
 msgid "Center camera on character"
 msgstr "カメラの中心をキャラクターにする"
 
-#: src/interface/man_machine_interface.cpp:1156
+#: src/interface/man_machine_interface.cpp:1157
 #, fuzzy
 msgid "Center on active character"
 msgstr "行動するキャラクターを切り替える"
@@ -654,7 +654,7 @@ msgid ""
 "Right part displays current speed."
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1176
+#: src/interface/man_machine_interface.cpp:1177
 #, fuzzy
 msgid "Change weapon"
 msgstr "武器カテゴリを切り替える"
@@ -687,7 +687,7 @@ msgstr "キャラクター名:"
 msgid "Character switching"
 msgstr "キャラクターの切り替え"
 
-#: src/interface/man_machine_interface.cpp:1158
+#: src/interface/man_machine_interface.cpp:1159
 msgid "Chat"
 msgstr ""
 
@@ -699,7 +699,7 @@ msgstr "アップデートをオンラインでチェックしますか？"
 msgid "Choose randomly between the different maps"
 msgstr "マップの中からランダムに選択"
 
-#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
+#: src/game/config.cpp:878 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "クラシック"
 
@@ -836,15 +836,15 @@ msgstr "デスモード中のターン毎ダメージ"
 msgid "Date"
 msgstr "ダイナマイト"
 
-#: src/interface/man_machine_interface.cpp:1186
+#: src/interface/man_machine_interface.cpp:1187
 msgid "Decrease explosion delay"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1191
+#: src/interface/man_machine_interface.cpp:1192
 msgid "Decrease minimap size"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1193
+#: src/interface/man_machine_interface.cpp:1194
 msgid "Decrease sound volume"
 msgstr ""
 
@@ -860,12 +860,12 @@ msgstr "メッセージを表示"
 msgid "Don't forget to validate once you have selected your team(s)!"
 msgstr "一度あなたのチームを選択し確認することを忘れずに"
 
-#: src/interface/man_machine_interface.cpp:1165
+#: src/interface/man_machine_interface.cpp:1166
 #, fuzzy
 msgid "Down"
 msgstr "ダウンロード"
 
-#: src/interface/man_machine_interface.cpp:1166
+#: src/interface/man_machine_interface.cpp:1167
 #, fuzzy
 msgid "Down slowly"
 msgstr "ダウンロード"
@@ -895,7 +895,7 @@ msgstr "ターンの時間"
 msgid "Dynamite"
 msgstr "ダイナマイト"
 
-#: src/game/game.cpp:526
+#: src/game/game.cpp:519
 msgid "END OF GAME"
 msgstr "ゲームを終了"
 
@@ -921,11 +921,11 @@ msgstr "ネットワーク初期化エラー : クライアント %s はあな�
 msgid "Error loading ground"
 msgstr "チーム読み込みエラー :"
 
-#: src/team/custom_teams_list.cpp:96 src/team/teams_list.cpp:132
+#: src/team/custom_teams_list.cpp:96 src/team/teams_list.cpp:129
 msgid "Error loading team :"
 msgstr "チーム読み込みエラー :"
 
-#: src/game/config.cpp:601 src/team/custom_team.cpp:155
+#: src/game/config.cpp:667 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -979,7 +979,7 @@ msgstr ""
 "あなたは直接インターネットに接続していないなら、ルーターを確認してください。"
 "TCP Port %s は、あなたのコンピュータにフォワーディングする必要があります。"
 
-#: src/team/team.cpp:157
+#: src/team/team.cpp:158
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "エラー: 見つかりません。 ボディ\"%s\" チーム \"%s\"."
@@ -988,7 +988,6 @@ msgstr "エラー: 見つかりません。 ボディ\"%s\" チーム \"%s\"."
 msgid "Experiment new game rules"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1177
 #: src/interface/man_machine_interface.cpp:1178
 #: src/interface/man_machine_interface.cpp:1179
 #: src/interface/man_machine_interface.cpp:1180
@@ -997,6 +996,7 @@ msgstr ""
 #: src/interface/man_machine_interface.cpp:1183
 #: src/interface/man_machine_interface.cpp:1184
 #: src/interface/man_machine_interface.cpp:1185
+#: src/interface/man_machine_interface.cpp:1186
 #, c-format
 msgid "Explosion delay of %u"
 msgstr ""
@@ -1101,12 +1101,12 @@ msgid "Have a good game!"
 msgstr "楽しんで！"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:268 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "指揮官"
 
-#: src/interface/man_machine_interface.cpp:1173 src/menu/main_menu.cpp:67
+#: src/interface/man_machine_interface.cpp:1174 src/menu/main_menu.cpp:67
 #: src/menu/pause_menu.cpp:56
 msgid "Help"
 msgstr "ヘルプ"
@@ -1117,7 +1117,7 @@ msgid "High"
 msgstr "ハイジャンプ"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/interface/man_machine_interface.cpp:1172 src/menu/help_menu.cpp:125
+#: src/interface/man_machine_interface.cpp:1173 src/menu/help_menu.cpp:125
 msgid "High jump"
 msgstr "ハイジャンプ"
 
@@ -1150,15 +1150,15 @@ msgid ""
 "increase this"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1187
+#: src/interface/man_machine_interface.cpp:1188
 msgid "Increase explosion delay"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1192
+#: src/interface/man_machine_interface.cpp:1193
 msgid "Increase minimap size"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1194
+#: src/interface/man_machine_interface.cpp:1195
 msgid "Increase sound volume"
 msgstr ""
 
@@ -1232,7 +1232,7 @@ msgstr ""
 msgid "Invalid filename"
 msgstr ""
 
-#: src/game/game.cpp:1078
+#: src/game/game.cpp:1071
 msgid "It's a present!"
 msgstr "プレゼントだ！"
 
@@ -1240,7 +1240,7 @@ msgstr "プレゼントだ！"
 msgid "Jetpack"
 msgstr "ジェットパック"
 
-#: src/interface/man_machine_interface.cpp:1171
+#: src/interface/man_machine_interface.cpp:1172
 msgid "Jump"
 msgstr "ジャンプ"
 
@@ -1296,7 +1296,7 @@ msgstr "接続したプレイヤーのリスト"
 msgid "Load maps:"
 msgstr "マップ読込:"
 
-#: src/team/teams_list.cpp:143
+#: src/team/teams_list.cpp:140
 msgid "Load teams:"
 msgstr "チーム読込:"
 
@@ -1418,22 +1418,22 @@ msgstr "最も失敗作"
 msgid "Most violent"
 msgstr "最も暴力的"
 
-#: src/interface/man_machine_interface.cpp:1170
+#: src/interface/man_machine_interface.cpp:1171
 #, fuzzy
 msgid "Move camera down"
 msgstr "キャラクターの移動"
 
-#: src/interface/man_machine_interface.cpp:1167
+#: src/interface/man_machine_interface.cpp:1168
 #, fuzzy
 msgid "Move camera left"
 msgstr "キャラクターの移動"
 
-#: src/interface/man_machine_interface.cpp:1168
+#: src/interface/man_machine_interface.cpp:1169
 #, fuzzy
 msgid "Move camera right"
 msgstr "キャラクターの移動"
 
-#: src/interface/man_machine_interface.cpp:1169
+#: src/interface/man_machine_interface.cpp:1170
 #, fuzzy
 msgid "Move camera up"
 msgstr "キャラクターの移動"
@@ -1450,19 +1450,19 @@ msgstr "カーソルやマウスにカメラを追従"
 msgid "Move character"
 msgstr "キャラクターの移動"
 
-#: src/interface/man_machine_interface.cpp:1159
+#: src/interface/man_machine_interface.cpp:1160
 msgid "Move left"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1160
+#: src/interface/man_machine_interface.cpp:1161
 msgid "Move left slowly"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1161
+#: src/interface/man_machine_interface.cpp:1162
 msgid "Move right"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1162
+#: src/interface/man_machine_interface.cpp:1163
 msgid "Move right slowly"
 msgstr ""
 
@@ -1499,7 +1499,7 @@ msgstr "新規ネットワークゲーム"
 msgid "New player warning?"
 msgstr "新規プレイヤーのお知らせ？"
 
-#: src/interface/man_machine_interface.cpp:1188
+#: src/interface/man_machine_interface.cpp:1189
 #, fuzzy
 msgid "Next character"
 msgstr "キャラクターの移動"
@@ -1509,7 +1509,7 @@ msgstr "キャラクターの移動"
 msgid "No comment."
 msgstr ""
 
-#: src/weapon/weapon.cpp:643
+#: src/game/game_mode.cpp:108
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "xml設定ファイル内に<%s>要素が見つかりません！"
@@ -1523,7 +1523,7 @@ msgid "Nobody!"
 msgstr "誰もいない！"
 
 #: src/gui/control_config.cpp:127 src/gui/control_config.cpp:175
-#: src/interface/man_machine_interface.cpp:1197
+#: src/interface/man_machine_interface.cpp:1198
 #, fuzzy
 msgid "None"
 msgstr "完了"
@@ -1549,7 +1549,7 @@ msgstr "キャラクターに関して:行動するキャラクターを切り�
 msgid "On map: select a target"
 msgstr "マップに関して: ターゲットを選択します"
 
-#: src/interface/man_machine_interface.cpp:1189
+#: src/interface/man_machine_interface.cpp:1190
 #, fuzzy
 msgid "Open options menu"
 msgstr "オプション メニュー"
@@ -1584,7 +1584,7 @@ msgstr "パスワード"
 msgid "Password:"
 msgstr "パスワード"
 
-#: src/interface/man_machine_interface.cpp:1153
+#: src/interface/man_machine_interface.cpp:1154
 msgid "Pause"
 msgstr "ポーズ"
 
@@ -1664,7 +1664,7 @@ msgid ""
 msgstr ""
 
 #: src/weapon/gun.cpp:73 src/weapon/shotgun.cpp:87
-#: src/weapon/snipe_rifle.cpp:247
+#: src/weapon/snipe_rifle.cpp:242
 msgid ""
 "Press space to shoot\n"
 "Use Up/Down to change initial angle"
@@ -1710,7 +1710,7 @@ msgstr ""
 msgid "Quickly quit game with Ctrl"
 msgstr "Ctrlでクイック終了"
 
-#: src/interface/man_machine_interface.cpp:1144 src/menu/main_menu.cpp:76
+#: src/interface/man_machine_interface.cpp:1145 src/menu/main_menu.cpp:76
 msgid "Quit"
 msgstr "終了"
 
@@ -1732,11 +1732,11 @@ msgstr ""
 msgid "Random map"
 msgstr "ランダムマップ"
 
-#: src/game/config.cpp:409
+#: src/game/config.cpp:458
 msgid "Reading the default config file"
 msgstr "デフォルト構成ファイルの読込中"
 
-#: src/game/config.cpp:488
+#: src/game/config.cpp:554
 msgid "Reading the personal config file"
 msgstr "個人構成ファイルを読込中"
 
@@ -1862,7 +1862,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1175
+#: src/interface/man_machine_interface.cpp:1176
 #, fuzzy
 msgid "Shoot"
 msgstr "ショットガン"
@@ -1907,7 +1907,7 @@ msgstr "ビンタでは相手を少し飛ばすことができます。"
 msgid "Smaller aim angle and walk step"
 msgstr "照準角度と移動の微調整"
 
-#: src/weapon/snipe_rifle.cpp:246
+#: src/weapon/snipe_rifle.cpp:241
 msgid "Sniper Rifle"
 msgstr "スナイパーライフル"
 
@@ -1954,7 +1954,7 @@ msgstr "サウンド"
 msgid "Starting a new game"
 msgstr "ゲームを開始中"
 
-#: src/interface/interface.cpp:307
+#: src/interface/interface.cpp:303
 msgid "Stock:"
 msgstr "残り:"
 
@@ -1979,7 +1979,7 @@ msgstr ""
 msgid "Syringe"
 msgstr "注射器"
 
-#: src/interface/man_machine_interface.cpp:1195
+#: src/interface/man_machine_interface.cpp:1196
 msgid "Take screenshot"
 msgstr ""
 
@@ -2054,7 +2054,7 @@ msgstr "ボールは、爆発前に戦場から出てしまいました。"
 msgid "The bigger the faster you'll fall!"
 msgstr ""
 
-#: src/menu/game_mode_editor.cpp:279
+#: src/menu/game_mode_editor.cpp:283
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2077,7 +2077,7 @@ msgstr "接続がタイムアウトしました。firewall を確認してくだ
 msgid "The disco grenade has left the dance floor before exploding!"
 msgstr "ディスコグレネードは、爆発前にダンスフロアから出てしまいました。"
 
-#: src/game/game.cpp:805
+#: src/game/game.cpp:798
 msgid "The game was interrupted because you got disconnected."
 msgstr "あなたが切断されたため、ゲームは中断されました。"
 
@@ -2106,7 +2106,7 @@ msgstr "サーバーから接続が拒否されました。"
 msgid "The server rejected the connection: wrong password!"
 msgstr "サーバーから接続が拒否されました: パスワードが違います！"
 
-#: src/weapon/weapon.cpp:655
+#: src/game/game_mode.cpp:120
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2167,23 +2167,23 @@ msgstr ""
 "ターン毎で1つの弾薬"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/interface/man_machine_interface.cpp:1154 src/menu/help_menu.cpp:131
+#: src/interface/man_machine_interface.cpp:1155 src/menu/help_menu.cpp:131
 #, fuzzy
 msgid "Toggle fullscreen"
 msgstr "フルスクリーン？"
 
-#: src/interface/man_machine_interface.cpp:1155
+#: src/interface/man_machine_interface.cpp:1156
 #, fuzzy
 msgid "Toggle interface"
 msgstr "インターフェースの表示/非表示"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/interface/man_machine_interface.cpp:1190 src/menu/help_menu.cpp:144
+#: src/interface/man_machine_interface.cpp:1191 src/menu/help_menu.cpp:144
 #, fuzzy
 msgid "Toggle minimap"
 msgstr "ミニマップの表示/非表示"
 
-#: src/interface/man_machine_interface.cpp:1157
+#: src/interface/man_machine_interface.cpp:1158
 #, fuzzy
 msgid "Toggle weapons menu"
 msgstr "武器メニューを表示"
@@ -2250,7 +2250,7 @@ msgstr "不明なコマンド"
 msgid "Unknown."
 msgstr "不明なコマンド"
 
-#: src/game/game_mode.cpp:319
+#: src/game/config.cpp:879
 msgid "Unlimited"
 msgstr "無制限"
 
@@ -2258,11 +2258,11 @@ msgstr "無制限"
 msgid "Unspecified error or end of file"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1163
+#: src/interface/man_machine_interface.cpp:1164
 msgid "Up"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1164
+#: src/interface/man_machine_interface.cpp:1165
 msgid "Up slowly"
 msgstr ""
 
@@ -2320,7 +2320,7 @@ msgid "Wait! %i player is not ready yet!"
 msgid_plural "Wait! %i players are not ready yet!"
 msgstr[0] "待ってください！ %i はまだ準備ができていません！"
 
-#: src/game/game.cpp:700
+#: src/game/game.cpp:693
 #, c-format
 msgid "Waiting for %s"
 msgstr "%s を待っています"
@@ -2348,7 +2348,7 @@ msgstr " Warmux バージョン"
 msgid "Warning, malformed replay with data of size %u"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1152
+#: src/interface/man_machine_interface.cpp:1153
 #, fuzzy
 msgid "Weapon category 8"
 msgstr "武器カテゴリを切り替える"
@@ -2374,12 +2374,12 @@ msgstr "Webサイト: "
 msgid "Welcome to %s on %s!"
 msgstr "%s (%s)へようこそ！"
 
-#: src/game/game.cpp:1187
+#: src/game/game.cpp:1180
 #, c-format
 msgid "What a beautiful homerun! %s from %s team is in another world..."
 msgstr "なんと美しいホームランだろう！%s (%s)は異世界へ..."
 
-#: src/game/game.cpp:1250
+#: src/game/game.cpp:1243
 #, c-format
 msgid "What a shame for %s - he was killed by a simple gun!"
 msgstr " %s はハンドガンごときにやられました...これは恥ずかしい！"
@@ -2445,7 +2445,7 @@ msgstr ""
 msgid "You need at least one valid map!"
 msgstr "最低1つの有効なマップが必要です！"
 
-#: src/game/game.cpp:320 src/team/teams_list.cpp:179
+#: src/game/game.cpp:313 src/team/teams_list.cpp:176
 msgid "You need at least two valid teams!"
 msgstr "最低2つの有効なチームが必要です！"
 
@@ -2462,7 +2462,7 @@ msgstr "ミス！"
 msgid "aka"
 msgstr "aka"
 
-#: src/weapon/air_attack.cpp:206
+#: src/weapon/air_attack.cpp:207
 #, fuzzy
 msgid ""
 "attack direction: Left/Right\n"

@@ -74,8 +74,8 @@ inline Double RestrictAngle(Double angle)
 }
 
 // Absolute value
-inline Double AbsoluteValue(const Double x) { return x >= 0 ? x : -x; }
-inline bool EqualsZero(const Double x) { return AbsoluteValue(x) <= EPSILON; }
+inline Double AbsoluteValue(const Double &x) { return x >= 0 ? x : -x; }
+inline bool EqualsZero(const Double &x) { return AbsoluteValue(x) <= EPSILON; }
 
 template <class T> T max(T a, T b)
 {

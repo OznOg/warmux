@@ -114,11 +114,11 @@ public:
   void ResetConstants() { *((ObjectConfig*)this) = m_cfg; };
 
   // Set initial speed.
-  void SetSpeedXY(Point2d vector);
+  void SetSpeedXY(const Point2d &vector);
   void SetSpeed(Double norm, Double angle) { SetSpeedXY(Point2d::FromPolarCoordinates(norm, angle)); };
 
   // Add a initial speed to the current speed.
-  void AddSpeedXY(Point2d vector);
+  void AddSpeedXY(const Point2d &vector);
   void AddSpeed(Double norm, Double angle) { AddSpeedXY(Point2d::FromPolarCoordinates(norm, angle)); };
 
   // Get current object speed
@@ -181,7 +181,7 @@ protected:
   virtual void SignalRebound() { };
 
   // Make the object rebound
-  void Rebound(Point2d contactPos, Double contact_angle);
+  void Rebound(const Point2d &contactPos, Double contact_angle);
 private:
 
   void ComputeFallNextXY(Double delta_t);

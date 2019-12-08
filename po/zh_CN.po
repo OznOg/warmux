@@ -62,35 +62,35 @@ msgstr " %s 队伍"
 msgid "%s Team - Remote"
 msgstr " %s 队伍- 遥控"
 
-#: src/game/game.cpp:1208
+#: src/game/game.cpp:1201
 #, c-format
 msgid "%s from %s team committed suicide!"
 msgstr "%s (%s) 自尽了 ！"
 
 #. Could be modified, but for now, save on translation
-#: src/game/game.cpp:1234 src/game/game.cpp:1253
+#: src/game/game.cpp:1227 src/game/game.cpp:1246
 #, c-format
 msgid "%s from %s team has died."
 msgstr "%s (%s)死掉了。。。"
 
-#: src/game/game.cpp:1200
+#: src/game/game.cpp:1193
 #, c-format
 msgid "%s from %s team has fallen into the water!"
 msgstr "%s (%s)入水——深呼吸，沉了！"
 
-#: src/game/game.cpp:1194
+#: src/game/game.cpp:1187
 #, c-format
 msgid "%s from %s team has fallen off the map!"
 msgstr "%s (%s)飞出地图边缘。。。诀别！"
 
-#: src/game/game.cpp:1214
+#: src/game/game.cpp:1207
 #, c-format
 msgid "%s from %s team has hit the ground too hard!"
 msgstr "%s (%s) 亲吻大地，可是对方太硬了！"
 
 # what about female names?
 #. The playing character killed himself
-#: src/game/game.cpp:1221
+#: src/game/game.cpp:1214
 #, c-format
 msgid "%s from %s team is dead because he is clumsy!"
 msgstr "%s (%s)的死因是: 太笨 ！"
@@ -107,12 +107,12 @@ msgid ""
 "fart."
 msgstr "%s 造成了环境影响，明明没给那只臭鼬下命令！"
 
-#: src/object/medkit.cpp:67
+#: src/object/medkit.cpp:66
 #, c-format
 msgid "%s has won %u points of energy!"
 msgstr "%s 取得了 %u 点能量！"
 
-#: src/game/game.cpp:1245
+#: src/game/game.cpp:1238
 #, c-format
 msgid "%s is a psychopath, he has killed a member of the %s team!"
 msgstr "%s 是疯子，他干掉了一个%s的倒霉蛋！"
@@ -145,7 +145,7 @@ msgid "%s needs a pause."
 msgstr "%s 需要叫暂停。"
 
 #. Can happen if the configuration is wrong...
-#: src/object/bonus_box.cpp:79
+#: src/object/bonus_box.cpp:81
 #, c-format
 msgid "%s team already has infinite ammo for the %s!"
 msgstr "%s 队有无穷的 %s弹夹！"
@@ -168,7 +168,7 @@ msgid "%s team has won %u Gnu! Blow them all, cowboy!"
 msgid_plural "%s team has won %u Gnus! Blow them all, cowboy!"
 msgstr[0] "%s 队得到 %u Gnu-北美野牛！ 吹起来, 牛仔！"
 
-#: src/weapon/air_attack.cpp:247
+#: src/weapon/air_attack.cpp:248
 #, c-format
 msgid "%s team has won %u air attack!"
 msgid_plural "%s team has won %u air attacks!"
@@ -335,7 +335,7 @@ msgid "%s team has won %u slap!"
 msgid_plural "%s team has won %u slaps! Dodge this!"
 msgstr[0] "%s 队拿到 %u 拍子了！快窜！"
 
-#: src/weapon/snipe_rifle.cpp:258
+#: src/weapon/snipe_rifle.cpp:253
 #, c-format
 msgid "%s team has won %u sniper rifle! Aim and shoot between the eyes!"
 msgid_plural ""
@@ -378,7 +378,7 @@ msgid "%s team has won %u tux launcher! Never seen a flying penguin?"
 msgid_plural "%s team has won %u tux launchers! Never seen a flying penguin?"
 msgstr[0] "%s 队得到 %u 企鹅发射器！ 没见过满天飞的企鹅吗?"
 
-#: src/game/game.cpp:1229 src/game/game.cpp:1241
+#: src/game/game.cpp:1222 src/game/game.cpp:1234
 #, c-format
 msgid "%s took a member of the %s team to the grave with him!"
 msgstr "%s 带走了 %s 的一员！"
@@ -388,35 +388,35 @@ msgstr "%s 带走了 %s 的一员！"
 msgid "%s: no such nickame"
 msgstr "%s: 没有这个名字"
 
-#: src/interface/man_machine_interface.cpp:1149
+#: src/interface/man_machine_interface.cpp:1150
 msgid "'Duel' weapon category"
 msgstr "'对决‘ 武器分类"
 
-#: src/interface/man_machine_interface.cpp:1145
+#: src/interface/man_machine_interface.cpp:1146
 msgid "'Heavy' weapon category"
 msgstr "‘重装‘ 武器分类"
 
-#: src/interface/man_machine_interface.cpp:1150
+#: src/interface/man_machine_interface.cpp:1151
 msgid "'Move' weapon category"
 msgstr "‘移动‘ 武器分类"
 
-#: src/interface/man_machine_interface.cpp:1146
+#: src/interface/man_machine_interface.cpp:1147
 msgid "'Rifle' weapon category"
 msgstr "'枪支'武器分类"
 
-#: src/interface/man_machine_interface.cpp:1148
+#: src/interface/man_machine_interface.cpp:1149
 msgid "'Special' weapon category"
 msgstr "'特殊'武器分类"
 
-#: src/interface/man_machine_interface.cpp:1147
+#: src/interface/man_machine_interface.cpp:1148
 msgid "'Throwing' weapon category"
 msgstr "‘投掷‘武器分类"
 
-#: src/interface/man_machine_interface.cpp:1151
+#: src/interface/man_machine_interface.cpp:1152
 msgid "'Tool' weapon category"
 msgstr "‘工具‘武器分类"
 
-#: src/interface/interface.cpp:283
+#: src/interface/interface.cpp:279
 msgid "(dead)"
 msgstr "(死掉的)"
 
@@ -430,7 +430,7 @@ msgid "(unknown time)"
 msgstr "(未知时间)"
 
 #. Display number of ammo
-#: src/interface/interface.cpp:306
+#: src/interface/interface.cpp:302
 msgid "(unlimited)"
 msgstr "(无限的)"
 
@@ -471,7 +471,7 @@ msgstr ""
 msgid "Action"
 msgstr "动作"
 
-#: src/weapon/air_attack.cpp:205
+#: src/weapon/air_attack.cpp:206
 msgid "Air Attack"
 msgstr "空袭"
 
@@ -487,7 +487,7 @@ msgstr "全部的队伍"
 msgid "Always"
 msgstr "总是"
 
-#: src/menu/game_mode_editor.cpp:236
+#: src/menu/game_mode_editor.cpp:240
 msgid "Ammos"
 msgstr ""
 
@@ -521,7 +521,7 @@ msgstr "作者:"
 msgid "Automatic Bazooka"
 msgstr "制导火箭炮"
 
-#: src/interface/man_machine_interface.cpp:1174
+#: src/interface/man_machine_interface.cpp:1175
 msgid "Back jump"
 msgstr "后空翻"
 
@@ -565,7 +565,7 @@ msgstr "行动之前"
 msgid "Benchmark"
 msgstr "评测"
 
-#: src/game/game_mode.cpp:320 src/menu/game_mode_editor.cpp:103
+#: src/game/config.cpp:880 src/menu/game_mode_editor.cpp:103
 msgid "Blitz"
 msgstr "闪电"
 
@@ -581,19 +581,19 @@ msgstr "弹力球"
 msgid "Bye bye Tux..."
 msgstr "Bye bye Tux..."
 
-#: src/team/teams_list.cpp:474 src/team/teams_list.cpp:510
-#: src/team/teams_list.cpp:519 src/team/teams_list.cpp:525
-#: src/team/teams_list.cpp:583
+#: src/team/teams_list.cpp:464 src/team/teams_list.cpp:500
+#: src/team/teams_list.cpp:509 src/team/teams_list.cpp:515
+#: src/team/teams_list.cpp:573
 #, c-format
 msgid "Can't find team %s!"
 msgstr "没找到队伍 %s！"
 
-#: src/team/teams_list.cpp:171
+#: src/team/teams_list.cpp:168
 #, c-format
 msgid "Cannot open personal teams directory (%s)!"
 msgstr "打不开个人团队目录(%s)！"
 
-#: src/team/teams_list.cpp:157
+#: src/team/teams_list.cpp:154
 #, c-format
 msgid "Cannot open teams directory (%s)!"
 msgstr "打不开团队目录 (%s)！"
@@ -608,7 +608,7 @@ msgstr "打不开定制的团队目录 (%s)！"
 msgid "Center camera on character"
 msgstr "镜头对准角色"
 
-#: src/interface/man_machine_interface.cpp:1156
+#: src/interface/man_machine_interface.cpp:1157
 msgid "Center on active character"
 msgstr "镜头对准活动角色"
 
@@ -636,7 +636,7 @@ msgstr ""
 "改变回放速度。\n"
 "右面显示当前速度。"
 
-#: src/interface/man_machine_interface.cpp:1176
+#: src/interface/man_machine_interface.cpp:1177
 msgid "Change weapon"
 msgstr "改变武器"
 
@@ -669,7 +669,7 @@ msgstr "角色名称："
 msgid "Character switching"
 msgstr "角色切换"
 
-#: src/interface/man_machine_interface.cpp:1158
+#: src/interface/man_machine_interface.cpp:1159
 msgid "Chat"
 msgstr "聊天"
 
@@ -681,7 +681,7 @@ msgstr "网上检查升级？"
 msgid "Choose randomly between the different maps"
 msgstr "在地图中随机选择"
 
-#: src/game/game_mode.cpp:318 src/menu/game_mode_editor.cpp:102
+#: src/game/config.cpp:878 src/menu/game_mode_editor.cpp:102
 msgid "Classic"
 msgstr "经典"
 
@@ -828,15 +828,15 @@ msgstr "死亡模式每回合伤害"
 msgid "Date"
 msgstr "炸药"
 
-#: src/interface/man_machine_interface.cpp:1186
+#: src/interface/man_machine_interface.cpp:1187
 msgid "Decrease explosion delay"
 msgstr "降低起爆延迟"
 
-#: src/interface/man_machine_interface.cpp:1191
+#: src/interface/man_machine_interface.cpp:1192
 msgid "Decrease minimap size"
 msgstr "降低小地图尺寸"
 
-#: src/interface/man_machine_interface.cpp:1193
+#: src/interface/man_machine_interface.cpp:1194
 msgid "Decrease sound volume"
 msgstr "降低音量"
 
@@ -852,11 +852,11 @@ msgstr "显示这条信息"
 msgid "Don't forget to validate once you have selected your team(s)!"
 msgstr "别忘了选择队伍之后要确认！"
 
-#: src/interface/man_machine_interface.cpp:1165
+#: src/interface/man_machine_interface.cpp:1166
 msgid "Down"
 msgstr "下"
 
-#: src/interface/man_machine_interface.cpp:1166
+#: src/interface/man_machine_interface.cpp:1167
 msgid "Down slowly"
 msgstr "缓慢向下"
 
@@ -884,7 +884,7 @@ msgstr "回合时间长度"
 msgid "Dynamite"
 msgstr "炸药"
 
-#: src/game/game.cpp:526
+#: src/game/game.cpp:519
 msgid "END OF GAME"
 msgstr "游戏结束"
 
@@ -909,11 +909,11 @@ msgstr "网络初始错误：客户端 %s 不同意你！ - %s"
 msgid "Error loading ground"
 msgstr "读取地面出错:"
 
-#: src/team/custom_teams_list.cpp:96 src/team/teams_list.cpp:132
+#: src/team/custom_teams_list.cpp:96 src/team/teams_list.cpp:129
 msgid "Error loading team :"
 msgstr "读取队伍出错 :"
 
-#: src/game/config.cpp:601 src/team/custom_team.cpp:155
+#: src/game/config.cpp:667 src/team/custom_team.cpp:155
 #: src/team/custom_team.cpp:166 src/team/custom_team.cpp:177
 #, c-format
 msgid ""
@@ -962,7 +962,7 @@ msgstr ""
 "连接。加入你不能直接连接互联网，检查路由器设置：TCP端口 %s 必须在你计算机端口"
 "之前。"
 
-#: src/team/team.cpp:157
+#: src/team/team.cpp:158
 #, c-format
 msgid "Error: can't find the body \"%s\" for the team \"%s\"."
 msgstr "错误: 找不到 body\"%s\" 队伍 \"%s\"。"
@@ -971,7 +971,6 @@ msgstr "错误: 找不到 body\"%s\" 队伍 \"%s\"。"
 msgid "Experiment new game rules"
 msgstr "实验新的游戏规则"
 
-#: src/interface/man_machine_interface.cpp:1177
 #: src/interface/man_machine_interface.cpp:1178
 #: src/interface/man_machine_interface.cpp:1179
 #: src/interface/man_machine_interface.cpp:1180
@@ -980,6 +979,7 @@ msgstr "实验新的游戏规则"
 #: src/interface/man_machine_interface.cpp:1183
 #: src/interface/man_machine_interface.cpp:1184
 #: src/interface/man_machine_interface.cpp:1185
+#: src/interface/man_machine_interface.cpp:1186
 #, c-format
 msgid "Explosion delay of %u"
 msgstr "%u 的起爆延迟"
@@ -1087,12 +1087,12 @@ msgid "Have a good game!"
 msgstr "来吧！"
 
 #. ***    Names: "Head commander" + text/custom team    ***
-#: src/interface/interface.cpp:272 src/menu/options_menu.cpp:180
+#: src/interface/interface.cpp:268 src/menu/options_menu.cpp:180
 #: src/menu/team_box.cpp:105
 msgid "Head commander"
 msgstr "指挥官"
 
-#: src/interface/man_machine_interface.cpp:1173 src/menu/main_menu.cpp:67
+#: src/interface/man_machine_interface.cpp:1174 src/menu/main_menu.cpp:67
 #: src/menu/pause_menu.cpp:56
 msgid "Help"
 msgstr "帮助"
@@ -1102,7 +1102,7 @@ msgid "High"
 msgstr "高"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/interface/man_machine_interface.cpp:1172 src/menu/help_menu.cpp:125
+#: src/interface/man_machine_interface.cpp:1173 src/menu/help_menu.cpp:125
 msgid "High jump"
 msgstr "高跳"
 
@@ -1137,15 +1137,15 @@ msgstr ""
 "如果喜欢医疗包，\n"
 "提升这个"
 
-#: src/interface/man_machine_interface.cpp:1187
+#: src/interface/man_machine_interface.cpp:1188
 msgid "Increase explosion delay"
 msgstr "提升起爆延迟"
 
-#: src/interface/man_machine_interface.cpp:1192
+#: src/interface/man_machine_interface.cpp:1193
 msgid "Increase minimap size"
 msgstr "提升小地图尺寸"
 
-#: src/interface/man_machine_interface.cpp:1194
+#: src/interface/man_machine_interface.cpp:1195
 msgid "Increase sound volume"
 msgstr "提升音量"
 
@@ -1216,7 +1216,7 @@ msgstr "界面和触摸控制，更多细节在其他标签页"
 msgid "Invalid filename"
 msgstr "不可用的文件名"
 
-#: src/game/game.cpp:1078
+#: src/game/game.cpp:1071
 msgid "It's a present!"
 msgstr "就是现在！"
 
@@ -1224,7 +1224,7 @@ msgstr "就是现在！"
 msgid "Jetpack"
 msgstr "喷射包"
 
-#: src/interface/man_machine_interface.cpp:1171
+#: src/interface/man_machine_interface.cpp:1172
 msgid "Jump"
 msgstr "跳跃"
 
@@ -1277,7 +1277,7 @@ msgstr "列出已经连接的玩家"
 msgid "Load maps:"
 msgstr "读取地图:"
 
-#: src/team/teams_list.cpp:143
+#: src/team/teams_list.cpp:140
 msgid "Load teams:"
 msgstr "读取队伍:"
 
@@ -1398,19 +1398,19 @@ msgstr "最失败的"
 msgid "Most violent"
 msgstr "最暴力的"
 
-#: src/interface/man_machine_interface.cpp:1170
+#: src/interface/man_machine_interface.cpp:1171
 msgid "Move camera down"
 msgstr "移动镜头向下"
 
-#: src/interface/man_machine_interface.cpp:1167
+#: src/interface/man_machine_interface.cpp:1168
 msgid "Move camera left"
 msgstr "移动镜头向左"
 
-#: src/interface/man_machine_interface.cpp:1168
+#: src/interface/man_machine_interface.cpp:1169
 msgid "Move camera right"
 msgstr "移动镜头向右"
 
-#: src/interface/man_machine_interface.cpp:1169
+#: src/interface/man_machine_interface.cpp:1170
 msgid "Move camera up"
 msgstr "移动镜头向上"
 
@@ -1424,19 +1424,19 @@ msgstr "用鼠标或方向键移动镜头"
 msgid "Move character"
 msgstr "移动角色"
 
-#: src/interface/man_machine_interface.cpp:1159
+#: src/interface/man_machine_interface.cpp:1160
 msgid "Move left"
 msgstr "向左移动"
 
-#: src/interface/man_machine_interface.cpp:1160
+#: src/interface/man_machine_interface.cpp:1161
 msgid "Move left slowly"
 msgstr "向左缓慢移动"
 
-#: src/interface/man_machine_interface.cpp:1161
+#: src/interface/man_machine_interface.cpp:1162
 msgid "Move right"
 msgstr "向右移动"
 
-#: src/interface/man_machine_interface.cpp:1162
+#: src/interface/man_machine_interface.cpp:1163
 msgid "Move right slowly"
 msgstr "向右缓慢移动"
 
@@ -1473,7 +1473,7 @@ msgstr "网上游戏"
 msgid "New player warning?"
 msgstr "新玩家警告？"
 
-#: src/interface/man_machine_interface.cpp:1188
+#: src/interface/man_machine_interface.cpp:1189
 msgid "Next character"
 msgstr "下一个角色"
 
@@ -1483,7 +1483,7 @@ msgstr "下一个角色"
 msgid "No comment."
 msgstr "评论："
 
-#: src/weapon/weapon.cpp:643
+#: src/game/game_mode.cpp:108
 #, c-format
 msgid "No element <%s> found in the xml config file!"
 msgstr "没找到 <%s>重点 xml配置文件 ！"
@@ -1497,7 +1497,7 @@ msgid "Nobody!"
 msgstr "空房间！"
 
 #: src/gui/control_config.cpp:127 src/gui/control_config.cpp:175
-#: src/interface/man_machine_interface.cpp:1197
+#: src/interface/man_machine_interface.cpp:1198
 msgid "None"
 msgstr "无"
 
@@ -1520,7 +1520,7 @@ msgstr "在角色上: 选择它"
 msgid "On map: select a target"
 msgstr "在地图上: 选择一个目标"
 
-#: src/interface/man_machine_interface.cpp:1189
+#: src/interface/man_machine_interface.cpp:1190
 msgid "Open options menu"
 msgstr "开启选项菜单"
 
@@ -1557,7 +1557,7 @@ msgstr "密码"
 msgid "Password:"
 msgstr "密码"
 
-#: src/interface/man_machine_interface.cpp:1153
+#: src/interface/man_machine_interface.cpp:1154
 msgid "Pause"
 msgstr "暂停"
 
@@ -1645,7 +1645,7 @@ msgstr ""
 "和缓地着陆"
 
 #: src/weapon/gun.cpp:73 src/weapon/shotgun.cpp:87
-#: src/weapon/snipe_rifle.cpp:247
+#: src/weapon/snipe_rifle.cpp:242
 msgid ""
 "Press space to shoot\n"
 "Use Up/Down to change initial angle"
@@ -1704,7 +1704,7 @@ msgstr "质量"
 msgid "Quickly quit game with Ctrl"
 msgstr "借用Ctrl快速退出游戏"
 
-#: src/interface/man_machine_interface.cpp:1144 src/menu/main_menu.cpp:76
+#: src/interface/man_machine_interface.cpp:1145 src/menu/main_menu.cpp:76
 msgid "Quit"
 msgstr "退出"
 
@@ -1725,11 +1725,11 @@ msgstr "轨道枪"
 msgid "Random map"
 msgstr "随机读取地图"
 
-#: src/game/config.cpp:409
+#: src/game/config.cpp:458
 msgid "Reading the default config file"
 msgstr "正读取默认设置文件"
 
-#: src/game/config.cpp:488
+#: src/game/config.cpp:554
 msgid "Reading the personal config file"
 msgstr "正读取个人设置文件"
 
@@ -1866,7 +1866,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1175
+#: src/interface/man_machine_interface.cpp:1176
 msgid "Shoot"
 msgstr "发射"
 
@@ -1909,7 +1909,7 @@ msgstr "拍一下，让那家伙跳一跳"
 msgid "Smaller aim angle and walk step"
 msgstr "慢步精准"
 
-#: src/weapon/snipe_rifle.cpp:246
+#: src/weapon/snipe_rifle.cpp:241
 msgid "Sniper Rifle"
 msgstr "狙击步枪"
 
@@ -1955,7 +1955,7 @@ msgstr "声音"
 msgid "Starting a new game"
 msgstr "重新来游戏"
 
-#: src/interface/interface.cpp:307
+#: src/interface/interface.cpp:303
 msgid "Stock:"
 msgstr "箱子:"
 
@@ -1980,7 +1980,7 @@ msgstr "在经典和回放两种界面间切换"
 msgid "Syringe"
 msgstr "注射器"
 
-#: src/interface/man_machine_interface.cpp:1195
+#: src/interface/man_machine_interface.cpp:1196
 msgid "Take screenshot"
 msgstr "截图"
 
@@ -2054,7 +2054,7 @@ msgstr "球膨胀前离开战场"
 msgid "The bigger the faster you'll fall!"
 msgstr "越大越快越失败!"
 
-#: src/menu/game_mode_editor.cpp:279
+#: src/menu/game_mode_editor.cpp:283
 msgid ""
 "The blitz mode does not reset the time between each team turn. A team looses "
 "when it has no players left or its time has ran out."
@@ -2075,7 +2075,7 @@ msgstr "连接超时。请检查防火墙！"
 msgid "The disco grenade has left the dance floor before exploding!"
 msgstr "跃动手雷离开舞台前发生爆炸"
 
-#: src/game/game.cpp:805
+#: src/game/game.cpp:798
 msgid "The game was interrupted because you got disconnected."
 msgstr "您断线了。"
 
@@ -2104,7 +2104,7 @@ msgstr "服务器拒绝"
 msgid "The server rejected the connection: wrong password!"
 msgstr "服务器拒绝: 密码错了。"
 
-#: src/weapon/weapon.cpp:655
+#: src/game/game_mode.cpp:120
 #, c-format
 msgid ""
 "The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"
@@ -2163,20 +2163,20 @@ msgstr ""
 "每回合一个弹夹"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/interface/man_machine_interface.cpp:1154 src/menu/help_menu.cpp:131
+#: src/interface/man_machine_interface.cpp:1155 src/menu/help_menu.cpp:131
 msgid "Toggle fullscreen"
 msgstr "切换全屏"
 
-#: src/interface/man_machine_interface.cpp:1155
+#: src/interface/man_machine_interface.cpp:1156
 msgid "Toggle interface"
 msgstr "切换界面"
 
 #. TRANSLATORS: please be imaginative and keep it short!
-#: src/interface/man_machine_interface.cpp:1190 src/menu/help_menu.cpp:144
+#: src/interface/man_machine_interface.cpp:1191 src/menu/help_menu.cpp:144
 msgid "Toggle minimap"
 msgstr "切换小地图"
 
-#: src/interface/man_machine_interface.cpp:1157
+#: src/interface/man_machine_interface.cpp:1158
 msgid "Toggle weapons menu"
 msgstr "切换武器菜单"
 
@@ -2242,7 +2242,7 @@ msgstr "未知命令种类 %i"
 msgid "Unknown."
 msgstr "未知命令"
 
-#: src/game/game_mode.cpp:319
+#: src/game/config.cpp:879
 msgid "Unlimited"
 msgstr "无限"
 
@@ -2250,11 +2250,11 @@ msgstr "无限"
 msgid "Unspecified error or end of file"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1163
+#: src/interface/man_machine_interface.cpp:1164
 msgid "Up"
 msgstr "向上"
 
-#: src/interface/man_machine_interface.cpp:1164
+#: src/interface/man_machine_interface.cpp:1165
 msgid "Up slowly"
 msgstr "缓慢向上"
 
@@ -2314,7 +2314,7 @@ msgid "Wait! %i player is not ready yet!"
 msgid_plural "Wait! %i players are not ready yet!"
 msgstr[0] "请等待！ %i没准备好！"
 
-#: src/game/game.cpp:700
+#: src/game/game.cpp:693
 #, c-format
 msgid "Waiting for %s"
 msgstr "等待 %s"
@@ -2340,7 +2340,7 @@ msgstr " Warmux 版本"
 msgid "Warning, malformed replay with data of size %u"
 msgstr ""
 
-#: src/interface/man_machine_interface.cpp:1152
+#: src/interface/man_machine_interface.cpp:1153
 msgid "Weapon category 8"
 msgstr "武器分类 8"
 
@@ -2364,12 +2364,12 @@ msgstr "网站："
 msgid "Welcome to %s on %s!"
 msgstr "欢迎来到 %s %s！"
 
-#: src/game/game.cpp:1187
+#: src/game/game.cpp:1180
 #, c-format
 msgid "What a beautiful homerun! %s from %s team is in another world..."
 msgstr "光彩的回老家了！%s 已经离开 %s ，到达了另一个世界。"
 
-#: src/game/game.cpp:1250
+#: src/game/game.cpp:1243
 #, c-format
 msgid "What a shame for %s - he was killed by a simple gun!"
 msgstr " %s 悲惨死去，不能瞑目！"
@@ -2436,7 +2436,7 @@ msgstr "你必须输入指挥官和全部玩家名称"
 msgid "You need at least one valid map!"
 msgstr "你需要可用的地图！"
 
-#: src/game/game.cpp:320 src/team/teams_list.cpp:179
+#: src/game/game.cpp:313 src/team/teams_list.cpp:176
 msgid "You need at least two valid teams!"
 msgstr "至少有2组才能开始 ！"
 
@@ -2453,7 +2453,7 @@ msgstr "你打偏了！"
 msgid "aka"
 msgstr "即"
 
-#: src/weapon/air_attack.cpp:206
+#: src/weapon/air_attack.cpp:207
 msgid ""
 "attack direction: Left/Right\n"
 "Bombing: Left click on the target\n"
