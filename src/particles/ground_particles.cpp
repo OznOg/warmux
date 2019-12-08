@@ -32,12 +32,11 @@ GroundParticle::GroundParticle(const Point2i& size, const Point2i& position) :
   SetSize(Point2i(1,1));
   m_initial_time_to_live = 1; // used as a boolean because we redefine Refresh!
   m_time_left_to_live = 1; // used as a boolean because we redefine Refresh!
-  image = nullptr;
 
   Rectanglei rec;
   rec.SetPosition( position - size / 2);
   rec.SetSize( size );
-  image = new Sprite(GetWorld().ground.GetPart(rec));
+  image = std::make_unique<Sprite>(GetWorld().ground.GetPart(rec));
 }
 
 void GroundParticle::Refresh()

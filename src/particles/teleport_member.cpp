@@ -31,7 +31,7 @@ TeleportMemberParticle::TeleportMemberParticle(Sprite& spr, const Point2i& posit
 {
   SetCollisionModel(false, false, false);
   spr.RefreshSurface(); // Make sure we have something to build on
-  image = new Sprite(spr.GetSurface());
+  image = std::make_unique<Sprite>(spr.GetSurface());
 
   ASSERT(image->GetWidth() && image->GetHeight());
   SetXY(position);

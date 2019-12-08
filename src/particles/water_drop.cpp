@@ -55,7 +55,7 @@ void WaterParticle::SetDefaults(particle_spr type)
   m_time_left_to_live = 100;
   m_check_move_on_end_turn = false;
 
-  image = new Sprite(*ParticleEngine::GetSprite(type));
+  image = ParticleEngine::GetSprite(type);
 
   image->SetRotation_HotSpot(bottom_center);
   SetSize(image->GetSize());

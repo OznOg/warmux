@@ -32,7 +32,7 @@ BodyMemberParticle::BodyMemberParticle(Sprite& spr, const Point2i& position)
   m_time_left_to_live = 100;
   // Bug #17408: make sure there's an available surface for the sprite
   spr.RefreshSurface();
-  image = new Sprite(spr.GetSurface());
+  image = std::make_unique<Sprite>(spr.GetSurface());
   image->EnableCaches(false, 0); // Some generic particle code requires it to be flipped
   ASSERT(image->GetWidth() && image->GetHeight());
   SetXY(position);

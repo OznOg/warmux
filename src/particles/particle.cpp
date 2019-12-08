@@ -61,11 +61,6 @@ Particle::Particle(const std::string &name) :
   SetCollisionModel(false, false, false);
 }
 
-Particle::~Particle()
-{
-  delete image;
-}
-
 void Particle::Draw()
 {
   if (m_time_left_to_live > 0) {
@@ -178,13 +173,13 @@ void ParticleEngine::FreeMem()
     delete i;
 }
 
-Sprite* ParticleEngine::GetSprite(particle_spr type)
+std::unique_ptr<Sprite> ParticleEngine::GetSprite(particle_spr type)
 {
   ASSERT(type < particle_spr_nbr);
   if (!sprites_loaded)
     return nullptr;
 
-  return new Sprite(*(particle_sprite[type]));
+  return std::make_unique<Sprite>(*particle_sprite[type]);
 }
 
 void ParticleEngine::AddNow(const Point2i &position,

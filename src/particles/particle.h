@@ -26,6 +26,8 @@
 #include "object/physical_obj.h"
 #include <WARMUX_base.h>
 
+#include <memory>
+
 // Forward declarations
 class Sprite;
 class Surface;
@@ -86,11 +88,10 @@ protected:
   uint m_time_between_scale;
   uint m_last_refresh;
 
-  Sprite *image;
+  std::unique_ptr<Sprite> image;
 
 public:
   Particle(const std::string &name);
-  ~Particle() override;
   void Draw() override;
   void Refresh() override;
   void SetOnTop(bool b) { on_top = b; }
@@ -120,7 +121,7 @@ public:
 
   static void Load();
   static void FreeMem();
-  static Sprite* GetSprite(particle_spr type);
+  static std::unique_ptr<Sprite> GetSprite(particle_spr type);
 
   static void AddNow(const Point2i &position,
                      uint nb_particles, particle_t type,

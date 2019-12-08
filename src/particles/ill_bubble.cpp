@@ -33,8 +33,7 @@ static const Double MIN_SCALE = 0.25f;
 
 IllBubble::IllBubble() : ExplosionSmoke(20)
 {
-  // delete the sprite of the ExplosionSmoke
-  delete image;
+  // also delete the sprite of the ExplosionSmoke
   image = ParticleEngine::GetSprite(ILL_BUBBLE_spr);
   SetAirResistFactor( GetAirResistFactor() * THREE );
 
