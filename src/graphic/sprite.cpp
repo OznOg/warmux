@@ -42,7 +42,7 @@ Surface Sprite::scratch;
 Sprite::Sprite()
   : fixed(false)
   , flipped(false)
-  , cache(*this)
+  , cache()
   , animation(*this)
 {
   Constructor();
@@ -51,7 +51,7 @@ Sprite::Sprite()
 Sprite::Sprite(const Surface& surface)
   : fixed(false)
   , flipped(false)
-  , cache(*this)
+  , cache()
   , animation(*this)
 {
   Constructor();
@@ -63,7 +63,7 @@ Sprite::Sprite(const Surface& surface)
 Sprite::Sprite(const Sprite &other)
   : fixed(other.fixed)
   , flipped(other.flipped)
-  , cache(*this)
+  , cache()
   , animation(other.animation, *this)
 {
   Constructor();
@@ -80,7 +80,7 @@ Sprite::Sprite(const Sprite &other)
   rot_hotspot = other.rot_hotspot;
   rotation_point = other.rotation_point;
 
-  cache.SetFrames(other.cache);
+  cache = other.cache;
 }
 
 void Sprite::Constructor()

@@ -41,7 +41,7 @@ class Sprite;
 class SpriteSubframeCache
 {
   std::vector<Surface> rotated;
-  Double min, max;
+  Double min = 0, max = 0;
 
   Double RestrictAngle(Double angle) const
   {
@@ -71,15 +71,10 @@ public:
   SpriteSubframeCache normal;
   SpriteSubframeCache flipped;
 
-  SpriteFrameCache(uint d = 100) { delay = d; }
+  SpriteFrameCache(uint d = 100) : delay(d) {}
   SpriteFrameCache(const Surface& surf, uint d = 100)
     : delay(d)
     , normal(surf)
-  { }
-  SpriteFrameCache(const SpriteFrameCache& other)
-    : delay(other.delay)
-    , normal(other.normal)
-    , flipped(other.flipped)
   { }
 
   void SetCaches(bool flipped, uint rotation_num, Double min, Double max);
@@ -88,34 +83,23 @@ public:
 class SpriteCache : private std::vector<SpriteFrameCache>
 {
   using Cont = std::vector<SpriteFrameCache>;
-  uint rotation_cache_size;
-  bool have_flipping_cache;
+  uint rotation_cache_size = 0;
+  bool have_flipping_cache = false;
 
 public:
   using Cont::size;
   using Cont::operator[];
 
-  explicit SpriteCache(Sprite &)
-    : rotation_cache_size(0)
-    , have_flipping_cache(false)
-  { }
+  //SpriteCache(Sprite&) ;
 
-  void SetFrames(const SpriteCache &other)
-  {
-    clear();
-    rotation_cache_size = other.rotation_cache_size;
-    have_flipping_cache = other.have_flipping_cache;
-    for (uint i=0; i<other.size(); i++)
-      push_back(SpriteFrameCache(other[i]));
-  }
-  void AddFrame(const Surface& surf, uint delay=100) { push_back(SpriteFrameCache(surf, delay)); }
+  void AddFrame(const Surface& surf, uint delay=100) { emplace_back(surf, delay); }
   void EnableCaches(bool flipped, uint rotation_num, const Double& min, const Double& max);
 
   //operator SpriteFrameCache& [](uint index) { return frames.at(index); }
   void SetDelay(uint delay)
   {
-    for (uint i=0; i<size(); i++)
-      operator[](i).delay = delay;
+    for (auto &s : *this)
+      s.delay = delay;
   }
 
   void FixParameters(const Double& rotation_rad,

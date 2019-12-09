@@ -71,8 +71,8 @@ void SpriteCache::EnableCaches(bool flipped, uint rotation_num, const Double& mi
 
   assert(!empty());
 
-  for (uint f=0; f<size(); f++) {
-    operator[](f).SetCaches(flipped, rotation_num, min, max);
+  for (auto &s : *this) {
+    s.SetCaches(flipped, rotation_num, min, max);
   }
 }
 
