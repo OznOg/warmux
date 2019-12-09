@@ -85,12 +85,16 @@ public:
   void SetCaches(bool flipped, uint rotation_num, Double min, Double max);
 };
 
-class SpriteCache : public std::vector<SpriteFrameCache>
+class SpriteCache : private std::vector<SpriteFrameCache>
 {
+  using Cont = std::vector<SpriteFrameCache>;
   uint rotation_cache_size;
   bool have_flipping_cache;
 
 public:
+  using Cont::size;
+  using Cont::operator[];
+
   explicit SpriteCache(Sprite &)
     : rotation_cache_size(0)
     , have_flipping_cache(false)
