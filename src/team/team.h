@@ -87,14 +87,12 @@ private:
   void AddOnePlayingCharacter(const std::string& character_name, Body *body);
   bool AddPlayingCharacters(const std::vector<std::string> characters);
 
-protected:
+public:
+
   Team(XmlReader& doc, std::shared_ptr<Profile> res,
        const std::string& name, const std::string &id);
 
-public:
-  // Do not call UnloadGamingData in here - these data are shared!
-  ~Team();
-  static Team* LoadTeam(const std::string &teams_dir, const std::string &id, std::string& error);
+  static std::unique_ptr<Team> LoadTeam(const std::string &teams_dir, const std::string &id, std::string& error);
 
   std::vector<int> m_nb_ammos;
   std::vector<int> m_nb_units;

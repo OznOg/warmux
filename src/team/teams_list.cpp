@@ -51,9 +51,6 @@ TeamsList::~TeamsList()
 {
   UnloadGamingData();
   Clear();
-  for (auto & it : full_list)
-    delete it;
-  full_list.clear();
   groups.clear();
 }
 
@@ -120,9 +117,9 @@ bool TeamsList::LoadOneTeam(const std::string &dir, const std::string &team_name
   // Add the team
   std::string real_name = ANSIToUTF8(dir, team_name);
   std::string error;
-  Team *team = Team::LoadTeam(dir, real_name, error);
+  auto team = Team::LoadTeam(dir, real_name, error);
   if (team) {
-    full_list.push_back(team);
+    full_list.emplace_back(std::move(team));
     std::cout << ((1<full_list.size())?", ":" ") << real_name;
     std::cout.flush();
     return true;
@@ -228,13 +225,9 @@ void TeamsList::UnloadGamingData()
 {
   groups.clear();
 
-  // Iterate over all teams not just he playing ones
-  // in order to unload leaver teams.
-  full_iterator it=full_list.begin(), end = full_list.end();
-
   // Unload the data of all teams
-  for (; it != end; ++it)
-    (**it).UnloadGamingData();
+  for (auto &t : full_list)
+      t->UnloadGamingData();
 
   // Run this now as no reference from Character are left
   BodyList::GetRef().FreeMem();
@@ -252,7 +245,7 @@ Team *TeamsList::FindById(const std::string &id, int &pos)
   }
 
   pos = std::distance(std::begin(full_list), it);
-  return *it;
+  return it->get();
 }
 
 //-----------------------------------------------------------------------------
@@ -267,7 +260,7 @@ Team *TeamsList::FindByIndex(uint index)
   auto it = full_list.begin();
   std::advance(it, index);
 
-  return it != full_list.end() ? *it : nullptr;
+  return it != full_list.end() ? it->get() : nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -588,7 +581,7 @@ Character& ActiveCharacter()
   return ActiveTeam().ActiveCharacter();
 }
 
-bool compareTeams(const Team *a, const Team *b)
+bool compareTeams(const std::unique_ptr<Team> &a, const std::unique_ptr<Team> &b)
 {
   return a->GetName() < b->GetName();
 }

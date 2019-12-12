@@ -723,9 +723,9 @@ void Network::SendTeamsList()
 
   // Build vector of teams
   std::vector<Team*> local_list;
-  const std::list<Team *>& flist = team_list->full_list;
-  for (auto it : flist)
-    local_list.push_back(it);
+  const auto& flist = team_list->full_list;
+  for (auto &it : flist)
+    local_list.push_back(it.get());
 
   DistantComputer* host = cpu.back();
   if (IsGameMaster()) {

@@ -40,10 +40,9 @@ class WeaponsList;
 class TeamsList : public Singleton<TeamsList>
 {
 public:
-  typedef std::list<Team *>::iterator full_iterator;
   typedef std::vector<Team *>::iterator iterator;
   typedef std::map<uint, TeamGroup> GroupList;
-  std::list<Team *> full_list;
+  std::list<std::unique_ptr<Team>> full_list;
   std::vector<Team*> playing_list;
 
 private:
@@ -116,6 +115,6 @@ inline Team& ActiveTeam() { return GetTeamsList().ActiveTeam(); }
 // current active character
 Character& ActiveCharacter();
 
-bool compareTeams(const Team *a, const Team *b);
+bool compareTeams(const std::unique_ptr<Team> &a, const std::unique_ptr<Team> &b);
 
 #endif

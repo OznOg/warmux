@@ -38,9 +38,9 @@
 NetworkTeamsSelectionBox::NetworkTeamsSelectionBox(const Point2i &_size, bool w_border)
   : TeamsSelectionBox(_size, true, w_border)
 {
-  const std::list<Team *>& list = GetTeamsList().full_list; 
-  for (auto it : list)
-    team_list.push_back(it);
+  const auto& list = GetTeamsList().full_list; 
+  for (auto &it : list)
+    team_list.push_back(it.get());
 
   local_teams_nb->SetMaxValue(GameMode::GetInstance()->GetMaxTeamsPerNetworkPlayer());
 
@@ -365,9 +365,9 @@ void NetworkTeamsSelectionBox::ChangeTeamListCallback(const std::vector<uint>& l
 {
   team_list.clear();
   std::vector<Team*> tmp_list;
-  const std::list<Team *>& flist = GetTeamsList().full_list; 
-  for (auto it : flist)
-    tmp_list.push_back(it);
+  const auto& flist = GetTeamsList().full_list; 
+  for (auto &it : flist)
+    tmp_list.push_back(it.get());
 
   for (unsigned int i : list)
     team_list.push_back(tmp_list[i]);

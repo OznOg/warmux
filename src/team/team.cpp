@@ -45,7 +45,7 @@
 #include "tool/xml_document.h"
 #include "weapon/weapons_list.h"
 
-Team* Team::LoadTeam(const std::string &teams_dir, const std::string &id, std::string& error)
+std::unique_ptr<Team> Team::LoadTeam(const std::string &teams_dir, const std::string &id, std::string& error)
 {
   std::string nomfich = teams_dir+id+ PATH_SEPARATOR "team.xml";
   std::string name;
@@ -69,7 +69,7 @@ Team* Team::LoadTeam(const std::string &teams_dir, const std::string &id, std::s
   }
 
   // The constructor will unload res
-  return new Team(doc, res, name, id);
+  return std::make_unique<Team>(doc, res, name, id);
 }
 
 Team::Team(XmlReader& doc, std::shared_ptr<Profile> res,
@@ -116,9 +116,6 @@ Team::Team(XmlReader& doc, std::shared_ptr<Profile> res,
   active_character = characters.end();
   nb_characters = GameMode::GetInstance()->nb_characters;
 }
-
-// Do not call UnloadGamingData in here - these data are shared!
-Team::~Team() { }
 
 void Team::AddOnePlayingCharacter(const std::string& character_name, Body *body)
 {
