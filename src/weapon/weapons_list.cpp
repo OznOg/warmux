@@ -115,10 +115,53 @@ WeaponsList::WeaponsList(const xmlNode* weapons_xml)
           Grapple, Blowtorch, Syringe>(weapons_xml);
 }
 
+bool _SaveXml(Weapon &w, XmlWriter& writer, xmlNode*  weapon)
+{
+  xmlNode* elem = XmlWriter::AddNode(weapon, w.m_id.c_str());
+  if (!elem) {
+    fprintf(stderr, "Couldn't save weapon config for %s\n", w.m_id.c_str());
+    return false;
+  }
+
+  writer.WriteElement(elem, "available_after_turn", int2str(w.m_available_after_turn));
+  writer.WriteElement(elem, "nb_ammo", int2str(w.m_initial_nb_ammo));
+  if (w.m_initial_nb_unit_per_ammo!=1)
+    writer.WriteElement(elem, "unit_per_ammo", int2str(w.m_initial_nb_unit_per_ammo));
+  writer.WriteElement(elem, "ammo_per_drop", int2str(w.ammo_per_drop));
+  writer.WriteElement(elem, "drop_probability", Double2str(w.drop_probability));
+  // max strength
+  // if max_strength = 0, no strength_bar !
+  if (w.max_strength.IsNotZero())
+    writer.WriteElement(elem, "max_strength", Double2str(w.max_strength));
+
+  // change weapon after ? (for the grapple = true)
+  if (w.m_can_change_weapon)
+    writer.WriteElement(elem, "change_weapon", bool2str(w.m_can_change_weapon));
+
+  // Disable crosshair ?
+  if (w.m_display_crosshair)
+    writer.WriteElement(elem, "display_crosshair", bool2str(w.m_display_crosshair));
+  // angle of weapon when drawing
+  // if (min_angle == max_angle) no cross_hair !
+  // between -90 to 90 degrees
+  int min_angle_deg = uround(w.min_angle * 180 / PI);
+  int max_angle_deg = uround(w.max_angle * 180 / PI);
+  if (min_angle_deg || max_angle_deg) {
+    writer.WriteElement(elem, "min_angle", int2str(min_angle_deg));
+    writer.WriteElement(elem, "max_angle", int2str(max_angle_deg));
+  }
+
+  // Save extra parameters if existing
+  if (w.extra_params)
+      bindExplosiveWeaponConfig(*w.extra_params)->SaveXml(writer, elem);
+
+  return true;
+}
+
 bool WeaponsList::Save(XmlWriter& writer, xmlNode* weapons_xml) const
 {
   for (auto &it : m_weapons_list) {
-    if (!it->SaveXml(writer, weapons_xml))
+    if (!_SaveXml(*it, writer, weapons_xml))
       return false;
   }
 

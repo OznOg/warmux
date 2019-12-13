@@ -636,48 +636,6 @@ void Weapon::DrawAmmoUnits() const
   }
 }
 
-xmlNode* Weapon::SaveXml(XmlWriter& writer, xmlNode*  weapon) const
-{
-  xmlNode* elem = XmlWriter::AddNode(weapon, m_id.c_str());
-  if (!elem) {
-    fprintf(stderr, "Couldn't save weapon config for %s\n", m_id.c_str());
-    return nullptr;
-  }
-
-  writer.WriteElement(elem, "available_after_turn", int2str(m_available_after_turn));
-  writer.WriteElement(elem, "nb_ammo", int2str(m_initial_nb_ammo));
-  if (m_initial_nb_unit_per_ammo!=1)
-    writer.WriteElement(elem, "unit_per_ammo", int2str(m_initial_nb_unit_per_ammo));
-  writer.WriteElement(elem, "ammo_per_drop", int2str(ammo_per_drop));
-  writer.WriteElement(elem, "drop_probability", Double2str(drop_probability));
-  // max strength
-  // if max_strength = 0, no strength_bar !
-  if (max_strength.IsNotZero())
-    writer.WriteElement(elem, "max_strength", Double2str(max_strength));
-
-  // change weapon after ? (for the grapple = true)
-  if (m_can_change_weapon)
-    writer.WriteElement(elem, "change_weapon", bool2str(m_can_change_weapon));
-
-  // Disable crosshair ?
-  if (m_display_crosshair)
-    writer.WriteElement(elem, "display_crosshair", bool2str(m_display_crosshair));
-  // angle of weapon when drawing
-  // if (min_angle == max_angle) no cross_hair !
-  // between -90 to 90 degrees
-  int min_angle_deg = uround(min_angle * 180 / PI);
-  int max_angle_deg = uround(max_angle * 180 / PI);
-  if (min_angle_deg || max_angle_deg) {
-    writer.WriteElement(elem, "min_angle", int2str(min_angle_deg));
-    writer.WriteElement(elem, "max_angle", int2str(max_angle_deg));
-  }
-
-  // Save extra parameters if existing
-  if (extra_params)
-      bindExplosiveWeaponConfig(*extra_params)->SaveXml(writer, elem);
-
-  return elem;
-}
 
 // Handle keyboard events
 

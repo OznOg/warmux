@@ -142,6 +142,7 @@ protected:
   SoundSample loading_sound;
 
   template<class W> friend std::unique_ptr<Weapon> _LoadXml(const xmlNode*  weapon);
+  friend bool _SaveXml(Weapon &w, XmlWriter& writer, xmlNode*  weapon);
 
 public:
   // weapon's icon
@@ -313,11 +314,6 @@ public:
 
   // Get informed that the turn is over.
   virtual void SignalTurnEnd() { StopLoading(); };
-
-  // Load parameters from the xml config file
-  // Return true if xml has been succesfully load
-  bool LoadXml(const xmlNode*  weapon);
-  virtual xmlNode* SaveXml(XmlWriter& writer, xmlNode*  weapon) const;
 
   // return the strength of the weapon
   Double ReadStrength() const { return m_strength; };
