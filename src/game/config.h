@@ -37,9 +37,9 @@
 #include <WARMUX_singleton.h>
 #include <WARMUX_point.h>
 #include <WARMUX_team_config.h>
+#include "object/object_cfg.h"
 
 // Forward declarations
-class ObjectConfig;
 class XmlWriter;
 typedef struct _xmlNode xmlNode;
 
@@ -276,7 +276,7 @@ private:
 
   /* this is mutable in order to be able to load config on fly when calling
    * GetObjectConfig() witch is not supposed to modify the object itself */
-  mutable std::map<std::string, ObjectConfig *> config_set;
+  mutable std::map<std::string, ObjectConfig> config_set;
 };
 
 #endif

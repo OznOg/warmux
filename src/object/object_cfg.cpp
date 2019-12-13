@@ -32,35 +32,3 @@
 
 const Double ObjectConfig::DEFAULT_WATER_RESIST_FACTOR = 40;
 
-void ObjectConfig::LoadXml(const std::string & obj_name, 
-                           const std::string & config_file)
-{
-  const xmlNode* elem = nullptr;
-  XmlReader      doc;
-
-  if ("" == config_file) {
-    const GameMode *mode = GameMode::GetConstInstance();
-    MSG_DEBUG("game_mode", "Load %s configuration from %s\n",
-              obj_name.c_str(), mode->GetName().c_str());
-
-    const XmlReader* ddoc = mode->GetXmlObjects();
-    elem = XmlReader::GetMarker(ddoc->GetRoot(), obj_name);
-  } else {
-    MSG_DEBUG("game_mode", "** Load %s configuration from file %s\n",
-              obj_name.c_str(), config_file.c_str());
-
-    // Load Xml configuration
-    ASSERT(doc.Load(config_file));
-    elem = XmlReader::GetMarker(doc.GetRoot(), obj_name);
-  }
-
-  ASSERT(elem != nullptr);
-  XmlReader::ReadDouble(elem, "mass",                m_mass);
-  XmlReader::ReadDouble(elem, "wind_factor",         m_wind_factor);
-  XmlReader::ReadDouble(elem, "air_resist_factor",   m_air_resist_factor);
-  XmlReader::ReadDouble(elem, "water_resist_factor", m_water_resist_factor);
-  XmlReader::ReadDouble(elem, "gravity_factor",      m_gravity_factor);
-  XmlReader::ReadDouble(elem, "rebound_factor",      m_rebound_factor);
-  XmlReader::ReadBool(elem,   "rebounding",          m_rebounding);
-  XmlReader::ReadBool(elem,   "auto_align_particle", m_align_particle_state);
-}

@@ -42,6 +42,7 @@
 
 #include "game/config.h"
 #include "game/game.h"
+#include "game/game_mode.h"
 #include "graphic/font.h"
 #include "graphic/video.h"
 #include "include/app.h"
@@ -340,6 +341,40 @@ void Config::SetLanguage(const std::string& language)
 }
 #endif
 
+static ObjectConfig ObjectConfigiFromXml(const std::string & obj_name, const std::string & config_file)
+{
+  const xmlNode* elem = nullptr;
+  XmlReader      doc;
+
+  if ("" == config_file) {
+    const GameMode *mode = GameMode::GetConstInstance();
+    MSG_DEBUG("game_mode", "Load %s configuration from %s\n",
+              obj_name.c_str(), mode->GetName().c_str());
+
+    auto ddoc = mode->GetXmlObjects();
+    elem = XmlReader::GetMarker(ddoc->GetRoot(), obj_name);
+  } else {
+    MSG_DEBUG("game_mode", "** Load %s configuration from file %s\n",
+              obj_name.c_str(), config_file.c_str());
+
+    // Load Xml configuration
+    ASSERT(doc.Load(config_file));
+    elem = XmlReader::GetMarker(doc.GetRoot(), obj_name);
+  }
+
+  ObjectConfig c;
+  ASSERT(elem != nullptr);
+  XmlReader::ReadDouble(elem, "mass",                c.m_mass);
+  XmlReader::ReadDouble(elem, "wind_factor",         c.m_wind_factor);
+  XmlReader::ReadDouble(elem, "air_resist_factor",   c.m_air_resist_factor);
+  XmlReader::ReadDouble(elem, "water_resist_factor", c.m_water_resist_factor);
+  XmlReader::ReadDouble(elem, "gravity_factor",      c.m_gravity_factor);
+  XmlReader::ReadDouble(elem, "rebound_factor",      c.m_rebound_factor);
+  XmlReader::ReadBool(elem,   "rebounding",          c.m_rebounding);
+  XmlReader::ReadBool(elem,   "auto_align_particle", c.m_align_particle_state);
+
+  return c;
+}
 /*
  * Load physics constants from the xml file and cache it.
  * This tries to find already loaded data in the map<> config_set and actually
@@ -347,29 +382,17 @@ void Config::SetLanguage(const std::string& language)
  */
 const ObjectConfig &Config::GetObjectConfig(const std::string &name, const std::string &xml_config) const
 {
-  ObjectConfig * objcfg;
-
-  std::map<std::string, ObjectConfig*>::const_iterator  it = config_set.find(name);
+  auto it = config_set.find(name);
   if (it == config_set.end()) {
-    objcfg = new ObjectConfig();
-    objcfg->LoadXml(name,xml_config);
-    config_set[name] = objcfg;
+    return config_set[name] = ObjectConfigiFromXml(name, xml_config);
   } else {
-    objcfg = it->second;
+    return it->second;
   }
-  return *objcfg;
 }
 
 void Config::RemoveAllObjectConfigs()
 {
-  std::map<std::string, ObjectConfig*>::iterator it = config_set.begin(),
-    end = config_set.end();
-
-  while (it != end) {
-    delete (it->second);
-    config_set.erase(it);
-    it = config_set.begin();
-  }
+    config_set.clear();
 }
 
 bool Config::DoLoading(void)

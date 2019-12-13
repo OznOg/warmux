@@ -24,10 +24,6 @@
 //-----------------------------------------------------------------------------
 #include <string>
 #include <WARMUX_types.h>
-//-----------------------------------------------------------------------------
-
-typedef struct _xmlNode xmlNode;
-class XmlWriter;
 
 class ObjectConfig
 {
@@ -59,9 +55,6 @@ public:
   bool m_align_particle_state = false;
 
   virtual ~ObjectConfig() = default;
-
-  void LoadXml(const std::string & obj_name, 
-               const std::string & config_file);
 };
 
 #endif // OBJECT_CFG_H
