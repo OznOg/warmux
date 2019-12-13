@@ -141,6 +141,8 @@ protected:
   bool can_be_used_on_closed_map;
   SoundSample loading_sound;
 
+  template<class W> friend std::unique_ptr<Weapon> _LoadXml(const xmlNode*  weapon);
+
 public:
   // weapon's icon
   Sprite * icon;

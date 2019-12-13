@@ -155,10 +155,8 @@ bool GameMode::LoadXml()
   elem = XmlReader::GetMarker(elem, "weapons");
   if (!elem)
     return false;
-  if (weapons_list)
-    weapons_list->Init(elem);
-  else
-    weapons_list = std::make_unique<WeaponsList>(elem);
+  
+  weapons_list = std::make_unique<WeaponsList>(elem);
 
   return bool(weapons_list);
 }

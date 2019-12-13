@@ -636,62 +636,6 @@ void Weapon::DrawAmmoUnits() const
   }
 }
 
-bool Weapon::LoadXml(const xmlNode*  weapon)
-{
-  const xmlNode* elem = XmlReader::GetMarker(weapon, m_id);
-  if (!elem) {
-    std::cout << Format(_("No element <%s> found in the xml config file!"),
-                        m_id.c_str())
-              << std::endl;
-    return false;
-  }
-
-  XmlReader::ReadInt(elem, "available_after_turn", m_available_after_turn);
-  XmlReader::ReadInt(elem, "nb_ammo", m_initial_nb_ammo);
-  XmlReader::ReadInt(elem, "unit_per_ammo", m_initial_nb_unit_per_ammo);
-  XmlReader::ReadInt(elem, "ammo_per_drop", ammo_per_drop);
-  XmlReader::ReadDouble(elem, "drop_probability", drop_probability);
-  if (m_initial_nb_ammo == INFINITE_AMMO && drop_probability.IsNotZero()) {
-    std::cerr << Format(_("The weapon %s has infinite ammo, but bonus boxes might contain ammo for it!"), m_id.c_str());
-    std::cerr << std::endl;
-  }
-
-  // max strength
-  // if max_strength = 0, no strength_bar !
-  XmlReader::ReadDouble(elem, "max_strength", max_strength);
-
-  // change weapon after ? (for the grapple = true)
-  XmlReader::ReadBool(elem, "change_weapon", m_can_change_weapon);
-
-  // Disable crosshair ?
-  XmlReader::ReadBool(elem, "display_crosshair", m_display_crosshair);
-  // angle of weapon when drawing
-  // if (min_angle == max_angle) no cross_hair !
-  // between -90 to 90 degrees
-  int min_angle_deg = 0, max_angle_deg = 0;
-  XmlReader::ReadInt(elem, "min_angle", min_angle_deg);
-  XmlReader::ReadInt(elem, "max_angle", max_angle_deg);
-  min_angle = min_angle_deg * PI / 180;
-  max_angle = max_angle_deg * PI / 180;
-  if (EqualsZero(min_angle - max_angle))
-    m_display_crosshair = false;
-#if 0
-  if (m_weapon_fire) {
-    uint num = 32 * (max_angle - min_angle) / TWO_PI;
-    m_weapon_fire->EnableCaches(true, num, min_angle, max_angle);
-  }
-#endif
-
-  // Load extra parameters if existing
-  if (extra_params)
-      bindExplosiveWeaponConfig(*extra_params)->LoadXml(elem);
-
-  if (drawable && origin == weapon_origin_HAND)
-    m_image->SetRotation_HotSpot(position);
-
-  return true;
-}
-
 xmlNode* Weapon::SaveXml(XmlWriter& writer, xmlNode*  weapon) const
 {
   xmlNode* elem = XmlWriter::AddNode(weapon, m_id.c_str());

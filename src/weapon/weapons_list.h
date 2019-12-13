@@ -40,11 +40,10 @@ private:
   std::list<std::unique_ptr<Weapon>> m_weapons_list;
 
   template <class... Weapon>
-  void allocate();
+  void allocate(const xmlNode* weapons_xml);
 public:
   WeaponsList(const xmlNode* weapons_xml);
 
-  void Init(const xmlNode* weapons_xml) const;
   bool Save(XmlWriter& writer, xmlNode* weapons_xml) const;
 
   void UpdateTranslation() const;
