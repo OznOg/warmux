@@ -23,6 +23,7 @@
 
 #include "character/character.h"
 #include "game/game_time.h"
+#include "game/config.h"
 #include "graphic/sprite.h"
 #include "include/action_handler.h"
 #include "interface/mouse.h"
@@ -67,7 +68,7 @@ Obus::~Obus()
 Obus* Plane::last_dropped_bomb = nullptr;
 
 Plane::Plane(AirAttackConfig &p_cfg) :
-  PhysicalObj("air_attack_plane"),
+  PhysicalObj("air_attack_plane", Config::GetInstance()->GetObjectConfig("air_attack_plane", "")),
   cfg(p_cfg)
 {
   SetCollisionModel(false, false, false);

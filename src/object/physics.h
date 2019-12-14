@@ -50,7 +50,7 @@ typedef enum {
 class Game;
 class Action;
 
-class Physics : private ObjectConfig
+class Physics : public ObjectConfig
 {
 private:
   MotionType_t m_motion_type;

@@ -28,6 +28,7 @@
 #include "character/character.h"
 #include "game/game_mode.h"
 #include "game/game.h"
+#include "game/config.h"
 #include "game/game_time.h"
 #include "graphic/sprite.h"
 #include "include/app.h"
@@ -51,7 +52,7 @@
 const uint SPEED = 5; // meter / seconde
 
 ObjBox::ObjBox(const std::string &name)
-  : PhysicalObj(name)
+  : PhysicalObj(name, Config::GetInstance()->GetObjectConfig(name, ""))
 {
   m_allow_negative_y = true;
 

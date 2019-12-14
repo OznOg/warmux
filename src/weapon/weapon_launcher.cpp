@@ -127,7 +127,7 @@ void WeaponBullet::DoExplosion()
 WeaponProjectile::WeaponProjectile(const std::string &name,
                                    ExplosiveWeaponConfig& p_cfg,
                                    WeaponLauncher * p_launcher):
-  PhysicalObj(name),
+  PhysicalObj(name, Config::GetInstance()->GetObjectConfig(name, "")),
   timeout_start(INVALID_TIMEOUT_START),
   cfg(p_cfg)
 {

@@ -23,12 +23,13 @@
 #include "object/objects_list.h"
 #include "object/physical_obj.h"
 #include "game/game_mode.h"
+#include "game/config.h"
 #include "graphic/sprite.h"
 #include "particles/particle.h"
 #include "tool/resource_manager.h"
 #include "weapon/explosion.h"
 
-PetrolBarrel::PetrolBarrel() : PhysicalObj("barrel")
+PetrolBarrel::PetrolBarrel() : PhysicalObj("barrel", Config::GetInstance()->GetObjectConfig("barrel", ""))
 {
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   img = GetResourceManager().LoadSprite(res, "object/barrel");

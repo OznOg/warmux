@@ -23,6 +23,7 @@
 #include <SDL.h>
 #include <map>
 #include "game/game_time.h"
+#include "game/config.h"
 #include "graphic/sprite.h"
 #include "map/map.h"
 #include "map/camera.h"
@@ -49,7 +50,7 @@
 #include "particles/explosion_particle.h"
 
 Particle::Particle(const std::string &name) :
-  PhysicalObj(name),
+  PhysicalObj(name, Config::GetInstance()->GetObjectConfig(name, "")),
   on_top(true), // if true displayed on top of characters and weapons
   m_initial_time_to_live(20),
   m_time_left_to_live(0),

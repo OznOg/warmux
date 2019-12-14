@@ -45,7 +45,7 @@ const uint bar_speed = 1;
 static bool need_flip = false;
 
 WindParticle::WindParticle(const std::string &xml_file, Double scale)
-  : PhysicalObj("wind", xml_file)
+  : PhysicalObj("wind", Config::GetInstance()->GetObjectConfig("wind", xml_file))
 {
   SetCollisionModel(false, false, false);
   CanBeGhost(false);

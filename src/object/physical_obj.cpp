@@ -50,8 +50,8 @@
 
 #define Y_OBJET_MIN  (-10000)
 
-PhysicalObj::PhysicalObj(const std::string &name, const std::string &xml_config) :
-  Physics(Config::GetInstance()->GetObjectConfig(name, xml_config)),
+PhysicalObj::PhysicalObj(const std::string &name, const ObjectConfig &cfg) :
+  Physics(cfg),
   m_collides_with_ground(true),
   m_collides_with_characters(false),
   m_collides_with_objects(false),

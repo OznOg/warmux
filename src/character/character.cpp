@@ -114,8 +114,8 @@ static uint GetRandomAnimationTimeValue()
   return GameTime::GetInstance()->Read() + RandomSync().GetUint(ANIM_PAUSE_MIN, ANIM_PAUSE_MAX);
 }
 
-Character::Character(Team& my_team, const std::string &name, Body *char_body, Config cfg) :
-  PhysicalObj("character"),
+Character::Character(Team& my_team, const std::string &name, Body *char_body, Config cfg, const ObjectConfig &obj_cfg) :
+  PhysicalObj("character", obj_cfg),
   MovableByUser(),
   character_name(name),
   m_team(my_team),

@@ -119,7 +119,9 @@ Team::Team(XmlReader& doc, std::shared_ptr<Profile> res,
 
 void Team::AddOnePlayingCharacter(const std::string& character_name, Body *body)
 {
-  auto new_char = std::make_unique<Character>(*this, character_name, body, GameMode::GetInstance()->character_cfg);
+  auto new_char = std::make_unique<Character>(*this, character_name, body,
+                                              GameMode::GetInstance()->character_cfg,
+                                              Config::GetInstance()->GetObjectConfig("character", ""));
 
   if (!new_char->PutRandomly(false, GetWorld().GetDistanceBetweenCharacters())) {
     // We haven't found any place to put the characters!!
