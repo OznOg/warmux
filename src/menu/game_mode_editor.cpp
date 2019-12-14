@@ -302,8 +302,8 @@ void GameModeEditor::LoadGameMode(bool force)
   opt_allow_character_selection->SetChoice(game_mode->allow_character_selection);
 
   opt_duration_turn->SetValue(game_mode->duration_turn, true);
-  opt_energy_ini->SetValue(game_mode->character.init_energy, true);
-  opt_energy_max->SetValue(game_mode->character.max_energy, true);
+  opt_energy_ini->SetValue(game_mode->character_cfg.init_energy, true);
+  opt_energy_max->SetValue(game_mode->character_cfg.max_energy, true);
   opt_time_before_death_mode->SetValue(game_mode->duration_before_death_mode, true);
   opt_damage_during_death_mode->SetValue(game_mode->damage_per_turn_during_death_mode, true);
   opt_gravity->SetValue((int)(game_mode->gravity), true);
@@ -333,8 +333,8 @@ void GameModeEditor::ValidGameMode()
   game_mode->allow_character_selection = (GameMode::manual_change_character_t)
     opt_allow_character_selection->GetIntValue();
   game_mode->duration_turn = opt_duration_turn->GetValue();
-  game_mode->character.init_energy = opt_energy_ini->GetValue();
-  game_mode->character.max_energy = opt_energy_max->GetValue();
+  game_mode->character_cfg.init_energy = opt_energy_ini->GetValue();
+  game_mode->character_cfg.max_energy = opt_energy_max->GetValue();
   game_mode->duration_before_death_mode = opt_time_before_death_mode->GetValue();
   game_mode->damage_per_turn_during_death_mode = opt_damage_during_death_mode->GetValue();
   game_mode->gravity = opt_gravity->GetValue();

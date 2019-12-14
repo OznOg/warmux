@@ -88,6 +88,19 @@ class Character : public PhysicalObj, public MovableByUser
 
 public:
 
+  struct Config
+  {
+    uint init_energy = 100;
+    uint max_energy = 200;
+    int jump_strength = 8;
+    Double jump_angle = -60;
+    int super_jump_strength = 11;
+    Double super_jump_angle = -80;
+    int back_jump_strength = 9;
+    Double back_jump_angle = -100;
+    uint walking_pause = 50;
+  } config;
+
   // Previous strength
   Double previous_strength;
 
@@ -121,7 +134,7 @@ private:
 public:
 
   bool MustBeDrawn() const;
-  Character (Team& my_team, const std::string &name, Body *char_body);
+  Character (Team& my_team, const std::string &name, Body *char_body, Config cfg);
   Character (const Character& acharacter);
   ~Character() override;
 

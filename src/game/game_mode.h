@@ -30,6 +30,7 @@
 #include "weapon/weapon_cfg.h"
 #include "tool/xml_document.h"
 #include "tool/config_element.h"
+#include "character/character.h"
 
 typedef struct _xmlNode xmlNode;
 class WeaponsList;
@@ -58,20 +59,7 @@ public:
   MineConfig mines_explosion_cfg;
 
 
-  struct s_character
-  {
-    uint init_energy;
-    uint max_energy;
-    uint mass;
-    Double air_resist_factor;
-    int jump_strength;
-    Double jump_angle;
-    int super_jump_strength;
-    Double super_jump_angle;
-    int back_jump_strength;
-    Double back_jump_angle;
-    uint walking_pause;
-  } character;
+  Character::Config character_cfg;
 
   bool auto_change_character;
 

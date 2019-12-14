@@ -114,7 +114,7 @@ static uint GetRandomAnimationTimeValue()
   return GameTime::GetInstance()->Read() + RandomSync().GetUint(ANIM_PAUSE_MIN, ANIM_PAUSE_MAX);
 }
 
-Character::Character(Team& my_team, const std::string &name, Body *char_body) :
+Character::Character(Team& my_team, const std::string &name, Body *char_body, Config cfg) :
   PhysicalObj("character"),
   MovableByUser(),
   character_name(name),
@@ -141,6 +141,7 @@ Character::Character(Team& my_team, const std::string &name, Body *char_body) :
   particle_engine(new ParticleEngine(500)),
   is_playing(false),
   last_direction_change(0),
+  config(std::move(cfg)),
   previous_strength(0),
   body(nullptr)
 {
@@ -154,24 +155,24 @@ Character::Character(Team& my_team, const std::string &name, Body *char_body) :
   // Allow player to go outside of map by upper bound (bug #10420)
   m_allow_negative_y = true;
   // Name Text object
-  if (Config::GetInstance()->GetDisplayNameCharacter())
+  if (::Config::GetInstance()->GetDisplayNameCharacter())
     name_text = new Text(character_name, m_team.GetColor(), Font::FONT_SMALL, Font::FONT_BOLD, true);
   else
     name_text = nullptr;
 
   // Energy
-  m_energy = GameMode::GetInstance()->character.init_energy;
+  m_energy = config.init_energy;
 
   energy_bar = new EnergyBar(0, 0,
                              WIDTH_ENERGY, HEIGHT_ENERGY,
-                             GameMode::GetInstance()->character.init_energy,
+                             config.init_energy,
                              0,
-                             GameMode::GetInstance()->character.init_energy);
+                             config.init_energy);
 
   energy_bar->SetBorderColor(black_color);
   energy_bar->SetBackgroundColor(gray_color);
 
-  SetEnergy(GameMode::GetInstance()->character.init_energy, nullptr);
+  SetEnergy(config.init_energy, nullptr);
 
   MSG_DEBUG("character", "Load character %s at %p",
             character_name.c_str(), this);
@@ -204,6 +205,7 @@ Character::Character(const Character& acharacter) :
   particle_engine(new ParticleEngine(250)),
   is_playing(acharacter.is_playing),
   last_direction_change(0),
+  config(acharacter.config),
   previous_strength(acharacter.previous_strength)
 {
   energy_bar = new EnergyBar(acharacter.energy_bar->GetX(),
@@ -215,7 +217,7 @@ Character::Character(const Character& acharacter) :
                              acharacter.energy_bar->GetMaxValue());
   energy_bar->SetBorderColor(black_color);
   energy_bar->SetBackgroundColor(gray_color);
-  SetEnergy(GameMode::GetInstance()->character.init_energy, nullptr);
+  SetEnergy(config.init_energy, nullptr);
 
   if (acharacter.body) {
     SetBody(std::make_unique<Body>(*acharacter.body));
@@ -293,7 +295,7 @@ bool Character::MustDrawLostEnergy() const
 
 bool Character::MustDrawEnergyBar() const
 {
-  if (Config::GetInstance()->GetDisplayEnergyCharacter()
+  if (::Config::GetInstance()->GetDisplayEnergyCharacter()
       && ((!IsActiveCharacter()
            && Game::GetInstance()->ReadState() != Game::END_TURN
            && !IsDead())
@@ -308,7 +310,7 @@ bool Character::MustDrawName() const
   if (!MustBeDrawn())
     return false;
 
-  if (Config::GetInstance()->GetDisplayNameCharacter()
+  if (::Config::GetInstance()->GetDisplayNameCharacter()
       && !IsActiveCharacter()
       && Game::GetInstance()->ReadState() != Game::END_TURN)
     return true;
@@ -432,7 +434,7 @@ void Character::SetEnergy(int new_energy, Character* dealer)
 
   // Change energy
   m_energy = InRange_Long((int)new_energy, 0,
-                          GameMode::GetInstance()->character.max_energy);
+                          config.max_energy);
   energy_bar->Actu(m_energy);
 
   // Dead character ?
@@ -556,16 +558,16 @@ void Character::Jump()
 {
   MSG_DEBUG("character", "Jump");
   JukeBox::GetInstance()->Play (ActiveTeam().GetSoundProfile(), "jump");
-  Jump(GameMode::GetInstance()->character.jump_strength,
-       GameMode::GetInstance()->character.jump_angle);
+  Jump(config.jump_strength,
+       config.jump_angle);
 }
 
 void Character::HighJump()
 {
   MSG_DEBUG("character", "HighJump");
   JukeBox::GetInstance()->Play (ActiveTeam().GetSoundProfile(), "superjump");
-  Jump(GameMode::GetInstance()->character.super_jump_strength,
-       GameMode::GetInstance()->character.super_jump_angle);
+  Jump(config.super_jump_strength,
+       config.super_jump_angle);
 }
 
 void Character::BackJump()
@@ -573,8 +575,8 @@ void Character::BackJump()
   MSG_DEBUG("character", "BackJump");
   back_jumping = true;
   JukeBox::GetInstance()->Play (ActiveTeam().GetSoundProfile(), "back_jump");
-  Jump(GameMode::GetInstance()->character.back_jump_strength,
-       GameMode::GetInstance()->character.back_jump_angle);
+  Jump(config.back_jump_strength,
+       config.back_jump_angle);
 }
 
 void Character::PrepareShoot()
@@ -677,8 +679,8 @@ void Character::Refresh()
   if (back_jumping) {
     ASSERT(&ActiveCharacter() == this);
     Double rotation;
-    static Double speed_init = GameMode::GetInstance()->character.back_jump_strength *
-       sin(GameMode::GetInstance()->character.back_jump_angle);
+    static Double speed_init = config.back_jump_strength *
+       sin(config.back_jump_angle);
 
     Point2d speed = GetSpeedXY();
     rotation = PI * speed.y / speed_init;
@@ -1042,7 +1044,7 @@ void Character::MakeSteps()
 {
   int height;
   bool ghost;
-  uint walking_pause = GameMode::GetInstance()->character.walking_pause;
+  uint walking_pause = config.walking_pause;
 
   const LRMoveIntention * lr_move_intention = GetLastLRMoveIntention();
   ASSERT(lr_move_intention);

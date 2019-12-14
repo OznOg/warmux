@@ -303,13 +303,13 @@ ok:
   SWAP(mode_info.turn_duration, game_mode->duration_turn);
   SWAP(mode_info.duration_before_death_mode, game_mode->duration_before_death_mode);
   SWAP(mode_info.damage_per_turn_during_death_mode, game_mode->damage_per_turn_during_death_mode);
-  SWAP(mode_info.init_energy, game_mode->character.init_energy);
-  SWAP(mode_info.max_energy, game_mode->character.max_energy);
+  SWAP(mode_info.init_energy, game_mode->character_cfg.init_energy);
+  SWAP(mode_info.max_energy, game_mode->character_cfg.max_energy);
   SWAP(mode_info.gravity, game_mode->gravity);
 
   MSG_DEBUG("replay", "Game mode: turn=%us move_player=%u max_energy=%u init_energy=%u\n",
             game_mode->duration_turn, game_mode->duration_move_player,
-            game_mode->character.max_energy, game_mode->character.init_energy);
+            game_mode->character_cfg.max_energy, game_mode->character_cfg.init_energy);
 
   // All of the above could be avoided through a GameMode::Load
   config_loaded = true;
@@ -435,8 +435,8 @@ void Replay::StopPlaying()
   game_mode->duration_turn = mode_info.turn_duration;
   game_mode->damage_per_turn_during_death_mode = mode_info.damage_per_turn_during_death_mode;
   game_mode->duration_before_death_mode = mode_info.duration_before_death_mode;
-  game_mode->character.init_energy = mode_info.init_energy;
-  game_mode->character.max_energy = mode_info.max_energy;
+  game_mode->character_cfg.init_energy = mode_info.init_energy;
+  game_mode->character_cfg.max_energy = mode_info.max_energy;
   game_mode->gravity = mode_info.gravity;
 
   // Restore also volume

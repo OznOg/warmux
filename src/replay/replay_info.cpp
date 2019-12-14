@@ -178,8 +178,8 @@ ReplayInfo *ReplayInfo::ReplayInfoFromCurrent(uint32_t duration, const char* com
   info->mode_info.turn_duration = game_mode->duration_turn;
   info->mode_info.duration_before_death_mode = game_mode->duration_before_death_mode;
   info->mode_info.damage_per_turn_during_death_mode = game_mode->damage_per_turn_during_death_mode;
-  info->mode_info.init_energy = game_mode->character.init_energy;
-  info->mode_info.max_energy = game_mode->character.max_energy;
+  info->mode_info.init_energy = game_mode->character_cfg.init_energy;
+  info->mode_info.max_energy = game_mode->character_cfg.max_energy;
   info->mode_info.gravity = (int)game_mode->gravity;
 
   // Everything ready

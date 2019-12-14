@@ -63,29 +63,27 @@ std::unique_ptr<ConfigElementList> GameMode::BindMembers() {
   main_settings->emplace_back(new UintConfigElement("damage_per_fall_unit", &damage_per_fall_unit, 7));
 
   auto char_settings = std::make_unique<ConfigElementList>();
-  char_settings->emplace_back(new UintConfigElement("mass", &character.mass, 100));
-  char_settings->emplace_back(new DoubleConfigElement("air_resist_factor", &character.air_resist_factor, 1.0));
-  char_settings->emplace_back(new UintConfigElement("walking_pause", &character.walking_pause, 50));
+  char_settings->emplace_back(new UintConfigElement("walking_pause", &character_cfg.walking_pause, 50));
 
   auto energy = std::make_unique<ConfigElementList>();
-  energy->emplace_back(new UintConfigElement("initial", &character.init_energy, 100, 1, 200, true));
-  energy->emplace_back(new UintConfigElement("maximum", &character.max_energy, 200, 1, 200, true));
+  energy->emplace_back(new UintConfigElement("initial", &character_cfg.init_energy, 100, 1, 200, true));
+  energy->emplace_back(new UintConfigElement("maximum", &character_cfg.max_energy, 200, 1, 200, true));
   char_settings->LinkList(std::move(energy), "energy");
   char_settings->LinkList(bindExplosiveWeaponConfig(death_explosion_cfg), "death_explosion");
 
   auto jump = std::make_unique<ConfigElementList>();
-  jump->emplace_back(new IntConfigElement("strength", &character.jump_strength, 8, true));
-  jump->emplace_back(new AngleConfigElement("angle", &character.jump_angle, -60, true));
+  jump->emplace_back(new IntConfigElement("strength", &character_cfg.jump_strength, 8, true));
+  jump->emplace_back(new AngleConfigElement("angle", &character_cfg.jump_angle, -60, true));
   char_settings->LinkList(std::move(jump), "jump");
 
   auto super_jump = std::make_unique<ConfigElementList>();
-  super_jump->emplace_back(new IntConfigElement("strength", &character.super_jump_strength, 11, true));
-  super_jump->emplace_back(new AngleConfigElement("angle", &character.super_jump_angle, -80, true));
+  super_jump->emplace_back(new IntConfigElement("strength", &character_cfg.super_jump_strength, 11, true));
+  super_jump->emplace_back(new AngleConfigElement("angle", &character_cfg.super_jump_angle, -80, true));
   char_settings->LinkList(std::move(super_jump), "super_jump");
 
   auto back_jump = std::make_unique<ConfigElementList>();
-  back_jump->emplace_back(new IntConfigElement("strength", &character.back_jump_strength, 9, true));
-  back_jump->emplace_back(new AngleConfigElement("angle", &character.back_jump_angle, -100, true));
+  back_jump->emplace_back(new IntConfigElement("strength", &character_cfg.back_jump_strength, 9, true));
+  back_jump->emplace_back(new AngleConfigElement("angle", &character_cfg.back_jump_angle, -100, true));
   char_settings->LinkList(std::move(back_jump), "back_jump");
   main_settings->LinkList(std::move(char_settings), "character");
 
@@ -117,17 +115,15 @@ void GameMode::LoadDefaultValues()
   safe_fall = 10;
   damage_per_fall_unit = 7;
 
-  character.init_energy = 100;
-  character.max_energy = 200;
-  character.mass = 100;
-  character.air_resist_factor = 1.0;
-  character.jump_strength = 8;
-  character.jump_angle = -60;
-  character.super_jump_strength = 11;
-  character.super_jump_angle = -80;
-  character.back_jump_strength = 9;
-  character.back_jump_angle = -100;
-  character.walking_pause = 50;
+  character_cfg.init_energy = 100;
+  character_cfg.max_energy = 200;
+  character_cfg.jump_strength = 8;
+  character_cfg.jump_angle = -60;
+  character_cfg.super_jump_strength = 11;
+  character_cfg.super_jump_angle = -80;
+  character_cfg.back_jump_strength = 9;
+  character_cfg.back_jump_angle = -100;
+  character_cfg.walking_pause = 50;
 
   auto_change_character = true;
 
