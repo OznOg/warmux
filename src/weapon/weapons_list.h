@@ -39,17 +39,13 @@ class WeaponsList
 private:
   std::list<std::unique_ptr<Weapon>> m_weapons_list;
 
-  template <class... Weapon>
-  void allocate(const xmlNode* weapons_xml);
 public:
-  WeaponsList(const xmlNode* weapons_xml);
-
   bool Save(XmlWriter& writer, xmlNode* weapons_xml) const;
 
   void UpdateTranslation() const;
 
   // Return a list of  weapons
-  const auto& GetList() const { return m_weapons_list; };
+  auto& GetList() { return m_weapons_list; };
   Weapon* GetWeapon(Weapon::Weapon_type type) const;
   const WeaponLauncher* GetWeaponLauncher(Weapon::Weapon_type type) const;
   bool GetWeaponBySort(Weapon::category_t num_sort, Weapon::Weapon_type &type);
