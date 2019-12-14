@@ -156,14 +156,14 @@ Character::Character(Team& my_team, const std::string &name, Body *char_body, Co
   m_allow_negative_y = true;
   // Name Text object
   if (::Config::GetInstance()->GetDisplayNameCharacter())
-    name_text = new Text(character_name, m_team.GetColor(), Font::FONT_SMALL, Font::FONT_BOLD, true);
+    name_text = std::make_unique<Text>(character_name, m_team.GetColor(), Font::FONT_SMALL, Font::FONT_BOLD, true);
   else
     name_text = nullptr;
 
   // Energy
   m_energy = config.init_energy;
 
-  energy_bar = new EnergyBar(0, 0,
+  energy_bar = std::make_unique<EnergyBar>(0, 0,
                              WIDTH_ENERGY, HEIGHT_ENERGY,
                              config.init_energy,
                              0,
@@ -173,28 +173,9 @@ Character::Character(Team& my_team, const std::string &name, Body *char_body, Co
   energy_bar->SetBackgroundColor(gray_color);
 
   SetEnergy(config.init_energy, nullptr);
-
-  MSG_DEBUG("character", "Load character %s at %p",
-            character_name.c_str(), this);
 }
 
-Character::~Character()
-{
-  MSG_DEBUG("character", "Unload character %s at %p",
-            character_name.c_str(), this);
-  if (name_text) {
-    delete name_text;
-  }
-  if (particle_engine) {
-    delete particle_engine;
-  }
-  if (energy_bar) {
-    delete energy_bar;
-  }
-  name_text       = nullptr;
-  particle_engine = nullptr;
-  energy_bar      = nullptr;
-}
+Character::~Character() = default;
 
 void Character::SignalDrowning()
 {

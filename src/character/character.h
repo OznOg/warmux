@@ -57,13 +57,13 @@ class Character : public PhysicalObj, public MovableByUser
   uint disease_duration; // std::numeric_limits<uint>::max() means unlimited
 
   std::unique_ptr<DamageStatistics> damage_stats;
-  EnergyBar * energy_bar;
+  std::unique_ptr<EnergyBar> energy_bar;
 
   // survived games
   int survivals;
 
   // name
-  Text* name_text;
+  std::unique_ptr<Text> name_text;
 
   // chrono
   uint rl_motion_pause;  // pause for left/right motion
@@ -78,7 +78,7 @@ class Character : public PhysicalObj, public MovableByUser
   int channel_step;
 
   // Generates green bubbles when the character is ill
-  ParticleEngine *particle_engine;
+  std::unique_ptr<ParticleEngine> particle_engine;
 
   // this is needed because of network needing to know
   // if we have changed of active character
