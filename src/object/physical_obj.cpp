@@ -51,6 +51,7 @@
 #define Y_OBJET_MIN  (-10000)
 
 PhysicalObj::PhysicalObj(const std::string &name, const std::string &xml_config) :
+  Physics(Config::GetInstance()->GetObjectConfig(name, xml_config)),
   m_collides_with_ground(true),
   m_collides_with_characters(false),
   m_collides_with_objects(false),
@@ -76,9 +77,6 @@ PhysicalObj::PhysicalObj(const std::string &name, const std::string &xml_config)
   m_energy(-1),
   m_allow_negative_y(false)
 {
-  m_cfg = Config::GetInstance()->GetObjectConfig(m_name, xml_config);
-  ResetConstants();       // Set physics constants from the xml file
-
   MSG_DEBUG("physical.mem", "Construction of %s", GetName().c_str());
 }
 

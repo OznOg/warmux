@@ -47,7 +47,8 @@ static const Double PENDULUM_REBOUND_FACTOR = 0.8;
 static const Double HALF_PI_PLUS    = HALF_PI+(Double)0.3;
 static const Double HALF_PI_MINUS   = HALF_PI-(Double)0.3 ;
 
-Physics::Physics ():
+Physics::Physics (ObjectConfig cfg):
+  ObjectConfig(cfg),
   m_motion_type(NoMotion),
   m_pos_x(),
   m_pos_y(),
@@ -64,7 +65,7 @@ Physics::Physics ():
   m_elasticity_damping(0.20),
   m_balancing_damping(0.40),
   m_elasticity_off(true),
-  m_cfg()
+  m_cfg(cfg)
 {
 }
 
