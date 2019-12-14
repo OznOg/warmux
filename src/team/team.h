@@ -46,10 +46,6 @@ class Profile;
 
 class Team
 {
-public:
-  typedef std::list<Character>::iterator iterator;
-  typedef std::list<Character>::const_iterator const_iterator;
-
 private:
   // parameters that never change after first loading
   Surface mini_flag;
@@ -71,8 +67,8 @@ private:
   std::string ai_name;
 
   // parameters changed just before game or in game
-  std::list<Character> characters;
-  iterator active_character;
+  std::list<std::unique_ptr<Character>> characters;
+  decltype(characters)::iterator active_character;
   Weapon *active_weapon;
   uint current_turn;
   bool abandoned;
@@ -120,7 +116,7 @@ public:
   void PrepareTurn();
 
   // Access to the character.
-  Character& ActiveCharacter() const { return (*active_character); }
+  Character& ActiveCharacter() const { return (*active_character->get()); }
 
   void DrawEnergy(const Point2i& pos) { energy.Draw(pos); }
   void Refresh() { energy.Refresh(); }
@@ -154,8 +150,8 @@ public:
   const Surface& GetMiniFlag() const { return mini_flag; }
   const Surface& GetDeathFlag() const { return death_flag; }
   const Surface& GetBigFlag() const { return big_flag; }
-  iterator begin() { return characters.begin(); }
-  iterator end() { return characters.end(); }
+  auto begin() { return characters.begin(); }
+  auto end() { return characters.end(); }
   Character* FindByIndex(uint index);
 
   void SetPlayerName(const std::string& player_name) { m_player_name = player_name; };

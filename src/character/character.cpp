@@ -178,58 +178,6 @@ Character::Character(Team& my_team, const std::string &name, Body *char_body, Co
             character_name.c_str(), this);
 }
 
-Character::Character(const Character& acharacter) :
-  PhysicalObj(acharacter),
-  MovableByUser(acharacter),
-  character_name(acharacter.character_name),
-  m_team(acharacter.m_team),
-  step_sound_played(acharacter.step_sound_played),
-  prepare_shoot(acharacter.prepare_shoot),
-  back_jumping(acharacter.back_jumping),
-  death_explosion(acharacter.death_explosion),
-  firing_angle(acharacter.firing_angle),
-  disease_dealer(acharacter.disease_dealer),
-  disease_damage_per_turn(acharacter.disease_damage_per_turn),
-  disease_duration(acharacter.disease_duration),
-  damage_stats(new DamageStatistics(*acharacter.damage_stats, *this)),
-  energy_bar(nullptr),
-  survivals(acharacter.survivals),
-  name_text(nullptr),
-  rl_motion_pause(acharacter.rl_motion_pause),
-  do_nothing_time(acharacter.do_nothing_time),
-  walking_time(acharacter.walking_time),
-  animation_time(acharacter.animation_time),
-  lost_energy(acharacter.lost_energy),
-  hidden(acharacter.hidden),
-  channel_step(acharacter.channel_step),
-  particle_engine(new ParticleEngine(250)),
-  is_playing(acharacter.is_playing),
-  last_direction_change(0),
-  config(acharacter.config),
-  previous_strength(acharacter.previous_strength)
-{
-  energy_bar = new EnergyBar(acharacter.energy_bar->GetX(),
-                             acharacter.energy_bar->GetY(),
-                             acharacter.energy_bar->GetWidth(),
-                             acharacter.energy_bar->GetHeight(),
-                             acharacter.energy_bar->GetCurrentValue(),
-                             acharacter.energy_bar->GetMinValue(),
-                             acharacter.energy_bar->GetMaxValue());
-  energy_bar->SetBorderColor(black_color);
-  energy_bar->SetBackgroundColor(gray_color);
-  SetEnergy(config.init_energy, nullptr);
-
-  if (acharacter.body) {
-    SetBody(std::make_unique<Body>(*acharacter.body));
-  }
-
-  if (acharacter.name_text) {
-    name_text = new Text(*acharacter.name_text);
-  }
-  MSG_DEBUG("character", "Copying character %s from %p to %p",
-            character_name.c_str(), &acharacter, this);
-}
-
 Character::~Character()
 {
   MSG_DEBUG("character", "Unload character %s at %p",
@@ -970,8 +918,8 @@ uint Character::GetTeamIndex() const
 uint Character::GetCharacterIndex() const
 {
   uint index = 0;
-  for (Team::iterator it = m_team.begin(); it != m_team.end() ; ++it, ++index) {
-    if (&(*it) == this)
+  for (auto it = m_team.begin(); it != m_team.end() ; ++it, ++index) {
+    if (it->get() == this)
       return index;
   }
   ASSERT(false);

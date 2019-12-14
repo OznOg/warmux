@@ -114,9 +114,9 @@ AIStupidPlayer::AIStupidPlayer(Team * team, float accuracy)
   items.push_back(std::make_pair(new WasteAmmoUnitsIdea(), &stats->WasteAmmo));
   FOR_EACH_LIVING_AND_DEAD_CHARACTER(team, character) {
     FOR_EACH_TEAM(other_team) {
-      bool is_enemy = !team->IsSameAs(**other_team);
+      bool is_enemy = !team->IsSameAs(*other_team);
       if (is_enemy) {
-        FOR_EACH_LIVING_AND_DEAD_CHARACTER(*other_team, other_character) {
+        FOR_EACH_LIVING_AND_DEAD_CHARACTER(other_team, other_character) {
           items.push_back(std::make_pair(new ShootDirectlyAtEnemyIdea(weapons_weighting, *character, *other_character,
                                                                       Weapon::WEAPON_GUN, MAX_GUN_DISTANCE),
                                          &stats->ShootDirectly));

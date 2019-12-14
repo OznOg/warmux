@@ -341,8 +341,8 @@ void Game::InitTeams()
 void Game::InitSounds()
 {
   FOR_EACH_TEAM(team)
-    if ((*team)->GetSoundProfile() != "default")
-      JukeBox::GetInstance()->LoadXML((**team).GetSoundProfile()) ;
+    if (team->GetSoundProfile() != "default")
+      JukeBox::GetInstance()->LoadXML(team->GetSoundProfile()) ;
 }
 
 void Game::InitInterface()
@@ -428,7 +428,7 @@ void Game::UnloadDatas(bool game_finished) const
   if (!Network::IsConnected() || !game_finished) {
     // Fix bug #10613: ensure all teams are reseted as local teams
     FOR_EACH_TEAM(team)
-      (*team)->SetDefaultPlayingConfig();
+      team->SetDefaultPlayingConfig();
   }
 
   if (Network::IsConnected()) {
@@ -439,14 +439,14 @@ void Game::UnloadDatas(bool game_finished) const
 
       // Fix bug #10613: ensure all teams are reseted as local teams
       FOR_EACH_TEAM(team)
-        (*team)->SetDefaultPlayingConfig();
+        team->SetDefaultPlayingConfig();
     }
     // else: we will start a new round!
   } else {
 
     // Fix bug #10613: ensure all teams are reseted as local teams
     FOR_EACH_TEAM(team)
-      (*team)->SetDefaultPlayingConfig();
+      team->SetDefaultPlayingConfig();
   }
 
   GetTeamsList().UnloadGamingData();
@@ -588,7 +588,7 @@ void Game::RefreshObject() const
 
   // Recompute energy of each team
   FOR_EACH_TEAM(team)
-    (*team)->Refresh();
+    team->Refresh();
   GetTeamsList().RefreshEnergy();
 
   ActiveTeam().AccessWeapon().Manage();

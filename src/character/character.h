@@ -135,7 +135,7 @@ public:
 
   bool MustBeDrawn() const;
   Character (Team& my_team, const std::string &name, Body *char_body, Config cfg);
-  Character (const Character& acharacter);
+  Character (const Character& acharacter) = delete;
   ~Character() override;
 
   virtual void SignalExplosion();

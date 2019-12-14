@@ -162,7 +162,7 @@ std::vector<TeamResults*>* TeamResults::createAllResults(void)
   // Build results list
   FOR_EACH_TEAM(team)
   {
-    results = TeamResults::createTeamResults(*team);
+    results = TeamResults::createTeamResults(team);
 
     results_list->push_back(results);
 

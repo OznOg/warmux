@@ -233,7 +233,7 @@ void Interface::Reset()
   energy_bar->InitVal(0, 0, GameMode::GetInstance()->character_cfg.init_energy);
   TeamEnergy::SetSpacing((174-MARGIN)*zoom / TeamsList::GetInstance()->GetPlayingList().size());
   FOR_EACH_TEAM(tmp_team)
-    (*tmp_team)->GetEnergyBar().SetHeight(default_toolbar.GetHeight());
+    tmp_team->GetEnergyBar().SetHeight(default_toolbar.GetHeight());
 }
 
 void Interface::DrawCharacterInfo()
@@ -393,7 +393,7 @@ void Interface::DrawTeamEnergy() const
 {
   Point2i team_bar_offset(430*zoom, 0);
   FOR_EACH_TEAM(tmp_team) {
-    Team* team = *tmp_team;
+    Team* team = tmp_team;
     if (!IsDisplayed()) // Fix bug #7753 (Team energy bar visible when the interface is hidden)
       team->GetEnergyBar().FinalizeMove();
     team->DrawEnergy(bottom_bar_pos + team_bar_offset);
@@ -511,19 +511,19 @@ void Interface::DrawMapPreview()
 
   // Add team characters
   FOR_EACH_TEAM(team) {
-    const Surface & icon = (*team)->GetMiniFlag();
+    const Surface & icon = team->GetMiniFlag();
 
-    for (auto & character : *(*(team))) {
+    for (auto & character : *team) {
 
-      if (character.IsDead()) {
+      if (character->IsDead()) {
         continue;
       }
 
-      coord = ground.PreviewCoordinates(character.GetPosition()) + offset;
+      coord = ground.PreviewCoordinates(character->GetPosition()) + offset;
       Point2i icoord = coord - (icon.GetSize()>>1);
       window.Blit(icon, icoord);
 
-      if (character.IsActiveCharacter()) {
+      if (character->IsActiveCharacter()) {
         uint radius = (icon.GetSize().x < icon.GetSize().y) ? icon.GetSize().y : icon.GetSize().x;
         radius = (radius/2) + 1;
         window.CircleColor(coord.x, coord.y, radius, m_playing_character_preview_color);

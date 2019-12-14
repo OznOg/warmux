@@ -119,22 +119,22 @@ Team::Team(XmlReader& doc, std::shared_ptr<Profile> res,
 
 void Team::AddOnePlayingCharacter(const std::string& character_name, Body *body)
 {
-  Character new_char(*this, character_name, body, GameMode::GetInstance()->character_cfg);
+  auto new_char = std::make_unique<Character>(*this, character_name, body, GameMode::GetInstance()->character_cfg);
 
-  if (!new_char.PutRandomly(false, GetWorld().GetDistanceBetweenCharacters())) {
+  if (!new_char->PutRandomly(false, GetWorld().GetDistanceBetweenCharacters())) {
     // We haven't found any place to put the characters!!
-    if (!new_char.PutRandomly(false, GetWorld().GetDistanceBetweenCharacters() / 2)) {
+    if (!new_char->PutRandomly(false, GetWorld().GetDistanceBetweenCharacters() / 2)) {
       std::cerr << std::endl;
       std::cerr << "Error: player " << character_name.c_str() << " will be probably misplaced!" << std::endl;
       std::cerr << std::endl;
 
       // Put it with no space...
-      new_char.PutRandomly(false, 0);
+      new_char->PutRandomly(false, 0);
     }
   }
-  new_char.Init();
+  new_char->Init();
 
-  characters.push_back(new_char);
+  characters.emplace_back(std::move(new_char));
 
   MSG_DEBUG("team", "Add %s in team %s", character_name.c_str(), m_name.c_str());
 }
@@ -185,11 +185,9 @@ uint Team::ReadEnergy() const
 {
   uint total_energy = 0;
 
-  const_iterator it = characters.begin(), end = characters.end();
-
-  for (; it != end; ++it) {
-    if ( !(*it).IsDead() )
-      total_energy += (*it).GetEnergy();
+  for (auto &c : characters) {
+    if (!c->IsDead())
+      total_energy += c->GetEnergy();
   }
 
   return total_energy;
@@ -203,7 +201,7 @@ void Team::SelectCharacter(Character * c)
     ActiveCharacter().StopPlaying();
 
     active_character = characters.begin();
-    while (c != &(*active_character) && active_character != characters.end())
+    while (c != active_character->get() && active_character != characters.end())
       active_character++;
 
     ASSERT(active_character != characters.end());
@@ -263,10 +261,10 @@ void Team::PreviousCharacter()
 int Team::NbAliveCharacter() const
 {
   uint nbr = 0;
-  const_iterator it= characters.begin(), end=characters.end();
 
-  for (; it!=end; ++it)
-    if ( !(*it).IsDead() ) nbr++;
+  for (auto &c : characters)
+    if (!c->IsDead())
+        nbr++;
 
   return nbr;
 }
@@ -319,13 +317,13 @@ void Team::SetWeapon(Weapon::Weapon_type type)
 Character* Team::FindByIndex(uint index)
 {
   ASSERT(index < characters.size());
-  iterator it= characters.begin(), end=characters.end();
 
-  while (index != 0 && it != end) {
+  for (auto &c : characters) {
+      if (index == 0)
+          return c.get();
     index--;
-    it++;
   }
-  return &(*it);
+  return nullptr;
 }
 
 void Team::LoadGamingData(WeaponsList &weapons)
