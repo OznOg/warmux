@@ -41,18 +41,28 @@ class GameMode : public Singleton<GameMode>
   std::string txt;
 
 public:
-  std::string rules;
+  std::string rules = "none";
 
-  uint nb_characters;
-  uint max_teams;
-  uint duration_turn;
-  uint duration_move_player;
-  uint duration_exchange_player;
-  uint duration_before_death_mode;
-  uint damage_per_turn_during_death_mode;
-  int gravity;
-  int safe_fall;
-  uint damage_per_fall_unit;
+  uint nb_characters = 6;
+  uint max_teams = 8;
+  uint duration_turn = 60;
+  uint duration_move_player = 3;
+  uint duration_exchange_player = 2;
+  uint duration_before_death_mode = 20 * 60;
+  uint damage_per_turn_during_death_mode = 5;
+  int gravity = 30;
+  int safe_fall = 10;
+  uint damage_per_fall_unit = 7;
+
+  enum manual_change_character_t {
+    ALWAYS = 0,
+    WITHIN_TEAM,
+    BEFORE_FIRST_ACTION,
+    NEVER
+  } allow_character_selection = BEFORE_FIRST_ACTION;
+
+  bool auto_change_character = true;
+
   ExplosiveWeaponConfig death_explosion_cfg;
   ExplosiveWeaponConfig barrel_explosion_cfg;
   ExplosiveWeaponConfig bonus_box_explosion_cfg;
@@ -61,16 +71,6 @@ public:
 
   Character::Config character_cfg;
 
-  bool auto_change_character;
-
-  typedef enum {
-    ALWAYS = 0,
-    WITHIN_TEAM,
-    BEFORE_FIRST_ACTION,
-    NEVER
-  } manual_change_character_t;
-
-  manual_change_character_t allow_character_selection;
   XmlReader doc;
 
 private:

@@ -103,32 +103,6 @@ std::unique_ptr<ConfigElementList> GameMode::BindMembers() {
 
 void GameMode::LoadDefaultValues()
 {
-  rules = "none";
-  nb_characters = 6;
-  max_teams = 8;
-  duration_turn = 60;
-  duration_move_player = 3;
-  duration_exchange_player = 2;
-  duration_before_death_mode = 20 * 60;
-  damage_per_turn_during_death_mode = 5;
-  gravity = 30;
-  safe_fall = 10;
-  damage_per_fall_unit = 7;
-
-  character_cfg.init_energy = 100;
-  character_cfg.max_energy = 200;
-  character_cfg.jump_strength = 8;
-  character_cfg.jump_angle = -60;
-  character_cfg.super_jump_strength = 11;
-  character_cfg.super_jump_angle = -80;
-  character_cfg.back_jump_strength = 9;
-  character_cfg.back_jump_angle = -100;
-  character_cfg.walking_pause = 50;
-
-  auto_change_character = true;
-
-  allow_character_selection = BEFORE_FIRST_ACTION;
-
   if (doc_objects)
     delete doc_objects;
 
