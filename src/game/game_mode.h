@@ -36,7 +36,6 @@ class WeaponsList;
 
 class GameMode : public Singleton<GameMode>
 {
-  ConfigElementList  main_settings;
   std::unique_ptr<WeaponsList> weapons_list;
   std::string txt;
 
@@ -94,6 +93,9 @@ private:
   void LoadDefaultValues();
 
   bool LoadXml();
+  std::unique_ptr<ConfigElementList> BindMembers() const;
+  std::unique_ptr<ConfigElementList> BindMembers();
+
   XmlWriter* SaveXml(const std::string& game_mode_name, const std::string& file_name = "") const;
 
   std::string GetFilename() const;

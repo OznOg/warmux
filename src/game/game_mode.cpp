@@ -35,20 +35,29 @@ GameMode::GameMode()
   , doc_objects(nullptr)
 {
   m_current = "classic";
+}
 
-  main_settings.emplace_back(new StringConfigElement("rules", &rules, "none"));
-  main_settings.emplace_back(new BoolConfigElement("auto_change_character", &auto_change_character, true));
-  main_settings.emplace_back(new StringConfigElement("allow_character_selection", &txt, "always"));
-  main_settings.emplace_back(new UintConfigElement("duration_turn", &duration_turn, 60));
-  main_settings.emplace_back(new UintConfigElement("duration_move_player", &duration_move_player, 3));
-  main_settings.emplace_back(new UintConfigElement("duration_exchange_player", &duration_exchange_player, 2));
-  main_settings.emplace_back(new UintConfigElement("duration_before_death_mode", &duration_before_death_mode, 20 * 60));
-  main_settings.emplace_back(new UintConfigElement("damage_per_turn_during_death_mode", &damage_per_turn_during_death_mode, 5));
-  main_settings.emplace_back(new UintConfigElement("max_teams", &max_teams, 8));
-  main_settings.emplace_back(new UintConfigElement("nb_characters", &nb_characters, 6));
-  main_settings.emplace_back(new IntConfigElement("gravity", &gravity, 30));
-  main_settings.emplace_back(new IntConfigElement("safe_fall", &safe_fall, 10));
-  main_settings.emplace_back(new UintConfigElement("damage_per_fall_unit", &damage_per_fall_unit, 7));
+std::unique_ptr<ConfigElementList> GameMode::BindMembers() const {
+    // FIXME ConfigElements should be able to take const refrencs so that I do
+    // not need const cast here... but this is an other story..
+   return const_cast<GameMode *>(this)->BindMembers();
+}
+
+std::unique_ptr<ConfigElementList> GameMode::BindMembers() {
+  auto main_settings = std::make_unique<ConfigElementList>();
+  main_settings->emplace_back(new StringConfigElement("rules", &rules, "none"));
+  main_settings->emplace_back(new BoolConfigElement("auto_change_character", &auto_change_character, true));
+  main_settings->emplace_back(new StringConfigElement("allow_character_selection", &txt, "always"));
+  main_settings->emplace_back(new UintConfigElement("duration_turn", &duration_turn, 60));
+  main_settings->emplace_back(new UintConfigElement("duration_move_player", &duration_move_player, 3));
+  main_settings->emplace_back(new UintConfigElement("duration_exchange_player", &duration_exchange_player, 2));
+  main_settings->emplace_back(new UintConfigElement("duration_before_death_mode", &duration_before_death_mode, 20 * 60));
+  main_settings->emplace_back(new UintConfigElement("damage_per_turn_during_death_mode", &damage_per_turn_during_death_mode, 5));
+  main_settings->emplace_back(new UintConfigElement("max_teams", &max_teams, 8));
+  main_settings->emplace_back(new UintConfigElement("nb_characters", &nb_characters, 6));
+  main_settings->emplace_back(new IntConfigElement("gravity", &gravity, 30));
+  main_settings->emplace_back(new IntConfigElement("safe_fall", &safe_fall, 10));
+  main_settings->emplace_back(new UintConfigElement("damage_per_fall_unit", &damage_per_fall_unit, 7));
 
   auto char_settings = std::make_unique<ConfigElementList>();
   char_settings->emplace_back(new UintConfigElement("mass", &character.mass, 100));
@@ -75,18 +84,20 @@ GameMode::GameMode()
   back_jump->emplace_back(new IntConfigElement("strength", &character.back_jump_strength, 9, true));
   back_jump->emplace_back(new AngleConfigElement("angle", &character.back_jump_angle, -100, true));
   char_settings->LinkList(std::move(back_jump), "back_jump");
-  main_settings.LinkList(std::move(char_settings), "character");
+  main_settings->LinkList(std::move(char_settings), "character");
 
   auto barrel = std::make_unique<ConfigElementList>();
   barrel->LinkList(bindExplosiveWeaponConfig(barrel_explosion_cfg), "explosion");
-  main_settings.LinkList(std::move(barrel), "barrel");
+  main_settings->LinkList(std::move(barrel), "barrel");
 
   auto bonus_box = std::make_unique<ConfigElementList>();
   bonus_box->LinkList(bindExplosiveWeaponConfig(bonus_box_explosion_cfg), "explosion");
-  main_settings.LinkList(std::move(bonus_box), "bonus_box");
+  main_settings->LinkList(std::move(bonus_box), "bonus_box");
 
-  main_settings.LinkList(std::make_unique<MedkitSettings>(), "medkit");
-  main_settings.LinkList(bindExplosiveWeaponConfig(mines_explosion_cfg), "minelauncher");
+  main_settings->LinkList(std::make_unique<MedkitSettings>(), "medkit");
+  main_settings->LinkList(bindExplosiveWeaponConfig(mines_explosion_cfg), "minelauncher");
+
+  return main_settings;
 }
 
 void GameMode::LoadDefaultValues()
@@ -137,8 +148,10 @@ GameMode::~GameMode()
 bool GameMode::LoadXml()
 {
   const xmlNode *elem = doc.GetRoot();
+
+  auto settings = BindMembers();
   // Load all elements
-  main_settings.LoadXml(elem);
+  settings->LoadXml(elem);
 
   if (txt == "always")
     allow_character_selection = ALWAYS;
@@ -254,7 +267,8 @@ XmlWriter* GameMode::SaveXml(const std::string&, const std::string& file_name) c
     return nullptr;
 
   xmlNode *node = out->GetRoot();
-  main_settings.SaveXml(*out, node);
+  auto settings = BindMembers();
+  settings->SaveXml(*out, node);
 
   node = XmlWriter::AddNode(node, "weapons");
   weapons_list->Save(*out, node);
