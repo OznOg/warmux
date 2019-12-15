@@ -22,6 +22,7 @@
 #define CLOTHE_H
 #include <map>
 #include <vector>
+#include <memory>
 
 class Member;
 typedef struct _xmlNode xmlNode;
@@ -35,8 +36,8 @@ class Clothe
 
 public:
   ~Clothe() { layers.clear(); }
-  Clothe(const xmlNode* xml, std::map<std::string, Member*>& members_lst);
-  Clothe(Clothe* c, std::map<std::string, Member*>& members_lst);
+  Clothe(const xmlNode* xml, std::map<std::string, std::unique_ptr<Member>>& members_lst);
+  Clothe(Clothe* c, std::map<std::string, std::unique_ptr<Member>>& members_lst);
 
   const std::string & GetName() const { return name; }
 

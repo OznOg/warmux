@@ -26,7 +26,7 @@
 #include <iostream>
 
 Clothe::Clothe(const xmlNode *                  xml,
-               std::map<std::string, Member*> & members_lst)
+               std::map<std::string, std::unique_ptr<Member>> & members_lst)
 {
   XmlReader::ReadStringAttr(xml, "name", name);
 
@@ -45,16 +45,16 @@ Clothe::Clothe(const xmlNode *                  xml,
       continue;
     }
 
-    std::map<std::string, Member *>::iterator itMember = members_lst.find(att);
+    auto itMember = members_lst.find(att);
 
     if (itMember != members_lst.end()) {
-      Member *member = itMember->second;
-      layers.push_back(member);
+      auto &member = itMember->second;
+      layers.push_back(member.get());
       // Weapon member doesn't have a sprite, don't check it
       if (member->GetType()!="weapon") {
-        non_weapon_layers.push_back(member);
+        non_weapon_layers.push_back(member.get());
         if (member->MustRefresh())
-          must_refresh.push_back(itMember->second);
+          must_refresh.push_back(itMember->second.get());
       }
     } else {
       std::cerr << "Undefined clothe member \"" << att << "\"" << std::endl;
@@ -63,17 +63,17 @@ Clothe::Clothe(const xmlNode *                  xml,
 }
 
 Clothe::Clothe(Clothe *                         c,
-               std::map<std::string, Member*> & members_lst):
+               std::map<std::string, std::unique_ptr<Member>> & members_lst):
   name(c->name)
 {
   for (auto & layer : c->layers) {
-    Member *member = members_lst.find(layer->GetName())->second;
-    layers.push_back(member);
+    auto &member = members_lst.find(layer->GetName())->second;
+    layers.push_back(member.get());
     // Weapon member doesn't have a sprite, don't check it
     if (member->GetType()!="weapon") {
-      non_weapon_layers.push_back(member);
+      non_weapon_layers.push_back(member.get());
       if (member->MustRefresh())
-        must_refresh.push_back(member);
+        must_refresh.push_back(member.get());
     }
   }
 }

@@ -59,6 +59,8 @@ Body::Body(const xmlNode *     xml,
   mainXmlNode(xml),
   mainFolder(main_folder)
 {
+  // Add a special weapon member to the body
+  members_lst["weapon"] = std::unique_ptr<Member>(weapon_member);
 }
 
 Body::Body(const Body & _body):
@@ -79,17 +81,14 @@ Body::Body(const Body & _body):
   owner(nullptr)
 {
   // Add a special weapon member to the body
-  members_lst["weapon"] = weapon_member;
+  members_lst["weapon"] = std::unique_ptr<Member>(weapon_member);
 
   // Make a copy of members
-  std::map<std::string, Member*>::const_iterator it1 = _body.members_lst.begin();
+  auto it1 = _body.members_lst.begin();
 
   while (it1 != _body.members_lst.end()) {
     if (it1->second->GetName() != "weapon") {
-      std::pair<std::string, Member*> p;
-      p.first = it1->first;
-      p.second = new Member(*it1->second);
-      members_lst.insert(p);
+      members_lst.emplace(it1->first, new Member(*it1->second));
     }
     ++it1;
   }
@@ -134,11 +133,9 @@ void Body::LoadMembers(xmlNodeArray &      nodes,
       std::cerr << "Warning !! The member \""<< name << "\" is defined twice in the xml file" << std::endl;
       ASSERT(false);
     } else {
-      Member * member = new Member(*it, main_folder);
-      members_lst[name] = member;
+      members_lst[name] = std::make_unique<Member>(*it, main_folder);
     }
   }
-  members_lst["weapon"] = weapon_member;
 }
 
 void Body::LoadClothes(xmlNodeArray &  nodes,
@@ -232,12 +229,6 @@ void Body::LoadMovements(xmlNodeArray &  nodes,
 Body::~Body()
 {
   // Pointers inside those lists are freed from the body_list
-  // Clean the members list
-  std::map<std::string, Member*>::iterator itMember = members_lst.begin();
-  while (itMember != members_lst.end()) {
-    delete itMember->second;
-    ++itMember;
-  }
 
   // Clean the clothes list
   std::map<std::string, Clothe*>::iterator itClothe = clothes_lst.begin();

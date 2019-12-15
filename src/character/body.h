@@ -45,7 +45,7 @@ class Body
 {
   friend class BodyList;
 
-  std::map<std::string, Member *>   members_lst;
+  std::map<std::string, std::unique_ptr<Member>>   members_lst;
   std::map<std::string, Clothe *>   clothes_lst;
   std::map<std::string, std::shared_ptr<Movement>> mvt_lst;
   const Clothe *                    current_clothe;
