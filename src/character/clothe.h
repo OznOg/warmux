@@ -21,6 +21,7 @@
 #ifndef CLOTHE_H
 #define CLOTHE_H
 #include <map>
+#include <memory>
 #include <vector>
 #include <memory>
 

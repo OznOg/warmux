@@ -94,12 +94,9 @@ Body::Body(const Body & _body):
   }
 
   // Make a copy of clothes
-  std::map<std::string, Clothe*>::const_iterator it2 = _body.clothes_lst.begin();
+  auto it2 = _body.clothes_lst.begin();
   while (it2 != _body.clothes_lst.end()) {
-    std::pair<std::string, Clothe*> p;
-    p.first = it2->first;
-    p.second = new Clothe(it2->second, members_lst);
-    clothes_lst.insert(p);
+    clothes_lst.emplace(it2->first, std::make_unique<Clothe>(it2->second.get(), members_lst));
     ++it2;
   }
 
@@ -156,8 +153,7 @@ void Body::LoadClothes(xmlNodeArray &  nodes,
     if (clothes_lst.find(name) != clothes_lst.end()) {
       std::cerr << "Warning !! The clothe \""<< name << "\" is defined twice in the xml file" << std::endl;
     } else {
-      Clothe* clothe = new Clothe(*it, members_lst);
-      clothes_lst[name] = clothe;
+      clothes_lst[name] = std::make_unique<Clothe>(*it, members_lst);
     }
   }
 }
@@ -201,8 +197,7 @@ void Body::LoadMovements(xmlNodeArray &  nodes,
     if (mvt_lst.find(name) != mvt_lst.end()) {
       std::cerr << "Warning !! The movement \""<< name << "\" is defined twice in the xml file" << std::endl;
     } else {
-      auto mvt = std::make_shared<Movement>(*it);
-      mvt_lst[name] = mvt;
+      mvt_lst[name] = std::make_shared<Movement>(*it);
     }
 
     std::map<std::string, std::string>::iterator iter = mvt_alias.begin();
@@ -216,8 +211,8 @@ void Body::LoadMovements(xmlNodeArray &  nodes,
 
   }
 
-  auto mvtBlack = mvt_lst.find("black");
-  std::map<std::string, Clothe *>::iterator   clothesBlack = clothes_lst.find("black");
+  auto mvtBlack     = mvt_lst.find("black");
+  auto clothesBlack = clothes_lst.find("black");
 
   if ((mvtBlack == mvt_lst.end() && clothesBlack != clothes_lst.end())
      || (mvtBlack != mvt_lst.end() && clothesBlack == clothes_lst.end())) {
@@ -228,22 +223,11 @@ void Body::LoadMovements(xmlNodeArray &  nodes,
 
 Body::~Body()
 {
-  // Pointers inside those lists are freed from the body_list
-
-  // Clean the clothes list
-  std::map<std::string, Clothe*>::iterator itClothe = clothes_lst.begin();
-  while (itClothe != clothes_lst.end()) {
-    delete itClothe->second;
-    ++itClothe;
-  }
-
-  members_lst.clear();
-  clothes_lst.clear();
 }
 
 void Body::ResetMovement() const
 {
-  for (auto layer : current_clothe->GetLayers()) {
+  for (auto &layer : current_clothe->GetLayers()) {
     layer->ResetMovement();
   }
 }
@@ -264,7 +248,6 @@ void Body::ApplyMovement(Movement * mvt,
   auto member = skel_lst.begin();
   bool                              useCrossHair;
   Movement::member_def              movMember = mvt->GetFrames()[frame];
-  Movement::member_def::iterator    itMember;
 
   // Move each member following the movement description
   // We do it using the order of the skeleton, as the movement of each
@@ -273,7 +256,7 @@ void Body::ApplyMovement(Movement * mvt,
     ASSERT(frame < mvt->GetFrames().size());
 
     Member *mb = (*member)->member;
-    itMember = std::find(movMember.begin(), movMember.end(), mb->GetType());
+    auto itMember = std::find(movMember.begin(), movMember.end(), mb->GetType());
 
     if (itMember != movMember.end()) {
 
@@ -463,7 +446,7 @@ void Body::Build()
 
   int y_max = 0;
   const std::vector<Member*>& layers = current_clothe->GetNonWeaponLayers();
-  for (auto member : layers) {
+  for (auto &member : layers) {
     if (!member->IsGoingThroughGround()) {
       // Rotate sprite, because the next part need to know the height
       // of the sprite once it is rotated
@@ -491,13 +474,13 @@ void Body::RefreshSprites()
 {
   if (need_refreshsprites) {
     const std::vector<Member*>& layers = current_clothe->GetNonWeaponLayers();
-    for (auto layer : layers)
+    for (auto &layer : layers)
       layer->RefreshSprite(direction);
 
     need_refreshsprites = false;
   } else {
     const std::vector<Member*>& must = current_clothe->MustRefreshMembers();
-    for (auto layer : must)
+    for (auto &layer : must)
       layer->RefreshSprite(direction);
   }
 }
@@ -534,7 +517,7 @@ void Body::Draw(const Point2i & _pos)
 
   // Finally draw each layer one by one
   const std::vector<Member*>& layers = current_clothe->GetLayers();
-  for (auto member : layers) {
+  for (auto &member : layers) {
     if (member == weapon_member) {
       // We draw the weapon member only if currently drawing the active character
       if (owner->IsActiveCharacter()) {
@@ -568,7 +551,7 @@ void Body::AddChildMembers(Member * parent)
   for ( ; child != attached.end(); ++child) {
 
     // Find if the current clothe uses this member:
-    for (auto member : layers) {
+    for (auto &member : layers) {
       if (member->GetType() == child->first) {
         // This child member is attached to his parent
         junction * body = new junction();
@@ -593,7 +576,7 @@ void Body::BuildSqueleton()
 
   // Find the "body" member as it is the top of the skeleton
   const std::vector<Member*>& layers = current_clothe->GetLayers();
-  for (auto member : layers) {
+  for (auto &member : layers) {
     if (member->GetType() == "body") {
 
       // TODO lami : overwrite junction constructor
@@ -626,10 +609,10 @@ void Body::SetClothe(const std::string & name)
     return;
   }
 
-  std::map<std::string, Clothe *>::iterator itClothes = clothes_lst.find(name);
+  auto itClothes = clothes_lst.find(name);
 
   if (itClothes != clothes_lst.end()) {
-    current_clothe = itClothes->second;
+    current_clothe = itClothes->second.get();
     BuildSqueleton();
     main_rotation_rad = 0;
     need_rebuild      = true;
@@ -686,13 +669,13 @@ void Body::SetClotheOnce(const std::string & name)
     return;
   }
 
-  std::map<std::string, Clothe *>::iterator itClothes = clothes_lst.find(name);
+  auto itClothes = clothes_lst.find(name);
 
   if (itClothes != clothes_lst.end()) {
     if (!previous_clothe) {
       previous_clothe = current_clothe;
     }
-    current_clothe = itClothes->second;
+    current_clothe = itClothes->second.get();
     BuildSqueleton();
     main_rotation_rad = 0;
     need_rebuild = true;
@@ -803,7 +786,7 @@ void Body::MakeParticles(const Point2i & pos)
   Build();
 
   const std::vector<Member*>& layers = current_clothe->GetNonWeaponLayers();
-  for (auto member : layers) {
+  for (auto &member : layers) {
     ParticleEngine::AddNow(new BodyMemberParticle(member->GetSprite(), member->GetPos()+pos));
   }
 }
@@ -813,7 +796,7 @@ void Body::MakeTeleportParticles(const Point2i& pos, const Point2i& dst)
   Build();
 
   const std::vector<Member*>& layers = current_clothe->GetNonWeaponLayers();
-  for (auto member : layers) {
+  for (auto &member : layers) {
     ParticleEngine::AddNow(new TeleportMemberParticle(member->GetSprite(),
                                                       member->GetPos()+pos, member->GetPos()+dst));
   }
