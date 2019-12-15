@@ -65,6 +65,7 @@ Weapon::Weapon(Weapon_type type,
                const std::string &id,
                EmptyWeaponConfig * params,
                bool drawable):
+  extra_params(params),
   drawable(drawable)
 {
   m_type = type;
@@ -94,22 +95,17 @@ Weapon::Weapon(Weapon_type type,
 
   m_can_change_weapon = false;
 
-  m_image = nullptr;
-  m_weapon_fire = nullptr;
-
   if (!use_flipping && !EqualsZero(min_angle - max_angle))
     use_flipping = true;
-
-  extra_params = params;
 
   weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
 
   if (drawable) {
-    m_image = new Sprite(GetResourceManager().LoadImage(weapons_res_profile, m_id));
+    m_image = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile, m_id));
     m_image->EnableCaches(use_flipping, 0);
   }
 
-  icon = new Sprite(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_ico"));
+  icon = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_ico"));
 
   mouse_character_selection = true;
 
@@ -138,14 +134,6 @@ Weapon::Weapon(Weapon_type type,
     XmlReader::ReadIntAttr(elem, "dx", hole_delta.x);
     XmlReader::ReadIntAttr(elem, "dy", hole_delta.y);
   }
-}
-
-Weapon::~Weapon()
-{
-  if (m_image) delete m_image;
-  if (m_weapon_fire) delete m_weapon_fire;
-  if (extra_params) delete extra_params;
-  if (icon) delete icon;
 }
 
 void Weapon::Select()

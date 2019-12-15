@@ -45,24 +45,16 @@ WeaponStrengthBar::WeaponStrengthBar() :
 {
 }
 
-WeaponStrengthBar::~WeaponStrengthBar()
-{
-  delete last_fire;
-  delete m_box;
-}
+WeaponStrengthBar::~WeaponStrengthBar() = default;
 
 void WeaponStrengthBar::InitPos(uint px, uint py, uint pwidth, uint pheight)
 {
   ProgressBar::InitPos(px, py, pwidth, pheight);
 
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  if (last_fire)
-    delete last_fire;
-  last_fire = new Sprite(LOAD_RES_IMAGE("interface/weapon_strength_bar_last_fire"));
+  last_fire = std::make_unique<Sprite>(LOAD_RES_IMAGE("interface/weapon_strength_bar_last_fire"));
 
-  if (m_box)
-    delete m_box;
-  m_box = PolygonGenerator::GenerateDecoratedBox(pwidth, pheight);
+  m_box = std::unique_ptr<DecoratedBox>(PolygonGenerator::GenerateDecoratedBox(pwidth, pheight));
   m_box->SetStyle(DecoratedBox::STYLE_SQUARE);
 }
 
@@ -142,12 +134,11 @@ void WeaponStrengthBar::DrawXY(const Point2i &pos) const {
 
     if (m_item_last_fire) {
       m_box->DelItem(0);
-      delete m_item_last_fire;
     }
 
-    PolygonItem * item = new PolygonItem(last_fire, p_marq);
-    const_cast<PolygonItem *&>(m_item_last_fire) = item;
-    m_box->AddItem(m_item_last_fire);
+    auto item = std::make_unique<PolygonItem>(last_fire.get(), p_marq);
+    const_cast<WeaponStrengthBar *>(this)->m_item_last_fire = std::move(item);
+    m_box->AddItem(m_item_last_fire.get());
   }
 
   Rectanglei dst(pos.x, pos.y, width, height);

@@ -28,11 +28,11 @@
 #include <WARMUX_debug.h>
 #include <WARMUX_point.h>
 #include "weapon/weapon_cfg.h"
+#include "graphic/sprite.h"
 
 #include "tool/resource_manager.h"
 
 class Character;
-class Sprite;
 class EmptyWeaponConfig;
 typedef struct _xmlNode xmlNode;
 class XmlWriter;
@@ -94,8 +94,8 @@ protected:
   std::string m_id;
   std::string m_name;
   std::string m_help;
-  Sprite *m_image;
-  Sprite *m_weapon_fire;
+  std::unique_ptr<Sprite> m_image;
+  std::unique_ptr<Sprite> m_weapon_fire;
   uint m_fire_remanence_time;
 
   typedef enum {
@@ -146,7 +146,7 @@ protected:
 
 public:
   // weapon's icon
-  Sprite * icon;
+  std::unique_ptr<Sprite> icon;
 
   // if max_strength != 0, display the strength bar
   Double max_strength;
@@ -189,9 +189,10 @@ public:
          const std::string &id,
          EmptyWeaponConfig * params,
          bool drawable = true);
+  virtual ~Weapon() = default;
+
   Weapon(const Weapon&) = delete;
   const Weapon &operator=(const Weapon&) = delete;
-  virtual ~Weapon();
 
   // Select or deselect the weapon
   void Select();

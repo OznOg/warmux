@@ -26,6 +26,7 @@
 #include "weapon/weapon_launcher.h"
 #include "graphic/color.h"
 #include <WARMUX_base.h>
+#include <memory>
 
 class BaseSnipeRifle : public WeaponLauncher
 {
@@ -36,7 +37,7 @@ private:
   Point2i laser_beam_start;
   Point2i targeted_point;
 
-  Sprite * m_laser_image;
+  std::unique_ptr<Sprite> m_laser_image;
   Color laser_beam_color, laser_beam_end_color;
 
   void ComputeCrossPoint(bool force);
@@ -48,7 +49,7 @@ protected:
 public:
   BaseSnipeRifle(Weapon_type type,
                  const std::string &id);
-  ~BaseSnipeRifle() override;
+
   void SignalProjectileGhostState() override;
   void DrawBeam();
   void Draw() override;  // In order to draw the laser beam / and the contact point.

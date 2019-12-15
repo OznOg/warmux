@@ -50,18 +50,13 @@ BaseSnipeRifle::BaseSnipeRifle(Weapon_type type, const std::string &id)
   m_category = RIFLE;
 
   last_angle = 0.0f;
-  m_weapon_fire = new Sprite(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_fire"));
+  m_weapon_fire = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_fire"));
 
   targeting_something = false;
-  m_laser_image = new Sprite(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_laser"));
+  m_laser_image = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_laser"));
   laser_beam_color = GetResourceManager().LoadColor(weapons_res_profile,m_id+"_laser_color");
   laser_beam_end_color = laser_beam_color;
   laser_beam_end_color.SetAlpha(0);
-}
-
-BaseSnipeRifle::~BaseSnipeRifle()
-{
-  delete m_laser_image;
 }
 
 bool BaseSnipeRifle::p_Shoot()
