@@ -237,20 +237,8 @@ Body::~Body()
     ++itClothe;
   }
 
-  FreeSkeletonVector();
-
   members_lst.clear();
   clothes_lst.clear();
-}
-
-void Body::FreeSkeletonVector()
-{
-  std::vector<junction *> ::iterator itSkel = skel_lst.begin();
-  while (itSkel != skel_lst.end()) {
-    delete (*itSkel);
-    ++itSkel;
-  }
-  skel_lst.clear();
 }
 
 void Body::ResetMovement() const
@@ -273,7 +261,7 @@ void Body::ApplyMovement(Movement * mvt,
               frame);
 #endif
 
-  std::vector<junction *>::iterator member = skel_lst.begin();
+  auto member = skel_lst.begin();
   bool                              useCrossHair;
   Movement::member_def              movMember = mvt->GetFrames()[frame];
   Movement::member_def::iterator    itMember;
@@ -409,7 +397,7 @@ void Body::ProcessFollowCursor(const member_mvt& mb_mvt, Member* member)
 void Body::ApplySqueleton()
 {
   // Move each member following the skeleton
-  std::vector<junction *>::iterator member = skel_lst.begin();
+  auto member = skel_lst.begin();
 
   // The first member is the body, we set it to pos:
   (*member)->member->SetPos(Point2i(0, 0));
@@ -586,7 +574,7 @@ void Body::AddChildMembers(Member * parent)
         junction * body = new junction();
         body->member = member;
         body->parent = parent;
-        skel_lst.push_back(body);
+        skel_lst.emplace_back(body);
 
         // continue recursively
         if (!member->GetAttachedTypes().empty()) {
@@ -601,8 +589,7 @@ void Body::BuildSqueleton()
 {
   // Find each member used by the current clothe
   // and set the parent member of each member
-
-  FreeSkeletonVector();
+  skel_lst.clear();
 
   // Find the "body" member as it is the top of the skeleton
   const std::vector<Member*>& layers = current_clothe->GetLayers();
@@ -613,7 +600,7 @@ void Body::BuildSqueleton()
       junction * body = new junction();
       body->member = member;
       body->parent = nullptr;
-      skel_lst.push_back(body);
+      skel_lst.emplace_back(body);
       break;
     }
   }

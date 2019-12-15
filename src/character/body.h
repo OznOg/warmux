@@ -66,7 +66,7 @@ class Body
 
   bool                              walking;
   Double                            main_rotation_rad;
-  std::vector<junction *>           skel_lst; // Body skeleton:
+  std::vector<std::unique_ptr<junction>> skel_lst; // Body skeleton:
                                               // Order to use to build the body
                                               // First element: member to build
                                               // Secnd element: parent member
@@ -98,7 +98,6 @@ class Body
                    const xmlNode * xml);
   void LoadMovements(xmlNodeArray &  nodes,
                      const xmlNode * xml);
-  void FreeSkeletonVector();
 
 public:
   Body(const xmlNode *     xml,

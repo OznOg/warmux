@@ -150,7 +150,7 @@ public:
 
   const AttachTypeMap&   GetAttachedTypes() const { return attached_types; }
 
-  void BuildAttachMemberMap(const std::vector<junction*>& skel_lst);
+  void BuildAttachMemberMap(const std::vector<std::unique_ptr<junction>>& skel_lst);
 };
 
 class WeaponMember : public Member

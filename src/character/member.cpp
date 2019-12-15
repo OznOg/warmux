@@ -307,7 +307,7 @@ void Member::ResetMovement()
     spr->SetFlipped(false);
 }
 
-void Member::BuildAttachMemberMap(const std::vector<junction*> & skel_lst)
+void Member::BuildAttachMemberMap(const std::vector<std::unique_ptr<junction>> & skel_lst)
 {
   if (attached_types.empty())
     return;
@@ -318,7 +318,7 @@ void Member::BuildAttachMemberMap(const std::vector<junction*> & skel_lst)
        ++child) {
 
     // Find this member in the skeleton:
-    for (auto junction : skel_lst) {
+    for (auto &junction : skel_lst) {
 
       Member *member = junction->member;
       if (member->type == child->first) {
