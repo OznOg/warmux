@@ -37,13 +37,6 @@
 
 static const std::string WARMUX_VERSION = PACKAGE_VERSION;
 
-void WakeUpDebugger()
-{
-#if !defined(WIN32) && !defined(GEKKO) && !defined(__SYMBIAN32__)
-  kill(getpid(), SIGABRT);
-#endif
-}
-
 void MissedAssertion(const char *filename, unsigned int line,
                      const char *message)
 {
@@ -51,10 +44,7 @@ void MissedAssertion(const char *filename, unsigned int line,
   std::cerr << filename << ':' << line
             << ": Missed assertion \"" << message << "\"."
             << std::endl;
-#ifdef DEBUG
-  WakeUpDebugger();
   abort();
-#endif
 }
 
 static std::string FormatError(const char *filename, unsigned int line,
