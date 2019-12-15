@@ -209,12 +209,13 @@ collision_t PhysicalObj::NotifyMove(Point2d oldPos, Point2d newPos)
             Double2str(newPos.x).c_str(), Double2str(newPos.y).c_str(),
             Double2str(lg).c_str());
 
-  if (!lg.IsNotZero())
-    return NO_COLLISION;
-
   // Compute increments to move the object step by step from the old
   // to the new position.
   lg = sqrt(lg);
+  
+  if (!lg.IsNotZero())
+    return NO_COLLISION;
+
   offset = (newPos - oldPos) / lg;
 
   // First iteration position.
