@@ -28,23 +28,6 @@
 #include "tool/resource_manager.h"
 #include "tool/xml_document.h"
 
-BodyList::BodyList()
-{
-}
-
-void BodyList::FreeMem()
-{
-  // The bodies member variable are freed from here, because the playing bodies
-  //  only contains pointers to member/movement/clothes of the bodies in the body_list
-  std::map<std::string, Body*>::iterator it = list.begin();
-
-  while (it != list.end()) {
-    delete it->second;
-    ++it;
-  }
-  list.clear();
-}
-
 void BodyList::Load(const std::string & name)
 {
   std::string dir = Config::GetInstance()->GetDataDir() + PATH_SEPARATOR + "body" + PATH_SEPARATOR + name + PATH_SEPARATOR;
@@ -58,7 +41,7 @@ void BodyList::Load(const std::string & name)
 
   Body * body = new Body(doc.GetRoot(), dir);
   body->Init();
-  list[name] = body;
+  list.emplace(name, body);
 }
 
 Body * BodyList::GetBody(const std::string & name)

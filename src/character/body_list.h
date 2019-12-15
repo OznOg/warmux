@@ -24,22 +24,24 @@
 #include <WARMUX_base.h>
 #include <WARMUX_singleton.h>
 #include <map>
+#include <memory>
 #include <string>
-//-----------------------------------------------------------------------------
-class Body;
+#include "character/body.h"
 
+//-----------------------------------------------------------------------------
 class BodyList : public Singleton<BodyList>
 {
 private:
-  std::map<std::string, Body*> list;
+  std::map<std::string, std::unique_ptr<Body>> list;
 
   void Load (const std::string &name);
 
-  BodyList();
+  BodyList() = default;
   friend class Singleton<BodyList>;
 
 public:
-  void FreeMem();
+  void FreeMem() { list.clear(); }
+
   Body* GetBody(const std::string &body);
 };
 
