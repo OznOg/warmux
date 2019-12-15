@@ -32,9 +32,7 @@
 #  define ATTRIBUTE_NORETURN
 #endif
 
-#ifdef DEBUG
 ATTRIBUTE_NORETURN
-#endif
 void MissedAssertion(const char *filename, unsigned int line, const char *message);
 
 // Assertion (disabled in release mode)

@@ -42,7 +42,7 @@ public:
     Map.push_back(name);
   }
   MemberType(const MemberType& other) { type = other.type; }
-  constexpr MemberType& operator=(const MemberType& other) = default;
+  MemberType& operator=(const MemberType& other) = default;
   operator int() const { return type; }
   operator const std::string&() const { return Map[type]; }
   bool operator ==(const std::string& name) const { return Map[type] == name; }

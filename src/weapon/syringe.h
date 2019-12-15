@@ -26,7 +26,7 @@
 #include "weapon.h"
 //-----------------------------------------------------------------------------
 
-class SyringeConfig;
+struct SyringeConfig;
 
 class Syringe : public Weapon
 {

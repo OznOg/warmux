@@ -25,7 +25,7 @@
 #include "particles/particle.h"
 #include <WARMUX_point.h>
 
-class ExplosiveWeaponConfig;
+struct ExplosiveWeaponConfig;
 
 int GetDamageFromExplosion(const ExplosiveWeaponConfig &config, Double distance);
 Double GetForceFromExplosion(const ExplosiveWeaponConfig &config, Double distance);

@@ -24,7 +24,7 @@
 
 #include "weapon/weapon_launcher.h"
 
-class AirAttackConfig;
+struct AirAttackConfig;
 class Sprite;
 
 class Obus : public WeaponProjectile

@@ -27,7 +27,7 @@
 #include "weapon/weapon_launcher.h"
 #include <WARMUX_base.h>
 
-class ClusterBombConfig;
+struct ClusterBombConfig;
 
 class ClusterLauncher : public WeaponLauncher
 {

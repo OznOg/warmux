@@ -25,7 +25,7 @@
 #include <WARMUX_base.h>
 #include "weapon.h"
 
-class SlapConfig;
+struct SlapConfig;
 
 class Slap : public Weapon
 {

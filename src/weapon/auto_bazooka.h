@@ -25,7 +25,7 @@
 #include <WARMUX_base.h>
 #include "weapon/target_launcher.h"
 
-class AutomaticBazookaConfig;
+struct AutomaticBazookaConfig;
 
 class AutomaticBazooka : public TargetLauncher
 {

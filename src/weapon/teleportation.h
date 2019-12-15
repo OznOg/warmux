@@ -24,7 +24,7 @@
 
 #include "weapon.h"
 
-class WeaponConfig;
+struct WeaponConfig;
 
 class Teleportation : public Weapon
 {

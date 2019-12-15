@@ -28,7 +28,7 @@
 #include "weapon/weapon_launcher.h"
 
 class Mine;
-class MineConfig;
+struct MineConfig;
 
 class ObjMine : public WeaponProjectile
 {

@@ -27,7 +27,7 @@
 
 class SuperTux;
 
-class SuperTuxWeaponConfig;
+struct SuperTuxWeaponConfig;
 
 class TuxLauncher : public WeaponLauncher
 {

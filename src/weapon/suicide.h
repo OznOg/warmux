@@ -24,7 +24,7 @@
 
 #include "weapon.h"
 
-class ExplosiveWeaponConfig;
+struct ExplosiveWeaponConfig;
 
 class Suicide : public Weapon
 {

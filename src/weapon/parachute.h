@@ -25,7 +25,7 @@
 #include "weapon.h"
 
 class Sprite;
-class ParachuteConfig;
+struct ParachuteConfig;
 
 //-----------------------------------------------------------------------------
 

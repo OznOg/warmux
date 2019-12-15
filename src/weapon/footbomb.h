@@ -26,7 +26,7 @@
 #include "weapon/weapon_launcher.h"
 #include <WARMUX_base.h>
 
-class FootBombConfig;
+struct FootBombConfig;
 
 class FootBombLauncher : public WeaponLauncher
 {

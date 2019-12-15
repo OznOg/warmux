@@ -26,7 +26,7 @@
 #include <WARMUX_point.h>
 
 class Sprite;
-class WeaponConfig;
+struct WeaponConfig;
 
 class Construct : public Weapon
 {

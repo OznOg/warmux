@@ -27,7 +27,7 @@
 
 class Sprite;
 class WeaponLauncher;
-class ExplosiveWeaponConfig;
+struct ExplosiveWeaponConfig;
 
 class WeaponProjectile : public PhysicalObj
 {

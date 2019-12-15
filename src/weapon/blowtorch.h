@@ -24,7 +24,7 @@
 
 #include "weapon.h"
 
-class BlowtorchConfig;
+struct BlowtorchConfig;
 
 class Blowtorch : public Weapon
 {

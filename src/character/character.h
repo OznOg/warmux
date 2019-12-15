@@ -59,9 +59,6 @@ class Character : public PhysicalObj, public MovableByUser
   std::unique_ptr<DamageStatistics> damage_stats;
   std::unique_ptr<EnergyBar> energy_bar;
 
-  // survived games
-  int survivals;
-
   // name
   std::unique_ptr<Text> name_text;
 
@@ -73,9 +70,6 @@ class Character : public PhysicalObj, public MovableByUser
   int lost_energy;
   bool hidden; //The character is hidden (needed by teleportation)
   bool walking_slowly;
-
-  // Channel used for sound
-  int channel_step;
 
   // Generates green bubbles when the character is ill
   std::unique_ptr<ParticleEngine> particle_engine;

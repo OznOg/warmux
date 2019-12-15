@@ -27,7 +27,7 @@
 #include <list>
 //-----------------------------------------------------------------------------
 
-class GrappleConfig;
+struct GrappleConfig;
 
 class Grapple : public Weapon
 {
