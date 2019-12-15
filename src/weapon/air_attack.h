@@ -45,7 +45,7 @@ class Plane : public PhysicalObj
   SoundSample flying_sound;
 
   int obus_dx, obus_dy;
-  Sprite *image;
+  std::unique_ptr<Sprite> image;
   int next_height;
   int cible_x;
   int distance_to_release;
