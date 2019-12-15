@@ -24,7 +24,7 @@
 #include "tool/xml_document.h"
 #include <WARMUX_debug.h>
 
-Movement::Movement(const xmlNode* xml) : ref_count(1), nb_loops(0), duration_per_frame(15), always_moving(false)
+Movement::Movement(const xmlNode* xml) : nb_loops(0), duration_per_frame(15), always_moving(false)
 {
   XmlReader::ReadStringAttr(xml, "name", type);
   ASSERT(type != "");

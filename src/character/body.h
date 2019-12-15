@@ -27,6 +27,8 @@
 #include <WARMUX_base.h>
 #include <WARMUX_point.h>
 
+#include <memory>
+
 // Forward declarations
 class Character;
 class BodyList;
@@ -45,7 +47,7 @@ class Body
 
   std::map<std::string, Member *>   members_lst;
   std::map<std::string, Clothe *>   clothes_lst;
-  std::map<std::string, Movement *> mvt_lst;
+  std::map<std::string, std::shared_ptr<Movement>> mvt_lst;
   const Clothe *                    current_clothe;
   Movement *                        current_mvt;
   uint                              current_loop;

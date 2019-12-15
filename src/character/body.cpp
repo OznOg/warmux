@@ -105,15 +105,7 @@ Body::Body(const Body & _body):
   }
 
   // Movements are shared
-  std::map<std::string, Movement*>::const_iterator it3 = _body.mvt_lst.begin();
-  while (it3 != _body.mvt_lst.end()) {
-    std::pair<std::string,Movement*> p;
-    p.first = it3->first;
-    p.second = it3->second;
-    Movement::ShareMovement(p.second);
-    mvt_lst.insert(p);
-    ++it3;
-  }
+  mvt_lst = _body.mvt_lst;
 }
 
 void Body::Init(void) {
@@ -212,14 +204,14 @@ void Body::LoadMovements(xmlNodeArray &  nodes,
     if (mvt_lst.find(name) != mvt_lst.end()) {
       std::cerr << "Warning !! The movement \""<< name << "\" is defined twice in the xml file" << std::endl;
     } else {
-      Movement* mvt = new Movement(*it);
+      auto mvt = std::make_shared<Movement>(*it);
       mvt_lst[name] = mvt;
     }
 
     std::map<std::string, std::string>::iterator iter = mvt_alias.begin();
     for ( ; iter != mvt_alias.end(); ++iter) {
       if (iter->second == name) {
-        Movement* mvt = new Movement(*it);
+        auto mvt = std::make_shared<Movement>(*it);
         mvt->SetType(iter->first);
         mvt_lst[iter->first] = mvt;
       }
@@ -227,7 +219,7 @@ void Body::LoadMovements(xmlNodeArray &  nodes,
 
   }
 
-  std::map<std::string, Movement *>::iterator mvtBlack     = mvt_lst.find("black");
+  auto mvtBlack = mvt_lst.find("black");
   std::map<std::string, Clothe *>::iterator   clothesBlack = clothes_lst.find("black");
 
   if ((mvtBlack == mvt_lst.end() && clothesBlack != clothes_lst.end())
@@ -254,18 +246,10 @@ Body::~Body()
     ++itClothe;
   }
 
-  // Unshare the movements
-  std::map<std::string, Movement*>::iterator itMovement = mvt_lst.begin();
-  while (itMovement != mvt_lst.end()) {
-    Movement::UnshareMovement(itMovement->second);
-    ++itMovement;
-  }
-
   FreeSkeletonVector();
 
   members_lst.clear();
   clothes_lst.clear();
-  mvt_lst.clear();
 }
 
 void Body::FreeSkeletonVector()
@@ -690,10 +674,10 @@ void Body::SetMovement(const std::string & name)
   if (current_clothe && current_clothe->GetName() == "black" && GetMovement() == "black") {
     return;
   }
-  std::map<std::string, Movement *>::iterator itMvt = mvt_lst.find(name);
+  auto itMvt = mvt_lst.find(name);
 
   if (itMvt != mvt_lst.end()) {
-    current_mvt       = itMvt->second;
+    current_mvt       = itMvt->second.get();
     current_frame     = 0;
     current_loop      = 0;
     last_refresh      = GameTime::GetInstance()->Read();
@@ -753,13 +737,13 @@ void Body::SetMovementOnce(const std::string & name)
     return;
   }
 
-  std::map<std::string, Movement *>::iterator itMvt = mvt_lst.find(name);
+  auto itMvt = mvt_lst.find(name);
 
   if (itMvt != mvt_lst.end()) {
     if (!previous_mvt) {
       previous_mvt = current_mvt;
     }
-    current_mvt = itMvt->second;
+    current_mvt = itMvt->second.get();
     current_frame = 0;
     current_loop = 0;
     last_refresh = GameTime::GetInstance()->Read();

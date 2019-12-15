@@ -67,8 +67,6 @@ public:
   typedef std::vector<class member_mvt> member_def; // Describe the position of each member for a given frame
 
 private:
-  uint ref_count;
-
   std::vector<member_def> frames;
   std::string type;
   uint nb_loops; // 0 means forever
@@ -78,7 +76,6 @@ private:
 
 public:
   Movement(const xmlNode* xml);
-  ~Movement() { };
 
   void SetType(const std::string& _type) { type = _type; }
   const std::string& GetType() const { return type; }
@@ -95,14 +92,6 @@ public:
   uint GetTestRight() const { return test_right; }
   uint GetTestTop() const { return test_top; }
   uint GetTestBottom() const { return test_bottom; }
-
-  static void ShareMovement(Movement* mvt) { mvt->ref_count++; }
-  static void UnshareMovement(Movement* mvt)
-  {
-    mvt->ref_count--;
-    if (!mvt->ref_count)
-      delete mvt;
-  }
 };
 
 #endif //MEMBER_H
