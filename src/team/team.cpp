@@ -150,8 +150,9 @@ bool Team::AddPlayingCharacters(const std::vector<std::string> names)
   characters.clear();
 
   // Time to effectively create the characters
+  BodyList bl;
   for (uint i = 0; i < nb_characters; i++) {
-    Body *body = BodyList::GetRef().GetBody(bodies_ids[i]);
+    Body *body = bl.GetBody(bodies_ids[i]);
     if (!body) {
       std::cerr << Format(_("Error: can't find the body \"%s\" for the team \"%s\"."),
                           bodies_ids[i].c_str(),

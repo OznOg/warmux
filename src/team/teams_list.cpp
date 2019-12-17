@@ -228,9 +228,6 @@ void TeamsList::UnloadGamingData()
   // Unload the data of all teams
   for (auto &t : full_list)
       t->UnloadGamingData();
-
-  // Run this now as no reference from Character are left
-  BodyList::GetRef().FreeMem();
 }
 
 //-----------------------------------------------------------------------------

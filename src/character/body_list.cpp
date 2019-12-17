@@ -41,7 +41,7 @@ void BodyList::Load(const std::string & name)
 
   Body * body = new Body(doc.GetRoot(), dir);
   body->Init();
-  list.emplace(name, body);
+  list[name].reset(body);
 }
 
 Body * BodyList::GetBody(const std::string & name)

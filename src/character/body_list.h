@@ -29,18 +29,15 @@
 #include "character/body.h"
 
 //-----------------------------------------------------------------------------
-class BodyList : public Singleton<BodyList>
+class BodyList
 {
 private:
   std::map<std::string, std::unique_ptr<Body>> list;
 
   void Load (const std::string &name);
 
-  BodyList() = default;
-  friend class Singleton<BodyList>;
-
 public:
-  void FreeMem() { list.clear(); }
+  BodyList() = default;
 
   Body* GetBody(const std::string &body);
 };
