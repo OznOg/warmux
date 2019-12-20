@@ -72,12 +72,10 @@ public:
 
   Character::Config character_cfg;
 
-  XmlReader doc;
-
 private:
   std::string m_current;
 
-  bool LoadXml();
+  bool LoadXml(XmlReader &doc);
   std::unique_ptr<ConfigElementList> BindMembers() const;
   std::unique_ptr<ConfigElementList> BindMembers();
 
@@ -95,7 +93,7 @@ public:
   WeaponsList &GetWeaponsList() { return *weapons_list; }
   int GetMaxTeamsPerNetworkPlayer() { return max_teams -1; }
 
-  bool Load(void);
+  bool Load();
 
   // mode: xml text of data/game_mode/<mode>.xml
   // mode_objects: xml text of data/game_mode/<mode>_objects.xml

@@ -164,7 +164,7 @@ void _LoadWeapon(WeaponsList &m_weapons_list, const xmlNode* weapons_xml) {
 }
 
 // Load data options from the selected game_mode
-bool GameMode::LoadXml()
+bool GameMode::LoadXml(XmlReader &doc)
 {
   const xmlNode *elem = doc.GetRoot();
 
@@ -206,12 +206,8 @@ bool GameMode::Load(void)
   Config * config = Config::GetInstance();
   m_current = config->GetGameMode();
 
-  if (!doc.Load(GetFilename()))
-    return false;
-  if (!LoadXml())
-    return false;
-
-  return true;
+  XmlReader doc;
+  return doc.Load(GetFilename()) && LoadXml(doc);
 }
 
 // Load the game mode from strings (probably from network)
@@ -225,13 +221,8 @@ bool GameMode::LoadFromString(const std::string& game_mode_name,
   if (!XmlReader().LoadFromString(game_mode_objects_contents))
     return false;
 
-  if (!doc.LoadFromString(game_mode_contents))
-    return false;
-  if (!LoadXml())
-    return false;
-
-  MSG_DEBUG("game_mode", "OK\n");
-  return true;
+  XmlReader doc;
+  return doc.LoadFromString(game_mode_contents) && LoadXml(doc);
 }
 
 bool GameMode::ExportToString(std::string& mode,
