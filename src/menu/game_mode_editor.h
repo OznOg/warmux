@@ -57,7 +57,7 @@ class GameModeEditor : public VBox
   ScrollBox             *opt_weapons_cfg;
   std::list<WeaponCfgBox*> weapon_cfg_list;
 
-  void LoadGameMode(bool force = false);
+  void LoadGameMode(std::string mode);
   void Apply();
   void WarnBlitz();
 

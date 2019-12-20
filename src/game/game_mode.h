@@ -76,8 +76,6 @@ public:
 private:
   std::string m_current;
 
-  XmlReader* doc_objects;
-
   void LoadDefaultValues();
 
   bool LoadXml();
@@ -89,9 +87,9 @@ private:
   std::string GetFilename() const;
 
   std::string GetDefaultObjectsFilename() const;
-  std::string GetObjectsFilename() const;
 
 public:
+  std::string GetObjectsFilename() const;
   const std::string& GetName() const { return m_current; }
 
   WeaponsList &GetWeaponsList() { return *weapons_list; }
@@ -109,8 +107,6 @@ public:
 
   bool ExportToString(std::string& mode,
                       std::string& mode_objects) const;
-
-  const XmlReader* GetXmlObjects() const { return doc_objects; }
 
   bool AllowCharacterSelection() const;
   bool AllowChangeWithinTeam() const { return allow_character_selection <= WITHIN_TEAM; }

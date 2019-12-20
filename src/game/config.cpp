@@ -341,7 +341,7 @@ void Config::SetLanguage(const std::string& language)
 }
 #endif
 
-static ObjectConfig ObjectConfigiFromXml(const std::string & obj_name, const std::string & config_file)
+static ObjectConfig ObjectConfigiFromXml(const std::string & obj_name, std::string config_file)
 {
   const xmlNode* elem = nullptr;
   XmlReader      doc;
@@ -351,16 +351,15 @@ static ObjectConfig ObjectConfigiFromXml(const std::string & obj_name, const std
     MSG_DEBUG("game_mode", "Load %s configuration from %s\n",
               obj_name.c_str(), mode->GetName().c_str());
 
-    auto ddoc = mode->GetXmlObjects();
-    elem = XmlReader::GetMarker(ddoc->GetRoot(), obj_name);
+    config_file = mode->GetObjectsFilename();
   } else {
     MSG_DEBUG("game_mode", "** Load %s configuration from file %s\n",
               obj_name.c_str(), config_file.c_str());
 
-    // Load Xml configuration
-    ASSERT(doc.Load(config_file));
-    elem = XmlReader::GetMarker(doc.GetRoot(), obj_name);
   }
+  // Load Xml configuration
+  ASSERT(doc.Load(config_file));
+  elem = XmlReader::GetMarker(doc.GetRoot(), obj_name);
 
   ObjectConfig c;
   ASSERT(elem != nullptr);

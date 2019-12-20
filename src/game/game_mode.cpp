@@ -35,9 +35,8 @@
 
 GameMode::GameMode()
   : weapons_list(nullptr)
-  , doc_objects(nullptr)
 {
-  m_current = "classic";
+  m_current = "";
 }
 
 std::unique_ptr<ConfigElementList> GameMode::BindMembers() const {
@@ -103,18 +102,10 @@ std::unique_ptr<ConfigElementList> GameMode::BindMembers() {
 
 void GameMode::LoadDefaultValues()
 {
-  if (doc_objects)
-    delete doc_objects;
-
-  doc_objects = new XmlReader();
 }
 
 GameMode::~GameMode()
 {
-  if (doc_objects) {
-    delete doc_objects;
-    doc_objects = nullptr;
-  }
 }
 
 template<class W>
@@ -226,10 +217,6 @@ bool GameMode::Load(void)
 
   LoadDefaultValues();
 
-  // Game mode objects configuration file
-  if (!doc_objects->Load(GetObjectsFilename()))
-    return false;
-
   if (!doc.Load(GetFilename()))
     return false;
   if (!LoadXml())
@@ -247,7 +234,7 @@ bool GameMode::LoadFromString(const std::string& game_mode_name,
   MSG_DEBUG("game_mode", "Loading %s from network: ", m_current.c_str());
   LoadDefaultValues();
 
-  if (!doc_objects->LoadFromString(game_mode_objects_contents))
+  if (!XmlReader().LoadFromString(game_mode_objects_contents))
     return false;
 
   if (!doc.LoadFromString(game_mode_contents))
@@ -262,7 +249,11 @@ bool GameMode::LoadFromString(const std::string& game_mode_name,
 bool GameMode::ExportToString(std::string& mode,
                               std::string& mode_objects) const
 {
-  mode_objects = doc_objects->ExportToString();
+  XmlReader objdoc;
+
+  objdoc.Load(GetObjectsFilename());
+  mode_objects = objdoc.ExportToString();
+
   XmlWriter *out = SaveXml(m_current);
   mode = out->SaveToString();
   delete out;

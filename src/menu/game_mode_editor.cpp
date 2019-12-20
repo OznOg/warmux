@@ -102,7 +102,7 @@ GameModeEditor::GameModeEditor(const Point2i& size, float zoom, bool _draw_borde
   rules.push_back(std::make_pair("classic", _("Classic")));
   rules.push_back(std::make_pair("blitz", _("Blitz")));
   opt_rules = new ComboBox(_("Rules"), "menu/character_selection",
-                           option_size, rules, "classic", fmedium, fmedium);
+                           option_size, rules, Config::GetInstance()->GetGameMode(), fmedium, fmedium);
   sbox->AddWidget(opt_rules);
 
   opt_duration_turn = new SpinButtonWithPicture(_("Duration of a turn"), "menu/timing_turn",
@@ -158,14 +158,16 @@ GameModeEditor::GameModeEditor(const Point2i& size, float zoom, bool _draw_borde
 
   SetBackgroundColor(transparent_color);
 
-  LoadGameMode(true);
+  LoadGameMode(selected_gamemode);
 }
 
 Widget *GameModeEditor::ClickUp(const Point2i & mousePosition, uint button)
 {
   Widget *w = VBox::ClickUp(mousePosition, button);
-  if (opt_game_mode->Contains(mousePosition))
-    LoadGameMode();
+  if (opt_game_mode->Contains(mousePosition)) {
+      std::string &mode = *(std::string*)opt_game_mode->GetSelectedValue();
+      LoadGameMode(mode);
+  }
   else if (w == save) {
     const std::string& mode = filename->GetText();
     GameMode * game_mode = GameMode::GetInstance();
@@ -284,15 +286,13 @@ void GameModeEditor::WarnBlitz()
   }
 }
 
-void GameModeEditor::LoadGameMode(bool force)
+void GameModeEditor::LoadGameMode(std::string mode_name)
 {
-  std::string* mode = (std::string*)opt_game_mode->GetSelectedValue();
-  if (Config::GetInstance()->GetGameMode() == *mode && !force)
-    return;
-  Config::GetInstance()->SetGameMode(*mode);
-  filename->SetText(*mode);
+  Config::GetInstance()->SetGameMode(mode_name);
+  filename->SetText(mode_name);
   GameMode * game_mode = GameMode::GetInstance();
-  game_mode->Load();
+  if (game_mode->GetName() != mode_name)
+      game_mode->Load();
 
   if (game_mode->rules == "classic")
     opt_rules->SetChoice(0);
