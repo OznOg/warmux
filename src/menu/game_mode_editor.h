@@ -38,7 +38,6 @@ class WeaponCfgBox;
 class GameModeEditor : public VBox
 {
   ItemBox               *opt_game_mode;
-  std::vector<std::pair<std::string, std::string> > game_modes;
   TextBox               *filename;
   Button                *save;
 

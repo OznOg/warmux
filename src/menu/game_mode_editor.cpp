@@ -70,7 +70,7 @@ GameModeEditor::GameModeEditor(const Point2i& size, float zoom, bool _draw_borde
 
   vbox->AddWidget(new Label(_("Game mode"), fsmall*10, fmedium, Font::FONT_BOLD, c_red));
   opt_game_mode = new ItemBox(Point2i(fsmall*10, 4*fsmall + 18));
-  game_modes = GameMode::ListGameModes();
+  auto game_modes = Config::GetInstance()->ListGameModes();
   for (auto & game_mode : game_modes) {
     if (game_mode.first != "skin_viewer")
       opt_game_mode->AddLabelItem(game_mode.first==selected_gamemode,

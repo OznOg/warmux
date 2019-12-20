@@ -204,10 +204,9 @@ bool GameMode::LoadXml(XmlReader &doc)
 bool GameMode::Load(void)
 {
   Config * config = Config::GetInstance();
-  m_current = config->GetGameMode();
 
   XmlReader doc;
-  return doc.Load(GetFilename()) && LoadXml(doc);
+  return doc.Load(config->GetModeFilename()) && LoadXml(doc);
 }
 
 // Load the game mode from strings (probably from network)
@@ -230,7 +229,7 @@ bool GameMode::ExportToString(std::string& mode,
 {
   XmlReader objdoc;
 
-  objdoc.Load(GetObjectsFilename());
+  objdoc.Load(Config::GetInstance()->GetObjectsFilename());
   mode_objects = objdoc.ExportToString();
 
   XmlWriter *out = SaveXml(m_current);
@@ -255,24 +254,6 @@ bool GameMode::AllowCharacterSelection() const
   }
 
   return true;
-}
-
-std::string GameMode::GetFilename() const
-{
-  Config * config = Config::GetInstance();
-  std::string filename = std::string("game_mode" PATH_SEPARATOR)
-                       + m_current + std::string(".xml");
-
-  std::string fullname = config->GetPersonalDataDir() + filename;
-
-  if (!DoesFileExist(fullname))
-    fullname = config->GetDataDir() + filename;
-
-  if (!DoesFileExist(fullname)) {
-    Error(Format("Can not find file %s", fullname.c_str()));
-  }
-
-  return fullname;
 }
 
 XmlWriter* GameMode::SaveXml(const std::string&, const std::string& file_name) const
@@ -307,76 +288,3 @@ bool GameMode::ExportToFile(const std::string& game_mode_name)
   return ok;
 }
 
-std::string GameMode::GetDefaultObjectsFilename() const
-{
-  std::string filename("game_mode" PATH_SEPARATOR "default_objects.xml");
-
-  return filename;
-}
-
-std::string GameMode::GetObjectsFilename() const
-{
-  Config * config = Config::GetInstance();
-  std::string filename = std::string("game_mode" PATH_SEPARATOR)
-                       + m_current + std::string("_objects.xml");
-
-  std::string fullname = config->GetPersonalDataDir() + filename;
-
-  if (!DoesFileExist(fullname))
-    fullname = config->GetDataDir() + filename;
-
-  if (!DoesFileExist(fullname)) {
-    std::cerr << "Game mode: File " << fullname
-      << " does not exist, use the default one instead." << std::endl;
-  }
-
-  fullname = config->GetDataDir() + GetDefaultObjectsFilename();
-  if (!DoesFileExist(fullname)) {
-    Error(Format("Can not find file %s", fullname.c_str()));
-  }
-
-  return fullname;
-}
-
-// Static method
-std::vector<std::pair<std::string, std::string> > GameMode::ListGameModes()
-{
-  std::vector<std::pair<std::string, std::string> > game_modes;
-  game_modes.push_back(std::pair<std::string, std::string>("classic", _("Classic")));
-  game_modes.push_back(std::pair<std::string, std::string>("unlimited", _("Unlimited")));
-  game_modes.push_back(std::pair<std::string, std::string>("blitz", _("Blitz")));
-#ifdef DEBUG
-  game_modes.push_back(std::pair<std::string, std::string>("skin_viewer", "Skin Viewer"));
-#endif
-
-  std::string personal_dir = Config::GetInstance()->GetPersonalDataDir() +
-    std::string("game_mode" PATH_SEPARATOR);
-
-  FolderSearch *f = OpenFolder(personal_dir);
-  if (f) {
-    bool is_file = true;
-    const char *name;
-    while ((name = FolderSearchNext(f, is_file)) != nullptr) {
-
-      // Only check files
-      if (is_file) {
-        std::string filename(name);
-
-        if (filename.size() >= 5
-            && filename.compare(filename.size()-4, 4, ".xml") == 0
-            && (filename.size() < 12
-                || filename.compare(filename.size()-12, 12, "_objects.xml") != 0)) {
-
-          std::string game_mode_name = filename.substr(0, filename.size()-4);
-          game_modes.push_back(std::pair<std::string, std::string>(game_mode_name, game_mode_name));
-        }
-      }
-
-      // Prepare again for searching files
-      is_file = true;
-    }
-    CloseFolder(f);
-  }
-
-  return game_modes;
-}

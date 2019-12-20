@@ -39,6 +39,9 @@
 #include <WARMUX_team_config.h>
 #include "object/object_cfg.h"
 
+#include <tuple>
+#include <vector>
+
 // Forward declarations
 class XmlWriter;
 typedef struct _xmlNode xmlNode;
@@ -155,6 +158,11 @@ public:
   std::string GetPersonalDataDir() const { return personal_data_dir; };
   std::string GetPersonalConfigDir() const { return personal_config_dir; };
   std::string GetChatLogDir() const { return chat_log_dir; };
+  std::string GetModeFilename() const;
+  std::string GetDefaultObjectsFilename() const;
+  std::string GetObjectsFilename() const;
+  ObjectConfig ObjectConfigiFromXml(const std::string & obj_name, std::string config_file) const;
+  std::vector<std::pair<std::string, std::string> > ListGameModes() const;
 
   bool Save(bool save_current_teams = false);
   const std::string &GetGameMode() const { return m_game_mode; }

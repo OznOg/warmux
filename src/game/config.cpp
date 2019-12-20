@@ -341,25 +341,52 @@ void Config::SetLanguage(const std::string& language)
 }
 #endif
 
-static ObjectConfig ObjectConfigiFromXml(const std::string & obj_name, std::string config_file)
+std::string Config::GetDefaultObjectsFilename() const
 {
-  const xmlNode* elem = nullptr;
-  XmlReader      doc;
+  std::string filename("game_mode" PATH_SEPARATOR "default_objects.xml");
 
+  return filename;
+}
+
+std::string Config::GetObjectsFilename() const
+{
+  std::string filename = std::string("game_mode" PATH_SEPARATOR)
+                       + m_game_mode + std::string("_objects.xml");
+
+  std::string fullname = personal_data_dir + filename;
+
+  if (!DoesFileExist(fullname))
+    fullname = data_dir + filename;
+
+  if (!DoesFileExist(fullname)) {
+    std::cerr << "Game mode: File " << fullname
+      << " does not exist, use the default one instead." << std::endl;
+  }
+
+  fullname = data_dir + GetDefaultObjectsFilename();
+  if (!DoesFileExist(fullname)) {
+    Error(Format("Can not find file %s", fullname.c_str()));
+  }
+
+  return fullname;
+}
+
+ObjectConfig Config::ObjectConfigiFromXml(const std::string & obj_name, std::string config_file) const
+{
   if ("" == config_file) {
-    const GameMode *mode = GameMode::GetConstInstance();
     MSG_DEBUG("game_mode", "Load %s configuration from %s\n",
-              obj_name.c_str(), mode->GetName().c_str());
+              obj_name.c_str(), m_game_mode.c_str());
 
-    config_file = mode->GetObjectsFilename();
+    config_file = GetObjectsFilename();
   } else {
     MSG_DEBUG("game_mode", "** Load %s configuration from file %s\n",
               obj_name.c_str(), config_file.c_str());
-
   }
+  
+  XmlReader doc;
   // Load Xml configuration
   ASSERT(doc.Load(config_file));
-  elem = XmlReader::GetMarker(doc.GetRoot(), obj_name);
+  auto elem = XmlReader::GetMarker(doc.GetRoot(), obj_name);
 
   ObjectConfig c;
   ASSERT(elem != nullptr);
@@ -500,6 +527,23 @@ void Config::ReadTeams(std::list<ConfigTeam>& teams, const xmlNode* elem)
     // get next team
     i++;
   }
+}
+
+std::string Config::GetModeFilename() const
+{
+  std::string filename = std::string("game_mode" PATH_SEPARATOR)
+                       + m_game_mode + ".xml";
+
+  std::string fullname = personal_data_dir + filename;
+
+  if (!DoesFileExist(fullname))
+    fullname = data_dir + filename;
+
+  if (!DoesFileExist(fullname)) {
+    Error(Format("Can not find file %s", fullname.c_str()));
+  }
+
+  return fullname;
 }
 
 // Read personal config file
@@ -827,4 +871,45 @@ void Config::SetNetworkLocalTeams()
       network_local_teams.push_back(config);
     }
   }
+}
+
+std::vector<std::pair<std::string, std::string> > Config::ListGameModes() const
+{
+  std::vector<std::pair<std::string, std::string> > game_modes;
+  game_modes.push_back(std::pair<std::string, std::string>("classic", _("Classic")));
+  game_modes.push_back(std::pair<std::string, std::string>("unlimited", _("Unlimited")));
+  game_modes.push_back(std::pair<std::string, std::string>("blitz", _("Blitz")));
+#ifdef DEBUG
+  game_modes.push_back(std::pair<std::string, std::string>("skin_viewer", "Skin Viewer"));
+#endif
+
+  std::string("game_mode" PATH_SEPARATOR);
+
+  FolderSearch *f = OpenFolder(personal_data_dir);
+  if (f) {
+    bool is_file = true;
+    const char *name;
+    while ((name = FolderSearchNext(f, is_file)) != nullptr) {
+
+      // Only check files
+      if (is_file) {
+        std::string filename(name);
+
+        if (filename.size() >= 5
+            && filename.compare(filename.size()-4, 4, ".xml") == 0
+            && (filename.size() < 12
+                || filename.compare(filename.size()-12, 12, "_objects.xml") != 0)) {
+
+          std::string game_mode_name = filename.substr(0, filename.size()-4);
+          game_modes.push_back(std::pair<std::string, std::string>(game_mode_name, game_mode_name));
+        }
+      }
+
+      // Prepare again for searching files
+      is_file = true;
+    }
+    CloseFolder(f);
+  }
+
+  return game_modes;
 }

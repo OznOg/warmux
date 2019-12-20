@@ -24,7 +24,6 @@
 #define GAME_MODE_H
 
 #include <string>
-#include <vector>
 #include <WARMUX_singleton.h>
 #include <WARMUX_base.h>
 #include "weapon/weapon_cfg.h"
@@ -81,13 +80,8 @@ private:
 
   XmlWriter* SaveXml(const std::string& game_mode_name, const std::string& file_name = "") const;
 
-  std::string GetFilename() const;
-
-  std::string GetDefaultObjectsFilename() const;
-
 public:
   ObjBox *makeMedkit() { return new Medkit(medkit_cfg); }
-  std::string GetObjectsFilename() const;
   const std::string& GetName() const { return m_current; }
 
   WeaponsList &GetWeaponsList() { return *weapons_list; }
@@ -108,8 +102,6 @@ public:
 
   bool AllowCharacterSelection() const;
   bool AllowChangeWithinTeam() const { return allow_character_selection <= WITHIN_TEAM; }
-
-  static std::vector<std::pair<std::string, std::string> > ListGameModes();
 
 protected:
   friend class Singleton<GameMode>;
