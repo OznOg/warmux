@@ -28,35 +28,25 @@
 
 class Team;
 class Character;
-class Action;
-class XmlWriter;
 
 //-----------------------------------------------------------------------------
-class MedkitSettings : public ConfigElementList
+struct MedkitSettings
 {
-public:
-  int nbr_health;
-  int start_points;
-  MedkitSettings()
-  {
-    emplace_back(new IntConfigElement("life_points", &start_points, 41));
-    emplace_back(new IntConfigElement("energy_boost", &nbr_health, 24));
-  }
+  int nbr_health = 41;
+  int start_points = 24;
 };
 
 class Medkit : public ObjBox
 {
   static std::weak_ptr<Sprite> g_icon;
-  static int icon_ref;
-  static MedkitSettings settings;
+  MedkitSettings settings;
 
   std::shared_ptr<Sprite> icon;
 
   void ApplyMedkit(Team &team, Character &character) const;
 public:
-  Medkit();
+  Medkit(const MedkitSettings &settings);
 
-  static ConfigElementList* GetConfigList() { return &settings; }
   void ApplyBonus(Character *) override;
   const Surface* GetIcon() const override;
 };

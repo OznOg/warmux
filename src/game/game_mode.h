@@ -31,6 +31,7 @@
 #include "tool/xml_document.h"
 #include "tool/config_element.h"
 #include "character/character.h"
+#include "object/medkit.h"
 
 typedef struct _xmlNode xmlNode;
 class WeaponsList;
@@ -67,6 +68,7 @@ public:
   ExplosiveWeaponConfig barrel_explosion_cfg;
   ExplosiveWeaponConfig bonus_box_explosion_cfg;
   MineConfig mines_explosion_cfg;
+  MedkitSettings medkit_cfg;
 
   Character::Config character_cfg;
 
@@ -86,6 +88,7 @@ private:
   std::string GetDefaultObjectsFilename() const;
 
 public:
+  ObjBox *makeMedkit() { return new Medkit(medkit_cfg); }
   std::string GetObjectsFilename() const;
   const std::string& GetName() const { return m_current; }
 

@@ -90,7 +90,10 @@ std::unique_ptr<ConfigElementList> GameMode::BindMembers() {
   bonus_box->LinkList(bindExplosiveWeaponConfig(bonus_box_explosion_cfg), "explosion");
   main_settings->LinkList(std::move(bonus_box), "bonus_box");
 
-  main_settings->LinkList(std::make_unique<MedkitSettings>(), "medkit");
+  auto med_kit = std::make_unique<ConfigElementList>();
+  med_kit->emplace_back(new IntConfigElement("life_points", &medkit_cfg.start_points, 41));
+  med_kit->emplace_back(new IntConfigElement("energy_boost", &medkit_cfg.nbr_health, 24));
+  main_settings->LinkList(std::move(med_kit), "medkit");
   main_settings->LinkList(bindExplosiveWeaponConfig(mines_explosion_cfg), "minelauncher");
 
   return main_settings;

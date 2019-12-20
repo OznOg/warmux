@@ -1060,7 +1060,7 @@ bool Game::NewBox()
   ObjBox * box;
   MSG_DEBUG("random.get", "Game::NewBox(...) box type?");
   if (RandomSync().GetBool()) {
-    box = new Medkit();
+    box = GameMode::GetRef().makeMedkit();
   } else {
     box = new BonusBox(weapons_list->GetRandomWeaponToDrop());
   }

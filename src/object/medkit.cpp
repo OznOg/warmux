@@ -33,10 +33,9 @@
 #include "tool/xml_document.h"
 
 std::weak_ptr<Sprite> Medkit::g_icon;
-MedkitSettings Medkit::settings;
 
-Medkit::Medkit()
-  : ObjBox("medkit")
+Medkit::Medkit(const MedkitSettings& settings)
+  : ObjBox("medkit"), settings(settings)
 {
   SetTestRect (29, 29, 63, 6);
 
