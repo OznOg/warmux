@@ -33,11 +33,7 @@
 #include "tool/math_tools.h"
 #include "graphic/sprite.h"
 
-GameMode::GameMode()
-  : weapons_list(nullptr)
-{
-  m_current = "";
-}
+GameMode::GameMode() = default;
 
 std::unique_ptr<ConfigElementList> GameMode::BindMembers() const {
     // FIXME ConfigElements should be able to take const refrencs so that I do
@@ -98,14 +94,6 @@ std::unique_ptr<ConfigElementList> GameMode::BindMembers() {
   main_settings->LinkList(bindExplosiveWeaponConfig(mines_explosion_cfg), "minelauncher");
 
   return main_settings;
-}
-
-void GameMode::LoadDefaultValues()
-{
-}
-
-GameMode::~GameMode()
-{
 }
 
 template<class W>
@@ -215,8 +203,6 @@ bool GameMode::Load(void)
   Config * config = Config::GetInstance();
   m_current = config->GetGameMode();
 
-  LoadDefaultValues();
-
   if (!doc.Load(GetFilename()))
     return false;
   if (!LoadXml())
@@ -232,7 +218,6 @@ bool GameMode::LoadFromString(const std::string& game_mode_name,
 {
   m_current = game_mode_name;
   MSG_DEBUG("game_mode", "Loading %s from network: ", m_current.c_str());
-  LoadDefaultValues();
 
   if (!XmlReader().LoadFromString(game_mode_objects_contents))
     return false;

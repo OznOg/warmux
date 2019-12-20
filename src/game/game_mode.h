@@ -68,15 +68,12 @@ public:
   ExplosiveWeaponConfig bonus_box_explosion_cfg;
   MineConfig mines_explosion_cfg;
 
-
   Character::Config character_cfg;
 
   XmlReader doc;
 
 private:
   std::string m_current;
-
-  void LoadDefaultValues();
 
   bool LoadXml();
   std::unique_ptr<ConfigElementList> BindMembers() const;
@@ -116,7 +113,6 @@ public:
 protected:
   friend class Singleton<GameMode>;
   GameMode();
-  ~GameMode() override;
 };
 
 #endif /* GAME_MODE_H */
