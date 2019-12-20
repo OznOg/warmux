@@ -186,7 +186,6 @@ bool CustomTeam::Save()
 
 bool CustomTeam::SaveXml()
 {
-  XmlWriter doc;
   std::string unix_name = name;
 
   for (char & i : unix_name) {
@@ -196,7 +195,7 @@ bool CustomTeam::SaveXml()
   }
 
   std::string m_filename = directory_name + PATH_SEPARATOR "team.xml";
-  doc.Create(m_filename, "resources", "1.0", "utf-8");
+  XmlWriter doc("resources", "1.0", "utf-8");
   xmlNode *root = doc.GetRoot();
   doc.WriteElement(root, "name", name);
 
@@ -207,7 +206,7 @@ bool CustomTeam::SaveXml()
     doc.WriteElement(character, "name", i);
   }
 
-  return doc.Save();
+  return doc.Save(m_filename);
 }
 
 

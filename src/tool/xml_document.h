@@ -5,7 +5,9 @@
 #include <vector>
 
 #include <WARMUX_base.h>
+#include <libxml/tree.h>
 #include "tool/string_tools.h"
+#include <memory>
 
 // Forward declaration
 typedef struct _xmlNode xmlNode;
@@ -122,23 +124,15 @@ private:
 
 class XmlWriter
 {
-  void Reset();
-
 protected:
-  xmlDoc*  m_doc;
-  xmlNode* m_root;
-  std::string m_filename;
-  bool m_save;
+
+  std::unique_ptr<xmlDoc, std::integral_constant<decltype(&xmlFreeDoc), &xmlFreeDoc>> m_doc;
   std::string m_encoding;
 
 public:
-  XmlWriter() : m_doc(nullptr), m_root(nullptr), m_save(false) { } ;
   ~XmlWriter();
 
-  bool Create(const std::string &filename, const std::string &root,
-              const std::string &version, const std::string &encoding);
-
-  bool IsOk() const { return m_doc && m_root; }
+  XmlWriter(const std::string &root, const std::string &version, const std::string &encoding);
 
   xmlNode *GetRoot() const;
 
@@ -151,7 +145,7 @@ public:
   void WriteComment(xmlNode* x,
                     const std::string& comment);
 
-  bool Save();
+  bool Save(const std::string &filename);
 
   std::string SaveToString() const;
 };

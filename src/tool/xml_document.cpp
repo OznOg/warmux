@@ -139,17 +139,6 @@ const xmlNode* XmlReader::GetMarker(const xmlNode* x, const std::string &name)
     }
   }
 
-#ifdef DEBUG
-  if (IsLOGGING("xml.tree")) {
-    std::string looked_name = std::string((const char*)(x->name)) + ">" + name;
-    for (const xmlNode *parent = x->parent;
-         parent != xmlDocGetRootElement(x->doc) && parent && parent->name;
-         parent = parent->parent) {
-      looked_name = std::string((const char*)(parent->name)) + ">" + looked_name;
-    }
-    fprintf(stderr, "Fail to read %s\n", looked_name.c_str());
-  }
-#endif
   return nullptr;
 }
 
@@ -570,24 +559,7 @@ const xmlNode* XmlReader::GetRoot() const
 
 //-----------------------------------------------------------------------------
 
-void XmlWriter::Reset()
-{
-  if (m_doc)
-    xmlFreeDoc(m_doc);
-  m_doc = nullptr;
-
-#if 0
-   if (m_root)
-     xmlFreeNode(m_root);
-   m_root = NULL;
-#endif
-}
-
-XmlWriter::~XmlWriter()
-{
-  Save();
-  Reset();
-}
+XmlWriter::~XmlWriter() = default;
 
 xmlNode *XmlWriter::AddNode(xmlNode* x, const char* name)
 {
@@ -599,7 +571,6 @@ xmlNode *XmlWriter::WriteElement(xmlNode* x,
                                  const std::string &value,
                                  bool attr)
 {
-  m_save = false;
   if (attr) {
     xmlSetProp(x, (const xmlChar*)name.c_str(), (const xmlChar*)value.c_str());
     return x;
@@ -615,37 +586,26 @@ void XmlWriter::WriteComment(xmlNode* x,
                              const std::string& comment)
 {
   xmlAddChild(x, xmlNewComment((const xmlChar*)comment.c_str()));
-  m_save = false;
 }
 
-bool XmlWriter::Create(const std::string &filename,const std::string &root,
-                       const std::string &version,const std::string &encoding)
+XmlWriter::XmlWriter(const std::string &root, const std::string &version,const std::string &encoding)
 {
-  Reset();
-  m_save = false;
-  m_filename = filename;
   m_encoding = encoding;
-  m_doc = xmlNewDoc((const xmlChar*)version.c_str());
-  xmlNode* node = xmlNewDocNode(m_doc, nullptr, (const xmlChar*)root.c_str(), nullptr);
-  xmlDocSetRootElement(m_doc, node);
-  m_root = xmlDocGetRootElement(m_doc);
-
-  ASSERT(m_root);
-  return true;
+  m_doc.reset(xmlNewDoc((const xmlChar*)version.c_str()));
+  xmlNode* node = xmlNewDocNode(m_doc.get(), nullptr, (const xmlChar*)root.c_str(), nullptr);
+  xmlDocSetRootElement(m_doc.get(), node);
 }
 
 xmlNode* XmlWriter::GetRoot() const
 {
-  ASSERT(m_root);
-  return m_root;
+  return xmlDocGetRootElement(m_doc.get());
 }
 
-bool XmlWriter::Save()
+bool XmlWriter::Save(const std::string &filename)
 {
-  if (m_filename == "") return false;
-  if (m_save) return true;
-  m_save = true;
-  int result = xmlSaveFormatFileEnc(m_filename.c_str(), m_doc,
+  if (filename == "")
+      return false;
+  int result = xmlSaveFormatFileEnc(filename.c_str(), m_doc.get(),
                                     m_encoding.empty() ? nullptr : m_encoding.c_str(), true);
   return (result != -1);
 }
@@ -655,7 +615,7 @@ std::string XmlWriter::SaveToString() const
   xmlChar *buffer = nullptr;
   int     length  = 0;
 
-  xmlDocDumpFormatMemoryEnc(m_doc, &buffer, &length, nullptr, 0);
+  xmlDocDumpFormatMemoryEnc(m_doc.get(), &buffer, &length, nullptr, 0);
   ASSERT(buffer);
 
   std::string ret((char *)buffer, length);

@@ -694,9 +694,8 @@ void Config::WriteTeams(const std::list<ConfigTeam>& teams, XmlWriter& doc, xmlN
 
 bool Config::SaveXml(bool save_current_teams)
 {
-  XmlWriter doc;
+  XmlWriter doc("config", "1.0", "utf-8");
 
-  doc.Create(m_filename, "config", "1.0", "utf-8");
   xmlNode *root = doc.GetRoot();
   doc.WriteElement(root, "version", Constants::WARMUX_VERSION);
 
@@ -809,7 +808,7 @@ bool Config::SaveXml(bool save_current_teams)
   xmlNode *controls_node = xmlAddChild(root, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)"controls"));
   Keyboard::GetInstance()->SaveConfig(controls_node);
 
-  return doc.Save();
+  return doc.Save(m_filename);
 }
 
 /*

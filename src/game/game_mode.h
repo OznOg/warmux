@@ -78,7 +78,7 @@ private:
   std::unique_ptr<ConfigElementList> BindMembers() const;
   std::unique_ptr<ConfigElementList> BindMembers();
 
-  XmlWriter* SaveXml(const std::string& game_mode_name, const std::string& file_name = "") const;
+  std::unique_ptr<XmlWriter> SaveXml() const;
 
 public:
   ObjBox *makeMedkit() { return new Medkit(medkit_cfg); }

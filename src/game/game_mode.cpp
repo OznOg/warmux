@@ -232,9 +232,8 @@ bool GameMode::ExportToString(std::string& mode,
   objdoc.Load(Config::GetInstance()->GetObjectsFilename());
   mode_objects = objdoc.ExportToString();
 
-  XmlWriter *out = SaveXml(m_current);
+  auto out = SaveXml();
   mode = out->SaveToString();
-  delete out;
   return !mode_objects.empty() && !mode.empty();
 }
 
@@ -256,12 +255,9 @@ bool GameMode::AllowCharacterSelection() const
   return true;
 }
 
-XmlWriter* GameMode::SaveXml(const std::string&, const std::string& file_name) const
+std::unique_ptr<XmlWriter> GameMode::SaveXml() const
 {
-  XmlWriter *out = new XmlWriter();
-  if (!out->Create(file_name, "game_mode", "1.0", "utf-8"))
-    return nullptr;
-
+  auto out = std::make_unique<XmlWriter>("game_mode", "1.0", "utf-8");
   xmlNode *node = out->GetRoot();
   auto settings = BindMembers();
   settings->SaveXml(*out, node);
@@ -278,13 +274,11 @@ bool GameMode::ExportToFile(const std::string& game_mode_name)
   std::string filename = std::string("game_mode" PATH_SEPARATOR)
                        + game_mode_name + std::string(".xml");
 
-  std::string fullname = config->GetPersonalDataDir() + filename;
-  XmlWriter *out = SaveXml(game_mode_name, fullname);
+  auto out = SaveXml();
   if (!out)
     return false;
 
-  bool ok = out->Save();
-  delete out;
-  return ok;
+  std::string fullname = config->GetPersonalDataDir() + filename;
+  return out->Save(fullname);
 }
 
