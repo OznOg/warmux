@@ -24,6 +24,9 @@
 
 #include "gui/vertical_box.h"
 
+#include <vector>
+#include <tuple>
+
 // Forward declarations
 class SpinButtonWithPicture;
 class ComboBox;
@@ -38,6 +41,7 @@ class WeaponCfgBox;
 class GameModeEditor : public VBox
 {
   ItemBox               *opt_game_mode;
+  std::vector<std::pair<std::string, std::string>> game_modes;
   TextBox               *filename;
   Button                *save;
 

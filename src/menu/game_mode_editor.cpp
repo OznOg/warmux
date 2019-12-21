@@ -70,10 +70,10 @@ GameModeEditor::GameModeEditor(const Point2i& size, float zoom, bool _draw_borde
 
   vbox->AddWidget(new Label(_("Game mode"), fsmall*10, fmedium, Font::FONT_BOLD, c_red));
   opt_game_mode = new ItemBox(Point2i(fsmall*10, 4*fsmall + 18));
-  auto game_modes = Config::GetInstance()->ListGameModes();
+  game_modes = Config::GetInstance()->ListGameModes();
   for (auto & game_mode : game_modes) {
     if (game_mode.first != "skin_viewer")
-      opt_game_mode->AddLabelItem(game_mode.first==selected_gamemode,
+      opt_game_mode->AddLabelItem(game_mode.first == selected_gamemode,
                                   game_mode.second, &game_mode.first, fsmall);
   }
   vbox->AddWidget(opt_game_mode);
@@ -165,8 +165,10 @@ Widget *GameModeEditor::ClickUp(const Point2i & mousePosition, uint button)
 {
   Widget *w = VBox::ClickUp(mousePosition, button);
   if (opt_game_mode->Contains(mousePosition)) {
-      std::string &mode = *(std::string*)opt_game_mode->GetSelectedValue();
-      LoadGameMode(mode);
+      auto mode = static_cast<const std::string *>(opt_game_mode->GetSelectedValue());
+      if (!mode)
+          return nullptr; // when deselecting an entry 
+      LoadGameMode(*mode);
   }
   else if (w == save) {
     const std::string& mode = filename->GetText();
