@@ -55,7 +55,7 @@ void Sky::Draw(bool redraw_all)
   if (last_pos != cur_pos || redraw_all) {
     last_pos = cur_pos;
     std::list<Rectanglei> screen;
-    screen.push_back(Rectanglei(cur_pos, GetMainWindow().GetSize()));
+    screen.emplace_back(Rectanglei(cur_pos, GetMainWindow().GetSize()));
     RedrawParticleList(screen);
     return;
   }
@@ -69,7 +69,7 @@ void Sky::RedrawParticleList(const std::list<Rectanglei>& list) const
   std::vector<Point2i> sky_pos;
 
   for (uint layer = 0; layer < images.size(); ++layer)
-    sky_pos.push_back(GetSkyPos(layer));
+    sky_pos.emplace_back(GetSkyPos(layer));
 
   for (const auto & it : list)
     RedrawParticle(it, sky_pos);
