@@ -23,15 +23,9 @@
 #include <WARMUX_point.h>
 #include "graphic/surface.h"
 
-// Must be at least 3
-#define  CELL_BITS         6
-#define  CELL_DIM          (1<<CELL_BITS)
-#define  CELL_MASK         (CELL_DIM-1)
-
 class TileItem
 {
 public:
-  TileItem() {};
   virtual ~TileItem() {};
 
   bool IsEmpty ();
@@ -46,9 +40,6 @@ public:
 class TileItem_Empty : public TileItem
 {
 public:
-  TileItem_Empty() { };
-  ~TileItem_Empty() override { };
-
   bool IsEmpty(const Point2i &/*pos*/) const override { return true; };
   void Dig(const Point2i &/*position*/, const Surface& /*dig*/){};
   void Dig(const Point2i &/*center*/, const uint /*radius*/) {};

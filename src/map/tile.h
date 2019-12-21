@@ -25,6 +25,12 @@
 #include <WARMUX_rectangle.h>
 #include <assert.h>
 
+// Must be at least 3
+#define  CELL_BITS         6
+#define  CELL_DIM          (1<<CELL_BITS)
+#define  CELL_MASK         (CELL_DIM-1)
+#include "map/tileitem.h"
+
 // Forward declarations
 class Surface;
 class Sprite;
@@ -68,7 +74,11 @@ public:
 
 
   // Is point (x,y) in vacuum ?
-  bool IsEmpty(const Point2i &pos) const;
+  bool IsEmpty(const Point2i & pos) const
+  {
+      return item[(pos.y >> CELL_BITS) * nbCells.x + (pos.x >> CELL_BITS)]->IsEmpty(pos & CELL_MASK);
+  }
+
 
   // Draw it (on the entire visible part)
   void DrawTile();

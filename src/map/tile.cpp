@@ -563,11 +563,6 @@ end:
   return ret;
 }
 
-bool Tile::IsEmpty(const Point2i & pos) const
-{
-  return item[(pos.y>>CELL_BITS) * nbCells.x + (pos.x>>CELL_BITS)]->IsEmpty(pos & CELL_MASK);
-}
-
 void Tile::DrawTile()
 {
   Point2i firstCell = Clamp(Camera::GetInstance()->GetPosition()>> CELL_BITS);
