@@ -78,7 +78,6 @@ protected:
 
 private:
   static std::string  current_rules;
-  std::string         current_mode;
 
   bool                isGameLaunched;
   ObjBox              *current_ObjBox;

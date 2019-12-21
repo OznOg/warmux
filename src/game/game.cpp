@@ -296,14 +296,7 @@ void Game::EndInitGameData_NetClient()
 
 void Game::InitWeapons()
 {
-  if (current_mode != GameMode::GetRef().GetName()) {
-    weapons_list = nullptr;
-    current_mode = GameMode::GetRef().GetName();
-  }
-
-  if (!weapons_list) {
     weapons_list = &GameMode::GetInstance()->GetWeaponsList();
-  }
 }
 
 void Game::InitMap()

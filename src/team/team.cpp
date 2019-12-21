@@ -217,7 +217,10 @@ void Team::SelectCharacter(Character * c)
 
 void Team::NextCharacter(bool newturn)
 {
-  ASSERT(0 < NbAliveCharacter());
+  if (0 == NbAliveCharacter()) {
+      Abandon();
+      return;
+  }
 
   ActiveCharacter().StopPlaying();
 
