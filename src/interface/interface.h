@@ -114,7 +114,7 @@ private:
   float zoom;
 
   //Minimap
-  Surface *minimap;
+  std::unique_ptr<Surface> minimap;
   uint m_last_minimap_redraw;
   Point2i m_last_preview_size;
   //Styled box

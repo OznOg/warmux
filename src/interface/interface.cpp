@@ -186,7 +186,6 @@ Interface::~Interface()
 {
   FreeDrawElements();
 
-  if (minimap) delete minimap;
   if (mask) delete mask;
   if (scratch) delete scratch;
 
@@ -214,8 +213,7 @@ void Interface::FreeDrawElements()
 
 void Interface::Reset()
 {
-  delete minimap;
-  minimap = nullptr;
+  minimap.reset();
   m_last_minimap_redraw = 0;
   start_hide_display = 0;
   start_show_display = 0;
@@ -440,10 +438,9 @@ void Interface::DrawMapPreview()
           delete mask;
           mask = nullptr;
         }
-        if (minimap) {
-          delete minimap;
-          minimap = nullptr;
-        }
+
+        minimap.reset();
+
         if (scratch) {
           delete scratch;
           scratch = nullptr;
@@ -451,7 +448,7 @@ void Interface::DrawMapPreview()
       }
 
       if (!minimap)
-        minimap = new Surface(preview_size, SDL_SWSURFACE, true);
+        minimap = std::make_unique<Surface>(preview_size, SDL_SWSURFACE, true);
 
       // Recreate the scratch buffer
       if (!scratch)
