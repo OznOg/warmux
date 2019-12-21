@@ -303,24 +303,15 @@ void WeaponsMenu::RefreshWeaponList()
   // reset number of weapon
   for (int i = 0; i < MAX_NUMBER_OF_WEAPON; i++)
     nb_weapon_type[i] = 0;
-  weapons_menu->ResetTransformation();
-  tools_menu->ResetTransformation();
-  // Refreshing Weapons menu
 
-  const std::vector<PolygonItem *>& weapons = weapons_menu->GetItem();
-  std::vector<PolygonItem *>::const_iterator item = weapons.begin();
-  for (; item != weapons.end(); item++) {
-    delete (*item);
-  }
-  weapons_menu->ClearItem(false);
+  // Refreshing Weapons menu
+  weapons_menu->ResetTransformation();
+  weapons_menu->ClearItem(true);
 
   // Tools menu
-  const std::vector<PolygonItem *>& tools = tools_menu->GetItem();
-  item = tools.begin();
-  for (; item != tools.end(); item++) {
-    delete (*item);
-  }
-  tools_menu->ClearItem(false);
+  tools_menu->ResetTransformation();
+  tools_menu->ClearItem(true);
+
   // Reinserting weapon
   WeaponsList * weapons_list = Game::GetInstance()->GetWeaponsList();
   for (const auto &it : weapons_list->GetList())
@@ -394,12 +385,11 @@ const Weapon * WeaponsMenu::UpdateCurrentOverflyItem(const Polygon * poly)
 {
   if (!show)
     return nullptr;
-  const std::vector<PolygonItem *>& items = poly->GetItem();
-  WeaponMenuItem * tmp;
+
   Interface::GetInstance()->SetCurrentOverflyWeapon(nullptr);
-  std::vector<PolygonItem *>::const_iterator item = items.begin();
-  for (; item != items.end(); item++) {
-    tmp = (WeaponMenuItem *)(*item);
+
+  for (auto &item : poly->GetItem()) {
+    auto tmp = (WeaponMenuItem *)item;
     if (tmp->IsMouseOver()) {
       Interface::GetInstance()->SetCurrentOverflyWeapon(tmp->GetWeapon());
       if (current_overfly_item != tmp) {
