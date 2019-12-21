@@ -137,8 +137,8 @@ void WeaponStrengthBar::DrawXY(const Point2i &pos) const {
     }
 
     auto item = std::make_unique<PolygonItem>(last_fire.get(), p_marq);
-    const_cast<WeaponStrengthBar *>(this)->m_item_last_fire = std::move(item);
-    m_box->AddItem(m_item_last_fire.get());
+    const_cast<WeaponStrengthBar *>(this)->m_item_last_fire = item.get();
+    m_box->AddItem(std::move(item));
   }
 
   Rectanglei dst(pos.x, pos.y, width, height);

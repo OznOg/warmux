@@ -31,7 +31,7 @@ class WeaponStrengthBar : public ProgressBar
   bool visible;
   std::unique_ptr<DecoratedBox> m_box;
   std::unique_ptr<Sprite> last_fire;
-  std::unique_ptr<PolygonItem> m_item_last_fire;
+  PolygonItem *m_item_last_fire;
   void FetchData();
 
 public:

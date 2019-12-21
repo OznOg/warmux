@@ -30,6 +30,8 @@
 #include "tool/affine_transform.h"
 #include "tool/math_tools.h"
 
+#include <iterator>
+
 
 //=========== POLYGON BUFFER ============ //
 // Use this structure to store transformed point
@@ -330,24 +332,13 @@ void Polygon::DeletePoint(int index)
 
 void Polygon::DelItem(int index)
 {
-  std::vector<PolygonItem *> vector_tmp;
-  Point2d tmp;
-  int i = 0;
-  for (std::vector<PolygonItem *>::iterator item = items.begin();
-       item != items.end(); item++, i++) {
-    if (i == index) // Skip point to remove
-      continue;
-    vector_tmp.push_back(*item);
-  }
-  items = vector_tmp;
+  auto it = items.begin();
+  std::advance(it, index);
+  items.erase(it);
 }
 
-void Polygon::ClearItem(bool free_mem)
+void Polygon::ClearItem()
 {
-  for (auto & item : items) {
-    if (free_mem)
-      delete item;
-  }
   items.clear();
 }
 
@@ -734,11 +725,11 @@ void DecoratedBox::ResetTransformation()
 
 }
 
-void DecoratedBox::AddItem(PolygonItem * item)
+void DecoratedBox::AddItem(std::unique_ptr<PolygonItem> item)
 {
   Point2d old_pos = item->GetPosition();
   old_pos.x += min.x;
   old_pos.y += min.y;
   item->SetPosition(old_pos);
-  Polygon::AddItem(item);
+  Polygon::AddItem(std::move(item));
 }

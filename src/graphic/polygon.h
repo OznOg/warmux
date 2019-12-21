@@ -22,10 +22,13 @@
 #ifndef POLYGON_H
 #define POLYGON_H
 
-#include <vector>
 #include <WARMUX_point.h>
 #include <WARMUX_rectangle.h>
 #include <WARMUX_types.h>
+
+#include <vector>
+#include <list>
+#include <memory>
 
 // Forward declarations
 class Color;
@@ -104,7 +107,7 @@ protected:
   std::vector<Point2d> original_shape;
   std::vector<Point2d> transformed_shape;
   // Vector of icons
-  std::vector<PolygonItem *> items;
+  std::list<std::unique_ptr<PolygonItem>> items;
   // Shape position after an affine transformation
   PolygonBuffer * shape_buffer;
 
@@ -189,11 +192,11 @@ public:
   void AddItem(const Sprite * sprite, const Point2d & pos,
                PolygonItem::H_align h_a = PolygonItem::H_CENTERED,
                PolygonItem::V_align v_a = PolygonItem::V_CENTERED)
-  { items.push_back(new PolygonItem(sprite, pos, h_a, v_a)); }
-  virtual void AddItem(PolygonItem * item) { items.push_back(item); }
+  { items.emplace_back(std::make_unique<PolygonItem>(sprite, pos, h_a, v_a)); }
+  virtual void AddItem(std::unique_ptr<PolygonItem> item) { items.emplace_back(std::move(item)); }
   void DelItem(int index);
-  const std::vector<PolygonItem *>& GetItem() const { return items; }
-  void ClearItem(bool free_mem = true);
+  const auto& GetItem() const { return items; }
+  void ClearItem();
 };
 
 class DecoratedBox : public Polygon
@@ -205,7 +208,7 @@ class DecoratedBox : public Polygon
   ~DecoratedBox() override;
   void Draw(Surface * dest) override;
   void ApplyTransformation(const AffineTransform2D & trans, bool save_transformation) override;
-  void AddItem(PolygonItem * item) override;
+  void AddItem(std::unique_ptr<PolygonItem> item) override;
   void ResetTransformation() override;
   void SetPosition(Double x, Double y);
   void SetStyle(Style style) { m_style = style; }

@@ -215,9 +215,9 @@ void WeaponsMenu::AddWeapon(const Weapon &new_item)
   }
   pos += P2D_TO_P2F(menu->GetMin()) + Point2f(30,25);
 
-  WeaponMenuItem * item = new WeaponMenuItem(new_item, pos);
+  auto item = std::make_unique<WeaponMenuItem>(new_item, pos);
   item->SetParent(this);
-  menu->AddItem(item);
+  menu->AddItem(std::move(item));
 
   nb_weapon_type[num_sort - 1]++;
 }
@@ -306,11 +306,11 @@ void WeaponsMenu::RefreshWeaponList()
 
   // Refreshing Weapons menu
   weapons_menu->ResetTransformation();
-  weapons_menu->ClearItem(true);
+  weapons_menu->ClearItem();
 
   // Tools menu
   tools_menu->ResetTransformation();
-  tools_menu->ClearItem(true);
+  tools_menu->ClearItem();
 
   // Reinserting weapon
   WeaponsList * weapons_list = Game::GetInstance()->GetWeaponsList();
@@ -389,7 +389,7 @@ const Weapon * WeaponsMenu::UpdateCurrentOverflyItem(const Polygon * poly)
   Interface::GetInstance()->SetCurrentOverflyWeapon(nullptr);
 
   for (auto &item : poly->GetItem()) {
-    auto tmp = (WeaponMenuItem *)item;
+    auto tmp = (WeaponMenuItem *)item.get();
     if (tmp->IsMouseOver()) {
       Interface::GetInstance()->SetCurrentOverflyWeapon(tmp->GetWeapon());
       if (current_overfly_item != tmp) {
