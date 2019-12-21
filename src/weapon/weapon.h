@@ -126,7 +126,7 @@ protected:
   bool m_can_change_weapon;
 
   // Extra parameters
-  EmptyWeaponConfig *extra_params;
+  std::unique_ptr<EmptyWeaponConfig> extra_params;
 
   // Visibility
   const bool drawable;
