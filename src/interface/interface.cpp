@@ -99,7 +99,7 @@ void Interface::LoadData()
 #endif
 
   // energy bar
-  energy_bar = new EnergyBar(0, 0, 150*zoom, 15*zoom, 0, 0,
+  energy_bar = std::make_unique<EnergyBar>(0, 0, 150*zoom, 15*zoom, 0, 0,
                              GameMode::GetInstance()->character_cfg.init_energy);
 
   // Labels
@@ -189,8 +189,6 @@ Interface::~Interface()
   if (minimap) delete minimap;
   if (mask) delete mask;
   if (scratch) delete scratch;
-
-  if (energy_bar) delete energy_bar;
 
   if (clock_normal) delete clock_normal;
   if (clock_emergency) delete clock_emergency;

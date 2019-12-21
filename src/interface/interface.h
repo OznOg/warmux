@@ -78,7 +78,7 @@ private:
   ProgressBar wind_bar;
 
   // This part is for normal interface mode
-  EnergyBar * energy_bar;
+  std::unique_ptr<EnergyBar> energy_bar;
 
   // Character information
   Text * t_character_name;

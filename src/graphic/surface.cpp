@@ -61,7 +61,7 @@ void Surface::NewSurface(const Point2i &size, Uint32 flags, bool useAlpha)
   // If no alpha, use default parameters
   if (!useAlpha) {
     surface = std::shared_ptr<SDL_Surface>(SDL_CreateRGBSurface(flags, size.x, size.y,
-                                   fmt->BitsPerPixel, fmt->Rmask, fmt->Gmask, fmt->Bmask, 0), SDL_FreeSurface);
+                                   fmt->BitsPerPixel, fmt->Rmask, fmt->Gmask, fmt->Bmask, 0), &SDL_FreeSurface);
   } else {
     // Code below taken from SDL_DisplayFormatAlpha
     // Why the default parameters to SDL_CreateRGBSurface when using 32bits are
