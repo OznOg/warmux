@@ -484,7 +484,7 @@ void Character::Jump(Double strength, Double angle /*in radian */)
 void Character::Jump()
 {
   MSG_DEBUG("character", "Jump");
-  JukeBox::GetInstance()->Play (ActiveTeam().GetSoundProfile(), "jump");
+  JukeBox::GetInstance()->Play (m_team.GetSoundProfile(), "jump");
   Jump(config.jump_strength,
        config.jump_angle);
 }
@@ -492,7 +492,7 @@ void Character::Jump()
 void Character::HighJump()
 {
   MSG_DEBUG("character", "HighJump");
-  JukeBox::GetInstance()->Play (ActiveTeam().GetSoundProfile(), "superjump");
+  JukeBox::GetInstance()->Play (m_team.GetSoundProfile(), "superjump");
   Jump(config.super_jump_strength,
        config.super_jump_angle);
 }
@@ -501,7 +501,7 @@ void Character::BackJump()
 {
   MSG_DEBUG("character", "BackJump");
   back_jumping = true;
-  JukeBox::GetInstance()->Play (ActiveTeam().GetSoundProfile(), "back_jump");
+  JukeBox::GetInstance()->Play (m_team.GetSoundProfile(), "back_jump");
   Jump(config.back_jump_strength,
        config.back_jump_angle);
 }
@@ -509,8 +509,8 @@ void Character::BackJump()
 void Character::PrepareShoot()
 {
   MSG_DEBUG("weapon.shoot", "-> begin");
-  SetMovementOnce("weapon-" + ActiveTeam().GetWeapon().GetID() + "-begin-shoot");
-  if (body->GetMovement() != "weapon-" + ActiveTeam().GetWeapon().GetID() + "-begin-shoot")
+  SetMovementOnce("weapon-" + m_team.GetWeapon().GetID() + "-begin-shoot");
+  if (body->GetMovement() != "weapon-" + m_team.GetWeapon().GetID() + "-begin-shoot")
   {
     MSG_DEBUG("weapon.shoot", "-> call DoShoot");
     // If a movement is defined for this weapon, just shoot
@@ -530,10 +530,10 @@ void Character::DoShoot()
   }
 
   MSG_DEBUG("weapon.shoot", "-> begin at time %u", GameTime::GetInstance()->Read());
-  SetMovement("weapon-" + ActiveTeam().GetWeapon().GetID() + "-end-shoot");
+  SetMovement("weapon-" + m_team.GetWeapon().GetID() + "-end-shoot");
   body->Build(); // Refresh the body
   damage_stats->OneMoreShot();
-  ActiveTeam().AccessWeapon().Shoot();
+  m_team.AccessWeapon().Shoot();
   MSG_DEBUG("weapon.shoot", "<- end");
 }
 
@@ -562,8 +562,8 @@ void Character::Refresh()
   if (IsFalling()) {
     bool closely = false;
     if (IsActiveCharacter() &&
-        (ActiveTeam().GetWeaponType() == Weapon::WEAPON_JETPACK
-         || ActiveTeam().GetWeaponType() == Weapon::WEAPON_PARACHUTE))
+        (m_team.GetWeaponType() == Weapon::WEAPON_JETPACK
+         || m_team.GetWeaponType() == Weapon::WEAPON_PARACHUTE))
       closely = true;
     Camera::GetInstance()->FollowObject(this, closely);
   }
@@ -581,10 +581,10 @@ void Character::Refresh()
       CharacterCursor::GetInstance()->FollowActiveCharacter();
 
     if (walking_time + 1000 < global_time->Read() && body->GetMovement().find("-shoot") == std::string::npos)
-      if (body->GetMovement() != "weapon-" + ActiveTeam().GetWeapon().GetID() + "-select")
-        body->SetMovement("weapon-" + ActiveTeam().GetWeapon().GetID() + "-select");
+      if (body->GetMovement() != "weapon-" + m_team.GetWeapon().GetID() + "-select")
+        body->SetMovement("weapon-" + m_team.GetWeapon().GetID() + "-select");
   } else {
-    if (body->GetMovement() == "weapon-" + ActiveTeam().GetWeapon().GetID() + "-select")
+    if (body->GetMovement() == "weapon-" + m_team.GetWeapon().GetID() + "-select")
       body->SetMovement("breathe");
   }
 
@@ -654,7 +654,7 @@ void Character::Refresh()
   body->Build();
 
   if (prepare_shoot) {
-    if (body->GetMovement() != "weapon-" + ActiveTeam().GetWeapon().GetID() + "-begin-shoot") {
+    if (body->GetMovement() != "weapon-" + m_team.GetWeapon().GetID() + "-begin-shoot") {
       // if the movement is finnished, shoot !
       DoShoot();
       prepare_shoot = false;
@@ -809,11 +809,11 @@ void Character::StartPlaying()
 
   ASSERT (!IsGhost());
   SetWeaponClothe();
-  ActiveTeam().crosshair.Draw();
+  m_team.crosshair.Draw();
  // SetRebounding(false);
   ShowGameInterface();
   if (!Replay::GetConstInstance()->IsPlaying())
-    Interface::GetInstance()->SetMode(ActiveTeam().IsLocalHuman() ? Interface::MODE_CONTROL : Interface::MODE_NORMAL);
+    Interface::GetInstance()->SetMode(m_team.IsLocalHuman() ? Interface::MODE_CONTROL : Interface::MODE_NORMAL);
   m_team.crosshair.Refresh(GetFiringAngle());
 }
 
@@ -837,8 +837,8 @@ Double Character::GetFiringAngle() const {
 #include <iostream>
 void Character::SetFiringAngle(Double angle) {
   /* angle = RestrictAngle(angle) */
-  angle = InRange_Double(angle, -(ActiveTeam().GetWeapon().GetMaxAngle()),
-                                -(ActiveTeam().GetWeapon().GetMinAngle()));
+  angle = InRange_Double(angle, -(m_team.GetWeapon().GetMaxAngle()),
+                                -(m_team.GetWeapon().GetMinAngle()));
   firing_angle = angle;
   m_team.crosshair.Refresh(GetFiringAngle());
   body->Rebuild();
@@ -944,7 +944,7 @@ void Character::StartWalking(bool slowly)
   Camera::GetInstance()->FollowObject(this);
   if (Network::GetInstance()->IsTurnMaster()) {
     HideGameInterface();
-    ActiveTeam().crosshair.Hide();
+    m_team.crosshair.Hide();
   }
   CharacterCursor::GetInstance()->Hide();
   UpdateLastMovingTime();
@@ -958,7 +958,7 @@ void Character::StartWalking(bool slowly)
 void Character::StopWalking()
 {
   if (Network::GetInstance()->IsTurnMaster())
-    ActiveTeam().crosshair.Show();
+    m_team.crosshair.Show();
   body->StopWalking();
 }
 
@@ -1114,11 +1114,11 @@ void Character::HandleKeyReleased_Down(bool slowly)
 
 void Character::HandleKeyPressed_Jump()
 {
-  if (ActiveTeam().AccessWeapon().IsPreventingJumps())
+  if (m_team.AccessWeapon().IsPreventingJumps())
     return;
   HideGameInterface();
 
-  ActiveTeam().crosshair.Hide();
+  m_team.crosshair.Hide();
 
   if (IsImmobile()) {
     Action *a = new Action(Action::ACTION_CHARACTER_JUMP);
@@ -1129,11 +1129,11 @@ void Character::HandleKeyPressed_Jump()
 // #################### HIGH JUMP
 void Character::HandleKeyPressed_HighJump()
 {
-  if (ActiveTeam().AccessWeapon().IsPreventingJumps())
+  if (m_team.AccessWeapon().IsPreventingJumps())
     return;
   HideGameInterface();
 
-  ActiveTeam().crosshair.Hide();
+  m_team.crosshair.Hide();
 
   if (IsImmobile()) {
     Action *a = new Action(Action::ACTION_CHARACTER_HIGH_JUMP);
@@ -1144,11 +1144,11 @@ void Character::HandleKeyPressed_HighJump()
 // #################### BACK JUMP
 void Character::HandleKeyPressed_BackJump()
 {
-  if (ActiveTeam().AccessWeapon().IsPreventingJumps())
+  if (m_team.AccessWeapon().IsPreventingJumps())
     return;
   HideGameInterface();
 
-  ActiveTeam().crosshair.Hide();
+  m_team.crosshair.Hide();
 
   if (IsImmobile()) {
     Action *a = new Action(Action::ACTION_CHARACTER_BACK_JUMP);
