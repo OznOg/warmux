@@ -106,40 +106,40 @@ void ManMachineInterface::HandleKeyPressed(const Key_t &key)
   if (!ActiveTeam().IsLocalHuman()) return;
   if (Game::GetInstance()->ReadState() == Game::END_TURN) return;
   if (ActiveCharacter().IsDead()) return;
-
+  auto &&ah = ActionHandler::GetInstance();
   switch (key) {
     case KEY_MOVE_RIGHT:
-      ActiveCharacter().HandleKeyPressed_MoveRight(false);
+      ah->HandleKeyPressed_MoveRight(false);
       break;
     case KEY_MOVE_RIGHT_SLOWLY:
-      ActiveCharacter().HandleKeyPressed_MoveRight(true);
+      ah->HandleKeyPressed_MoveRight(true);
       break;
     case KEY_MOVE_LEFT:
-      ActiveCharacter().HandleKeyPressed_MoveLeft(false);
+      ah->HandleKeyPressed_MoveLeft(false);
       break;
     case KEY_MOVE_LEFT_SLOWLY:
-      ActiveCharacter().HandleKeyPressed_MoveLeft(true);
+      ah->HandleKeyPressed_MoveLeft(true);
       break;
     case KEY_UP:
-      ActiveCharacter().HandleKeyPressed_Up(false);
+      ah->HandleKeyPressed_Up(false);
       break;
     case KEY_UP_SLOWLY:
-      ActiveCharacter().HandleKeyPressed_Up(true);
+      ah->HandleKeyPressed_Up(true);
       break;
     case KEY_DOWN:
-      ActiveCharacter().HandleKeyPressed_Down(false);
+      ah->HandleKeyPressed_Down(false);
       break;
     case KEY_DOWN_SLOWLY:
-      ActiveCharacter().HandleKeyPressed_Down(true);
+      ah->HandleKeyPressed_Down(true);
       break;
     case KEY_JUMP:
-      ActiveCharacter().HandleKeyPressed_Jump();
+      ah->HandleKeyPressed_Jump();
       break;
     case KEY_HIGH_JUMP:
-      ActiveCharacter().HandleKeyPressed_HighJump();
+      ah->HandleKeyPressed_HighJump();
       break;
     case KEY_BACK_JUMP:
-      ActiveCharacter().HandleKeyPressed_BackJump();
+      ah->HandleKeyPressed_BackJump();
       break;
     case KEY_SHOOT:
       // Shoot key is not accepted in HAS_PLAYED state
@@ -322,39 +322,40 @@ void ManMachineInterface::HandleKeyReleased(const Key_t &key)
     if (ActiveCharacter().IsDead()) return;
     if (Game::GetInstance()->ReadState() == Game::END_TURN) return;
 
+    auto &&ah = ActionHandler::GetInstance();
     switch (key) {
       case KEY_MOVE_RIGHT:
-        ActiveCharacter().HandleKeyReleased_MoveRight(false);
+        ah->HandleKeyReleased_MoveRight(false);
         break;
       case KEY_MOVE_RIGHT_SLOWLY:
-        ActiveCharacter().HandleKeyReleased_MoveRight(true);
+        ah->HandleKeyReleased_MoveRight(true);
         break;
       case KEY_MOVE_LEFT:
-        ActiveCharacter().HandleKeyReleased_MoveLeft(false);
+        ah->HandleKeyReleased_MoveLeft(false);
         break;
       case KEY_MOVE_LEFT_SLOWLY:
-        ActiveCharacter().HandleKeyReleased_MoveLeft(true);
+        ah->HandleKeyReleased_MoveLeft(true);
         break;
       case KEY_UP:
-        ActiveCharacter().HandleKeyReleased_Up(false);
+        ah->HandleKeyReleased_Up(false);
         break;
       case KEY_UP_SLOWLY:
-        ActiveCharacter().HandleKeyReleased_Up(true);
+        ah->HandleKeyReleased_Up(true);
         break;
       case KEY_DOWN:
-        ActiveCharacter().HandleKeyReleased_Down(false);
+        ah->HandleKeyReleased_Down(false);
         break;
       case KEY_DOWN_SLOWLY:
-        ActiveCharacter().HandleKeyReleased_Down(true);
+        ah->HandleKeyReleased_Down(true);
         break;
       case KEY_JUMP:
-        ActiveCharacter().HandleKeyReleased_Jump();
+        ah->HandleKeyReleased_Jump();
         break;
       case KEY_HIGH_JUMP:
-        ActiveCharacter().HandleKeyReleased_HighJump();
+        ah->HandleKeyReleased_HighJump();
         break;
       case KEY_BACK_JUMP:
-        ActiveCharacter().HandleKeyReleased_BackJump();
+        ah->HandleKeyReleased_BackJump();
         break;
       default:
         if (Game::GetInstance()->ReadState() == Game::HAS_PLAYED)

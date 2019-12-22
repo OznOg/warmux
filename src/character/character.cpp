@@ -467,7 +467,12 @@ void Character::Draw()
 
 void Character::Jump(Double strength, Double angle /*in radian */)
 {
+  if (m_team.AccessWeapon().IsPreventingJumps())
+    return;
+
   Camera::GetInstance()->FollowObject(this);
+
+  m_team.crosshair.Hide();
 
   UpdateLastMovingTime();
   walking_time = GameTime::GetInstance()->Read();
@@ -1050,108 +1055,3 @@ bool Character::ComputeHeightMovement(int & height)
   return false;
 }
 
-void Character::HandleKeyPressed_MoveRight(bool slowly)
-{
-  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_RIGHT);
-  a->Push(slowly ? 1 : 0);
-  ActionHandler::GetInstance()->NewAction(a);
-}
-
-void Character::HandleKeyReleased_MoveRight(bool slowly)
-{
-  Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_RIGHT);
-  a->Push(slowly ? 1 : 0);
-  ActionHandler::GetInstance()->NewAction(a);
-}
-
-void Character::HandleKeyPressed_MoveLeft(bool slowly)
-{
-  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_LEFT);
-  a->Push(slowly ? 1 : 0);
-  ActionHandler::GetInstance()->NewAction(a);
-}
-
-void Character::HandleKeyReleased_MoveLeft(bool slowly)
-{
-  Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_LEFT);
-  a->Push(slowly ? 1 : 0);
-  ActionHandler::GetInstance()->NewAction(a);
-}
-
-// #################### UP
-
-void Character::HandleKeyPressed_Up(bool slowly)
-{
-  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_UP);
-  a->Push(slowly ? 1 : 0);
-  ActionHandler::GetInstance()->NewAction(a);
-}
-
-void Character::HandleKeyReleased_Up(bool slowly)
-{
-  Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_UP);
-  a->Push(slowly ? 1 : 0);
-  ActionHandler::GetInstance()->NewAction(a);
-}
-
-// #################### DOWN
-
-void Character::HandleKeyPressed_Down(bool slowly)
-{
-  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_DOWN);
-  a->Push(slowly ? 1 : 0);
-  ActionHandler::GetInstance()->NewAction(a);
-}
-
-void Character::HandleKeyReleased_Down(bool slowly)
-{
-  Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_DOWN);
-  a->Push(slowly ? 1 : 0);
-  ActionHandler::GetInstance()->NewAction(a);
-}
-
-// #################### JUMP
-
-void Character::HandleKeyPressed_Jump()
-{
-  if (m_team.AccessWeapon().IsPreventingJumps())
-    return;
-  HideGameInterface();
-
-  m_team.crosshair.Hide();
-
-  if (IsImmobile()) {
-    Action *a = new Action(Action::ACTION_CHARACTER_JUMP);
-    ActionHandler::GetInstance()->NewAction(a);
-  }
-}
-
-// #################### HIGH JUMP
-void Character::HandleKeyPressed_HighJump()
-{
-  if (m_team.AccessWeapon().IsPreventingJumps())
-    return;
-  HideGameInterface();
-
-  m_team.crosshair.Hide();
-
-  if (IsImmobile()) {
-    Action *a = new Action(Action::ACTION_CHARACTER_HIGH_JUMP);
-    ActionHandler::GetInstance()->NewAction(a);
-  }
-}
-
-// #################### BACK JUMP
-void Character::HandleKeyPressed_BackJump()
-{
-  if (m_team.AccessWeapon().IsPreventingJumps())
-    return;
-  HideGameInterface();
-
-  m_team.crosshair.Hide();
-
-  if (IsImmobile()) {
-    Action *a = new Action(Action::ACTION_CHARACTER_BACK_JUMP);
-    ActionHandler::GetInstance()->NewAction(a);
-  }
-}

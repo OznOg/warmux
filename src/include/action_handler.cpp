@@ -1293,6 +1293,88 @@ static bool IsFrameAction(const Action* a)
   return a->GetType() == Action::ACTION_GAME_CALCULATE_FRAME;
 }
 
+void ActionHandler::HandleKeyPressed_MoveRight(bool slowly)
+{
+  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_RIGHT);
+  a->Push(slowly ? 1 : 0);
+  NewAction(a);
+}
+
+void ActionHandler::HandleKeyPressed_MoveLeft(bool slowly)
+{
+  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_LEFT);
+  a->Push(slowly ? 1 : 0);
+  NewAction(a);
+}
+
+// #################### UP
+
+void ActionHandler::HandleKeyPressed_Up(bool slowly)
+{
+  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_UP);
+  a->Push(slowly ? 1 : 0);
+  NewAction(a);
+}
+
+// #################### DOWN
+
+void ActionHandler::HandleKeyPressed_Down(bool slowly)
+{
+  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_DOWN);
+  a->Push(slowly ? 1 : 0);
+  NewAction(a);
+}
+
+void ActionHandler::HandleKeyReleased_MoveRight(bool slowly)
+{
+    Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_RIGHT);
+    a->Push(slowly ? 1 : 0);
+    NewAction(a);
+}
+
+void ActionHandler::HandleKeyReleased_MoveLeft(bool slowly)
+{
+  Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_LEFT);
+  a->Push(slowly ? 1 : 0);
+  NewAction(a);
+}
+
+void ActionHandler::HandleKeyReleased_Up(bool slowly)
+{
+  Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_UP);
+  a->Push(slowly ? 1 : 0);
+  NewAction(a);
+}
+
+void ActionHandler::HandleKeyReleased_Down(bool slowly)
+{
+  Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_DOWN);
+  a->Push(slowly ? 1 : 0);
+  NewAction(a);
+}
+
+// #################### JUMP
+
+void ActionHandler::HandleKeyPressed_Jump()
+{
+  Action *a = new Action(Action::ACTION_CHARACTER_JUMP);
+  NewAction(a);
+}
+
+// #################### HIGH JUMP
+void ActionHandler::HandleKeyPressed_HighJump()
+{
+  Action *a = new Action(Action::ACTION_CHARACTER_HIGH_JUMP);
+  NewAction(a);
+}
+
+// #################### BACK JUMP
+void ActionHandler::HandleKeyPressed_BackJump()
+{
+  Action *a = new Action(Action::ACTION_CHARACTER_BACK_JUMP);
+  NewAction(a);
+}
+
 bool ActionHandler::ExecActionsForOneFrame()
 {
   ASSERT(GameIsRunning());

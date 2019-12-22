@@ -50,6 +50,22 @@ public:
   void ExecFrameLessActions();
   bool ExecActionsForOneFrame();
   void AddActionsFrames(uint nb, DistantComputer* cpu);
+
+  void HandleKeyReleased_MoveRight(bool slowly);
+  void HandleKeyReleased_MoveLeft(bool slowly);
+  void HandleKeyReleased_Up(bool slowly);
+  void HandleKeyReleased_Down(bool slowly);
+  void HandleKeyPressed_MoveLeft(bool slowly);
+  void HandleKeyPressed_MoveRight(bool slowly);
+  void HandleKeyPressed_Up(bool slowly);
+  void HandleKeyPressed_Down(bool slowly);
+  void HandleKeyPressed_BackJump();
+  void HandleKeyReleased_Jump() { }
+  void HandleKeyPressed_HighJump();
+  void HandleKeyReleased_HighJump() {}
+  void HandleKeyPressed_Jump();
+  void HandleKeyReleased_BackJump() {}
+
 };
 
 void Action_Handler_Init();
