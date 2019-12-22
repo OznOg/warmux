@@ -103,57 +103,10 @@ void WeaponsList::UpdateTranslation() const
 
 //-----------------------------------------------------------------------------
 
-bool WeaponsList::GetWeaponBySort(Weapon::category_t sort, Weapon::Weapon_type &type)
-{
-  bool open = ActiveMap()->LoadedData()->IsOpened();
-
-  auto it  = m_weapons_list.begin();
-  if (ActiveTeam().GetWeapon().Category() == sort) {
-      /* find the current position */
-      it = std::find_if(m_weapons_list.begin(),
-                     m_weapons_list.end(),
-                     [] (const auto &w) { return &ActiveTeam().GetWeapon() == w.get(); });
-      it++;
-  }
-  auto start_it = it;
-  it = std::find_if(it, m_weapons_list.end(), [&](const auto &w) {
-              return w->Category() == sort
-                      && ActiveTeam().ReadNbAmmos(w->GetType()) != 0
-                      && (open  || w->CanBeUsedOnClosedMap());
-          });
-
-  /* Ok, a weapon was found let's return it */
-  if (it != m_weapons_list.end()) {
-      type = (*it)->GetType();
-      return true;
-  }
-
-  if (start_it == m_weapons_list.begin()) {
-      return false;
-  } 
-
-  /* we didn't find a valid weapon after the current one ; lets wrap:
-   * restart from the begining and try to find the first one matching
-   * our criteria */
-  it = std::find_if(m_weapons_list.begin(), start_it, [&](const auto &w) {
-              return w->Category() == sort
-                      && ActiveTeam().ReadNbAmmos(w->GetType()) != 0
-                      && (open  || w->CanBeUsedOnClosedMap());
-          });
-
-  /* Ok, a weapon was found let's return it */
-  if (it != m_weapons_list.end()) {
-      type = (*it)->GetType();
-      return true;
-  }
-
-  /* we definitly found nothing... */
-  return false;
-}
-
 const Weapon &WeaponsList::GetRandomWeaponToDrop()
 {
   Double probability_sum = 0;
+
   for (auto &w : m_weapons_list) {
     probability_sum += w->GetDropProbability();
   }

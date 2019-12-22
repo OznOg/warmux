@@ -40,8 +40,6 @@ class Action;
 class ActionHandler : public Singleton<ActionHandler>, public WActionHandler
 {
   friend class Singleton<ActionHandler>;
-  ActionHandler();
-  ~ActionHandler() override;
 
 public:
   void NewAction(Action* a, bool repeat_to_network=true);

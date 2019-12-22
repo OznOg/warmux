@@ -1288,14 +1288,6 @@ void Action_Handler_Init()
 // ########################################################
 
 
-ActionHandler::ActionHandler(): WActionHandler()
-{
-}
-
-ActionHandler::~ActionHandler()
-{
-}
-
 static bool IsFrameAction(const Action* a)
 {
   return a->GetType() == Action::ACTION_GAME_CALCULATE_FRAME;

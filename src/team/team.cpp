@@ -44,6 +44,7 @@
 #include "tool/resource_manager.h"
 #include "tool/xml_document.h"
 #include "weapon/weapons_list.h"
+#include <algorithm>
 
 std::unique_ptr<Team> Team::LoadTeam(const std::string &teams_dir, const std::string &id, std::string& error)
 {
@@ -292,8 +293,8 @@ void Team::PrepareTurn()
   for (const auto &w : weapons_list->GetList()) {
     if (w->AvailableAfterTurn() == (int)current_turn) {
       // this weapon is available now
-      m_nb_ammos[ w->GetType() ] += w->ReadInitialNbAmmo();
-      m_nb_units[ w->GetType() ] += w->ReadInitialNbUnit();
+      weaponStatus[ w->GetType() ].m_nb_ammos += w->ReadInitialNbAmmo();
+      weaponStatus[ w->GetType() ].m_nb_units += w->ReadInitialNbUnit();
     }
   }
 
@@ -338,22 +339,17 @@ void Team::LoadGamingData(WeaponsList &weapons)
   current_turn = 0;
 
   // Reset ammos
-  m_nb_ammos.clear();
-  m_nb_units.clear();
+  weaponStatus.clear();
   auto &l_weapons_list = weapons_list->GetList() ;
 
-  m_nb_ammos.assign(l_weapons_list.size(), 0);
-  m_nb_units.assign(l_weapons_list.size(), 0);
+  weaponStatus.assign(l_weapons_list.size(), { 0, 0 });
 
   for (const auto &w : l_weapons_list) {
     if (w->AvailableAfterTurn() == 0) {
       // this weapon is available now
-      m_nb_ammos[ w->GetType() ] = w->ReadInitialNbAmmo();
-      m_nb_units[ w->GetType() ] = w->ReadInitialNbUnit();
+      weaponStatus[ w->GetType() ] = { w->ReadInitialNbAmmo(), w->ReadInitialNbUnit() };
     } else {
       // this weapon will be available later
-      m_nb_ammos[ w->GetType() ] = 0;
-      m_nb_units[ w->GetType() ] = 0;
     }
   }
 
@@ -436,3 +432,51 @@ void Team::PushCustomCharactersNamesIntoAction(Action *a) const
     a->Push(custom_characters_names[i]);
   }
 }
+
+bool Team::GetWeaponBySort(bool open_map, Weapon::category_t sort, Weapon::Weapon_type &type)
+{
+  auto &m_weapons_list = weapons_list->GetList();
+  auto it = m_weapons_list.begin();
+  if (active_weapon->Category() == sort) {
+      /* find the current position */
+      it = std::find_if(m_weapons_list.begin(),
+                     m_weapons_list.end(),
+                     [this] (const auto &w) { return active_weapon == w.get(); });
+      it++;
+  }
+  auto start_it = it;
+  it = std::find_if(it, m_weapons_list.end(), [&](const auto &w) {
+              return w->Category() == sort
+                      && ReadNbAmmos(w->GetType()) != 0
+                      && (open_map  || w->CanBeUsedOnClosedMap());
+          });
+
+  /* Ok, a weapon was found let's return it */
+  if (it != m_weapons_list.end()) {
+      type = (*it)->GetType();
+      return true;
+  }
+
+  if (start_it == m_weapons_list.begin()) {
+      return false;
+  } 
+
+  /* we didn't find a valid weapon after the current one ; lets wrap:
+   * restart from the begining and try to find the first one matching
+   * our criteria */
+  it = std::find_if(m_weapons_list.begin(), start_it, [&](const auto &w) {
+              return w->Category() == sort
+                      && ActiveTeam().ReadNbAmmos(w->GetType()) != 0
+                      && (open_map  || w->CanBeUsedOnClosedMap());
+          });
+
+  /* Ok, a weapon was found let's return it */
+  if (it != m_weapons_list.end()) {
+      type = (*it)->GetType();
+      return true;
+  }
+
+  /* we definitly found nothing... */
+  return false;
+}
+

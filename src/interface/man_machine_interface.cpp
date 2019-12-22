@@ -23,6 +23,7 @@
 #include "interface/interface.h"
 #include "character/character.h"
 #include "game/config.h"
+#include "map/maps_list.h"
 #include "game/game.h"
 #include "game/game_mode.h"
 #include "game/game_time.h"
@@ -493,8 +494,7 @@ void ManMachineInterface::HandleKeyReleased(const Key_t &key)
 
     if (weapon_sort != Weapon::INVALID && ActiveTeam().GetWeapon().CanChangeWeapon()) {
       Weapon::Weapon_type weapon;
-      WeaponsList * weapons_list = Game::GetInstance()->GetWeaponsList();
-      if (weapons_list->GetWeaponBySort(weapon_sort, weapon)) {
+      if (ActiveTeam().GetWeaponBySort(ActiveMap()->LoadedData()->IsOpened(), weapon_sort, weapon)) {
         ASSERT (weapon >= Weapon::FIRST && weapon <= Weapon::LAST);
         ActionHandler::GetInstance()->NewAction(new Action(Action::ACTION_PLAYER_CHANGE_WEAPON, weapon));
       }

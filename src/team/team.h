@@ -90,9 +90,12 @@ public:
 
   static std::unique_ptr<Team> LoadTeam(const std::string &teams_dir, const std::string &id, std::string& error);
 
-  std::vector<int> m_nb_ammos;
-  std::vector<int> m_nb_units;
-  std::vector<int> m_energy;
+  struct WeaponStatus {
+      int m_nb_ammos;
+      int m_nb_units;
+  };
+
+  std::vector<WeaponStatus> weaponStatus;
 
   // Others
   CrossHair        crosshair;
@@ -156,27 +159,28 @@ public:
 
   void SetPlayerName(const std::string& player_name) { m_player_name = player_name; };
 
+  bool GetWeaponBySort(bool open_map, Weapon::category_t sort, Weapon::Weapon_type &type);
   // Number of ammo for the current selected weapon.
   // (return INFINITE_AMMO is ammo are unlimited !)
   int ReadNbAmmos() const { return ReadNbAmmos(active_weapon->GetType()); }
   int ReadNbAmmos(Weapon::Weapon_type weapon_type) const
   {
-    ASSERT((uint)weapon_type < m_nb_ammos.size());
-    return m_nb_ammos[weapon_type];
+    ASSERT((uint)weapon_type < weaponStatus.size());
+    return weaponStatus[weapon_type].m_nb_ammos;
   }
   // if value not initialized, it initialize to 0 and then return 0
-  int& AccessNbAmmos() { return m_nb_ammos[active_weapon->GetType()]; }
+  int& AccessNbAmmos() { return weaponStatus[active_weapon->GetType()].m_nb_ammos; }
 
   // Number of current unit per ammo for the selected weapon.
   int ReadNbUnits() const { return ReadNbUnits(active_weapon->GetType()); }
   int ReadNbUnits(Weapon::Weapon_type weapon_type) const
   {
-    ASSERT((uint)weapon_type < m_nb_units.size());
-    return m_nb_units[weapon_type];
+    ASSERT((uint)weapon_type < weaponStatus.size());
+    return weaponStatus[weapon_type].m_nb_units;
   }
   // if value not initialized, it initialize to 0 and then return 0
-  int& AccessNbUnits() { return m_nb_units[active_weapon->GetType()]; }
-  void ResetNbUnits() { m_nb_units[active_weapon->GetType()] = active_weapon->ReadInitialNbUnit(); }
+  int& AccessNbUnits() { return weaponStatus[active_weapon->GetType()].m_nb_units; }
+  void ResetNbUnits() { weaponStatus[active_weapon->GetType()].m_nb_units = active_weapon->ReadInitialNbUnit(); }
 
   bool IsAI() const { return ai_name != NO_AI_NAME; }
   bool IsHuman() const { return !IsAI(); }

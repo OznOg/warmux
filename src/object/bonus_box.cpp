@@ -70,9 +70,11 @@ void BonusBox::ApplyBonus(Character * c)
   };
   Weapon::Weapon_type w_type = weapon.GetType();
 
+  auto &weaponsStatus = c->AccessTeam().weaponStatus[w_type];
+
   if (c->AccessTeam().ReadNbAmmos(w_type) != INFINITE_AMMO) {
     int won_ammo = weapon.GetAmmoPerDrop();
-    c->AccessTeam().m_nb_ammos[w_type] += won_ammo;
+    weaponsStatus.m_nb_ammos += won_ammo;
     txt << weapon.GetWeaponWinString(c->AccessTeam().GetName().c_str(), won_ammo);
   } else {
     // Can happen if the configuration is wrong...

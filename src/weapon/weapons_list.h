@@ -48,7 +48,6 @@ public:
   auto& GetList() { return m_weapons_list; };
   Weapon* GetWeapon(Weapon::Weapon_type type) const;
   const WeaponLauncher* GetWeaponLauncher(Weapon::Weapon_type type) const;
-  bool GetWeaponBySort(Weapon::category_t num_sort, Weapon::Weapon_type &type);
   const Weapon &GetRandomWeaponToDrop();
 };
 

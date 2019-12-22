@@ -45,7 +45,7 @@ class WActionHandler
 
 protected:
   WActionHandler();
-  ~WActionHandler();
+  virtual ~WActionHandler();
 
   // Action queue
   std::list<Action*> queue;
