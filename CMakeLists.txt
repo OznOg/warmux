@@ -154,7 +154,7 @@ ENDIF(COMMAND cmake_policy)
 
 ADD_DEFINITIONS(${LIBXML2_DEFINITIONS})
 IF(FRIBIDI_FOUND)
-  ADD_DEFINITIONS(-DUSE_FRIBIDI)
+  ADD_DEFINITIONS(-DUSE_FRIBIDI ${FRIBIDI_DEFINITIONS})
 ENDIF(FRIBIDI_FOUND)
 
 # config.h and compile-flags
@@ -215,7 +215,7 @@ INSTALL(DIRECTORY data/ DESTINATION ${DATA_DESTINATION}
 # Install desktop file and icon
 IF(UNIX AND NOT APPLE)
   INSTALL(FILES data/warmux.desktop DESTINATION share/applications)
-  INSTALL(FILES data/warmux_128x128.png DESTINATION share/pixmaps)
+  INSTALL(FILES data/icon/warmux_128x128.png DESTINATION share/pixmaps)
 ENDIF(UNIX AND NOT APPLE)
 
 # Install docs
