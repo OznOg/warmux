@@ -30,8 +30,8 @@
 
 // Loop for all objects
 #define FOR_ALL_OBJECTS(object) \
-  for (ObjectsList::iterator object=ObjectsList::GetRef().begin(), \
-       end=ObjectsList::GetRef().end(); \
+  for (auto object = ObjectsList::GetRef().begin(), \
+       end = ObjectsList::GetRef().end(); \
        (object) != end; \
        ++(object))
 
@@ -56,7 +56,6 @@ public:
   using std::list<PhysicalObj*>::begin;
   using std::list<PhysicalObj*>::end;
 
-  typedef std::list<PhysicalObj*>::iterator iterator;
   std::list<PhysicalObj*> overlapped_objects;
 
 public:
