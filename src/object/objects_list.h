@@ -44,7 +44,7 @@
 
 //-----------------------------------------------------------------------------
 
-class ObjectsList : public Singleton<ObjectsList>, public std::list<PhysicalObj*>
+class ObjectsList : public Singleton<ObjectsList>, private std::list<PhysicalObj*>
 {
   ObjectsList();
   ~ObjectsList() override;
@@ -53,6 +53,9 @@ class ObjectsList : public Singleton<ObjectsList>, public std::list<PhysicalObj*
   void RemoveOverlappedObjectReference(const PhysicalObj * obj);
 
 public:
+  using std::list<PhysicalObj*>::begin;
+  using std::list<PhysicalObj*>::end;
+
   typedef std::list<PhysicalObj*>::iterator iterator;
   std::list<PhysicalObj*> overlapped_objects;
 

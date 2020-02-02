@@ -168,13 +168,9 @@ ShootDirectlyAtEnemyIdea::ShootDirectlyAtEnemyIdea(const WeaponsWeighting & weap
 
 static const PhysicalObj* GetObjectAt(const Point2i & pos)
 {
-  const ObjectsList * objects = ObjectsList::GetConstInstance();
-  ObjectsList::const_iterator it = objects->begin();
-  while(it != objects->end()) {
-    const PhysicalObj* object = *it;
+  for (auto &object : *ObjectsList::GetConstInstance()) {
     if (object->GetTestRect().Contains(pos) && !object->IsDead())
       return object;
-    it++;
   }
 
   FOR_ALL_CHARACTERS(team, character) {
@@ -216,13 +212,9 @@ static bool ShotMisses(const Character *shooter, const Character *enemy,
   Point2i pos = from;
   Point2i delta = to - from;
 
-  const ObjectsList * objects = ObjectsList::GetConstInstance();
-  ObjectsList::const_iterator it = objects->begin();
-  while(it != objects->end()) {
-    const PhysicalObj* object = *it;
+  for (auto &object : *ObjectsList::GetConstInstance()) {
     if (!object->IsDead() && ObjectLiesOnSegment(object, from, to))
       return true;
-    it++;
   }
 
   FOR_ALL_CHARACTERS(team, character) {
