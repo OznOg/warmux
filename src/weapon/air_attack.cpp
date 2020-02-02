@@ -118,14 +118,14 @@ void Plane::Shoot(Double speed, const Point2i& target)
 
   SetSpeedXY(speed_vector);
 
+  // FIXME Seems to me that a race is possible here: the plane is not yet in
+  // object list but we already follow it...
   Camera::GetRef().FollowObject(this);
-
-  ObjectsList::GetRef().AddObject(this);
 }
 
 void Plane::DropBomb()
 {
-  Obus * instance = new Obus(cfg);
+  auto instance = std::make_unique<Obus>(cfg);
   instance->SetXY(Point2i(GetX(), obus_dy));
 
   Point2d speed_vector = GetSpeedXY();
@@ -138,13 +138,14 @@ void Plane::DropBomb()
   speed_vector.SetValues(speed_vector.x + fx*factor, speed_vector.y + fy*factor);
   instance->SetSpeedXY(speed_vector);
 
-  ObjectsList::GetRef().AddObject(instance);
+  last_dropped_bomb = instance.get();
 
-  last_dropped_bomb = instance;
+  ObjectsList::GetRef().AddObject(std::move(instance));
+
   nb_dropped_bombs++;
 
   if (nb_dropped_bombs == 1)
-    Camera::GetRef().FollowObject(instance);
+    Camera::GetRef().FollowObject(last_dropped_bomb);
 }
 
 void Plane::Refresh()
@@ -224,10 +225,11 @@ bool AirAttack::p_Shoot()
   if (Network::GetInstance()->IsTurnMaster())
       Mouse::GetInstance()->SetPointer(Mouse::POINTER_SELECT);
 
-  Plane * plane = new Plane(cfg());
+  auto plane = std::make_unique<Plane>(cfg());
+
   plane->Shoot(cfg().speed, target);
-  // The plane instance is in fact added to an objects list,
-  // which will delete it for us when needed.
+
+  ObjectsList::GetRef().AddObject(std::move(plane));
 
   return true;
 }

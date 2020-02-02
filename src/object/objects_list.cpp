@@ -34,26 +34,17 @@
 #include <vector>
 #include <iostream>
 
-ObjectsList::ObjectsList()
-{}
-
-ObjectsList::~ObjectsList()
-{
-  FreeMem();
-}
-
 void ObjectsList::PlaceMines()
 {
   MSG_DEBUG("lst_objects","Placing mines");
   for (uint i = 0; i < ActiveMap()->LoadedData().GetNbMine(); ++i)
   {
-    ObjMine *obj = new ObjMine(GameMode::GetInstance()->mines_explosion_cfg);
+    auto obj = std::make_unique<ObjMine>(GameMode::GetInstance()->mines_explosion_cfg);
     Double detection_range_factor = 1.5;
-    if (obj->PutRandomly(false, GameMode::GetInstance()->mines_explosion_cfg.detection_range * PIXEL_PER_METER * detection_range_factor))
+    if (obj->PutRandomly(false, GameMode::GetInstance()->mines_explosion_cfg.detection_range * PIXEL_PER_METER * detection_range_factor)) {
       // detection range is in meter
-      push_back(obj);
-    else
-      delete obj;
+      emplace_back(std::move(obj));
+    }
   }
 }
 
@@ -62,12 +53,10 @@ void ObjectsList::PlaceBarrels()
   MSG_DEBUG("lst_objects","Placing barrels");
   for (uint i = 0; i < ActiveMap()->LoadedData().GetNbBarrel(); ++i)
   {
-    PetrolBarrel *obj = new PetrolBarrel();
+    auto obj = std::make_unique<PetrolBarrel>();
 
     if (obj->PutRandomly(false, 20.0))
-      push_back(obj);
-    else
-      delete obj;
+      emplace_back(std::move(obj));
   }
 }
 
@@ -75,9 +64,9 @@ void ObjectsList::PlaceBarrels()
 //-----------------------------------------------------------------------------
 void ObjectsList::Refresh()
 {
-  ObjectsList::iterator object=begin();
+  auto object = begin();
 
-  while(object != end())
+  while (object != end())
   {
     (*object)->UpdatePosition();
 
@@ -89,9 +78,8 @@ void ObjectsList::Refresh()
 
     if ((*object)->IsGhost()) {
       // Stop following this object, remove from overlapse reference then delete it.
-      Camera::GetInstance()->StopFollowingObj(*object);
-      RemoveOverlappedObjectReference(*object);
-      delete (*object);
+      Camera::GetInstance()->StopFollowingObj(object->get());
+      RemoveOverlappedObjectReference(*object->get());
       object = erase(object);
     } else {
       object++;
@@ -102,9 +90,8 @@ void ObjectsList::Refresh()
 //-----------------------------------------------------------------------------
 void ObjectsList::Draw()
 {
-  for (auto & it : *this)
-  {
-    ASSERT(it != NULL);
+  for (auto & it : *this) {
+    ASSERT(it != nullptr);
 
     if (!it->IsGhost())
       it->Draw();
@@ -114,12 +101,10 @@ void ObjectsList::Draw()
 //-----------------------------------------------------------------------------
 bool ObjectsList::AllReady() const
 {
-  FOR_EACH_OBJECT(object)
-  {
-    if (!(*object)->IsImmobile())
-    {
+  for (auto &obj : *this) {
+    if (!obj->IsGhost() && !obj->IsImmobile()) {
       MSG_DEBUG("lst_objects", "\"%s\" is not ready ( IsImmobile()==false )",
-                (*object)->GetName().c_str());
+                obj->GetName().c_str());
       return false;
     }
   }
@@ -128,31 +113,19 @@ bool ObjectsList::AllReady() const
 
 //-----------------------------------------------------------------------------
 
-void ObjectsList::FreeMem()
+void ObjectsList::RemoveOverlappedObjectReference(const PhysicalObj &obj)
 {
-  ObjectsList::iterator object;
-  for (object = begin(); object != end(); ++object) {
-    if ((*object))
-      delete(*object);
-  }
-  clear();
-}
+  for (auto it = overlapped_objects.begin(); it != overlapped_objects.end();) {
 
-//-----------------------------------------------------------------------------
-
-void ObjectsList::RemoveOverlappedObjectReference(const PhysicalObj * obj)
-{
-  for (iterator it = overlapped_objects.begin(); it != overlapped_objects.end();) {
-
-    if ((*it)->GetOverlappingObject() == obj) {
+    if ((*it)->GetOverlappingObject() == &obj) {
       MSG_DEBUG("lst_objects", "removing overlapse reference of \"%s\" (%p) in \"%s\"",
-                obj->GetName().c_str(), obj, (*it)->GetName().c_str());
+                obj.GetName().c_str(), &obj, (*it)->GetName().c_str());
       (*it)->SetOverlappingObject(nullptr);
       it = overlapped_objects.erase(it);
 
-    } else if ((*it) == obj) {
+    } else if (*it == &obj) {
       MSG_DEBUG("lst_objects", "removing overlapse object of \"%s\" (%p)",
-                obj->GetName().c_str(), obj);
+                obj.GetName().c_str(), &obj);
       it = overlapped_objects.erase(it);
     } else {
       ++it;

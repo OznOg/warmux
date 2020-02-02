@@ -26,6 +26,8 @@
 #include <WARMUX_singleton.h>
 #include "object/physical_obj.h"
 #include <list>
+#include <memory>
+
 //-----------------------------------------------------------------------------
 
 // Loop for all objects
@@ -44,17 +46,16 @@
 
 //-----------------------------------------------------------------------------
 
-class ObjectsList : public Singleton<ObjectsList>, private std::list<PhysicalObj*>
+class ObjectsList : public Singleton<ObjectsList>, private std::list<std::unique_ptr<PhysicalObj>>
 {
-  ObjectsList();
-  ~ObjectsList() override;
+  ObjectsList() = default;
   friend class Singleton<ObjectsList>;
 
-  void RemoveOverlappedObjectReference(const PhysicalObj * obj);
+  void RemoveOverlappedObjectReference(const PhysicalObj &obj);
 
 public:
-  using std::list<PhysicalObj*>::begin;
-  using std::list<PhysicalObj*>::end;
+  using std::list<std::unique_ptr<PhysicalObj>>::begin;
+  using std::list<std::unique_ptr<PhysicalObj>>::end;
 
   std::list<PhysicalObj*> overlapped_objects;
 
@@ -71,21 +72,12 @@ public:
   // Place barrels randomly on the map
   void PlaceBarrels();
 
-  void FreeMem();
-
-  void AddObject(PhysicalObj * obj)
+  void AddObject(std::unique_ptr<PhysicalObj> obj)
   {
     // bug #16834 and some others probably: set last runtime
     // to a realistic value
     obj->ResetLastRunTime();
-    push_back(obj);
-  }
-
-  // Overlapse handling
-  void RemoveObject(PhysicalObj * obj)
-  {
-    remove(obj);
-    RemoveOverlappedObjectReference(obj);
+    emplace_back(std::move(obj));
   }
 
   void AddOverlappedObject(PhysicalObj * obj);

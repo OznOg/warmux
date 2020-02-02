@@ -170,7 +170,7 @@ static const PhysicalObj* GetObjectAt(const Point2i & pos)
 {
   for (auto &object : *ObjectsList::GetConstInstance()) {
     if (object->GetTestRect().Contains(pos) && !object->IsDead())
-      return object;
+      return object.get();
   }
 
   FOR_ALL_CHARACTERS(team, character) {
@@ -213,7 +213,7 @@ static bool ShotMisses(const Character *shooter, const Character *enemy,
   Point2i delta = to - from;
 
   for (auto &object : *ObjectsList::GetConstInstance()) {
-    if (!object->IsDead() && ObjectLiesOnSegment(object, from, to))
+    if (!object->IsDead() && ObjectLiesOnSegment(object.get(), from, to))
       return true;
   }
 

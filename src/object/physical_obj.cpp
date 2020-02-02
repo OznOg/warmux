@@ -698,7 +698,7 @@ PhysicalObj* PhysicalObj::CollidedObjectXY(const Point2i & position) const
   if (m_collides_with_objects) {
     if (m_is_character) {
       FOR_EACH_OBJECT(it) {
-        PhysicalObj * object=*it;
+        PhysicalObj * object = it->get();
         // We check both objet if one overlapses the other
         if (object->m_collides_with_characters) {
           if (object != this && !IsOverlapping(object) && !object->IsOverlapping(this) &&
@@ -711,13 +711,11 @@ PhysicalObj* PhysicalObj::CollidedObjectXY(const Point2i & position) const
       }
     } else {
       FOR_EACH_OBJECT(it) {
-        PhysicalObj * object=*it;
+        PhysicalObj * object = it->get();
         // We check both objet if one overlapses the other
         if (object != this && !IsOverlapping(object) && !object->IsOverlapping(this) &&
             object->m_collides_with_objects && object->Intersect(rect)) {
           return object;
-        } else if (IsOverlapping(object) != object->IsOverlapping(this)) {
-          //printf("Check2\n");
         }
       }
     }

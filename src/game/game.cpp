@@ -415,7 +415,6 @@ void Game::UnloadDatas(bool game_finished) const
 {
   GetWorld().FreeMem();
   ActiveMap()->FreeData();
-  ObjectsList::GetRef().FreeMem();
   ParticleEngine::Stop();
 
   if (!Network::IsConnected() || !game_finished) {
@@ -1050,26 +1049,27 @@ bool Game::NewBox()
   }
 
   // Type of box : 1 = MedKit, 2 = Bonus Box.
-  ObjBox * box;
+  std::unique_ptr<ObjBox> box;
   MSG_DEBUG("random.get", "Game::NewBox(...) box type?");
   if (RandomSync().GetBool()) {
-    box = GameMode::GetRef().makeMedkit();
+    box.reset(GameMode::GetRef().makeMedkit());
   } else {
-    box = new BonusBox(weapons_list->GetRandomWeaponToDrop());
+    box = std::make_unique<BonusBox>(weapons_list->GetRandomWeaponToDrop());
   }
   // Randomize container
   box->Randomize();
 
   if (!box->PutRandomly(true, 20.0, true)) {
     MSG_DEBUG("box", "Missed to put a box");
-    delete box;
     return false;
   }
 
-  ObjectsList::GetRef().AddObject(box);
-  Camera::GetInstance()->FollowObject(box);
+  auto ptr = box.get();
+  ObjectsList::GetRef().AddObject(std::move(box));
+  // FIXME there are too many people using pointer to a private data here...
+  Camera::GetInstance()->FollowObject(ptr);
   GameMessages::GetInstance()->Add(_("It's a present!"), white_color);
-  SetCurrentBox(box);
+  SetCurrentBox(ptr);
 
   return true;
 }
@@ -1143,7 +1143,7 @@ PhysicalObj* Game::GetMovingObject() const
   FOR_EACH_OBJECT(object) {
     if (!(*object)->IsImmobile()) {
       MSG_DEBUG("game.endofturn", "Object (%s) is moving", (*object)->GetName().c_str());
-      return (*object);
+      return object->get();
     }
   }
 
