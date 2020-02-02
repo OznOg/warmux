@@ -29,6 +29,7 @@
 #include "graphic/surface.h"
 #include "tool/resource_manager.h"
 #include "tool/xml_document.h"
+#include <memory>
 
 // Forward declarations
 class Action;
@@ -84,8 +85,8 @@ protected:
   std::string water_type;
 
   struct s_wind wind;
-  InfoMapBasicAccessor *basic;
-  InfoMapAccessor      *normal;
+  std::unique_ptr<InfoMapBasicAccessor> basic;
+  std::unique_ptr<InfoMapAccessor>      normal;
 
   std::shared_ptr<Profile> res_profile;
 
@@ -116,8 +117,8 @@ public:
   InfoMapAccessor      *LoadData();
   InfoMapBasicAccessor *LoadBasicInfo();
 
-  InfoMapBasicAccessor *LoadedInfo() { assert(basic); return basic; }
-  InfoMapAccessor      *LoadedData() { assert(normal); return normal; }
+  InfoMapBasicAccessor &LoadedInfo() { assert(basic); return *basic; }
+  InfoMapAccessor      &LoadedData() { assert(normal); return *normal; }
 };
 
 class InfoMapBasicAccessor {

@@ -299,7 +299,7 @@ void RandomMap::Generate(InfoMap::Island_type generator)
 std::string RandomMap::SaveMap()
 {
   std::string filename = Config::GetInstance()->GetPersonalDataDir() +
-                         ActiveMap()->LoadedInfo()->ReadFullMapName() +
+                         ActiveMap()->LoadedInfo().ReadFullMapName() +
                          " - last random generation.png";
   return (result.ImgSave(filename)) ? filename : "";
 }

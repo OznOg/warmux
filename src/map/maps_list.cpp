@@ -68,7 +68,7 @@ InfoMapBasicAccessor* InfoMap::LoadBasicInfo()
   std::string error;
 
   if (basic)
-    return basic;
+    return basic.get();
 
   std::string nomfich = m_directory + "config.xml";
 
@@ -93,8 +93,8 @@ InfoMapBasicAccessor* InfoMap::LoadBasicInfo()
   }
 
   MSG_DEBUG("map.load", "Map loaded: %s", m_map_name.c_str());
-  basic = new InfoMapBasicAccessor(this);
-  return basic;
+  basic = std::make_unique<InfoMapBasicAccessor>(this);
+  return basic.get();
 
 err:
   Question question(Question::WARNING);
@@ -201,10 +201,6 @@ InfoMap::~InfoMap()
 {
   // No need to unload profile, it will get automatically cleaned by ResourceManager
   res_profile = nullptr;
-  if (normal)
-    delete normal;
-  if (basic)
-    delete basic;
 }
 
 std::string InfoMap::GenerateMap(std::shared_ptr<Profile> profile, InfoMap::Island_type generator,
@@ -218,7 +214,7 @@ std::string InfoMap::GenerateMap(std::shared_ptr<Profile> profile, InfoMap::Isla
 InfoMapAccessor *InfoMap::LoadData()
 {
   if (normal)
-    return normal;
+    return normal.get();
 
   MSG_DEBUG("map.load", "Map data loaded: %s", name.c_str());
 
@@ -246,13 +242,13 @@ InfoMapAccessor *InfoMap::LoadData()
   if (!DoesFileExist(ground_filename))
     return nullptr;
 
-  normal = new InfoMapAccessor(this);
-  return normal;
+  normal = std::make_unique<InfoMapAccessor>(this);
+  return normal.get();
 }
 
 void InfoMap::FreeData()
 {
-  delete normal; normal = nullptr;
+  normal = nullptr;
 }
 
 /* ========================================================================== */

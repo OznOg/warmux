@@ -199,7 +199,7 @@ WeaponsMenu::~WeaponsMenu()
 // Add a new weapon to the weapon menu.
 void WeaponsMenu::AddWeapon(const Weapon &new_item)
 {
-  if (!new_item.CanBeUsedOnClosedMap() && !ActiveMap()->LoadedInfo()->IsOpened())
+  if (!new_item.CanBeUsedOnClosedMap() && !ActiveMap()->LoadedInfo().IsOpened())
     return;
 
   Point2f pos;

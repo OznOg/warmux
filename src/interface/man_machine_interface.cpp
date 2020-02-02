@@ -495,7 +495,7 @@ void ManMachineInterface::HandleKeyReleased(const Key_t &key)
 
     if (weapon_sort != Weapon::INVALID && ActiveTeam().GetWeapon().CanChangeWeapon()) {
       Weapon::Weapon_type weapon;
-      if (ActiveTeam().GetWeaponBySort(ActiveMap()->LoadedData()->IsOpened(), weapon_sort, weapon)) {
+      if (ActiveTeam().GetWeaponBySort(ActiveMap()->LoadedData().IsOpened(), weapon_sort, weapon)) {
         ASSERT (weapon >= Weapon::FIRST && weapon <= Weapon::LAST);
         ActionHandler::GetInstance()->NewAction(new Action(Action::ACTION_PLAYER_CHANGE_WEAPON, weapon));
       }
