@@ -112,11 +112,11 @@ void FootBomb::DoExplosion()
     Double cluster_deviation = RandomSync().GetDouble(-half_angle_range, half_angle_range);
     Double speed = RandomSync().GetDouble(config.nb_min_speed, config.nb_max_speed);
 
-    FootBomb *cluster = new FootBomb(config, launcher);
+    auto cluster = std::make_unique<FootBomb>(config, launcher);
     cluster->doShoot(pos, speed, angle+cluster_deviation, m_recursions-1);
     cluster->SetTimeOut(cfg.timeout + m_timeout_modifier);
 
-    ObjectsList::GetRef().AddObject(cluster);
+    ObjectsList::GetRef().AddObject(std::move(cluster));
   }
 }
 
@@ -138,9 +138,9 @@ void FootBombLauncher::UpdateTranslationStrings()
   m_help = _("Timeout: Mouse wheel or Page Up/Down\nAngle: Up/Down\nFire: Press space until desired strength is reached\nOne ammo per turn");
 }
 
-WeaponProjectile * FootBombLauncher::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> FootBombLauncher::GetProjectileInstance()
 {
-  return new FootBomb(cfg(), this);
+  return std::make_unique<FootBomb>(cfg(), this);
 }
 
 FootBombConfig& FootBombLauncher::cfg()

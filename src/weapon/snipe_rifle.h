@@ -58,7 +58,7 @@ public:
 class SnipeRifle : public BaseSnipeRifle
 {
 protected:
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
 
 public:
   SnipeRifle();

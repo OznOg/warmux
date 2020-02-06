@@ -126,7 +126,7 @@ void ObjMine::Detection()
   Double speed_detection = static_cast<MineConfig&>(cfg).speed_detection;
   Double norm, angle;
   FOR_EACH_OBJECT(it) {
-    PhysicalObj *obj = *it;
+    PhysicalObj *obj = it->get();
     if (obj != this && GetName() != obj->GetName() &&
         GetCenter().SquareDistance(obj->GetCenter()) < detection_range) {
 
@@ -208,9 +208,9 @@ void Mine::UpdateTranslationStrings()
   m_help = _("Place mine by pressing space\nMine explodes when someone steps onto it\nMay be a fake mine by chance");
 }
 
-WeaponProjectile * Mine::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> Mine::GetProjectileInstance()
 {
-  return new ObjMine(cfg(), this);
+  return std::make_unique<ObjMine>(cfg(), this);
 }
 
 bool Mine::p_Shoot()
@@ -238,8 +238,7 @@ void Mine::Add(int x, int y)
   else
     projectile->SetSpeed(1.0, -THREE * QUARTER_PI);
 
-  ObjectsList::GetRef().AddObject (projectile);
-  projectile = nullptr;
+  ObjectsList::GetRef().AddObject(std::move(projectile));
   ReloadLauncher();
 }
 

@@ -38,7 +38,7 @@ public:
 protected:
   void ChooseTarget(Point2i mouse_pos) override;
 
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
 };
 
 #endif /* AUTO_BAZOOKA_H */

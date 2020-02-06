@@ -156,9 +156,9 @@ void DiscoGrenadeLauncher::UpdateTranslationStrings()
   m_help = _("Up/Down: Set direction\nSet timer 1-6 using +/- or 1-6 keys\nPress space till desired strength");
 }
 
-WeaponProjectile * DiscoGrenadeLauncher::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> DiscoGrenadeLauncher::GetProjectileInstance()
 {
-  return new DiscoGrenade(cfg(), this);
+  return std::make_unique<DiscoGrenade>(cfg(), this);
 }
 std::string DiscoGrenadeLauncher::GetWeaponWinString(const char *TeamName, uint items_count ) const
 {

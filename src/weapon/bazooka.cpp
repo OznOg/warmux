@@ -109,9 +109,9 @@ Bazooka::Bazooka() :
   ReloadLauncher();
 }
 
-WeaponProjectile * Bazooka::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> Bazooka::GetProjectileInstance()
 {
-  return new BazookaRocket(cfg(), this);
+  return std::make_unique<BazookaRocket>(cfg(), this);
 }
 
 void Bazooka::UpdateTranslationStrings()

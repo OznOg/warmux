@@ -32,7 +32,7 @@ const int SHOTGUN_BULLETS = 4;
 class Shotgun : public WeaponLauncher
 {
   protected:
-    WeaponProjectile * GetProjectileInstance() override;
+    std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
     void IncMissedShots() override;
     bool p_Shoot() override;
   public:

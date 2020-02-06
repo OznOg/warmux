@@ -77,9 +77,9 @@ void GrenadeLauncher::UpdateTranslationStrings()
   m_help = _("Up/Down: Set direction\nSet timer 1-6 using +/- or 1-6 keys\nPress space till desired strength");
 }
 
-WeaponProjectile * GrenadeLauncher::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> GrenadeLauncher::GetProjectileInstance()
 {
-  return new Grenade(cfg(), this);
+  return std::make_unique<Grenade>(cfg(), this);
 }
 
 std::string GrenadeLauncher::GetWeaponWinString(const char *TeamName, uint items_count ) const

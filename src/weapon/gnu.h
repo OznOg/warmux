@@ -54,7 +54,7 @@ public:
 protected:
   bool p_Shoot() override;
   void Refresh() override;
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
 };
 
 #endif

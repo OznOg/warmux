@@ -62,8 +62,9 @@ DynamiteStick::DynamiteStick(ExplosiveWeaponConfig& cfg,
   SetTestRect (0, 0, 2, 3);
 }
 
-void DynamiteStick::Shoot(Double strength)
+void DynamiteStick::Shoot(Double)
 {
+  // add the character speed
   uint delay = (1000 * WeaponProjectile::GetTotalTimeout())/image->GetFrameCount();
   image->SetFrameSpeed(delay);
 
@@ -77,7 +78,12 @@ void DynamiteStick::Shoot(Double strength)
   // during WeaponProjectile::Shoot (#bug 10241)
   timeout_sound.Play("default","weapon/dynamite_fuze", -1);
 
-  WeaponProjectile::Shoot(strength);
+  WeaponProjectile::Shoot(0);
+
+  if(ActiveCharacter().GetDirection() == 1)
+    SetSpeed(3.0, -QUARTER_PI);
+  else
+    SetSpeed(3.0, -THREE * QUARTER_PI);
 }
 
 void DynamiteStick::Refresh()
@@ -119,24 +125,15 @@ void Dynamite::UpdateTranslationStrings()
   m_help = _("Set timer 1-6 using +/- or 1-6 keys\nSpace to place dynamite");
 }
 
-WeaponProjectile * Dynamite::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> Dynamite::GetProjectileInstance()
 {
-  return new DynamiteStick(cfg(), this);
+  return std::make_unique<DynamiteStick>(cfg(), this);
 }
 
 // drop a dynamite
 bool Dynamite::p_Shoot ()
 {
-  projectile->Shoot(0);
-  // add the character speed
-  if(ActiveCharacter().GetDirection() == 1)
-    projectile->SetSpeed(3.0, -QUARTER_PI);
-  else
-    projectile->SetSpeed(3.0, -THREE * QUARTER_PI);
-
-  projectile = nullptr;
-  ReloadLauncher();
-  return true;
+  return WeaponLauncher::p_Shoot();
 }
 
 bool Dynamite::ShouldBeDrawn()

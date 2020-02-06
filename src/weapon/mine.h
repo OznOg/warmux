@@ -67,7 +67,7 @@ class Mine : public WeaponLauncher
 private:
   void Add (int x, int y);
 protected:
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
   bool p_Shoot() override;
   bool ShouldBeDrawn() override;
 public:

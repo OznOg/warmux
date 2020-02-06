@@ -37,7 +37,7 @@ class ClusterLauncher : public WeaponLauncher
   std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
 
  protected:
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
  private:
   ClusterBombConfig& cfg() ;
 };

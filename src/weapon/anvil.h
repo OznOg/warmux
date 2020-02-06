@@ -33,7 +33,7 @@ public:
   void UpdateTranslationStrings() override;
   std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
 protected:
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
   bool p_Shoot() override;
   //virtual bool ShouldBeDrawn() { return !IsOnCooldownFromShot(); }
 };

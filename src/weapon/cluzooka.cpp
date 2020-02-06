@@ -58,19 +58,17 @@ protected:
     JukeBox::GetInstance()->Play( "default", "weapon/cluzooka_shot" );
     ParticleEngine::AddExplosionSmoke(pos, 50, ParticleEngine::LittleESmoke);
 
-    ClusterType * cluster;
-
     for (uint i = 0; i < fragments; ++i) {
       Double cluster_deviation = (angle_range * i)/fragments - angle_range*ONE_HALF;
 
-      cluster = new ClusterType(cfg, p_launcher);
+      auto cluster = std::make_unique<ClusterType>(cfg, p_launcher);
 #ifdef CLUSTERS_SPAWN_CLUSTERS
       cluster->doShoot(pos, speed, angle+cluster_deviation, recursion_depth);
 #else
       cluster->doShoot(pos, speed, angle+cluster_deviation);
 #endif
 
-      ObjectsList::GetRef().AddObject(cluster);
+      ObjectsList::GetRef().AddObject(std::move(cluster));
     }
     m_spawned_clusters = true;
   }
@@ -345,9 +343,9 @@ Cluzooka::Cluzooka() :
   ReloadLauncher();
 }
 
-WeaponProjectile * Cluzooka::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> Cluzooka::GetProjectileInstance()
 {
-  return new CluzookaRocket(cfg(), this);
+  return std::make_unique<CluzookaRocket>(cfg(), this);
 }
 
 void Cluzooka::UpdateTranslationStrings()

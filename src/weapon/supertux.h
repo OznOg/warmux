@@ -53,7 +53,7 @@ public:
   bool IsPreventingWeaponAngleChanges() override { return IsOnCooldownFromShot(); }
 
 protected:
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
   bool p_Shoot() override;
   void Refresh() override;
   bool ShouldBeDrawn() override { return !(current_tux || tux_death_time); }

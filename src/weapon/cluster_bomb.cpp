@@ -142,7 +142,6 @@ void ClusterBomb::DoExplosion()
   WeaponProjectile::DoExplosion();
 
   const uint fragments = static_cast<ClusterBombConfig &>(cfg).nb_fragments;
-  Cluster * cluster;
 
   const Double angle_range = HALF_PI;
   Point2i pos = GetPosition();
@@ -152,10 +151,10 @@ void ClusterBomb::DoExplosion()
     Double cluster_deviation = angle_range * i / ( Double )fragments - angle_range / TWO;
     Double speed = RandomSync().GetDouble(10, 25);
 
-    cluster = new Cluster(static_cast<ClusterBombConfig &>(cfg), launcher);
+    auto cluster = std::make_unique<Cluster>(static_cast<ClusterBombConfig &>(cfg), launcher);
     cluster->doShoot( pos, speed, angle + cluster_deviation );
 
-    ObjectsList::GetRef().AddObject(cluster);
+    ObjectsList::GetRef().AddObject(std::move(cluster));
   }
 }
 
@@ -177,9 +176,9 @@ void ClusterLauncher::UpdateTranslationStrings()
   m_help = _("Timeout: Mouse wheel or Page Up/Down\nAngle: Up/Down\nFire: Press space until desired strength is reached\nOne ammo per turn");
 }
 
-WeaponProjectile * ClusterLauncher::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> ClusterLauncher::GetProjectileInstance()
 {
-  return new ClusterBomb(cfg(), this);
+  return std::make_unique<ClusterBomb>(cfg(), this);
 }
 
 ClusterBombConfig& ClusterLauncher::cfg()

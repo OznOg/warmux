@@ -120,9 +120,9 @@ void RiotBomb::UpdateTranslationStrings()
   m_help = _("Initial fire angle: Up/Down\nFire: Press space until desired strength is reached\nOne ammo per turn");
 }
 
-WeaponProjectile * RiotBomb::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> RiotBomb::GetProjectileInstance()
 {
-  return new RiotBombRocket(cfg(), this);
+  return std::make_unique<RiotBombRocket>(cfg(), this);
 }
 
 std::string RiotBomb::GetWeaponWinString(const char *TeamName, uint items_count ) const

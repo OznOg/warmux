@@ -151,7 +151,7 @@ void ApplyExplosion (const Point2i &pos,
 
   // Apply the blast on physical objects.
   FOR_EACH_OBJECT(it) {
-   PhysicalObj *obj = *it;
+   PhysicalObj *obj = it->get();
 
    // CanBeBlasted() is a hack
    if (obj->CanBeBlasted() && !obj->IsGhost()) {

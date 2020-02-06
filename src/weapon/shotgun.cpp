@@ -88,9 +88,9 @@ void Shotgun::UpdateTranslationStrings()
 }
 
 // Return a buckshot instance for the shotgun
-WeaponProjectile * Shotgun::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> Shotgun::GetProjectileInstance()
 {
-  return new ShotgunBuckshot(cfg(), this);
+  return std::make_unique<ShotgunBuckshot>(cfg(), this);
 }
 
 void Shotgun::ShootSound() const
@@ -114,7 +114,7 @@ bool Shotgun::p_Shoot ()
 
   for(int i = 0; i < SHOTGUN_BULLETS; i++) {
     projectile->Shoot(SHOTGUN_BUCKSHOT_SPEED);
-    projectile = nullptr;
+    ObjectsList::GetRef().AddObject(std::move(projectile));
     ReloadLauncher();
   }
   ShootSound();

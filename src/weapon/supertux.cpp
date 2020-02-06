@@ -202,9 +202,9 @@ void TuxLauncher::UpdateTranslationStrings()
   m_help = _("Set initial direction with up/down\nPress space to launch\nUse Left/Right to change direction");
 }
 
-WeaponProjectile * TuxLauncher::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> TuxLauncher::GetProjectileInstance()
 {
-  return new SuperTux(cfg(), this);
+  return std::make_unique<SuperTux>(cfg(), this);
 }
 
 bool TuxLauncher::p_Shoot ()
@@ -212,11 +212,10 @@ bool TuxLauncher::p_Shoot ()
   if (current_tux || tux_death_time)
     return false;
 
-  current_tux = static_cast<SuperTux *>(projectile);
+  current_tux = static_cast<SuperTux *>(projectile.get());
   tux_death_time = 0;
-  bool r = WeaponLauncher::p_Shoot();
 
-  return r;
+  return WeaponLauncher::p_Shoot();
 }
 
 void TuxLauncher::Refresh()

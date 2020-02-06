@@ -32,7 +32,7 @@ class Dynamite : public WeaponLauncher
 {
   protected:
     bool p_Shoot() override;
-    WeaponProjectile * GetProjectileInstance() override;
+    std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
     bool ShouldBeDrawn() override;
   public:
     Dynamite();

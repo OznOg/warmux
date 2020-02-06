@@ -177,15 +177,15 @@ void AutomaticBazooka::UpdateTranslationStrings()
              "Firing: keep the space key pressed until the desired strength\nOne ammo per turn");
 }
 
-WeaponProjectile * AutomaticBazooka::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> AutomaticBazooka::GetProjectileInstance()
 {
-  return new RPG(cfg(), this);
+  return std::make_unique<RPG>(cfg(), this);
 }
 
 void AutomaticBazooka::ChooseTarget(Point2i mouse_pos)
 {
   TargetLauncher::ChooseTarget(mouse_pos);
-  static_cast<RPG *>(projectile)->SetTarget(m_target.pos);
+  static_cast<RPG *>(projectile.get())->SetTarget(m_target.pos);
 }
 
 AutomaticBazookaConfig &AutomaticBazooka::cfg()

@@ -98,9 +98,9 @@ void SubMachineGun::UpdateTranslationStrings()
 }
 
 // Return a projectile instance for the submachine gun
-WeaponProjectile * SubMachineGun::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> SubMachineGun::GetProjectileInstance()
 {
-  return new SubMachineGunBullet(cfg(), this);
+  return std::make_unique<SubMachineGunBullet>(cfg(), this);
 }
 
 void SubMachineGun::IncMissedShots()

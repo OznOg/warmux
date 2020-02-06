@@ -168,7 +168,7 @@ bool GnuLauncher::p_Shoot()
   if (current_gnu || gnu_death_time)
     return false;
 
-  current_gnu = static_cast<Gnu *>(projectile);
+  current_gnu = static_cast<Gnu *>(projectile.get());
   gnu_death_time = 0;
   bool r = WeaponLauncher::p_Shoot();
   return r;
@@ -228,9 +228,9 @@ void GnuLauncher::SignalEndOfProjectile()
   gnu_death_time = GameTime::GetInstance()->Read();
 }
 
-WeaponProjectile * GnuLauncher::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> GnuLauncher::GetProjectileInstance()
 {
-  return new Gnu(cfg(), this);
+  return std::make_unique<Gnu>(cfg(), this);
 }
 
 std::string GnuLauncher::GetWeaponWinString(const char *TeamName, uint items_count ) const

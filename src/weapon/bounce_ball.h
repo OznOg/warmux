@@ -29,7 +29,7 @@ class BounceBallLauncher : public WeaponLauncher
 {
   protected:
     bool p_Shoot () override;
-    WeaponProjectile * GetProjectileInstance() override;
+    std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
 
     void UpdateTranslationStrings() override;
     std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;

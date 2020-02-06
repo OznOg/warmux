@@ -91,20 +91,17 @@ void BounceBallLauncher::UpdateTranslationStrings()
   m_help = _("Timeout: Mouse wheel or Page Up/Down\nAngle: Up/Down\nFire: space key\nOne ammo per turn");
 }
 
-WeaponProjectile * BounceBallLauncher::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> BounceBallLauncher::GetProjectileInstance()
 {
-  return new BounceBall(cfg(), this);
+  return std::make_unique<BounceBall>(cfg(), this);
 }
 
 bool BounceBallLauncher::p_Shoot ()
 {
   if (max_strength == 0)
-    projectile->Shoot (10);
-  else
-    projectile->Shoot (m_strength);
-  projectile = nullptr;
-  ReloadLauncher();
-  return true;
+      max_strength = 10;
+
+  return WeaponLauncher::p_Shoot();
 }
 
 std::string BounceBallLauncher::GetWeaponWinString(const char *TeamName, uint items_count ) const

@@ -33,7 +33,7 @@ public:
   void UpdateTranslationStrings() override;
   std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
 protected:
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
 };
 
 #endif /* DISCO_GRENADE_H */

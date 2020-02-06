@@ -32,7 +32,7 @@ private:
   ParticleEngine particle;
   bool shoot_started;
 protected:
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
   void IncMissedShots() override;
   void Refresh() override;
   bool p_Shoot() override;

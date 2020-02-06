@@ -178,7 +178,6 @@ void WeaponProjectile::Shoot(Double strength)
 
   // Set the initial position.
   SetOverlappingObject(&ActiveCharacter(), 100);
-  ObjectsList::GetRef().AddObject(this);
 
   Double angle = ActiveCharacter().GetFiringAngle();
   RandomizeShoot(angle, strength);
@@ -457,12 +456,6 @@ WeaponLauncher::WeaponLauncher(Weapon_type type,
   ignore_going_out_of_water_signal = false;
 }
 
-WeaponLauncher::~WeaponLauncher()
-{
-  if (projectile)
-    delete projectile;
-}
-
 int WeaponLauncher::GetDamage() const
 {
   return cfg().damage;
@@ -478,18 +471,14 @@ bool WeaponLauncher::p_Shoot()
 //     return true;
 //   }
   projectile->Shoot(m_strength);
-  projectile = nullptr;
+  ObjectsList::GetRef().AddObject(std::move(projectile));
   ReloadLauncher();
   return true;
 }
 
-bool WeaponLauncher::ReloadLauncher()
+void WeaponLauncher::ReloadLauncher()
 {
-  if (projectile) {
-    return false;
-  }
   projectile = GetProjectileInstance();
-  return true;
 }
 
 // Direct Explosion when pushing weapon to max power !

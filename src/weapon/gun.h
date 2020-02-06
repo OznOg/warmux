@@ -35,7 +35,7 @@ class Gun : public WeaponLauncher
     std::string GetWeaponWinString(const char *TeamName, uint items_count) const override;
   protected:
     bool p_Shoot() override;
-    WeaponProjectile * GetProjectileInstance() override;
+    std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
 };
 
 #endif /* GUN_H */

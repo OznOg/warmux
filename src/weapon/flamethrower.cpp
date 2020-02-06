@@ -136,9 +136,9 @@ void FlameThrower::UpdateTranslationStrings()
 }
 
 // Return a projectile instance for the submachine gun
-WeaponProjectile * FlameThrower::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> FlameThrower::GetProjectileInstance()
 {
-  return new FlameThrowerBullet(cfg(), this);
+  return std::make_unique<FlameThrowerBullet>(cfg(), this);
 }
 
 void FlameThrower::IncMissedShots()

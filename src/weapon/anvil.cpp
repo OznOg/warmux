@@ -160,10 +160,9 @@ bool AnvilLauncher::p_Shoot()
 
   Point2i tmp(m_target.pos.x, 1 - projectile->GetHeight());
   projectile->SetXY(tmp);
-  ((Anvil*)projectile)->PlayFallSound();
-  ObjectsList::GetRef().AddObject(projectile);
-  Camera::GetInstance()->FollowObject(projectile);
-  projectile = nullptr;
+  ((Anvil*)projectile.get())->PlayFallSound();
+  Camera::GetInstance()->FollowObject(projectile.get());
+  ObjectsList::GetRef().AddObject(std::move(projectile));
   ReloadLauncher();
 
   // Go back to default cursor
@@ -174,9 +173,9 @@ bool AnvilLauncher::p_Shoot()
   return true;
 }
 
-WeaponProjectile * AnvilLauncher::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> AnvilLauncher::GetProjectileInstance()
 {
-  return new Anvil(cfg(), this);
+  return std::make_unique<Anvil>(cfg(), this);
 }
 
 std::string AnvilLauncher::GetWeaponWinString(const char *TeamName, uint items_count ) const

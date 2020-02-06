@@ -98,9 +98,9 @@ void RailGun::UpdateTranslationStrings()
   m_help = _("Shoots all players in a straight line!");
 }
 
-WeaponProjectile * RailGun::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> RailGun::GetProjectileInstance()
 {
-  return new RailBullet(cfg(), this);
+  return std::make_unique<RailBullet>(cfg(), this);
 }
 
 bool RailGun::p_Shoot()

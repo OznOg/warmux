@@ -33,7 +33,7 @@ protected:
   void IncMissedShots() override;
 
   // Must be implemented
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
 
 public:
   RailGun();

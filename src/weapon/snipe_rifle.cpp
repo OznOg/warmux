@@ -242,9 +242,9 @@ void SnipeRifle::UpdateTranslationStrings()
   m_help = _("Press space to shoot\nUse Up/Down to change initial angle");
 }
 
-WeaponProjectile * SnipeRifle::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> SnipeRifle::GetProjectileInstance()
 {
-  return new SnipeBullet(cfg(), this);
+  return std::make_unique<SnipeBullet>(cfg(), this);
 }
 
 std::string SnipeRifle::GetWeaponWinString(const char *TeamName, uint items_count ) const

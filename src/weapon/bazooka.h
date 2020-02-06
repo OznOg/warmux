@@ -31,7 +31,7 @@ public:
   std::string GetWeaponWinString(const char *TeamName, uint items_count ) const override;
   void UpdateTranslationStrings() override;
 protected:
-  WeaponProjectile * GetProjectileInstance() override;
+  std::unique_ptr<WeaponProjectile> GetProjectileInstance() override;
 };
 
 #endif

@@ -121,7 +121,7 @@ public:
   bool ignore_drowning_signal;
   bool ignore_going_out_of_water_signal;
 protected:
-  WeaponProjectile * projectile;
+  std::unique_ptr<WeaponProjectile> projectile;
   uint nb_active_projectile;
   bool m_allow_change_timeout;
   int missed_shots;
@@ -129,8 +129,8 @@ protected:
 protected:
   bool p_Shoot() override;
   void p_Select() override;
-  virtual WeaponProjectile * GetProjectileInstance() = 0;
-  virtual bool ReloadLauncher();
+  virtual std::unique_ptr<WeaponProjectile> GetProjectileInstance() = 0;
+  virtual void ReloadLauncher();
 private:
   void DirectExplosion();
   void SetTimeoutForAllPlayers(int timeout);
@@ -139,7 +139,6 @@ public:
                  const std::string &id,
                  EmptyWeaponConfig * params,
                  bool drawable = true);
-  ~WeaponLauncher() override;
 
   // Methods to access data of the projectile
   int GetDamage() const;
@@ -192,7 +191,6 @@ public:
   void HandleKeyReleased_Less() override { SetTimeoutForAllPlayers(GetTimeout() - 1); }
   void HandleKeyReleased_More() override { SetTimeoutForAllPlayers(GetTimeout() + 1); }
 
-  WeaponProjectile* GetProjectile() { return projectile; };
   ExplosiveWeaponConfig& cfg() const;
 
   // Implemeting a method that would otherwise have required RTTI

@@ -200,10 +200,10 @@ bool PolecatLauncher::p_Shoot()
   if (current_polecat || polecat_death_time)
     return false;
 
-  current_polecat = static_cast<Polecat *>(projectile);
+  current_polecat = static_cast<Polecat *>(projectile.get());
   polecat_death_time = 0;
-  bool r = WeaponLauncher::p_Shoot();
-  return r;
+
+  return WeaponLauncher::p_Shoot();
 }
 
 void PolecatLauncher::Refresh()
@@ -262,9 +262,9 @@ void PolecatLauncher::SignalEndOfProjectile()
   polecat_death_time = GameTime::GetInstance()->Read();
 }
 
-WeaponProjectile * PolecatLauncher::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> PolecatLauncher::GetProjectileInstance()
 {
-  return new Polecat(cfg(), this);
+  return std::make_unique<Polecat>(cfg(), this);
 }
 
 std::string PolecatLauncher::GetWeaponWinString(const char *TeamName, uint items_count ) const

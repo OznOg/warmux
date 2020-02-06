@@ -42,6 +42,10 @@ class GunBullet : public WeaponBullet
     GunBullet(ExplosiveWeaponConfig& cfg,
               WeaponLauncher * p_launcher);
   protected:
+    void Shoot(Double) override {
+        WeaponBullet::Shoot (GUN_BULLET_SPEED);
+    }
+
     void ShootSound() override;
 };
 
@@ -73,9 +77,9 @@ void Gun::UpdateTranslationStrings()
   m_help = _("Press space to shoot\nUse Up/Down to change initial angle");
 }
 
-WeaponProjectile * Gun::GetProjectileInstance()
+std::unique_ptr<WeaponProjectile> Gun::GetProjectileInstance()
 {
-  return new GunBullet(cfg(), this);
+  return std::make_unique<GunBullet>(cfg(), this);
 }
 
 bool Gun::p_Shoot()
@@ -83,10 +87,7 @@ bool Gun::p_Shoot()
   if (IsOnCooldownFromShot())
     return false;
 
-  projectile->Shoot (GUN_BULLET_SPEED);
-  projectile = nullptr;
-  ReloadLauncher();
-  return true;
+  return WeaponLauncher::p_Shoot();
 }
 
 std::string Gun::GetWeaponWinString(const char *TeamName, uint items_count ) const
