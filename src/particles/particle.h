@@ -107,7 +107,7 @@ class ParticleEngine
 
   static bool sprites_loaded;
   static std::unique_ptr<Sprite> particle_sprite[particle_spr_nbr];
-  static std::list<Particle *> lst_particles;
+  static std::list<std::unique_ptr<Particle>> lst_particles;
 
   static void AddLittleESmoke(const Point2i &pos, const uint &radius);
   static void AddBigESmoke(const Point2i &pos, const uint &radius);
@@ -127,7 +127,7 @@ public:
                      uint nb_particles, particle_t type,
                      bool upper,
                      Double angle=-1, Double norme=-1);
-  static void AddNow(Particle* particle);
+  static void AddNow(std::unique_ptr<Particle> particle);
 
   enum ESmokeStyle { NoESmoke, LittleESmoke, BigESmoke }; // Style of smoke explosion (quantitie of smoke)
   static void AddExplosionSmoke(const Point2i &pos, const uint &radius, const ESmokeStyle &style);

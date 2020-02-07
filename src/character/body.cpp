@@ -787,7 +787,7 @@ void Body::MakeParticles(const Point2i & pos)
 
   const std::vector<Member*>& layers = current_clothe->GetNonWeaponLayers();
   for (auto &member : layers) {
-    ParticleEngine::AddNow(new BodyMemberParticle(member->GetSprite(), member->GetPos()+pos));
+    ParticleEngine::AddNow(std::make_unique<BodyMemberParticle>(member->GetSprite(), member->GetPos()+pos));
   }
 }
 
@@ -797,7 +797,7 @@ void Body::MakeTeleportParticles(const Point2i& pos, const Point2i& dst)
 
   const std::vector<Member*>& layers = current_clothe->GetNonWeaponLayers();
   for (auto &member : layers) {
-    ParticleEngine::AddNow(new TeleportMemberParticle(member->GetSprite(),
+    ParticleEngine::AddNow(std::make_unique<TeleportMemberParticle>(member->GetSprite(),
                                                       member->GetPos()+pos, member->GetPos()+dst));
   }
 }

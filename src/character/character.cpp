@@ -352,9 +352,9 @@ void Character::SetEnergy(int new_energy, Character* dealer)
 {
   int diff = new_energy - m_energy;
   if (diff < 0) {
-    Particle *tmp = new FadingText(int2str(diff));
+    std::unique_ptr<Particle> tmp(new FadingText(int2str(diff)));
     tmp->SetXY(GetPosition());
-    ParticleEngine::AddNow(tmp);
+    ParticleEngine::AddNow(std::move(tmp));
   }
 
   if (IsDead()) return;

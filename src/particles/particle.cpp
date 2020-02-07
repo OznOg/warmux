@@ -128,7 +128,7 @@ void ParticleEngine::AddPeriodic(const Point2i &position, particle_t type,
 //-----------------------------------------------------------------------------
 // Static methods
 bool ParticleEngine::sprites_loaded = false;
-std::list<Particle*> ParticleEngine::lst_particles;
+std::list<std::unique_ptr<Particle>> ParticleEngine::lst_particles;
 std::unique_ptr<Sprite> ParticleEngine::particle_sprite[particle_spr_nbr];
 
 void ParticleEngine::Load()
@@ -254,17 +254,17 @@ void ParticleEngine::AddNow(const Point2i &position,
       particle->SetXY(position);
       particle->SetOnTop(upper);
       particle->SetSpeed(tmp_norme, tmp_angle);
-      lst_particles.push_back(particle);
+      lst_particles.emplace_back(particle);
     }
   }
 }
 
-void ParticleEngine::AddNow(Particle* particle)
+void ParticleEngine::AddNow(std::unique_ptr<Particle> particle)
 {
   if (!sprites_loaded || !particle)
     return;
 
-  lst_particles.push_back(particle);
+  lst_particles.emplace_back(std::move(particle));
 }
 
 void ParticleEngine::AddBigESmoke(const Point2i &position, const uint &radius)
@@ -281,14 +281,12 @@ void ParticleEngine::AddBigESmoke(const Point2i &position, const uint &radius)
   static const float little_sin[] = { 0.000000f,  0.587785f,  0.951057f,  0.951056f,  0.587785f,
                                      -0.000000f, -0.587785f, -0.951056f, -0.951056f, -0.587785f };
 
-  Particle *particle = nullptr;
-
   for (uint i=0; i<little_partic_nbr; i++) {
 //      angle = (Double) i * PI * 2.0 / (Double) little_partic_nbr;
     uint size = radius *2;
     float norme = 2.5f * radius / 3.0f;
 
-    particle = new ExplosionSmoke(size);
+    auto particle = new ExplosionSmoke(size);
     particle->SetOnTop(true);
 
     Point2i pos = position; //Set position to center of explosion
@@ -297,7 +295,7 @@ void ParticleEngine::AddBigESmoke(const Point2i &position, const uint &radius)
     pos = pos + Point2i(norme * little_cos[i], norme * little_sin[i]);
 
     particle->SetXY(pos);
-    lst_particles.push_back(particle);
+    lst_particles.emplace_back(particle);
   }
 }
 
@@ -313,7 +311,6 @@ void ParticleEngine::AddLittleESmoke(const Point2i &position, const uint &radius
   static const float big_cos[] = { 1.000000f, -0.809017f,  0.309017f, 0.309017f, -0.809017f };
   static const float big_sin[] = { 0.000000f,  0.587785f, -0.951056f, 0.951057f, -0.587785f };
 
-  Particle *particle = nullptr;
   for (uint i=0; i<big_partic_nbr; i++) {
 //      angle = (Double) i * PI * 4.0 / (Double)big_partic_nbr;
     uint size = radius;
@@ -323,11 +320,11 @@ void ParticleEngine::AddLittleESmoke(const Point2i &position, const uint &radius
     pos = pos - size / 2;       //Set the center of the smoke to the center..
     pos = pos + Point2i(norme * big_cos[i], norme * big_sin[i]); //Put inside the circle of the explosion
 
-    particle = new ExplosionSmoke(size);
+    auto particle = new ExplosionSmoke(size);
     particle->SetXY(pos);
     particle->SetOnTop(true);
 
-    lst_particles.push_back(particle);
+    lst_particles.emplace_back(particle);
   }
 }
 
@@ -348,48 +345,33 @@ void ParticleEngine::AddExplosionSmoke(const Point2i &position, const uint &radi
 
 void ParticleEngine::Draw(bool upper)
 {
-  std::list<Particle *>::iterator Particle_it;
   // draw the particles
-  for (Particle_it=lst_particles.begin(); Particle_it!=lst_particles.end(); ++Particle_it)
-    if ((*Particle_it)->IsOnTop() == upper)
-      (*Particle_it)->Draw();
+  for (auto &p : lst_particles)
+    if (p->IsOnTop() == upper)
+      p->Draw();
 }
 
 void ParticleEngine::Refresh()
 {
   // remove old particles
-  std::list<Particle*>::iterator it=lst_particles.begin(), end=lst_particles.end();
-  while (it != end) {
-    if (! (*it)->StillUseful()) {
-      delete *it;
-      it = lst_particles.erase(it);
-    } else {
-      it++;
-    }
-  }
+  lst_particles.remove_if([](auto &p) { return !p->StillUseful(); });
 
   // update the particles
-  for(it=lst_particles.begin(); it!=lst_particles.end(); ++it) {
-    (*it)->Refresh();
-  }
+  for (auto &p : lst_particles)
+    p->Refresh();
 }
 
 void ParticleEngine::Stop()
 {
   // remove all the particles
-  std::list<Particle*>::iterator it=lst_particles.begin(), end=lst_particles.end();
-  while (it != end) {
-    delete *it;
-    it = lst_particles.erase(it);
-  }
+  lst_particles.clear();
 }
 
 PhysicalObj * ParticleEngine::IsSomethingMoving()
 {
-  std::list<Particle *>::iterator Particle_it;
   // check if particle need to be check in end of turn
-  for (Particle_it=lst_particles.begin(); Particle_it!=lst_particles.end(); ++Particle_it)
-    if ((*Particle_it)->CheckOnEndTurn() && (*Particle_it)->StillUseful())
-      return *Particle_it;
+  for (auto &p : lst_particles)
+    if (p->CheckOnEndTurn() && p->StillUseful())
+      return p.get();
   return nullptr;
 }
