@@ -249,7 +249,7 @@ Surface ResourceManager::LoadImage(const std::shared_ptr<Profile> profile, const
   //      By now force alpha and no colorkey
 }
 
-Sprite *ResourceManager::LoadSprite(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
+std::unique_ptr<Sprite> ResourceManager::LoadSprite(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   const xmlNode* elem_sprite = GetElement(profile, "sprite", resource_name);
   if (!elem_sprite)
@@ -258,7 +258,7 @@ Sprite *ResourceManager::LoadSprite(const std::shared_ptr<Profile> profile, cons
   return LoadSprite(elem_sprite, resource_name, profile->relative_path);
 }
 
-Sprite *ResourceManager::LoadSprite(const xmlNode* elem_sprite, const std::string& resource_name,
+std::unique_ptr<Sprite> ResourceManager::LoadSprite(const xmlNode* elem_sprite, const std::string& resource_name,
                                     const std::string& main_folder) const
 {
   const xmlNode* elem_image = XmlReader::GetMarker(elem_sprite, "image");
@@ -274,7 +274,7 @@ Sprite *ResourceManager::LoadSprite(const xmlNode* elem_sprite, const std::strin
   //      By now force alpha and no colorkey
 
   bool alpha = true;
-  Sprite *sprite = nullptr;
+  std::unique_ptr<Sprite> sprite = nullptr;
 
   const xmlNode* elem_grid = XmlReader::GetMarker(elem_image, "grid");
 
@@ -282,7 +282,7 @@ Sprite *ResourceManager::LoadSprite(const xmlNode* elem_sprite, const std::strin
     ASSERT(resource_name != "barrel");
     // No grid element, Load the Sprite like a normal image
     Surface surface = LoadImage(main_folder+image_filename, alpha);
-    sprite = new Sprite();
+    sprite = std::make_unique<Sprite>();
     sprite->Init(surface, surface.GetSize(), 1, 1);
   } else {
     Point2i frameSize, offset;
@@ -307,7 +307,7 @@ Sprite *ResourceManager::LoadSprite(const xmlNode* elem_sprite, const std::strin
     }
 
     Surface surface = LoadImage(main_folder+image_filename, alpha);
-    sprite = new Sprite();
+    sprite = std::make_unique<Sprite>();
     sprite->Init(surface, frameSize, nb_frames_x, nb_frames_y);
   }
 

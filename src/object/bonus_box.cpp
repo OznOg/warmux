@@ -27,7 +27,6 @@
 
 #include "object/bonus_box.h"
 #include "character/character.h"
-#include "graphic/sprite.h"
 #include "interface/game_msg.h"
 #include "network/randomsync.h"
 #include "sound/jukebox.h"

@@ -24,16 +24,16 @@
 
 #include <WARMUX_base.h>
 #include "gui/widget.h"
+#include "graphic/sprite.h"
 
 // Forward declarations
-class Sprite;
 class Profile;
 
 class Button : public Widget
 {
 protected:
   bool     img_scale;
-  Sprite * image;
+  std::unique_ptr<Sprite> image;
 
 public:
   Button (const std::shared_ptr<Profile> res_profile,
@@ -41,7 +41,6 @@ public:
           bool img_scale = false);
   Button(std::shared_ptr<Profile> profile,
          const xmlNode * baseListBoxNode);
-  ~Button() override;
 
   bool LoadXMLConfiguration(void) override;
   void Draw(const Point2i & mousePosition) override;

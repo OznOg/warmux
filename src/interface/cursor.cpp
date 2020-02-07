@@ -39,12 +39,6 @@ CharacterCursor::CharacterCursor()
   arrow_change = GetResourceManager().LoadSprite(res, "gfx/arrow-change");
 }
 
-CharacterCursor::~CharacterCursor()
-{
-  delete arrow_jump;
-  delete arrow_change;
-}
-
 // Draw cursor
 void CharacterCursor::Draw()
 {
@@ -79,7 +73,7 @@ void CharacterCursor::Hide()
   arrow->animation.SetLoopMode(false);
 
   // To force direct stop when using "arrow change"
-  if (arrow == arrow_change)
+  if (arrow == arrow_change.get())
     arrow->animation.Finish();
 }
 
@@ -96,9 +90,9 @@ void CharacterCursor::FollowActiveCharacter()
     return;
 
   if (GameMode::GetInstance()->AllowCharacterSelection())
-    arrow = arrow_change;
+    arrow = arrow_change.get();
   else
-    arrow = arrow_jump;
+    arrow = arrow_jump.get();
 
   arrow->animation.SetLoopMode(true);
   arrow->Start();

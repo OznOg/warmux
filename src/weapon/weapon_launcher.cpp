@@ -159,11 +159,6 @@ WeaponProjectile::WeaponProjectile(const std::string &name,
   m_unique_id = name + Game::GetUniqueId();
 }
 
-WeaponProjectile::~WeaponProjectile()
-{
-  delete image;
-}
-
 void WeaponProjectile::Shoot(Double strength)
 {
   MSG_DEBUG("weapon.projectile", "shoot with strength:%s", Double2str(strength).c_str());

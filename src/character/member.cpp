@@ -165,7 +165,6 @@ Member::Member(const Member & m)
 
 Member::~Member()
 {
-  delete spr;
   attached_members.clear();
   attached_types.clear();
 }

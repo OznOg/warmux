@@ -21,7 +21,6 @@
 
 #include "gui/button.h"
 #include "include/app.h"
-#include "graphic/sprite.h"
 #include "graphic/video.h"
 #include "tool/resource_manager.h"
 
@@ -41,13 +40,6 @@ Button::Button(std::shared_ptr<Profile> profile,
   img_scale(true),
   image(nullptr)
 {
-}
-
-Button::~Button()
-{
-  if (nullptr != image) {
-    delete image;
-  }
 }
 
 bool Button::LoadXMLConfiguration()
@@ -84,7 +76,7 @@ bool Button::LoadXMLConfiguration()
     }
   }
 
-  image = new Sprite();
+  image = std::unique_ptr<Sprite>();
   image->AddFrame(pictureUp.DisplayFormatAlpha());
   image->AddFrame(pictureDown.DisplayFormatAlpha());
 

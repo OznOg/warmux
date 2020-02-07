@@ -26,7 +26,6 @@
 #include "character/character.h"
 #include "game/game.h"
 #include "game/game_mode.h"
-#include "graphic/sprite.h"
 #include "include/action_handler.h"
 #include "interface/game_msg.h"
 #include "map/camera.h"
@@ -54,12 +53,6 @@ void Parachute::UpdateTranslationStrings()
 {
   m_name = _("Parachute");
   m_help = _("Parachute avoids hitting the ground too hard\nOpens automatically\nUse left/right to change direction");
-}
-
-Parachute::~Parachute()
-{
-  if (img)
-    delete img;
 }
 
 void Parachute::p_Select()

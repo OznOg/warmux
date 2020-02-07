@@ -108,7 +108,8 @@ private:
   bool display_minimap;
   WeaponStrengthBar weapon_strength_bar;
 
-  Sprite *clock, *clock_normal, *clock_emergency;
+  Sprite *clock;
+  std::unique_ptr<Sprite> clock_normal, clock_emergency;
   Point2i bottom_bar_pos;
   int last_width;
   float zoom;

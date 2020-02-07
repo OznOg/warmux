@@ -129,7 +129,7 @@ void ParticleEngine::AddPeriodic(const Point2i &position, particle_t type,
 // Static methods
 bool ParticleEngine::sprites_loaded = false;
 std::list<Particle*> ParticleEngine::lst_particles;
-Sprite* ParticleEngine::particle_sprite[particle_spr_nbr];
+std::unique_ptr<Sprite> ParticleEngine::particle_sprite[particle_spr_nbr];
 
 void ParticleEngine::Load()
 {
@@ -169,9 +169,8 @@ void ParticleEngine::FreeMem()
   // Only called at game exit: loading particles is long and costly
   // and it would be a waste to discard the cache already available
   sprites_loaded = false;
-
   for (auto & i : particle_sprite)
-    delete i;
+      i.reset();
 }
 
 std::unique_ptr<Sprite> ParticleEngine::GetSprite(particle_spr type)

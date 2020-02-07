@@ -24,7 +24,6 @@
 #include "object/physical_obj.h"
 #include "game/game_mode.h"
 #include "game/config.h"
-#include "graphic/sprite.h"
 #include "particles/particle.h"
 #include "tool/resource_manager.h"
 #include "weapon/explosion.h"
@@ -40,11 +39,6 @@ PetrolBarrel::PetrolBarrel() : PhysicalObj("barrel", Config::GetInstance()->GetO
   SetCollisionModel(true, true, true);
   SetSize(img->GetSize());
   SetTestRect (1, 1, 2, 2);
-}
-
-PetrolBarrel::~PetrolBarrel()
-{
-  delete img;
 }
 
 void PetrolBarrel::Draw()

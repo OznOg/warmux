@@ -26,9 +26,9 @@
 #include <WARMUX_base.h>
 #include <WARMUX_singleton.h>
 #include "object/physical_obj.h"
+#include "graphic/sprite.h"
 
 // Forward declarations
-class Sprite;
 typedef struct _xmlNode xmlNode;
 
 // Max wind strength in m/(sec*sec)
@@ -36,12 +36,11 @@ typedef struct _xmlNode xmlNode;
 
 class WindParticle : public PhysicalObj
 {
-  Sprite * sprite;
+  std::unique_ptr<Sprite> sprite;
 
 public:
   WindParticle(const std::string & xml_file, 
                Double scale);
-  ~WindParticle() override;
   void Draw() override;
   void Refresh() override;
 };

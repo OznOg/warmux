@@ -28,7 +28,6 @@
 #include "game/config.h"
 #include "game/game.h"
 #include "game/game_time.h"
-#include "graphic/sprite.h"
 #include "include/action_handler.h"
 #include "map/camera.h"
 #include "map/map.h"
@@ -152,12 +151,6 @@ void Grapple::UpdateTranslationStrings()
 {
   m_name = _("Grapple");
   m_help = _("Press space to shoot grapple\nUse left/right to swing\nPress space to release");
-}
-
-Grapple::~Grapple()
-{
-  if (m_hook_sprite) delete m_hook_sprite;
-  if (m_node_sprite) delete m_node_sprite;
 }
 
 bool Grapple::p_Shoot()

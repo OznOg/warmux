@@ -58,7 +58,7 @@ class WeaponsMenu
 {
 public:
   static const int MAX_NUMBER_OF_WEAPON;
-  Sprite * m_not_yet_available;
+  std::unique_ptr<Sprite> m_not_yet_available;
 
 private:
   Polygon * weapons_menu;

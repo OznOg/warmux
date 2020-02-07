@@ -23,15 +23,13 @@
 #define BARREL_H
 
 #include "object/physical_obj.h"
-
-class Sprite;
+#include "graphic/sprite.h"
 
 class PetrolBarrel : public PhysicalObj
 {
-  Sprite* img;
+  std::unique_ptr<Sprite> img;
 public:
   PetrolBarrel();
-  ~PetrolBarrel() override;
   void Draw() override;
   void Refresh() override { };
 protected:

@@ -23,7 +23,6 @@
 #include "map/camera.h"
 #include "game/config.h"
 #include "game/game_time.h"
-#include "graphic/sprite.h"
 #include "graphic/video.h"
 #include "map/map.h"
 #include "map/maps_list.h"
@@ -91,11 +90,6 @@ WindParticle::WindParticle(const std::string &xml_file, Double scale)
 
   // Now that caches have been set, refresh
   sprite->RefreshSurface();
-}
-
-WindParticle::~WindParticle()
-{
-  delete sprite;
 }
 
 void WindParticle::Refresh()

@@ -106,7 +106,7 @@ class ParticleEngine
   uint m_time_between_add;
 
   static bool sprites_loaded;
-  static Sprite* particle_sprite[particle_spr_nbr];
+  static std::unique_ptr<Sprite> particle_sprite[particle_spr_nbr];
   static std::list<Particle *> lst_particles;
 
   static void AddLittleESmoke(const Point2i &pos, const uint &radius);

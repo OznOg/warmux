@@ -24,8 +24,8 @@
 
 #include "weapon.h"
 #include "object/physical_obj.h"
+#include "graphic/sprite.h"
 
-class Sprite;
 class WeaponLauncher;
 struct ExplosiveWeaponConfig;
 
@@ -34,7 +34,7 @@ class WeaponProjectile : public PhysicalObj
   uint timeout_start;
 
 protected:
-  Sprite *image;
+  std::unique_ptr<Sprite> image;
   bool explode_colliding_character; // before timeout.
   bool explode_with_timeout;
   bool explode_with_collision;
@@ -50,7 +50,6 @@ public:
   WeaponProjectile(const std::string &nom,
                    ExplosiveWeaponConfig& cfg,
                    WeaponLauncher * p_launcher);
-  ~WeaponProjectile() override;
 
   void Draw() override;
   // Call by the object list class to refresh the weapon's state

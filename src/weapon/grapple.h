@@ -24,6 +24,7 @@
 //-----------------------------------------------------------------------------
 #include "weapon.h"
 #include <WARMUX_base.h>
+#include "graphic/sprite.h"
 #include <list>
 //-----------------------------------------------------------------------------
 
@@ -43,8 +44,8 @@ class Grapple : public Weapon
 
     // Rope launching data.
     bool attached;
-    Sprite* m_hook_sprite;
-    Sprite* m_node_sprite;
+    std::unique_ptr<Sprite> m_hook_sprite;
+    std::unique_ptr<Sprite> m_node_sprite;
 
     SoundSample cable_sound;
     bool move_left_pressed;
@@ -86,7 +87,6 @@ class Grapple : public Weapon
     Double delta_len ;
 
     Grapple();
-    ~Grapple() override;
     void Draw() override;
     void NotifyMove(bool collision) override;
 

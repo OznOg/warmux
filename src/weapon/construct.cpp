@@ -27,7 +27,6 @@
 #include "character/character.h"
 #include "game/game_mode.h"
 #include "game/game_time.h"
-#include "graphic/sprite.h"
 #include "include/action_handler.h"
 #include "interface/interface.h"
 #include "interface/mouse.h"
@@ -72,11 +71,6 @@ void Construct::UpdateTranslationStrings()
   m_help = _("Click onto the place, where you\nwant to place the construction.\nUp/down changes direction.");
 }
 
-Construct::~Construct()
-{
-  delete construct_spr;
-}
-
 std::string Construct::GetWeaponWinString(const char *TeamName, uint items_count) const
 {
   return Format(ngettext("%s team has won %u construct weapon! Don't forget your helmet.",
@@ -90,7 +84,7 @@ bool Construct::p_Shoot()
   if (!target_chosen)
     return false;
   JukeBox::GetInstance()->Play("default", "weapon/construct");
-  GetWorld().MergeSprite(dst - construct_spr->GetSizeMax()/2, construct_spr);
+  GetWorld().MergeSprite(dst - construct_spr->GetSizeMax()/2, construct_spr.get());
 
   target_chosen = false; // ensure next shoot cannot be done pressing key space
   return true;

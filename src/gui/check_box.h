@@ -25,9 +25,8 @@
 #include <WARMUX_base.h>
 #include "gui/widget.h"
 #include "graphic/text.h"
+#include "graphic/sprite.h"
 #include <string>
-
-class Sprite;
 
 class CheckBox : public Text, public Widget
 {
@@ -35,7 +34,7 @@ class CheckBox : public Text, public Widget
 
 protected:
   bool     m_value;
-  Sprite * m_checked_image;
+  std::unique_ptr<Sprite> m_checked_image;
 
 public:
   CheckBox(const std::string & label,
@@ -45,7 +44,6 @@ public:
            Font::font_style_t font_style = Font::FONT_BOLD);
   CheckBox(std::shared_ptr<Profile> profile,
            const xmlNode * checkBoxNode);
-  ~CheckBox() override;
 
   void Draw(const Point2i & mousePosition) override;
   Widget * Click(const Point2i &, uint) override { return this; };

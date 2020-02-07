@@ -189,9 +189,6 @@ Interface::~Interface()
   if (mask) delete mask;
   if (scratch) delete scratch;
 
-  if (clock_normal) delete clock_normal;
-  if (clock_emergency) delete clock_emergency;
-
   delete help;
 }
 
@@ -642,10 +639,10 @@ void Interface::UpdateTimer(uint utimer, bool emergency, bool reset_anim)
   Sprite *prev_clock = clock;
 
   if (emergency) {
-    clock = clock_emergency;
+    clock = clock_emergency.get();
     timer->SetColor(primary_red_color);
   } else {
-    clock = clock_normal;
+    clock = clock_normal.get();
     timer->SetColor(black_color);
   }
 
@@ -654,7 +651,7 @@ void Interface::UpdateTimer(uint utimer, bool emergency, bool reset_anim)
 
   if (prev_clock != clock || reset_anim) {
 
-    if (clock == clock_normal) {
+    if (clock == clock_normal.get()) {
       uint frame_delay = utimer * 1000 / clock->GetFrameCount();
       clock->SetFrameSpeed(frame_delay);
     }

@@ -190,8 +190,6 @@ WeaponsMenu::~WeaponsMenu()
     delete weapons_menu;
   if (tools_menu)
     delete tools_menu;
-  if (m_not_yet_available)
-    delete m_not_yet_available;
   if (nb_weapon_type)
     delete[] nb_weapon_type;
 }

@@ -24,12 +24,12 @@
 //-----------------------------------------------------------------------------
 #include "object/physical_obj.h"
 #include "sound/sound_sample.h"
+#include "graphic/sprite.h"
 
 #include <memory>
 
 class Team;
 class Character;
-class Sprite;
 class Surface;
 typedef struct _xmlNode xmlNode;
 class Action;
@@ -58,7 +58,7 @@ public:
 
 protected:
   bool parachute;
-  Sprite *anim;
+  std::unique_ptr<Sprite> anim;
   void Explode();
 
   void SignalGroundCollision(const Point2d& my_speed_before, const Double& contactAngle) override;

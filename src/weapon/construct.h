@@ -24,6 +24,7 @@
 #include "weapon.h"
 #include <WARMUX_base.h>
 #include <WARMUX_point.h>
+#include "graphic/sprite.h"
 
 class Sprite;
 struct WeaponConfig;
@@ -32,7 +33,7 @@ class Construct : public Weapon
 {
 private:
   bool target_chosen;
-  Sprite* construct_spr;
+  std::unique_ptr<Sprite> construct_spr;
   Double angle;
   Point2i dst;
 
@@ -46,7 +47,6 @@ protected:
 
 public:
   Construct();
-  ~Construct() override;
   void Draw() override;
   void ChooseTarget(Point2i mouse_pos) override;
 

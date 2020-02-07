@@ -26,12 +26,14 @@
 #include <WARMUX_singleton.h>
 //-----------------------------------------------------------------------------
 
+#include <memory>
+
 class Sprite;
 
 class CharacterCursor : public Singleton<CharacterCursor>
 {
-  Sprite *arrow_jump;
-  Sprite *arrow_change;
+  std::unique_ptr<Sprite> arrow_jump;
+  std::unique_ptr<Sprite> arrow_change;
 
   Sprite *arrow;
 
@@ -48,7 +50,6 @@ public:
 protected:
   friend class Singleton<CharacterCursor>;
   CharacterCursor();
-  ~CharacterCursor() override;
 };
 
 //-----------------------------------------------------------------------------

@@ -23,8 +23,8 @@
 #define PARACHUTE_H
 
 #include "weapon.h"
+#include "graphic/sprite.h"
 
-class Sprite;
 struct ParachuteConfig;
 
 //-----------------------------------------------------------------------------
@@ -35,7 +35,7 @@ class Parachute : public Weapon
     bool open;
     bool closing;
 
-    Sprite* img;
+    std::unique_ptr<Sprite> img;
   protected:
     bool m_used_this_turn;
     void p_Select() override;
@@ -44,7 +44,6 @@ class Parachute : public Weapon
     bool p_Shoot() override;
   public:
     Parachute();
-    ~Parachute() override;
     void Draw() override;
     bool ShouldBeDrawn() override { return false; };
 

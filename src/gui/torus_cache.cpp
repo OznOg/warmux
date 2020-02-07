@@ -30,8 +30,8 @@
 static int      ref_count = 0;
 static Surface *annulus_background = nullptr;
 static Surface *annulus_foreground = nullptr;
-static Sprite  *img_plus = nullptr;
-static Sprite  *img_minus = nullptr;
+static std::unique_ptr<Sprite> img_plus = nullptr;
+static std::unique_ptr<Sprite> img_minus = nullptr;
 static Color    progress_color;
 
 TorusCache::TorusCache(const std::string& resource_id, int bigr, int smallr)
@@ -73,8 +73,6 @@ TorusCache::~TorusCache()
   if (!ref_count) {
     delete annulus_background; annulus_background = nullptr;
     delete annulus_foreground; annulus_foreground = nullptr;
-    delete img_plus; img_plus = nullptr;
-    delete img_minus; img_minus = nullptr;
   }
 }
 

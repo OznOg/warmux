@@ -109,7 +109,7 @@ private:
   AttachMemberMap attached_members;
 
 protected:
-  Sprite*     spr;
+  std::unique_ptr<Sprite> spr;
   std::string name;
   MemberType  type;
   Point2i     anchor;

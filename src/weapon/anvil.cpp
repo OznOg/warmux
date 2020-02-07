@@ -102,7 +102,7 @@ void Anvil::SignalOutOfMap()
 void Anvil::Refresh()
 {
   if (merge_time && merge_time < GameTime::GetInstance()->Read()) {
-    GetWorld().MergeSprite(GetPosition(), image);
+    GetWorld().MergeSprite(GetPosition(), image.get());
     Ghost();
   } else {
     WeaponProjectile::Refresh();

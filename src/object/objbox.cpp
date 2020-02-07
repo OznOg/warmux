@@ -67,7 +67,6 @@ ObjBox::ObjBox(const std::string &name)
 
 ObjBox::~ObjBox()
 {
-  delete anim;
   Game::GetInstance()->SetCurrentBox(nullptr);
 }
 

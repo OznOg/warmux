@@ -62,13 +62,6 @@ void CheckBox::Init(uint width)
   size.y = Text::GetHeight();
 }
 
-CheckBox::~CheckBox()
-{
-  if (nullptr != m_checked_image) {
-    delete m_checked_image;
-  }
-}
-
 void CheckBox::Pack()
 {
   Text::SetMaxWidth(size.x - m_checked_image->GetWidth() -2);
@@ -110,7 +103,7 @@ bool CheckBox::LoadXMLConfiguration()
     }
   }
 
-  m_checked_image = new Sprite();
+  m_checked_image = std::unique_ptr<Sprite>();
   m_checked_image->AddFrame(picChecked.DisplayFormatAlpha());
   m_checked_image->AddFrame(picUnchecked.DisplayFormatAlpha());
 

@@ -86,10 +86,10 @@ public:
   std::string LoadImageFilename(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   Surface LoadImage(const std::shared_ptr<Profile> profile, const std::string& resource_name, bool alpha = true) const;
 
-  Sprite *LoadSprite(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
+  std::unique_ptr<Sprite> LoadSprite(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
 
   // the following method is usefull if you have direct access to the xml file
-  Sprite *LoadSprite(const xmlNode* sprite_elem, const std::string& resource_name, const std::string& main_folder) const;
+  std::unique_ptr<Sprite> LoadSprite(const xmlNode* sprite_elem, const std::string& resource_name, const std::string& main_folder) const;
 
   const xmlNode*  GetElement(const std::shared_ptr<Profile> profile, const std::string& ressource_type,
                              const std::string& ressource_name) const;
