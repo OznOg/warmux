@@ -54,7 +54,7 @@ BaseSnipeRifle::BaseSnipeRifle(Weapon_type type, const std::string &id)
 
   targeting_something = false;
   m_laser_image = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_laser"));
-  laser_beam_color = GetResourceManager().LoadColor(weapons_res_profile,m_id+"_laser_color");
+  laser_beam_color = weapons_res_profile->LoadColor(m_id + "_laser_color");
   laser_beam_end_color = laser_beam_color;
   laser_beam_end_color.SetAlpha(0);
 }

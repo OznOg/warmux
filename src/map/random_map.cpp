@@ -64,7 +64,7 @@ RandomMap::RandomMap(std::shared_ptr<Profile> profile, const int width, const in
   XmlReader::ReadDouble(profile->doc->GetRoot(), "border_size", border_size);
 
   // Loading resources
-  border_color = GetResourceManager().LoadColor(profile, "border_color");
+  border_color = profile->LoadColor("border_color");
   texture = GetResourceManager().LoadImage(profile, "texture");
   for (uint i = 0; i < number_of_element; i++) {
     std::stringstream ss;

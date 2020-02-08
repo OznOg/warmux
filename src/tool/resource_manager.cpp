@@ -48,21 +48,6 @@ ResourceManager::~ResourceManager()
   xmlCleanupParser();
 }
 
-Color ResourceManager::LoadColor(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
-{
-  const xmlNode* elem = profile->GetElement("color", resource_name);
-  if (!elem)
-    Error("ResourceManager: can't find color resource \""+resource_name+"\" in profile "+profile->filename);
-
-  uint chanel_color[4];
-  std::string tmp[4] = { "r", "g", "b", "a" };
-  for (int i = 0; i < 4; i++) {
-    if (!profile->doc->ReadUintAttr(elem, tmp[i], chanel_color[i]))
-      Error("ResourceManager: color resource \""+resource_name+"\" has no "+tmp[i]+" field in profile "+profile->filename);
-  }
-  return Color(chanel_color[0], chanel_color[1], chanel_color[2], chanel_color[3]);
-}
-
 Surface ResourceManager::LoadImage(const std::string& filename,
                                    bool alpha, bool set_colorkey, Uint32 colorkey) const
 {

@@ -88,7 +88,7 @@ void Water::Init()
 
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
-  type_color = new Color(GetResourceManager().LoadColor(res, "water_colors/" + water_type));
+  type_color = new Color(res->LoadColor("water_colors/" + water_type));
 #ifdef HAVE_HANDHELD
   surface = GetResourceManager().LoadImage(res, image, false);
   pattern.NewSurface(Point2i(PATTERN_WIDTH, PATTERN_HEIGHT),

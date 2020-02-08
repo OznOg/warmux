@@ -53,7 +53,7 @@ EnergyBar::EnergyBar(uint _x,
   for (uint i = 0; i < NB_OF_ENERGY_COLOR ;i++) {
     std::ostringstream color_name;
     color_name << "energy_bar/energy_color_" << energy_step[i] << "_percent";
-    Color colors_value = GetResourceManager().LoadColor(res, color_name.str());
+    Color colors_value = res->LoadColor(color_name.str());
 
     colors_value.SetAlpha(SDL_ALPHA_OPAQUE);
     ProcessThresholds(i, energy_step[i], colors_value);

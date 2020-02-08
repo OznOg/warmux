@@ -200,6 +200,21 @@ public:
       return mouse_cursor;
   }
 
+  Color LoadColor(const std::string& resource_name) const
+  {
+      const xmlNode* elem = GetElement("color", resource_name);
+      if (!elem)
+          Error("ResourceManager: can't find color resource \"" + resource_name + "\" in profile " + filename);
+
+      uint chanel_color[4];
+      std::string tmp[4] = { "r", "g", "b", "a" };
+      for (int i = 0; i < 4; i++) {
+          if (!doc->ReadUintAttr(elem, tmp[i], chanel_color[i]))
+              Error("ResourceManager: color resource \"" + resource_name + "\" has no " + tmp[i] + " field in profile " + filename);
+      }
+      return Color(chanel_color[0], chanel_color[1], chanel_color[2], chanel_color[3]);
+  }
+
   Profile(std::string path, std::string filename, std::unique_ptr<XmlReader> doc) :
            relative_path(path), filename(filename), doc(std::move(doc)) { }
   
@@ -235,7 +250,6 @@ public:
 
   std::shared_ptr<Profile> LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const;
 
-  Color LoadColor(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   std::string LoadImageFilename(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   Surface LoadImage(const std::shared_ptr<Profile> profile, const std::string& resource_name, bool alpha = true) const;
 };
@@ -244,7 +258,7 @@ inline ResourceManager& GetResourceManager() { return ResourceManager::GetRef();
 
 #define LOAD_RES_IMAGE(name) GetResourceManager().LoadImage(res, name)
 #define LOAD_RES_SPRITE(name) res->LoadSprite(name)
-#define LOAD_RES_COLOR(name) GetResourceManager().LoadColor(res, name)
+#define LOAD_RES_COLOR(name) res->LoadColor(name)
 #define LOAD_RES_POINT(name) res->LoadPoint2i(name)
 
 #endif /* _RESOURCE_MANAGER_H */
