@@ -171,9 +171,9 @@ WeaponsMenu::WeaponsMenu()
   m_not_yet_available = res->LoadSprite("interface/hourglass");
 
   // Polygon Size
-  Point2i size = LOAD_RES_POINT("interface/weapons_interface_size");
+  Point2i size = res->LoadPoint2i("interface/weapons_interface_size");
   weapons_menu = PolygonGenerator::GenerateDecoratedBox(size.x, size.y);
-  size = LOAD_RES_POINT("interface/tools_interface_size");
+  size = res->LoadPoint2i("interface/tools_interface_size");
   tools_menu = PolygonGenerator::GenerateDecoratedBox(size.x, size.y);
   // Setting colors
   Color plane_color = res->LoadColor("interface/background_color");

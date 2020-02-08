@@ -296,6 +296,4 @@ public:
 
 inline ResourceManager& GetResourceManager() { return ResourceManager::GetRef(); }
 
-#define LOAD_RES_POINT(name) res->LoadPoint2i(name)
-
 #endif /* _RESOURCE_MANAGER_H */
