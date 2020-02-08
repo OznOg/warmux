@@ -152,6 +152,17 @@ public:
       return elem;
   }
 
+  int LoadInt(const std::string& resource_name) const
+  {
+      int tmp = 0;
+      const xmlNode* elem = GetElement("int", resource_name);
+      if (!elem)
+          Error("ResourceManager: can't find int resource \"" + resource_name + "\" in profile " + filename);
+      if (!doc->ReadIntAttr(elem, "value", tmp))
+          Error("ResourceManager: int resource \"" + resource_name + "\" has no value field in profile " + filename);
+      return tmp;
+  }
+
   Profile(std::string path, std::string filename, std::unique_ptr<XmlReader> doc) :
            relative_path(path), filename(filename), doc(std::move(doc)) { }
   
@@ -189,7 +200,6 @@ public:
 
   MouseCursor LoadMouseCursor(const std::shared_ptr<Profile> profile, const std::string& resource_name, Mouse::pointer_t pointer_id) const;
   Color LoadColor(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
-  int LoadInt(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   Double LoadDouble(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   Point2i LoadPoint2i(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   Point2d LoadPoint2d(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;

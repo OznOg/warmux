@@ -460,7 +460,7 @@ void Config::LoadDefaultValue()
   Point2i tmp;
 
   //=== Default video value ===
-  int number_of_resolution_available = GetResourceManager().LoadInt(res, "default_video_mode/number_of_resolution_available");
+  int number_of_resolution_available = res->LoadInt("default_video_mode/number_of_resolution_available");
   for(int i = 1; i <= number_of_resolution_available; i++) {
     tmp = Point2i(0, 0);
     std::ostringstream section; section << "default_video_mode/" << i;
@@ -494,7 +494,7 @@ void Config::LoadDefaultValue()
 #endif
 
 #if 0 //== Team Color
-  int number_of_team_color = GetResourceManager().LoadInt(res, "team_colors/number_of_team_color");
+  int number_of_team_color = res->LoadInt("team_colors/number_of_team_color");
   for(int i = 1; i <= number_of_team_color; i++) {
     tmp = Point2i(0, 0);
     std::ostringstream section; section << "team_colors/" << i;

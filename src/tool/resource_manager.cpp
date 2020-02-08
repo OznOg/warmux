@@ -48,17 +48,6 @@ ResourceManager::~ResourceManager()
   xmlCleanupParser();
 }
 
-int ResourceManager::LoadInt(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
-{
-  int tmp = 0;
-  const xmlNode* elem = profile->GetElement("int", resource_name);
-  if (!elem)
-    Error("ResourceManager: can't find int resource \""+resource_name+"\" in profile "+profile->filename);
-  if (!profile->doc->ReadIntAttr(elem, "value", tmp))
-    Error("ResourceManager: int resource \""+resource_name+"\" has no value field in profile "+profile->filename);
-  return tmp;
-}
-
 Double ResourceManager::LoadDouble(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   Double tmp = ZERO;
