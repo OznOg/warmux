@@ -235,7 +235,7 @@ InfoMapAccessor *InfoMap::LoadData()
   }
 
   if (!random_generated) {
-    ground_filename = GetResourceManager().LoadImageFilename(res_profile, "map");
+    ground_filename = res_profile->LoadImageFilename("map");
   } else {
     ground_filename = GenerateMap(res_profile, island_type, img_sky.GetWidth(), img_sky.GetHeight());
   }

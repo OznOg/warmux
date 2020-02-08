@@ -215,6 +215,19 @@ public:
       return Color(chanel_color[0], chanel_color[1], chanel_color[2], chanel_color[3]);
   }
 
+  std::string LoadImageFilename(const std::string& resource_name) const
+  {
+      const xmlNode* elem = GetElement("surface", resource_name);
+      if (!elem)
+          Error("ResourceManager: can't find image resource \"" + resource_name + "\" in profile " + filename);
+
+      std::string filename;
+      if (!doc->ReadStringAttr(elem, "file", filename))
+          Error("ResourceManager: image resource \"" + resource_name + "\" has no file field in profile " + filename);
+
+      return relative_path + filename;
+  }
+
   Profile(std::string path, std::string filename, std::unique_ptr<XmlReader> doc) :
            relative_path(path), filename(filename), doc(std::move(doc)) { }
   
@@ -250,7 +263,6 @@ public:
 
   std::shared_ptr<Profile> LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const;
 
-  std::string LoadImageFilename(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   Surface LoadImage(const std::shared_ptr<Profile> profile, const std::string& resource_name, bool alpha = true) const;
 };
 

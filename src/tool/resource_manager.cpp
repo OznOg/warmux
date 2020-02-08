@@ -92,22 +92,9 @@ std::shared_ptr<Profile> ResourceManager::LoadXMLProfile(const std::string& xml_
   return profile;
 }
 
-std::string ResourceManager::LoadImageFilename(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
-{
-  const xmlNode* elem = profile->GetElement("surface", resource_name);
-  if (!elem)
-    Error("ResourceManager: can't find image resource \""+resource_name+"\" in profile "+profile->filename);
-
-  std::string filename;
-  if (!profile->doc->ReadStringAttr(elem, "file", filename))
-    Error("ResourceManager: image resource \""+resource_name+"\" has no file field in profile "+profile->filename);
-
-  return profile->relative_path+filename;
-}
-
 Surface ResourceManager::LoadImage(const std::shared_ptr<Profile> profile, const std::string& resource_name, bool alpha) const
 {
-  std::string    filename = LoadImageFilename(profile, resource_name);
+  std::string    filename = profile->LoadImageFilename(resource_name);
   Surface        image    = LoadImage(filename, alpha);
   const xmlNode *elem     = profile->GetElement("surface", resource_name);
   std::string    str;
