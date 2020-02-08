@@ -289,8 +289,6 @@ class ResourceManager : public Singleton<ResourceManager>
 
 public:
   void SetDataPath(const std::string& path) { base_path = path; }
-  Surface LoadImage(const std::string& ressource_str, bool alpha = false,
-                    bool set_colorkey = false, Uint32 colorkey = 0) const;
 
   std::shared_ptr<Profile> LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const;
 };
