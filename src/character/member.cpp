@@ -60,10 +60,10 @@ Member::Member(const xmlNode *     xml,
   , anchor(0,0)
 {
   XmlReader::ReadStringAttr(xml, "name", name);
-  ASSERT(name!="");
+  ASSERT(name != "");
 
   // Load the sprite
-  spr = GetResourceManager().LoadSprite(xml, name, main_folder);
+  spr = LoadSprite(xml, name, main_folder);
   spr->EnableCaches(true, 0);
 
   // Get the various option

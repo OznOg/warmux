@@ -55,7 +55,7 @@ Construct::Construct() : Weapon(WEAPON_CONSTRUCT, "construct",
 {
   UpdateTranslationStrings();
 
-  construct_spr = GetResourceManager().LoadSprite( weapons_res_profile, "construct_spr");
+  construct_spr = weapons_res_profile->LoadSprite("construct_spr");
   // The 12 is the result of (TWO * PI) / DELTA_ANGLE
   construct_spr->EnableCaches(false, 12);
   m_name = _("Construct");

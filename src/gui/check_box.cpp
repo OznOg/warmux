@@ -55,7 +55,7 @@ CheckBox::CheckBox(std::shared_ptr<Profile> profile,
 void CheckBox::Init(uint width)
 {
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  m_checked_image = GetResourceManager().LoadSprite(res, "menu/check");
+  m_checked_image = res->LoadSprite("menu/check");
 
   position = Point2i(W_UNDEF, W_UNDEF);
   size.x = width;

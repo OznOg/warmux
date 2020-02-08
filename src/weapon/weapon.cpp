@@ -109,7 +109,7 @@ Weapon::Weapon(Weapon_type type,
 
   mouse_character_selection = true;
 
-  const xmlNode* elem = GetResourceManager().GetElement(weapons_res_profile, "position", m_id);
+  const xmlNode* elem = weapons_res_profile->GetElement("position", m_id);
   if (elem) {
     // E.g. <position name="my_weapon_id" origin="hand" x="-1" y="0" />
     std::string origin_xml;
@@ -128,7 +128,7 @@ Weapon::Weapon(Weapon_type type,
     ASSERT(false);
   }
 
-  elem = GetResourceManager().GetElement(weapons_res_profile, "hole", m_id);
+  elem = weapons_res_profile->GetElement("hole", m_id);
   if (elem) {
     // E.g. <hole name="my_weapon_id" dx="-1" dy="0" />
     XmlReader::ReadIntAttr(elem, "dx", hole_delta.x);

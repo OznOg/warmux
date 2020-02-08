@@ -51,7 +51,7 @@ ResourceManager::~ResourceManager()
 int ResourceManager::LoadInt(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   int tmp = 0;
-  const xmlNode* elem = GetElement(profile, "int", resource_name);
+  const xmlNode* elem = profile->GetElement("int", resource_name);
   if (!elem)
     Error("ResourceManager: can't find int resource \""+resource_name+"\" in profile "+profile->filename);
   if (!profile->doc->ReadIntAttr(elem, "value", tmp))
@@ -62,7 +62,7 @@ int ResourceManager::LoadInt(const std::shared_ptr<Profile> profile, const std::
 Double ResourceManager::LoadDouble(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   Double tmp = ZERO;
-  const xmlNode* elem = GetElement(profile, "Double", resource_name);
+  const xmlNode* elem = profile->GetElement("Double", resource_name);
   if (!elem)
     Error("ResourceManager: can't find Double resource \""+resource_name+"\" in profile "+profile->filename);
   if (!profile->doc->ReadDoubleAttr(elem, "value", tmp))
@@ -72,7 +72,7 @@ Double ResourceManager::LoadDouble(const std::shared_ptr<Profile> profile, const
 
 Color ResourceManager::LoadColor(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
-  const xmlNode* elem = GetElement(profile, "color", resource_name);
+  const xmlNode* elem = profile->GetElement("color", resource_name);
   if (!elem)
     Error("ResourceManager: can't find color resource \""+resource_name+"\" in profile "+profile->filename);
 
@@ -87,7 +87,7 @@ Color ResourceManager::LoadColor(const std::shared_ptr<Profile> profile, const s
 
 Point2i ResourceManager::LoadPoint2i(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
-  const xmlNode* elem = GetElement(profile, "point", resource_name);
+  const xmlNode* elem = profile->GetElement("point", resource_name);
   if (!elem)
     Error("ResourceManager: can't find point resource \""+resource_name+"\" in profile "+profile->filename);
 
@@ -102,7 +102,7 @@ Point2i ResourceManager::LoadPoint2i(const std::shared_ptr<Profile> profile, con
 
 Point2d ResourceManager::LoadPoint2d(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
-  const xmlNode* elem = GetElement(profile, "point", resource_name);
+  const xmlNode* elem = profile->GetElement("point", resource_name);
   if (!elem)
     Error("ResourceManager: can't find point resource \""+resource_name+"\" in profile "+profile->filename);
 
@@ -118,7 +118,7 @@ Point2d ResourceManager::LoadPoint2d(const std::shared_ptr<Profile> profile, con
 MouseCursor ResourceManager::LoadMouseCursor(const std::shared_ptr<Profile> profile, const std::string& resource_name,
                                              Mouse::pointer_t _pointer_id) const
 {
-  const xmlNode* elem = GetElement(profile, "mouse_cursor", resource_name);
+  const xmlNode* elem = profile->GetElement("mouse_cursor", resource_name);
   if (!elem)
     Error("ResourceManager: can't find mouse cursor resource \""+resource_name+"\" in profile "+profile->filename);
   std::string filename;
@@ -176,35 +176,14 @@ std::shared_ptr<Profile> ResourceManager::LoadXMLProfile(const std::string& xml_
     return nullptr;
   }
 
-  auto profile = std::make_shared<Profile>(xml_filename, std::move(doc));
-  profile->filename = xml_filename;
-  profile->relative_path = path;
+  auto profile = std::make_shared<Profile>(path, xml_filename, std::move(doc));
   profiles[xml_filename] = profile;
   return profile;
 }
 
-const xmlNode*  ResourceManager::GetElement(const std::shared_ptr<Profile> profile, const std::string& resource_type,
-                                            const std::string& resource_name) const
-{
-  const xmlNode* elem = profile->doc->Access(profile->doc->GetRoot(), resource_type, resource_name);
-
-  if (!elem) {
-    std::string r_name = resource_name;
-    const xmlNode* cur_elem = profile->doc->GetRoot();
-
-    while((r_name.find("/") != r_name.npos) && (cur_elem != nullptr)) {
-      cur_elem = profile->doc->Access(cur_elem, "section", r_name.substr(0, r_name.find("/")));
-      r_name = r_name.substr(r_name.find("/") + 1, r_name.length());
-    }
-    if (cur_elem)
-      elem = profile->doc->Access(cur_elem, resource_type, r_name);
-  }
-  return elem;
-}
-
 std::string ResourceManager::LoadImageFilename(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
-  const xmlNode* elem = GetElement(profile, "surface", resource_name);
+  const xmlNode* elem = profile->GetElement("surface", resource_name);
   if (!elem)
     Error("ResourceManager: can't find image resource \""+resource_name+"\" in profile "+profile->filename);
 
@@ -219,7 +198,7 @@ Surface ResourceManager::LoadImage(const std::shared_ptr<Profile> profile, const
 {
   std::string    filename = LoadImageFilename(profile, resource_name);
   Surface        image    = LoadImage(filename, alpha);
-  const xmlNode *elem     = GetElement(profile, "surface", resource_name);
+  const xmlNode *elem     = profile->GetElement("surface", resource_name);
   std::string    str;
 
   if (XmlReader::ReadStringAttr(elem, "size", str)) {
@@ -248,110 +227,4 @@ Surface ResourceManager::LoadImage(const std::shared_ptr<Profile> profile, const
   // TODO load more properties in xml : alpha, colorkey....
   //      By now force alpha and no colorkey
 }
-
-std::unique_ptr<Sprite> ResourceManager::LoadSprite(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
-{
-  const xmlNode* elem_sprite = GetElement(profile, "sprite", resource_name);
-  if (!elem_sprite)
-    Error("ResourceManager: can't find sprite resource \""+resource_name+"\" in profile "+profile->filename);
-
-  return LoadSprite(elem_sprite, resource_name, profile->relative_path);
-}
-
-std::unique_ptr<Sprite> ResourceManager::LoadSprite(const xmlNode* elem_sprite, const std::string& resource_name,
-                                    const std::string& main_folder) const
-{
-  const xmlNode* elem_image = XmlReader::GetMarker(elem_sprite, "image");
-
-  if (!elem_image)
-    Error("ResourceManager: can't load (sprite) resource " + resource_name);
-
-  std::string image_filename;
-  if (!XmlReader::ReadStringAttr(elem_image, "file", image_filename))
-    Error("ResourceManager: can't load (sprite) resource " + resource_name);
-
-  // TODO load more properties in xml : alpha, colorkey....
-  //      By now force alpha and no colorkey
-
-  bool alpha = true;
-  std::unique_ptr<Sprite> sprite = nullptr;
-
-  const xmlNode* elem_grid = XmlReader::GetMarker(elem_image, "grid");
-
-  if (!elem_grid) {
-    ASSERT(resource_name != "barrel");
-    // No grid element, Load the Sprite like a normal image
-    Surface surface = LoadImage(main_folder+image_filename, alpha);
-    sprite = std::make_unique<Sprite>();
-    sprite->Init(surface, surface.GetSize(), 1, 1);
-  } else {
-    Point2i frameSize, offset;
-    int nb_frames_x = 1;
-    int nb_frames_y = 1;
-    std::string str;
-
-    // size is required
-    if (!XmlReader::ReadStringAttr(elem_grid, "size", str))
-      Error("ResourceManager: can't load sprite resource \""+resource_name+"\", no attribute size");
-    if (sscanf(str.c_str(), "%i,%i", &frameSize.x, &frameSize.y) != 2)
-      Error("ResourceManager: can't load sprite resource \""+resource_name+"\", malformed size attribute " + str);
-
-    //array is not required, default is 1,1
-    if (XmlReader::ReadStringAttr(elem_grid, "array", str)) {
-      if (sscanf(str.c_str(), "%i,%i", &nb_frames_x, &nb_frames_y) != 2)
-        Error("ResourceManager: can't load (sprite) resource "+resource_name+"\", malformed array attribute " + str);
-      if (nb_frames_x <= 0)
-        nb_frames_x = 1;
-      if (nb_frames_y <= 0)
-        nb_frames_y = 1;
-    }
-
-    Surface surface = LoadImage(main_folder+image_filename, alpha);
-    sprite = std::make_unique<Sprite>();
-    sprite->Init(surface, frameSize, nb_frames_x, nb_frames_y);
-  }
-
-  ASSERT(sprite != nullptr);
-
-  const xmlNode* elem = XmlReader::GetMarker(elem_sprite, "animation");
-  if (elem != nullptr) {
-    std::string str;
-    // Set the frame speed
-    if (XmlReader::ReadStringAttr(elem, "speed", str))
-      sprite->SetFrameSpeed(atoi(str.c_str()));
-
-    if (XmlReader::ReadStringAttr(elem, "loop_mode", str)) {
-      bool loop_value;
-      if (str2bool(str, loop_value))
-        sprite->animation.SetLoopMode(loop_value);
-      else if (str == "pingpong")
-        sprite->animation.SetPingPongMode(true);
-      else
-        Error("ResourceManager: unrecognized xml option loop_mode=\"" +str+ "\" in resource " + resource_name);
-    }
-
-    if (XmlReader::ReadStringAttr(elem, "loop_wait", str)) {
-      sprite->animation.SetLoopWait(atoi(str.c_str()));
-    }
-
-    if (XmlReader::ReadStringAttr(elem, "loop_wait_random", str)) {
-      sprite->animation.SetLoopWaitRandom(atoi(str.c_str()));
-    }
-
-
-  }
-  return sprite;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 

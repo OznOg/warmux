@@ -46,7 +46,7 @@ Parachute::Parachute() : Weapon(WEAPON_PARACHUTE, "parachute", new ParachuteConf
   m_initial_nb_ammo = 2;
   use_unit_on_first_shoot = false;
   m_used_this_turn = false;
-  img = GetResourceManager().LoadSprite(weapons_res_profile, "parachute_sprite");
+  img = weapons_res_profile->LoadSprite("parachute_sprite");
 }
 
 void Parachute::UpdateTranslationStrings()

@@ -28,7 +28,7 @@ Button::Button(const std::shared_ptr<Profile> res_profile,
                const std::string & resource_id,
                bool _img_scale):
   img_scale(_img_scale),
-  image(GetResourceManager().LoadSprite(res_profile, resource_id))
+  image(res_profile->LoadSprite(resource_id))
 {
   position = Point2i(-1, -1);
   size = image->GetSize();

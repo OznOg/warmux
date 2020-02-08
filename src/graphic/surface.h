@@ -54,6 +54,7 @@ public:
    */
   explicit Surface(SDL_Surface *sdl_surface) : surface(sdl_surface, SDL_FreeSurface) { }
   explicit Surface(std::weak_ptr<SDL_Surface> sdl_surface) : surface(sdl_surface) { }
+
   /**
    * Constructor building a surface object using the NewSurface function.
    *
@@ -174,5 +175,17 @@ public:
 
   Surface Mirror();
 };
+
+
+// FIXME make a constructor from this
+static inline Surface LoadImage(const std::string& _filename, bool alpha = false, bool set_colorkey = false, Uint32 colorkey = 0)
+{
+    Surface surface(_filename.c_str());
+
+    if (set_colorkey)
+        surface.SetColorKey(SDL_SRCCOLORKEY, colorkey);
+
+    return (alpha) ? surface.DisplayFormatAlpha() : surface.DisplayFormat();
+}
 
 #endif

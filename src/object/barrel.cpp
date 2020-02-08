@@ -31,7 +31,7 @@
 PetrolBarrel::PetrolBarrel() : PhysicalObj("barrel", Config::GetInstance()->GetObjectConfig("barrel", ""))
 {
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  img = GetResourceManager().LoadSprite(res, "object/barrel");
+  img = res->LoadSprite("object/barrel");
   ASSERT(img);
 
   m_energy = 25;

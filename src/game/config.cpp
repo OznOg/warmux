@@ -470,14 +470,14 @@ void Config::LoadDefaultValue()
   }
 
   //== Default keyboard key
-  const xmlNode *node = GetResourceManager().GetElement(res, "section", "default_keyboard_layout");
+  const xmlNode *node = res->GetElement("section", "default_keyboard_layout");
   if (node) {
     Keyboard::GetInstance()->SetConfig(node);
   }
 
 #ifdef ENABLE_NLS
   //=== Default fonts value ===
-  node = GetResourceManager().GetElement(res, "section", "default_language_fonts");
+  node = res->GetElement("section", "default_language_fonts");
   if (node) {
     xmlNodeArray list = XmlReader::GetNamedChildren(node, "language");
     for (auto & it : list) {

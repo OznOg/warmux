@@ -145,7 +145,7 @@ WeaponProjectile::WeaponProjectile(const std::string &name,
 
   auto weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
 
-  image = GetResourceManager().LoadSprite(weapons_res_profile, name);
+  image = weapons_res_profile->LoadSprite(name);
   SetSize(image->GetSize());
 
   // Set rectangle test

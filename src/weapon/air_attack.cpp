@@ -75,7 +75,7 @@ Plane::Plane(AirAttackConfig &p_cfg) :
 
   auto weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
 
-  image = GetResourceManager().LoadSprite(weapons_res_profile, "air_attack_plane");
+  image = weapons_res_profile->LoadSprite("air_attack_plane");
   image->EnableCaches(true, 0);
   SetSize(image->GetSize());
   obus_dx = 100;
