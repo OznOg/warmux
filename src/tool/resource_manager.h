@@ -231,7 +231,7 @@ public:
   Surface LoadImage(const std::string& resource_name, bool alpha = true) const
   {
       std::string    _filename = LoadImageFilename(resource_name);
-      Surface        image    = LoadImage(_filename, alpha);
+      Surface        image    = ::LoadImage(_filename, alpha);
       const xmlNode *elem     = GetElement("surface", resource_name);
       std::string    str;
 
