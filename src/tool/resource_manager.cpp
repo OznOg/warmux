@@ -39,14 +39,6 @@
 
 ResourceManager::ProfileMap ResourceManager::profiles;
 
-ResourceManager::ResourceManager() : base_path("")
-{
-}
-
-ResourceManager::~ResourceManager()
-{
-}
-
 std::shared_ptr<Profile> ResourceManager::LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const
 {
   /* Nex test may create a empt week_ptr, but this is harmless as it will be

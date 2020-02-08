@@ -280,12 +280,12 @@ public:
 
 class ResourceManager : public Singleton<ResourceManager>
 {
-  ResourceManager();
-  ~ResourceManager() override;
+  ResourceManager() = default;
+  ~ResourceManager() override = default;
   friend class Singleton<ResourceManager>;
   typedef std::map<std::string, std::weak_ptr<Profile>> ProfileMap;
   static ProfileMap profiles;
-  std::string base_path;
+  std::string base_path = "";
 
 public:
   void SetDataPath(const std::string& path) { base_path = path; }
