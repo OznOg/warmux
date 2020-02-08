@@ -56,7 +56,7 @@ public:
     SetBorder(5*factor);
 
     // Set the icon
-    icon = LOAD_RES_IMAGE("menu/" + name);
+    icon = res->LoadImage("menu/" + name);
     pic  = new PictureWidget(icon);
     AddWidget(pic);
 

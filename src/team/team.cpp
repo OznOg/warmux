@@ -91,10 +91,10 @@ Team::Team(XmlReader& doc, std::shared_ptr<Profile> res,
   team_color = LOAD_RES_COLOR("teamcolor");
 
   // Load flag
-  flag = LOAD_RES_IMAGE("flag");
+  flag = res->LoadImage("flag");
   mini_flag = flag.RotoZoom(ZERO, ONE_HALF, ONE_HALF);
-  death_flag = LOAD_RES_IMAGE("death_flag");
-  big_flag = LOAD_RES_IMAGE("big_flag");
+  death_flag = res->LoadImage("death_flag");
+  big_flag = res->LoadImage("big_flag");
 
   // Get sound profile
   if (!XmlReader::ReadString(doc.GetRoot(), "sound_profile", m_sound_profile))

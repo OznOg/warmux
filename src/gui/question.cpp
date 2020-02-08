@@ -177,7 +177,7 @@ void Question::Set (const std::string &pmessage,
 
   if (bg_sprite != "") {
     auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-    background = new Sprite(LOAD_RES_IMAGE(bg_sprite));
+    background = new Sprite(res->LoadImage(bg_sprite));
     background->ScaleSize(GetMainWindow().GetSize());
   } else {
     text->SetMaxWidth(GetMainWindow().GetWidth()/2);

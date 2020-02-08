@@ -52,7 +52,7 @@ void WeaponStrengthBar::InitPos(uint px, uint py, uint pwidth, uint pheight)
   ProgressBar::InitPos(px, py, pwidth, pheight);
 
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  last_fire = std::make_unique<Sprite>(LOAD_RES_IMAGE("interface/weapon_strength_bar_last_fire"));
+  last_fire = std::make_unique<Sprite>(res->LoadImage("interface/weapon_strength_bar_last_fire"));
 
   m_box = std::unique_ptr<DecoratedBox>(PolygonGenerator::GenerateDecoratedBox(pwidth, pheight));
   m_box->SetStyle(DecoratedBox::STYLE_SQUARE);

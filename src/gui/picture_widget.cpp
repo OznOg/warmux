@@ -170,7 +170,7 @@ void PictureWidget::Draw(const Point2i &/*mousePosition*/)
     if (name.empty())
       return;
     auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-    SetSurface(LOAD_RES_IMAGE(name), type);
+    SetSurface(res->LoadImage(name), type);
 
     // Needed to set the resizing
     ApplyScaling(type);

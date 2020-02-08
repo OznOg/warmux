@@ -46,7 +46,7 @@ WeaponHelp::WeaponHelp()
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
   // Polygon Size
-  background = LOAD_RES_IMAGE("interface/background_help");
+  background = res->LoadImage("interface/background_help");
 
   help.SetMaxWidth(background.GetWidth() - 10 - ICON_SIZE - 2*5);
 }

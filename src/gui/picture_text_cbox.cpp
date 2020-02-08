@@ -41,10 +41,10 @@ PictureTextCBox::PictureTextCBox(const std::string & label,
 {
   SetFont(dark_gray_color, fsize, Font::FONT_NORMAL, false);
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  m_image = LOAD_RES_IMAGE(resource_id);
-  m_enabled = LOAD_RES_IMAGE("menu/enabled");
-  m_disabled_front = LOAD_RES_IMAGE("menu/disabled_front");
-  m_disabled_back = LOAD_RES_IMAGE("menu/disabled_back");
+  m_image = res->LoadImage(resource_id);
+  m_enabled = res->LoadImage("menu/enabled");
+  m_disabled_front = res->LoadImage("menu/disabled_front");
+  m_disabled_back = res->LoadImage("menu/disabled_back");
   m_value = value;
 
   Text::SetMaxWidth(size.x);

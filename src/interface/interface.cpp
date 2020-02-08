@@ -54,7 +54,7 @@
 void Interface::LoadData()
 {
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  Surface tmp     = LOAD_RES_IMAGE("interface/background_interface");
+  Surface tmp     = res->LoadImage("interface/background_interface");
 
   FreeDrawElements();
 
@@ -69,11 +69,11 @@ void Interface::LoadData()
   if (last_width < tmp.GetWidth()+20) {
     zoom            = last_width / (float)(tmp.GetWidth()+20);
     default_toolbar = tmp.RotoZoom(0.0, zoom, zoom);
-    small_interface = LOAD_RES_IMAGE("interface/small_background_interface").RotoZoom(0.0, zoom, zoom);
+    small_interface = res->LoadImage("interface/small_background_interface").RotoZoom(0.0, zoom, zoom);
     if (replay) {
-      replay_toolbar = LOAD_RES_IMAGE("interface/background_replay").RotoZoom(0.0, zoom, zoom);
+      replay_toolbar = res->LoadImage("interface/background_replay").RotoZoom(0.0, zoom, zoom);
     } else {
-      control_toolbar = LOAD_RES_IMAGE("interface/background_control_interface").RotoZoom(0.0, zoom, zoom);
+      control_toolbar = res->LoadImage("interface/background_control_interface").RotoZoom(0.0, zoom, zoom);
     }
     clock_normal->Scale(zoom, zoom);
     clock_emergency->Scale(zoom, zoom);
@@ -82,11 +82,11 @@ void Interface::LoadData()
     zoom            = 1.0f;
     default_toolbar = tmp;
     if (replay) {
-      replay_toolbar = LOAD_RES_IMAGE("interface/background_replay");
+      replay_toolbar = res->LoadImage("interface/background_replay");
     } else {
-      control_toolbar = LOAD_RES_IMAGE("interface/background_control_interface");
+      control_toolbar = res->LoadImage("interface/background_control_interface");
     }
-    small_interface = LOAD_RES_IMAGE("interface/small_background_interface");
+    small_interface = res->LoadImage("interface/small_background_interface");
   }
   clock_width = 70*zoom+0.5f;
 #if defined(ANDROID) || defined (__SYMBIAN32__)

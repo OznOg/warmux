@@ -44,9 +44,9 @@ TorusCache::TorusCache(const std::string& resource_id, int bigr, int smallr)
 
   // Load the shared resources
   if (!annulus_background)
-    annulus_background = new Surface(LOAD_RES_IMAGE("menu/annulus_background"));
+    annulus_background = new Surface(res->LoadImage("menu/annulus_background"));
   if (!annulus_foreground)
-    annulus_foreground = new Surface(LOAD_RES_IMAGE("menu/annulus_foreground"));
+    annulus_foreground = new Surface(res->LoadImage("menu/annulus_foreground"));
   if (!img_plus)
     img_plus = LOAD_RES_SPRITE("menu/big_plus");
   if (!img_minus)
@@ -56,7 +56,7 @@ TorusCache::TorusCache(const std::string& resource_id, int bigr, int smallr)
   ref_count++;
 
   // Now load own values
-  m_image = LOAD_RES_IMAGE(resource_id);
+  m_image = res->LoadImage(resource_id);
   m_plus = new Sprite(*img_plus);
   m_minus = new Sprite(*img_minus);
 }

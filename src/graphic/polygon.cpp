@@ -610,15 +610,15 @@ void GenerateStyledBorder(Surface & source, DecoratedBox::Style style)
   }
 
   // styled box
-  rounding_style[1][2] = LOAD_RES_IMAGE("interface/"+style_str+"_bottom");
-  rounding_style[0][2] = LOAD_RES_IMAGE("interface/"+style_str+"_bottom_left");
-  rounding_style[2][2] = LOAD_RES_IMAGE("interface/"+style_str+"_bottom_right");
-  rounding_style[1][0] = LOAD_RES_IMAGE("interface/"+style_str+"_top");
-  rounding_style[0][0] = LOAD_RES_IMAGE("interface/"+style_str+"_top_left");
-  rounding_style[2][0] = LOAD_RES_IMAGE("interface/"+style_str+"_top_right");
-  rounding_style[0][1] = LOAD_RES_IMAGE("interface/"+style_str+"_left");
-  rounding_style[2][1] = LOAD_RES_IMAGE("interface/"+style_str+"_right");
-  rounding_style[1][1] = LOAD_RES_IMAGE("interface/"+style_str+"_center");
+  rounding_style[1][2] = res->LoadImage("interface/"+style_str+"_bottom");
+  rounding_style[0][2] = res->LoadImage("interface/"+style_str+"_bottom_left");
+  rounding_style[2][2] = res->LoadImage("interface/"+style_str+"_bottom_right");
+  rounding_style[1][0] = res->LoadImage("interface/"+style_str+"_top");
+  rounding_style[0][0] = res->LoadImage("interface/"+style_str+"_top_left");
+  rounding_style[2][0] = res->LoadImage("interface/"+style_str+"_top_right");
+  rounding_style[0][1] = res->LoadImage("interface/"+style_str+"_left");
+  rounding_style[2][1] = res->LoadImage("interface/"+style_str+"_right");
+  rounding_style[1][1] = res->LoadImage("interface/"+style_str+"_center");
   for (j=0; j<3; j++)
     for (i=0; i<3; i++)
       rounding_style[j][i].SetAlpha(0, 0);

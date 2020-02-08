@@ -57,15 +57,15 @@ TeamBox::TeamBox(const std::string& _player_name, const Point2i& _size, uint g)
 
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
 
-  player_local[0] = LOAD_RES_IMAGE("menu/player_local_human");
-  player_local[1] = LOAD_RES_IMAGE("menu/player_local_ai");
-  player_local[2] = LOAD_RES_IMAGE("menu/player_local_ai_dumb");
-  player_local[3] = LOAD_RES_IMAGE("menu/player_local_ai_strong");
+  player_local[0] = res->LoadImage("menu/player_local_human");
+  player_local[1] = res->LoadImage("menu/player_local_ai");
+  player_local[2] = res->LoadImage("menu/player_local_ai_dumb");
+  player_local[3] = res->LoadImage("menu/player_local_ai_strong");
 
-  player_remote[0] = LOAD_RES_IMAGE("menu/player_remote_human");
-  player_remote[1] = LOAD_RES_IMAGE("menu/player_remote_ai");
-  player_remote[2] = LOAD_RES_IMAGE("menu/player_remote_ai_dumb");
-  player_remote[3] = LOAD_RES_IMAGE("menu/player_remote_ai_strong");
+  player_remote[0] = res->LoadImage("menu/player_remote_human");
+  player_remote[1] = res->LoadImage("menu/player_remote_ai");
+  player_remote[2] = res->LoadImage("menu/player_remote_ai_dumb");
+  player_remote[3] = res->LoadImage("menu/player_remote_ai_strong");
 
   int width = _size.x - (CHAR_COUNT_WIDGET_SIZE+2*margin+2*border_size);
   Box * tmp_player_box = new VBox(_size.y-2*border_size, false, false, false);
