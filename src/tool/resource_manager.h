@@ -152,6 +152,21 @@ public:
       return elem;
   }
 
+  Point2i LoadPoint2i(const std::string& resource_name) const
+  {
+      const xmlNode* elem = GetElement("point", resource_name);
+      if (!elem)
+          Error("ResourceManager: can't find point resource \"" + resource_name + "\" in profile " + filename);
+
+      uint point[2];
+      std::string tmp[2] = { "x", "y" };
+      for (int i = 0; i < 2; i++) {
+          if (!doc->ReadUintAttr(elem, tmp[i], point[i]))
+              Error("ResourceManager: point resource \"" + resource_name +"\" has no " + tmp[i] +" field in profile " + filename);
+      }
+      return Point2i(point[0], point[1]);
+  }
+
   int LoadInt(const std::string& resource_name) const
   {
       int tmp = 0;
@@ -201,7 +216,6 @@ public:
   MouseCursor LoadMouseCursor(const std::shared_ptr<Profile> profile, const std::string& resource_name, Mouse::pointer_t pointer_id) const;
   Color LoadColor(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   Double LoadDouble(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
-  Point2i LoadPoint2i(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   Point2d LoadPoint2d(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   std::string LoadImageFilename(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   Surface LoadImage(const std::shared_ptr<Profile> profile, const std::string& resource_name, bool alpha = true) const;
@@ -212,6 +226,6 @@ inline ResourceManager& GetResourceManager() { return ResourceManager::GetRef();
 #define LOAD_RES_IMAGE(name) GetResourceManager().LoadImage(res, name)
 #define LOAD_RES_SPRITE(name) res->LoadSprite(name)
 #define LOAD_RES_COLOR(name) GetResourceManager().LoadColor(res, name)
-#define LOAD_RES_POINT(name) GetResourceManager().LoadPoint2i(res, name)
+#define LOAD_RES_POINT(name) res->LoadPoint2i(name)
 
 #endif /* _RESOURCE_MANAGER_H */

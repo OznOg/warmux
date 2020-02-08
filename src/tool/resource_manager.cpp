@@ -74,21 +74,6 @@ Color ResourceManager::LoadColor(const std::shared_ptr<Profile> profile, const s
   return Color(chanel_color[0], chanel_color[1], chanel_color[2], chanel_color[3]);
 }
 
-Point2i ResourceManager::LoadPoint2i(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
-{
-  const xmlNode* elem = profile->GetElement("point", resource_name);
-  if (!elem)
-    Error("ResourceManager: can't find point resource \""+resource_name+"\" in profile "+profile->filename);
-
-  uint point[2];
-  std::string tmp[2] = { "x", "y" };
-  for (int i = 0; i < 2; i++) {
-    if (!profile->doc->ReadUintAttr(elem, tmp[i], point[i]))
-      Error("ResourceManager: point resource \""+resource_name+"\" has no "+tmp[i]+" field in profile "+profile->filename);
-  }
-  return Point2i(point[0], point[1]);
-}
-
 Point2d ResourceManager::LoadPoint2d(const std::shared_ptr<Profile> profile, const std::string& resource_name) const
 {
   const xmlNode* elem = profile->GetElement("point", resource_name);

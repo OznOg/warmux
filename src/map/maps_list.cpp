@@ -173,8 +173,8 @@ bool InfoMap::ProcessXmlData(const xmlNode *xml)
   bool add_pad = false;
   XmlReader::ReadBool(xml, "add_pad", add_pad);
   if (is_opened && add_pad) {
-    upper_left_pad = GetResourceManager().LoadPoint2i(res_profile, "upper_left_pad");
-    lower_right_pad = GetResourceManager().LoadPoint2i(res_profile, "lower_right_pad");
+    upper_left_pad = res_profile->LoadPoint2i("upper_left_pad");
+    lower_right_pad = res_profile->LoadPoint2i("lower_right_pad");
   }
 
   const xmlNode* xmlwind = XmlReader::GetMarker(xml, "wind");

@@ -464,7 +464,7 @@ void Config::LoadDefaultValue()
   for(int i = 1; i <= number_of_resolution_available; i++) {
     tmp = Point2i(0, 0);
     std::ostringstream section; section << "default_video_mode/" << i;
-    tmp = GetResourceManager().LoadPoint2i(res, section.str());
+    tmp = res->LoadPoint2i(section.str());
     if(tmp.GetX() > 0 && tmp.GetY() > 0)
       resolution_available.push_back(tmp);
   }
@@ -498,7 +498,7 @@ void Config::LoadDefaultValue()
   for(int i = 1; i <= number_of_team_color; i++) {
     tmp = Point2i(0, 0);
     std::ostringstream section; section << "team_colors/" << i;
-    tmp = GetResourceManager().LoadPoint2i(res, section.str());
+    tmp = res->LoadPoint2i(section.str());
     if(tmp.GetX() > 0 && tmp.GetY() > 0)
       resolution_available.push_back(tmp);
   }
