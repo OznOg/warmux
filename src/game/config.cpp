@@ -482,10 +482,10 @@ void Config::LoadDefaultValue()
     xmlNodeArray list = XmlReader::GetNamedChildren(node, "language");
     for (auto & it : list) {
       std::string lang, font;
-      if (res->doc->ReadStringAttr(it, "name", lang) &&
-         res->doc->ReadStringAttr(it, "file", font)) {
+      if (res->GetXMLDocument()->ReadStringAttr(it, "name", lang) &&
+         res->GetXMLDocument()->ReadStringAttr(it, "file", font)) {
         bool rel = false;
-        res->doc->ReadBoolAttr(it, "relative", rel);
+        res->GetXMLDocument()->ReadBoolAttr(it, "relative", rel);
         fonts[lang] = (rel) ? font_dir + font : font;
         //std::cout << "Language " << lang << ": " << fonts[lang] << std::endl;
       }

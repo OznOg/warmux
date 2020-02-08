@@ -273,8 +273,9 @@ public:
 
   XmlReader * GetXMLDocument(void) const { return this->doc.get(); }
 
-  std::string relative_path;
-  std::string filename;
+  const std::string relative_path;
+  const std::string filename;
+private:
   std::unique_ptr<XmlReader> doc; //TODO move to private
 };
 

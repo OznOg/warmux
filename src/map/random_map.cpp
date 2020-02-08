@@ -59,9 +59,9 @@ RandomMap::RandomMap(std::shared_ptr<Profile> profile, const int width, const in
   expanded_bezier_shape = nullptr;
 
   number_of_element = 0;
-  XmlReader::ReadUint(profile->doc->GetRoot(), "nb_element", number_of_element);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "nb_element", number_of_element);
   border_size = 8.0;
-  XmlReader::ReadDouble(profile->doc->GetRoot(), "border_size", border_size);
+  XmlReader::ReadDouble(profile->GetXMLDocument()->GetRoot(), "border_size", border_size);
 
   // Loading resources
   border_color = profile->LoadColor("border_color");
@@ -91,30 +91,30 @@ void RandomMap::GeneratePlatforms()
   uint vertchance = 10; /* % chance of the platform being vertical */
   uint elemchance = 10; /* % chance of putting down a random element on the platform */
 
-  XmlReader::ReadUint(profile->doc->GetRoot(), "nb_platforms_min", minplats);
-  XmlReader::ReadUint(profile->doc->GetRoot(), "nb_platforms_max", maxplats);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "nb_platforms_min", minplats);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "nb_platforms_max", maxplats);
   if (minplats < 1)
     minplats = 1;
   if (maxplats < minplats)
     maxplats = minplats;
 
-  XmlReader::ReadUint(profile->doc->GetRoot(), "platform_width_min", minwidth);
-  XmlReader::ReadUint(profile->doc->GetRoot(), "platform_width_max", maxwidth);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "platform_width_min", minwidth);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "platform_width_max", maxwidth);
   if (minwidth < 2)
     minwidth = 2;
   if (maxwidth < minwidth)
     maxwidth = minwidth;
 
-  XmlReader::ReadUint(profile->doc->GetRoot(), "platform_height_min", minhei);
-  XmlReader::ReadUint(profile->doc->GetRoot(), "platform_height_max", maxhei);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "platform_height_min", minhei);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "platform_height_max", maxhei);
   if (minhei < 2)
     minhei = 2;
   if (maxhei < minhei)
     maxhei = minhei;
 
-  XmlReader::ReadUint(profile->doc->GetRoot(), "platform_vert_chance", vertchance);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "platform_vert_chance", vertchance);
 
-  XmlReader::ReadUint(profile->doc->GetRoot(), "platform_element_chance", elemchance);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "platform_element_chance", elemchance);
 
   uint nplats = RandomSync().GetInt(minplats, maxplats);
 
@@ -241,23 +241,23 @@ void RandomMap::GenerateGridElements()
 
   if (number_of_element < 1) return;
 
-  XmlReader::ReadUint(profile->doc->GetRoot(), "generator_grid_wid", grid_wid);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "generator_grid_wid", grid_wid);
   if (grid_wid < 1)
     grid_wid = 1;
 
-  XmlReader::ReadUint(profile->doc->GetRoot(), "generator_grid_hei", grid_hei);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "generator_grid_hei", grid_hei);
   if (grid_hei < 1)
     grid_hei = 1;
 
-  XmlReader::ReadUint(profile->doc->GetRoot(), "generator_element_chance", elemchance);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "generator_element_chance", elemchance);
 
-  XmlReader::ReadUint(profile->doc->GetRoot(), "generator_element_adj_x_min", elem_adj_x_min);
-  XmlReader::ReadUint(profile->doc->GetRoot(), "generator_element_adj_x_max", elem_adj_x_max);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "generator_element_adj_x_min", elem_adj_x_min);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "generator_element_adj_x_max", elem_adj_x_max);
   if (elem_adj_x_min > elem_adj_x_max)
     elem_adj_x_min = elem_adj_x_max;
 
-  XmlReader::ReadUint(profile->doc->GetRoot(), "generator_element_adj_y_min", elem_adj_y_min);
-  XmlReader::ReadUint(profile->doc->GetRoot(), "generator_element_adj_y_max", elem_adj_y_max);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "generator_element_adj_y_min", elem_adj_y_min);
+  XmlReader::ReadUint(profile->GetXMLDocument()->GetRoot(), "generator_element_adj_y_max", elem_adj_y_max);
   if (elem_adj_y_min > elem_adj_y_max)
     elem_adj_y_min = elem_adj_y_max;
 
