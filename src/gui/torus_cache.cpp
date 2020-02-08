@@ -52,7 +52,7 @@ TorusCache::TorusCache(const std::string& resource_id, int bigr, int smallr)
   if (!img_minus)
     img_minus = res->LoadSprite("menu/big_minus");
   if (!ref_count)
-    progress_color = LOAD_RES_COLOR("menu/annulus_progress_color");
+    progress_color = res->LoadColor("menu/annulus_progress_color");
   ref_count++;
 
   // Now load own values

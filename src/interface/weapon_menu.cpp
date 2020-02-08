@@ -176,8 +176,8 @@ WeaponsMenu::WeaponsMenu()
   size = LOAD_RES_POINT("interface/tools_interface_size");
   tools_menu = PolygonGenerator::GenerateDecoratedBox(size.x, size.y);
   // Setting colors
-  Color plane_color = LOAD_RES_COLOR("interface/background_color");
-  Color border_color = LOAD_RES_COLOR("interface/border_color");
+  Color plane_color = res->LoadColor("interface/background_color");
+  Color border_color = res->LoadColor("interface/border_color");
   weapons_menu->SetPlaneColor(plane_color);
   weapons_menu->SetBorderColor(border_color);
   tools_menu->SetPlaneColor(plane_color);

@@ -152,12 +152,12 @@ Interface::Interface()
   , scratch(nullptr)
 {
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  m_text_color = LOAD_RES_COLOR("interface/text_color");
-  m_energy_text_color = LOAD_RES_COLOR("interface/energy_text_color");
+  m_text_color = res->LoadColor("interface/text_color");
+  m_energy_text_color = res->LoadColor("interface/energy_text_color");
 
   // wind bar
-  wind_bar.SetMinMaxValueColor(LOAD_RES_COLOR("interface/wind_color_min"),
-                               LOAD_RES_COLOR("interface/wind_color_max"));
+  wind_bar.SetMinMaxValueColor(res->LoadColor("interface/wind_color_min"),
+                               res->LoadColor("interface/wind_color_max"));
   wind_bar.InitVal(0, -100, 100);
 
   wind_bar.border_color.SetColor(0, 0, 0, 0);
@@ -170,13 +170,13 @@ Interface::Interface()
   weapon_strength_bar.InitPos(0, 0, 300, 15);
   weapon_strength_bar.InitVal(0, 0, 100);
 
-  weapon_strength_bar.SetValueColor(LOAD_RES_COLOR("interface/weapon_strength_bar_value"));
-  weapon_strength_bar.SetBorderColor(LOAD_RES_COLOR("interface/weapon_strength_bar_border"));
-  weapon_strength_bar.SetBackgroundColor(LOAD_RES_COLOR("interface/weapon_strength_bar_background"));
+  weapon_strength_bar.SetValueColor(res->LoadColor("interface/weapon_strength_bar_value"));
+  weapon_strength_bar.SetBorderColor(res->LoadColor("interface/weapon_strength_bar_border"));
+  weapon_strength_bar.SetBackgroundColor(res->LoadColor("interface/weapon_strength_bar_background"));
 
-  m_camera_preview_color = LOAD_RES_COLOR("interface/camera_preview_color");
+  m_camera_preview_color = res->LoadColor("interface/camera_preview_color");
 
-  m_playing_character_preview_color = LOAD_RES_COLOR("interface/playing_character_preview_color");
+  m_playing_character_preview_color = res->LoadColor("interface/playing_character_preview_color");
 
   // Weapon help
   help = new WeaponHelp();

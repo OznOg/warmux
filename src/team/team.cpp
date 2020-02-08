@@ -88,7 +88,7 @@ Team::Team(XmlReader& doc, std::shared_ptr<Profile> res,
   , energy(this)
 {
   // Load team color
-  team_color = LOAD_RES_COLOR("teamcolor");
+  team_color = res->LoadColor("teamcolor");
 
   // Load flag
   flag = res->LoadImage("flag");
