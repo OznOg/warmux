@@ -76,7 +76,7 @@ Shotgun::Shotgun() : WeaponLauncher(WEAPON_SHOTGUN, "shotgun", new ExplosiveWeap
   m_category = RIFLE;
 
   announce_missed_shots = false;
-  m_weapon_fire = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_fire"));
+  m_weapon_fire = std::make_unique<Sprite>(weapons_res_profile->LoadImage(m_id+"_fire"));
 
   ReloadLauncher();
 }

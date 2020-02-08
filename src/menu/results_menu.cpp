@@ -255,7 +255,7 @@ ResultsMenu::ResultsMenu(std::vector<TeamResults*>& v, bool disconnected)
     ComputeTeamsOrder();
 
   // Load the podium img
-  podium_img = GetResourceManager().LoadImage(res, "menu/podium");
+  podium_img = res->LoadImage("menu/podium");
   podium_img.SetAlpha(0, 0);
 
   Point2i tab_size = wsize - Point2i(tab_x + x, y+actions_buttons->GetSizeY());

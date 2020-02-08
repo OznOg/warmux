@@ -85,7 +85,7 @@ InfoMapBasicAccessor* InfoMap::LoadBasicInfo()
     goto err;
   }
   // Load preview
-  preview = GetResourceManager().LoadImage(res_profile, "preview");
+  preview = res_profile->LoadImage("preview");
   // Load other informations
   if (!doc.Load(nomfich) || !ProcessXmlData(doc.GetRoot())) {
     error = _("error parsing the config file");
@@ -225,13 +225,13 @@ InfoMapAccessor *InfoMap::LoadData()
     for (uint i = 0; i < layer; i++) {
       std::ostringstream ss;
       ss << "sky_layer_" << i;
-      sky_layer.push_back(GetResourceManager().LoadImage(res_profile, ss.str(), true));
+      sky_layer.push_back(res_profile->LoadImage(ss.str(), true));
     }
   }
 
   // If no layer, load sky in display format
   if (!layer) {
-    img_sky = GetResourceManager().LoadImage(res_profile, "sky", false);
+    img_sky = res_profile->LoadImage("sky", false);
   }
 
   if (!random_generated) {

@@ -45,7 +45,7 @@ Blowtorch::Blowtorch() :
 
   m_category = TOOL;
   m_time_between_each_shot = MIN_TIME_BETWEEN_DIG;
-  m_weapon_fire = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile, "blowtorch_fire"));
+  m_weapon_fire = std::make_unique<Sprite>(weapons_res_profile->LoadImage("blowtorch_fire"));
   m_can_change_weapon = true;
 }
 

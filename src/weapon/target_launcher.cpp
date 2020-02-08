@@ -39,7 +39,7 @@ TargetLauncher::TargetLauncher(Weapon_type type,
   mouse_character_selection = false;
   m_allow_change_timeout = true;
   m_target.selected = false;
-  m_target.image = GetResourceManager().LoadImage(weapons_res_profile, "baz_cible");
+  m_target.image = weapons_res_profile->LoadImage("baz_cible");
 }
 
 void TargetLauncher::Draw()

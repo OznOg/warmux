@@ -56,7 +56,7 @@ Airhammer::Airhammer():
 
   m_category = TOOL;
 
-  impact = GetResourceManager().LoadImage( weapons_res_profile, "airhammer_impact");
+  impact =  weapons_res_profile->LoadImage("airhammer_impact");
   m_time_between_each_shot = MIN_TIME_BETWEEN_JOLT;
   m_can_change_weapon = true;
 }

@@ -41,7 +41,7 @@ CrossHair::CrossHair()
   enable = false;
   hidden = false;
   auto res = GetResourceManager().LoadXMLProfile( "graphism.xml", false);
-  image = GetResourceManager().LoadImage(res, "gfx/pointeur1");
+  image = res->LoadImage("gfx/pointeur1");
 }
 
 void CrossHair::SetActive(bool _enable)

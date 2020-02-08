@@ -36,7 +36,7 @@ Question::Question(type _type)
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
   switch (_type) {
   case WARNING:
-    icon = new Sprite(GetResourceManager().LoadImage(res,"menu/ico_warning"));
+    icon = new Sprite(res->LoadImage("menu/ico_warning"));
     break;
   case NO_TYPE:
     icon = nullptr;

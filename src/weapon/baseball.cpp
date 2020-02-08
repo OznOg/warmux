@@ -38,7 +38,7 @@ Baseball::Baseball() : Weapon(WEAPON_BASEBALL, "baseball", new BaseballConfig())
   UpdateTranslationStrings();
 
   m_category = DUEL;
-  m_weapon_fire = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_fire"));
+  m_weapon_fire = std::make_unique<Sprite>(weapons_res_profile->LoadImage(m_id+"_fire"));
 }
 
 void Baseball::UpdateTranslationStrings()

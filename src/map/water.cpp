@@ -90,12 +90,12 @@ void Water::Init()
 
   type_color = new Color(res->LoadColor("water_colors/" + water_type));
 #ifdef HAVE_HANDHELD
-  surface = GetResourceManager().LoadImage(res, image, false);
+  surface = res->LoadImage(image, false);
   pattern.NewSurface(Point2i(PATTERN_WIDTH, PATTERN_HEIGHT),
                      SDL_SWSURFACE|SDL_SRCCOLORKEY, false);
   pattern.SetColorKey(SDL_SRCCOLORKEY|SDL_RLEACCEL, 0);
 #else
-  surface = GetResourceManager().LoadImage(res, image, true);
+  surface = res->LoadImage(image, true);
   pattern.NewSurface(Point2i(PATTERN_WIDTH, PATTERN_HEIGHT),
                      SDL_SWSURFACE|SDL_SRCALPHA, true);
 #endif

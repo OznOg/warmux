@@ -101,11 +101,11 @@ Weapon::Weapon(Weapon_type type,
   weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
 
   if (drawable) {
-    m_image = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile, m_id));
+    m_image = std::make_unique<Sprite>(weapons_res_profile->LoadImage(m_id));
     m_image->EnableCaches(use_flipping, 0);
   }
 
-  icon = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_ico"));
+  icon = std::make_unique<Sprite>(weapons_res_profile->LoadImage(m_id+"_ico"));
 
   mouse_character_selection = true;
 

@@ -48,17 +48,6 @@ ResourceManager::~ResourceManager()
   xmlCleanupParser();
 }
 
-Surface ResourceManager::LoadImage(const std::string& filename,
-                                   bool alpha, bool set_colorkey, Uint32 colorkey) const
-{
-  Surface surface(filename.c_str());
-
-  if (set_colorkey)
-    surface.SetColorKey(SDL_SRCCOLORKEY, colorkey);
-
-  return (alpha) ? surface.DisplayFormatAlpha() : surface.DisplayFormat();
-}
-
 std::shared_ptr<Profile> ResourceManager::LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const
 {
   /* Nex test may create a empt week_ptr, but this is harmless as it will be
@@ -90,39 +79,5 @@ std::shared_ptr<Profile> ResourceManager::LoadXMLProfile(const std::string& xml_
   auto profile = std::make_shared<Profile>(path, xml_filename, std::move(doc));
   profiles[xml_filename] = profile;
   return profile;
-}
-
-Surface ResourceManager::LoadImage(const std::shared_ptr<Profile> profile, const std::string& resource_name, bool alpha) const
-{
-  std::string    filename = profile->LoadImageFilename(resource_name);
-  Surface        image    = LoadImage(filename, alpha);
-  const xmlNode *elem     = profile->GetElement("surface", resource_name);
-  std::string    str;
-
-  if (XmlReader::ReadStringAttr(elem, "size", str)) {
-    int x, y;
-    Rectanglei source_rect(0,0, image.GetWidth(), image.GetHeight());
-
-    if (sscanf(str.c_str(), "%i,%i", &x, &y) != 2)
-      Error("ResourceManager: can't load image resource \""+resource_name+"\", malformed size attribute " + str);
-    source_rect.SetSizeX(x);
-    source_rect.SetSizeY(y);
-
-    if (XmlReader::ReadStringAttr(elem, "pos", str)) {
-      if (sscanf(str.c_str(), "%i,%i", &x, &y) != 2)
-        Error("ResourceManager: can't load image resource \""+resource_name+"\", malformed position attribute " + str);
-
-      source_rect.SetPositionX(x);
-      source_rect.SetPositionY(y);
-    }
-
-    return image.Crop(source_rect);
-  }
-  else {
-    return image;
-  }
-
-  // TODO load more properties in xml : alpha, colorkey....
-  //      By now force alpha and no colorkey
 }
 

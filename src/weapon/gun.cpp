@@ -67,7 +67,7 @@ Gun::Gun() : WeaponLauncher(WEAPON_GUN, "gun", new ExplosiveWeaponConfig())
   UpdateTranslationStrings();
 
   m_category = RIFLE;
-  m_weapon_fire = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_fire"));
+  m_weapon_fire = std::make_unique<Sprite>(weapons_res_profile->LoadImage(m_id+"_fire"));
   ReloadLauncher();
 }
 

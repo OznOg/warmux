@@ -84,7 +84,7 @@ SubMachineGun::SubMachineGun() : WeaponLauncher(WEAPON_SUBMACHINE_GUN, "m16", ne
   announce_missed_shots = false;
   m_time_between_each_shot = SUBMACHINE_TIME_BETWEEN_SHOOT;
 
-  m_weapon_fire = std::make_unique<Sprite>(GetResourceManager().LoadImage(weapons_res_profile,m_id+"_fire"));
+  m_weapon_fire = std::make_unique<Sprite>(weapons_res_profile->LoadImage(m_id+"_fire"));
 
   shoot_started = false;
 

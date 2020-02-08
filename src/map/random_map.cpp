@@ -65,11 +65,11 @@ RandomMap::RandomMap(std::shared_ptr<Profile> profile, const int width, const in
 
   // Loading resources
   border_color = profile->LoadColor("border_color");
-  texture = GetResourceManager().LoadImage(profile, "texture");
+  texture = profile->LoadImage("texture");
   for (uint i = 0; i < number_of_element; i++) {
     std::stringstream ss;
     ss << "element_" << (i + 1);
-    element = GetResourceManager().LoadImage(profile, ss.str());
+    element = profile->LoadImage(ss.str());
     random_element_list.AddElement(&element);
   }
   element_list.clear();

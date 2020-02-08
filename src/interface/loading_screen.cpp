@@ -70,7 +70,7 @@ void LoadingScreen::StartLoading(uint nb, const std::string& resource,
   int index = nb-1;
   // Get profile from resource manager
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  const Surface& image = GetResourceManager().LoadImage(res, "loading_screen/"+resource);
+  const Surface& image = res->LoadImage("loading_screen/"+resource);
 
   int slot_margin_x = (120/2 - image.GetWidth()/2);
   int x = ((GetMainWindow().GetWidth() - icon_count*120)/2)+ index*120;

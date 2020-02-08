@@ -221,11 +221,42 @@ public:
       if (!elem)
           Error("ResourceManager: can't find image resource \"" + resource_name + "\" in profile " + filename);
 
-      std::string filename;
-      if (!doc->ReadStringAttr(elem, "file", filename))
-          Error("ResourceManager: image resource \"" + resource_name + "\" has no file field in profile " + filename);
+      std::string _filename;
+      if (!doc->ReadStringAttr(elem, "file", _filename))
+          Error("ResourceManager: image resource \"" + resource_name + "\" has no file field in profile " + _filename);
 
-      return relative_path + filename;
+      return relative_path + _filename;
+  }
+
+  Surface LoadImage(const std::string& resource_name, bool alpha = true) const
+  {
+      std::string    _filename = LoadImageFilename(resource_name);
+      Surface        image    = LoadImage(_filename, alpha);
+      const xmlNode *elem     = GetElement("surface", resource_name);
+      std::string    str;
+
+      if (XmlReader::ReadStringAttr(elem, "size", str)) {
+          int x, y;
+          Rectanglei source_rect(0,0, image.GetWidth(), image.GetHeight());
+
+          if (sscanf(str.c_str(), "%i,%i", &x, &y) != 2)
+              Error("ResourceManager: can't load image resource \""+resource_name+"\", malformed size attribute " + str);
+          source_rect.SetSizeX(x);
+          source_rect.SetSizeY(y);
+
+          if (XmlReader::ReadStringAttr(elem, "pos", str)) {
+              if (sscanf(str.c_str(), "%i,%i", &x, &y) != 2)
+                  Error("ResourceManager: can't load image resource \""+resource_name+"\", malformed position attribute " + str);
+
+              source_rect.SetPositionX(x);
+              source_rect.SetPositionY(y);
+          }
+
+          return image.Crop(source_rect);
+      }
+      else {
+          return image;
+      }
   }
 
   Profile(std::string path, std::string filename, std::unique_ptr<XmlReader> doc) :
@@ -262,13 +293,11 @@ public:
                     bool set_colorkey = false, Uint32 colorkey = 0) const;
 
   std::shared_ptr<Profile> LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const;
-
-  Surface LoadImage(const std::shared_ptr<Profile> profile, const std::string& resource_name, bool alpha = true) const;
 };
 
 inline ResourceManager& GetResourceManager() { return ResourceManager::GetRef(); }
 
-#define LOAD_RES_IMAGE(name) GetResourceManager().LoadImage(res, name)
+#define LOAD_RES_IMAGE(name) res->LoadImage(name)
 #define LOAD_RES_SPRITE(name) res->LoadSprite(name)
 #define LOAD_RES_COLOR(name) res->LoadColor(name)
 #define LOAD_RES_POINT(name) res->LoadPoint2i(name)
