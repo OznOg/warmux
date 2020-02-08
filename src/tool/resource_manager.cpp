@@ -45,7 +45,6 @@ ResourceManager::ResourceManager() : base_path("")
 
 ResourceManager::~ResourceManager()
 {
-  xmlCleanupParser();
 }
 
 std::shared_ptr<Profile> ResourceManager::LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const
