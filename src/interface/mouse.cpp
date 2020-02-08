@@ -81,8 +81,7 @@ Mouse::Mouse()
 
   for (int i=POINTER_SELECT; i < POINTER_ATTACK; i++) {
     cursors.insert(std::make_pair(Mouse::pointer_t(i),
-                                  GetResourceManager().LoadMouseCursor(res, __pointers[i],
-                                                                       Mouse::pointer_t(i))));
+                                  res->LoadMouseCursor(__pointers[i], Mouse::pointer_t(i))));
   }
 
   current_pointer = POINTER_STANDARD;

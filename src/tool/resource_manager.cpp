@@ -63,28 +63,6 @@ Color ResourceManager::LoadColor(const std::shared_ptr<Profile> profile, const s
   return Color(chanel_color[0], chanel_color[1], chanel_color[2], chanel_color[3]);
 }
 
-MouseCursor ResourceManager::LoadMouseCursor(const std::shared_ptr<Profile> profile, const std::string& resource_name,
-                                             Mouse::pointer_t _pointer_id) const
-{
-  const xmlNode* elem = profile->GetElement("mouse_cursor", resource_name);
-  if (!elem)
-    Error("ResourceManager: can't find mouse cursor resource \""+resource_name+"\" in profile "+profile->filename);
-  std::string filename;
-  if (!profile->doc->ReadStringAttr(elem, "file", filename))
-    Error("ResourceManager: mouse cursor resource \""+resource_name+"\" has no file field in profile "+profile->filename);
-
-  uint point[2];
-  std::string tmp[2] = { "x", "y" };
-  for (int i = 0; i < 2; i++) {
-    if (!profile->doc->ReadUintAttr(elem, tmp[i], point[i]))
-      Error("ResourceManager: mouse cursor resource \""+resource_name+"\" has no "+tmp[i]+" field in profile "+profile->filename);
-  }
-  Point2i pos(point[0], point[1]);
-
-  MouseCursor mouse_cursor(_pointer_id, profile->relative_path+filename, pos);
-  return mouse_cursor;
-}
-
 Surface ResourceManager::LoadImage(const std::string& filename,
                                    bool alpha, bool set_colorkey, Uint32 colorkey) const
 {

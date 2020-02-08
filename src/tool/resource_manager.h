@@ -35,6 +35,7 @@
 #include "graphic/surface.h"
 #include "graphic/sprite.h"
 #include "interface/mouse.h"
+#include "interface/mouse_cursor.h"
 #include "tool/xml_document.h"
 
 #include <memory>
@@ -178,6 +179,27 @@ public:
       return tmp;
   }
 
+  MouseCursor LoadMouseCursor(const std::string& resource_name, Mouse::pointer_t _pointer_id) const
+  {
+      const xmlNode* elem = GetElement("mouse_cursor", resource_name);
+      if (!elem)
+          Error("ResourceManager: can't find mouse cursor resource \"" + resource_name + "\" in profile " + filename);
+      std::string filename;
+      if (!doc->ReadStringAttr(elem, "file", filename))
+          Error("ResourceManager: mouse cursor resource \"" + resource_name + "\" has no file field in profile " + filename);
+
+      uint point[2];
+      std::string tmp[2] = { "x", "y" };
+      for (int i = 0; i < 2; i++) {
+          if (!doc->ReadUintAttr(elem, tmp[i], point[i]))
+              Error("ResourceManager: mouse cursor resource \"" + resource_name + "\" has no " + tmp[i] + " field in profile " + filename);
+      }
+      Point2i pos(point[0], point[1]);
+
+      MouseCursor mouse_cursor(_pointer_id, relative_path + filename, pos);
+      return mouse_cursor;
+  }
+
   Profile(std::string path, std::string filename, std::unique_ptr<XmlReader> doc) :
            relative_path(path), filename(filename), doc(std::move(doc)) { }
   
@@ -213,7 +235,6 @@ public:
 
   std::shared_ptr<Profile> LoadXMLProfile(const std::string& xml_filename, bool is_absolute_path) const;
 
-  MouseCursor LoadMouseCursor(const std::shared_ptr<Profile> profile, const std::string& resource_name, Mouse::pointer_t pointer_id) const;
   Color LoadColor(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   std::string LoadImageFilename(const std::shared_ptr<Profile> profile, const std::string& resource_name) const;
   Surface LoadImage(const std::shared_ptr<Profile> profile, const std::string& resource_name, bool alpha = true) const;
