@@ -138,28 +138,28 @@ void ParticleEngine::Load()
 
   // Pre-load the sprite of each particle
   auto res = GetResourceManager().LoadXMLProfile("weapons.xml", false);
-  particle_sprite[SMOKE_spr] = LOAD_RES_SPRITE("smoke");
-  particle_sprite[EXPLOSION_SMOKE_spr] = LOAD_RES_SPRITE("smoke_explosion");
-  particle_sprite[EXPLOSION_BIG_SMOKE_spr] = LOAD_RES_SPRITE("smoke_big_explosion");
-  particle_sprite[ILL_BUBBLE_spr] = LOAD_RES_SPRITE("ill_bubble");
-  particle_sprite[FIRE_spr]  = LOAD_RES_SPRITE("fire_particle");
-  particle_sprite[STAR_spr]  = LOAD_RES_SPRITE("star_particle");
-  particle_sprite[DARK_SMOKE_spr]  = LOAD_RES_SPRITE("dark_smoke");
-  particle_sprite[MAGIC_STAR_R_spr] = LOAD_RES_SPRITE("pink_star_particle");
+  particle_sprite[SMOKE_spr] = res->LoadSprite("smoke");
+  particle_sprite[EXPLOSION_SMOKE_spr] = res->LoadSprite("smoke_explosion");
+  particle_sprite[EXPLOSION_BIG_SMOKE_spr] = res->LoadSprite("smoke_big_explosion");
+  particle_sprite[ILL_BUBBLE_spr] = res->LoadSprite("ill_bubble");
+  particle_sprite[FIRE_spr]  = res->LoadSprite("fire_particle");
+  particle_sprite[STAR_spr]  = res->LoadSprite("star_particle");
+  particle_sprite[DARK_SMOKE_spr]  = res->LoadSprite("dark_smoke");
+  particle_sprite[MAGIC_STAR_R_spr] = res->LoadSprite("pink_star_particle");
   particle_sprite[MAGIC_STAR_R_spr]->EnableCaches(false, 32);
-  particle_sprite[MAGIC_STAR_Y_spr] = LOAD_RES_SPRITE("yellow_star_particle");
+  particle_sprite[MAGIC_STAR_Y_spr] = res->LoadSprite("yellow_star_particle");
   particle_sprite[MAGIC_STAR_Y_spr]->EnableCaches(false, 32);
-  particle_sprite[MAGIC_STAR_B_spr] = LOAD_RES_SPRITE("blue_star_particle");
+  particle_sprite[MAGIC_STAR_B_spr] = res->LoadSprite("blue_star_particle");
   particle_sprite[MAGIC_STAR_B_spr]->EnableCaches(false, 32);
-  particle_sprite[BULLET_spr] = LOAD_RES_SPRITE("bullet_particle");
+  particle_sprite[BULLET_spr] = res->LoadSprite("bullet_particle");
   particle_sprite[BULLET_spr]->EnableCaches(false, 6);
-  particle_sprite[POLECAT_FART_spr] = LOAD_RES_SPRITE("polecat_fart");
-  particle_sprite[CLEARWATER_spr] = LOAD_RES_SPRITE("water_drop");
-  particle_sprite[LAVA_spr] = LOAD_RES_SPRITE("lava_drop");
-  particle_sprite[RADIOACTIVE_spr] = LOAD_RES_SPRITE("radioactive_drop");
-  particle_sprite[DIRTYWATER_spr] = LOAD_RES_SPRITE("dirtywater_drop");
-  particle_sprite[CHOCOLATEWATER_spr] = LOAD_RES_SPRITE("chocolate_drop");
-  particle_sprite[EXPLOSION_spr] = LOAD_RES_SPRITE("explosion_particle");
+  particle_sprite[POLECAT_FART_spr] = res->LoadSprite("polecat_fart");
+  particle_sprite[CLEARWATER_spr] = res->LoadSprite("water_drop");
+  particle_sprite[LAVA_spr] = res->LoadSprite("lava_drop");
+  particle_sprite[RADIOACTIVE_spr] = res->LoadSprite("radioactive_drop");
+  particle_sprite[DIRTYWATER_spr] = res->LoadSprite("dirtywater_drop");
+  particle_sprite[CHOCOLATEWATER_spr] = res->LoadSprite("chocolate_drop");
+  particle_sprite[EXPLOSION_spr] = res->LoadSprite("explosion_particle");
 
   sprites_loaded = true;
 }

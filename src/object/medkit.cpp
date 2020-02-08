@@ -40,7 +40,7 @@ Medkit::Medkit(const MedkitSettings& settings)
   SetTestRect (29, 29, 63, 6);
 
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  anim = LOAD_RES_SPRITE("object/medkit");
+  anim = res->LoadSprite("object/medkit");
 
   SetSize(anim->GetSize());
   anim->animation.SetLoopMode(false);

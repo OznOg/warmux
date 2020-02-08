@@ -168,7 +168,7 @@ WeaponsMenu::WeaponsMenu()
 {
   // Loading value from XML
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  m_not_yet_available = LOAD_RES_SPRITE("interface/hourglass");
+  m_not_yet_available = res->LoadSprite("interface/hourglass");
 
   // Polygon Size
   Point2i size = LOAD_RES_POINT("interface/weapons_interface_size");

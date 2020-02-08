@@ -60,9 +60,9 @@ void Interface::LoadData()
 
   // Clocks should be kept, as information difficult to retrieve is there
   if (!clock_normal)
-    clock_normal    = LOAD_RES_SPRITE("interface/clock_normal");
+    clock_normal    = res->LoadSprite("interface/clock_normal");
   if (!clock_emergency)
-    clock_emergency = LOAD_RES_SPRITE("interface/clock_emergency");
+    clock_emergency = res->LoadSprite("interface/clock_emergency");
 
   bool replay = Replay::GetConstInstance()->IsPlaying();
   last_width = AppWarmux::GetInstance()->video->window.GetWidth();

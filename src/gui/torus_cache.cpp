@@ -48,9 +48,9 @@ TorusCache::TorusCache(const std::string& resource_id, int bigr, int smallr)
   if (!annulus_foreground)
     annulus_foreground = new Surface(res->LoadImage("menu/annulus_foreground"));
   if (!img_plus)
-    img_plus = LOAD_RES_SPRITE("menu/big_plus");
+    img_plus = res->LoadSprite("menu/big_plus");
   if (!img_minus)
-    img_minus = LOAD_RES_SPRITE("menu/big_minus");
+    img_minus = res->LoadSprite("menu/big_minus");
   if (!ref_count)
     progress_color = LOAD_RES_COLOR("menu/annulus_progress_color");
   ref_count++;
