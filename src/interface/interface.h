@@ -120,7 +120,7 @@ private:
   Point2i m_last_preview_size;
   //Styled box
   Surface *mask;
-  Surface *scratch;
+  std::unique_ptr<Surface> scratch;
 
   Color m_camera_preview_color;
   Color m_playing_character_preview_color;

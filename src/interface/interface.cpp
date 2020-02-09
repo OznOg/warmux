@@ -187,7 +187,6 @@ Interface::~Interface()
   FreeDrawElements();
 
   if (mask) delete mask;
-  if (scratch) delete scratch;
 
   delete help;
 }
@@ -437,11 +436,7 @@ void Interface::DrawMapPreview()
         }
 
         minimap.reset();
-
-        if (scratch) {
-          delete scratch;
-          scratch = nullptr;
-        }
+        scratch.reset();
       }
 
       if (!minimap)
@@ -449,7 +444,7 @@ void Interface::DrawMapPreview()
 
       // Recreate the scratch buffer
       if (!scratch)
-        scratch = new Surface(preview_size, SDL_SWSURFACE, true);
+        scratch = std::make_unique<Surface>(preview_size, SDL_SWSURFACE, true);
 
       Point2i mergePos = -ground.GetPreviewRect().GetPosition();
       scratch->Blit(*ground.GetPreview(), mergePos);
