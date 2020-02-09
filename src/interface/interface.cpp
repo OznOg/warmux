@@ -104,23 +104,23 @@ void Interface::LoadData()
   // Labels
   uint fsize = Font::FONT_SMALL*powf(zoom, 0.85f)+0.5f;
   if (fsize < 10) fsize = 10;
-  t_character_name = new Text("None", m_text_color, fsize);
-  t_team_name = new Text("None", m_text_color, fsize);
-  t_player_name = new Text("None", m_text_color, fsize);
-  t_weapon_name = new Text("None", m_text_color, fsize);
-  t_weapon_stock = new Text("0", m_text_color, fsize);
-  t_character_energy = new Text("Dead", m_energy_text_color, fsize, Font::FONT_BOLD, true);
+  t_character_name = std::make_unique<Text>("None", m_text_color, fsize);
+  t_team_name = std::make_unique<Text>("None", m_text_color, fsize);
+  t_player_name = std::make_unique<Text>("None", m_text_color, fsize);
+  t_weapon_name = std::make_unique<Text>("None", m_text_color, fsize);
+  t_weapon_stock = std::make_unique<Text>("0", m_text_color, fsize);
+  t_character_energy = std::make_unique<Text>("Dead", m_energy_text_color, fsize, Font::FONT_BOLD, true);
 
   // Replay labels
   if (replay) {
     char tmp[] = { 'x', '1', 0 };
     tmp[1] = 48+(uint)GameTime::GetConstInstance()->GetSpeed();
-    t_speed = new Text(tmp, primary_red_color, Font::FONT_HUGE*zoom+0.5f, Font::FONT_BOLD, true);
+    t_speed = std::make_unique<Text>(tmp, primary_red_color, Font::FONT_HUGE*zoom+0.5f, Font::FONT_BOLD, true);
   }
 
   // Timer
-  global_timer = new Text("0", gray_color, Font::FONT_BIG*zoom+0.5f);
-  timer = new Text("0", black_color, Font::FONT_MEDIUM*zoom+0.5f);
+  global_timer = std::make_unique<Text>("0", gray_color, Font::FONT_BIG*zoom+0.5f);
+  timer = std::make_unique<Text>("0", black_color, Font::FONT_MEDIUM*zoom+0.5f);
 
   wind_bar.InitPos(0, 0, 82*zoom-1.5f, 15*zoom-1.5f);
 }
@@ -180,25 +180,20 @@ Interface::Interface()
 
 Interface::~Interface()
 {
-  FreeDrawElements();
-
   if (mask) delete mask;
 }
 
 void Interface::FreeDrawElements()
 {
-  if (global_timer) delete global_timer;
-  if (timer) delete timer;
-  if (t_character_name) delete t_character_name;
-  if (t_team_name) delete t_team_name;
-  if (t_player_name) delete t_player_name;
-  if (t_character_energy) delete t_character_energy;
-  if (t_weapon_name) delete t_weapon_name;
-  if (t_weapon_stock) delete t_weapon_stock;
-  if (t_speed) {
-    delete t_speed;
-    t_speed = nullptr;
-  }
+    global_timer.reset();
+    timer.reset();
+    t_character_name.reset();
+    t_team_name.reset();
+    t_player_name.reset();
+    t_character_energy.reset();
+    t_weapon_name.reset();
+    t_weapon_stock.reset();
+    t_speed.reset();
 }
 
 void Interface::Reset()

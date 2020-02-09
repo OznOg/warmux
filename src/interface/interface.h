@@ -71,8 +71,8 @@ private:
   int     clock_width;
 
   // Timers
-  Text * global_timer;
-  Text * timer;
+  std::unique_ptr<Text> global_timer;
+  std::unique_ptr<Text> timer;
   uint remaining_turn_time;
 
   ProgressBar wind_bar;
@@ -81,17 +81,17 @@ private:
   std::unique_ptr<EnergyBar> energy_bar;
 
   // Character information
-  Text * t_character_name;
-  Text * t_team_name;
-  Text * t_player_name;
-  Text * t_character_energy;
+  std::unique_ptr<Text> t_character_name;
+  std::unique_ptr<Text> t_team_name;
+  std::unique_ptr<Text> t_player_name;
+  std::unique_ptr<Text> t_character_energy;
 
   // Weapon information
-  Text * t_weapon_name;
-  Text * t_weapon_stock;
+  std::unique_ptr<Text> t_weapon_name;
+  std::unique_ptr<Text> t_weapon_stock;
 
   // Replay info
-  Text * t_speed;
+  std::unique_ptr<Text> t_speed;
   void SetSpeed(const Double& speed);
 
   // Related to interface mode
