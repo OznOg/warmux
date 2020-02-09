@@ -55,7 +55,7 @@ class Plane : public PhysicalObj
   int GetDirection() const;
   void DropBomb();
 public:
-  Plane(AirAttackConfig& cfg);
+  Plane(AirAttackConfig& cfg, Profile &profile);
   ~Plane() override;
   void Shoot(Double speed, const Point2i& target);
   void Draw() override;

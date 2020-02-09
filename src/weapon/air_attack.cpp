@@ -67,15 +67,13 @@ Obus::~Obus()
 
 Obus* Plane::last_dropped_bomb = nullptr;
 
-Plane::Plane(AirAttackConfig &p_cfg) :
+Plane::Plane(AirAttackConfig &p_cfg, Profile &profile) :
   PhysicalObj("air_attack_plane", Config::GetInstance()->GetObjectConfig("air_attack_plane", "")),
   cfg(p_cfg)
 {
   SetCollisionModel(false, false, false);
 
-  auto weapons_res_profile = GetResourceManager().LoadXMLProfile("weapons.xml", false);
-
-  image = weapons_res_profile->LoadSprite("air_attack_plane");
+  image = profile.LoadSprite("air_attack_plane");
   image->EnableCaches(true, 0);
   SetSize(image->GetSize());
   obus_dx = 100;
@@ -225,7 +223,7 @@ bool AirAttack::p_Shoot()
   if (Network::GetInstance()->IsTurnMaster())
       Mouse::GetInstance()->SetPointer(Mouse::POINTER_SELECT);
 
-  auto plane = std::make_unique<Plane>(cfg());
+  auto plane = std::make_unique<Plane>(cfg(), *weapons_res_profile);
 
   plane->Shoot(cfg().speed, target);
 
