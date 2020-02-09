@@ -117,9 +117,9 @@ void SubMachineGun::p_Deselect()
 
 bool SubMachineGun::p_Shoot()
 {
-  projectile->Shoot(SUBMACHINE_BULLET_SPEED);
-  projectile = nullptr;
-  ReloadLauncher();
+  m_strength = SUBMACHINE_BULLET_SPEED;
+
+  WeaponLauncher::p_Shoot();
 
   Point2i pos;
   ActiveCharacter().GetHandPosition(pos);

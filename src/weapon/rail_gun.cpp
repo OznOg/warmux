@@ -109,10 +109,10 @@ bool RailGun::p_Shoot()
     return false;
 
   hits = 0;
-  projectile->Shoot(RAIL_BULLET_SPEED);
-  projectile = nullptr;
-  ReloadLauncher();
-  return true;
+
+  m_strength = RAIL_BULLET_SPEED;
+
+  return WeaponLauncher::p_Shoot();
 }
 
 void RailGun::IncMissedShots()

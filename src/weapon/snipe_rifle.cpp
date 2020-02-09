@@ -64,10 +64,9 @@ bool BaseSnipeRifle::p_Shoot()
   if (IsOnCooldownFromShot())
     return false;
 
-  projectile->Shoot(SNIPE_RIFLE_BULLET_SPEED);
-  projectile = nullptr;
-  ReloadLauncher();
-  return true;
+  m_strength = SNIPE_RIFLE_BULLET_SPEED;
+
+  return WeaponLauncher::p_Shoot();
 }
 
 // When an explosion occurs, we compute a new targeted point

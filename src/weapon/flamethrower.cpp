@@ -150,9 +150,9 @@ void FlameThrower::IncMissedShots()
 
 bool FlameThrower::p_Shoot()
 {
-  projectile->Shoot(FLAMETHROWER_BULLET_SPEED);
-  projectile = nullptr;
-  ReloadLauncher();
+  m_strength = FLAMETHROWER_BULLET_SPEED;
+
+  WeaponLauncher::p_Shoot();
 
   Point2i pos;
   ActiveCharacter().GetHandPosition(pos);
