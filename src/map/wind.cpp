@@ -154,15 +154,6 @@ Wind::Wind():
 {
 }
 
-void Wind::RemoveAllParticles()
-{
-  iterator it = particles.begin(), end = particles.end();
-  while (it != end) {
-    delete (*it);
-    it = particles.erase(it);
-  }
-}
-
 void Wind::Reset()
 {
   m_last_move = 0;
@@ -170,7 +161,7 @@ void Wind::Reset()
   m_val = m_nv_val = 0;
   Interface::GetInstance()->UpdateWindIndicator(m_val);
 
-  RemoveAllParticles();
+  particles.clear();
   uint nb = Config::GetConstInstance()->GetWindParticlesPercentage();
 
   if (!nb) {
@@ -185,7 +176,7 @@ void Wind::Reset()
   std::string config_file = ActiveMap()->GetConfigFilepath();
 
   for (uint i = 0; i < nb; ++i) {
-    particles.push_back(new WindParticle(config_file, (Double)i / nb));
+    particles.emplace_back(new WindParticle(config_file, (Double)i / nb));
   }
 
   RandomizeParticlesPos();
@@ -199,9 +190,8 @@ void Wind::ChooseRandomVal()
 
 void Wind::DrawParticles()
 {
-  iterator it = particles.begin(), end = particles.end();
-  for (; it != end; ++it) {
-    (*it)->Draw();
+  for (auto &p : particles) {
+    p->Draw();
   }
 }
 
@@ -217,17 +207,13 @@ void Wind::Refresh()
     Interface::GetInstance()->UpdateWindIndicator(m_val);
   }
 
-  iterator it = particles.begin(), end = particles.end();
-
-  for (; it != end; ++it) {
-    (*it)->Refresh();
+  for (auto &p : particles) {
+    p->Refresh();
   }
 }
 
 void Wind::RandomizeParticlesPos()
 {
-  iterator it = particles.begin(), end = particles.end();
-
   const Camera *cam = Camera::GetConstInstance();
   int sx = cam->GetPositionX();
   int sy = cam->GetPositionY();
@@ -235,9 +221,9 @@ void Wind::RandomizeParticlesPos()
   int ey = sy + cam->GetSizeY();
   MSG_DEBUG("wind", "camera position: %d, %d - %d, %d", sx, ex, sy, ey);
 
-  for (; it != end; ++it) {
-    (*it)->SetXY(Point2i(RandomLocal().GetInt(sx, ex),
+  for (auto &p : particles) {
+    p->SetXY(Point2i(RandomLocal().GetInt(sx, ex),
                          RandomLocal().GetInt(sy, ey)));
-    MSG_DEBUG("wind", "new particule position: %d, %d", (*it)->GetX(), (*it)->GetY());
+    MSG_DEBUG("wind", "new particule position: %d, %d", p->GetX(), p->GetY());
   }
 }

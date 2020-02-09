@@ -51,13 +51,10 @@ class Wind : public Singleton<Wind>
   uint m_last_move;
   uint m_last_part_mvt;
 
-  std::list<WindParticle *> particles;
-  typedef std::list<WindParticle *>::iterator iterator;
-  void RemoveAllParticles();
+  std::list<std::unique_ptr<WindParticle>> particles;
   void RandomizeParticlesPos(); // Put particles randomly on the screen
 
   Wind();
-  ~Wind() override { RemoveAllParticles(); }
   friend class Singleton<Wind>;
 
 public:
