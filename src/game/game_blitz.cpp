@@ -114,9 +114,9 @@ void GameBlitz::RefreshClock()
           }
 
           if (duration > 10) {
-            Interface::GetInstance()->UpdateTimer(duration, false, false);
+            interface->UpdateTimer(duration, false, false);
           } else {
-            Interface::GetInstance()->UpdateTimer(duration, true, false);
+            interface->UpdateTimer(duration, true, false);
           }
         }
         break;
@@ -126,7 +126,7 @@ void GameBlitz::RefreshClock()
           cur = KillGroup(cur);
         } else {
           duration--;
-          Interface::GetInstance()->UpdateTimer(duration, false, false);
+          interface->UpdateTimer(duration, false, false);
         }
         SetState(END_TURN);
         break;
@@ -180,8 +180,8 @@ void GameBlitz::__SetState_PLAYING()
   GetTeamsList().NextTeam();
 
   // initialize counter
-  Interface::GetInstance()->UpdateTimer(GetCurrentTeam()->second, false, true);
-  Interface::GetInstance()->EnableDisplayTimer(true);
+  interface->UpdateTimer(GetCurrentTeam()->second, false, true);
+  interface->EnableDisplayTimer(true);
   last_clock_update = GameTime::GetInstance()->Read();
 
   give_objbox = true; //hack: make it so that no more than one objbox per turn
@@ -203,7 +203,7 @@ void GameBlitz::__SetState_END_TURN()
   CharacterCursor::GetInstance()->Hide();
   last_clock_update = GameTime::GetInstance()->Read();
   // Ensure the clock sprite isn't NULL:
-  Interface::GetInstance()->UpdateTimer(GameMode::GetInstance()->duration_exchange_player,
+  interface->UpdateTimer(GameMode::GetInstance()->duration_exchange_player,
                                         false,
                                         true);
 

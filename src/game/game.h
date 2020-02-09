@@ -37,6 +37,7 @@ class ObjBox;
 class FramePerSecond;
 class PhysicalObj;
 class WeaponsList;
+class Interface;
 class Menu;
 
 class Game : public Singleton<Game>
@@ -70,6 +71,7 @@ protected:
   uint                last_clock_update;
   bool                benching;
   std::vector< std::pair<float, float> > bench_res;
+  Interface          *interface = nullptr;
 
   friend class Singleton<Game>;
   friend bool GameIsRunning();

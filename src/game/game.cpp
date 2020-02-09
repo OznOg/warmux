@@ -342,7 +342,9 @@ void Game::InitInterface()
   CharacterCursor::GetInstance()->Reset();
   Keyboard::GetInstance()->Reset();
 
-  Interface::GetInstance()->Reset();
+  interface = Interface::GetInstance();
+  interface->Reset();
+
   GameMessages::GetInstance()->Reset();
 
   ParticleEngine::Load();
@@ -397,6 +399,7 @@ uint Game::Start(bool bench)
 
     MSG_DEBUG("game", "End of game_loop.Run()" );
     JukeBox::GetInstance()->StopAll();
+    interface = nullptr;
   } else {
     fprintf(stderr, "Couldn't load map\n");
   }
@@ -648,7 +651,7 @@ void Game::Draw()
 
   // Draw the interface (current team information, weapon ammo)
   StatStart("GameDraw:interface");
-  Interface::GetInstance()->Draw();
+  interface->Draw();
   StatStop("GameDraw:interface");
 
 #ifdef ENABLE_VKEYBD
@@ -1103,8 +1106,7 @@ void Game::SetState(game_loop_state_t new_state, bool begin_game)
 
   state = new_state;
 
-  Interface *interf = Interface::GetInstance();
-  interf->weapons_menu.Hide();
+  interface->weapons_menu.Hide();
 
   switch (state) {
   // Beginning of a new turn:

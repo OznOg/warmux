@@ -82,9 +82,9 @@ void GameClassic::RefreshClock()
           countdown_sample.Play("default", "countdown-end_turn");
         }
         if (duration > 10) {
-          Interface::GetInstance()->UpdateTimer(duration, false, false);
+          interface->UpdateTimer(duration, false, false);
         } else {
-          Interface::GetInstance()->UpdateTimer(duration, true, false);
+          interface->UpdateTimer(duration, true, false);
         }
       }
       break;
@@ -94,7 +94,7 @@ void GameClassic::RefreshClock()
         SetState(END_TURN);
       } else {
         duration--;
-        Interface::GetInstance()->UpdateTimer(duration, false, false);
+        interface->UpdateTimer(duration, false, false);
       }
       break;
 
@@ -142,8 +142,8 @@ void GameClassic::__SetState_PLAYING()
 
   // initialize counter
   duration = GameMode::GetInstance()->duration_turn;
-  Interface::GetInstance()->UpdateTimer(duration, false, true);
-  Interface::GetInstance()->EnableDisplayTimer(true);
+  interface->UpdateTimer(duration, false, true);
+  interface->EnableDisplayTimer(true);
   last_clock_update = GameTime::GetInstance()->Read();
 
   Wind::GetRef().ChooseRandomVal();
@@ -166,7 +166,7 @@ void GameClassic::__SetState_HAS_PLAYED()
   MSG_DEBUG("game.statechange", "Has played, now can move");
   duration = GameMode::GetInstance()->duration_move_player;
   last_clock_update = GameTime::GetInstance()->Read();
-  Interface::GetInstance()->UpdateTimer(duration, false, true);
+  interface->UpdateTimer(duration, false, true);
   CharacterCursor::GetInstance()->Hide();
 }
 
@@ -178,8 +178,8 @@ void GameClassic::__SetState_END_TURN()
   ActiveTeam().AccessWeapon().Deselect();
   CharacterCursor::GetInstance()->Hide();
   duration = GameMode::GetInstance()->duration_exchange_player;
-  Interface::GetInstance()->UpdateTimer(duration, false, true);
-  Interface::GetInstance()->EnableDisplayTimer(false);
+  interface->UpdateTimer(duration, false, true);
+  interface->EnableDisplayTimer(false);
   last_clock_update = GameTime::GetInstance()->Read();
 
   // Applying Disease damage and Death mode.
