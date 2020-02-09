@@ -21,7 +21,6 @@
 
 #include "include/action_handler.h"
 #include "interface/interface.h"
-#include "interface/weapon_help.h"
 #include "interface/keyboard.h"
 #include "interface/mouse.h"
 #include "character/character.h"
@@ -177,9 +176,6 @@ Interface::Interface()
   m_camera_preview_color = res->LoadColor("interface/camera_preview_color");
 
   m_playing_character_preview_color = res->LoadColor("interface/playing_character_preview_color");
-
-  // Weapon help
-  help = new WeaponHelp();
 }
 
 Interface::~Interface()
@@ -187,8 +183,6 @@ Interface::~Interface()
   FreeDrawElements();
 
   if (mask) delete mask;
-
-  delete help;
 }
 
 void Interface::FreeDrawElements()
@@ -221,7 +215,7 @@ void Interface::Reset()
   mode = Replay::GetConstInstance()->IsPlaying() ? MODE_REPLAY : MODE_NORMAL;
 
   weapons_menu.Reset();
-  help->Reset();
+  help.Reset();
   energy_bar->InitVal(0, 0, GameMode::GetInstance()->character_cfg.init_energy);
   TeamEnergy::SetSpacing((174-MARGIN)*zoom / TeamsList::GetInstance()->GetPlayingList().size());
   FOR_EACH_TEAM(tmp_team)
@@ -583,7 +577,7 @@ void Interface::Draw()
     // The rectangle to redraw is already set there
   }
 
-  help->Draw();
+  help.Draw();
 }
 
 int Interface::GetHeight() const
@@ -994,8 +988,8 @@ int Interface::AnyClick(const Point2i &mouse_pos, ClickType type, Point2i old_mo
     switch (type) {
       case CLICK_TYPE_LONG:
         if (weapon_button.Contains(old_mouse_pos)) {
-          help->SetWeapon(ateam.AccessWeapon());
-          help->SwitchDisplay();
+          help.SetWeapon(ateam.AccessWeapon());
+          help.SwitchDisplay();
         }
         break;
       case CLICK_TYPE_DOWN: return 0; // Needed to allow long clicks

@@ -25,6 +25,7 @@
 #include <WARMUX_base.h>
 #include <WARMUX_singleton.h>
 #include "interface/weapon_menu.h"
+#include "interface/weapon_help.h"
 #include "gui/progress_bar.h"
 #include "weapon/weapon_strength_bar.h"
 
@@ -34,7 +35,6 @@ class Team;
 class Text;
 class Polygon;
 class Weapon;
-class WeaponHelp;
 class Profile;
 class EnergyBar;
 
@@ -63,7 +63,7 @@ public:
   Character *character_under_cursor;
   const Weapon *weapon_under_cursor;
   WeaponsMenu weapons_menu;
-  WeaponHelp *help;
+  WeaponHelp help;
   Team *tmp_team;
 
 private:
