@@ -100,56 +100,6 @@ Menu::~Menu()
   }
 }
 
-void Menu::LoadMenu(std::shared_ptr<Profile> profile,
-                    const xmlNode * rootMenuNode)
-{
-  LoadBackground(profile, rootMenuNode);
-  LoadWidget(profile, rootMenuNode, &widgets);
-  widgets.Pack();
-}
-
-void Menu::LoadBackground(std::shared_ptr<Profile> profile,
-                          const xmlNode * rootMenuNode)
-{
-  XmlReader * xmlFile = profile->GetXMLDocument();
-  std::string file("menu/pic_not_found.png");
-  xmlFile->ReadStringAttr(rootMenuNode, "backgroundPicture", file);
-  file = profile->relative_path + file;
-  Surface surface(file.c_str());
-  background = new Sprite(surface);
-}
-
-void Menu::LoadWidget(std::shared_ptr<Profile> profile,
-                      const xmlNode * rootMenuNode,
-                      WidgetList * container)
-{
-  XmlReader * xmlFile = profile->GetXMLDocument();
-  uint widgetCount = xmlFile->GetNbChildren(rootMenuNode);
-  const xmlNode * currentNode = xmlFile->GetFirstChild(rootMenuNode);
-  std::string currentNodeName;
-
-  // For each sub-node ...
-  for ( ; widgetCount > 0; --widgetCount) {
-
-    currentNodeName = xmlFile->GetNodeName(currentNode);
-    Widget * newWidget = CreateWidget(profile, currentNode, currentNodeName);
-
-    if (newWidget) {
-      if ("GridBox" == currentNodeName ||
-          "HorizontalBox" == currentNodeName ||
-          "VerticalBox" == currentNodeName) {
-        LoadWidget(profile, currentNode, (WidgetList*)newWidget);
-      }
-      container->AddWidget(newWidget);
-    }
-    currentNode = xmlFile->GetNextSibling(currentNode);
-  }
-
-  if (container) {
-    container->Pack();
-  }
-}
-
 Widget * Menu::CreateWidget(std::shared_ptr<Profile> profile,
                             const xmlNode * widgetNode,
                             std::string & widgetName)

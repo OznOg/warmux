@@ -100,20 +100,6 @@ MainMenu::MainMenu() :
   StatStart("Main:Menu");
 }
 
-void MainMenu::Init(void)
-{
-  auto xmlProfile = GetResourceManager().LoadXMLProfile("menu.xml", false);
-  XmlReader * xmlFile = xmlProfile->GetXMLDocument();
-
-  const xmlNode * mainMenuNode = xmlFile->GetFirstNamedChild(xmlFile->GetRoot(), "MainMenu");
-  if (nullptr == mainMenuNode) {
-    Error("MainMenu: can't load 'MainMenu' xml node from menu.xml");
-    exit(EXIT_FAILURE);
-  }
-
-  LoadMenu(xmlProfile, mainMenuNode);
-}
-
 void MainMenu::SelectAction(const Widget * widget)
 {
   if (widget == play) {
@@ -141,33 +127,6 @@ void MainMenu::SelectAction(const Widget * widget)
     choice = QUIT;
     close_menu = true;
   }
-
-  // New implementation (XML custom menus)
-  /*
-  if (NULL == widget) {
-    return;
-  }
-  std::string action = widget->GetActionName();
-  if ("GoToLocalGameMenu" == action) {
-    choice = PLAY;
-    close_menu = true;
-  } else if ("GoToNetworkGameMenu" == action) {
-    choice = NETWORK;
-    close_menu = true;
-  } else if ("GoToOptionsMenu" == action) {
-    choice = OPTIONS;
-    close_menu = true;
-  } else if ("GoToHelpMenu" == action) {
-    choice = HELP;
-    close_menu = true;
-  } else if ("GoToCreditsMenu" == action) {
-    choice = CREDITS;
-    close_menu = true;
-  } else if ("Quit" == action) {
-    choice = QUIT;
-    close_menu = true;
-  }
-  */
 }
 
 void MainMenu::OnClickUp(const Point2i &mousePosition, int button)
