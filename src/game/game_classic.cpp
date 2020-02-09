@@ -146,7 +146,7 @@ void GameClassic::__SetState_PLAYING()
   Interface::GetInstance()->EnableDisplayTimer(true);
   last_clock_update = GameTime::GetInstance()->Read();
 
-  Wind::GetRef().UpdateStrength();
+  Wind::GetRef().ChooseRandomVal();
 
   SetCharacterChosen(false);
 

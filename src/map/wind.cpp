@@ -191,24 +191,10 @@ void Wind::Reset()
   RandomizeParticlesPos();
 }
 
-void Wind::SetVal(int val)
-{
-  if (val > 100) m_nv_val = 100;
-  else if (val < -100) m_nv_val = -100;
-  else
-    m_nv_val = val;
-}
-
 void Wind::ChooseRandomVal()
 {
   MSG_DEBUG("random.get", "Wind::ChooseRandomVal()");
   SetVal(RandomSync().GetInt(-100, 100));
-}
-
-void Wind::UpdateStrength()
-{
-  MSG_DEBUG("random.get", "Wind::UpdateStrength()");
-  SetVal(m_nv_val + RandomSync().GetInt(-50, 50));
 }
 
 void Wind::DrawParticles()

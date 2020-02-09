@@ -167,7 +167,7 @@ void GameBlitz::__SetState_PLAYING()
 {
   MSG_DEBUG("game.statechange", "Playing");
 
-  Wind::GetRef().UpdateStrength();
+  Wind::GetRef().ChooseRandomVal();
 
   SetCharacterChosen(false);
 
