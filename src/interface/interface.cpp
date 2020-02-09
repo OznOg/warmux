@@ -52,27 +52,26 @@
 
 void Interface::LoadData()
 {
-  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  Surface tmp     = res->LoadImage("interface/background_interface");
+  Surface tmp     = profile->LoadImage("interface/background_interface");
 
   FreeDrawElements();
 
   // Clocks should be kept, as information difficult to retrieve is there
   if (!clock_normal)
-    clock_normal    = res->LoadSprite("interface/clock_normal");
+    clock_normal    = profile->LoadSprite("interface/clock_normal");
   if (!clock_emergency)
-    clock_emergency = res->LoadSprite("interface/clock_emergency");
+    clock_emergency = profile->LoadSprite("interface/clock_emergency");
 
   bool replay = Replay::GetConstInstance()->IsPlaying();
   last_width = AppWarmux::GetInstance()->video->window.GetWidth();
   if (last_width < tmp.GetWidth()+20) {
     zoom            = last_width / (float)(tmp.GetWidth()+20);
     default_toolbar = tmp.RotoZoom(0.0, zoom, zoom);
-    small_interface = res->LoadImage("interface/small_background_interface").RotoZoom(0.0, zoom, zoom);
+    small_interface = profile->LoadImage("interface/small_background_interface").RotoZoom(0.0, zoom, zoom);
     if (replay) {
-      replay_toolbar = res->LoadImage("interface/background_replay").RotoZoom(0.0, zoom, zoom);
+      replay_toolbar = profile->LoadImage("interface/background_replay").RotoZoom(0.0, zoom, zoom);
     } else {
-      control_toolbar = res->LoadImage("interface/background_control_interface").RotoZoom(0.0, zoom, zoom);
+      control_toolbar = profile->LoadImage("interface/background_control_interface").RotoZoom(0.0, zoom, zoom);
     }
     clock_normal->Scale(zoom, zoom);
     clock_emergency->Scale(zoom, zoom);
@@ -81,11 +80,11 @@ void Interface::LoadData()
     zoom            = 1.0f;
     default_toolbar = tmp;
     if (replay) {
-      replay_toolbar = res->LoadImage("interface/background_replay");
+      replay_toolbar = profile->LoadImage("interface/background_replay");
     } else {
-      control_toolbar = res->LoadImage("interface/background_control_interface");
+      control_toolbar = profile->LoadImage("interface/background_control_interface");
     }
-    small_interface = res->LoadImage("interface/small_background_interface");
+    small_interface = profile->LoadImage("interface/small_background_interface");
   }
   clock_width = 70*zoom+0.5f;
 #if defined(ANDROID) || defined (__SYMBIAN32__)
@@ -126,7 +125,8 @@ void Interface::LoadData()
 }
 
 Interface::Interface()
-  : global_timer(nullptr)
+  : profile(GetResourceManager().LoadXMLProfile("graphism.xml", false))
+  , global_timer(nullptr)
   , timer(nullptr)
   , energy_bar(nullptr)
   , t_character_name(nullptr)
@@ -140,6 +140,7 @@ Interface::Interface()
   , start_hide_display(0)
   , start_show_display(0)
   , display_minimap(true)
+  , weapon_strength_bar(profile)
   , clock(nullptr)
   , clock_normal(nullptr)
   , clock_emergency(nullptr)
@@ -150,13 +151,12 @@ Interface::Interface()
   , mask(nullptr)
   , scratch(nullptr)
 {
-  auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  m_text_color = res->LoadColor("interface/text_color");
-  m_energy_text_color = res->LoadColor("interface/energy_text_color");
+  m_text_color = profile->LoadColor("interface/text_color");
+  m_energy_text_color = profile->LoadColor("interface/energy_text_color");
 
   // wind bar
-  wind_bar.SetMinMaxValueColor(res->LoadColor("interface/wind_color_min"),
-                               res->LoadColor("interface/wind_color_max"));
+  wind_bar.SetMinMaxValueColor(profile->LoadColor("interface/wind_color_min"),
+                               profile->LoadColor("interface/wind_color_max"));
   wind_bar.InitVal(0, -100, 100);
 
   wind_bar.border_color.SetColor(0, 0, 0, 0);
@@ -169,13 +169,13 @@ Interface::Interface()
   weapon_strength_bar.InitPos(0, 0, 300, 15);
   weapon_strength_bar.InitVal(0, 0, 100);
 
-  weapon_strength_bar.SetValueColor(res->LoadColor("interface/weapon_strength_bar_value"));
-  weapon_strength_bar.SetBorderColor(res->LoadColor("interface/weapon_strength_bar_border"));
-  weapon_strength_bar.SetBackgroundColor(res->LoadColor("interface/weapon_strength_bar_background"));
+  weapon_strength_bar.SetValueColor(profile->LoadColor("interface/weapon_strength_bar_value"));
+  weapon_strength_bar.SetBorderColor(profile->LoadColor("interface/weapon_strength_bar_border"));
+  weapon_strength_bar.SetBackgroundColor(profile->LoadColor("interface/weapon_strength_bar_background"));
 
-  m_camera_preview_color = res->LoadColor("interface/camera_preview_color");
+  m_camera_preview_color = profile->LoadColor("interface/camera_preview_color");
 
-  m_playing_character_preview_color = res->LoadColor("interface/playing_character_preview_color");
+  m_playing_character_preview_color = profile->LoadColor("interface/playing_character_preview_color");
 }
 
 Interface::~Interface()

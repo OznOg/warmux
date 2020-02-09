@@ -21,6 +21,7 @@
 #define WEAPON_STRENGTH_BAR_H
 
 #include "gui/progress_bar.h"
+#include "tool/resource_manager.h"
 
 class Sprite;
 class PolygonItem;
@@ -28,6 +29,7 @@ class DecoratedBox;
 
 class WeaponStrengthBar : public ProgressBar
 {
+  std::shared_ptr<Profile> profile;
   bool visible;
   std::unique_ptr<DecoratedBox> m_box;
   std::unique_ptr<Sprite> last_fire;
@@ -35,7 +37,7 @@ class WeaponStrengthBar : public ProgressBar
   void FetchData();
 
 public:
-  WeaponStrengthBar();
+  WeaponStrengthBar(std::shared_ptr<Profile> profile);
   ~WeaponStrengthBar() override;
   void DrawXY(const Point2i &pos) const override;
   void InitPos (uint x, uint y, uint larg, uint haut) override;

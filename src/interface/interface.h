@@ -67,6 +67,8 @@ public:
   Team *tmp_team;
 
 private:
+  std::shared_ptr<Profile> profile;
+
   // Regular part of the interface
   int     clock_width;
 

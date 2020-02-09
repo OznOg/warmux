@@ -27,7 +27,6 @@
 #include "graphic/video.h"
 
 #include "map/map.h"
-#include "tool/resource_manager.h"
 #include "team/team.h"
 #include "team/teams_list.h"
 #include "character/character.h"
@@ -36,8 +35,9 @@
 #include "game/game.h"
 
 
-WeaponStrengthBar::WeaponStrengthBar() :
+WeaponStrengthBar::WeaponStrengthBar(std::shared_ptr<Profile> profile) :
   ProgressBar(),
+  profile(profile),
   visible(false),
   m_box(nullptr),
   last_fire(nullptr),
