@@ -81,17 +81,6 @@ Menu::Menu(const std::string& bg, t_action _actions)
   widgets.SetContainer(this);
 }
 
-Menu::Menu(void)
-  : widgets()
-  , actions(vNo)
-  , background(nullptr)
-  , b_cancel(nullptr)
-  , b_ok(nullptr)
-  , close_menu(false)
-  , actions_buttons(nullptr)
-{
-}
-
 Menu::~Menu()
 {
   AppWarmux::GetInstance()->SetCurrentMenu(nullptr);

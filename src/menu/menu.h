@@ -48,7 +48,6 @@ public:
   const t_action actions;
 
   Menu(const std::string& bg, t_action actions = vOkCancel);
-  Menu(void);
   ~Menu() override;
 
   void Run(bool skip=false);
