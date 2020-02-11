@@ -48,7 +48,7 @@ Menu::Menu(const std::string& bg, t_action _actions)
   Surface& window = GetMainWindow();
 
   auto res = GetResourceManager().LoadXMLProfile("graphism.xml", false);
-  background = new Sprite(res->LoadImage(bg, false));
+  background = std::make_unique<Sprite>(res->LoadImage(bg, false));
 
   b_ok = nullptr;
   b_cancel = nullptr;
@@ -84,9 +84,6 @@ Menu::Menu(const std::string& bg, t_action _actions)
 Menu::~Menu()
 {
   AppWarmux::GetInstance()->SetCurrentMenu(nullptr);
-  if (background) {
-    delete background;
-  }
 }
 
 Widget * Menu::CreateWidget(std::shared_ptr<Profile> profile,

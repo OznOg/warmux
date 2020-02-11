@@ -64,7 +64,7 @@ public:
   static void WakeUpOnCallback();
 
 private:
-  Sprite *background;
+  std::unique_ptr<Sprite> background;
 
   // Detect and instanciate a widget.
   Widget * CreateWidget(std::shared_ptr<Profile> profile,
