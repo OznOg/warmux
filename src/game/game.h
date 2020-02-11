@@ -40,7 +40,7 @@ class WeaponsList;
 class Interface;
 class Menu;
 
-class Game : public Singleton<Game>
+class Game
 {
 public:
   typedef enum {
@@ -54,6 +54,10 @@ public:
     START_PAUSE,
     END_PAUSE
   } PauseRequest;
+
+  Game();
+  virtual ~Game();
+  bool IsGameLaunched() const { return isGameLaunched; }
 
 protected:
   virtual bool Run();         // Main loop
@@ -72,11 +76,6 @@ protected:
   bool                benching;
   std::vector< std::pair<float, float> > bench_res;
   Interface          *interface = nullptr;
-
-  friend class Singleton<Game>;
-  friend bool GameIsRunning();
-  Game();
-  ~Game() override;
 
 private:
   static std::string  current_rules;
@@ -148,8 +147,6 @@ private:
   virtual void __SetState_HAS_PLAYED() = 0;
   virtual void __SetState_END_TURN() = 0;
 
-  bool IsGameLaunched() const { return isGameLaunched; }
-
   // Menus might be launched while a game is running
   static Menu *menu;
 
@@ -207,6 +204,6 @@ public:
   float GetLastFrameRate() const;
 };
 
-inline bool GameIsRunning() { return (Game::singleton) ? Game::singleton->IsGameLaunched() : false; }
+inline bool GameIsRunning() { return Game::GetInstance() ? Game::GetInstance()->IsGameLaunched() : false; }
 
 #endif // GAME_H

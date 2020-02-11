@@ -24,12 +24,10 @@
 
 #include <WARMUX_rectangle.h>
 
-class Surface;
-
 class Container
 {
  public:
-  virtual ~Container() {};
+  virtual ~Container() = default;
   virtual void RedrawBackground(const Rectanglei& rect) const = 0;
 };
 

@@ -81,36 +81,28 @@ std::string Game::current_rules = "none";
 
 Menu *Game::menu = nullptr;
 
+std::unique_ptr<Game> singleton;
+
 Game * Game::GetInstance()
 {
-  if (!singleton) {
-
-    current_rules = GameMode::GetRef().rules;
-
-    if (GameMode::GetRef().rules == "blitz")
-      singleton = new GameBlitz();
-    else if (GameMode::GetRef().rules == "classic" ||
-             GameMode::GetRef().rules == "benchmark")
-      singleton = new GameClassic();
-    else {
-      fprintf(stderr, "%s game rules not implemented\n", GameMode::GetRef().rules.c_str());
-      exit(1);
-    }
-    singleton->menu = nullptr;
-  }
-  return singleton;
+  return singleton.get();
 }
 
 Game * Game::UpdateGameRules()
 {
-  const std::string& config_rules = GameMode::GetRef().rules;
-  printf("Current rules: %s\n", config_rules.c_str());
-  if (singleton && current_rules != config_rules) {
-    printf("Rules change! %s -> %s\n", current_rules.c_str(), config_rules.c_str());
-    delete singleton;
-  }
+  auto config_rules = GameMode::GetRef().rules;
 
-  return GetInstance();
+  if (config_rules == "blitz")
+      singleton = std::make_unique<GameBlitz>();
+  else if (config_rules == "classic" || config_rules == "benchmark")
+      singleton = std::make_unique<GameClassic>();
+  else {
+      fprintf(stderr, "%s game rules not implemented\n", config_rules.c_str());
+      exit(1);
+  }
+  singleton->menu = nullptr;
+
+  return singleton.get();
 }
 
 void Game::InitEverything()
