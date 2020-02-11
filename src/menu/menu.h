@@ -92,8 +92,6 @@ protected:
   virtual void key_cancel();
   virtual void key_up();
   virtual void key_down();
-  virtual void key_left();
-  virtual void key_right();
   virtual void key_tab();
   virtual bool signal_ok() { return true; }
   virtual bool signal_cancel() { return true; }

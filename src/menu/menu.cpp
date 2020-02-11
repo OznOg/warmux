@@ -195,14 +195,6 @@ void Menu::key_down()
   RedrawMenu();
 }
 
-void Menu::key_left()
-{
-}
-
-void Menu::key_right()
-{
-}
-
 void Menu::key_tab()
 {
   widgets.SetFocusOnNextWidget();
@@ -320,12 +312,6 @@ void Menu::HandleEvent(const SDL_Event& evnt)
         break;
       case SDLK_DOWN:
         key_down();
-        break;
-      case SDLK_LEFT:
-        key_left();
-        break;
-      case SDLK_RIGHT:
-        key_right();
         break;
       case SDLK_TAB:
         key_tab();
