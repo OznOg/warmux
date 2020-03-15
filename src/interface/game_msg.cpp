@@ -79,7 +79,7 @@ void GameMessages::Add(const std::string &message, const Color& color)
   // Debug message
   std::cout << "o MSG: " << message << std::endl;
   // Add message at the end of the list
-  Message * newMessage = new Message(message, color, Font::FONT_MEDIUM,
+  auto * newMessage = new Message(message, color, Font::FONT_MEDIUM,
                                      Font::FONT_BOLD, GameTime::GetInstance()->Read());
   newMessage->SetMaxWidth(GetMainWindow().GetWidth()-8);
   list.push_back(newMessage);

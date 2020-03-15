@@ -59,7 +59,7 @@ ButtonPic::ButtonPic(std::shared_ptr<Profile> profile,
              picture="menu/i_play.png"
              text="Play" />
 */
-bool ButtonPic::LoadXMLConfiguration(void)
+bool ButtonPic::LoadXMLConfiguration()
 {
   if (nullptr == profile || nullptr == widgetNode) {
     //TODO error ... xml attributs not initialized !

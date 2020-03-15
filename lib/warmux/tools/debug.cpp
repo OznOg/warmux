@@ -17,13 +17,13 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  ******************************************************************************/
 
-#include <iostream>
+#include <cstdarg>
 #include <cstdio>
-#include <vector>
+#include <cstring>
+#include <iostream>
 #include <string>
-#include <string.h>
-#include <stdarg.h>
 #include <sys/types.h>
+#include <vector>
 #ifdef _MSC_VER
 #  include <process.h>
 #  define getpid _getpid

@@ -20,10 +20,12 @@
  *****************************************************************************/
 
 #include "gui/picture_widget.h"
+
 #include "graphic/colors.h"
 #include "graphic/sprite.h"
 #include "graphic/video.h"
 #include "include/app.h"
+#include <utility>
 
 PictureWidget::PictureWidget(const Point2i & _size)
   : Widget(_size, false)
@@ -36,12 +38,12 @@ PictureWidget::PictureWidget(const Point2i & _size)
 }
 
 PictureWidget::PictureWidget(const Point2i & _size,
-                             const std::string & resource_id,
+                             std::string  resource_id,
                              ScalingType _type)
   : Widget(_size, false)
   , disabled(false)
   , loaded(false)
-  , name(resource_id)
+  , name(std::move(resource_id))
   , type(_type)
   , picture_size(0, 0)
   , spr(nullptr)
@@ -197,5 +199,5 @@ Point2i PictureWidget::GetPicturePosition() const
 
 Point2f PictureWidget::GetScale() const
 {
-  return Point2f(spr->GetScaleX().tofloat(), spr->GetScaleY().tofloat());
+  return {spr->GetScaleX().tofloat(), spr->GetScaleY().tofloat()};
 }

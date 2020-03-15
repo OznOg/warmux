@@ -128,7 +128,7 @@ private:
 public:
 
   bool MustBeDrawn() const;
-  Character (Team& my_team, const std::string &name, Body *char_body, Config cfg, const ObjectConfig &obj_cfg);
+  Character (Team& my_team, std::string name, Body *char_body, Config cfg, const ObjectConfig &obj_cfg);
   Character (const Character& acharacter) = delete;
   ~Character() override;
 

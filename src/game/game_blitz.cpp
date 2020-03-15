@@ -54,7 +54,7 @@ void GameBlitz::EndOfGame()
 
 GameBlitz::time_iterator GameBlitz::GetCurrentTeam()
 {
-  time_iterator cur = times.find(ActiveTeam().GetGroup());
+  auto cur = times.find(ActiveTeam().GetGroup());
   ASSERT(cur != times.end());
   return cur;
 }
@@ -95,7 +95,7 @@ void GameBlitz::RefreshClock()
     if (counter) {
       counter--;
     } else {
-      time_iterator cur = GetCurrentTeam();
+      auto cur = GetCurrentTeam();
 
       uint duration = cur->second;
 

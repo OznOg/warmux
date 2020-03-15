@@ -244,7 +244,7 @@ void NetworkMenu::PrepareForNewGame()
 bool NetworkMenu::signal_ok()
 {
   const std::vector<Team*>& playing_list = GetTeamsList().playing_list;
-  std::vector<Team*>::const_iterator it  = playing_list.begin();
+  auto it  = playing_list.begin();
   bool found       = false;
   uint first_group;
 

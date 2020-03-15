@@ -19,11 +19,12 @@
  * Custom Team
  *****************************************************************************/
 
+#include <cerrno>
 #include <cstring>
-#include <sstream>
 #include <iostream>
-#include <errno.h>
 #include <libxml/tree.h>
+#include <sstream>
+#include <utility>
 
 #include "game/config.h"
 #include "team/custom_team.h"
@@ -31,10 +32,10 @@
 #include <WARMUX_file_tools.h>
 #include "tool/xml_document.h"
 
-CustomTeam::CustomTeam(const std::string &team_name)
+CustomTeam::CustomTeam(std::string team_name)
   : is_name_changed(false)
   , nb_characters(MAX_CHARACTERS)
-  , name(team_name)
+  , name(std::move(team_name))
 {
   Config *config = Config::GetInstance();
   int team_count = 0;
@@ -51,16 +52,16 @@ CustomTeam::CustomTeam(const std::string &team_name)
   } while (DoesFolderExist(directory_name));
 
   for (uint i = 1; i < nb_characters + 1; i++) {
-    characters_name_list.push_back("");
+    characters_name_list.emplace_back("");
   }
 }
 
-CustomTeam::CustomTeam(const std::string& team_name,
-                       const std::string& directory,
+CustomTeam::CustomTeam(std::string  team_name,
+                       std::string  directory,
                        const std::vector<std::string>& list)
   : is_name_changed(false)
-  , name(team_name)
-  , directory_name(directory)
+  , name(std::move(team_name))
+  , directory_name(std::move(directory))
   , characters_name_list(list)
 {
   nb_characters = list.size();
@@ -109,11 +110,6 @@ CustomTeam* CustomTeam::LoadCustomTeam(const std::string &custom_teams_dir,
   }
 
   return new CustomTeam(teamname, directory, list);
-}
-
-
-CustomTeam::~CustomTeam()
-{
 }
 
 void CustomTeam::Delete()

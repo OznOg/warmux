@@ -30,7 +30,6 @@ class FireParticle : public Particle
   int oscil_delta;
 public:
   FireParticle();
-  ~FireParticle() override;
   void Refresh() override;
   void Draw() override;
 protected:

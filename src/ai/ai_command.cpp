@@ -40,14 +40,14 @@ bool IncreaseAngleCommand::Execute()
   float current_angle = ActiveCharacter().GetAbsFiringAngle().tofloat();
   if (current_angle >= target_angle) {
     if (is_increasing) {
-      Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_DOWN);
+      auto *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_DOWN);
       a->Push(slowly);
       ActionHandler::GetInstance()->NewAction(a);
     }
     return true;
   } else {
     if (!is_increasing) {
-      Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_DOWN);
+      auto *a = new Action(Action::ACTION_CHARACTER_START_MOVING_DOWN);
       a->Push(slowly);
       ActionHandler::GetInstance()->NewAction(a);
       is_increasing = true;
@@ -70,14 +70,14 @@ bool DecreaseAngleCommand::Execute()
   float current_angle = ActiveCharacter().GetAbsFiringAngle().tofloat();
   if (current_angle <= target_angle) {
     if (is_decreasing) {
-      Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_UP);
+      auto *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_UP);
       a->Push(slowly);
       ActionHandler::GetInstance()->NewAction(a);
     }
     return true;
   } else {
     if (!is_decreasing) {
-      Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_UP);
+      auto *a = new Action(Action::ACTION_CHARACTER_START_MOVING_UP);
       a->Push(slowly);
       ActionHandler::GetInstance()->NewAction(a);
       is_decreasing = true;
@@ -134,14 +134,14 @@ bool SetWeaponAngleCommand::Execute()
 
 bool StartShootingCommand::Execute()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_START_SHOOTING);
+  auto *a = new Action(Action::ACTION_WEAPON_START_SHOOTING);
   ActionHandler::GetInstance()->NewAction(a);
   return true;
 }
 
 bool StopShootingCommand::Execute()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_STOP_SHOOTING);
+  auto *a = new Action(Action::ACTION_WEAPON_STOP_SHOOTING);
   ActionHandler::GetInstance()->NewAction(a);
   return true;
 }
@@ -238,7 +238,7 @@ bool SelectWeaponCommand::Execute()
 {
   if (weapon == ActiveTeam().GetWeapon().GetType())
     return true;
-  Action * a = new Action(Action::ACTION_PLAYER_CHANGE_WEAPON, weapon);
+  auto * a = new Action(Action::ACTION_PLAYER_CHANGE_WEAPON, weapon);
   ActionHandler::GetInstance()->NewAction(a);
   return true;
 }
@@ -277,7 +277,7 @@ SetTimeoutCommand::SetTimeoutCommand(int timeout):
 
 bool SetTimeoutCommand::Execute()
 {
-  Action * a = new Action(Action::ACTION_WEAPON_SET_TIMEOUT, timeout);
+  auto * a = new Action(Action::ACTION_WEAPON_SET_TIMEOUT, timeout);
   ActionHandler::GetInstance()->NewAction(a);
   return true;
 }

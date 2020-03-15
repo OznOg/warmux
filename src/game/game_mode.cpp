@@ -201,7 +201,7 @@ bool GameMode::LoadXml(XmlReader &doc)
   return bool(weapons_list);
 }
 
-bool GameMode::Load(void)
+bool GameMode::Load()
 {
   Config * config = Config::GetInstance();
 

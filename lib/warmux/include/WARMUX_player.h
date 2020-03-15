@@ -48,7 +48,7 @@ private:
   std::list<ConfigTeam>::iterator FindTeamWithId(const std::string team_id);
   State state;
 public:
-  Player(uint player_id, const std::string& nickname);
+  Player(uint player_id, std::string  nickname);
   Player();
   ~Player() { Disconnect(); }
   // This is misleading: it is assumed this doesn't use the network, check ~DistantComputer()

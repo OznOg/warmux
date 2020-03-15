@@ -28,7 +28,7 @@ std::map<int, SoundSample*> SoundSample::sound_samples_channel;
 
 void SoundSample::ChannelFinished(int channel)
 {
-  std::map<int, SoundSample*>::iterator it=sound_samples_channel.find(channel);
+  auto it=sound_samples_channel.find(channel);
 
   if (it != sound_samples_channel.end()) {
     SoundSample* s = it->second;
@@ -43,7 +43,7 @@ SoundSample::~SoundSample()
     return;
 
   // removing sample from the table
-  std::map<int, SoundSample*>::iterator it=sound_samples_channel.find(channel);
+  auto it=sound_samples_channel.find(channel);
 
   if (it != sound_samples_channel.end()) {
     SoundSample* s = it->second;

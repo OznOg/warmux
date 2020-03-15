@@ -20,7 +20,9 @@
  *****************************************************************************/
 
 #include "weapon/weapon_strength_bar.h"
+
 #include "graphic/color.h"
+#include <utility>
 
 #include "graphic/sprite.h"
 #include "graphic/polygon_generator.h"
@@ -37,15 +39,13 @@
 
 WeaponStrengthBar::WeaponStrengthBar(std::shared_ptr<Profile> profile) :
   ProgressBar(),
-  profile(profile),
+  profile(std::move(profile)),
   visible(false),
   m_box(nullptr),
   last_fire(nullptr),
   m_item_last_fire(nullptr)
 {
 }
-
-WeaponStrengthBar::~WeaponStrengthBar() = default;
 
 void WeaponStrengthBar::InitPos(uint px, uint py, uint pwidth, uint pheight)
 {
@@ -128,7 +128,7 @@ void WeaponStrengthBar::DrawXY(const Point2i &pos) const {
   image.FillRect(r_value, bar_color);
 
   // marks
-  mark_it_const it=mark.begin(), it_end = mark.end();
+  auto it=mark.begin(), it_end = mark.end();
   for (; it != it_end; ++it) {
     Point2i p_marq(1+it->val, height/2);
 

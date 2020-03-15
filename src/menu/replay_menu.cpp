@@ -19,8 +19,8 @@
  * Replay menu
  *****************************************************************************/
 
+#include <ctime>
 #include <fstream>
-#include <time.h>
 
 #include <WARMUX_i18n.h>
 

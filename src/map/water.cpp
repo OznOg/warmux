@@ -19,20 +19,20 @@
  * Refresh water that may be placed in bottom of the ground.
  *****************************************************************************/
 
+#include "map/water.h"
 #include "game/game_mode.h"
-#include <assert.h>
-#include <SDL.h>
 #include "game/game_time.h"
 #include "graphic/video.h"
 #include "interface/interface.h"
 #include "map/camera.h"
 #include "map/map.h"
 #include "map/maps_list.h"
-#include "map/water.h"
 #include "particles/particle.h"
 #include "tool/math_tools.h"
 #include "tool/resource_manager.h"
 #include "tool/string_tools.h"
+#include <SDL.h>
+#include <cassert>
 
 #define GO_UP_TIME 1  // min
 #define GO_UP_STEP 15 // pixels

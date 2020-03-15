@@ -194,7 +194,7 @@ void Polygon::Init()
 void Polygon::ApplyTransformation(const AffineTransform2D & trans, bool save_transformation)
 {
   int i = 0;
-  for (std::vector<Point2d>::iterator point = original_shape.begin();
+  for (auto point = original_shape.begin();
       point != original_shape.end(); point++, i++) {
     transformed_shape[i] = trans * (*point);
     if (save_transformation)
@@ -317,7 +317,7 @@ void Polygon::DeletePoint(int index)
   Point2d tmp;
   int i = 0;
   shape_buffer->SetSize(shape_buffer->GetSize() - 1);
-  for (std::vector<Point2d>::iterator point = original_shape.begin();
+  for (auto point = original_shape.begin();
       point != original_shape.end(); point++, i++) {
     if (i == index) continue; // Skip point to remove
     tmp = (*point);
@@ -344,7 +344,7 @@ void Polygon::ClearItem()
 
 Point2d Polygon::GetRandomUpperPoint()
 {
-  std::vector<Point2d>::iterator point = transformed_shape.begin();
+  auto point = transformed_shape.begin();
   Point2d tmp, previous;
   tmp = *point;
   MSG_DEBUG("random.get", "Polygon::GetRandomUpperPoint()");
@@ -361,7 +361,7 @@ Point2d Polygon::GetRandomUpperPoint()
     if (tmp.y > max_tmp)
       return tmp;
   }
-  return Point2d();
+  return {};
 }
 
 // And the famous Bezier curve. And this algorithm is that simple ? I'm so disappointed !
@@ -410,7 +410,7 @@ void Polygon::AddRandomCurve(const Point2d& start, const Point2d& end,
 Polygon * Polygon::GetBezierInterpolation(Double smooth_value, int num_steps, Double rand)
 {
   Point2d p0, p1, p2, p3, c0, c1, c2, v1, v2;
-  Polygon * shape = new Polygon();
+  auto * shape = new Polygon();
   Double l1, l2, l3;
   AffineTransform2D trans = AffineTransform2D();
   for (int index_p1 = 0; index_p1 < (int)original_shape.size(); index_p1++) {

@@ -341,7 +341,7 @@ void Grapple::Draw()
   quad.x2 = (int)round(x + 2 * cos(angle));
   quad.y2 = (int)round(y - 2 * sin(angle));
 
-  for (std::list<rope_node_t>::reverse_iterator it = rope_nodes.rbegin();
+  for (auto it = rope_nodes.rbegin();
        it != rope_nodes.rend(); it++) {
     quad.x3 = (int)round(it->pos.x + 2 * cos(angle));
     quad.y3 = (int)round(it->pos.y - 2 * sin(angle));

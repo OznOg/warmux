@@ -16,7 +16,7 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  ******************************************************************************/
-#include <signal.h>
+#include <csignal>
 #ifdef _WIN32
 # include <windows.h>
 # include <direct.h>
@@ -37,7 +37,7 @@ void Env::SetConfigClass(ServerConfig& _config)
   config = &_config;
 }
 
-void Env::Daemonize(void)
+void Env::Daemonize()
 {
 #ifndef _WIN32
   pid_t fwis = fork();

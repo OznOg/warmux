@@ -45,7 +45,7 @@ AbstractSpinButton::AbstractSpinButton(std::shared_ptr<Profile> profile,
 {
 }
 
-bool AbstractSpinButton::LoadXMLConfiguration(void)
+bool AbstractSpinButton::LoadXMLConfiguration()
 {
   if (nullptr == profile || nullptr == widgetNode) {
     return false;

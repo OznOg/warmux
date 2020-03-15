@@ -36,19 +36,19 @@ const int Constants::MAP_MAX_SIZE = 6000*6000;
 
 Constants::Constants()
 {
-  AUTHORS.push_back("Lawrence AZZOUG");
-  AUTHORS.push_back("Frédéric BERTOLUS");
-  AUTHORS.push_back("Anthony CARRÉ");
-  AUTHORS.push_back("Laurent DEFERT SIMONNEAU");
-  AUTHORS.push_back("Jean-Christophe DUBERGA");
-  AUTHORS.push_back("Matthieu FERTRÉ");
-  AUTHORS.push_back("Christophe GISQUET");
-  AUTHORS.push_back("Sebastien GONZALVE");
-  AUTHORS.push_back("Reiner HERRMANN");
-  AUTHORS.push_back("Florian KÖBERLE");
-  AUTHORS.push_back("Renaud LOTTIAUX");
-  AUTHORS.push_back("Yannig PERRÉ");
-  AUTHORS.push_back("Olivie SERRES");
-  AUTHORS.push_back("Victor STINNER");
-  AUTHORS.push_back("Mikko VARTIAINEN");
+  AUTHORS.emplace_back("Lawrence AZZOUG");
+  AUTHORS.emplace_back("Frédéric BERTOLUS");
+  AUTHORS.emplace_back("Anthony CARRÉ");
+  AUTHORS.emplace_back("Laurent DEFERT SIMONNEAU");
+  AUTHORS.emplace_back("Jean-Christophe DUBERGA");
+  AUTHORS.emplace_back("Matthieu FERTRÉ");
+  AUTHORS.emplace_back("Christophe GISQUET");
+  AUTHORS.emplace_back("Sebastien GONZALVE");
+  AUTHORS.emplace_back("Reiner HERRMANN");
+  AUTHORS.emplace_back("Florian KÖBERLE");
+  AUTHORS.emplace_back("Renaud LOTTIAUX");
+  AUTHORS.emplace_back("Yannig PERRÉ");
+  AUTHORS.emplace_back("Olivie SERRES");
+  AUTHORS.emplace_back("Victor STINNER");
+  AUTHORS.emplace_back("Mikko VARTIAINEN");
 }

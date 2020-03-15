@@ -24,10 +24,10 @@
 #include <SDL_timer.h>
 #include <WARMUX_socket.h>
 
+#include "extSDL_net.h"
+#include <cerrno>
 #include <iostream>
 #include <sys/types.h>
-#include <errno.h>
-#include "extSDL_net.h"
 //-----------------------------------------------------------------------------
 
 // bigger packets are sent by a fake client
@@ -259,7 +259,7 @@ WSocket* WSocket::LookForClient()
   if (!client_sock)
     return nullptr;
 
-  WSocket* client = new WSocket(client_sock);
+  auto* client = new WSocket(client_sock);
   return client;
 }
 

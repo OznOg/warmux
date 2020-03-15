@@ -340,7 +340,7 @@ void TileItem_ColorKey16::Darken(int start_x, int end_x, uint8_t* buf)
     start_x = (start_x < 0) ? 0 : (start_x >= CELL_DIM) ? CELL_DIM - 1 : start_x;
     end_x = (end_x >= CELL_DIM) ? CELL_DIM - start_x : end_x - start_x + 1;
 
-    uint16_t *ptr = (uint16_t*)buf;
+    auto *ptr = (uint16_t*)buf;
     ptr += start_x;
     while (end_x--) {
       uint16_t s = ptr[0];
@@ -358,7 +358,7 @@ void TileItem_ColorKey16::Empty(int start_x, int end_x, uint8_t* buf)
     start_x = (start_x < 0) ? 0 : (start_x >= CELL_DIM) ? CELL_DIM - 1 : start_x;
     end_x = (end_x >= CELL_DIM) ? CELL_DIM - start_x : end_x - start_x + 1;
 
-    uint16_t *ptr = (uint16_t*)buf;
+    auto *ptr = (uint16_t*)buf;
     uint16_t ckey = color_key;
     ptr += start_x;
     while (end_x--)
@@ -369,7 +369,7 @@ void TileItem_ColorKey16::Empty(int start_x, int end_x, uint8_t* buf)
 void TileItem_ColorKey16::ScalePreview(uint8_t* out, int x, uint opitch, uint shift)
 {
   const Uint16 *idata  = (Uint16*)m_surface.GetPixels();
-  Uint16       *odata  = (Uint16*)out;
+  auto       *odata  = (Uint16*)out;
   uint          ipitch = m_surface.GetPitch();
   Point2i       start  = m_start_check>>shift;
   Point2i       end    = (m_end_check + (1<<shift) -1)>>shift;
@@ -417,7 +417,7 @@ void TileItem_ColorKey16::ScalePreview(uint8_t* out, int x, uint opitch, uint sh
 TileItem_ColorKey24::TileItem_ColorKey24(void *pixels, int pitch, uint8_t threshold)
   : TileItem_BaseColorKey(threshold)
 {
-  uint8_t *ptr  = (uint8_t*)pixels;
+  auto *ptr  = (uint8_t*)pixels;
   int      x, y;
 
   // Set pixels considered as transparent as colorkey
@@ -630,7 +630,7 @@ void TileItem_AlphaSoftware::Dig(const Point2i &position, const Surface& dig)
   m_start_check.SetValues(position.max(Point2i(0, 0)));
   m_end_check.SetValues(m_surface.GetSize().min(position+dig.GetSize()));
 
-  Uint32 *ptr    = (Uint32 *)m_surface.GetPixels();
+  auto *ptr    = (Uint32 *)m_surface.GetPixels();
   int     pitch  = m_surface.GetPitch()>>2;
 
   ptr += m_start_check.y*pitch;
@@ -653,7 +653,7 @@ void TileItem_AlphaSoftware::Darken(int start_x, int end_x, uint8_t* buf)
     start_x = (start_x < 0) ? 0 : (start_x >= CELL_DIM) ? CELL_DIM - 1 : start_x;
     end_x = (end_x >= CELL_DIM) ? CELL_DIM - start_x : end_x - start_x + 1;
 
-    uint32_t *ptr = (uint32_t*)buf;
+    auto *ptr = (uint32_t*)buf;
     ptr += start_x;
     while(end_x--) {
       uint32_t s = ptr[0];

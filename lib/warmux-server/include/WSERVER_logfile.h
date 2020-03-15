@@ -36,7 +36,7 @@ class LogFile
   virtual void AtClose() {};
 
  public:
-  LogFile(const std::string &suffix);
+  LogFile(std::string suffix);
   virtual ~LogFile();
 
   void OpenFile();

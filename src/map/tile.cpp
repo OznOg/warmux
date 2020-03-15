@@ -102,7 +102,7 @@ void Tile::Dig(const Point2i &position, const Surface& dig)
     for(c.x = firstCell.x; c.x <= lastCell.x; c.x++) {
       TileItem *ti = item[index + c.x];
       if (!ti->IsTotallyEmpty()) {
-        TileItem_NonEmpty *tin = static_cast<TileItem_NonEmpty *>(ti);
+        auto *tin = static_cast<TileItem_NonEmpty *>(ti);
 
         tin->GetSurface().Lock();
         tin->Dig(position - (c<<CELL_BITS), dig);
@@ -150,7 +150,7 @@ void Tile::Dig(const Point2i &center, const uint radius)
     for (c.x = firstCell.x; c.x <= lastCell.x; c.x++) {
       TileItem *ti = item[index + c.x];
       if (!ti->IsTotallyEmpty()) {
-        TileItem_NonEmpty *tin = static_cast<TileItem_NonEmpty *>(ti);
+        auto *tin = static_cast<TileItem_NonEmpty *>(ti);
 
         tin->GetSurface().Lock();
         tin->Dig(center - (c<<CELL_BITS), radius);
@@ -194,7 +194,7 @@ TileItem_NonEmpty* Tile::GetNonEmpty(uint x, uint y)
 
 TileItem_NonEmpty* Tile::CreateNonEmpty(uint8_t *ptr, int stride)
 {
-  Uint32 *pix = (Uint32 *)ptr;
+  auto *pix = (Uint32 *)ptr;
 
   for (int y=0; y<CELL_DIM; y++) {
     for (int x=0; x<CELL_DIM; x++) {
@@ -370,7 +370,7 @@ void Tile::CheckPreview(bool force)
     for (i.x =startCell.x; i.x < endCell.x; i.x++) {
       TileItem *ti = item[i.x + offset];
       if (!ti->IsTotallyEmpty()) {
-        TileItem_NonEmpty *tin = static_cast<TileItem_NonEmpty *>(ti);
+        auto *tin = static_cast<TileItem_NonEmpty *>(ti);
 
         tin->GetSurface().Lock();
         tin->ScalePreview(dst, i.x-startCell.x, pitch, m_shift);
@@ -592,7 +592,7 @@ void Tile::DrawTile_Clipped(const Rectanglei & worldClip) const
     for (c.x = firstCell.x; c.x <= lastCell.x; c.x++) {
       if (item[index + c.x]->IsTotallyEmpty())
         continue;
-      TileItem_NonEmpty *tin = static_cast<TileItem_NonEmpty*>(item[index + c.x]);
+      auto *tin = static_cast<TileItem_NonEmpty*>(item[index + c.x]);
 
       // For all selected items, clip source and destination blitting rectangles
       Rectanglei destRect(c<<CELL_BITS, Point2i(CELL_DIM, CELL_DIM));
@@ -632,7 +632,7 @@ Surface Tile::GetPart(const Rectanglei& rec)
       TileItem *ti = item[index + i.x];
       if (ti->IsTotallyEmpty())
         continue;
-      TileItem_NonEmpty *tin = static_cast<TileItem_NonEmpty*>(ti);
+      auto *tin = static_cast<TileItem_NonEmpty*>(ti);
 
       Point2i cell_pos = i<<CELL_BITS;
       Rectanglei src;
@@ -667,7 +667,7 @@ Tile::SynchTileList Tile::GetTilesToSynch()
   for (uint i = 0; i < cellsCount; i++) {
     if (item[i]->IsTotallyEmpty())
       continue;
-    TileItem_NonEmpty *t = static_cast<TileItem_NonEmpty*>(item[i]);
+    auto *t = static_cast<TileItem_NonEmpty*>(item[i]);
 
     if (t->NeedSynch()) {
       SynchTileInfo info = { static_cast<uint16_t>(i), t->GetSynchsum() };

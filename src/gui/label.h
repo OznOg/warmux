@@ -42,7 +42,6 @@ public:
   Label(std::shared_ptr<Profile> profile,
         const xmlNode * pictureNode);
   Label(void) {}
-  ~Label() override;
 
   bool LoadXMLConfiguration(void) override;
   void Draw(const Point2i & mousePosition) override;

@@ -57,7 +57,7 @@ public:
   PictureWidget(const Surface& surface,
                 ScalingType type = NO_SCALING);
   PictureWidget(const Point2i & size,
-                const std::string & resource_id,
+                std::string  resource_id,
                 ScalingType type = NO_SCALING);
   PictureWidget(std::shared_ptr<Profile> profile,
                 const xmlNode * pictureNode);

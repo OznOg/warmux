@@ -128,7 +128,7 @@ bool Joystick::HandleKeyEvent(const SDL_Event& evnt)
     return true;
   }
 
-  std::map<int, std::vector<Key_t> >::iterator it = layout.find(evnt.jbutton.button);
+  auto it = layout.find(evnt.jbutton.button);
 
   if (it == layout.end())
     return false;

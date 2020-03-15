@@ -18,9 +18,9 @@ along with XMOTO; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =============================================================================*/
 
-#include <errno.h>
+#include <cerrno>
 #ifndef WIN32
-#include <string.h>
+#include <cstring>
 #endif
 
 /******************************************************************************
@@ -114,7 +114,7 @@ struct _TCPsocket {
 
 int SDLNet_TCP_Send_noBlocking(TCPsocket sock, const void *datap, int len)
 {
-  const Uint8 *data = (const Uint8 *)datap;  /* For pointer arithmetic */
+  const auto *data = (const Uint8 *)datap;  /* For pointer arithmetic */
   int sent, left;
 
   /* Server sockets are for accepting connections only */
@@ -211,7 +211,7 @@ const char * SDLNet_TryToResolveIP(IPaddress *ip)
     return dns_addr;
   } else {
     // We can't resolve the hostname, so just show the ip address
-    unsigned char* str_ip = (unsigned char*)(&(ip->host));
+    auto* str_ip = (unsigned char*)(&(ip->host));
     static char formatted_ip[16];
     snprintf(formatted_ip, 16, "%i.%i.%i.%i",
              (int)str_ip[0], (int)str_ip[1], (int)str_ip[2], (int)str_ip[3]);

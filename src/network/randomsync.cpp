@@ -19,12 +19,12 @@
  * Functions to generate random datas (number, boolean, etc.).
  *****************************************************************************/
 
-#include <time.h>
 #include "network/randomsync.h"
-#include "network/network.h"
 #include "include/action_handler.h"
+#include "network/network.h"
 #include <WARMUX_debug.h>
 #include <WARMUX_random.h>
+#include <ctime>
 
 void RandomSyncGen::InitRandom()
 {
@@ -89,7 +89,7 @@ void RandomSyncGen::Verify()
   if (!turn_master)
     return;
   uint seed = GetSeed();
-  Action* action = new Action(Action::ACTION_NETWORK_VERIFY_RANDOM_SYNC);
+  auto* action = new Action(Action::ACTION_NETWORK_VERIFY_RANDOM_SYNC);
   action->Push((int)seed);
   ActionHandler::GetInstance()->NewAction(action);
 }

@@ -17,7 +17,6 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  ******************************************************************************/
 
-#include <iostream> //cerr
 #include "graphic/text.h"
 #include "graphic/video.h"
 #include "include/app.h"
@@ -25,8 +24,10 @@
 #include "interface/interface.h"
 #include "map/map.h"
 #include "tool/xml_document.h"
+#include <iostream> //cerr
+#include <utility>
 
-Text::Text(const std::string & text,
+Text::Text(std::string  text,
            const Color & fontColor,
            uint fontSize,
            Font::font_style_t fontStyle,
@@ -36,7 +37,7 @@ Text::Text(const std::string & text,
            Alignment align) :
   surf(),
   background(),
-  txt(text),
+  txt(std::move(text)),
   color(fontColor),
   shadowed(isShadowed),
   dummy(_dummy),
@@ -236,9 +237,9 @@ void Text::RenderMultiLines()
 
       index_word++;
     }
-    std::vector<std::string>::iterator it = lines.begin();
+    auto it = lines.begin();
     while (it != lines.end()) {
-      ret_lines.push_back(std::string(*it));
+      ret_lines.emplace_back(*it);
       ++it;
     }
 

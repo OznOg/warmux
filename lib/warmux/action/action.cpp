@@ -20,8 +20,8 @@
  *****************************************************************************/
 
 //-----------------------------------------------------------------------------
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 
 #include <WARMUX_action.h>
 #include <WARMUX_distant_cpu.h>
@@ -284,7 +284,7 @@ Point2i Action::PopPoint2i()
   int x, y;
   x = PopInt();
   y = PopInt();
-  return Point2i(x, y);
+  return {x, y};
 }
 
 Point2d Action::PopPoint2d()
@@ -292,7 +292,7 @@ Point2d Action::PopPoint2d()
   Double x, y;
   x = PopDouble();
   y = PopDouble();
-  return Point2d(x, y);
+  return {x, y};
 }
 
 EulerVector Action::PopEulerVector()
@@ -301,5 +301,5 @@ EulerVector Action::PopEulerVector()
   x0 = PopDouble();
   x1 = PopDouble();
   x2 = PopDouble();
-  return EulerVector(x0, x1, x2);
+  return {x0, x1, x2};
 }

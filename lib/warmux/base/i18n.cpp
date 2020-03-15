@@ -20,13 +20,13 @@
  * Eg. : Format("Hello %s", "world") returns "Hello World".
  *****************************************************************************/
 
-#include <WARMUX_i18n.h>
 #include <WARMUX_error.h>
+#include <WARMUX_i18n.h>
+#include <cstdarg>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <string>
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include <string.h>
 
 #ifdef USE_FRIBIDI
 # include <fribidi/fribidi.h>
@@ -40,7 +40,7 @@ char* localization(const char * message) {
   int l        = strlen(string);
   int l_u      = fribidi_charset_to_unicode(FRIBIDI_CHAR_SET_UTF8, string, l, unicode_buffer);
 
-  fribidi_log2vis(unicode_buffer, l_u, &pbase_dir, unicode_buffer, NULL, NULL, NULL);
+  fribidi_log2vis(unicode_buffer, l_u, &pbase_dir, unicode_buffer, nullptr, nullptr, nullptr);
   fribidi_unicode_to_charset(FRIBIDI_CHAR_SET_UTF8, unicode_buffer, l_u, (char *)buffer);
   return buffer;
 }

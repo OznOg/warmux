@@ -27,8 +27,8 @@
 #include <WARMUX_point.h>
 
 #include "ai/ai_stupid_player.h"
-#include "character/character.h"
 #include "character/body_list.h"
+#include "character/character.h"
 #include "game/config.h"
 #include "game/game.h"
 #include "game/game_mode.h"
@@ -45,6 +45,7 @@
 #include "tool/xml_document.h"
 #include "weapon/weapons_list.h"
 #include <algorithm>
+#include <utility>
 
 std::unique_ptr<Team> Team::LoadTeam(const std::string &teams_dir, const std::string &id, std::string& error)
 {
@@ -74,9 +75,9 @@ std::unique_ptr<Team> Team::LoadTeam(const std::string &teams_dir, const std::st
 }
 
 Team::Team(XmlReader& doc, std::shared_ptr<Profile> res,
-           const std::string& name, const std::string &id)
-  : m_id(id)
-  , m_name(name)
+           std::string  name, std::string id)
+  : m_id(std::move(id))
+  , m_name(std::move(name))
   , m_player_name("")
   , remote(false)
   , ai(nullptr)

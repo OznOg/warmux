@@ -67,7 +67,7 @@ Keyboard::GetRegisteredAction(int raw_key_code, bool ctrl, bool alt, bool shift)
                  alt*ALT_OFFSET + ctrl*CONTROL_OFFSET;
 
   // If the map doesn't have such key, exit immediately
-  std::map<int, std::vector<Key_t> >::const_iterator it = layout.find(key_code);
+  auto it = layout.find(key_code);
   if (it == layout.end())
     return KEY_NONE;
 
@@ -200,7 +200,7 @@ void Keyboard::HandleKeyComboEvent(int key_code, Key_Event_t event_type)
             ((key_code / MODIFIER_OFFSET) & ALT_BIT)?"[alt] + ": "",
             ((key_code / MODIFIER_OFFSET) & SHIFT_BIT)?"[shift] + ": "",
             key_code % MODIFIER_OFFSET);
-  std::map<int, std::vector<Key_t> >::iterator it = layout.find(key_code);
+  auto it = layout.find(key_code);
 
   if (it == layout.end())
     return;
@@ -320,7 +320,7 @@ bool Keyboard::HandleKeyEvent(const SDL_Event& evnt)
   modifier_bits = GetModifierBits();
 
   if (modifier_bits != previous_modifier_bits) {
-    std::set<SDLKey>::const_iterator it = pressed_keys.find(basic_key_code);
+    auto it = pressed_keys.find(basic_key_code);
     if (it !=  pressed_keys.end()) {
       key_code = basic_key_code + MODIFIER_OFFSET * previous_modifier_bits;
       HandleKeyComboEvent(key_code, KEY_RELEASED);

@@ -34,10 +34,6 @@ MsgBox::MsgBox(const Point2i& size, Font::font_size_t fsize,
   WidgetList::SetBackgroundColor(defaultOptionColorBox);
 }
 
-MsgBox::~MsgBox()
-{
-}
-
 void MsgBox::NewMessage(const std::string &msg, const Color& color)
 {
   bool del = false;
@@ -48,7 +44,7 @@ void MsgBox::NewMessage(const std::string &msg, const Color& color)
     del = true;
   }
   int max = GetMaxOffset();
-  Label *lbl = new Label(msg, size.x-10, font_size, font_style, color);
+  auto *lbl = new Label(msg, size.x-10, font_size, font_style, color);
 
   AddWidget(lbl);
   if (!del) {

@@ -20,6 +20,7 @@
  *****************************************************************************/
 
 #include <algorithm> // std::min/max
+#include <utility>
 
 #include "include/app.h"
 #include "graphic/colors.h"
@@ -45,10 +46,8 @@ public:
   Widget* box;
 
 public:
-  Tab(const std::string& _id, const std::string& _title, Widget* _box) :
-    id(_id), title(_title), box(_box) {};
-
-  ~Tab() {};
+  Tab(std::string  _id, std::string  _title, Widget* _box) :
+    id(std::move(_id)), title(std::move(_title)), box(_box) {};
 
   const std::string& GetTitle() const { return title; };
   const std::string& GetId() const { return id; };

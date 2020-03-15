@@ -38,7 +38,6 @@ class WeaponStrengthBar : public ProgressBar
 
 public:
   WeaponStrengthBar(std::shared_ptr<Profile> profile);
-  ~WeaponStrengthBar() override;
   void DrawXY(const Point2i &pos) const override;
   void InitPos (uint x, uint y, uint larg, uint haut) override;
   Color ComputeValueColor(int val) const;

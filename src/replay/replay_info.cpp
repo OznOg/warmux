@@ -19,9 +19,9 @@
  * Information on/for a replay file
  *****************************************************************************/
 
-#include <string>
 #include <SDL_net.h>
-#include <time.h>
+#include <ctime>
+#include <string>
 
 #include <WARMUX_i18n.h>
 
@@ -64,7 +64,7 @@ ReplayInfo::ReplayInfo(time_t d, uint32_t dms)
 ReplayInfo *ReplayInfo::ReplayInfoFromFile(FILE *in)
 {
   char        temp[256+1];
-  ReplayInfo *info = new ReplayInfo(0, 0);
+  auto *info = new ReplayInfo(0, 0);
   uint32_t    marker;
 
   info->last_error = _("Unspecified error or end of file");
@@ -157,7 +157,7 @@ team_error:
 
 ReplayInfo *ReplayInfo::ReplayInfoFromCurrent(uint32_t duration, const char* comment)
 {
-  ReplayInfo *info    = new ReplayInfo(time(nullptr), duration);
+  auto *info    = new ReplayInfo(time(nullptr), duration);
 
   info->version = Constants::WARMUX_VERSION; // Copy ?
   info->comment = (comment) ? comment : _("No comment.");

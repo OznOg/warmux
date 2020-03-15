@@ -50,10 +50,6 @@ Label::Label(std::shared_ptr<Profile> profile,
   align = Text::ALIGN_LEFT_TOP;
 }
 
-Label::~Label()
-{
-}
-
 bool Label::LoadXMLConfiguration()
 {
   if (nullptr == profile || nullptr == widgetNode) {

@@ -21,7 +21,7 @@
 
 #include <getopt.h>
 #ifndef WIN32
-# include <signal.h>
+# include <csignal>
 #endif
 
 #include <SDL.h>
@@ -103,7 +103,7 @@ AppWarmux::~AppWarmux()
 
 static std::string replay;
 
-int AppWarmux::Main(void)
+int AppWarmux::Main()
 {
   DisplayLoadingPicture();
 
@@ -359,7 +359,7 @@ void DisplayWelcomeMessage()
 {
   std::cout << "=== " << _("Warmux version ") << Constants::WARMUX_VERSION << std::endl;
   std::cout << "=== " << _("Authors:") << ' ';
-  for (std::vector < std::string >::iterator it = Constants::GetInstance()->AUTHORS.begin(),
+  for (auto it = Constants::GetInstance()->AUTHORS.begin(),
        fin = Constants::GetInstance()->AUTHORS.end(); it != fin; ++it)
     {
       if (it != Constants::GetInstance()->AUTHORS.begin())

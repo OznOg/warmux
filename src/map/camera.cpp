@@ -479,7 +479,7 @@ Point2i Camera::ComputeShake() const
   ASSERT(time >= m_started_shaking);
 
   if (time > m_started_shaking + m_shake_duration || m_shake_duration == 0) {
-    return Point2i(0, 0); // not shaking now
+    return {0, 0}; // not shaking now
   }
 
   if (time == m_last_time_shake_calculated)
@@ -490,7 +490,7 @@ Point2i Camera::ComputeShake() const
 
   float func_val = 1.0f;
   if (t >= 0.001f) {
-    float k_scale_angle = float(10 * M_PI);
+    auto k_scale_angle = float(10 * M_PI);
     float arg = k_scale_angle * t;
     // denormalized sinc
     func_val = (1 - t) * sin(arg) / arg;

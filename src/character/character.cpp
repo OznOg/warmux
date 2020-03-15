@@ -114,10 +114,10 @@ static uint GetRandomAnimationTimeValue()
   return GameTime::GetInstance()->Read() + RandomSync().GetUint(ANIM_PAUSE_MIN, ANIM_PAUSE_MAX);
 }
 
-Character::Character(Team& my_team, const std::string &name, Body *char_body, Config cfg, const ObjectConfig &obj_cfg) :
+Character::Character(Team& my_team, std::string name, Body *char_body, Config cfg, const ObjectConfig &obj_cfg) :
   PhysicalObj("character", obj_cfg),
   MovableByUser(),
-  character_name(name),
+  character_name(std::move(name)),
   m_team(my_team),
   step_sound_played(true),
   prepare_shoot(false),
@@ -840,6 +840,7 @@ Double Character::GetFiringAngle() const {
 }
 
 #include <iostream>
+#include <utility>
 void Character::SetFiringAngle(Double angle) {
   /* angle = RestrictAngle(angle) */
   angle = InRange_Double(angle, -(m_team.GetWeapon().GetMaxAngle()),

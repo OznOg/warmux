@@ -41,7 +41,6 @@ class WeaponHelp
 
 public:
   WeaponHelp();
-  ~WeaponHelp();
   void SetWeapon(Weapon& item);
   void Draw();
   void SwitchDisplay() { if(show) Hide(); else Show(); }

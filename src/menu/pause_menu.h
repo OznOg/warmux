@@ -54,7 +54,6 @@ private:
 
  public:
   PauseMenu(bool& exit_game);
-  ~PauseMenu() override;
 
   // Those are needed because PauseMenu might have those called through
   // a callback while displaying a submenu

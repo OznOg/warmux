@@ -97,7 +97,7 @@ SpinButton::~SpinButton()
   }
 }
 
-bool SpinButton::LoadXMLConfiguration(void)
+bool SpinButton::LoadXMLConfiguration()
 {
   if (nullptr == profile || nullptr == widgetNode) {
     return false;

@@ -75,7 +75,7 @@ void TeamsList::NextTeam()
 Team* TeamsList::GetNextTeam()
 {
   // Next group
-  GroupList::iterator git = active_group;
+  auto git = active_group;
   std::vector<Team*>::iterator it;
 
   do {
@@ -126,7 +126,7 @@ bool TeamsList::LoadOneTeam(const std::string &dir, const std::string &team_name
   }
 
   std::cerr << std::endl
-    << Format(_("Error loading team :")) << real_name <<":"<< error
+    << Format("%s", _("Error loading team :")) << real_name <<":"<< error
     << std::endl;
   return false;
 }
@@ -207,7 +207,7 @@ void TeamsList::RandomizeFirstPlayer()
   MSG_DEBUG("random.get", "TeamList::RandomizeFirstPlayer()");
   int skip = RandomSync().GetInt(0, groups.size()-1);
 
-  for (GroupList::iterator git = groups.begin(); git != groups.end(); ++git) {
+  for (auto git = groups.begin(); git != groups.end(); ++git) {
     if (!(skip--))
       active_group = git;
 
@@ -264,7 +264,7 @@ Team *TeamsList::FindByIndex(uint index)
 
 Team* TeamsList::FindPlayingById(const std::string &id, int &index)
 {
-  iterator it = playing_list.begin(), end = playing_list.end();
+  auto it = playing_list.begin(), end = playing_list.end();
   index=0;
   for (; it != end; ++it, ++index) {
     if ((*it) -> GetId() == id)
@@ -331,7 +331,7 @@ void TeamsList::RefreshEnergy()
   // - change ranking
   // - prepare energy bar for next event
 
-  iterator it=playing_list.begin(), end = playing_list.end();
+  auto it=playing_list.begin(), end = playing_list.end();
   energy_t status;
 
   bool waiting = true; // every energy bar are waiting
@@ -389,14 +389,14 @@ void TeamsList::RefreshEnergy()
 
 void TeamsList::RefreshSort()
 {
-  iterator it=playing_list.begin(), end = playing_list.end();
+  auto it=playing_list.begin(), end = playing_list.end();
   uint rank;
 
   // Find a ranking without taking acount of the equalities
   it = playing_list.begin();
   for (; it != end; ++it) {
     rank = 0;
-    iterator it2=playing_list.begin();
+    auto it2=playing_list.begin();
     for (; it2 != end; ++it2) {
       if (it != it2 && (**it2).ReadEnergy() > (**it).ReadEnergy())
         ++rank;
@@ -408,7 +408,7 @@ void TeamsList::RefreshSort()
   it = playing_list.begin();
   for (; it != end; ++it) {
     rank = (**it).energy.rank_tmp;
-    iterator it2=playing_list.begin();
+    auto it2=playing_list.begin();
     for (it2 = it; it2 != end; ++it2) {
       if (it != it2 && (**it2).ReadEnergy() == (**it).ReadEnergy())
         ++rank;
@@ -423,7 +423,7 @@ void TeamsList::ChangeSelection(const std::list<uint>& nv_selection)
 {
   selection = nv_selection;
 
-  selection_iterator it=selection.begin(), end = selection.end();
+  auto it=selection.begin(), end = selection.end();
   playing_list.clear();
   for (; it != end; ++it)
     playing_list.push_back(FindByIndex(*it));
@@ -433,7 +433,7 @@ void TeamsList::ChangeSelection(const std::list<uint>& nv_selection)
 
 bool TeamsList::IsSelected(uint index)
 {
-  selection_iterator pos = std::find(selection.begin(), selection.end(), index);
+  auto pos = std::find(selection.begin(), selection.end(), index);
   return pos != selection.end();
 }
 
@@ -534,12 +534,12 @@ void TeamsList::DelTeam(Team* the_team)
 
   the_team->SetDefaultPlayingConfig();
 
-  selection_iterator it = std::find(selection.begin(), selection.end(), pos);
+  auto it = std::find(selection.begin(), selection.end(), pos);
 
   if (it != selection.end())
     selection.erase(it);
 
-  iterator playing_it = std::find(playing_list.begin(), playing_list.end(), the_team);
+  auto playing_it = std::find(playing_list.begin(), playing_list.end(), the_team);
 
   ASSERT(playing_it != playing_list.end());
 
@@ -559,8 +559,8 @@ void TeamsList::DelTeam(const std::string &id)
 
 void TeamsList::SetActive(const std::string &id)
 {
-  for (GroupList::iterator git = groups.begin(); git != groups.end(); ++git) {
-    for (TeamGroup::iterator it = git->second.begin(); it != git->second.end(); ++it) {
+  for (auto git = groups.begin(); git != groups.end(); ++git) {
+    for (auto it = git->second.begin(); it != git->second.end(); ++it) {
       if ((*it)->GetId() == id) {
         active_group = git;
         git->second.active_team = it;

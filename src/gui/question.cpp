@@ -59,10 +59,9 @@ Question::~Question()
 int Question::TreatsKey (const SDL_Event &evnt){
 
   // Tests the key
-  choice_iterator it=choices.begin(), end=choices.end();
-  for (; it != end; ++it){
-    if (evnt.key.keysym.sym == it -> key()) {
-      return it -> val();
+  for (auto & choice : choices){
+    if (evnt.key.keysym.sym == choice.key()) {
+      return choice.val();
     }
   }
 

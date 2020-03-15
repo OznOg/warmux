@@ -195,7 +195,7 @@ void ProgressBar::DrawXY(const Point2i & pos) const
   }
 
   // marks
-  mark_it_const it = mark.begin(), it_end = mark.end();
+  auto it = mark.begin(), it_end = mark.end();
 
   for (; it != it_end; ++it) {
     Rectanglei r_marq;

@@ -86,7 +86,7 @@ private:
 public:
 
   Team(XmlReader& doc, std::shared_ptr<Profile> res,
-       const std::string& name, const std::string &id);
+       std::string  name, std::string id);
 
   static std::unique_ptr<Team> LoadTeam(const std::string &teams_dir, const std::string &id, std::string& error);
 

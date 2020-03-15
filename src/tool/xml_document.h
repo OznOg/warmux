@@ -130,7 +130,6 @@ protected:
   std::string m_encoding;
 
 public:
-  ~XmlWriter();
 
   XmlWriter(const std::string &root, const std::string &version, const std::string &encoding);
 

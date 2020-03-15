@@ -64,7 +64,7 @@ void HBox::Pack()
   }
 }
 
-bool HBox::LoadXMLConfiguration(void)
+bool HBox::LoadXMLConfiguration()
 {
   if (nullptr == profile || nullptr == widgetNode) {
     return false;

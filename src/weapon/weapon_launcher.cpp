@@ -19,9 +19,9 @@
  * WeaponLauncher: generic weapon to launch a projectile
  *****************************************************************************/
 
-#include <sstream>
 #include <WARMUX_debug.h>
-#include <limits.h>
+#include <climits>
+#include <sstream>
 
 #include "character/character.h"
 #include "game/config.h"
@@ -534,7 +534,7 @@ void WeaponLauncher::IncMissedShots()
 
 void WeaponLauncher::SetTimeoutForAllPlayers(int timeout)
 {
-  Action * a = new Action(Action::ACTION_WEAPON_SET_TIMEOUT, timeout);
+  auto * a = new Action(Action::ACTION_WEAPON_SET_TIMEOUT, timeout);
   ActionHandler::GetInstance()->NewAction(a);
 }
 

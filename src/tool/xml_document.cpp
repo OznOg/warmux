@@ -559,8 +559,6 @@ const xmlNode* XmlReader::GetRoot() const
 
 //-----------------------------------------------------------------------------
 
-XmlWriter::~XmlWriter() = default;
-
 xmlNode *XmlWriter::AddNode(xmlNode* x, const char* name)
 {
   return xmlAddChild(x, xmlNewNode(nullptr /* empty prefix */, (const xmlChar*)name));

@@ -112,7 +112,7 @@ void Video::AddUniqueConfigSorted(int w, int h)
 {
   Point2i p(w, h);
 
-  std::list<Point2i>::iterator res  = available_configs.begin(),
+  auto res  = available_configs.begin(),
                                end  = available_configs.end();
 
   for (; res != end; res++) {

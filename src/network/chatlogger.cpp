@@ -5,9 +5,9 @@
 #ifdef DEBUG
 #include <WARMUX_random.h>
 #endif
-#include "network/chatlogger.h"
 #include "game/config.h"
-#include <time.h>
+#include "network/chatlogger.h"
+#include <ctime>
 
 #define TIME_BASE_YEAR 1900
 

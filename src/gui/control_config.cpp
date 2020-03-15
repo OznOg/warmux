@@ -335,7 +335,7 @@ ControlConfig::ControlConfig(const Point2i& size, bool readonly)
   box = new SelectBox(size, false, true /* full box width used*/);
   box->SetBorder(c_black, 0);
   for (int i=0; i<ManMachineInterface::KEY_NONE; i++) {
-    ControlItem *item = new ControlItem(i, readonly, 32);
+    auto *item = new ControlItem(i, readonly, 32);
     items.push_back(item);
     box->AddWidget(item);
   }

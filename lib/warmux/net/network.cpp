@@ -41,7 +41,7 @@
 #    include <arpa/nameser.h>
 #    include <resolv.h>
 #  endif
-#  include <errno.h>
+#  include <cerrno>
 #  include <unistd.h>
 #endif
 
@@ -101,7 +101,7 @@ void WNet::Quit()
 #ifdef WIN32
 # define SOCKET_PARAM    char
 #else
-typedef int SOCKET;
+using SOCKET = int;
 # define SOCKET_PARAM    void
 # ifndef INVALID_SOCKET
 #   define INVALID_SOCKET  (-1)

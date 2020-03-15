@@ -65,10 +65,6 @@ PauseMenu::PauseMenu(bool& _exit_game)
   widgets.Pack();
 }
 
-PauseMenu::~PauseMenu()
-{
-}
-
 void PauseMenu::BackToMainMenu()
 {
   exit_game = true;

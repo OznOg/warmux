@@ -101,10 +101,10 @@ class Body
 
 public:
   Body(const xmlNode *     xml,
-       const std::string & main_folder);
+       std::string  main_folder);
   Body(const Body & cpy);
-  void Init(void);
   ~Body();
+  void Init(void);
 
   //// MISC
   void                    Draw(const Point2i & pos);

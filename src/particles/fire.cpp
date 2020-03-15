@@ -61,10 +61,6 @@ FireParticle::FireParticle()
   SetSize(image->GetSize());
 }
 
-FireParticle::~FireParticle()
-{
-}
-
 void FireParticle::Refresh()
 {
   uint now = GameTime::GetInstance()->Read();

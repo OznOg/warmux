@@ -20,8 +20,9 @@
  *****************************************************************************/
 
 #include <algorithm>
-#include <sstream>
 #include <iostream>
+#include <sstream>
+#include <utility>
 
 #include <WARMUX_action.h>
 #include <WARMUX_debug.h>
@@ -41,12 +42,12 @@
 
 extern const uint MAX_WIND_OBJECTS;
 
-InfoMap::InfoMap(const std::string &map_name, const std::string &directory)
+InfoMap::InfoMap(std::string map_name, std::string directory)
   : name("not initialized")
   , author_info("not initialized")
   , music_playlist("ingame")
-  , m_directory(directory)
-  , m_map_name(map_name)
+  , m_directory(std::move(directory))
+  , m_map_name(std::move(map_name))
   , nb_mine(4)
   , nb_barrel(4)
   , alpha_threshold(255)
@@ -101,7 +102,7 @@ err:
   std::string msg = Format(_("Map %s in folder '%s' is invalid: %s"),
                            m_map_name.c_str(), m_directory.c_str(), error.c_str());
   std::cerr << msg << std::endl;
-  question.Set(msg, 1, 0);
+  question.Set(msg, true, 0);
   question.Ask();
 
   return nullptr;

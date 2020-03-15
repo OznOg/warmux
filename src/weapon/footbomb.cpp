@@ -103,7 +103,7 @@ void FootBomb::DoExplosion()
   if (!m_recursions)
     return;
 
-  FootBombConfig &config = static_cast<FootBombConfig &>(cfg);
+  auto &config = static_cast<FootBombConfig &>(cfg);
   Double half_angle_range = config.nb_angle_dispersion * PI / 180;
   Point2i pos = GetPosition();
 

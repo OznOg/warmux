@@ -19,10 +19,10 @@
  * Refresh des fichiers.
  *****************************************************************************/
 
+#include <cerrno>
+#include <cstdlib>
 #include <fstream>
 #include <sys/stat.h>
-#include <errno.h>
-#include <cstdlib>
 
 #ifdef WIN32
    // To get SHGetSpecialFolderPath
@@ -33,9 +33,9 @@
 #  include <direct.h>
 #  undef DeleteFile  // windows.h defines it I think
 #else
-#  include <sys/types.h>
+#  include <cstdlib> // getenv
 #  include <sys/stat.h>
-#  include <stdlib.h> // getenv
+#  include <sys/types.h>
 #  include <unistd.h> // not needed by mingw
 #endif
 
@@ -282,7 +282,7 @@ struct _FolderSearch
 
 FolderSearch* OpenFolder(const std::string& dirname)
 {
-  FolderSearch *f = new FolderSearch;
+  auto *f = new FolderSearch;
   f->dir = opendir(dirname.c_str());
   f->dname = dirname;
 

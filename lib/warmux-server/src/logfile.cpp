@@ -16,14 +16,16 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  ******************************************************************************/
-#include <stdio.h>
-#include <time.h>
+#include <cstdio>
+#include <ctime>
 
 #include <WSERVER_config.h>
 #include <WSERVER_debug.h>
 #include <WSERVER_logfile.h>
 
-LogFile::LogFile(const std::string &suffix) : suffix_filename(suffix), fd(nullptr)
+#include <utility>
+
+LogFile::LogFile(std::string suffix) : suffix_filename(std::move(suffix)), fd(nullptr)
 {
 }
 

@@ -19,12 +19,13 @@
  *Energy bar.
  *****************************************************************************/
 
+#include "gui/energy_bar.h"
+#include "gui/progress_bar.h"
+#include "tool/resource_manager.h"
+#include <algorithm>
 #include <iostream>
 #include <sstream>
-#include <algorithm>
-#include "gui/energy_bar.h"
-#include "tool/resource_manager.h"
-#include "gui/progress_bar.h"
+#include <utility>
 
 static const int energy_step[EnergyBar::NB_OF_ENERGY_COLOR] = { 16, 33, 50, 67, 84, 100 };
 
@@ -63,7 +64,7 @@ EnergyBar::EnergyBar(uint _x,
 
 EnergyBar::EnergyBar(std::shared_ptr<Profile> _profile,
                      const xmlNode * _widgetNode) :
-  profile(_profile),
+  profile(std::move(_profile)),
   widgetNode(_widgetNode),
   listThresholds()
 {

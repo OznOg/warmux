@@ -38,7 +38,7 @@ protected:
 
 public:
   RandomGenerator();
-  virtual ~RandomGenerator();
+  virtual ~RandomGenerator() = default;
   virtual void InitRandom();
 
   void UnRandom();

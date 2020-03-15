@@ -20,7 +20,8 @@
  *****************************************************************************/
 
 #include <algorithm> // For std::find
-#include <stdlib.h>
+#include <cstdlib>
+#include <utility>
 #ifdef WIN32
 # include <windows.h> // DWORD, GetUserName
 #endif
@@ -29,9 +30,9 @@
 #include <WARMUX_i18n.h>
 #include <WARMUX_player.h>
 
-Player::Player(uint _player_id, const std::string& _nickname) :
+Player::Player(uint _player_id, std::string  _nickname) :
   player_id(_player_id),
-  nickname(_nickname),
+  nickname(std::move(_nickname)),
   state(STATE_NOT_INITIALIZED)
 {
 }
@@ -81,7 +82,7 @@ bool Player::AddTeam(const ConfigTeam& team_conf)
 
 bool Player::RemoveTeam(const std::string& team_id)
 {
-  std::list<ConfigTeam>::iterator it = FindTeamWithId(team_id);
+  auto it = FindTeamWithId(team_id);
   if (it == owned_teams.end()) {
     ASSERT(false);
     return false;
@@ -93,7 +94,7 @@ bool Player::RemoveTeam(const std::string& team_id)
 
 bool Player::UpdateTeam(const std::string& old_team_id, const ConfigTeam& team_conf)
 {
-  std::list<ConfigTeam>::iterator it = FindTeamWithId(old_team_id);
+  auto it = FindTeamWithId(old_team_id);
   if (it == owned_teams.end()) {
     ASSERT(false);
     return false;

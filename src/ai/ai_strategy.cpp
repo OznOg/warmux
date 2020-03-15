@@ -60,7 +60,7 @@ AIStrategy(0.0f)
 
 AICommand * SkipTurnStrategy::CreateCommand() const
 {
-  CommandList * commands = new CommandList();
+  auto * commands = new CommandList();
   commands->Add(new SelectWeaponCommand(Weapon::WEAPON_SKIP_TURN));
   commands->Add(new StartShootingCommand());
   commands->Add(new StopShootingCommand());
@@ -70,7 +70,7 @@ AICommand * SkipTurnStrategy::CreateCommand() const
 static CommandList * CreateSelectCommandList(const Character & character, Weapon::Weapon_type weapon,
                                              LRDirection  direction, float angle, int timeout = -1)
 {
-  CommandList * commands = new CommandList();
+  auto * commands = new CommandList();
   commands->Add(new SelectCharacterCommand(&character));
   commands->Add(new DoNothingCommand(1000));
   commands->Add(new SelectWeaponCommand(weapon));

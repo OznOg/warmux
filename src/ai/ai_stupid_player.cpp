@@ -110,37 +110,37 @@ AIStupidPlayer::AIStupidPlayer(Team * team, float accuracy)
   , best_strategy(nullptr)
 {
   AllStats *stats = AllStats::GetInstance();
-  items.push_back(std::make_pair(new SkipTurnIdea(), &stats->SkipTurn));
-  items.push_back(std::make_pair(new WasteAmmoUnitsIdea(), &stats->WasteAmmo));
+  items.emplace_back(new SkipTurnIdea(), &stats->SkipTurn);
+  items.emplace_back(new WasteAmmoUnitsIdea(), &stats->WasteAmmo);
   FOR_EACH_LIVING_AND_DEAD_CHARACTER(team, character) {
     FOR_EACH_TEAM(other_team) {
       bool is_enemy = !team->IsSameAs(*other_team);
       if (is_enemy) {
         FOR_EACH_LIVING_AND_DEAD_CHARACTER(other_team, other_character) {
-          items.push_back(std::make_pair(new ShootDirectlyAtEnemyIdea(weapons_weighting, *character, *other_character,
+          items.emplace_back(new ShootDirectlyAtEnemyIdea(weapons_weighting, *character, *other_character,
                                                                       Weapon::WEAPON_GUN, MAX_GUN_DISTANCE),
-                                         &stats->ShootDirectly));
-          items.push_back(std::make_pair(new ShootDirectlyAtEnemyIdea(weapons_weighting, *character, *other_character,
+                                         &stats->ShootDirectly);
+          items.emplace_back(new ShootDirectlyAtEnemyIdea(weapons_weighting, *character, *other_character,
                                                                       Weapon::WEAPON_SHOTGUN, MAX_SHOTGUN_DISTANCE),
-                                         &stats->ShootDirectly));
-          items.push_back(std::make_pair(new ShootDirectlyAtEnemyIdea(weapons_weighting, *character, *other_character,
+                                         &stats->ShootDirectly);
+          items.emplace_back(new ShootDirectlyAtEnemyIdea(weapons_weighting, *character, *other_character,
                                                                       Weapon::WEAPON_SNIPE_RIFLE, MAX_SNIPER_RIFILE_DISTANCE),
-                                         &stats->ShootDirectly));
-          items.push_back(std::make_pair(new FireMissileWithFixedDurationIdea(weapons_weighting, *character, *other_character,
+                                         &stats->ShootDirectly);
+          items.emplace_back(new FireMissileWithFixedDurationIdea(weapons_weighting, *character, *other_character,
                                                                               Weapon::WEAPON_BAZOOKA, 0.5f),
-                                         &stats->WeaponLauncher));
-          items.push_back(std::make_pair(new FireMissileWithFixedDurationIdea(weapons_weighting, *character, *other_character,
+                                         &stats->WeaponLauncher);
+          items.emplace_back(new FireMissileWithFixedDurationIdea(weapons_weighting, *character, *other_character,
                                                                               Weapon::WEAPON_BAZOOKA, 0.9f),
-                                         &stats->WeaponLauncher));
-          items.push_back(std::make_pair(new FireMissileWithFixedDurationIdea(weapons_weighting, *character, *other_character,
+                                         &stats->WeaponLauncher);
+          items.emplace_back(new FireMissileWithFixedDurationIdea(weapons_weighting, *character, *other_character,
                                                                               Weapon::WEAPON_BAZOOKA, 2.0f),
-                                         &stats->WeaponLauncher));
-          items.push_back(std::make_pair(new FireMissileWithFixedDurationIdea(weapons_weighting, *character, *other_character,
+                                         &stats->WeaponLauncher);
+          items.emplace_back(new FireMissileWithFixedDurationIdea(weapons_weighting, *character, *other_character,
                                                                               Weapon::WEAPON_GRENADE, 1.2f, 2),
-                                         &stats->WeaponLauncher));
-          items.push_back(std::make_pair(new FireMissileWithFixedDurationIdea(weapons_weighting, *character, *other_character,
+                                         &stats->WeaponLauncher);
+          items.emplace_back(new FireMissileWithFixedDurationIdea(weapons_weighting, *character, *other_character,
                                                                               Weapon::WEAPON_DISCO_GRENADE, 1.2f, 2),
-                                         &stats->WeaponLauncher));
+                                         &stats->WeaponLauncher);
         }
       }
     }
@@ -163,7 +163,7 @@ void AIStupidPlayer::PrepareTurn()
   Reset();
   weapons_weighting.RandomizeFactors();
 
-  std::list<AIItem>::iterator it = items.begin();
+  auto it = items.begin();
   while (it != items.end()) {
     if (it->first->NoLongerPossible()) {
       delete it->first;

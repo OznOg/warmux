@@ -41,7 +41,7 @@ void TextList::AddText(const std::string &txt, const Color& color, uint maxlines
 }
 
 void TextList::Draw(int x, int y, int height){
-  iterator it = list.begin(), end = list.end();
+  auto it = list.begin(), end = list.end();
 
   for(; it!=end; it++){
     //Draw each item in the list

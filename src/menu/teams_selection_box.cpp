@@ -201,7 +201,7 @@ LocalTeamsSelectionBox::LocalTeamsSelectionBox(const Point2i &size, bool border)
 {
   GetTeamsList().InitList(Config::GetInstance()->AccessTeamList());
 
-  TeamsList::iterator it  = GetTeamsList().playing_list.begin(),
+  auto it  = GetTeamsList().playing_list.begin(),
     end = GetTeamsList().playing_list.end();
 
   uint j=0;

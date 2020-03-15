@@ -24,7 +24,7 @@
  * If the object go outside of the world, it become a ghost.
  *****************************************************************************/
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <iostream>
 
 #include <WARMUX_debug.h>
@@ -457,7 +457,7 @@ Point2d Physics::ComputeNextXY(Double delta_t){
     ComputePendulumNextXY(delta_t);
   }
 
-  return Point2d(m_pos_x.x0, m_pos_y.x0);
+  return {m_pos_x.x0, m_pos_y.x0};
 }
 
 void Physics::ResetLastRunTime()

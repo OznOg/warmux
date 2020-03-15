@@ -37,7 +37,6 @@ public:
       bool shadowed = true);
   Box(std::shared_ptr<Profile> _profile,
       const xmlNode * _boxNode);
-  ~Box() override;
 
   void ParseXMLBoxParameters(void);
 

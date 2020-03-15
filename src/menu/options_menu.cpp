@@ -82,7 +82,7 @@ OptionMenu::OptionMenu() :
   tabs->SetPosition(border, border);
 
   /* Graphic options */
-  GridBox * graphic_options = new GridBox(2, 4, 20*factor, false);
+  auto * graphic_options = new GridBox(2, 4, 20*factor, false);
   Point2i gfx_option_size = graphic_options->GetDefaultBoxSize(tabs_size);
 
   // Various options
@@ -116,10 +116,10 @@ OptionMenu::OptionMenu() :
                               gfx_option_size, 30, 5, 20, 60, fmedium, fmedium);
   graphic_options->AddWidget(opt_max_fps);
   std::vector< std::pair<std::string, std::string> > qualities;
-  qualities.push_back(std::pair<std::string, std::string>("0", _("Low memory")));
-  qualities.push_back(std::pair<std::string, std::string>("1", _("Medium")));
+  qualities.emplace_back("0", _("Low memory"));
+  qualities.emplace_back("1", _("Medium"));
 #ifndef HAVE_HANDHELD
-  qualities.push_back(std::pair<std::string, std::string>("2", _("High")));
+  qualities.emplace_back("2", _("High"));
 #endif
   opt_quality = new ComboBox(_("Quality"), "menu/fps", gfx_option_size,
                              qualities, qualities[config->GetQuality()].first,
@@ -141,7 +141,7 @@ OptionMenu::OptionMenu() :
     if (window_w == mode->GetX() && window_h == mode->GetY())
       current_resolution = text;
 
-    video_resolutions.push_back (std::pair<std::string, std::string>(text, text));
+    video_resolutions.emplace_back(text, text);
   }
   cbox_video_mode =
     new ComboBox(_("Resolution"), "menu/resolution", gfx_option_size,
@@ -166,7 +166,7 @@ OptionMenu::OptionMenu() :
   // bug #12193 : Missed assertion in game option (custom team editor) while playing
   if (!GameIsRunning()) {
     #define DIMENSION   130
-    GridBox * teams_editor_names = new GridBox(5, 2, 2, false);
+    auto * teams_editor_names = new GridBox(5, 2, 2, false);
     Box * teams_editor = new HBox(DIMENSION, false, false, true);
 
     lbox_teams = new ItemBox(Point2i(DIMENSION, tabs->GetSizeY()), false);
@@ -232,7 +232,7 @@ OptionMenu::OptionMenu() :
 
 #if USE_MISC_TAB
   /* Misc options */
-  GridBox * misc_options = new GridBox(2, 2, 50*factor, false);
+  auto * misc_options = new GridBox(2, 2, 50*factor, false);
   Point2i misc_option_size = misc_options->GetDefaultBoxSize(tabs_size);
 
   opt_updates =
@@ -261,7 +261,7 @@ OptionMenu::OptionMenu() :
 #endif
 
   /* Sound options */
-  GridBox * sound_options = new GridBox(2, 3, 20*factor, false);
+  auto * sound_options = new GridBox(2, 3, 20*factor, false);
   Point2i sound_option_size = sound_options->GetDefaultBoxSize(tabs_size);
 
   music_cbox =
@@ -290,9 +290,9 @@ OptionMenu::OptionMenu() :
   uint current_freq = Config::GetInstance()->GetSoundFrequency();
   std::vector<std::pair<std::string, std::string> > sound_freqs;
   std::string current_sound_freq;
-  sound_freqs.push_back(std::pair<std::string, std::string>("11025", "11 kHz"));
-  sound_freqs.push_back(std::pair<std::string, std::string>("22050", "22 kHz"));
-  sound_freqs.push_back(std::pair<std::string, std::string>("44100", "44 kHz"));
+  sound_freqs.emplace_back("11025", "11 kHz");
+  sound_freqs.emplace_back("22050", "22 kHz");
+  sound_freqs.emplace_back("44100", "44 kHz");
 
   if (current_freq == 44100)
     current_sound_freq = "44100";
@@ -584,7 +584,7 @@ void OptionMenu::AddTeam()
     return;
   }
 
-  CustomTeam *new_team = new CustomTeam(tbox_team_name->GetText());
+  auto *new_team = new CustomTeam(tbox_team_name->GetText());
 
   selected_team = new_team;
   SaveTeam();

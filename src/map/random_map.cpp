@@ -131,7 +131,7 @@ void RandomMap::GeneratePlatforms()
     Double x = RandomSync().GetDouble(0, (width - wid));
     Double y = RandomSync().GetDouble(0, (height - hei));
 
-    Polygon *tmp = new Polygon();
+    auto *tmp = new Polygon();
 
     tmp->AddPoint(Point2d(x, y));
     tmp->AddPoint(Point2d(x+wid, y));
@@ -183,7 +183,7 @@ void RandomMap::GenerateIsland()
 
   result.Fill(0);
 
-  Polygon *tmp = new Polygon();
+  auto *tmp = new Polygon();
 
   // +10 so it's outside the screen
   tmp->AddPoint(Point2d(-100, height + 100));

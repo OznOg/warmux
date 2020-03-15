@@ -106,7 +106,7 @@ Font::~Font()
   surface_text_table.clear();
 }
 
-void Font::ReleaseInstances(void)
+void Font::ReleaseInstances()
 {
   std::map<int, Font *>::iterator fontMapIte;
 
@@ -182,7 +182,7 @@ Surface Font::Render(const std::string & txt,
   Surface surface;
 
   if (cache) {
-    txt_iterator p = surface_text_table.find(txt);
+    auto p = surface_text_table.find(txt);
     if( p == surface_text_table.end() ){
       if( surface_text_table.size() > 5 ){
         //SDL_FreeSurface( surface_text_table.begin()->second );
@@ -191,7 +191,7 @@ Surface Font::Render(const std::string & txt,
       surface = CreateSurface(txt, color);
       surface_text_table.insert( txt_sample(txt, surface) );
     } else {
-      txt_iterator p2 = surface_text_table.find( txt );
+      auto p2 = surface_text_table.find( txt );
       surface = p2->second;
     }
   } else {

@@ -41,7 +41,6 @@ protected:
 
 public:
   NetworkServer(const std::string& game_name, const std::string& password);
-  ~NetworkServer() override;
 
   //virtual const bool IsConnected() const { return true; }
   bool IsServer() const override { return true; }

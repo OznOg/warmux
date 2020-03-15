@@ -50,10 +50,6 @@ NetworkServer::NetworkServer(const std::string& game_name, const std::string& pa
   game_master_player = true;
 }
 
-NetworkServer::~NetworkServer()
-{
-}
-
 void NetworkServer::HandleAction(Action* a, DistantComputer* sender)
 {
   // Repeat the packet to other clients
@@ -108,7 +104,7 @@ void NetworkServer::WaitActionSleep()
 
     socket_set->AddSocket(incoming);
 
-    DistantComputer* client = new DistantComputer(incoming, nickname, player_id);
+    auto* client = new DistantComputer(incoming, nickname, player_id);
     AddRemoteHost(client);
 
     if (GetNbPlayersConnected() >= max_nb_players)

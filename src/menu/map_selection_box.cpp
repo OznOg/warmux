@@ -95,7 +95,7 @@ void MapSelectionBox::ChangeMap(uint index)
 
 void MapSelectionBox::UpdateMapInfo()
 {
-  InfoMap* info = (InfoMap*)box->GetSelectedValue();
+  auto* info = (InfoMap*)box->GetSelectedValue();
 
   if (!info) {
     // Random map selected
@@ -221,7 +221,7 @@ void MapSelectionBox::RefreshBox()
       MapsList *map_list = MapsList::GetInstance();
 
       // Crude
-      MapsList::iterator it = map_list->lst.begin()
+      auto it = map_list->lst.begin()
                             + map_list->FindMapById(common[i]->GetRawName());
       delete *it;
       map_list->lst.erase(it);

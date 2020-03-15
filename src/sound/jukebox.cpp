@@ -207,7 +207,7 @@ void JukeBox::LoadMusicXML()
     return;
 
   // is xml_file already loaded ?
-  std::set<std::string>::iterator it_profile = m_profiles_loaded.find("music") ;
+  auto it_profile = m_profiles_loaded.find("music") ;
   if (it_profile !=  m_profiles_loaded.end()) {
     MSG_DEBUG("jukebox", "Music is already loaded !");
     return;
@@ -326,7 +326,7 @@ bool JukeBox::PlayMusic(const std::string& type)
   if (m_init == false || !Config::GetInstance()->GetSoundMusic())
     return false;
 
-  PlayListMap::iterator it = playlist.find(type);
+  auto it = playlist.find(type);
 
   if (it == playlist.end()) {
     std::cerr << "[Music] Unable to find " << type << " profile" << std::endl;
@@ -389,7 +389,7 @@ void JukeBox::LoadXML(const std::string& profile)
     return;
 
   // is xml_file already loaded ?
-  std::set<std::string>::iterator it_profile = m_profiles_loaded.find(profile);
+  auto it_profile = m_profiles_loaded.find(profile);
   if (it_profile !=  m_profiles_loaded.end()) {
     MSG_DEBUG("jukebox", "Profile %s is already loaded !", profile.c_str());
     return;
@@ -457,7 +457,7 @@ int JukeBox::Play(const std::string& category, const std::string& sample,
   if (nb_sounds) {
     std::pair<sample_iterator, sample_iterator> p =
       m_soundsamples.equal_range(category+ "/" +sample);
-    sample_iterator it = p.first;
+    auto it = p.first;
 
     // Choose a random sound sample
     if (nb_sounds > 1) {

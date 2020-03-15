@@ -17,9 +17,9 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  ******************************************************************************/
 
-#include <time.h>
-#include <stdio.h>
 #include <WSERVER_clock.h>
+#include <cstdio>
+#include <ctime>
 
 static char time_str[16];
 static char date_str[16];
@@ -52,7 +52,7 @@ const char* BasicClock::UpTimeStr()
 {
   double d = difftime(time(nullptr), start_time);
 
-  unsigned long t = (unsigned long) d;
+  auto t = (unsigned long) d;
   unsigned short sec, min, hr, day;
   sec = (unsigned short) t % 60;
   t /= 60;

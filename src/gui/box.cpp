@@ -24,7 +24,7 @@
 #include "graphic/colors.h"
 #include "graphic/video.h"
 
-Box::Box(void)
+Box::Box()
   : margin(0)
 {
 }
@@ -48,10 +48,6 @@ Box::Box(std::shared_ptr<Profile> profile,
          const xmlNode * boxNode) :
   WidgetList(profile, boxNode),
   margin(5)
-{
-}
-
-Box::~Box()
 {
 }
 

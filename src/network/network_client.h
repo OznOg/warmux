@@ -36,7 +36,6 @@ protected:
 
 public:
   NetworkClient(const std::string& password);
-  ~NetworkClient() override;
 
   //virtual const bool IsConnected() const { return true; }
   bool IsClient() const override { return true; }

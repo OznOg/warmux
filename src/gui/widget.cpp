@@ -28,6 +28,8 @@
 #include "include/app.h"
 #include <WARMUX_debug.h>
 
+#include <utility>
+
 Widget::Widget()
   : Rectanglei()
   , has_focus(false)
@@ -76,7 +78,7 @@ Widget::Widget(std::shared_ptr<Profile> _profile,
   , highlight_bg_color(transparent_color)
   , ct(nullptr)
   , need_redrawing(true)
-  , profile(_profile)
+  , profile(std::move(_profile))
   , widgetNode(_widgetNode)
   , actionName("NoAction")
 {
@@ -113,7 +115,7 @@ void Widget::RedrawForeground() const
     surf.RectangleColor(*this, border_color, border_size);
 }
 
-void Widget::ParseXMLMisc(void)
+void Widget::ParseXMLMisc()
 {
   if (!profile || !widgetNode)
     return;
@@ -123,7 +125,7 @@ void Widget::ParseXMLMisc(void)
   xmlFile->ReadStringAttr(widgetNode, "action", actionName);
 }
 
-void Widget::ParseXMLBorder(void)
+void Widget::ParseXMLBorder()
 {
   if (!profile || !widgetNode)
     return;
@@ -137,7 +139,7 @@ void Widget::ParseXMLBorder(void)
   SetBorder(borderColor, borderSize);
 }
 
-void Widget::ParseXMLBackground(void)
+void Widget::ParseXMLBackground()
 {
   if (!profile || !widgetNode)
     return;
@@ -149,14 +151,14 @@ void Widget::ParseXMLBackground(void)
   SetBackgroundColor(backgroundColor);
 }
 
-void Widget::ParseXMLPosition(void)
+void Widget::ParseXMLPosition()
 {
   int x = ParseHorizontalTypeAttribut("x", 0);
   int y = ParseVerticalTypeAttribut("y", 0);
   SetPosition(x, y);
 }
 
-void Widget::ParseXMLSize(void)
+void Widget::ParseXMLSize()
 {
   int width = ParseHorizontalTypeAttribut("width", 100);
   int height = ParseVerticalTypeAttribut("height", 100);
@@ -201,7 +203,7 @@ int Widget::ParseVerticalTypeAttribut(const std::string & attributName,
   return finalValue;
 }
 
-void Widget::ParseXMLGeometry(void)
+void Widget::ParseXMLGeometry()
 {
   if (!profile || !widgetNode) {
     return;

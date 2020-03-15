@@ -25,6 +25,7 @@
  *****************************************************************************/
 
 #include <iostream>
+#include <utility>
 
 #include <WARMUX_debug.h>
 #include <WARMUX_point.h>
@@ -50,7 +51,7 @@
 
 #define Y_OBJET_MIN  (-10000)
 
-PhysicalObj::PhysicalObj(const std::string &name, const ObjectConfig &cfg) :
+PhysicalObj::PhysicalObj(std::string name, const ObjectConfig &cfg) :
   Physics(cfg),
   m_collides_with_ground(true),
   m_collides_with_characters(false),
@@ -71,7 +72,7 @@ PhysicalObj::PhysicalObj(const std::string &name, const ObjectConfig &cfg) :
   m_ignore_movements(false),
   m_is_character(false),
   m_is_fire(false),
-  m_name(name),
+  m_name(std::move(name)),
   m_rebound_sound(""),
   m_alive(ALIVE),
   m_energy(-1),

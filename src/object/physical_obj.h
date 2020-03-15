@@ -94,7 +94,7 @@ protected:
   }
 
 public:
-  PhysicalObj(const std::string &name, const ObjectConfig &cfg);
+  PhysicalObj(std::string name, const ObjectConfig &cfg);
   /* Note : The copy constructor is not implemented (and this is not a bug)
    * because we can copy directly the pointer m_overlapping_object whereas this
    * object does not own it.

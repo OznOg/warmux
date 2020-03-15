@@ -207,9 +207,9 @@ void Surface::MergeSurface(Surface &spr, const Point2i &pos)
   // for each pixel lines of a source image
   if (cur_fmt->BytesPerPixel == spr_fmt->BytesPerPixel && cur_fmt->BytesPerPixel == 4) {
     int     cur_pitch = (surface->pitch>>2);
-    Uint32* cur_ptr   = (Uint32*)surface->pixels;
+    auto* cur_ptr   = (Uint32*)surface->pixels;
     int     spr_pitch = (spr.surface->pitch>>2);
-    Uint32* spr_ptr   = (Uint32*)spr.surface->pixels;
+    auto* spr_ptr   = (Uint32*)spr.surface->pixels;
     Uint32  spr_pix, cur_pix, a, p_a;
     Point2i offset;
 
@@ -435,7 +435,7 @@ int Surface::AAPolygonColor(std::list<Point2i> polygon, const Color & color)
   vx = new Sint16[polygon.size()];
   vy = new Sint16[polygon.size()];
   int i = 0;
-  for (std::list<Point2i>::iterator point = polygon.begin(); point != polygon.end(); point++, i++) {
+  for (auto point = polygon.begin(); point != polygon.end(); point++, i++) {
     vx[i] = point->x;
     vy[i] = point->y;
   }
@@ -458,7 +458,7 @@ int Surface::FilledPolygon(std::list<Point2i> polygon, const Color & color)
   vx = new Sint16[polygon.size()];
   vy = new Sint16[polygon.size()];
   int i = 0;
-  for (std::list<Point2i>::iterator point = polygon.begin(); point != polygon.end(); point++, i++) {
+  for (auto point = polygon.begin(); point != polygon.end(); point++, i++) {
     vx[i] = point->x;
     vy[i] = point->y;
   }
@@ -480,7 +480,7 @@ int Surface::TexturedPolygon(std::list<Point2i> polygon, const Surface * texture
   vx = new Sint16[polygon.size()];
   vy = new Sint16[polygon.size()];
   int i = 0;
-  for (std::list<Point2i>::iterator point = polygon.begin(); point != polygon.end(); point++, i++) {
+  for (auto point = polygon.begin(); point != polygon.end(); point++, i++) {
     vx[i] = point->x;
     vy[i] = point->y;
   }
@@ -557,7 +557,7 @@ bool Surface::ImgSave(const std::string& filename, bool bmp)
   // Creating a png ...
   png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
   if (png_ptr == nullptr) // Structure and ...
-    return 1;
+    return true;
   info_ptr = png_create_info_struct(png_ptr);
   if (info_ptr == nullptr) // Information.
     goto end;
@@ -613,7 +613,7 @@ mirror(void *d, uint dpitch,
        const void* s, uint spitch,
        int w, int h)
 {
-  pixel *dst = (pixel*)d;
+  auto *dst = (pixel*)d;
   const pixel *src = ((pixel*)s)+(w-1);
 
   dpitch /= sizeof(pixel);
@@ -656,7 +656,7 @@ Surface Surface::Mirror()
     break;
   case 24:
     {
-      uint8_t *dst = (uint8_t*)surf->pixels;
+      auto *dst = (uint8_t*)surf->pixels;
       const uint8_t *src = (uint8_t*)surface->pixels;
       src += 3*(surf->w-1);
       for (int y=0; y<surf->h; y++) {

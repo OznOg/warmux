@@ -329,49 +329,49 @@ void Weapon::RepeatShoot()
 
 void Weapon::StartMovingLeftForAllPlayers()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_START_MOVING_LEFT);
+  auto *a = new Action(Action::ACTION_WEAPON_START_MOVING_LEFT);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
 void Weapon::StopMovingLeftForAllPlayers()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_STOP_MOVING_LEFT);
+  auto *a = new Action(Action::ACTION_WEAPON_STOP_MOVING_LEFT);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
 void Weapon::StartMovingRightForAllPlayers()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_START_MOVING_RIGHT);
+  auto *a = new Action(Action::ACTION_WEAPON_START_MOVING_RIGHT);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
 void Weapon::StopMovingRightForAllPlayers()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_STOP_MOVING_RIGHT);
+  auto *a = new Action(Action::ACTION_WEAPON_STOP_MOVING_RIGHT);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
 void Weapon::StartMovingUpForAllPlayers()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_START_MOVING_UP);
+  auto *a = new Action(Action::ACTION_WEAPON_START_MOVING_UP);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
 void Weapon::StopMovingUpForAllPlayers()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_STOP_MOVING_UP);
+  auto *a = new Action(Action::ACTION_WEAPON_STOP_MOVING_UP);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
 void Weapon::StartMovingDownForAllPlayers()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_START_MOVING_DOWN);
+  auto *a = new Action(Action::ACTION_WEAPON_START_MOVING_DOWN);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
 void Weapon::StopMovingDownForAllPlayers()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_STOP_MOVING_DOWN);
+  auto *a = new Action(Action::ACTION_WEAPON_STOP_MOVING_DOWN);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
@@ -630,13 +630,13 @@ void Weapon::DrawAmmoUnits() const
 // #################### SHOOT
 void Weapon::HandleKeyPressed_Shoot()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_START_SHOOTING);
+  auto *a = new Action(Action::ACTION_WEAPON_START_SHOOTING);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
 void Weapon::HandleKeyReleased_Shoot()
 {
-  Action *a = new Action(Action::ACTION_WEAPON_STOP_SHOOTING);
+  auto *a = new Action(Action::ACTION_WEAPON_STOP_SHOOTING);
   ActionHandler::GetInstance()->NewAction(a);
 }
 

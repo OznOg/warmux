@@ -133,7 +133,7 @@ std::vector<std::string> DistantComputer::GetNicknames() const
   }
 
   if (nicknames.empty())
-    nicknames.push_back(_("Unnamed"));
+    nicknames.emplace_back(_("Unnamed"));
 
   return nicknames;
 }
@@ -176,10 +176,10 @@ std::vector<uint> DistantComputer::GetCommonMaps(const std::list<DistantComputer
     return index_list;
   }
 
-  std::list<DistantComputer*>::const_iterator first = cpu.begin();
+  auto first = cpu.begin();
   const std::vector<uint>& start_list = (*first)->GetAvailableMaps();
   for (unsigned int index : start_list) {
-    std::list<DistantComputer*>::const_iterator client = first;
+    auto client = first;
     bool found = true;
     client++;
     for (; client != cpu.end(); client++) {
@@ -215,10 +215,10 @@ std::vector<uint> DistantComputer::GetCommonTeams(const std::list<DistantCompute
     return index_list;
   }
 
-  std::list<DistantComputer*>::const_iterator first = cpu.begin();
+  auto first = cpu.begin();
   const std::vector<uint>& start_list = (*first)->GetAvailableTeams();
   for (unsigned int index : start_list) {
-    std::list<DistantComputer*>::const_iterator client = first;
+    auto client = first;
     bool found = true;
     client++;
     for (; client != cpu.end(); client++) {

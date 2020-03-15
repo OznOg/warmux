@@ -23,16 +23,16 @@
 #include <iostream>
 #include <SDL_stdinc.h>
 
-#include <SDL_video.h>
-#include <limits.h>
+#include "graphic/colors.h"
+#include "graphic/surface.h"
+#include "graphic/video.h"
+#include "include/constant.h"
 #include "map/camera.h"
 #include "map/map.h"
 #include "map/maps_list.h"
-#include "graphic/surface.h"
-#include "graphic/video.h"
-#include "graphic/colors.h"
-#include "include/constant.h"
 #include "tool/isnan.h"
+#include <SDL_video.h>
+#include <climits>
 
 void Ground::Init()
 {

@@ -18,10 +18,6 @@
  ******************************************************************************
  * Character of a team.
  *****************************************************************************/
-#include <sstream>
-#include <iostream>
-#include <algorithm>
-#include <WARMUX_debug.h>
 #include "character/body.h"
 #include "character/character.h"
 #include "character/clothe.h"
@@ -30,16 +26,21 @@
 #include "game/game_time.h"
 #include "graphic/sprite.h"
 #include "interface/mouse.h"
+#include "network/randomsync.h"
 #include "particles/body_member.h"
 #include "particles/teleport_member.h"
-#include "network/randomsync.h"
 #include "team/team.h"
 #include "team/teams_list.h"
 #include "tool/resource_manager.h"
 #include "tool/string_tools.h"
+#include <WARMUX_debug.h>
+#include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <utility>
 
 Body::Body(const xmlNode *     xml,
-           const std::string & main_folder):
+           std::string  main_folder):
   current_clothe(nullptr),
   current_mvt(nullptr),
   current_loop(0),
@@ -57,7 +58,7 @@ Body::Body(const xmlNode *     xml,
   need_refreshsprites(true),
   owner(nullptr),
   mainXmlNode(xml),
-  mainFolder(main_folder)
+  mainFolder(std::move(main_folder))
 {
   // Add a special weapon member to the body
   members_lst["weapon"] = std::unique_ptr<Member>(weapon_member);
@@ -104,7 +105,10 @@ Body::Body(const Body & _body):
   mvt_lst = _body.mvt_lst;
 }
 
-void Body::Init(void) {
+/* Here to keep forward declarations of private stuff */
+Body::~Body() = default;
+
+void Body::Init() {
   const xmlNode * skeletons = XmlReader::GetMarker(mainXmlNode, "skeletons");
   ASSERT(skeletons);
 
@@ -200,7 +204,7 @@ void Body::LoadMovements(xmlNodeArray &  nodes,
       mvt_lst[name] = std::make_shared<Movement>(*it);
     }
 
-    std::map<std::string, std::string>::iterator iter = mvt_alias.begin();
+    auto iter = mvt_alias.begin();
     for ( ; iter != mvt_alias.end(); ++iter) {
       if (iter->second == name) {
         auto mvt = std::make_shared<Movement>(*it);
@@ -216,13 +220,9 @@ void Body::LoadMovements(xmlNodeArray &  nodes,
 
   if ((mvtBlack == mvt_lst.end() && clothesBlack != clothes_lst.end())
      || (mvtBlack != mvt_lst.end() && clothesBlack == clothes_lst.end())) {
-    std::cerr << "Error: The movement \"black\" or the clothe \"black\" is not defined!" << std::endl;
+    std::cerr << R"(Error: The movement "black" or the clothe "black" is not defined!)" << std::endl;
     exit(EXIT_FAILURE);
   }
-}
-
-Body::~Body()
-{
 }
 
 void Body::ResetMovement() const
@@ -543,7 +543,7 @@ void Body::Draw(const Point2i & _pos)
 void Body::AddChildMembers(Member * parent)
 {
   const Member::AttachTypeMap& attached = parent->GetAttachedTypes();
-  Member::AttachTypeMap::const_iterator child = attached.begin();
+  auto child = attached.begin();
 
   // Add child members of the parent member to the skeleton
   // and continue recursively with child members
@@ -554,7 +554,7 @@ void Body::AddChildMembers(Member * parent)
     for (auto &member : layers) {
       if (member->GetType() == child->first) {
         // This child member is attached to his parent
-        junction * body = new junction();
+        auto * body = new junction();
         body->member = member;
         body->parent = parent;
         skel_lst.emplace_back(body);
@@ -580,7 +580,7 @@ void Body::BuildSqueleton()
     if (member->GetType() == "body") {
 
       // TODO lami : overwrite junction constructor
-      junction * body = new junction();
+      auto * body = new junction();
       body->member = member;
       body->parent = nullptr;
       skel_lst.emplace_back(body);

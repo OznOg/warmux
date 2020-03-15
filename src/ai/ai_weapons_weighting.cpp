@@ -27,7 +27,7 @@
 WeaponsWeighting::WeaponsWeighting()
 {
   for (int index = Weapon::FIRST; index < Weapon::LAST; index++) {
-    Weapon::Weapon_type type = (Weapon::Weapon_type) index;
+    auto type = (Weapon::Weapon_type) index;
     SetMinFactor(type, 1);
     SetMaxFactor(type, 1);
     factor[type] = 1;
@@ -40,7 +40,7 @@ WeaponsWeighting::WeaponsWeighting()
 void WeaponsWeighting::RandomizeFactors()
 {
   for (int index = Weapon::FIRST; index < Weapon::LAST; index++) {
-    Weapon::Weapon_type type = (Weapon::Weapon_type) index;
+    auto type = (Weapon::Weapon_type) index;
     factor[type] = RandomLocal().GetDouble(min_factor[type], max_factor[type]).tofloat();
   }
 }

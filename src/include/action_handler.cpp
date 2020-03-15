@@ -99,7 +99,7 @@ static void Action_Network_ClientChangeState(Action *a)
   if (!Network::GetInstance()->IsGameMaster())
     return;
   int player_id = a->PopInt();
-  WNet::net_game_state_t client_state = (WNet::net_game_state_t)a->PopInt();
+  auto client_state = (WNet::net_game_state_t)a->PopInt();
 
   MSG_DEBUG("network.game_state", "game master (%s) <-- player %d (%s)",
             WNet::GetGameStateAsString(Network::GetInstance()->GetState()),
@@ -144,7 +144,7 @@ static void Action_Network_MasterChangeState(Action *a)
 {
   FAIL_IF_GAMEMASTER(a);
 
-  WNet::net_game_state_t server_state = (WNet::net_game_state_t)a->PopInt();
+  auto server_state = (WNet::net_game_state_t)a->PopInt();
 
   MSG_DEBUG("network.game_state", "game master (%s) --> player %d (%s)",
     WNet::GetGameStateAsString(server_state),
@@ -217,7 +217,7 @@ static void Action_Network_Check_Phase1(Action *a)
   // At that point, data is loaded or this is a bug
   b.Push(ActiveMap()->GetRawName());
   b.Push(int(GetWorld().ground.GetCRC()));
-  TeamsList::iterator it = GetTeamsList().playing_list.begin();
+  auto it = GetTeamsList().playing_list.begin();
   for (; it != GetTeamsList().playing_list.end() ; ++it) {
     b.Push((*it)->GetId());
   }
@@ -263,7 +263,7 @@ static void ForceGlobalDisconnection()
 
 static void Action_Network_Disconnect_On_Error(Action *a)
 {
-  enum net_error error = (enum net_error)a->PopInt();
+  auto error = (enum net_error)a->PopInt();
   AppWarmux::DisplayError(NetErrorId_2_String(error));
   ForceGlobalDisconnection();
 }
@@ -312,7 +312,7 @@ static void Action_Network_Check_Phase2(Action *a)
 
   // Check the teams
   std::string team;
-  TeamsList::iterator it = GetTeamsList().playing_list.begin();
+  auto it = GetTeamsList().playing_list.begin();
   for (; it != GetTeamsList().playing_list.end() ; ++it) {
     team = a->PopString();
     if (team != (*it)->GetId()) {
@@ -429,7 +429,7 @@ static const Color& DefaultCPUColor(const DistantComputer *cpu)
 
   const std::list<DistantComputer*>& cpus = Network::GetInstance()->GetRemoteHosts();
   int i = 0;
-  for (std::list<DistantComputer*>::const_iterator itcpu = cpus.begin();
+  for (auto itcpu = cpus.begin();
        itcpu != cpus.end();
        ++itcpu, ++i) {
     if ((*itcpu)->GetGameId() == cpu->GetGameId()) {
@@ -456,7 +456,7 @@ static void Action_ChatMessage(Action *a)
   // Search first active team
   if (player) {
     const std::list<ConfigTeam>& teams = player->GetTeams();
-    std::list<ConfigTeam>::const_iterator it = teams.begin(), found = it;
+    auto it = teams.begin(), found = it;
     for (; it != teams.end(); ++it) {
       if (it->ai == NO_AI_NAME) {
         found = it;
@@ -754,7 +754,7 @@ static inline void add_team_config_to_action(Action& a, const ConfigTeam& team)
 void ActionHandler::NewRequestTeamAction(const ConfigTeam & team)
 {
   int player_id = int(Network::GetInstance()->GetPlayer().GetId());
-  Action * a = new Action(Action::ACTION_GAME_REQUEST_TEAM);
+  auto * a = new Action(Action::ACTION_GAME_REQUEST_TEAM);
   a->Push(player_id);
   add_team_config_to_action(*a, team);
   NewAction(a);
@@ -820,7 +820,7 @@ static void Action_Game_RequestTeamRemoval(Action *a)
 
 void WARMUX_DisconnectPlayer(Player& player)
 {
-  std::list<ConfigTeam>::iterator it = player.owned_teams.begin();
+  auto it = player.owned_teams.begin();
   while (it != player.owned_teams.end()) {
     std::string team_id = it->id;
 
@@ -1295,14 +1295,14 @@ static bool IsFrameAction(const Action* a)
 
 void ActionHandler::HandleKeyPressed_MoveRight(bool slowly)
 {
-  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_RIGHT);
+  auto *a = new Action(Action::ACTION_CHARACTER_START_MOVING_RIGHT);
   a->Push(slowly ? 1 : 0);
   NewAction(a);
 }
 
 void ActionHandler::HandleKeyPressed_MoveLeft(bool slowly)
 {
-  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_LEFT);
+  auto *a = new Action(Action::ACTION_CHARACTER_START_MOVING_LEFT);
   a->Push(slowly ? 1 : 0);
   NewAction(a);
 }
@@ -1311,7 +1311,7 @@ void ActionHandler::HandleKeyPressed_MoveLeft(bool slowly)
 
 void ActionHandler::HandleKeyPressed_Up(bool slowly)
 {
-  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_UP);
+  auto *a = new Action(Action::ACTION_CHARACTER_START_MOVING_UP);
   a->Push(slowly ? 1 : 0);
   NewAction(a);
 }
@@ -1320,35 +1320,35 @@ void ActionHandler::HandleKeyPressed_Up(bool slowly)
 
 void ActionHandler::HandleKeyPressed_Down(bool slowly)
 {
-  Action *a = new Action(Action::ACTION_CHARACTER_START_MOVING_DOWN);
+  auto *a = new Action(Action::ACTION_CHARACTER_START_MOVING_DOWN);
   a->Push(slowly ? 1 : 0);
   NewAction(a);
 }
 
 void ActionHandler::HandleKeyReleased_MoveRight(bool slowly)
 {
-    Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_RIGHT);
+    auto *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_RIGHT);
     a->Push(slowly ? 1 : 0);
     NewAction(a);
 }
 
 void ActionHandler::HandleKeyReleased_MoveLeft(bool slowly)
 {
-  Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_LEFT);
+  auto *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_LEFT);
   a->Push(slowly ? 1 : 0);
   NewAction(a);
 }
 
 void ActionHandler::HandleKeyReleased_Up(bool slowly)
 {
-  Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_UP);
+  auto *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_UP);
   a->Push(slowly ? 1 : 0);
   NewAction(a);
 }
 
 void ActionHandler::HandleKeyReleased_Down(bool slowly)
 {
-  Action *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_DOWN);
+  auto *a = new Action(Action::ACTION_CHARACTER_STOP_MOVING_DOWN);
   a->Push(slowly ? 1 : 0);
   NewAction(a);
 }
@@ -1357,21 +1357,21 @@ void ActionHandler::HandleKeyReleased_Down(bool slowly)
 
 void ActionHandler::HandleKeyPressed_Jump()
 {
-  Action *a = new Action(Action::ACTION_CHARACTER_JUMP);
+  auto *a = new Action(Action::ACTION_CHARACTER_JUMP);
   NewAction(a);
 }
 
 // #################### HIGH JUMP
 void ActionHandler::HandleKeyPressed_HighJump()
 {
-  Action *a = new Action(Action::ACTION_CHARACTER_HIGH_JUMP);
+  auto *a = new Action(Action::ACTION_CHARACTER_HIGH_JUMP);
   NewAction(a);
 }
 
 // #################### BACK JUMP
 void ActionHandler::HandleKeyPressed_BackJump()
 {
-  Action *a = new Action(Action::ACTION_CHARACTER_BACK_JUMP);
+  auto *a = new Action(Action::ACTION_CHARACTER_BACK_JUMP);
   NewAction(a);
 }
 
@@ -1386,7 +1386,7 @@ bool ActionHandler::ExecActionsForOneFrame()
   }
 
   // Frame is obviously complete from now on
-  std::list<Action*>::iterator it = queue.begin();
+  auto it = queue.begin();
   Replay *replay = Replay::GetInstance();
   while (it != queue.end()) {
     Action * a = (*it);
@@ -1456,7 +1456,7 @@ void ActionHandler::AddActionsFrames(uint nb, DistantComputer* cpu)
 
   // We are not locking queue because the only caller already locked it!
   while (nb) {
-    Action *a = new Action(Action::ACTION_GAME_CALCULATE_FRAME);
+    auto *a = new Action(Action::ACTION_GAME_CALCULATE_FRAME);
     a->SetCreator(cpu);
     queue.push_back(a);
     nb--;
@@ -1465,7 +1465,7 @@ void ActionHandler::AddActionsFrames(uint nb, DistantComputer* cpu)
 
 void ActionHandler::NewActionActiveCharacter(const Team* team, int index)
 {
-  Action * next_character = new Action(Action::ACTION_PLAYER_CHANGE_CHARACTER);
+  auto * next_character = new Action(Action::ACTION_PLAYER_CHANGE_CHARACTER);
   next_character->Push((team) ? team->GetId() : "");
   uint next_character_index = (index<0) ? ActiveCharacter().GetCharacterIndex() : index;
   next_character->Push((int)next_character_index);

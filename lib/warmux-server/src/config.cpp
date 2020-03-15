@@ -155,21 +155,15 @@ void ServerConfig::Reload()
 void ServerConfig::Display() const
 {
   DPRINT(INFO, "Current config:");
-  for(std::map<std::string, bool>::const_iterator cfg = bool_value.begin();
-      cfg != bool_value.end();
-      ++cfg) {
+  for(auto cfg = bool_value.begin(); cfg != bool_value.end(); ++cfg) {
     DPRINT(INFO, "(bool) %s = %s", cfg->first.c_str(), cfg->second?"true":"false");
   }
 
-  for(std::map<std::string, int>::const_iterator cfg = int_value.begin();
-      cfg != int_value.end();
-      ++cfg) {
+  for(auto cfg = int_value.begin(); cfg != int_value.end(); ++cfg) {
     DPRINT(INFO, "(int) %s = %i", cfg->first.c_str(), cfg->second);
   }
 
-  for(std::map<std::string, std::string>::const_iterator cfg = str_value.begin();
-      cfg != str_value.end();
-      ++cfg) {
+  for(auto cfg = str_value.begin(); cfg != str_value.end(); ++cfg) {
     DPRINT(INFO, "(str) %s = %s", cfg->first.c_str(), cfg->second.c_str());
   }
 
@@ -183,7 +177,7 @@ void ServerConfig::Display() const
 
 bool ServerConfig::Get(const std::string & name, bool & value) const
 {
-  std::map<std::string, bool>::const_iterator it = bool_value.find(name);
+  auto it = bool_value.find(name);
 
   if (it == bool_value.end()) {
     DPRINT(INFO, "Unknown or unset boolean (true/false) config option: %s", name.c_str());
@@ -196,7 +190,7 @@ bool ServerConfig::Get(const std::string & name, bool & value) const
 
 bool ServerConfig::Get(const std::string & name, int & value) const
 {
-  std::map<std::string, int>::const_iterator it = int_value.find(name);
+  auto it = int_value.find(name);
 
   if (it == int_value.end()) {
     DPRINT(INFO, "Unknown or unset integer config option: %s", name.c_str());
@@ -209,7 +203,7 @@ bool ServerConfig::Get(const std::string & name, int & value) const
 
 bool ServerConfig::Get(const std::string & name, std::string & value) const
 {
-  std::map<std::string, std::string>::const_iterator it = str_value.find(name);
+  auto it = str_value.find(name);
 
   if (it == str_value.end()) {
     DPRINT(INFO, "Unknown or unset string config option: %s", name.c_str());
@@ -250,18 +244,13 @@ void ServerConfig::SetDefault(const std::string & name, const std::string & valu
 
 bool ServerConfig::IsVersionSupported(const std::string & version) const
 {
-  std::list<std::string>::const_iterator it;
-  for (it = supported_versions.begin();
-       it != supported_versions.end();
-       it++) {
-    if (version == *it)
+  for (const auto & supported_version : supported_versions) {
+    if (version == supported_version)
       return true;
   }
 
-  for (it = hidden_supported_versions.begin();
-       it != hidden_supported_versions.end();
-       it++) {
-    if (version == *it)
+  for (const auto & hidden_supported_version : hidden_supported_versions) {
+    if (version == hidden_supported_version)
       return true;
   }
 
@@ -278,11 +267,8 @@ const std::string ServerConfig::SupportedVersions2Str() const
 const std::string ServerConfig::SupportedVersions2Str(const std::list<std::string>& versions_lst)
 {
  std::string versions = "";
-  std::list<std::string>::const_iterator it;
-  for (it = versions_lst.begin();
-       it != versions_lst.end();
-       it++) {
-    versions += *it + ',';
+  for (const auto & it : versions_lst) {
+    versions += it + ',';
   }
 
   return versions.substr(0, versions.size()-1);

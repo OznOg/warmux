@@ -64,7 +64,7 @@ protected:
   void RenderMultiLines();
 
 public:
-  Text(const std::string & text,
+  Text(std::string  text,
        const Color & fontColor = white_color,
        uint fontSize = (uint)Font::FONT_SMALL,
        Font::font_style_t fontStyle = Font::FONT_BOLD,

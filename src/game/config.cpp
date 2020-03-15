@@ -21,12 +21,12 @@
  * the configuration file.
  *****************************************************************************/
 
+#include <cerrno>
 #include <cstdlib>
+#include <iostream>
+#include <libxml/tree.h>
 #include <sstream>
 #include <string>
-#include <iostream>
-#include <errno.h>
-#include <libxml/tree.h>
 
 #ifdef __APPLE__
 #  include <CoreFoundation/CoreFoundation.h>
@@ -421,7 +421,7 @@ void Config::RemoveAllObjectConfigs()
     config_set.clear();
 }
 
-bool Config::DoLoading(void)
+bool Config::DoLoading()
 {
   // create the directory if it does not exist (we should do it before exiting the game)
   // the user can ask to start an internet game and download a file in the personnal dir
@@ -676,7 +676,7 @@ bool Config::Save(bool save_current_teams)
 
 void Config::WriteTeams(const std::list<ConfigTeam>& teams, XmlWriter& doc, xmlNode* xml)
 {
-  std::list<ConfigTeam>::const_iterator
+  auto
     it = teams.begin(),
     end = teams.end();
 
@@ -715,7 +715,7 @@ bool Config::SaveXml(bool save_current_teams)
     if (save_current_teams) {
       teams.clear();
 
-      TeamsList::iterator
+      auto
         it = GetTeamsList().playing_list.begin(),
         end = GetTeamsList().playing_list.end();
 
@@ -835,7 +835,7 @@ uint Config::GetMaxVolume()
 const std::string& Config::GetTtfFilename() const
 {
 #ifdef ENABLE_NLS
-  std::map<std::string, std::string>::const_iterator it = fonts.begin();
+  auto it = fonts.begin();
   while (it != fonts.end()) {
     const std::string& lang = it->first;
     if (!lang.compare(0, lang.size(), default_language)) {
@@ -855,7 +855,7 @@ void Config::SetNetworkLocalTeams()
   // personal teams used durint last network game
   network_local_teams.clear();
 
-  TeamsList::iterator
+  auto
     it = GetTeamsList().playing_list.begin(),
     end = GetTeamsList().playing_list.end();
 
@@ -875,11 +875,11 @@ void Config::SetNetworkLocalTeams()
 std::vector<std::pair<std::string, std::string> > Config::ListGameModes() const
 {
   std::vector<std::pair<std::string, std::string> > game_modes;
-  game_modes.push_back(std::pair<std::string, std::string>("classic", _("Classic")));
-  game_modes.push_back(std::pair<std::string, std::string>("unlimited", _("Unlimited")));
-  game_modes.push_back(std::pair<std::string, std::string>("blitz", _("Blitz")));
+  game_modes.emplace_back("classic", _("Classic"));
+  game_modes.emplace_back("unlimited", _("Unlimited"));
+  game_modes.emplace_back("blitz", _("Blitz"));
 #ifdef DEBUG
-  game_modes.push_back(std::pair<std::string, std::string>("skin_viewer", "Skin Viewer"));
+  game_modes.emplace_back("skin_viewer", "Skin Viewer");
 #endif
 
   std::string("game_mode" PATH_SEPARATOR);
@@ -900,7 +900,7 @@ std::vector<std::pair<std::string, std::string> > Config::ListGameModes() const
                 || filename.compare(filename.size()-12, 12, "_objects.xml") != 0)) {
 
           std::string game_mode_name = filename.substr(0, filename.size()-4);
-          game_modes.push_back(std::pair<std::string, std::string>(game_mode_name, game_mode_name));
+          game_modes.emplace_back(game_mode_name, game_mode_name);
         }
       }
 

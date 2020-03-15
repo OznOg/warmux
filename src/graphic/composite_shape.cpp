@@ -46,7 +46,7 @@ void CompositeShape::DrawOnScreen()
   Point2d min, max;
   Point2i tmp;
   int i = 0;
-  for(std::vector<Polygon *>::iterator poly = layers.begin();
+  for(auto poly = layers.begin();
       poly != layers.end(); poly++, i++) {
     (*poly)->Draw(&GetMainWindow());
     if(i == 0) {

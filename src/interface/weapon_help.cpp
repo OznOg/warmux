@@ -51,11 +51,6 @@ WeaponHelp::WeaponHelp()
   help.SetMaxWidth(background.GetWidth() - 10 - ICON_SIZE - 2*5);
 }
 
-WeaponHelp::~WeaponHelp()
-{
-}
-
-
 void WeaponHelp::SetWeapon(Weapon& item)
 {
   weapon_icon = &item.GetIcon();

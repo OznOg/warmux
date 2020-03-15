@@ -38,8 +38,8 @@ class CustomTeam
   bool SaveXml();
 
 protected:
-  CustomTeam(const std::string& team_name,
-             const std::string& directory,
+  CustomTeam(std::string  team_name,
+             std::string  directory,
              const std::vector<std::string>& list);
 
 public:
@@ -48,8 +48,7 @@ public:
                                     const std::string &id,
                                     std::string& error);
 
-  CustomTeam(const std::string &team_name);
-  ~CustomTeam();
+  CustomTeam(std::string team_name);
   std::string GetName() { return name; }
   std::vector<std::string> GetCharactersNameList()
   {

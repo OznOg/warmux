@@ -66,7 +66,7 @@ void VBox::Pack()
   }
 }
 
-bool VBox::LoadXMLConfiguration(void)
+bool VBox::LoadXMLConfiguration()
 {
   if (nullptr == profile || nullptr == widgetNode) {
     return false;

@@ -20,7 +20,7 @@
  *****************************************************************************/
 
 #include <algorithm>  //std::sort
-#include <time.h>
+#include <ctime>
 
 #include <WARMUX_debug.h>
 #include <WARMUX_download.h>
@@ -97,7 +97,7 @@ class ResultBox : public HBox
     AddWidget(score);
 
     if (player) {
-      PictureWidget *team_picture = new PictureWidget(DefSize);
+      auto *team_picture = new PictureWidget(DefSize);
       team_picture->SetSurface(player->GetTeam().GetFlag());
       AddWidget(team_picture);
       img = team_picture;
@@ -335,7 +335,7 @@ ResultsMenu::ResultsMenu(std::vector<TeamResults*>& v, bool disconnected)
         r.color = team->GetColor();
         r.item = &team->GetFlag();
         for (uint i=0; i<list.size(); i++)
-          r.list.push_back(std::make_pair(list[i]->GetDuration()*0.001f, list[i]->GetValue()));
+          r.list.emplace_back(list[i]->GetDuration()*0.001f, list[i]->GetValue());
         team_results.push_back(r);
       }
     }

@@ -20,13 +20,13 @@
  * Obtain information about running games from an index server
  *****************************************************************************/
 
-#include <assert.h>
-#include <time.h>
 #include <SDL_net.h>
 #include <WARMUX_debug.h>
 #include <WARMUX_download.h>
 #include <WARMUX_index_server.h>
 #include <WARMUX_random.h>
+#include <cassert>
+#include <ctime>
 
 IndexServer::IndexServer():
   server_lst(),
@@ -387,7 +387,7 @@ std::list<GameServerInfo> IndexServer::GetHostList(bool symbolic_name)
     if (!r)
       goto out;
 
-    unsigned char* str_ip = (unsigned char*)&ip.host;
+    auto* str_ip = (unsigned char*)&ip.host;
     char formated_ip[16];
     snprintf(formated_ip, 16, "%i.%i.%i.%i",
              (int)str_ip[0], (int)str_ip[1], (int)str_ip[2], (int)str_ip[3]);

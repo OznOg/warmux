@@ -149,7 +149,7 @@ Widget* WidgetList::GetLastWidget() const
 {
   Widget *last = nullptr;
 
-  for (crwit it = widget_list.rbegin(); it != widget_list.rend(); it++) {
+  for (auto it = widget_list.rbegin(); it != widget_list.rend(); it++) {
     if ((*it)->IsWidgetBrowser()) {
       last = (*it)->GetLastWidget();
       if (last)
@@ -263,7 +263,7 @@ Widget* WidgetList::GetPreviousWidget(const Widget *w, bool loop) const
     return r;
   }
 
-  for (std::list<Widget*>::const_reverse_iterator it = widget_list.rbegin();
+  for (auto it = widget_list.rbegin();
        it != widget_list.rend();
        it++) {
     if (w == (*it)) {

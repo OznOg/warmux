@@ -99,8 +99,8 @@ GameModeEditor::GameModeEditor(const Point2i& size, float zoom, bool _draw_borde
   vbox->AddWidget(sbox);
 
   std::vector<std::pair<std::string, std::string> > rules;
-  rules.push_back(std::make_pair("classic", _("Classic")));
-  rules.push_back(std::make_pair("blitz", _("Blitz")));
+  rules.emplace_back("classic", _("Classic"));
+  rules.emplace_back("blitz", _("Blitz"));
   opt_rules = new ComboBox(_("Rules"), "menu/character_selection",
                            option_size, rules, Config::GetInstance()->GetGameMode(), fmedium, fmedium);
   sbox->AddWidget(opt_rules);
@@ -113,10 +113,10 @@ GameModeEditor::GameModeEditor(const Point2i& size, float zoom, bool _draw_borde
   sbox->AddWidget(opt_duration_turn);
 
   std::vector<std::pair<std::string, std::string> > char_sel;
-  char_sel.push_back(std::make_pair("always", _("Always")));
-  char_sel.push_back(std::make_pair("within_team", _("Within team")));
-  char_sel.push_back(std::make_pair("before_action", _("Before action")));
-  char_sel.push_back(std::make_pair("never", _("Never")));
+  char_sel.emplace_back("always", _("Always"));
+  char_sel.emplace_back("within_team", _("Within team"));
+  char_sel.emplace_back("before_action", _("Before action"));
+  char_sel.emplace_back("never", _("Never"));
 
   opt_allow_character_selection = new ComboBox(_("Character switching"), "menu/character_selection",
                                                option_size, char_sel, "always", fmedium, fmedium);
@@ -200,7 +200,7 @@ class WeaponCfgBox : public HBox
 public:
   template <class SubElement>
   void doStuff(ConfigElement &c) {
-      const SubElement &element = static_cast<const SubElement &>(c);
+      const auto &element = static_cast<const SubElement &>(c);
       int val = *element.m_val;
       SpinButtonWithPicture *tmp;
 
@@ -315,7 +315,7 @@ void GameModeEditor::LoadGameMode(std::string mode_name)
   weapon_cfg_list.clear(); // Widgets already deleted above
   const auto &wlist = game_mode->GetWeaponsList().GetList();
   for (auto &it : wlist) {
-    WeaponCfgBox *w = new WeaponCfgBox(*it, 100);
+    auto *w = new WeaponCfgBox(*it, 100);
     opt_weapons_cfg->AddWidget(w);
     weapon_cfg_list.push_back(w);
   }

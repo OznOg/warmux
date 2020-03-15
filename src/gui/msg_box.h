@@ -35,7 +35,6 @@ class MsgBox : public ScrollBox
 public:
   MsgBox(const Point2i& size, Font::font_size_t font_size,
          Font::font_style_t font_style, uint max_lines = 25);
-  ~MsgBox() override;
 
   void NewMessage(const std::string& msg, const Color& color = white_color);
 };

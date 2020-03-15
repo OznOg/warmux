@@ -670,7 +670,7 @@ void Game::Draw()
   if (benching) {
     float avg = fps->GetLastValue();
     if (avg > 0.0) {
-      bench_res.push_back(std::make_pair(GameTime::GetInstance()->Read()/1000.0f, avg));
+      bench_res.emplace_back(GameTime::GetInstance()->Read()/1000.0f, avg);
     }
   }
 
@@ -707,7 +707,7 @@ void Game::CallDraw()
 
 void Game::PingClient() const
 {
-  Action * a = new Action(Action::ACTION_NETWORK_PING);
+  auto * a = new Action(Action::ACTION_NETWORK_PING);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
@@ -964,7 +964,7 @@ void Game::MainLoop()
     bool is_turn_master = net->IsTurnMaster();
     if (is_turn_master) {
       time->SetWaitingForNetwork(false);
-      Action *a = new Action(Action::ACTION_GAME_CALCULATE_FRAME);
+      auto *a = new Action(Action::ACTION_GAME_CALCULATE_FRAME);
       ah->NewAction(a);
     }
     bool actions_executed = ah->ExecActionsForOneFrame();
@@ -1275,8 +1275,8 @@ uint Game::RemainingGroups() const
   const TeamsList::GroupList& glist = TeamsList::GetInstance()->GetGroupList();
   for (const auto & git : glist) {
     bool has = false;
-    for (TeamGroup::const_iterator it = git.second.begin(); it != git.second.end(); ++it) {
-      if ((*it)->NbAliveCharacter()) {
+    for (auto it : git.second) {
+      if (it->NbAliveCharacter()) {
         has = true;
         break;
       }

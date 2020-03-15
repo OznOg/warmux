@@ -46,7 +46,7 @@ GridBox::GridBox(std::shared_ptr<Profile> profile,
 {
 }
 
-GridBox::~GridBox(void)
+GridBox::~GridBox()
 {
   for (uint i = 0; i < lines; ++i) {
     delete [] grid[i];
@@ -54,7 +54,7 @@ GridBox::~GridBox(void)
   delete [] grid;
 }
 
-bool GridBox::LoadXMLConfiguration(void)
+bool GridBox::LoadXMLConfiguration()
 {
   if (nullptr == profile || nullptr == widgetNode) {
     return false;
@@ -74,7 +74,7 @@ bool GridBox::LoadXMLConfiguration(void)
   return true;
 }
 
-void GridBox::InitGrid(void)
+void GridBox::InitGrid()
 {
   grid = new Widget **[lines];
 

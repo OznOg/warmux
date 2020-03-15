@@ -88,7 +88,7 @@ protected:
   bool game_master_player;
   WNet::net_game_state_t state;
 
-  Network(const std::string& game_name, const std::string& password); // pattern singleton
+  Network(std::string  game_name, std::string  password); // pattern singleton
 
   WSocketSet* socket_set;
 

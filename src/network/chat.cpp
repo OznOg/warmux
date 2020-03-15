@@ -109,7 +109,7 @@ void Chat::SendMessage(const std::string &msg, bool in_game)
   if (msg.size() == 0)
     return;
 
-  Action* a = new Action((in_game) ? Action::ACTION_CHAT_INGAME_MESSAGE
+  auto* a = new Action((in_game) ? Action::ACTION_CHAT_INGAME_MESSAGE
                                    : Action::ACTION_CHAT_MENU_MESSAGE);
   a->Push(Network::GetInstance()->GetPlayer().GetId());
   a->Push(msg);

@@ -20,8 +20,8 @@
  *****************************************************************************/
 
 #include "tool/string_tools.h"
+#include <cassert>
 #include <sstream>
-#include <assert.h>
 
 template<typename T>
 bool str2type(const std::string &txt, T &value)

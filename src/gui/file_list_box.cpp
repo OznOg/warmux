@@ -32,7 +32,7 @@ void FileListBox::Empty()
 {
   for (auto & m_value : m_values) {
     if (m_value) {
-      const std::string* str = static_cast<const std::string*>(m_value);
+      const auto* str = static_cast<const std::string*>(m_value);
       delete str;
     }
   }
@@ -43,7 +43,7 @@ void FileListBox::Clear()
 {
   for (auto & m_value : m_values) {
     if (m_value) {
-      const std::string* str = static_cast<const std::string*>(m_value);
+      const auto* str = static_cast<const std::string*>(m_value);
       delete str;
     }
   }
@@ -54,7 +54,7 @@ void FileListBox::RemoveSelected()
 {
   if (selected_item != -1) {
     if (m_values[selected_item]) {
-      const std::string* str = static_cast<const std::string*>(m_values[selected_item]);
+      const auto* str = static_cast<const std::string*>(m_values[selected_item]);
       delete str;
     }
     ItemBox::RemoveSelected();
@@ -64,7 +64,7 @@ void FileListBox::RemoveSelected()
 const std::string* FileListBox::GetSelectedFile() const
 {
   if (list_files) {
-    const std::string* str = static_cast<const std::string*>(ItemBox::GetSelectedValue());
+    const auto* str = static_cast<const std::string*>(ItemBox::GetSelectedValue());
     if (str && DoesFileExist(*str))
       return str;
   }
@@ -73,7 +73,7 @@ const std::string* FileListBox::GetSelectedFile() const
 
 const std::string* FileListBox::GetSelectedFolder() const
 {
-  const std::string* str = static_cast<const std::string*>(ItemBox::GetSelectedValue());
+  const auto* str = static_cast<const std::string*>(ItemBox::GetSelectedValue());
   if (str && DoesFolderExist(*str))
     return str;
   return nullptr;
@@ -127,7 +127,7 @@ void FileListBox::PopulateFileList(const std::string& path)
       if (is_file) {
         // We have a file, check that it validates the list
         if (MatchFilter(name)) {
-          std::string* filename = new std::string(new_path);
+          auto* filename = new std::string(new_path);
           *filename += name;
           MSG_DEBUG("file", "Adding file %s\n", name);
           AddLabelItem(false, ANSIToUTF8(new_path, name), filename, Font::FONT_MEDIUM);

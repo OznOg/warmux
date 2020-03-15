@@ -95,7 +95,7 @@ protected:
   std::string GenerateMap(std::shared_ptr<Profile> profile, InfoMap::Island_type generator,
                           const int width, const int height) const;
 public:
-  InfoMap(const std::string&, const std::string&);
+  InfoMap(std::string , std::string );
   ~InfoMap();
   void FreeData();
 

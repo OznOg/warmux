@@ -19,9 +19,9 @@
  * Simple class that caches the sounds played - part of jukebox
  *****************************************************************************/
 
-#include <iostream>
+#include <cassert>
 #include <fstream>
-#include <assert.h>
+#include <iostream>
 
 #include <SDL_mixer.h>
 
@@ -141,7 +141,7 @@ void SampleCache::Clear()
 
 int SampleCache::FindChunkByName( const std::string & name )
 {
-    std::map< std::string, int >::iterator it = m_chunks_by_name.find( name );
+    auto it = m_chunks_by_name.find( name );
     if ( m_chunks_by_name.end() == it )
         return -1;
 
@@ -150,7 +150,7 @@ int SampleCache::FindChunkByName( const std::string & name )
 
 int SampleCache::FindChunkByAddr( Mix_Chunk * pchk )
 {
-    std::map< Mix_Chunk *, int >::iterator it = m_chunks_by_addr.find( pchk );
+    auto it = m_chunks_by_addr.find( pchk );
     if ( m_chunks_by_addr.end() == it )
         return -1;
 

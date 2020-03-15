@@ -474,7 +474,7 @@ void Interface::DrawMapPreview()
   // Add objects like medkits or bonus boxes
   FOR_EACH_OBJECT(object) {
     if ((*object)->GetName()=="medkit" || (*object)->GetName()=="bonus_box") {
-      ObjBox* box = static_cast<ObjBox*>(object->get());
+      auto* box = static_cast<ObjBox*>(object->get());
       const Surface* icon = box->GetIcon();
 
       // The real icon

@@ -55,7 +55,7 @@ void EnergyList::AddValue(uint value)
   if (value == m_last_value)
     return;
 
-  EnergyValue *eval = new EnergyValue(GameTime::GetInstance()->Read(), value);
+  auto *eval = new EnergyValue(GameTime::GetInstance()->Read(), value);
   if (value > m_max_value) m_max_value = value;
   m_last_value = value;
   EnergyList::push_back(eval);

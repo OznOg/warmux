@@ -120,7 +120,7 @@ bool GameMenu::signal_ok()
   SaveOptions();
 
   const std::vector<Team*>& playing_list = GetTeamsList().playing_list;
-  std::vector<Team*>::const_iterator it  = playing_list.begin();
+  auto it  = playing_list.begin();
 
   if (playing_list.size() <= 1) {
     Question q(Question::WARNING);

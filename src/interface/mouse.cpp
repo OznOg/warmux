@@ -139,7 +139,7 @@ void Mouse::ActionLeftClick(bool /*shift*/) const
     if (GameMode::GetConstInstance()->AllowCharacterSelection()) {
       TeamGroup& tlist = TeamsList::GetInstance()->GetGroupList()[ActiveTeam().GetGroup()];
 
-      for (TeamGroup::iterator it = tlist.begin(); it != tlist.end(); ++it) {
+      for (auto it = tlist.begin(); it != tlist.end(); ++it) {
         if (FindCharacter(pos, *it)) {
           tlist.active_team = it;
           ActionHandler::GetInstance()->NewActionActiveCharacter(*it);
@@ -164,7 +164,7 @@ void Mouse::ActionLeftClick(bool /*shift*/) const
   // - Do nothing
   // - Choose a target but don't fire
   // - Choose a target and fire it !
-  Action* a = new Action(Action::ACTION_WEAPON_SET_TARGET);
+  auto* a = new Action(Action::ACTION_WEAPON_SET_TARGET);
   a->Push(pos);
   ActionHandler::GetInstance()->NewAction (a);
 }
@@ -331,7 +331,7 @@ Point2i Mouse::GetPosition() const
   int x, y;
 
   SDL_GetMouseState(&x, &y);
-  return Point2i(x, y);
+  return {x, y};
 }
 
 Point2i Mouse::GetWorldPosition() const

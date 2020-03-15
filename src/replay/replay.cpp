@@ -22,7 +22,7 @@
 #include "replay.h"
 
 #include <SDL_net.h>
-#include <assert.h>
+#include <cassert>
 #ifdef _WIN32
 #  include <wchar.h>
 #endif
@@ -360,7 +360,7 @@ Action* Replay::GetAction()
   }
 
   // Read action
-  Action *a = new Action((char*)ptr, nullptr);
+  auto *a = new Action((char*)ptr, nullptr);
   Action::Action_t type = a->GetType();
   if (type > Action::ACTION_TIME_VERIFY_SYNC) {
     Error(Format(_("Malformed replay: action with unknow type %08X"), type));
@@ -388,7 +388,7 @@ bool Replay::RefillActions()
   ActionHandler *ah = ActionHandler::GetInstance();
 
   ah->Lock();
-  while (1) {
+  while (true) {
     Action *a = GetAction();
     if (a) {
       ah->NewAction(a, false);
@@ -397,7 +397,7 @@ bool Replay::RefillActions()
         count = SDLNet_Read16(ptr); ptr += 2;
         MSG_DEBUG("replay", "Repeating %u\n", count);
         for (uint i=0; i<count; i++) {
-          Action *a = new Action(Action::ACTION_GAME_CALCULATE_FRAME);
+          auto *a = new Action(Action::ACTION_GAME_CALCULATE_FRAME);
           ah->NewAction(a, false);
         }
       }

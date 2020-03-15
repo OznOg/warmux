@@ -19,15 +19,15 @@
  * Polygon Generator. Generate various polygon shape on demand (including random one).
  *****************************************************************************/
 
-#include <stdlib.h>
-#include "graphic/polygon.h"
 #include "graphic/polygon_generator.h"
+#include "graphic/polygon.h"
 #include "network/randomsync.h"
 #include "tool/affine_transform.h"
+#include <cstdlib>
 
 Polygon * PolygonGenerator::GenerateRectangle(const Double& width, const Double& height)
 {
-  Polygon * tmp = new Polygon();
+  auto * tmp = new Polygon();
   tmp->AddPoint(Point2d( width * ONE_HALF,  height * ONE_HALF));
   tmp->AddPoint(Point2d( width * ONE_HALF, -height * ONE_HALF));
   tmp->AddPoint(Point2d(-width * ONE_HALF, -height * ONE_HALF));
@@ -37,7 +37,7 @@ Polygon * PolygonGenerator::GenerateRectangle(const Double& width, const Double&
 
 Polygon * PolygonGenerator::GenerateRectangle(const Point2d & orig, const Point2d & size)
 {
-  Polygon * tmp = new Polygon();
+  auto * tmp = new Polygon();
   tmp->AddPoint(Point2d(orig.x + size.x, orig.y + size.y));
   tmp->AddPoint(Point2d(orig.x + size.x, orig.y));
   tmp->AddPoint(Point2d(orig.x,          orig.y));
@@ -47,7 +47,7 @@ Polygon * PolygonGenerator::GenerateRectangle(const Point2d & orig, const Point2
 
 Polygon * PolygonGenerator::GenerateDentedCircle(const Double& diameter, int nb_point, const Double& rand_offset)
 {
-  Polygon * tmp = new Polygon();
+  auto * tmp = new Polygon();
   AffineTransform2D trans = AffineTransform2D();
   Point2d top;
   for(int i = 0; i < nb_point; i++) {
@@ -60,7 +60,7 @@ Polygon * PolygonGenerator::GenerateDentedCircle(const Double& diameter, int nb_
 
 Polygon * PolygonGenerator::GenerateRoundedRectangle(const Double& width, const Double& height, const Double& edge)
 {
-  Polygon * tmp = new Polygon();
+  auto * tmp = new Polygon();
   Double edge_vector = edge * ONE_HALF;
   tmp->AddBezierCurve(Point2d(-width * ONE_HALF + edge, -height * ONE_HALF),
                       Point2d(-edge_vector, 0),
@@ -97,7 +97,7 @@ Polygon * PolygonGenerator::GenerateRandomTrapeze(const Double& width, const Dou
   int number_of_bottom_point, number_of_side_point;
   // XXX Unused !?
   // int number_of_upper_point;
-  Polygon * tmp = new Polygon();
+  auto * tmp = new Polygon();
   number_of_side_point = 1 + (int)RandomSync().GetDouble((height / FOUR) / MIN_SPACE_BETWEEN_POINT,
                                      height / MIN_SPACE_BETWEEN_POINT);
   if(coef > ZERO) {
@@ -130,7 +130,7 @@ Polygon * PolygonGenerator::GenerateRandomTrapeze(const Double& width, const Dou
 Polygon * PolygonGenerator::GeneratePie(const Double& diameter, int nb_point,
                                         const Double& angle, const Double& angle_offset)
 {
-  Polygon * tmp = new Polygon();
+  auto * tmp = new Polygon();
   AffineTransform2D trans = AffineTransform2D();
   Point2d top;
   for(int i = 0; i < nb_point; i++) {
@@ -152,7 +152,7 @@ Polygon * PolygonGenerator::GeneratePartialTorus(Double diameter, Double min_dia
     diameter = min_diameter;
     min_diameter = tmp;
   }
-  Polygon * tmp = new Polygon();
+  auto * tmp = new Polygon();
   AffineTransform2D trans = AffineTransform2D();
   Point2d top = Point2d(0, diameter*ONE_HALF);
   for(int i = 0; i < nb_point; i++) {
@@ -169,7 +169,7 @@ Polygon * PolygonGenerator::GeneratePartialTorus(Double diameter, Double min_dia
 
 DecoratedBox * PolygonGenerator::GenerateDecoratedBox(const Double& width, const Double& height)
 {
-  DecoratedBox * tmp = new DecoratedBox(width, height);
+  auto * tmp = new DecoratedBox(width, height);
 
   return tmp;
 }

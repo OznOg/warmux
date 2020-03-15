@@ -51,10 +51,6 @@ NetworkClient::NetworkClient(const std::string& password) : Network("-", passwor
 #endif
 }
 
-NetworkClient::~NetworkClient()
-{
-}
-
 void NetworkClient::CloseConnection(std::list<DistantComputer*>::iterator closed)
 {
   printf("- client disconnected: %s\n", (*closed)->ToString().c_str());

@@ -151,7 +151,7 @@ void Construct::Up() const
 {
   Double new_angle = angle + DELTA_ANGLE;
 
-  Action* a = new Action(Action::ACTION_WEAPON_CONSTRUCTION, new_angle);
+  auto* a = new Action(Action::ACTION_WEAPON_CONSTRUCTION, new_angle);
   ActionHandler::GetInstance()->NewAction(a);
 }
 
@@ -159,7 +159,7 @@ void Construct::Down() const
 {
   Double new_angle = angle - DELTA_ANGLE;
 
-  Action* a = new Action(Action::ACTION_WEAPON_CONSTRUCTION, new_angle);
+  auto* a = new Action(Action::ACTION_WEAPON_CONSTRUCTION, new_angle);
   ActionHandler::GetInstance()->NewAction(a);
 }
 

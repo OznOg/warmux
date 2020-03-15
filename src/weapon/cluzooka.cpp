@@ -41,10 +41,10 @@ template< typename ClusterType >
 class ClusterSpawner
 {
 protected:
-  bool m_spawned_clusters;
+  bool m_spawned_clusters{ false };
 
-  ClusterSpawner() : m_spawned_clusters( false ) {};
-  virtual ~ClusterSpawner() {};
+  ClusterSpawner() = default;
+  virtual ~ClusterSpawner() = default;
 
   virtual void SpawnClusters( uint fragments, uint recursion_depth,
                               const Point2i pos, Double speed, Double angle, Double angle_range,

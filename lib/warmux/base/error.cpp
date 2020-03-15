@@ -19,12 +19,12 @@
  * Refresh des erreurs, exceptions, assertions, etc.
  *****************************************************************************/
 
-#include <cstdlib>
-#include <iostream>
-#include <signal.h>
 #include <WARMUX_error.h>
 #include <WARMUX_i18n.h>
 #include <WARMUX_types.h>
+#include <csignal>
+#include <cstdlib>
+#include <iostream>
 
 #ifdef ANDROID
 #  include <android/log.h>

@@ -133,9 +133,8 @@ Member::Member(const xmlNode *     xml,
     }
   }
 
-  AttachTypeMap::iterator attachment_it = attached_types.begin();
-  for (; attachment_it != attached_types.end(); ++attachment_it)
-    attachment_it->second.SetAnchor(anchor);
+  for (auto & attached_type : attached_types)
+    attached_type.second.SetAnchor(anchor);
 
   ResetMovement();
 }
@@ -245,7 +244,7 @@ void Member::ApplySqueleton(Member * parent_member)
   // Set the position
   pos = parent->pos - anchor;
 
-  AttachTypeMap::iterator itAttachedType = parent->attached_types.find(type);
+  auto itAttachedType = parent->attached_types.find(type);
 
   if (itAttachedType != parent->attached_types.end()) {
     pos += itAttachedType->second[parent->spr->GetCurrentFrame()].point;

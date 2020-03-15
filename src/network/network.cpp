@@ -20,6 +20,7 @@
  *****************************************************************************/
 
 #include <algorithm>
+#include <utility>
 
 #ifdef WIN32
 #  ifndef NOMINMAX
@@ -41,7 +42,7 @@
 #    include <arpa/nameser.h>
 #    include <resolv.h>
 #  endif
-#  include <errno.h>
+#  include <cerrno>
 #  include <unistd.h>
 #endif
 
@@ -189,7 +190,7 @@ void NetworkThread::ReceiveActions()
         }
 #endif
 
-        Action* a = new Action(buffer, (*dst_cpu));
+        auto* a = new Action(buffer, (*dst_cpu));
         free(buffer);
 
         MSG_DEBUG("network.traffic", "Received action %s",
@@ -222,10 +223,10 @@ NetworkServer * Network::GetInstanceServer()
   return (NetworkServer*)singleton;
 }
 
-Network::Network(const std::string& _game_name, const std::string& passwd) :
+Network::Network(std::string  _game_name, std::string  passwd) :
   cpu(),
-  game_name(_game_name),
-  password(passwd),
+  game_name(std::move(_game_name)),
+  password(std::move(passwd)),
   game_master_player(false),
   state(WNet::NO_NETWORK),// useless value at beginning
   socket_set(nullptr),
@@ -345,7 +346,7 @@ void Network::DisconnectNetwork()
   NetworkThread::Wait();
 
   SDL_LockMutex(cpus_lock);
-  std::list<DistantComputer*>::iterator client = cpu.begin();
+  auto client = cpu.begin();
 
   while (client != cpu.end()) {
     DistantComputer* tmp = (*client);
@@ -369,7 +370,7 @@ void Network::DisconnectNetwork()
 // Send Messages
 void Network::SendActionToAll(const Action& a, bool lock) const
 {
-  if (0) {
+  if (false) {
   if (a.GetType() == Action::ACTION_GAME_CALCULATE_FRAME) {
     frames++;
     if (frames == Action::MAX_FRAMES) {
@@ -466,7 +467,7 @@ connection_state_t Network::ClientStart(const std::string& host,
                                         const std::string& port,
                                         const std::string& password)
 {
-  NetworkClient* net = new NetworkClient(password);
+  auto* net = new NetworkClient(password);
   MSG_DEBUG("singleton", "Created singleton %p of type 'NetworkClient'\n", net);
 
   // replace current singleton
@@ -494,7 +495,7 @@ connection_state_t Network::ClientStart(const std::string& host,
 // Static method
 connection_state_t Network::ServerStart(const std::string& port, const std::string& game_name, const std::string& password)
 {
-  NetworkServer* net = new NetworkServer(game_name, password);
+  auto* net = new NetworkServer(game_name, password);
   MSG_DEBUG("singleton", "Created singleton %p of type 'NetworkServer'\n", net);
 
   // replace current singleton
@@ -675,7 +676,7 @@ void Network::CheckOneHostTeams(Player& player, DistantComputer* new_host,
                                 const std::vector<uint>& common_list)
 {
   const std::list<ConfigTeam>& configs         = player.GetTeams();
-  std::list<ConfigTeam>::const_iterator config = configs.begin();
+  auto config = configs.begin();
 
   // Check current player list of teams
   while (config != configs.end()) {
@@ -694,7 +695,7 @@ void Network::CheckOneHostTeams(Player& player, DistantComputer* new_host,
       std::string id = config->id;
       MSG_DEBUG("action_handler.team", "Deleting team %s!\n", id.c_str());
 
-      Action *a = new Action(Action::ACTION_GAME_DEL_TEAM);
+      auto *a = new Action(Action::ACTION_GAME_DEL_TEAM);
       a->Push(int(player.GetId()));
       a->Push(id);
 
@@ -743,10 +744,10 @@ void Network::SendTeamsList()
     MSG_DEBUG("action_handler.team", "Common list has now " SIZET_FORMAT "u teams\n", common_list.size());
 
     // Browse the hosts
-    std::list<DistantComputer*>::iterator it = cpu.begin();
+    auto it = cpu.begin();
     for (; it != cpu.end(); it++) {
       std::list<Player>&          players = (*it)->GetPlayers();
-      std::list<Player>::iterator cur     = players.begin();
+      auto cur     = players.begin();
 
       // Check current host' players
       for (; cur != players.end(); cur++)

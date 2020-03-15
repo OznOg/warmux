@@ -19,16 +19,12 @@
  * Functions to generate random datas (number, boolean, etc.).
  *****************************************************************************/
 
-#include <time.h>
 #include <WARMUX_debug.h>
 #include <WARMUX_random.h>
+#include <ctime>
 
 RandomGenerator::RandomGenerator() :
   next(0), initialized(false), unrandom(false)
-{
-}
-
-RandomGenerator::~RandomGenerator()
 {
 }
 
@@ -131,12 +127,12 @@ Point2i RandomGenerator::GetPoint(const Rectanglei &rect)
   Point2i bottomPoint = rect.GetBottomRightPoint();
   int32_t x = GetInt(topPoint.x, bottomPoint.x);
   int32_t y = GetInt(topPoint.y, bottomPoint.y);
-  return Point2i( x, y );
+  return { x, y };
 }
 
 Point2i RandomGenerator::GetPoint(const Point2i &pt)
 {
   int32_t x = GetInt(0, pt.x - 1);
   int32_t y = GetInt(0, pt.y - 1);
-  return Point2i(x, y);
+  return {x, y};
 }

@@ -18,13 +18,13 @@
  ******************************************************************************
  * Download a file using libcurl
  *****************************************************************************/
+#include <cctype>
 #include <cerrno>
 #include <cstdio>
-#include <map>
-#include <fstream>
 #include <cstdlib>
 #include <cstring>
-#include <ctype.h>
+#include <fstream>
+#include <map>
 
 #include <WARMUX_debug.h>
 #include <WARMUX_download.h>
@@ -41,7 +41,7 @@ static size_t dummy_callback(void*, size_t size, size_t nmemb, void*)
 
 static size_t download_callback(void* buf, size_t size, size_t nmemb, void* str)
 {
-  std::string* out = (std::string*)str;
+  auto* out = (std::string*)str;
   size_t       sz  = size*nmemb;
 
   out->append((char*)buf, sz);
@@ -278,7 +278,7 @@ std::string Downloader::UrlEncode(const std::string& str)
   const char*       src      = str.c_str();
 
   while (len && *src) {
-    unsigned char ch = (unsigned char)*src;
+    auto ch = (unsigned char)*src;
     if (*src == ' ') {
       ret += '+';
     }

@@ -117,10 +117,6 @@ BenchmarkMenu::BenchmarkMenu() :
   widgets.Pack();
 }
 
-BenchmarkMenu::~BenchmarkMenu()
-{
-}
-
 bool BenchmarkMenu::Launch(BenchItem *b)
 {
   if (!b)
